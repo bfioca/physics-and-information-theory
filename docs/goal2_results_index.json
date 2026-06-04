@@ -1,0 +1,348 @@
+{
+  "package": "Goal 2 finite causal-patch / horizon-code toy model result index",
+  "scope": "Results through cosmology Phase 31, with Goal 1 balanced-bridge theorem as seed",
+  "status_legend": {
+    "exact_theorem": "A theorem-level claim checked by symbolic/template reasoning and exact finite-prefix verification where applicable.",
+    "exact_exhaustive_bounded_search": "All objects in a stated finite bounded family are enumerated and verified exactly.",
+    "exact_finite_certificate": "A concrete finite construction or finite prefix is verified exactly.",
+    "exploratory_frontier_evidence": "Bounded frontier/search evidence that is exact for searched records but not exhaustive for a broad mathematical family."
+  },
+  "definitions": [
+    {
+      "term": "stabilizer_code",
+      "definition": "An n-qubit stabilizer subspace represented by Pauli generators, with exact diagnostics for logical basis, distance, entropy, region algebra, and erasure correctability."
+    },
+    {
+      "term": "code_pair",
+      "definition": "Two stabilizer codes compared on entropy-visible and reconstruction-visible diagnostics."
+    },
+    {
+      "term": "patch_cover",
+      "definition": "A finite list of named physical-qubit regions attached to a code or code pair."
+    },
+    {
+      "term": "observer_patch",
+      "definition": "A named patch interpreted as an observer causal patch, usually observer_p or observer_q."
+    },
+    {
+      "term": "shared_horizon",
+      "definition": "The named overlap region that must equal observer_p intersect observer_q under strict causal-patch gates."
+    },
+    {
+      "term": "bridge_shell",
+      "definition": "The collection of bridge-pair qubits added by the balanced-bridge construction."
+    },
+    {
+      "term": "static_diamond",
+      "definition": "The causal union observer_p union observer_q."
+    },
+    {
+      "term": "causal_patch_entropy_profile",
+      "definition": "Named patch entropies plus overlap, MI, CMI, and tripartite information data for patch pairs."
+    },
+    {
+      "term": "observer_algebra_signature",
+      "definition": "The tuple (logical_dim, center_dim, commutant_dim, reconstructs_all) for a region algebra."
+    },
+    {
+      "term": "erasure_correctability_profile",
+      "definition": "Named erasure scenarios recording correctability for each code."
+    },
+    {
+      "term": "survivor_fixed_point",
+      "definition": "Whether the survivor complement reconstructs all logicals after an erasure."
+    },
+    {
+      "term": "strict_causal_patch_gate",
+      "definition": "Matching entropy/overlap data, horizon overlap, shared horizon algebra, observer reconstruction difference, matching erasure profile, and erasure algebra difference."
+    },
+    {
+      "term": "channel_rule_substrate",
+      "definition": "A certified transition graph or edge-filtered subgraph supporting exact rational channel rules."
+    }
+  ],
+  "claims": [
+    {
+      "id": "goal1_balanced_bridge_css_family",
+      "title": "Balanced-bridge CSS separation family",
+      "status_class": "exact_theorem",
+      "claim": "For all bridge counts m, A_m and B_m have n=6+2m, k=1, d=2, matching labeled one- and two-qubit entropy diagnostics, no single-qubit non-central logical reconstruction, and distinct reconstruction/algebra profiles.",
+      "scope": "All m under the balanced-bridge generator rule.",
+      "commands": [
+        "python3 -m qgtoy bridge-proof-check",
+        "python3 -m qgtoy bridge-theorem"
+      ],
+      "primary_files": [
+        "qgtoy/bridge_proof.py",
+        "qgtoy/family.py",
+        "README.md"
+      ],
+      "evidence_type": "symbolic CSS support-mask proof plus exact prefix certificates"
+    },
+    {
+      "id": "goal2_static_balanced_bridge_atlas",
+      "title": "Static balanced-bridge causal-patch atlas",
+      "status_class": "exact_finite_certificate",
+      "claim": "Named patch entropy, overlap, MI, CMI, and I3 data match, and shared-horizon algebra matches, while observer-patch reconstructability differs.",
+      "scope": "Checked balanced-bridge prefixes for the source-aware atlas.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase1 --max-m 3"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "README.md"
+      ],
+      "evidence_type": "exact stabilizer and region-algebra certificate"
+    },
+    {
+      "id": "goal2_deterministic_bridge_growth",
+      "title": "Deterministic bridge growth increment laws",
+      "status_class": "exact_finite_certificate",
+      "claim": "Bridge growth preserves causal-patch separation and has exact increment laws for observer entropy, observer-pair MI, private CMI, tripartite information, and witness algebra signatures.",
+      "scope": "Checked growth prefix.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase2 --max-m 3"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "README.md"
+      ],
+      "evidence_type": "exact finite bridge-growth and erasure-channel certificate"
+    },
+    {
+      "id": "source_aware_cover_semantics",
+      "title": "Source-aware covers recover lifted bridge slices",
+      "status_class": "exact_exhaustive_bounded_search",
+      "claim": "Generic bounded covers find the seed but not lifted bridge slices, while source-aware bridge atlases recover lifted sources under the same strict hit criteria.",
+      "scope": "Bounded source-frontier and cover-template searches.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase4 --max-hits-per-pair 3",
+        "python3 -m qgtoy cosmology-phase6",
+        "python3 -m qgtoy cosmology-phase7",
+        "python3 -m qgtoy cosmology-phase8"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "README.md"
+      ],
+      "evidence_type": "exact bounded search plus replayable frontier-cache records"
+    },
+    {
+      "id": "repaired_noncss_atlas_recovery",
+      "title": "Distance-repaired non-CSS atlas recovery",
+      "status_class": "exact_exhaustive_bounded_search",
+      "claim": "Distance repair, low-order entropy matching, and strict causal-patch erasure semantics are separable; atlas-aware covers recover strict hits for repaired graph/CWS-like examples.",
+      "scope": "Phase 11/12 repaired graph/CWS-like sources and 525 atlas-aware repaired covers.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase11",
+        "python3 -m qgtoy cosmology-phase12"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "README.md"
+      ],
+      "evidence_type": "exact rank-kernel diagnostics and bounded repaired-cover search"
+    },
+    {
+      "id": "repaired_cover_dynamics",
+      "title": "Repaired cover dynamics and role-semantics comparison",
+      "status_class": "exact_finite_certificate",
+      "claim": "A fixed repaired non-CSS code pair admits a cover flow from a near-miss to a strict atlas hit; role labels alone do not determine horizon semantics.",
+      "scope": "Phase 13 two-slice flow and Phase 14 bounded cover-transition graph.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase13",
+        "python3 -m qgtoy cosmology-phase14"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "README.md"
+      ],
+      "evidence_type": "exact finite cover-flow and rank-kernel erasure certificate"
+    },
+    {
+      "id": "mixed_transition_graph_and_exact_channels",
+      "title": "Mixed transition graph and exact rational channels",
+      "status_class": "exact_finite_certificate",
+      "claim": "The mixed inner/outer graph has stable shared-horizon correctability and survivor fixed point while entropy breaks, operator collapse, and algebra monotonicity failures occur under certified transitions.",
+      "scope": "49-node, 84-edge mixed transition graph and exact rational channels.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase21",
+        "python3 -m qgtoy cosmology-phase22",
+        "python3 -m qgtoy cosmology-phase23"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "README.md"
+      ],
+      "evidence_type": "exact finite transition graph and rational Markov/channel certificates"
+    },
+    {
+      "id": "bounded_channel_rule_search",
+      "title": "Bounded exact channel-rule search and robust synthesis",
+      "status_class": "exact_exhaustive_bounded_search",
+      "claim": "Stationary bucket weights, absorbing classes, target signs, and Pareto frontiers depend on exact channel rules and substrates; robust synthesis gives audited no-go and yes-go target signs within a 27-rule language.",
+      "scope": "27 positive symmetric edge-bonus rules, 7 descent rules, and four Phase 26 substrates.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase24",
+        "python3 -m qgtoy cosmology-phase25",
+        "python3 -m qgtoy cosmology-phase26",
+        "python3 -m qgtoy cosmology-phase27",
+        "python3 -m qgtoy cosmology-phase28"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "tests/test_stabilizer.py",
+        "README.md"
+      ],
+      "evidence_type": "exact exhaustive bounded enumeration with rational certificates and audited feature predicates"
+    },
+    {
+      "id": "substrate_and_cover_codesign",
+      "title": "Substrate and cover co-design pressure tests",
+      "status_class": "exact_exhaustive_bounded_search",
+      "claim": "Some robust no-go signs are substrate- or cover-family artifacts, while others persist under stricter gates.",
+      "scope": "Phase 29 eight substrate families and Phase 30 selected strict/near-miss covers.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase29",
+        "python3 -m qgtoy cosmology-phase30"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "tests/test_stabilizer.py",
+        "README.md"
+      ],
+      "evidence_type": "exact bounded co-design enumeration with strict-vs-near-miss separation"
+    },
+    {
+      "id": "phase31_strict_cover_audit",
+      "title": "Strict repaired-cover exhaustive audit",
+      "status_class": "exact_exhaustive_bounded_search",
+      "claim": "Among 175 repaired private-full/shared-inner covers there are 66 raw hits, 8 strict hits, and 58 erasure-gate rejections. Entropy_break - full_semantics stays negative for all strict hits, while operator-related sign flips occur exactly when observer_p_private_blocks is nonempty.",
+      "scope": "All 175 Phase 12 private-full/shared-inner repaired covers and all eight strict hits.",
+      "commands": [
+        "python3 -m qgtoy cosmology-phase31"
+      ],
+      "primary_files": [
+        "qgtoy/cosmology.py",
+        "tests/test_stabilizer.py",
+        "README.md"
+      ],
+      "key_numbers": {
+        "covers_scanned": 175,
+        "raw_entropy_reconstruction_hits": 66,
+        "strict_cover_hits": 8,
+        "erasure_gate_rejections": 58,
+        "entropy_break_over_full_best_gap": "-1/53",
+        "operator_collapse_over_full_best_gap": "3/70",
+        "operator_collapse_over_entropy_break_best_gap": "19/284"
+      },
+      "evidence_type": "exact exhaustive bounded cover scan and exact robust-channel audit"
+    },
+    {
+      "id": "frontier_evidence",
+      "title": "Extended source frontier evidence",
+      "status_class": "exploratory_frontier_evidence",
+      "claim": "CSS, graph/CWS-like, and shallow-encoder source records provide additional exact bounded evidence for entropy/reconstruction separation searches, but do not exhaust broad code families.",
+      "scope": "Configured frontier/cache searches only.",
+      "commands": [
+        "python3 -m qgtoy robust-search --max-n 6 --k 1",
+        "python3 -m qgtoy lift-frontier",
+        "python3 -m qgtoy cosmology-phase5",
+        "python3 -m qgtoy cosmology-phase8"
+      ],
+      "primary_files": [
+        "qgtoy/robust.py",
+        "qgtoy/family.py",
+        "qgtoy/cosmology.py"
+      ],
+      "evidence_type": "bounded exact frontier records and cache replay, not global exhaustive proof"
+    }
+  ],
+  "command_index": [
+    {
+      "command": "python3 -m qgtoy bridge-proof-check",
+      "verifies": [
+        "goal1_balanced_bridge_css_family"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy bridge-theorem",
+      "verifies": [
+        "goal1_balanced_bridge_css_family"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase1 --max-m 3",
+      "verifies": [
+        "goal2_static_balanced_bridge_atlas"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase2 --max-m 3",
+      "verifies": [
+        "goal2_deterministic_bridge_growth"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase6",
+      "verifies": [
+        "source_aware_cover_semantics"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase12",
+      "verifies": [
+        "repaired_noncss_atlas_recovery"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase13",
+      "verifies": [
+        "repaired_cover_dynamics"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase21",
+      "verifies": [
+        "mixed_transition_graph_and_exact_channels"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase22",
+      "verifies": [
+        "mixed_transition_graph_and_exact_channels"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase27",
+      "verifies": [
+        "bounded_channel_rule_search"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase28",
+      "verifies": [
+        "bounded_channel_rule_search"
+      ]
+    },
+    {
+      "command": "python3 -m qgtoy cosmology-phase31",
+      "verifies": [
+        "phase31_strict_cover_audit"
+      ]
+    }
+  ],
+  "limitations": [
+    "Small finite stabilizer/CSS/non-CSS toy models.",
+    "Mostly k=1.",
+    "Bounded cover grammars and transition-rule families.",
+    "Role labels are not physical geometry by themselves.",
+    "The de Sitter analogy is diagnostic rather than literal.",
+    "Entropy matching is limited to specified patch or low-order diagnostics unless a certificate states otherwise."
+  ],
+  "next_research_directions": [
+    "Move to tensor-network or holographic-code extensions.",
+    "Search for d >= 3 analogues.",
+    "Translate the package into a short paper-style note."
+  ]
+}

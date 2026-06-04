@@ -1,0 +1,80 @@
+{
+  "package": "Goal 6: Operational Observer Algebra Tomography",
+  "status": "certificate_available",
+  "core_command": "python3 -m qgtoy observer-tomography-operational --max-n 4",
+  "human_note": "docs/goal6_operational_observer_tomography_note.md",
+  "core_claim": "Single-logical-Pauli entropy/relative-entropy/recovery response plus commutator tests determine finite stabilizer/OA-QEC observer-algebra signatures without directly supplying L_R^perp.",
+  "operational_completion": {
+    "entropy_response": "Delta_v(R) = S_code(R) - S_code+<v>(R)",
+    "visibility_identity": "Delta_v(R)=1 iff v has a representative supported on R",
+    "signature_reconstruction": "logical_dim=dim L_R; center_dim=dim L_R-rank(commutator form); commutant_dim=2k-dim L_R"
+  },
+  "hierarchy_scope": "This is a diagnostic hierarchy of insufficiency and completion, not a proven total information order among all listed shadows.",
+  "diagnostic_landscape": [
+    {
+      "shadow": "channel",
+      "result": "insufficient",
+      "witness": "[[3,2,1]] <XXI> vs <XXX>"
+    },
+    {
+      "shadow": "center and channel_plus_center",
+      "result": "insufficient",
+      "witness": "[[4,2,1]] <XIIX,XXXI> vs <IZXI,ZIXX>"
+    },
+    {
+      "shadow": "entropy_response_dimension",
+      "result": "insufficient",
+      "bounded_witness": "n=4 collision with signatures (2,2,2,false) vs (2,0,2,false)"
+    },
+    {
+      "shadow": "center_plus_entropy_response_dimension",
+      "result": "sufficient_for_signatures"
+    },
+    {
+      "shadow": "entropy_response_or_relative_entropy_or_recovery_plus_commutator_tests",
+      "result": "sufficient_for_signatures"
+    }
+  ],
+  "distance_amplified_witnesses": [
+    {
+      "claim": "Channel-shadow insufficiency persists after distance amplification.",
+      "parameters": "[[15,2,3]]"
+    },
+    {
+      "claim": "Channel-plus-center insufficiency persists after distance amplification.",
+      "parameters": "[[20,2,3]]"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "goal6_default_certificate",
+      "claim": "Emit diagnostic landscape, bounded operational scan, theorem audit, and distance-amplified witnesses.",
+      "command": "python3 -m qgtoy observer-tomography-operational --max-n 4"
+    },
+    {
+      "id": "goal6_focused_regression",
+      "claim": "Regression check for all certified Goal 6 claims.",
+      "command": "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal6_operational_observer_algebra_tomography_certificate"
+    }
+  ],
+  "evidence_classes": {
+    "exact_theorem_style_claims": [
+      "single_probe_response_and_commutator_test_completion"
+    ],
+    "bounded_exhaustive_evidence": [
+      "k2_permutation_quotient_scan_n_le_4",
+      "entropy_response_dimension_insufficiency_at_n4",
+      "center_plus_entropy_response_no_collision_through_n4",
+      "operational_response_signature_audit_through_n4"
+    ],
+    "distance_amplified_evidence": [
+      "five_qubit_inner_lift_15_2_3_channel_witness",
+      "five_qubit_inner_lift_20_2_3_channel_plus_center_witness"
+    ],
+    "known_derived": [
+      "stabilizer_cleaning_qss_oaqec_supported_logical_reconstruction",
+      "stabilizer_entropy_rank_response_under_added_logical_checks"
+    ]
+  },
+  "harlow_facing_interpretation": "Weak observer shadows fail for k>1, but finite operational probes can complete the observer-algebra signature: single logical perturbation response identifies visible logical probes, and commutator tests recover the symplectic type of the visible algebra."
+}

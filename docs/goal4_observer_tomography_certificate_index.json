@@ -1,0 +1,99 @@
+{
+  "package": "Goal 4: Observer Algebra Tomography",
+  "status": "fast_certificate_available",
+  "core_command": "python3 -m qgtoy observer-tomography --max-m 3",
+  "core_claim": "Observer entropy, horizon/overlap, MI/CMI/I3, erasure-correctability, and survivor fixed-point shadows do not determine observer reconstruction algebra or channel algebra semantics in the balanced-bridge observer family.",
+  "positive_boundary_claim": "For k=1 stabilizer/OA-QEC all-region atlases, all-region erasure-correctability plus survivor fixed-point booleans determine every all-region observer-algebra signature.",
+  "diagnostic_tiers": [
+    {
+      "id": "entropy_horizon_shadow",
+      "description": "Named entropy, overlap, MI/CMI/I3, shared-horizon entropy, and shared-horizon algebra.",
+      "result": "non_identifying_for_balanced_bridge_family"
+    },
+    {
+      "id": "entropy_horizon_plus_erasure_correctability",
+      "description": "Adds erasure correctability and survivor fixed-point booleans.",
+      "result": "still_non_identifying_for_balanced_bridge_family"
+    },
+    {
+      "id": "plus_observer_center_profile",
+      "description": "Adds observer center dimensions.",
+      "result": "first_separator_in_certified_family_prefix"
+    },
+    {
+      "id": "plus_observer_commutant_profile",
+      "description": "Adds observer commutant dimensions.",
+      "result": "separator_in_certified_family_prefix"
+    },
+    {
+      "id": "plus_logical_probe_response",
+      "description": "Adds exact finite logical-probe visibility responses.",
+      "result": "separator_in_certified_family_prefix"
+    },
+    {
+      "id": "full_observer_algebra_profile",
+      "description": "Full observer algebra signatures.",
+      "result": "complete_by_definition_for_declared_regions"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "goal4_fast_tomography_certificate",
+      "claim": "The fast Goal 4 certificate emits the theorem-style claim, balanced-bridge prefix records, tomography tiers, and Harlow-facing interpretation.",
+      "command": "python3 -m qgtoy observer-tomography --max-m 3"
+    },
+    {
+      "id": "static_observer_shadow",
+      "claim": "Named observer entropy, horizon/overlap, MI/CMI/I3, and shared-horizon algebra agree while observer reconstruction differs.",
+      "command": "python3 -m qgtoy cosmology-phase1 --max-m 3"
+    },
+    {
+      "id": "erasure_survivor_shadow",
+      "claim": "Erasure correctability and survivor fixed-point shadows agree while erasure-channel algebra semantics differ.",
+      "command": "python3 -m qgtoy cosmology-phase2 --max-m 3"
+    },
+    {
+      "id": "strict_cover_bounded_evidence",
+      "claim": "The strict-cover bounded audit separates certified observer-patch hits from entropy near-misses rejected by erasure semantics.",
+      "command": "python3 -m qgtoy cosmology-phase31 --max-bonus 2"
+    },
+    {
+      "id": "finite_min_cut_bounded_evidence",
+      "claim": "The Goal 3 finite holographic-code witness matches entropy and finite min-cut diagnostics while reconstruction/channel diagnostics split.",
+      "command": "python3 -m qgtoy holography-phase40"
+    },
+    {
+      "id": "combined_live_min_cut_tomography",
+      "claim": "The Goal 4 certificate can optionally run the Goal 3 min-cut audit live.",
+      "command": "python3 -m qgtoy observer-tomography --max-m 3 --include-holography"
+    },
+    {
+      "id": "bounded_all_region_tomography_scan",
+      "claim": "The bounded all-region scan over n<=4, k=1 stabilizer-code representatives finds low-order entropy non-identifiability and no collisions after adding all-region erasure/fixed-point data.",
+      "command": "python3 -m qgtoy observer-tomography --max-m 3 --scan-max-n 4"
+    },
+    {
+      "id": "k1_all_region_erasure_fixed_point_completion_lemma",
+      "claim": "Exact k=1 all-region lemma: erasure-correctability and survivor fixed-point data determine region-algebra signatures; the command audits the implementation over the declared bounded representatives.",
+      "command": "python3 -m qgtoy observer-tomography --max-m 3 --scan-max-n 4"
+    }
+  ],
+  "evidence_classes": {
+    "exact_theorem_style_claims": [
+      "balanced_bridge_observer_family_non_identifiability",
+      "finite_prefix_tomography_tier_audit",
+      "k1_all_region_erasure_fixed_point_completion_lemma"
+    ],
+    "exhaustive_bounded_search_evidence": [
+      "goal4_all_region_n4_tomography_scan",
+      "cosmology_phase31_strict_cover_audit",
+      "holography_phase40_min_cut_reconstruction_channel_witness"
+    ],
+    "conjectural_or_open": [
+      "minimal_enriched_shadow_completeness_boundary",
+      "higher_distance_observer_tomography_analogues",
+      "all_stabilizer_oa_qec_observer_classification"
+    ]
+  },
+  "harlow_facing_interpretation": "S_Ob sets a size scale, but the observer's effective physics is specified by entropy scale, observer algebra, and channel/coarse-graining data. Entropy, horizon, min-cut, and fixed-point shadows alone are incomplete finite invariants."
+}

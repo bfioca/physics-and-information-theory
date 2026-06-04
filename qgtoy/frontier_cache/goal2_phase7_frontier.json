@@ -1,0 +1,183 @@
+{
+  "description": "Persistent exact source frontier for Goal 2: robust CSS seed, deterministic balanced-bridge lifts, and optional exact calibration pair.",
+  "generation_parameters": {
+    "include_calibration": true,
+    "max_bridge_m": 2
+  },
+  "name": "goal2_phase7_frontier_cache",
+  "records": [
+    {
+      "cache_key_sha256": "254855939691305fe91adcf66c1a4ceac786db539614b1eea8a4e0eeb9eddbbb",
+      "diagnostics": {
+        "first_quality": {
+          "distance": 2,
+          "passes": true,
+          "reason": "ok"
+        },
+        "reconstruction_profiles_differ": true,
+        "same_labeled_t2_entropy": true,
+        "second_quality": {
+          "distance": 2,
+          "passes": true,
+          "reason": "ok"
+        }
+      },
+      "first_generators": [
+        "ZZZIIZ",
+        "IZIIZI",
+        "IIZZII",
+        "XIIIIX",
+        "IXXXXI"
+      ],
+      "frontier_kind": "seed",
+      "k": 1,
+      "mutation_depth": 0,
+      "n": 6,
+      "name": "seed_css_witness",
+      "origin": "Goal 1 robust n=6 CSS witness, before bridge growth",
+      "second_generators": [
+        "ZZIIIZ",
+        "IZIIZI",
+        "IIZZII",
+        "XIIIIX",
+        "XXXXXI"
+      ],
+      "source_type": "cached_css_seed",
+      "template_hints": [
+        "generic_two_observer"
+      ]
+    },
+    {
+      "cache_key_sha256": "b93fa188974dba2ed85cdaf12910a90399fa6db269027737eb104b4b9e07b910",
+      "diagnostics": {
+        "first_quality": {
+          "distance": 2,
+          "passes": true,
+          "reason": "ok"
+        },
+        "reconstruction_profiles_differ": true,
+        "same_labeled_t2_entropy": true,
+        "second_quality": {
+          "distance": 2,
+          "passes": true,
+          "reason": "ok"
+        }
+      },
+      "first_generators": [
+        "IZZIIIZZ",
+        "ZZZIIZII",
+        "IZIIZIII",
+        "IIZZIIII",
+        "IIIIIIXX",
+        "XIIIIXII",
+        "IXXXXIII"
+      ],
+      "frontier_kind": "targeted_lift",
+      "k": 1,
+      "mutation_depth": 1,
+      "n": 8,
+      "name": "balanced_bridge_lift_m1",
+      "origin": "deterministic balanced-bridge lift of the robust CSS seed pair",
+      "second_generators": [
+        "IZZIIIZZ",
+        "ZZIIIZII",
+        "IZIIZIII",
+        "IIZZIIII",
+        "IIIIIIXX",
+        "XIIIIXII",
+        "XXXXXIII"
+      ],
+      "source_type": "targeted_css_lift",
+      "template_hints": [
+        "source_aware_bridge_observer"
+      ]
+    },
+    {
+      "cache_key_sha256": "584c4780adf8d0855e11d049e0e81be04a811e851111c74dab470d08197ad0f9",
+      "diagnostics": {
+        "first_quality": {
+          "distance": 2,
+          "passes": true,
+          "reason": "ok"
+        },
+        "reconstruction_profiles_differ": true,
+        "same_labeled_t2_entropy": true,
+        "second_quality": {
+          "distance": 2,
+          "passes": true,
+          "reason": "ok"
+        }
+      },
+      "first_generators": [
+        "IZZIIIIIZZ",
+        "IZZIIIZZII",
+        "ZZZIIZIIII",
+        "IZIIZIIIII",
+        "IIZZIIIIII",
+        "IIIIIIIIXX",
+        "IIIIIIXXII",
+        "XIIIIXIIII",
+        "IXXXXIIIII"
+      ],
+      "frontier_kind": "targeted_lift",
+      "k": 1,
+      "mutation_depth": 2,
+      "n": 10,
+      "name": "balanced_bridge_lift_m2",
+      "origin": "deterministic balanced-bridge lift of the robust CSS seed pair",
+      "second_generators": [
+        "IZZIIIIIZZ",
+        "IZZIIIZZII",
+        "ZZIIIZIIII",
+        "IZIIZIIIII",
+        "IIZZIIIIII",
+        "IIIIIIIIXX",
+        "IIIIIIXXII",
+        "XIIIIXIIII",
+        "XXXXXIIIII"
+      ],
+      "source_type": "targeted_css_lift",
+      "template_hints": [
+        "source_aware_bridge_observer"
+      ]
+    },
+    {
+      "cache_key_sha256": "6f7cb2f3a01d418e8b44911f6490f12f1147339fb441a16d4a5e6d7d659b3b1f",
+      "diagnostics": {
+        "first_quality": {
+          "distance": 1,
+          "passes": false,
+          "reason": "distance"
+        },
+        "reconstruction_profiles_differ": true,
+        "same_labeled_t2_entropy": true,
+        "second_quality": {
+          "distance": 1,
+          "passes": false,
+          "reason": "distance"
+        }
+      },
+      "first_generators": [
+        "XIZI",
+        "XZII",
+        "ZXXI"
+      ],
+      "frontier_kind": "calibration",
+      "k": 1,
+      "mutation_depth": 0,
+      "n": 4,
+      "name": "minimal_n4_calibration_pair",
+      "origin": "exact minimal low-order entropy/reconstruction calibration search",
+      "second_generators": [
+        "XIZI",
+        "XZII",
+        "ZXXX"
+      ],
+      "source_type": "cached_exhaustive_calibration",
+      "template_hints": [
+        "generic_two_observer"
+      ]
+    }
+  ],
+  "schema_version": 1
+}

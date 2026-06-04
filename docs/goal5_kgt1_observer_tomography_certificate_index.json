@@ -1,0 +1,102 @@
+{
+  "package": "Goal 5: k>1 Observer Algebra Tomography",
+  "status": "certificate_available",
+  "core_command": "python3 -m qgtoy observer-tomography-kgt1 --max-n 4",
+  "human_note": "docs/goal5_kgt1_observer_algebra_tomography_note.md",
+  "harlow_facing_note": "docs/goal5_harlow_theorem_note.md",
+  "core_claim": "For k>1 finite stabilizer/OA-QEC codes, all-region erasure-correctability plus survivor fixed-point booleans do not determine all-region observer-algebra signatures.",
+  "minimal_counterexample": {
+    "parameters": {
+      "n": 3,
+      "k": 2,
+      "distance": 1
+    },
+    "first_generators": [
+      "XXI"
+    ],
+    "second_generators": [
+      "XXX"
+    ],
+    "matching_shadow": "all-region erasure/survivor channel shadow",
+    "separating_region": [
+      0,
+      1
+    ],
+    "first_signature": [
+      2,
+      0,
+      2,
+      false
+    ],
+    "second_signature": [
+      3,
+      1,
+      1,
+      false
+    ]
+  },
+  "diagnostic_hierarchy": [
+    {
+      "tier": "channel",
+      "result": "insufficient",
+      "witness": "n=3,k=2 pair <XXI> vs <XXX>"
+    },
+    {
+      "tier": "channel_plus_center",
+      "result": "insufficient",
+      "witness": "n=4,k=2 pair <XIIX,XXXI> vs <IZXI,ZIXX>"
+    },
+    {
+      "tier": "center_plus_logical_commutant",
+      "certificate_tier": "channel_plus_center_commutant",
+      "result": "algebraically_sufficient_for_signatures",
+      "reason": "dim L_R = 2k - logical_commutant_dim; center_dim supplies dim(L_R cap L_R^perp)"
+    }
+  ],
+  "proof_audit": {
+    "logical_space": "L = S^perp / S",
+    "region_subspace": "L_R is the image in L of centralizer Paulis supported in R",
+    "center_dim": "dim(L_R cap L_R^perp)",
+    "commutant_dim": "dim L_R^perp inside the full logical symplectic space L",
+    "completion_formula": "dim L_R = 2k - dim L_R^perp",
+    "scope_note": "This is symplectic bookkeeping from direct logical-commutant data, not a non-tautological operational tomography theorem."
+  },
+  "proof_obligations": [
+    {
+      "id": "goal5_default_certificate",
+      "claim": "Emit the k>1 counterexample, hierarchy scan, scalable lift, distance-amplified witness, and known-vs-new interpretation.",
+      "command": "python3 -m qgtoy observer-tomography-kgt1 --max-n 4"
+    },
+    {
+      "id": "goal5_amplified_full_channel_scan",
+      "claim": "Directly scan all 32768 regions of the distance-amplified [[15,2,3]] witness for all-region channel-shadow matching.",
+      "command": "python3 -m qgtoy observer-tomography-kgt1 --max-n 4 --include-amplified-full-scan"
+    },
+    {
+      "id": "goal4_k1_boundary",
+      "claim": "The k=1 erasure/survivor completion lemma is retained as known-derived scaffolding.",
+      "command": "python3 -m qgtoy observer-tomography --max-m 3 --scan-max-n 4"
+    }
+  ],
+  "evidence_classes": {
+    "exact_theorem_style_claims": [
+      "k_gt_1_channel_shadow_non_identifiability"
+    ],
+    "exact_linear_algebra_completions": [
+      "center_commutant_signature_bookkeeping"
+    ],
+    "bounded_exhaustive_evidence": [
+      "k2_permutation_quotient_scan_n_le_4",
+      "channel_plus_center_insufficiency_at_n4",
+      "center_commutant_no_collision_through_n4"
+    ],
+    "distance_amplified_evidence": [
+      "five_qubit_perfect_inner_concatenated_15_2_3_witness",
+      "optional_full_32768_region_channel_shadow_scan"
+    ],
+    "known_derived": [
+      "k1_completion_lemma_as_cleaning_qss_access_structure_boundary"
+    ]
+  },
+  "harlow_facing_interpretation": "For k>1, erasure/survivor channel shadows detect forbidden and qualified regions but not the symplectic type of intermediate observer algebras. Center data alone is still insufficient. Center plus logical commutant dimensions algebraically complete observer-algebra signatures, but the non-tautological open problem is to replace direct commutant input with operational diagnostics."
+}
