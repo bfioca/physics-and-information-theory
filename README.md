@@ -185,6 +185,19 @@ Read the Goal 8 intrinsic tomography memo:
 docs/goal8_intrinsic_observer_tomography_note.md
 ```
 
+Emit the Goal 9 finite-dimensional OAQEC intrinsic tomography certificate:
+
+```bash
+python3 -m qgtoy observer-tomography-oaqec --max-block-dim 4 --max-blocks 5
+```
+
+Read the Goal 9 theorem note and machine-readable certificate index:
+
+```text
+docs/goal9_finite_oaqec_intrinsic_tomography_note.md
+docs/goal9_finite_oaqec_intrinsic_tomography_certificate_index.json
+```
+
 Optionally include the full all-region scan of the distance-amplified
 `[[15,2,3]]` witness:
 

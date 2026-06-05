@@ -51,6 +51,7 @@ from qgtoy.observer_tomography_atlas import goal7_observer_tomography_atlas_cert
 from qgtoy.observer_tomography_intrinsic import goal8_intrinsic_observer_tomography_certificate
 from qgtoy.observer_tomography_kgt1 import goal5_kgt1_observer_tomography_certificate
 from qgtoy.observer_tomography_operational import goal6_operational_observer_tomography_certificate
+from qgtoy.oaqec_tomography import goal9_finite_oaqec_intrinsic_tomography_certificate
 from qgtoy.robust import RobustConstraints, code_quality, robust_frontier
 from qgtoy.search import (
     certify_minimal_entropy_reconstruction_discordance,
@@ -1439,6 +1440,31 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertEqual(rows["physical_response_commutator_tomography"]["proof_status"], "theorem")
         self.assertEqual(rows["erasure_survivor_channel"]["amplification"]["status"], "pass")
         self.assertIn("without labeled logical Pauli probes", certificate["intrinsic_completion_theorem"]["claim"])
+
+    def test_goal9_finite_oaqec_intrinsic_observer_tomography_certificate(self):
+        certificate = goal9_finite_oaqec_intrinsic_tomography_certificate(max_block_dim=4, max_blocks=5)
+        self.assertEqual(certificate["status"], "pass")
+        claims = certificate["certified_claims"]
+        self.assertTrue(claims["formal_wedderburn_signature_declared"])
+        self.assertTrue(claims["weak_dimension_center_commutator_shadow_collision_found"])
+        self.assertTrue(claims["bounded_collision_is_minimal_in_declared_order"])
+        self.assertTrue(claims["full_product_star_tomography_recovers_examples"])
+        self.assertTrue(claims["finite_oaqec_tomography_theorem_declared"])
+        self.assertTrue(claims["goal8_stabilizer_special_case_bridge_declared"])
+
+        collision = certificate["negative_hierarchy"]["bounded_first_collision"]
+        self.assertEqual(collision["shadow"], (20, 5, 15))
+        self.assertEqual(collision["first_block_sizes"], (1, 1, 1, 1, 4))
+        self.assertEqual(collision["second_block_sizes"], (2, 2, 2, 2, 2))
+        self.assertNotEqual(
+            collision["first_signature"]["abstract_block_sizes"],
+            collision["second_signature"]["abstract_block_sizes"],
+        )
+
+        theorem = certificate["positive_theorem"]
+        self.assertIn("product/* table", theorem["claim"])
+        self.assertTrue(all(record["status"] == "pass" for record in theorem["theorem_audit_examples"]))
+        self.assertIn("stabilizer special case", certificate["harlow_facing_interpretation"])
 
     def test_holography_phase1_stabilizer_tensor_network_seed_certificate(self):
         certificate = bridge_holography_phase1_certificate()

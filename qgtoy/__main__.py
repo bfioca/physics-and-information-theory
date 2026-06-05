@@ -49,6 +49,7 @@ from .observer_tomography_atlas import goal7_observer_tomography_atlas_certifica
 from .observer_tomography_intrinsic import goal8_intrinsic_observer_tomography_certificate
 from .observer_tomography_kgt1 import goal5_kgt1_observer_tomography_certificate
 from .observer_tomography_operational import goal6_operational_observer_tomography_certificate
+from .oaqec_tomography import goal9_finite_oaqec_intrinsic_tomography_certificate
 from .robust import (
     ENTROPY_KEY_MODES,
     ROBUST_SOURCES,
@@ -466,6 +467,19 @@ def run_observer_tomography_intrinsic(args: argparse.Namespace) -> None:
                 equivalence=args.dedupe,
                 max_codes_per_n=args.max_codes_per_n,
                 max_region_catalog=args.max_region_catalog,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_observer_tomography_oaqec(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal9_finite_oaqec_intrinsic_tomography_certificate(
+                max_block_dim=args.max_block_dim,
+                max_blocks=args.max_blocks,
             ),
             indent=2,
             sort_keys=True,
@@ -1541,6 +1555,14 @@ def build_parser() -> argparse.ArgumentParser:
     observer_tomography_intrinsic.add_argument("--max-codes-per-n", type=int)
     observer_tomography_intrinsic.add_argument("--max-region-catalog", type=int, default=8)
     observer_tomography_intrinsic.set_defaults(func=run_observer_tomography_intrinsic)
+
+    observer_tomography_oaqec = subparsers.add_parser(
+        "observer-tomography-oaqec",
+        help="emit the Goal 9 finite-dimensional OAQEC observer-algebra tomography certificate",
+    )
+    observer_tomography_oaqec.add_argument("--max-block-dim", type=int, default=4)
+    observer_tomography_oaqec.add_argument("--max-blocks", type=int, default=5)
+    observer_tomography_oaqec.set_defaults(func=run_observer_tomography_oaqec)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",
