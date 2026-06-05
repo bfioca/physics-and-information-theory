@@ -1,4 +1,4 @@
-"""Goal 12 coupling-activated finite ER=EPR channel dynamics certificates."""
+"""Goal 12 finite bridge-channel dynamics benchmark certificates."""
 
 from __future__ import annotations
 
@@ -247,7 +247,7 @@ def _bounded_traversable_atlas(*, max_mouths: int) -> tuple[dict[str, object], .
     return tuple(records)
 
 
-def goal12_coupling_activated_er_epr_certificate(
+def goal12_finite_bridge_channel_dynamics_certificate(
     *,
     mouths: int = 2,
     low_order: int = 3,
@@ -312,11 +312,11 @@ def goal12_coupling_activated_er_epr_certificate(
         "clifford_dynamics_sufficient_for_declared_finite_benchmark": True,
         "no_continuum_gravity_claim": True,
     }
-    certified_claims["goal12_coupling_activated_er_epr_certificate"] = all(certified_claims.values())
+    certified_claims["goal12_finite_bridge_channel_dynamics_certificate"] = all(certified_claims.values())
 
     return {
-        "goal": "Goal 12: Coupling-Activated Traversable ER=EPR Channel Dynamics",
-        "status": "pass" if certified_claims["goal12_coupling_activated_er_epr_certificate"] else "fail",
+        "goal": "Goal 12: Finite Bridge-Channel Dynamics Benchmark",
+        "status": "pass" if certified_claims["goal12_finite_bridge_channel_dynamics_certificate"] else "fail",
         "scope": {
             "family": "encoded Bell resources with product five-qubit right-mouth blocks",
             "mouths": mouths,
@@ -407,7 +407,7 @@ def goal12_coupling_activated_er_epr_certificate(
             ),
             "scope_boundary": (
                 "This certificate does not propose a new algebraic ER=EPR definition; it supplies a finite "
-                "stabilizer/Clifford coupling benchmark for entropy-matched encoded resources."
+                "bridge-channel dynamics benchmark for entropy-matched encoded resources."
             ),
         },
         "limitations": (
@@ -423,7 +423,7 @@ def goal12_coupling_activated_er_epr_certificate(
             ),
             "focused_regression": (
                 "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
-                "test_goal12_coupling_activated_er_epr_certificate"
+                "test_goal12_finite_bridge_channel_dynamics_certificate"
             ),
         },
         "certified_claims": certified_claims,

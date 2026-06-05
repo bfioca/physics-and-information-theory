@@ -45,9 +45,9 @@ from qgtoy.family import (
     seed_pair,
     witness_mechanism_summary,
 )
-from qgtoy.er_epr_channel import goal10_finite_er_epr_channel_benchmark_certificate
-from qgtoy.er_epr_encoded import goal11_encoded_mouth_er_epr_certificate
-from qgtoy.er_epr_traversable import goal12_coupling_activated_er_epr_certificate
+from qgtoy.er_epr_channel import goal10_finite_bridge_channel_benchmark_certificate
+from qgtoy.er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
+from qgtoy.er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
 from qgtoy.graphs import enumerate_graph_state_reps
 from qgtoy.observer_tomography import observer_algebra_tomography_certificate
 from qgtoy.observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -1469,8 +1469,8 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertTrue(all(record["status"] == "pass" for record in theorem["theorem_audit_examples"]))
         self.assertIn("stabilizer special case", certificate["expert_facing_interpretation"])
 
-    def test_goal10_finite_er_epr_channel_benchmark_certificate(self):
-        certificate = goal10_finite_er_epr_channel_benchmark_certificate(max_pairs=4)
+    def test_goal10_finite_bridge_channel_benchmark_certificate(self):
+        certificate = goal10_finite_bridge_channel_benchmark_certificate(max_pairs=4)
         self.assertEqual(certificate["status"], "pass")
         claims = certificate["certified_claims"]
         self.assertTrue(claims["exact_permutation_epr_family_declared"])
@@ -1500,8 +1500,8 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         )
         self.assertIn("number of fixed points", certificate["theorem_style_result"]["claim"])
 
-    def test_goal11_encoded_mouth_er_epr_channel_certificate(self):
-        certificate = goal11_encoded_mouth_er_epr_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
+    def test_goal11_encoded_mouth_bridge_channel_certificate(self):
+        certificate = goal11_encoded_mouth_bridge_channel_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
         self.assertEqual(certificate["status"], "pass")
         claims = certificate["certified_claims"]
         self.assertTrue(claims["encoded_mouth_models_declared"])
@@ -1536,8 +1536,8 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertIn("through order d", certificate["theorem_style_result"]["claim"])
         self.assertIn("fixed points", certificate["theorem_style_result"]["claim"])
 
-    def test_goal12_coupling_activated_er_epr_certificate(self):
-        certificate = goal12_coupling_activated_er_epr_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
+    def test_goal12_finite_bridge_channel_dynamics_certificate(self):
+        certificate = goal12_finite_bridge_channel_dynamics_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
         self.assertEqual(certificate["status"], "pass")
         claims = certificate["certified_claims"]
         self.assertTrue(claims["explicit_bounded_coupling_declared"])

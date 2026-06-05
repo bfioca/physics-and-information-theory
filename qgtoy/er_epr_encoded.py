@@ -1,4 +1,4 @@
-"""Goal 11 encoded-mouth finite ER=EPR-style channel certificates."""
+"""Goal 11 encoded-mouth bridge-channel benchmark certificates."""
 
 from __future__ import annotations
 
@@ -347,7 +347,7 @@ def _bounded_encoded_atlas(*, max_mouths: int) -> tuple[dict[str, object], ...]:
     return tuple(records)
 
 
-def goal11_encoded_mouth_er_epr_certificate(
+def goal11_encoded_mouth_bridge_channel_certificate(
     *,
     mouths: int = 2,
     low_order: int = 3,
@@ -411,11 +411,11 @@ def goal11_encoded_mouth_er_epr_certificate(
         and first_mismatch["order"] == aligned.block_distance + 1,
         "no_continuum_gravity_claim": True,
     }
-    certified_claims["goal11_encoded_mouth_er_epr_certificate"] = all(certified_claims.values())
+    certified_claims["goal11_encoded_mouth_bridge_channel_certificate"] = all(certified_claims.values())
 
     return {
-        "goal": "Goal 11: Encoded-Mouth ER=EPR Channel Theorem",
-        "status": "pass" if certified_claims["goal11_encoded_mouth_er_epr_certificate"] else "fail",
+        "goal": "Goal 11: Encoded-Mouth Bridge-Channel Benchmark",
+        "status": "pass" if certified_claims["goal11_encoded_mouth_bridge_channel_certificate"] else "fail",
         "scope": {
             "family": "logical Bell pairs with right mouths encoded into five-qubit perfect-code blocks",
             "mouths": mouths,
@@ -498,7 +498,7 @@ def goal11_encoded_mouth_er_epr_certificate(
             ),
             "scope_boundary": (
                 "This certificate does not propose a new algebraic ER=EPR definition; it supplies a finite "
-                "encoded-mouth stabilizer certificate for low-order entropy blindness versus channel recovery."
+                "encoded-mouth bridge-channel certificate for low-order entropy blindness versus channel recovery."
             ),
         },
         "limitations": (
@@ -514,7 +514,7 @@ def goal11_encoded_mouth_er_epr_certificate(
             ),
             "focused_regression": (
                 "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
-                "test_goal11_encoded_mouth_er_epr_channel_certificate"
+                "test_goal11_encoded_mouth_bridge_channel_certificate"
             ),
         },
         "certified_claims": certified_claims,

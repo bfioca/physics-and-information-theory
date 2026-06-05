@@ -44,9 +44,9 @@ from .cosmology import (
 from .family import bridge_family_certificate, bridge_theorem_certificate, lift_frontier, witness_mechanism_summary
 from .gf2 import mask_to_tuple
 from .graphs import enumerate_graph_state_reps
-from .er_epr_channel import goal10_finite_er_epr_channel_benchmark_certificate
-from .er_epr_encoded import goal11_encoded_mouth_er_epr_certificate
-from .er_epr_traversable import goal12_coupling_activated_er_epr_certificate
+from .er_epr_channel import goal10_finite_bridge_channel_benchmark_certificate
+from .er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
+from .er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
 from .observer_tomography_intrinsic import goal8_intrinsic_observer_tomography_certificate
@@ -493,7 +493,7 @@ def run_observer_tomography_oaqec(args: argparse.Namespace) -> None:
 def run_er_epr_channel(args: argparse.Namespace) -> None:
     print(
         json.dumps(
-            goal10_finite_er_epr_channel_benchmark_certificate(max_pairs=args.max_pairs),
+            goal10_finite_bridge_channel_benchmark_certificate(max_pairs=args.max_pairs),
             indent=2,
             sort_keys=True,
         )
@@ -503,7 +503,7 @@ def run_er_epr_channel(args: argparse.Namespace) -> None:
 def run_er_epr_encoded(args: argparse.Namespace) -> None:
     print(
         json.dumps(
-            goal11_encoded_mouth_er_epr_certificate(
+            goal11_encoded_mouth_bridge_channel_certificate(
                 mouths=args.mouths,
                 low_order=args.low_order,
                 atlas_max_mouths=args.atlas_max_mouths,
@@ -517,7 +517,7 @@ def run_er_epr_encoded(args: argparse.Namespace) -> None:
 def run_er_epr_traversable(args: argparse.Namespace) -> None:
     print(
         json.dumps(
-            goal12_coupling_activated_er_epr_certificate(
+            goal12_finite_bridge_channel_dynamics_certificate(
                 mouths=args.mouths,
                 low_order=args.low_order,
                 atlas_max_mouths=args.atlas_max_mouths,
@@ -1607,14 +1607,14 @@ def build_parser() -> argparse.ArgumentParser:
 
     er_epr_channel = subparsers.add_parser(
         "er-epr-channel",
-        help="emit the Goal 10 finite ER=EPR channel benchmark certificate",
+        help="emit the Goal 10 finite bridge-channel benchmark certificate",
     )
     er_epr_channel.add_argument("--max-pairs", type=int, default=4)
     er_epr_channel.set_defaults(func=run_er_epr_channel)
 
     er_epr_encoded = subparsers.add_parser(
         "er-epr-encoded",
-        help="emit the Goal 11 encoded-mouth ER=EPR channel theorem certificate",
+        help="emit the Goal 11 encoded-mouth bridge-channel benchmark certificate",
     )
     er_epr_encoded.add_argument("--mouths", type=int, default=2)
     er_epr_encoded.add_argument("--low-order", type=int, default=3)
@@ -1623,7 +1623,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     er_epr_traversable = subparsers.add_parser(
         "er-epr-traversable",
-        help="emit the Goal 12 coupling-activated ER=EPR channel dynamics certificate",
+        help="emit the Goal 12 finite bridge-channel dynamics certificate",
     )
     er_epr_traversable.add_argument("--mouths", type=int, default=2)
     er_epr_traversable.add_argument("--low-order", type=int, default=3)

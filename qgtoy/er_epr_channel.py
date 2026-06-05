@@ -1,4 +1,4 @@
-"""Goal 10 finite ER=EPR-style channel benchmark certificates."""
+"""Goal 10 finite bridge-channel benchmark certificates."""
 
 from __future__ import annotations
 
@@ -282,7 +282,7 @@ def _atlas_records(max_pairs: int) -> tuple[dict[str, object], ...]:
     return tuple(rows)
 
 
-def goal10_finite_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4) -> dict[str, object]:
+def goal10_finite_bridge_channel_benchmark_certificate(*, max_pairs: int = 4) -> dict[str, object]:
     if max_pairs < 2:
         raise ValueError("max_pairs must be at least 2 for the aligned/crossed witness")
 
@@ -323,11 +323,11 @@ def goal10_finite_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4) ->
         ),
         "no_continuum_gravity_claim": True,
     }
-    certified_claims["goal10_finite_er_epr_channel_benchmark_certificate"] = all(certified_claims.values())
+    certified_claims["goal10_finite_bridge_channel_benchmark_certificate"] = all(certified_claims.values())
 
     return {
-        "goal": "Goal 10: Finite ER=EPR Channel Benchmark",
-        "status": "pass" if certified_claims["goal10_finite_er_epr_channel_benchmark_certificate"] else "fail",
+        "goal": "Goal 10: Finite Bridge-Channel Benchmark",
+        "status": "pass" if certified_claims["goal10_finite_bridge_channel_benchmark_certificate"] else "fail",
         "scope": {
             "family": "finite stabilizer EPR-pairing resources with named left/right mouth ports",
             "max_pairs": max_pairs,
@@ -392,11 +392,11 @@ def goal10_finite_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4) ->
             ),
             "scope_boundary": (
                 "This certificate does not propose a new algebraic ER=EPR definition; it supplies a finite "
-                "stabilizer channel benchmark for entropy/min-cut shadows versus named transfer channels."
+                "bridge-channel benchmark for entropy/min-cut shadows versus named transfer channels."
             ),
         },
         "limitations": (
-            "This is a finite stabilizer port benchmark, not a continuum-gravity theorem and not a generic "
+            "This is a finite stabilizer bridge-channel port benchmark, not a continuum-gravity theorem and not a generic "
             "many-body traversable-wormhole simulation.  The separation is against coarse L/R entropy and "
             "min-cut shadows; full port-resolved entropy detects the EPR pairing in this simple family.  "
             "The next harder target is a non-Clifford or tensor-network family where richer entropy/min-cut "
@@ -406,7 +406,7 @@ def goal10_finite_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4) ->
             "goal10_certificate": f"python3 -m qgtoy er-epr-channel --max-pairs {max_pairs}",
             "focused_regression": (
                 "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
-                "test_goal10_finite_er_epr_channel_benchmark_certificate"
+                "test_goal10_finite_bridge_channel_benchmark_certificate"
             ),
         },
         "certified_claims": certified_claims,

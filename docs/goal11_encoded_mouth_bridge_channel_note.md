@@ -1,7 +1,7 @@
-# Goal 11: Encoded-Mouth ER=EPR Channel Theorem
+# Goal 11: Encoded-Mouth Bridge-Channel Benchmark
 
-Goal 11 upgrades the Goal 10 ER=EPR calibration benchmark from permuted Bell
-pairs to encoded mouths. The finite question is:
+Goal 11 upgrades the Goal 10 bridge-channel calibration benchmark from
+permuted Bell pairs to encoded mouths. The finite question is:
 
 ```text
 Can low-order physical entanglement diagnostics miss an encoded bridge channel
@@ -77,18 +77,19 @@ reconstruction still predicts the channel.
 
 Engelhardt and Liu's
 ["Algebraic ER=EPR and Complexity Transfer"](https://arxiv.org/abs/2311.04281)
-is prior art for the conceptual slogan that ER=EPR should be algebraic rather
-than entropy-only. Goal 11 is narrower: it gives an exact finite stabilizer
+is prior art for the conceptual claim that ER=EPR should be algebraic rather
+than entropy-only. Goal 11 is narrower: it gives an exact finite bridge-channel
 certificate showing how a mouth map can be hidden below code distance while
 remaining visible to algebraic reconstruction.
 
 ## Scientific Interpretation
 
-The finite lesson is that an ER=EPR benchmark should ask for an operational
-channel through a declared coupling, not just an amount of entanglement. In this
-encoded stabilizer model, the bridge is present but decoder-dependent: the
-wrong fixed-mouth decoder sees zero capacity, while the algebraically correct
-decoder recovers full capacity.
+The finite lesson is that a bridge-channel benchmark should ask for an
+operational channel through a declared decoder or coupling, not just an amount
+of entanglement. In this encoded stabilizer model, low-order physical entropy
+through the code distance is blind to the logical mouth map: the wrong
+fixed-mouth decoder sees zero capacity, while the algebraically correct decoder
+recovers full capacity.
 
 ## Limitations
 
@@ -103,5 +104,5 @@ diagnostics, with a theorem schema for distance-`d` stabilizer encodings.
 | Claim | Command |
 | --- | --- |
 | Goal 11 encoded-mouth certificate | `python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3` |
-| Focused Goal 11 regression | `python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_er_epr_channel_certificate` |
-| JSON certificate index validation | `python3 -m json.tool docs/goal11_encoded_mouth_er_epr_channel_certificate_index.json` |
+| Focused Goal 11 regression | `python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate` |
+| JSON certificate index validation | `python3 -m json.tool docs/goal11_encoded_mouth_bridge_channel_certificate_index.json` |

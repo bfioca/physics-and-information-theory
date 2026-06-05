@@ -1,7 +1,8 @@
 # Physics and Information Theory Toy Verifier
 
 Exact finite stabilizer/QEC certificates for entropy, reconstruction,
-observer-algebra tomography, and finite ER=EPR-style channel benchmarks.
+observer-algebra tomography, and finite bridge-channel benchmarks for
+algebraic ER=EPR diagnostics.
 
 This repository is a research-code notebook with executable certificates. It
 uses small, exact finite models to test which diagnostics are too coarse to
@@ -16,14 +17,14 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
 - **Goals 4-9:** observer-algebra tomography forms a finite diagnostic
   hierarchy; weak shadows fail, while sufficiently rich operational/product
   data recover the finite algebraic signature.
-- **Goal 10:** in a finite ER=EPR channel benchmark, coarse L/R entropy and
+- **Goal 10:** in a finite bridge-channel benchmark, coarse L/R entropy and
   min-cut count bridge resources but do not determine the named channel;
   algebraic connectivity does for the declared permutation-EPR family.
-- **Goal 11:** in an encoded-mouth ER=EPR benchmark, coarse and low-order
+- **Goal 11:** in an encoded-mouth bridge-channel benchmark, coarse and low-order
   physical entropy/min-cut diagnostics through the code distance agree while
   naive fixed-mouth channel capacity differs; the correct algebraic decoder
   restores capacity.
-- **Goal 12:** in a coupling-activated finite ER=EPR benchmark, explicit
+- **Goal 12:** in a finite bridge-channel dynamics benchmark, explicit
   encoded Clifford couplings transfer probes exactly when the coupling
   activation matches the algebraic bridge map; entropy-matched controls fail
   under wrong activations.
@@ -42,10 +43,11 @@ Do not read the certificates as continuum-gravity theorems or as novelty claims
 about standard stabilizer/OA-QEC linear algebra. Each memo separates exact
 theorem-style claims, bounded exhaustive evidence, and limitations.
 
-The ER=EPR channel benchmarks use operator-algebraic language as conceptual
-background, not as a new formulation of algebraic ER=EPR. The primary prior art
-for that broad framing is Engelhardt and Liu, ["Algebraic ER=EPR and Complexity
-Transfer"](https://arxiv.org/abs/2311.04281). The contribution here is the
+The bridge-channel benchmarks use Engelhardt and Liu's algebraic ER=EPR
+proposal as conceptual prior art, not as a banner claimed here. Engelhardt and
+Liu, ["Algebraic ER=EPR and Complexity
+Transfer"](https://arxiv.org/abs/2311.04281), is the primary reference for the
+broad operator-algebraic connectivity framing. The contribution here is the
 finite stabilizer/QEC certificate layer: explicit low-order entropy collisions,
 encoded channel controls, and coupling-activated transfer checks.
 
@@ -83,11 +85,11 @@ to make every candidate pass exact checks.
 No runtime dependencies are required beyond Python 3.11+.
 
 ```bash
-python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_er_epr_channel_benchmark_certificate
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_bridge_channel_benchmark_certificate
 python3 -m qgtoy er-epr-channel --max-pairs 4
-python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_er_epr_channel_certificate
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate
 python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
-python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_coupling_activated_er_epr_certificate
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate
 python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
 ```
 
@@ -264,7 +266,7 @@ docs/goal9_finite_oaqec_intrinsic_tomography_note.md
 docs/goal9_finite_oaqec_intrinsic_tomography_certificate_index.json
 ```
 
-Emit the Goal 10 finite ER=EPR channel benchmark certificate:
+Emit the Goal 10 finite bridge-channel benchmark certificate:
 
 ```bash
 python3 -m qgtoy er-epr-channel --max-pairs 4
@@ -273,11 +275,11 @@ python3 -m qgtoy er-epr-channel --max-pairs 4
 Read the Goal 10 theorem note and machine-readable certificate index:
 
 ```text
-docs/goal10_finite_er_epr_channel_benchmark_note.md
-docs/goal10_finite_er_epr_channel_benchmark_certificate_index.json
+docs/goal10_finite_bridge_channel_benchmark_note.md
+docs/goal10_finite_bridge_channel_benchmark_certificate_index.json
 ```
 
-Emit the Goal 11 encoded-mouth ER=EPR channel theorem certificate:
+Emit the Goal 11 encoded-mouth bridge-channel benchmark certificate:
 
 ```bash
 python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
@@ -286,11 +288,11 @@ python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
 Read the Goal 11 theorem note and machine-readable certificate index:
 
 ```text
-docs/goal11_encoded_mouth_er_epr_channel_note.md
-docs/goal11_encoded_mouth_er_epr_channel_certificate_index.json
+docs/goal11_encoded_mouth_bridge_channel_note.md
+docs/goal11_encoded_mouth_bridge_channel_certificate_index.json
 ```
 
-Emit the Goal 12 coupling-activated ER=EPR channel dynamics certificate:
+Emit the Goal 12 finite bridge-channel dynamics certificate:
 
 ```bash
 python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
@@ -299,8 +301,8 @@ python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 
 Read the Goal 12 theorem note and machine-readable certificate index:
 
 ```text
-docs/goal12_coupling_activated_er_epr_channel_note.md
-docs/goal12_coupling_activated_er_epr_channel_certificate_index.json
+docs/goal12_finite_bridge_channel_dynamics_note.md
+docs/goal12_finite_bridge_channel_dynamics_certificate_index.json
 ```
 
 Optionally include the full all-region scan of the distance-amplified
