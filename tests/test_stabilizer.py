@@ -46,6 +46,7 @@ from qgtoy.family import (
     witness_mechanism_summary,
 )
 from qgtoy.er_epr_channel import goal10_algebraic_er_epr_channel_benchmark_certificate
+from qgtoy.er_epr_encoded import goal11_encoded_mouth_er_epr_certificate
 from qgtoy.graphs import enumerate_graph_state_reps
 from qgtoy.observer_tomography import observer_algebra_tomography_certificate
 from qgtoy.observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -1497,6 +1498,42 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
             2,
         )
         self.assertIn("number of fixed points", certificate["theorem_style_result"]["claim"])
+
+    def test_goal11_encoded_mouth_er_epr_channel_certificate(self):
+        certificate = goal11_encoded_mouth_er_epr_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
+        self.assertEqual(certificate["status"], "pass")
+        claims = certificate["certified_claims"]
+        self.assertTrue(claims["encoded_mouth_models_declared"])
+        self.assertTrue(claims["right_mouths_encoded_with_distance_three_code"])
+        self.assertTrue(claims["coarse_entropy_mincut_shadows_match"])
+        self.assertTrue(claims["low_order_labeled_physical_entropy_matches"])
+        self.assertTrue(claims["logical_block_entropy_reveals_decoder_scale_map"])
+        self.assertTrue(claims["algebraic_connectivity_differs"])
+        self.assertTrue(claims["naive_identity_decoder_channel_differs"])
+        self.assertTrue(claims["correct_algebraic_decoder_restores_capacity"])
+        self.assertTrue(claims["wrong_decoder_control_certified"])
+        self.assertTrue(claims["first_entropy_mismatch_at_decoder_scale"])
+
+        witness = certificate["representative_witness"]
+        low_order_audit = witness["comparisons"]["low_order_physical_entropy_audit"]
+        self.assertEqual(low_order_audit["mismatch_count"], 0)
+        self.assertEqual(low_order_audit["regions_checked"], 299)
+        self.assertEqual(witness["comparisons"]["first_entropy_mismatch"]["order"], 4)
+        self.assertEqual(witness["comparisons"]["naive_identity_decoder_capacity"]["first"], 2)
+        self.assertEqual(witness["comparisons"]["naive_identity_decoder_capacity"]["second"], 0)
+        self.assertEqual(witness["comparisons"]["correct_decoder_capacity"]["first"], 2)
+        self.assertEqual(witness["comparisons"]["correct_decoder_capacity"]["second"], 2)
+        self.assertEqual(
+            witness["first"]["algebraic_reconstruction"]["connectivity_matrix_rows_L_columns_right_blocks"],
+            ((1, 0), (0, 1)),
+        )
+        self.assertEqual(
+            witness["second"]["algebraic_reconstruction"]["connectivity_matrix_rows_L_columns_right_blocks"],
+            ((0, 1), (1, 0)),
+        )
+        self.assertEqual(certificate["bounded_atlas"]["first_low_order_blind_capacity_split"]["m"], 2)
+        self.assertIn("through order d", certificate["theorem_style_result"]["claim"])
+        self.assertIn("fixed points", certificate["theorem_style_result"]["claim"])
 
     def test_holography_phase1_stabilizer_tensor_network_seed_certificate(self):
         certificate = bridge_holography_phase1_certificate()

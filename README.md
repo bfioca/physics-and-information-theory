@@ -19,6 +19,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
 - **Goal 10:** in a finite ER=EPR channel benchmark, coarse L/R entropy and
   min-cut count bridge resources but do not determine the named channel;
   algebraic connectivity does for the declared permutation-EPR family.
+- **Goal 11:** in an encoded-mouth ER=EPR benchmark, coarse and low-order
+  physical entropy/min-cut diagnostics through the code distance agree while
+  naive fixed-mouth channel capacity differs; the correct algebraic decoder
+  restores capacity.
 
 ## Public Claim Boundary
 
@@ -70,6 +74,8 @@ No runtime dependencies are required beyond Python 3.11+.
 ```bash
 python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_algebraic_er_epr_channel_benchmark_certificate
 python3 -m qgtoy er-epr-channel --max-pairs 4
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_er_epr_channel_certificate
+python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
 ```
 
 For the broader certificate family, run the commands below.
@@ -256,6 +262,19 @@ Read the Goal 10 theorem note and machine-readable certificate index:
 ```text
 docs/goal10_algebraic_er_epr_channel_benchmark_note.md
 docs/goal10_algebraic_er_epr_channel_benchmark_certificate_index.json
+```
+
+Emit the Goal 11 encoded-mouth ER=EPR channel theorem certificate:
+
+```bash
+python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
+```
+
+Read the Goal 11 theorem note and machine-readable certificate index:
+
+```text
+docs/goal11_encoded_mouth_er_epr_channel_note.md
+docs/goal11_encoded_mouth_er_epr_channel_certificate_index.json
 ```
 
 Optionally include the full all-region scan of the distance-amplified

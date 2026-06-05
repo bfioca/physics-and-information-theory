@@ -45,6 +45,7 @@ from .family import bridge_family_certificate, bridge_theorem_certificate, lift_
 from .gf2 import mask_to_tuple
 from .graphs import enumerate_graph_state_reps
 from .er_epr_channel import goal10_algebraic_er_epr_channel_benchmark_certificate
+from .er_epr_encoded import goal11_encoded_mouth_er_epr_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
 from .observer_tomography_intrinsic import goal8_intrinsic_observer_tomography_certificate
@@ -492,6 +493,20 @@ def run_er_epr_channel(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             goal10_algebraic_er_epr_channel_benchmark_certificate(max_pairs=args.max_pairs),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_er_epr_encoded(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal11_encoded_mouth_er_epr_certificate(
+                mouths=args.mouths,
+                low_order=args.low_order,
+                atlas_max_mouths=args.atlas_max_mouths,
+            ),
             indent=2,
             sort_keys=True,
         )
@@ -1581,6 +1596,15 @@ def build_parser() -> argparse.ArgumentParser:
     )
     er_epr_channel.add_argument("--max-pairs", type=int, default=4)
     er_epr_channel.set_defaults(func=run_er_epr_channel)
+
+    er_epr_encoded = subparsers.add_parser(
+        "er-epr-encoded",
+        help="emit the Goal 11 encoded-mouth ER=EPR channel theorem certificate",
+    )
+    er_epr_encoded.add_argument("--mouths", type=int, default=2)
+    er_epr_encoded.add_argument("--low-order", type=int, default=3)
+    er_epr_encoded.add_argument("--atlas-max-mouths", type=int, default=3)
+    er_epr_encoded.set_defaults(func=run_er_epr_encoded)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -1,0 +1,82 @@
+{
+  "package": "Goal 11: Encoded-Mouth Algebraic ER=EPR Channel Theorem",
+  "status": "certificate_available",
+  "core_command": "python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3",
+  "human_note": "docs/goal11_encoded_mouth_er_epr_channel_note.md",
+  "scope": {
+    "family": "logical Bell pairs with right mouths encoded into product five-qubit perfect-code blocks",
+    "representative_mouths": 2,
+    "right_block_code": "[[5,1,3]] five-qubit perfect stabilizer code",
+    "low_order_cutoff": 3,
+    "atlas_max_mouths": 3,
+    "coupling_family": "identity encoded-mouth decoder versus algebraically correct right-block decoder"
+  },
+  "core_claim": "Low-order physical entropy/min-cut shadows through the code distance do not determine the encoded ER=EPR bridge channel; algebraic reconstruction predicts the decoder-dependent capacity.",
+  "theorem_style_claims": [
+    {
+      "id": "distance_blind_encoded_mouth_shadow",
+      "claim": "For right-mouth stabilizer encoding blocks of distance d, logical mouth twists are invisible to labeled physical entropy diagnostics through order d because all pairing-dependent Bell checks have support at least d+1."
+    },
+    {
+      "id": "fixed_mouth_capacity_formula",
+      "claim": "For the declared identity right-block decoder, channel capacity equals the number of fixed points of the logical left-to-right-block connectivity map."
+    },
+    {
+      "id": "correct_decoder_restores_capacity",
+      "claim": "The algebraically correct decoder recovers one qubit per mouth, while wrong declared decoders fail off fixed points."
+    }
+  ],
+  "bounded_exhaustive_evidence": [
+    {
+      "id": "representative_m2_low_order_audit",
+      "scope": "all labeled physical regions of size <=3 for two five-qubit right blocks plus two left mouths",
+      "regions_checked": 299,
+      "mismatch_count": 0,
+      "first_entropy_mismatch_order": 4,
+      "identity_decoder_capacities_qubits": {
+        "aligned": 2,
+        "twisted": 0
+      },
+      "correct_decoder_capacities_qubits": {
+        "aligned": 2,
+        "twisted": 2
+      }
+    },
+    {
+      "id": "bounded_permutation_atlas",
+      "scope": "all logical mouth permutations for m<=3 with product five-qubit right blocks",
+      "first_low_order_blind_capacity_split": "m=2",
+      "low_order_profile_classes_through_distance": "one class for each fixed m in the declared atlas"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "goal11_certificate",
+      "claim": "Emit the encoded-mouth ER=EPR channel certificate.",
+      "command": "python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3"
+    },
+    {
+      "id": "goal11_focused_regression",
+      "claim": "Regression check for the Goal 11 certificate.",
+      "command": "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_er_epr_channel_certificate"
+    },
+    {
+      "id": "goal11_json_index_validation",
+      "claim": "Validate the machine-readable certificate index.",
+      "command": "python3 -m json.tool docs/goal11_encoded_mouth_er_epr_channel_certificate_index.json"
+    }
+  ],
+  "diagnostic_hierarchy": {
+    "coarse_entropy_mincut": "insufficient for encoded fixed-mouth channel capacity",
+    "low_order_physical_entropy_through_distance": "insufficient for the encoded mouth map",
+    "encoded_block_entropy": "detects the mouth map at decoder scale",
+    "algebraic_connectivity_matrix": "sufficient for identity and correct decoder capacity in the declared family",
+    "pauli_transfer_and_otoc_like_controls": "target operational channel diagnostics"
+  },
+  "known_vs_new": {
+    "known_derived": "Standard stabilizer distance, logical Bell stabilizers, and Clifford Pauli transfer.",
+    "new_programmatic_contribution": "Packages an encoded-mouth ER=EPR benchmark where low-order physical entropy diagnostics are blind but algebraic reconstruction predicts channel capacity."
+  },
+  "limitations": "This is an exact finite stabilizer encoded-mouth theorem, not a continuum-gravity theorem, not a noisy approximate-QEC theorem, and not a many-body traversable-wormhole simulation. Full encoded-block diagnostics reveal the mouth map.",
+  "next_frontier": "Replace product stabilizer blocks with richer tensor-network or many-body dynamics and test whether algebraic connectivity predicts traversable-channel capacity beyond exact Clifford encoders."
+}
