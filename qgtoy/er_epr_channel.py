@@ -1,4 +1,4 @@
-"""Goal 10 algebraic ER=EPR finite channel benchmark certificates."""
+"""Goal 10 finite ER=EPR-style channel benchmark certificates."""
 
 from __future__ import annotations
 
@@ -282,7 +282,7 @@ def _atlas_records(max_pairs: int) -> tuple[dict[str, object], ...]:
     return tuple(rows)
 
 
-def goal10_algebraic_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4) -> dict[str, object]:
+def goal10_finite_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4) -> dict[str, object]:
     if max_pairs < 2:
         raise ValueError("max_pairs must be at least 2 for the aligned/crossed witness")
 
@@ -323,11 +323,11 @@ def goal10_algebraic_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4)
         ),
         "no_continuum_gravity_claim": True,
     }
-    certified_claims["goal10_algebraic_er_epr_channel_benchmark_certificate"] = all(certified_claims.values())
+    certified_claims["goal10_finite_er_epr_channel_benchmark_certificate"] = all(certified_claims.values())
 
     return {
-        "goal": "Goal 10: Algebraic ER=EPR Channel Benchmark",
-        "status": "pass" if certified_claims["goal10_algebraic_er_epr_channel_benchmark_certificate"] else "fail",
+        "goal": "Goal 10: Finite ER=EPR Channel Benchmark",
+        "status": "pass" if certified_claims["goal10_finite_er_epr_channel_benchmark_certificate"] else "fail",
         "scope": {
             "family": "finite stabilizer EPR-pairing resources with named left/right mouth ports",
             "max_pairs": max_pairs,
@@ -385,6 +385,16 @@ def goal10_algebraic_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4)
                 "same one-qubit operator size, but the probe exits at the wrong named mouth."
             ),
         },
+        "related_work": {
+            "conceptual_prior_art": (
+                "Engelhardt and Liu, Algebraic ER=EPR and Complexity Transfer, arXiv:2311.04281, "
+                "is the primary prior art for the broad operator-algebraic ER=EPR framing."
+            ),
+            "scope_boundary": (
+                "This certificate does not propose a new algebraic ER=EPR definition; it supplies a finite "
+                "stabilizer channel benchmark for entropy/min-cut shadows versus named transfer channels."
+            ),
+        },
         "limitations": (
             "This is a finite stabilizer port benchmark, not a continuum-gravity theorem and not a generic "
             "many-body traversable-wormhole simulation.  The separation is against coarse L/R entropy and "
@@ -396,7 +406,7 @@ def goal10_algebraic_er_epr_channel_benchmark_certificate(*, max_pairs: int = 4)
             "goal10_certificate": f"python3 -m qgtoy er-epr-channel --max-pairs {max_pairs}",
             "focused_regression": (
                 "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
-                "test_goal10_algebraic_er_epr_channel_benchmark_certificate"
+                "test_goal10_finite_er_epr_channel_benchmark_certificate"
             ),
         },
         "certified_claims": certified_claims,

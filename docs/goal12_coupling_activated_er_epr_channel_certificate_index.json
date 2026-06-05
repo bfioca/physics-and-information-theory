@@ -83,8 +83,9 @@
     "otoc_like_support_growth": "points to the algebraic receiver and distinguishes wrong activations"
   },
   "known_vs_new": {
-    "known_derived": "Standard stabilizer distance, encoded Bell transfer, and Clifford Pauli-transfer bookkeeping.",
-    "new_programmatic_contribution": "Packages a finite coupling-activated ER=EPR benchmark where entropy-matched encoded resources require the right algebraic activation to become traversable."
+    "conceptual_prior_art": "Engelhardt-Liu 2023, Algebraic ER=EPR and Complexity Transfer, is the primary prior art for the broad operator-algebraic ER=EPR framing.",
+    "known_derived": "Standard stabilizer distance, encoded Bell transfer, Clifford Pauli-transfer bookkeeping, and the general lesson that algebraic structure matters beyond entanglement amount.",
+    "new_programmatic_contribution": "Packages the finite coupling-activated certificate layer where entropy-matched encoded resources require the activation map to match the bridge algebra."
   },
   "limitations": "This is an exact finite stabilizer/Clifford coupling benchmark, not a continuum-gravity theorem, not a chaotic many-body traversable-wormhole simulation, and not an approximate-QEC theorem. Full encoded-block diagnostics reveal the mouth map.",
   "next_frontier": "Replace the encoded Bell-transfer instrument with richer tensor-network or many-body dynamics and test whether algebraic bridge connectivity still predicts transfer better than entropy shadows."

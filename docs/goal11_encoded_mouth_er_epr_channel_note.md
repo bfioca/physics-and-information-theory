@@ -1,4 +1,4 @@
-# Goal 11: Encoded-Mouth Algebraic ER=EPR Channel Theorem
+# Goal 11: Encoded-Mouth ER=EPR Channel Theorem
 
 Goal 11 upgrades the Goal 10 ER=EPR calibration benchmark from permuted Bell
 pairs to encoded mouths. The finite question is:
@@ -72,6 +72,15 @@ bridge channel for permuted EPR pairs, but port-resolved pair entropies exposed
 the permutation. Goal 11 hides the mouth map behind a distance-3 encoding:
 low-order physical entropy probes through order 3 are blind, while algebraic
 reconstruction still predicts the channel.
+
+## Relation To Engelhardt-Liu
+
+Engelhardt and Liu's
+["Algebraic ER=EPR and Complexity Transfer"](https://arxiv.org/abs/2311.04281)
+is prior art for the conceptual slogan that ER=EPR should be algebraic rather
+than entropy-only. Goal 11 is narrower: it gives an exact finite stabilizer
+certificate showing how a mouth map can be hidden below code distance while
+remaining visible to algebraic reconstruction.
 
 ## Scientific Interpretation
 

@@ -79,6 +79,17 @@ Goal 11 hid the mouth map below code distance and recovered it with algebraic
 decoding. Goal 12 makes the next finite ER=EPR move: a declared coupling
 activates transfer if and only if it matches the algebraic bridge connectivity.
 
+## Relation To Engelhardt-Liu
+
+Engelhardt and Liu's
+["Algebraic ER=EPR and Complexity Transfer"](https://arxiv.org/abs/2311.04281)
+is the closest conceptual prior art: it frames ER=EPR in terms of operator
+algebraic structure rather than entanglement amount. Goal 12 should be read as
+a finite stabilizer/QEC benchmark inspired by that distinction, not as a new
+definition of algebraic ER=EPR. Its contribution is an executable certificate
+for coupling-activated transfer: entropy-matched encoded resources require the
+activation map to match the bridge algebra.
+
 ## Scientific Interpretation
 
 The finite lesson is that a bridge is not merely an entropy count. In this

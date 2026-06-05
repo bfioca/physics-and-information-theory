@@ -45,7 +45,7 @@ from qgtoy.family import (
     seed_pair,
     witness_mechanism_summary,
 )
-from qgtoy.er_epr_channel import goal10_algebraic_er_epr_channel_benchmark_certificate
+from qgtoy.er_epr_channel import goal10_finite_er_epr_channel_benchmark_certificate
 from qgtoy.er_epr_encoded import goal11_encoded_mouth_er_epr_certificate
 from qgtoy.er_epr_traversable import goal12_coupling_activated_er_epr_certificate
 from qgtoy.graphs import enumerate_graph_state_reps
@@ -1469,8 +1469,8 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertTrue(all(record["status"] == "pass" for record in theorem["theorem_audit_examples"]))
         self.assertIn("stabilizer special case", certificate["expert_facing_interpretation"])
 
-    def test_goal10_algebraic_er_epr_channel_benchmark_certificate(self):
-        certificate = goal10_algebraic_er_epr_channel_benchmark_certificate(max_pairs=4)
+    def test_goal10_finite_er_epr_channel_benchmark_certificate(self):
+        certificate = goal10_finite_er_epr_channel_benchmark_certificate(max_pairs=4)
         self.assertEqual(certificate["status"], "pass")
         claims = certificate["certified_claims"]
         self.assertTrue(claims["exact_permutation_epr_family_declared"])

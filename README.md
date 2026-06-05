@@ -1,7 +1,7 @@
 # Physics and Information Theory Toy Verifier
 
 Exact finite stabilizer/QEC certificates for entropy, reconstruction,
-observer-algebra tomography, and algebraic ER=EPR channel benchmarks.
+observer-algebra tomography, and finite ER=EPR-style channel benchmarks.
 
 This repository is a research-code notebook with executable certificates. It
 uses small, exact finite models to test which diagnostics are too coarse to
@@ -42,6 +42,13 @@ Do not read the certificates as continuum-gravity theorems or as novelty claims
 about standard stabilizer/OA-QEC linear algebra. Each memo separates exact
 theorem-style claims, bounded exhaustive evidence, and limitations.
 
+The ER=EPR channel benchmarks use operator-algebraic language as conceptual
+background, not as a new formulation of algebraic ER=EPR. The primary prior art
+for that broad framing is Engelhardt and Liu, ["Algebraic ER=EPR and Complexity
+Transfer"](https://arxiv.org/abs/2311.04281). The contribution here is the
+finite stabilizer/QEC certificate layer: explicit low-order entropy collisions,
+encoded channel controls, and coupling-activated transfer checks.
+
 For the public-release audit, see
 [`docs/public_release_checklist.md`](docs/public_release_checklist.md).
 
@@ -76,7 +83,7 @@ to make every candidate pass exact checks.
 No runtime dependencies are required beyond Python 3.11+.
 
 ```bash
-python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_algebraic_er_epr_channel_benchmark_certificate
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_er_epr_channel_benchmark_certificate
 python3 -m qgtoy er-epr-channel --max-pairs 4
 python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_er_epr_channel_certificate
 python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
@@ -257,7 +264,7 @@ docs/goal9_finite_oaqec_intrinsic_tomography_note.md
 docs/goal9_finite_oaqec_intrinsic_tomography_certificate_index.json
 ```
 
-Emit the Goal 10 algebraic ER=EPR channel benchmark certificate:
+Emit the Goal 10 finite ER=EPR channel benchmark certificate:
 
 ```bash
 python3 -m qgtoy er-epr-channel --max-pairs 4
@@ -266,8 +273,8 @@ python3 -m qgtoy er-epr-channel --max-pairs 4
 Read the Goal 10 theorem note and machine-readable certificate index:
 
 ```text
-docs/goal10_algebraic_er_epr_channel_benchmark_note.md
-docs/goal10_algebraic_er_epr_channel_benchmark_certificate_index.json
+docs/goal10_finite_er_epr_channel_benchmark_note.md
+docs/goal10_finite_er_epr_channel_benchmark_certificate_index.json
 ```
 
 Emit the Goal 11 encoded-mouth ER=EPR channel theorem certificate:

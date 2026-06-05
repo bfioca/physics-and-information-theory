@@ -1,4 +1,4 @@
-# Goal 10: Algebraic ER=EPR Channel Benchmark
+# Goal 10: Finite ER=EPR Channel Benchmark
 
 Goal 10 pivots from observer-algebra tomography back to ER=EPR. The finite
 question is operational:
@@ -72,6 +72,17 @@ channel-visible structure. Goals 5-9 built observer-algebra tomography. Goal 10
 uses that lesson for ER=EPR: a bridge should be tested by an operational channel,
 and the relevant finite invariant is the algebraic connectivity of the resource.
 
+## Relation To Engelhardt-Liu
+
+Engelhardt and Liu's
+["Algebraic ER=EPR and Complexity Transfer"](https://arxiv.org/abs/2311.04281)
+is the primary conceptual prior art for the broad claim that ER=EPR should
+depend on operator-algebraic entanglement structure, not just entanglement
+amount. Goal 10 does not propose that framework. It gives a finite stabilizer
+benchmark certificate inside that conceptual neighborhood: coarse entropy and
+min-cut shadows match, while a named channel depends on the resource's
+connectivity matrix.
+
 ## Scientific Interpretation
 
 The finite lesson is: ER=EPR should not be modeled as "amount of entanglement
@@ -93,5 +104,5 @@ channel capacity.
 | Claim | Command |
 | --- | --- |
 | Goal 10 channel certificate | `python3 -m qgtoy er-epr-channel --max-pairs 4` |
-| Focused Goal 10 regression | `python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_algebraic_er_epr_channel_benchmark_certificate` |
-| JSON certificate index validation | `python3 -m json.tool docs/goal10_algebraic_er_epr_channel_benchmark_certificate_index.json` |
+| Focused Goal 10 regression | `python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_er_epr_channel_benchmark_certificate` |
+| JSON certificate index validation | `python3 -m json.tool docs/goal10_finite_er_epr_channel_benchmark_certificate_index.json` |

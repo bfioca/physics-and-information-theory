@@ -1,4 +1,4 @@
-"""Goal 11 encoded-mouth algebraic ER=EPR channel certificates."""
+"""Goal 11 encoded-mouth finite ER=EPR-style channel certificates."""
 
 from __future__ import annotations
 
@@ -414,7 +414,7 @@ def goal11_encoded_mouth_er_epr_certificate(
     certified_claims["goal11_encoded_mouth_er_epr_certificate"] = all(certified_claims.values())
 
     return {
-        "goal": "Goal 11: Encoded-Mouth Algebraic ER=EPR Channel Theorem",
+        "goal": "Goal 11: Encoded-Mouth ER=EPR Channel Theorem",
         "status": "pass" if certified_claims["goal11_encoded_mouth_er_epr_certificate"] else "fail",
         "scope": {
             "family": "logical Bell pairs with right mouths encoded into five-qubit perfect-code blocks",
@@ -490,6 +490,16 @@ def goal11_encoded_mouth_er_epr_certificate(
             "algebra_visible": "The logical connectivity matrix predicts identity-decoder and correct-decoder capacity.",
             "channel_visible": "The certificate emits exact zero/one Pauli transfer matrices for identity and correct decoders.",
             "control_visible": "Wrong identity decoders fail on twisted mouths; OTOC-like signals appear on the correct encoded block.",
+        },
+        "related_work": {
+            "conceptual_prior_art": (
+                "Engelhardt and Liu, Algebraic ER=EPR and Complexity Transfer, arXiv:2311.04281, "
+                "is the primary prior art for the broad operator-algebraic ER=EPR framing."
+            ),
+            "scope_boundary": (
+                "This certificate does not propose a new algebraic ER=EPR definition; it supplies a finite "
+                "encoded-mouth stabilizer certificate for low-order entropy blindness versus channel recovery."
+            ),
         },
         "limitations": (
             "This is an exact stabilizer encoded-mouth theorem, not a continuum-gravity theorem, not a noisy "

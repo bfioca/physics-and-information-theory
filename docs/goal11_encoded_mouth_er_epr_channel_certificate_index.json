@@ -1,5 +1,5 @@
 {
-  "package": "Goal 11: Encoded-Mouth Algebraic ER=EPR Channel Theorem",
+  "package": "Goal 11: Encoded-Mouth ER=EPR Channel Theorem",
   "status": "certificate_available",
   "core_command": "python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3",
   "human_note": "docs/goal11_encoded_mouth_er_epr_channel_note.md",
@@ -74,8 +74,9 @@
     "pauli_transfer_and_otoc_like_controls": "target operational channel diagnostics"
   },
   "known_vs_new": {
-    "known_derived": "Standard stabilizer distance, logical Bell stabilizers, and Clifford Pauli transfer.",
-    "new_programmatic_contribution": "Packages an encoded-mouth ER=EPR benchmark where low-order physical entropy diagnostics are blind but algebraic reconstruction predicts channel capacity."
+    "conceptual_prior_art": "Engelhardt-Liu 2023, Algebraic ER=EPR and Complexity Transfer, is the primary prior art for the broad operator-algebraic ER=EPR framing.",
+    "known_derived": "Standard stabilizer distance, logical Bell stabilizers, Clifford Pauli transfer, and the general lesson that algebraic structure matters beyond entanglement amount.",
+    "new_programmatic_contribution": "Packages the finite encoded-mouth certificate layer where low-order physical entropy diagnostics are blind below code distance but algebraic reconstruction predicts channel capacity."
   },
   "limitations": "This is an exact finite stabilizer encoded-mouth theorem, not a continuum-gravity theorem, not a noisy approximate-QEC theorem, and not a many-body traversable-wormhole simulation. Full encoded-block diagnostics reveal the mouth map.",
   "next_frontier": "Replace product stabilizer blocks with richer tensor-network or many-body dynamics and test whether algebraic connectivity predicts traversable-channel capacity beyond exact Clifford encoders."

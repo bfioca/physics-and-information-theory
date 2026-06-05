@@ -323,7 +323,7 @@ def goal12_coupling_activated_er_epr_certificate(
             "low_order": low_order,
             "atlas_max_mouths": atlas_max_mouths,
             "right_block_code": "[[5,1,3]] five-qubit perfect stabilizer code",
-            "dynamics": "bounded encoded Clifford Bell-coupling activation map",
+            "dynamics": "bounded encoded Clifford Bell-coupling activation U_couple(alpha)",
         },
         "theorem_style_result": {
             "name": "Coupling-Activated Encoded Bridge Channel Theorem",
@@ -398,6 +398,16 @@ def goal12_coupling_activated_er_epr_certificate(
             "control_visible": (
                 "Wrong activations and entropy-matched permutation-scrambled resources do not force "
                 "structured mouth-to-mouth transfer."
+            ),
+        },
+        "related_work": {
+            "conceptual_prior_art": (
+                "Engelhardt and Liu, Algebraic ER=EPR and Complexity Transfer, arXiv:2311.04281, "
+                "is the primary prior art for the broad operator-algebraic ER=EPR framing."
+            ),
+            "scope_boundary": (
+                "This certificate does not propose a new algebraic ER=EPR definition; it supplies a finite "
+                "stabilizer/Clifford coupling benchmark for entropy-matched encoded resources."
             ),
         },
         "limitations": (

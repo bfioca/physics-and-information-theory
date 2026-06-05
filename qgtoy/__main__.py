@@ -44,7 +44,7 @@ from .cosmology import (
 from .family import bridge_family_certificate, bridge_theorem_certificate, lift_frontier, witness_mechanism_summary
 from .gf2 import mask_to_tuple
 from .graphs import enumerate_graph_state_reps
-from .er_epr_channel import goal10_algebraic_er_epr_channel_benchmark_certificate
+from .er_epr_channel import goal10_finite_er_epr_channel_benchmark_certificate
 from .er_epr_encoded import goal11_encoded_mouth_er_epr_certificate
 from .er_epr_traversable import goal12_coupling_activated_er_epr_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
@@ -493,7 +493,7 @@ def run_observer_tomography_oaqec(args: argparse.Namespace) -> None:
 def run_er_epr_channel(args: argparse.Namespace) -> None:
     print(
         json.dumps(
-            goal10_algebraic_er_epr_channel_benchmark_certificate(max_pairs=args.max_pairs),
+            goal10_finite_er_epr_channel_benchmark_certificate(max_pairs=args.max_pairs),
             indent=2,
             sort_keys=True,
         )
@@ -1607,7 +1607,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     er_epr_channel = subparsers.add_parser(
         "er-epr-channel",
-        help="emit the Goal 10 algebraic ER=EPR channel benchmark certificate",
+        help="emit the Goal 10 finite ER=EPR channel benchmark certificate",
     )
     er_epr_channel.add_argument("--max-pairs", type=int, default=4)
     er_epr_channel.set_defaults(func=run_er_epr_channel)
