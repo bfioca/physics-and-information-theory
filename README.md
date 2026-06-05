@@ -198,6 +198,19 @@ docs/goal9_finite_oaqec_intrinsic_tomography_note.md
 docs/goal9_finite_oaqec_intrinsic_tomography_certificate_index.json
 ```
 
+Emit the Goal 10 algebraic ER=EPR channel benchmark certificate:
+
+```bash
+python3 -m qgtoy er-epr-channel --max-pairs 4
+```
+
+Read the Goal 10 theorem note and machine-readable certificate index:
+
+```text
+docs/goal10_algebraic_er_epr_channel_benchmark_note.md
+docs/goal10_algebraic_er_epr_channel_benchmark_certificate_index.json
+```
+
 Optionally include the full all-region scan of the distance-amplified
 `[[15,2,3]]` witness:
 

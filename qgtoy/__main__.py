@@ -44,6 +44,7 @@ from .cosmology import (
 from .family import bridge_family_certificate, bridge_theorem_certificate, lift_frontier, witness_mechanism_summary
 from .gf2 import mask_to_tuple
 from .graphs import enumerate_graph_state_reps
+from .er_epr_channel import goal10_algebraic_er_epr_channel_benchmark_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
 from .observer_tomography_intrinsic import goal8_intrinsic_observer_tomography_certificate
@@ -481,6 +482,16 @@ def run_observer_tomography_oaqec(args: argparse.Namespace) -> None:
                 max_block_dim=args.max_block_dim,
                 max_blocks=args.max_blocks,
             ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_er_epr_channel(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal10_algebraic_er_epr_channel_benchmark_certificate(max_pairs=args.max_pairs),
             indent=2,
             sort_keys=True,
         )
@@ -1563,6 +1574,13 @@ def build_parser() -> argparse.ArgumentParser:
     observer_tomography_oaqec.add_argument("--max-block-dim", type=int, default=4)
     observer_tomography_oaqec.add_argument("--max-blocks", type=int, default=5)
     observer_tomography_oaqec.set_defaults(func=run_observer_tomography_oaqec)
+
+    er_epr_channel = subparsers.add_parser(
+        "er-epr-channel",
+        help="emit the Goal 10 algebraic ER=EPR channel benchmark certificate",
+    )
+    er_epr_channel.add_argument("--max-pairs", type=int, default=4)
+    er_epr_channel.set_defaults(func=run_er_epr_channel)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -45,6 +45,7 @@ from qgtoy.family import (
     seed_pair,
     witness_mechanism_summary,
 )
+from qgtoy.er_epr_channel import goal10_algebraic_er_epr_channel_benchmark_certificate
 from qgtoy.graphs import enumerate_graph_state_reps
 from qgtoy.observer_tomography import observer_algebra_tomography_certificate
 from qgtoy.observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -1465,6 +1466,37 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertIn("product/* table", theorem["claim"])
         self.assertTrue(all(record["status"] == "pass" for record in theorem["theorem_audit_examples"]))
         self.assertIn("stabilizer special case", certificate["harlow_facing_interpretation"])
+
+    def test_goal10_algebraic_er_epr_channel_benchmark_certificate(self):
+        certificate = goal10_algebraic_er_epr_channel_benchmark_certificate(max_pairs=4)
+        self.assertEqual(certificate["status"], "pass")
+        claims = certificate["certified_claims"]
+        self.assertTrue(claims["exact_permutation_epr_family_declared"])
+        self.assertTrue(claims["aligned_crossed_coarse_entropy_mincut_match"])
+        self.assertTrue(claims["aligned_crossed_port_resolved_entropy_splits"])
+        self.assertTrue(claims["aligned_crossed_algebraic_connectivity_differs"])
+        self.assertTrue(claims["aligned_crossed_fixed_mouth_channel_differs"])
+        self.assertTrue(claims["operator_growth_wrong_mouth_control_certified"])
+        self.assertTrue(claims["bounded_atlas_has_same_coarse_shadow_capacity_variation"])
+        self.assertTrue(claims["optimal_relabel_capacity_limitation_recorded"])
+
+        witness = certificate["representative_witness"]
+        self.assertTrue(witness["comparisons"]["coarse_entropy_mincut_match"])
+        self.assertEqual(witness["comparisons"]["fixed_mouth_channel_capacity"]["first"], 2)
+        self.assertEqual(witness["comparisons"]["fixed_mouth_channel_capacity"]["second"], 0)
+        self.assertEqual(
+            witness["first"]["algebraic_connectivity_diagnostics"]["connectivity_matrix_rows_L_columns_R"],
+            ((1, 0), (0, 1)),
+        )
+        self.assertEqual(
+            witness["second"]["algebraic_connectivity_diagnostics"]["connectivity_matrix_rows_L_columns_R"],
+            ((0, 1), (1, 0)),
+        )
+        self.assertEqual(
+            certificate["bounded_atlas"]["first_same_coarse_shadow_channel_split"]["m"],
+            2,
+        )
+        self.assertIn("number of fixed points", certificate["theorem_style_result"]["claim"])
 
     def test_holography_phase1_stabilizer_tensor_network_seed_certificate(self):
         certificate = bridge_holography_phase1_certificate()
