@@ -47,6 +47,7 @@ from qgtoy.family import (
 )
 from qgtoy.er_epr_channel import goal10_algebraic_er_epr_channel_benchmark_certificate
 from qgtoy.er_epr_encoded import goal11_encoded_mouth_er_epr_certificate
+from qgtoy.er_epr_traversable import goal12_coupling_activated_er_epr_certificate
 from qgtoy.graphs import enumerate_graph_state_reps
 from qgtoy.observer_tomography import observer_algebra_tomography_certificate
 from qgtoy.observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -1534,6 +1535,52 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertEqual(certificate["bounded_atlas"]["first_low_order_blind_capacity_split"]["m"], 2)
         self.assertIn("through order d", certificate["theorem_style_result"]["claim"])
         self.assertIn("fixed points", certificate["theorem_style_result"]["claim"])
+
+    def test_goal12_coupling_activated_er_epr_certificate(self):
+        certificate = goal12_coupling_activated_er_epr_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
+        self.assertEqual(certificate["status"], "pass")
+        claims = certificate["certified_claims"]
+        self.assertTrue(claims["explicit_bounded_coupling_declared"])
+        self.assertTrue(claims["coupling_has_no_hidden_decoder_input"])
+        self.assertTrue(claims["coarse_entropy_mincut_shadows_match"])
+        self.assertTrue(claims["low_order_labeled_physical_entropy_matches"])
+        self.assertTrue(claims["identity_coupling_transfer_differs"])
+        self.assertTrue(claims["algebra_aware_coupling_restores_twisted_transfer"])
+        self.assertTrue(claims["wrong_coupling_control_fails"])
+        self.assertTrue(claims["generic_entropy_matched_controls_do_not_force_structured_transfer"])
+        self.assertTrue(claims["pauli_transfer_and_recovery_recorded"])
+        self.assertTrue(claims["otoc_like_support_growth_recorded"])
+
+        witness = certificate["representative_witness"]
+        comparisons = witness["comparisons"]
+        self.assertEqual(comparisons["low_order_physical_entropy_audit"]["mismatch_count"], 0)
+        self.assertEqual(comparisons["low_order_physical_entropy_audit"]["regions_checked"], 299)
+        self.assertEqual(comparisons["first_entropy_mismatch"]["order"], 4)
+        self.assertEqual(comparisons["identity_coupling_capacity"], {"aligned": 2, "twisted": 0})
+        self.assertEqual(comparisons["algebra_aware_coupling_capacity"], {"twisted": 2})
+        self.assertEqual(
+            comparisons["wrong_coupling_capacity"],
+            {"aligned_with_twisted_activation": 0, "twisted_with_identity_activation": 0},
+        )
+
+        twisted_wrong = witness["transfer_diagnostics"]["twisted_identity_wrong_mouth"]
+        self.assertEqual(twisted_wrong["activation_capacity_qubits"], 0)
+        self.assertEqual(
+            twisted_wrong["pauli_transfer_matrix_diagonal_XYZ_by_probe"],
+            ((0, 0, 0), (0, 0, 0)),
+        )
+        twisted_correct = witness["transfer_diagnostics"]["twisted_algebra_aware"]
+        self.assertEqual(twisted_correct["activation_capacity_qubits"], 2)
+        self.assertEqual(
+            twisted_correct["pauli_transfer_matrix_diagonal_XYZ_by_probe"],
+            ((1, 1, 1), (1, 1, 1)),
+        )
+
+        atlas_split = certificate["generic_entropy_matched_controls"]["first_entropy_matched_capacity_split"]
+        self.assertEqual(atlas_split["m"], 2)
+        self.assertEqual(atlas_split["all_activation_capacity_profile"], {0: 2, 2: 2})
+        self.assertIn("activation alpha", certificate["theorem_style_result"]["claim"])
+        self.assertIn("capacity equals", certificate["theorem_style_result"]["claim"])
 
     def test_holography_phase1_stabilizer_tensor_network_seed_certificate(self):
         certificate = bridge_holography_phase1_certificate()

@@ -23,6 +23,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   physical entropy/min-cut diagnostics through the code distance agree while
   naive fixed-mouth channel capacity differs; the correct algebraic decoder
   restores capacity.
+- **Goal 12:** in a coupling-activated finite ER=EPR benchmark, explicit
+  encoded Clifford couplings transfer probes exactly when the coupling
+  activation matches the algebraic bridge map; entropy-matched controls fail
+  under wrong activations.
 
 ## Public Claim Boundary
 
@@ -76,6 +80,8 @@ python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_
 python3 -m qgtoy er-epr-channel --max-pairs 4
 python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_er_epr_channel_certificate
 python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_coupling_activated_er_epr_certificate
+python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
 ```
 
 For the broader certificate family, run the commands below.
@@ -275,6 +281,19 @@ Read the Goal 11 theorem note and machine-readable certificate index:
 ```text
 docs/goal11_encoded_mouth_er_epr_channel_note.md
 docs/goal11_encoded_mouth_er_epr_channel_certificate_index.json
+```
+
+Emit the Goal 12 coupling-activated ER=EPR channel dynamics certificate:
+
+```bash
+python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
+```
+
+Read the Goal 12 theorem note and machine-readable certificate index:
+
+```text
+docs/goal12_coupling_activated_er_epr_channel_note.md
+docs/goal12_coupling_activated_er_epr_channel_certificate_index.json
 ```
 
 Optionally include the full all-region scan of the distance-amplified
