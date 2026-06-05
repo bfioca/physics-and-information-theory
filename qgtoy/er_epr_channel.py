@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from itertools import permutations
 
 from .gf2 import mask_to_tuple
+from .quantum_channel import teleportation_channel_certificate
 from .stabilizer import StabilizerState
 
 
@@ -169,76 +170,75 @@ class EPRPairingModel:
         }
 
     def identity_mouth_channel_diagnostics(self) -> dict[str, object]:
-        """Exact channel under the declared identity-mouth teleportation coupling.
-
-        The coupling is the standard Bell-measurement plus Pauli-feed-forward
-        Clifford teleportation gadget from an external probe Q_i through L_i to
-        the declared output R_i.  The EPR resource supplies a perfect qubit
-        channel to R_i exactly when the algebraic bridge edge is L_i--R_i.
-        """
-        port_channels = []
-        for left, actual_right in enumerate(self.pairing):
-            target_right = left
-            fixed = actual_right == target_right
-            port_channels.append(
-                {
-                    "input_probe": f"Q{left}",
-                    "left_mouth": f"L{left}",
-                    "declared_target": f"R{target_right}",
-                    "actual_algebraic_receiver": f"R{actual_right}",
-                    "target_pauli_transfer_diagonal_XYZ": (1, 1, 1) if fixed else (0, 0, 0),
-                    "actual_receiver_pauli_transfer_diagonal_XYZ": (1, 1, 1),
-                    "average_fidelity_to_declared_target": "1" if fixed else "1/2",
-                    "quantum_capacity_to_declared_target_qubits": 1 if fixed else 0,
-                    "wrong_mouth_transfer": not fixed,
-                }
+        """Verify the simultaneous mouth channel from explicit Bell-projection Kraus operators."""
+        if self.m > 3:
+            raise ValueError("dense channel diagnostics are limited to at most three mouth pairs")
+        identity_decoder = teleportation_channel_certificate(self.pairing, tuple(range(self.m)))
+        pairing_aware_decoder = teleportation_channel_certificate(self.pairing, self.pairing)
+        port_channels = tuple(
+            {
+                "input_probe": f"Q{left}",
+                "left_mouth": f"L{left}",
+                "declared_target": f"R{left}",
+                "algebraic_pairing_target": f"R{actual_right}",
+                "identity_decoder_pauli_transfer_diagonal_XYZ": port[
+                    "pauli_transfer_diagonal_XYZ"
+                ],
+                "identity_decoder_average_fidelity": port["average_fidelity_to_identity"],
+                "perfect_fixed_port_transmission": port["perfect_fixed_port"],
+            }
+            for left, (actual_right, port) in enumerate(
+                zip(
+                    self.pairing,
+                    identity_decoder["fixed_port_transmission"]["ports"],
+                    strict=True,
+                )
             )
-        fixed_capacity = sum(row["quantum_capacity_to_declared_target_qubits"] for row in port_channels)
+        )
         return {
             "declared_coupling": "identity-mouth Bell-teleportation Clifford gadget Q_i + L_i -> R_i",
-            "port_channels": tuple(port_channels),
-            "fixed_mouth_quantum_capacity_qubits": fixed_capacity,
-            "optimal_right_port_relabel_capacity_qubits": self.m,
-            "capacity_formula": "number of fixed points of the algebraic connectivity permutation",
+            "port_channels": port_channels,
+            "identity_decoder": identity_decoder,
+            "pairing_aware_decoder": pairing_aware_decoder,
+            "identity_decoder_perfect_fixed_port_qubits": identity_decoder["fixed_port_transmission"][
+                "perfect_qubits"
+            ],
+            "identity_decoder_exact_joint_noiseless_qubits": identity_decoder[
+                "preserved_operator_algebra"
+            ]["exact_joint_noiseless_qubits"],
+            "pairing_aware_decoder_perfect_qubits": pairing_aware_decoder["fixed_port_transmission"][
+                "perfect_qubits"
+            ],
+            "interpretive_correction": (
+                "Fixed points count perfect named-port product transmission, not quantum capacity. "
+                "The full channel can retain correlated classical or noiseless-subsystem information."
+            ),
         }
 
     def operator_growth_controls(self) -> dict[str, object]:
         rows = []
-        commutator_rows = []
         for left, actual_right in enumerate(self.pairing):
             fixed = left == actual_right
             rows.append(
                 {
                     "probe": f"Q{left}",
-                    "heisenberg_output_support": (f"R{actual_right}",),
-                    "output_pauli_weight": 1,
+                    "resource_pairing_support": (f"R{actual_right}",),
+                    "paired_pauli_weight": 1,
                     "declared_target_overlap": 1 if fixed else 0,
-                    "off_target_wrong_mouth": not fixed,
-                }
-            )
-            commutator_rows.append(
-                {
-                    "probe": f"Q{left}",
-                    "declared_target_detector": f"R{left}",
-                    "actual_receiver_detector": f"R{actual_right}",
-                    "otoc_like_commutator_signal_at_declared_target": 1 if fixed else 0,
-                    "otoc_like_commutator_signal_at_actual_receiver": 1,
+                    "off_target_pairing": not fixed,
                 }
             )
         return {
-            "pauli_support_growth_rows": tuple(rows),
-            "otoc_like_commutator_rows": tuple(commutator_rows),
-            "size_distribution": {
-                "all_transferred_nonidentity_probe_paulis_have_output_weight": 1,
+            "resource_pairing_rows": tuple(rows),
+            "pairing_size_distribution": {
+                "all_epr_pairing_generators_have_right_weight": 1,
                 "declared_target_hits": sum(1 for left, right in enumerate(self.pairing) if left == right),
-                "wrong_mouth_hits": sum(1 for left, right in enumerate(self.pairing) if left != right),
+                "off_target_pairings": sum(1 for left, right in enumerate(self.pairing) if left != right),
             },
-            "generic_scrambling_control_status": (
-                "exact permutation-scrambling proxy only; this is not a chaotic many-body scrambling model"
-            ),
+            "dynamics_status": "structural resource diagnostic only; no OTOC or operator-growth claim",
             "control_interpretation": (
                 "Permutation-scrambled EPR resources have the same coarse L/R entanglement and the same "
-                "operator size, but send probes to the wrong right-mouth ports under the declared coupling."
+                "pair-generator weight, but different named left-to-right resource connectivity."
             ),
         }
 
@@ -254,11 +254,11 @@ class EPRPairingModel:
         }
 
 
-def _capacity_profile_for_m(m: int) -> dict[int, int]:
+def _fixed_port_profile_for_m(m: int) -> dict[int, int]:
     profile: dict[int, int] = {}
     for pairing in permutations(range(m)):
-        capacity = sum(1 for left, right in enumerate(pairing) if left == right)
-        profile[capacity] = profile.get(capacity, 0) + 1
+        fixed_ports = sum(1 for left, right in enumerate(pairing) if left == right)
+        profile[fixed_ports] = profile.get(fixed_ports, 0) + 1
     return dict(sorted(profile.items()))
 
 
@@ -267,16 +267,16 @@ def _atlas_records(max_pairs: int) -> tuple[dict[str, object], ...]:
     for m in range(1, max_pairs + 1):
         models = tuple(EPRPairingModel(name=f"m{m}_{pairing}", pairing=pairing) for pairing in permutations(range(m)))
         coarse_shadows = {repr(model.coarse_entropy_mincut_shadow()) for model in models}
-        capacities = {
-            model.identity_mouth_channel_diagnostics()["fixed_mouth_quantum_capacity_qubits"] for model in models
-        }
+        fixed_port_counts = {len(model.fixed_mouth_edges()) for model in models}
         rows.append(
             {
                 "m": m,
                 "models_checked": len(models),
                 "coarse_entropy_mincut_shadow_classes": len(coarse_shadows),
-                "fixed_mouth_capacity_profile": _capacity_profile_for_m(m),
-                "same_coarse_shadow_capacity_varies": len(coarse_shadows) == 1 and len(capacities) > 1,
+                "perfect_fixed_port_profile": _fixed_port_profile_for_m(m),
+                "same_coarse_shadow_fixed_port_transmission_varies": (
+                    len(coarse_shadows) == 1 and len(fixed_port_counts) > 1
+                ),
             }
         )
     return tuple(rows)
@@ -294,12 +294,14 @@ def goal10_finite_bridge_channel_benchmark_certificate(*, max_pairs: int = 4) ->
     coarse_match = aligned.coarse_entropy_mincut_shadow() == crossed.coarse_entropy_mincut_shadow()
     port_entropy_splits = aligned.port_resolved_entropy_mincut_shadow() != crossed.port_resolved_entropy_mincut_shadow()
     algebra_differs = aligned.algebraic_connectivity_matrix() != crossed.algebraic_connectivity_matrix()
-    aligned_capacity = aligned.identity_mouth_channel_diagnostics()["fixed_mouth_quantum_capacity_qubits"]
-    crossed_capacity = crossed.identity_mouth_channel_diagnostics()["fixed_mouth_quantum_capacity_qubits"]
-    channel_differs = aligned_capacity != crossed_capacity
+    aligned_channel = aligned.identity_mouth_channel_diagnostics()
+    crossed_channel = crossed.identity_mouth_channel_diagnostics()
+    aligned_fixed_ports = aligned_channel["identity_decoder_perfect_fixed_port_qubits"]
+    crossed_fixed_ports = crossed_channel["identity_decoder_perfect_fixed_port_qubits"]
+    channel_differs = aligned_fixed_ports != crossed_fixed_ports
     atlas = _atlas_records(max_pairs)
     first_capacity_collision = next(
-        (record for record in atlas if record["same_coarse_shadow_capacity_varies"]),
+        (record for record in atlas if record["same_coarse_shadow_fixed_port_transmission_varies"]),
         None,
     )
 
@@ -309,17 +311,28 @@ def goal10_finite_bridge_channel_benchmark_certificate(*, max_pairs: int = 4) ->
         "aligned_crossed_port_resolved_entropy_splits": port_entropy_splits,
         "aligned_crossed_algebraic_connectivity_differs": algebra_differs,
         "aligned_crossed_fixed_mouth_channel_differs": channel_differs
-        and aligned_capacity == 2
-        and crossed_capacity == 0,
-        "operator_growth_wrong_mouth_control_certified": all(
-            row["wrong_mouth_transfer"]
-            for row in crossed.identity_mouth_channel_diagnostics()["port_channels"]  # type: ignore[index]
+        and aligned_fixed_ports == 2
+        and crossed_fixed_ports == 0,
+        "explicit_choi_channels_are_trace_preserving": (
+            aligned_channel["identity_decoder"]["trace_preserving_error"] < 1e-12
+            and crossed_channel["identity_decoder"]["trace_preserving_error"] < 1e-12
         ),
-        "bounded_atlas_has_same_coarse_shadow_capacity_variation": first_capacity_collision is not None
+        "crossed_identity_decoder_has_correlated_classical_center": (
+            crossed_channel["identity_decoder"]["preserved_operator_algebra"][
+                "exact_joint_noiseless_qubits"
+            ]
+            == 0
+            and crossed_channel["identity_decoder"]["preserved_operator_algebra"]["center_dimension"] == 2
+        ),
+        "resource_pairing_wrong_mouth_control_certified": all(
+            row["off_target_pairing"]
+            for row in crossed.operator_growth_controls()["resource_pairing_rows"]
+        ),
+        "bounded_atlas_has_same_coarse_shadow_fixed_port_variation": first_capacity_collision is not None
         and first_capacity_collision["m"] == 2,
-        "optimal_relabel_capacity_limitation_recorded": (
-            aligned.identity_mouth_channel_diagnostics()["optimal_right_port_relabel_capacity_qubits"] == 2
-            and crossed.identity_mouth_channel_diagnostics()["optimal_right_port_relabel_capacity_qubits"] == 2
+        "pairing_aware_decoder_restores_exact_channel": (
+            aligned_channel["pairing_aware_decoder"]["fidelity"]["entanglement_fidelity_to_identity"] == 1.0
+            and crossed_channel["pairing_aware_decoder"]["fidelity"]["entanglement_fidelity_to_identity"] == 1.0
         ),
         "no_continuum_gravity_claim": True,
     }
@@ -335,18 +348,20 @@ def goal10_finite_bridge_channel_benchmark_certificate(*, max_pairs: int = 4) ->
             "minimality_scope": "permutation EPR resources; first channel split occurs at m=2",
         },
         "theorem_style_result": {
-            "name": "Permutation-EPR Fixed-Mouth Channel Theorem",
+            "name": "Permutation-EPR Fixed-Port Transmission Theorem",
             "claim": (
                 "For m EPR bridge resources whose algebraic connectivity is a permutation pi from L ports "
-                "to R ports, the declared identity-mouth teleportation channel Q_i,L_i -> R_i has exact "
-                "qubit capacity equal to the number of fixed points of pi.  Coarse L/R entropy and EPR "
-                "min-cut diagnostics depend only on m, so they do not determine the fixed-mouth channel."
+                "to R ports, the number of perfect named-port product channels under the identity decoder "
+                "equals the number of fixed points of pi. This is not a quantum-capacity formula: the full "
+                "simultaneous channel can preserve correlated operator algebras. Coarse L/R entropy and EPR "
+                "min-cut diagnostics depend only on m, so they do not determine the named-port channel."
             ),
             "proof_sketch": (
-                "Each EPR edge L_i--R_pi(i) supplies the standard stabilizer teleportation resource.  "
-                "The identity-mouth Clifford gadget recovers the probe at R_i iff pi(i)=i; otherwise the "
-                "same Pauli transfer appears at the wrong mouth R_pi(i), and the declared target channel "
-                "is depolarizing.  The product of EPR edges has S(L)=S(R)=mincut(L)=m for every permutation."
+                "The emitted Kraus operators are obtained by contracting every Bell outcome with the declared "
+                "Pauli feed-forward and routing map. Their Choi matrices verify complete positivity and trace "
+                "preservation directly. A fixed port has identity X/Y/Z transfer; a non-fixed port does not. "
+                "For the crossed m=2 control the residual channel is the correlated II/XX/YY/ZZ twirl, not "
+                "two independent depolarizing channels."
             ),
         },
         "representative_witness": {
@@ -356,16 +371,16 @@ def goal10_finite_bridge_channel_benchmark_certificate(*, max_pairs: int = 4) ->
                 "coarse_entropy_mincut_match": coarse_match,
                 "port_resolved_entropy_mincut_split": port_entropy_splits,
                 "algebraic_connectivity_differs": algebra_differs,
-                "fixed_mouth_channel_capacity": {
-                    "first": aligned_capacity,
-                    "second": crossed_capacity,
+                "perfect_fixed_port_qubits": {
+                    "first": aligned_fixed_ports,
+                    "second": crossed_fixed_ports,
                 },
                 "channel_differs": channel_differs,
             },
         },
         "bounded_atlas": {
             "records": atlas,
-            "first_same_coarse_shadow_channel_split": first_capacity_collision,
+            "first_same_coarse_shadow_fixed_port_split": first_capacity_collision,
         },
         "diagnostic_interpretation": {
             "entropy_mincut_visible": (
@@ -377,12 +392,12 @@ def goal10_finite_bridge_channel_benchmark_certificate(*, max_pairs: int = 4) ->
                 "predicts the fixed-mouth channel."
             ),
             "channel_visible": (
-                "The declared channel is a stabilizer/Clifford teleportation protocol with exact Pauli "
-                "transfer matrices and exact zero/one qubit capacities."
+                "The declared simultaneous channel is built from explicit Bell-projection Kraus operators, "
+                "with Choi rank, Pauli transfer, fidelity, and preserved-algebra diagnostics."
             ),
             "control_visible": (
-                "The crossed resource is a wrong-mouth control: it has the same coarse entanglement and "
-                "same one-qubit operator size, but the probe exits at the wrong named mouth."
+                "The crossed resource is a wrong-mouth structural control: it has the same coarse entanglement "
+                "and pair-generator weight but a different named resource pairing."
             ),
         },
         "related_work": {
@@ -399,13 +414,13 @@ def goal10_finite_bridge_channel_benchmark_certificate(*, max_pairs: int = 4) ->
             "This is a finite stabilizer bridge-channel port benchmark, not a continuum-gravity theorem and not a generic "
             "many-body traversable-wormhole simulation.  The separation is against coarse L/R entropy and "
             "min-cut shadows; full port-resolved entropy detects the EPR pairing in this simple family.  "
-            "The next harder target is a non-Clifford or tensor-network family where richer entropy/min-cut "
-            "diagnostics still collide while operator algebra predicts channel capacity."
+            "The next harder target is a non-Clifford or tensor-network family where complete entropy data "
+            "still collide while operator algebra predicts reconstruction or an operational recovery channel."
         ),
         "reproducibility": {
-            "goal10_certificate": f"python3 -m qgtoy er-epr-channel --max-pairs {max_pairs}",
+            "goal10_certificate": f"PYTHONPATH=. python3 -m qgtoy er-epr-channel --max-pairs {max_pairs}",
             "focused_regression": (
-                "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
+                "PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
                 "test_goal10_finite_bridge_channel_benchmark_certificate"
             ),
         },

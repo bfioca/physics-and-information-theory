@@ -22,12 +22,19 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   algebraic connectivity does for the declared permutation-EPR family.
 - **Goal 11:** in an encoded-mouth bridge-channel benchmark, coarse and low-order
   physical entropy/min-cut diagnostics through the code distance agree while
-  naive fixed-mouth channel capacity differs; the correct algebraic decoder
-  restores capacity.
+  perfect fixed-port transmission differs; an explicit pairing-aware decoder
+  restores the exact full logical channel.
 - **Goal 12:** in a finite bridge-channel dynamics benchmark, explicit
   encoded Clifford couplings transfer probes exactly when the coupling
   activation matches the algebraic bridge map; entropy-matched controls fail
   under wrong activations.
+- **Static-patch bilayer program:** explicit CPTP teleportation channels,
+  label-invariant complete-entropy/reconstruction searches, and a tunable
+  complementary two-screen recovery transition provide the next research
+  substrate toward a controlled ER=EPR-in-dS question. The symmetric coherent
+  routing model has an exact recovery/quantum-area-analogue transition match;
+  an independent area bias gives a finite no-go, and the interpretation audit
+  passes only the algebraic ER=EPR gates, not the gravity or dS/CFT gates.
 
 ## Public Claim Boundary
 
@@ -85,12 +92,14 @@ to make every candidate pass exact checks.
 No runtime dependencies are required beyond Python 3.11+.
 
 ```bash
-python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_bridge_channel_benchmark_certificate
-python3 -m qgtoy er-epr-channel --max-pairs 4
-python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate
-python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
-python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate
-python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_bridge_channel_benchmark_certificate
+PYTHONPATH=. python3 -m qgtoy er-epr-channel --max-pairs 4
+PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate
+PYTHONPATH=. python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate
+PYTHONPATH=. python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_bilayer
+PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
 
 For the broader certificate family, run the commands below.
@@ -269,7 +278,7 @@ docs/goal9_finite_oaqec_intrinsic_tomography_certificate_index.json
 Emit the Goal 10 finite bridge-channel benchmark certificate:
 
 ```bash
-python3 -m qgtoy er-epr-channel --max-pairs 4
+PYTHONPATH=. python3 -m qgtoy er-epr-channel --max-pairs 4
 ```
 
 Read the Goal 10 theorem note and machine-readable certificate index:
@@ -282,7 +291,7 @@ docs/goal10_finite_bridge_channel_benchmark_certificate_index.json
 Emit the Goal 11 encoded-mouth bridge-channel benchmark certificate:
 
 ```bash
-python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
 ```
 
 Read the Goal 11 theorem note and machine-readable certificate index:
@@ -303,6 +312,18 @@ Read the Goal 12 theorem note and machine-readable certificate index:
 ```text
 docs/goal12_finite_bridge_channel_dynamics_note.md
 docs/goal12_finite_bridge_channel_dynamics_certificate_index.json
+```
+
+Emit the finite static-patch bilayer research certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy bilayer-program
+```
+
+Read the problem specification, bounded result, and de Sitter claim boundary:
+
+```text
+docs/ds_bilayer_reconstruction_program.md
 ```
 
 Optionally include the full all-region scan of the distance-amplified

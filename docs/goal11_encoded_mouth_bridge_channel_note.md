@@ -31,9 +31,10 @@ operator. Since every nontrivial right logical has physical weight at least
 
 **Theorem.** For encoded Bell resources whose right mouths are encoded in
 distance-`d` stabilizer blocks, logical mouth twists are invisible to labeled
-physical entropy diagnostics through order `d`, while the identity decoded
-channel capacity equals the number of fixed points of the logical connectivity
-map. The correct algebraic decoder restores full capacity.
+physical entropy diagnostics through order `d`, while perfect named-port
+transmission under the identity decoder equals the number of fixed points of
+the logical connectivity map. This is not a capacity formula. The pairing-aware
+decoder restores the exact full logical channel.
 
 ## Representative Witness
 
@@ -44,8 +45,8 @@ For the default `m=2` certificate:
 | coarse `S(L),S(R),I(L:R)` and logical min-cut | same | same |
 | labeled physical entropy through order 3 | same | same |
 | first labeled entropy split | order 4 | order 4 |
-| identity right-block decoder capacity | 2 qubits | 0 qubits |
-| correct algebraic decoder capacity | 2 qubits | 2 qubits |
+| identity decoder perfect fixed ports | 2 qubits | 0 qubits |
+| pairing-aware decoder perfect ports | 2 qubits | 2 qubits |
 | wrong decoder control | fails off fixed points | fails off fixed points |
 
 The twisted model is not "no bridge." It is an encoded wrong-mouth resource:
@@ -58,12 +59,13 @@ the bridge exists only after decoding the algebraically correct right block.
   agree for the representative aligned/twisted pair.
 - Decoder-scale visible: full encoded blocks reveal the logical mouth map.
   This is exactly where the distance-3 code stops hiding the twist.
-- Algebra-visible: the logical connectivity matrix differs and predicts
-  identity-decoder capacity.
-- Channel-visible: exact Pauli transfer rows record identity transfer for
-  fixed mouths and zero transfer for wrong declared mouths.
-- Operator-growth visible: OTOC-like detector signals appear on the correct
-  encoded block, not the naive identity target.
+- Algebra-visible: the logical connectivity matrix differs and predicts the
+  correct block routing.
+- Channel-visible: explicit logical Kraus/Choi calculations record fixed-port
+  transfer, correlated residual noise, and the pairing-aware exact channel.
+- Structural-control visible: pairing-dependent logical Bell checks involve
+  the correct encoded block. Dynamics are reported only by the explicit
+  channel calculation.
 
 ## Relation To Goal 10
 
@@ -87,9 +89,10 @@ remaining visible to algebraic reconstruction.
 The finite lesson is that a bridge-channel benchmark should ask for an
 operational channel through a declared decoder or coupling, not just an amount
 of entanglement. In this encoded stabilizer model, low-order physical entropy
-through the code distance is blind to the logical mouth map: the wrong
-fixed-mouth decoder sees zero capacity, while the algebraically correct decoder
-recovers full capacity.
+through the code distance is blind to the logical mouth map, and the bridge is
+decoder-dependent: the wrong
+fixed-mouth decoder has no perfect fixed-port channel, while the algebraically
+correct decoder recovers the exact full logical channel.
 
 ## Limitations
 
@@ -103,6 +106,6 @@ diagnostics, with a theorem schema for distance-`d` stabilizer encodings.
 
 | Claim | Command |
 | --- | --- |
-| Goal 11 encoded-mouth certificate | `python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3` |
-| Focused Goal 11 regression | `python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate` |
+| Goal 11 encoded-mouth certificate | `PYTHONPATH=. python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3` |
+| Focused Goal 11 regression | `PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate` |
 | JSON certificate index validation | `python3 -m json.tool docs/goal11_encoded_mouth_bridge_channel_certificate_index.json` |

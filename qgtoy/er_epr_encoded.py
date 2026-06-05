@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from itertools import permutations
 
 from .gf2 import mask_to_tuple, masks_of_size
+from .quantum_channel import teleportation_channel_certificate
 from .stabilizer import (
     StabilizerCode,
     StabilizerState,
@@ -201,33 +202,48 @@ class EncodedMouthBridgeModel:
         }
 
     def channel_diagnostics(self) -> dict[str, object]:
-        rows = []
-        for left, actual_block in enumerate(self.pairing):
-            declared_block = left
-            fixed = actual_block == declared_block
-            rows.append(
-                {
-                    "input_probe": f"Q{left}",
-                    "left_mouth": f"L{left}",
-                    "declared_encoded_target": f"B{declared_block}",
-                    "actual_encoded_receiver": f"B{actual_block}",
-                    "identity_decoder_pauli_transfer_XYZ": (1, 1, 1) if fixed else (0, 0, 0),
-                    "correct_decoder_pauli_transfer_XYZ": (1, 1, 1),
-                    "wrong_decoder_capacity_qubits": 0 if not fixed else 1,
-                    "identity_decoder_capacity_qubits": 1 if fixed else 0,
-                    "correct_decoder_capacity_qubits": 1,
-                    "identity_decoder_average_fidelity": "1" if fixed else "1/2",
-                    "correct_decoder_average_fidelity": "1",
-                }
+        if self.m > 3:
+            raise ValueError("dense encoded-mouth channel diagnostics are limited to at most three mouths")
+        identity_decoder = teleportation_channel_certificate(self.pairing, tuple(range(self.m)))
+        pairing_aware_decoder = teleportation_channel_certificate(self.pairing, self.pairing)
+        rows = tuple(
+            {
+                "input_probe": f"Q{left}",
+                "left_mouth": f"L{left}",
+                "declared_encoded_target": f"B{left}",
+                "algebraic_pairing_target": f"B{actual_block}",
+                "identity_decoder_pauli_transfer_XYZ": port["pauli_transfer_diagonal_XYZ"],
+                "identity_decoder_average_fidelity": port["average_fidelity_to_identity"],
+                "perfect_fixed_port_transmission": port["perfect_fixed_port"],
+            }
+            for left, (actual_block, port) in enumerate(
+                zip(
+                    self.pairing,
+                    identity_decoder["fixed_port_transmission"]["ports"],
+                    strict=True,
+                )
             )
-        identity_capacity = sum(int(row["identity_decoder_capacity_qubits"]) for row in rows)
-        correct_capacity = sum(int(row["correct_decoder_capacity_qubits"]) for row in rows)
+        )
         return {
-            "declared_coupling": "encoded Bell-teleportation with identity right-block decoder B_i",
-            "port_channels": tuple(rows),
-            "naive_identity_decoder_capacity_qubits": identity_capacity,
-            "correct_algebraic_decoder_capacity_qubits": correct_capacity,
-            "capacity_formula": "identity decoder capacity equals fixed points of the encoded connectivity map",
+            "declared_coupling": (
+                "ideal block recovery followed by simultaneous encoded Bell teleportation with identity block routing"
+            ),
+            "port_channels": rows,
+            "identity_decoder": identity_decoder,
+            "pairing_aware_decoder": pairing_aware_decoder,
+            "identity_decoder_perfect_fixed_port_qubits": identity_decoder["fixed_port_transmission"][
+                "perfect_qubits"
+            ],
+            "identity_decoder_exact_joint_noiseless_qubits": identity_decoder[
+                "preserved_operator_algebra"
+            ]["exact_joint_noiseless_qubits"],
+            "pairing_aware_decoder_perfect_qubits": pairing_aware_decoder["fixed_port_transmission"][
+                "perfect_qubits"
+            ],
+            "interpretive_correction": (
+                "Fixed logical mouths count perfect named-port transmission only. They do not by themselves "
+                "give the quantum capacity of the simultaneous encoded channel."
+            ),
         }
 
     def operator_growth_controls(self) -> dict[str, object]:
@@ -237,25 +253,25 @@ class EncodedMouthBridgeModel:
             rows.append(
                 {
                     "probe": f"Q{left}",
-                    "encoded_output_support": f"B{actual_block}",
-                    "encoded_output_weight": self.block_distance,
-                    "identity_target_detector": f"B{left}",
-                    "correct_detector": f"B{actual_block}",
-                    "otoc_like_signal_at_identity_target": 1 if fixed else 0,
-                    "otoc_like_signal_at_correct_block": 1,
+                    "encoded_resource_pairing_support": f"B{actual_block}",
+                    "minimum_logical_support_weight": self.block_distance,
+                    "declared_identity_block": f"B{left}",
+                    "declared_target_overlap": 1 if fixed else 0,
+                    "off_target_pairing": not fixed,
                 }
             )
         return {
-            "pauli_support_growth_rows": tuple(rows),
-            "support_growth_summary": {
+            "encoded_resource_pairing_rows": tuple(rows),
+            "pairing_support_summary": {
                 "left_probe_weight": 1,
-                "encoded_output_weight": self.block_distance,
+                "minimum_right_logical_weight": self.block_distance,
                 "identity_target_hits": len(self.fixed_mouths()),
-                "wrong_encoded_mouth_hits": self.m - len(self.fixed_mouths()),
+                "off_target_encoded_pairings": self.m - len(self.fixed_mouths()),
             },
+            "dynamics_status": "structural encoded-pairing diagnostic only; no OTOC claim",
             "control_interpretation": (
                 "The twisted resource has the same low-order physical entropies as the aligned resource, "
-                "but OTOC-like detector signals appear on the algebraically correct encoded block."
+                "but its pairing-dependent logical Bell checks involve different encoded blocks."
             ),
         }
 
@@ -319,11 +335,11 @@ def _first_entropy_mismatch_order(
     return None
 
 
-def _capacity_profile(m: int) -> dict[int, int]:
+def _fixed_port_profile(m: int) -> dict[int, int]:
     profile: dict[int, int] = {}
     for pairing in permutations(range(m)):
-        capacity = sum(1 for left, block in enumerate(pairing) if left == block)
-        profile[capacity] = profile.get(capacity, 0) + 1
+        fixed_ports = sum(1 for left, block in enumerate(pairing) if left == block)
+        profile[fixed_ports] = profile.get(fixed_ports, 0) + 1
     return dict(sorted(profile.items()))
 
 
@@ -333,15 +349,17 @@ def _bounded_encoded_atlas(*, max_mouths: int) -> tuple[dict[str, object], ...]:
         models = tuple(EncodedMouthBridgeModel(name=f"m{m}_{pairing}", pairing=pairing) for pairing in permutations(range(m)))
         low_order_profiles = {repr(model.physical_low_order_entropy_profile(model.block_distance)) for model in models}
         coarse_shadows = {repr(model.coarse_entropy_mincut_shadow()) for model in models}
-        capacities = {model.channel_diagnostics()["naive_identity_decoder_capacity_qubits"] for model in models}
+        fixed_port_counts = {len(model.fixed_mouths()) for model in models}
         records.append(
             {
                 "m": m,
                 "models_checked": len(models),
                 "coarse_shadow_classes": len(coarse_shadows),
                 "low_order_physical_entropy_profile_classes_through_distance": len(low_order_profiles),
-                "identity_decoder_capacity_profile": _capacity_profile(m),
-                "same_low_order_profile_capacity_varies": len(low_order_profiles) == 1 and len(capacities) > 1,
+                "identity_decoder_perfect_fixed_port_profile": _fixed_port_profile(m),
+                "same_low_order_profile_fixed_port_transmission_varies": (
+                    len(low_order_profiles) == 1 and len(fixed_port_counts) > 1
+                ),
             }
         )
     return tuple(records)
@@ -355,6 +373,8 @@ def goal11_encoded_mouth_bridge_channel_certificate(
 ) -> dict[str, object]:
     if mouths < 2:
         raise ValueError("mouths must be at least 2 for an aligned/twisted channel split")
+    if mouths > 3 or atlas_max_mouths > 3:
+        raise ValueError("the explicit dense channel certificate is limited to at most three mouths")
     if atlas_max_mouths < mouths:
         raise ValueError("atlas_max_mouths must be at least mouths")
 
@@ -375,15 +395,18 @@ def goal11_encoded_mouth_bridge_channel_certificate(
     aligned_channel = aligned.channel_diagnostics()
     twisted_channel = twisted.channel_diagnostics()
     naive_channel_differs = (
-        aligned_channel["naive_identity_decoder_capacity_qubits"]
-        != twisted_channel["naive_identity_decoder_capacity_qubits"]
+        aligned_channel["identity_decoder_perfect_fixed_port_qubits"]
+        != twisted_channel["identity_decoder_perfect_fixed_port_qubits"]
     )
     correct_decoder_restores = (
-        aligned_channel["correct_algebraic_decoder_capacity_qubits"] == mouths
-        and twisted_channel["correct_algebraic_decoder_capacity_qubits"] == mouths
+        aligned_channel["pairing_aware_decoder_perfect_qubits"] == mouths
+        and twisted_channel["pairing_aware_decoder_perfect_qubits"] == mouths
     )
     atlas = _bounded_encoded_atlas(max_mouths=atlas_max_mouths)
-    first_atlas_split = next((record for record in atlas if record["same_low_order_profile_capacity_varies"]), None)
+    first_atlas_split = next(
+        (record for record in atlas if record["same_low_order_profile_fixed_port_transmission_varies"]),
+        None,
+    )
 
     certified_claims = {
         "encoded_mouth_models_declared": True,
@@ -394,18 +417,21 @@ def goal11_encoded_mouth_bridge_channel_certificate(
         "logical_block_entropy_reveals_decoder_scale_map": logical_block_split,
         "algebraic_connectivity_differs": algebra_differs,
         "naive_identity_decoder_channel_differs": naive_channel_differs
-        and aligned_channel["naive_identity_decoder_capacity_qubits"] == mouths
-        and twisted_channel["naive_identity_decoder_capacity_qubits"] == mouths - 2,
-        "correct_algebraic_decoder_restores_capacity": correct_decoder_restores,
+        and aligned_channel["identity_decoder_perfect_fixed_port_qubits"] == mouths
+        and twisted_channel["identity_decoder_perfect_fixed_port_qubits"] == mouths - 2,
+        "explicit_choi_channels_are_trace_preserving": (
+            aligned_channel["identity_decoder"]["trace_preserving_error"] < 1e-12
+            and twisted_channel["identity_decoder"]["trace_preserving_error"] < 1e-12
+        ),
+        "correct_algebraic_decoder_restores_exact_channel": correct_decoder_restores,
         "wrong_decoder_control_certified": all(
-            row["identity_decoder_capacity_qubits"] == 0
-            for row in twisted_channel["port_channels"][:2]  # type: ignore[index]
+            not row["perfect_fixed_port_transmission"] for row in twisted_channel["port_channels"][:2]
         ),
-        "otoc_like_correct_block_signals_recorded": all(
-            row["otoc_like_signal_at_correct_block"] == 1
-            for row in twisted.operator_growth_controls()["pauli_support_growth_rows"]  # type: ignore[index]
+        "encoded_pairing_support_recorded": all(
+            row["off_target_pairing"]
+            for row in twisted.operator_growth_controls()["encoded_resource_pairing_rows"][:2]
         ),
-        "bounded_atlas_has_low_order_blind_capacity_variation": first_atlas_split is not None
+        "bounded_atlas_has_low_order_blind_fixed_port_variation": first_atlas_split is not None
         and first_atlas_split["m"] == 2,
         "first_entropy_mismatch_at_decoder_scale": first_mismatch is not None
         and first_mismatch["order"] == aligned.block_distance + 1,
@@ -429,8 +455,9 @@ def goal11_encoded_mouth_bridge_channel_certificate(
             "claim": (
                 "For encoded Bell resources whose right mouths are encoded in distance-d stabilizer blocks, "
                 "logical mouth twists are invisible to labeled physical entropy diagnostics through order d, "
-                "but the identity decoded channel capacity is the number of fixed points of the logical "
-                "connectivity map.  The correct algebraic decoder restores full capacity."
+                "while the number of perfect named-port logical channels under the identity decoder is the "
+                "number of fixed points of the logical connectivity map. This is not a capacity formula. "
+                "The pairing-aware decoder restores the exact full logical channel."
             ),
             "proof_sketch": (
                 "The right code stabilizers are identical for all logical mouth pairings.  The only pairing-"
@@ -439,7 +466,7 @@ def goal11_encoded_mouth_bridge_channel_certificate(
                 "physical support at least d+1.  Therefore entropy ranks on regions of size at most d are "
                 "pairing-independent.  Decoding block B_j recovers the probe paired with that block, so an "
                 "identity decoder succeeds exactly on fixed points and the permutation-aware decoder succeeds "
-                "on all mouths."
+                "on all mouths. Explicit Bell-projection Kraus operators verify the resulting Choi matrices."
             ),
         },
         "representative_witness": {
@@ -451,26 +478,26 @@ def goal11_encoded_mouth_bridge_channel_certificate(
                 "first_entropy_mismatch": first_mismatch,
                 "logical_block_entropy_split": logical_block_split,
                 "algebraic_connectivity_differs": algebra_differs,
-                "naive_identity_decoder_capacity": {
-                    "first": aligned_channel["naive_identity_decoder_capacity_qubits"],
-                    "second": twisted_channel["naive_identity_decoder_capacity_qubits"],
+                "identity_decoder_perfect_fixed_port_qubits": {
+                    "first": aligned_channel["identity_decoder_perfect_fixed_port_qubits"],
+                    "second": twisted_channel["identity_decoder_perfect_fixed_port_qubits"],
                 },
-                "correct_decoder_capacity": {
-                    "first": aligned_channel["correct_algebraic_decoder_capacity_qubits"],
-                    "second": twisted_channel["correct_algebraic_decoder_capacity_qubits"],
+                "pairing_aware_decoder_perfect_qubits": {
+                    "first": aligned_channel["pairing_aware_decoder_perfect_qubits"],
+                    "second": twisted_channel["pairing_aware_decoder_perfect_qubits"],
                 },
             },
         },
         "bounded_atlas": {
             "records": atlas,
-            "first_low_order_blind_capacity_split": first_atlas_split,
+            "first_low_order_blind_fixed_port_split": first_atlas_split,
         },
         "scalable_family_statement": {
             "status": "theorem_schema",
             "claim": (
                 "Replacing the five-qubit block by any right-mouth stabilizer encoding family with distance d "
-                "hides logical mouth twists from physical entropy probes of order at most d, while decoded "
-                "capacity remains controlled by the logical connectivity map.  Distance amplification would "
+                "hides logical mouth twists from physical entropy probes of order at most d, while named-port "
+                "transmission remains controlled by the logical connectivity map. Distance amplification would "
                 "raise the physical order at which entropy can detect the mouth map."
             ),
             "caveat": (
@@ -487,9 +514,17 @@ def goal11_encoded_mouth_bridge_channel_certificate(
                 "Full encoded blocks reveal the logical mouth map; this is the algebraic decoder scale, not a "
                 "low-order physical shadow."
             ),
-            "algebra_visible": "The logical connectivity matrix predicts identity-decoder and correct-decoder capacity.",
-            "channel_visible": "The certificate emits exact zero/one Pauli transfer matrices for identity and correct decoders.",
-            "control_visible": "Wrong identity decoders fail on twisted mouths; OTOC-like signals appear on the correct encoded block.",
+            "algebra_visible": (
+                "The logical connectivity matrix predicts fixed-port transmission and the pairing-aware decoder."
+            ),
+            "channel_visible": (
+                "The certificate constructs the simultaneous logical CPTP map and emits Choi, fidelity, Pauli-noise, "
+                "and preserved-operator-algebra diagnostics."
+            ),
+            "control_visible": (
+                "The encoded Bell checks record the off-target block pairing; the explicit channel separately "
+                "records the wrong-decoder dynamics."
+            ),
         },
         "related_work": {
             "conceptual_prior_art": (
@@ -509,11 +544,11 @@ def goal11_encoded_mouth_bridge_channel_certificate(
         ),
         "reproducibility": {
             "goal11_certificate": (
-                f"python3 -m qgtoy er-epr-encoded --mouths {mouths} --low-order {low_order} "
+                f"PYTHONPATH=. python3 -m qgtoy er-epr-encoded --mouths {mouths} --low-order {low_order} "
                 f"--atlas-max-mouths {atlas_max_mouths}"
             ),
             "focused_regression": (
-                "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
+                "PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
                 "test_goal11_encoded_mouth_bridge_channel_certificate"
             ),
         },

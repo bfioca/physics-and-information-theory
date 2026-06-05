@@ -7,6 +7,7 @@ import json
 from typing import Any
 
 from .bridge_proof import bridge_symbolic_proof_check
+from .bilayer import bilayer_reconstruction_program_certificate
 from .cosmology import (
     bridge_cosmology_phase1_certificate,
     bridge_cosmology_phase2_certificate,
@@ -526,6 +527,10 @@ def run_er_epr_traversable(args: argparse.Namespace) -> None:
             sort_keys=True,
         )
     )
+
+
+def run_bilayer_program(args: argparse.Namespace) -> None:
+    print(json.dumps(bilayer_reconstruction_program_certificate(), indent=2, sort_keys=True))
 
 
 def run_cosmology_phase1(args: argparse.Namespace) -> None:
@@ -1629,6 +1634,12 @@ def build_parser() -> argparse.ArgumentParser:
     er_epr_traversable.add_argument("--low-order", type=int, default=3)
     er_epr_traversable.add_argument("--atlas-max-mouths", type=int, default=3)
     er_epr_traversable.set_defaults(func=run_er_epr_traversable)
+
+    bilayer_program = subparsers.add_parser(
+        "bilayer-program",
+        help="emit the finite static-patch bilayer reconstruction research certificate",
+    )
+    bilayer_program.set_defaults(func=run_bilayer_program)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

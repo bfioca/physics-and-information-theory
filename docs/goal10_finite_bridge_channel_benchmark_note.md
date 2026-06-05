@@ -30,23 +30,28 @@ identity mouths:
 Q_i + L_i -> R_i.
 ```
 
-**Theorem.** For this family, the fixed-mouth quantum channel capacity is the
-number of fixed points of `pi`. Coarse L/R entropy and EPR min-cut diagnostics
-depend only on `m`, so they do not determine the fixed-mouth channel.
+**Theorem.** For this family, the number of perfect named-port product channels
+under the identity decoder is the number of fixed points of `pi`. This is not a
+quantum-capacity formula. Coarse L/R entropy and EPR min-cut diagnostics depend
+only on `m`, so they do not determine the named-port channel.
+
+The channel is now constructed from the Bell-projection and feed-forward Kraus
+operators. The certificate checks trace preservation, Choi rank, Pauli
+transfer, entanglement fidelity, and the preserved operator algebra.
 
 ## Representative Witness
 
 For `m=2`:
 
-| Model | Algebraic connectivity | Coarse L/R entropy and min-cut | Fixed-mouth capacity |
+| Model | Algebraic connectivity | Coarse L/R entropy and min-cut | Perfect fixed ports |
 | --- | --- | --- | --- |
 | aligned | `L0-R0`, `L1-R1` | `S(L)=S(R)=mincut(L)=2` | `2` qubits |
 | crossed | `L0-R1`, `L1-R0` | `S(L)=S(R)=mincut(L)=2` | `0` qubits |
 
-The crossed model is the exact wrong-mouth control: the probe is transferred,
-but to the wrong named right port. Its optimal capacity after right-port relabeling
-is still `2`, so the claim is not that entanglement disappeared. The claim is
-that coarse entanglement does not specify the named bridge channel.
+For the crossed model with the identity decoder, the simultaneous two-qubit
+channel is the correlated `II/XX/YY/ZZ` twirl. It has no perfect fixed-port
+qubit and no quantum noiseless subsystem, but preserves a two-generator
+classical center. The pairing-aware decoder is exactly the identity channel.
 
 ## Diagnostics
 
@@ -54,12 +59,11 @@ that coarse entanglement does not specify the named bridge channel.
   min-cut agree for aligned and crossed resources.
 - Algebra-visible: the connectivity matrix differs and predicts the declared
   channel.
-- Channel-visible: the Pauli transfer matrix to each declared target is either
-  identity `(1,1,1)` or zero `(0,0,0)`.
-- Control-visible: the crossed resource has the same one-qubit operator size
-  but sends probes to off-target mouths. The certificate also records an
-  OTOC-like detector signal: the crossed resource lights up the actual wrong
-  mouth, not the declared target.
+- Channel-visible: explicit Choi and Pauli-transfer diagnostics distinguish the
+  identity channel from the correlated crossed-mouth twirl.
+- Structural-control visible: the crossed resource has the same one-qubit
+  pair-generator weight but different named resource connectivity. Dynamics
+  are reported only by the explicit channel calculation.
 
 Port-resolved pair entropies do distinguish this simple EPR witness. This is
 why the result is a finite channel benchmark against coarse entropy/min-cut
@@ -96,14 +100,14 @@ benchmark it does, exactly.
 This is a stabilizer port benchmark, not a continuum-gravity theorem and not a
 generic many-body traversable-wormhole simulation. The crossed resource is an
 exact wrong-mouth/permutation-scrambling proxy, not a chaotic SYK-like control.
-The next harder target is a non-Clifford or tensor-network family where richer
-entropy/min-cut diagnostics still collide while algebraic connectivity predicts
-channel capacity.
+The next harder target is a non-Clifford or tensor-network family where
+complete entropy data collide while operator algebra predicts an operational
+recovery distinction.
 
 ## Reproducibility
 
 | Claim | Command |
 | --- | --- |
-| Goal 10 channel certificate | `python3 -m qgtoy er-epr-channel --max-pairs 4` |
-| Focused Goal 10 regression | `python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_bridge_channel_benchmark_certificate` |
+| Goal 10 channel certificate | `PYTHONPATH=. python3 -m qgtoy er-epr-channel --max-pairs 4` |
+| Focused Goal 10 regression | `PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_bridge_channel_benchmark_certificate` |
 | JSON certificate index validation | `python3 -m json.tool docs/goal10_finite_bridge_channel_benchmark_certificate_index.json` |

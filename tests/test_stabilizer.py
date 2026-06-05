@@ -1478,14 +1478,16 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertTrue(claims["aligned_crossed_port_resolved_entropy_splits"])
         self.assertTrue(claims["aligned_crossed_algebraic_connectivity_differs"])
         self.assertTrue(claims["aligned_crossed_fixed_mouth_channel_differs"])
-        self.assertTrue(claims["operator_growth_wrong_mouth_control_certified"])
-        self.assertTrue(claims["bounded_atlas_has_same_coarse_shadow_capacity_variation"])
-        self.assertTrue(claims["optimal_relabel_capacity_limitation_recorded"])
+        self.assertTrue(claims["resource_pairing_wrong_mouth_control_certified"])
+        self.assertTrue(claims["explicit_choi_channels_are_trace_preserving"])
+        self.assertTrue(claims["crossed_identity_decoder_has_correlated_classical_center"])
+        self.assertTrue(claims["bounded_atlas_has_same_coarse_shadow_fixed_port_variation"])
+        self.assertTrue(claims["pairing_aware_decoder_restores_exact_channel"])
 
         witness = certificate["representative_witness"]
         self.assertTrue(witness["comparisons"]["coarse_entropy_mincut_match"])
-        self.assertEqual(witness["comparisons"]["fixed_mouth_channel_capacity"]["first"], 2)
-        self.assertEqual(witness["comparisons"]["fixed_mouth_channel_capacity"]["second"], 0)
+        self.assertEqual(witness["comparisons"]["perfect_fixed_port_qubits"]["first"], 2)
+        self.assertEqual(witness["comparisons"]["perfect_fixed_port_qubits"]["second"], 0)
         self.assertEqual(
             witness["first"]["algebraic_connectivity_diagnostics"]["connectivity_matrix_rows_L_columns_R"],
             ((1, 0), (0, 1)),
@@ -1495,10 +1497,11 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
             ((0, 1), (1, 0)),
         )
         self.assertEqual(
-            certificate["bounded_atlas"]["first_same_coarse_shadow_channel_split"]["m"],
+            certificate["bounded_atlas"]["first_same_coarse_shadow_fixed_port_split"]["m"],
             2,
         )
         self.assertIn("number of fixed points", certificate["theorem_style_result"]["claim"])
+        self.assertIn("not a quantum-capacity formula", certificate["theorem_style_result"]["claim"])
 
     def test_goal11_encoded_mouth_bridge_channel_certificate(self):
         certificate = goal11_encoded_mouth_bridge_channel_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
@@ -1511,8 +1514,10 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertTrue(claims["logical_block_entropy_reveals_decoder_scale_map"])
         self.assertTrue(claims["algebraic_connectivity_differs"])
         self.assertTrue(claims["naive_identity_decoder_channel_differs"])
-        self.assertTrue(claims["correct_algebraic_decoder_restores_capacity"])
+        self.assertTrue(claims["explicit_choi_channels_are_trace_preserving"])
+        self.assertTrue(claims["correct_algebraic_decoder_restores_exact_channel"])
         self.assertTrue(claims["wrong_decoder_control_certified"])
+        self.assertTrue(claims["encoded_pairing_support_recorded"])
         self.assertTrue(claims["first_entropy_mismatch_at_decoder_scale"])
 
         witness = certificate["representative_witness"]
@@ -1520,10 +1525,10 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertEqual(low_order_audit["mismatch_count"], 0)
         self.assertEqual(low_order_audit["regions_checked"], 299)
         self.assertEqual(witness["comparisons"]["first_entropy_mismatch"]["order"], 4)
-        self.assertEqual(witness["comparisons"]["naive_identity_decoder_capacity"]["first"], 2)
-        self.assertEqual(witness["comparisons"]["naive_identity_decoder_capacity"]["second"], 0)
-        self.assertEqual(witness["comparisons"]["correct_decoder_capacity"]["first"], 2)
-        self.assertEqual(witness["comparisons"]["correct_decoder_capacity"]["second"], 2)
+        self.assertEqual(witness["comparisons"]["identity_decoder_perfect_fixed_port_qubits"]["first"], 2)
+        self.assertEqual(witness["comparisons"]["identity_decoder_perfect_fixed_port_qubits"]["second"], 0)
+        self.assertEqual(witness["comparisons"]["pairing_aware_decoder_perfect_qubits"]["first"], 2)
+        self.assertEqual(witness["comparisons"]["pairing_aware_decoder_perfect_qubits"]["second"], 2)
         self.assertEqual(
             witness["first"]["algebraic_reconstruction"]["connectivity_matrix_rows_L_columns_right_blocks"],
             ((1, 0), (0, 1)),
@@ -1532,9 +1537,10 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
             witness["second"]["algebraic_reconstruction"]["connectivity_matrix_rows_L_columns_right_blocks"],
             ((0, 1), (1, 0)),
         )
-        self.assertEqual(certificate["bounded_atlas"]["first_low_order_blind_capacity_split"]["m"], 2)
+        self.assertEqual(certificate["bounded_atlas"]["first_low_order_blind_fixed_port_split"]["m"], 2)
         self.assertIn("through order d", certificate["theorem_style_result"]["claim"])
         self.assertIn("fixed points", certificate["theorem_style_result"]["claim"])
+        self.assertIn("not a capacity formula", certificate["theorem_style_result"]["claim"])
 
     def test_goal12_finite_bridge_channel_dynamics_certificate(self):
         certificate = goal12_finite_bridge_channel_dynamics_certificate(mouths=2, low_order=3, atlas_max_mouths=3)
