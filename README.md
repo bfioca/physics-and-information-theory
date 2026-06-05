@@ -65,6 +65,9 @@ encoded channel controls, and coupling-activated transfer checks.
 For the public-release audit, see
 [`docs/public_release_checklist.md`](docs/public_release_checklist.md).
 
+For the current expert-facing bridge-channel summary, see
+[`docs/harlow_facing_bridge_channel_note.md`](docs/harlow_facing_bridge_channel_note.md).
+
 ## Core Implementation
 
 The current implementation focuses on finite binary symplectic calculations:

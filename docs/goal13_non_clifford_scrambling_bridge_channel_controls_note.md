@@ -90,6 +90,6 @@ Pauli-twirled proxy. Full encoded-block diagnostics still reveal the mouth map.
 
 | Claim | Command |
 | --- | --- |
-| Goal 13 control certificate | `python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3` |
-| Focused Goal 13 regression | `python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Goal 13 control certificate | `PYTHONPATH=. python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3` |
+| Focused Goal 13 regression | `PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
 | JSON certificate index validation | `python3 -m json.tool docs/goal13_non_clifford_scrambling_bridge_channel_controls_certificate_index.json` |
