@@ -95,7 +95,7 @@ and channel-visible diagnostics differ.
 Goal 4 packages the shared lesson as a diagnostic question: which finite data
 determine an observer's effective quantum theory?
 
-## Harlow-Facing Interpretation
+## Expert-Facing Interpretation
 
 In closed-universe observer language, `S_Ob` can set a size scale, but it does
 not specify which quantum mechanics the observer gets. The finite OA-QEC

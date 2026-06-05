@@ -3,7 +3,7 @@
   "status": "certificate_available",
   "core_command": "python3 -m qgtoy observer-tomography-kgt1 --max-n 4",
   "human_note": "docs/goal5_kgt1_observer_algebra_tomography_note.md",
-  "harlow_facing_note": "docs/goal5_harlow_theorem_note.md",
+  "expert_facing_note": "docs/goal5_expert_theorem_note.md",
   "core_claim": "For k>1 finite stabilizer/OA-QEC codes, all-region erasure-correctability plus survivor fixed-point booleans do not determine all-region observer-algebra signatures.",
   "minimal_counterexample": {
     "parameters": {
@@ -98,5 +98,5 @@
       "k1_completion_lemma_as_cleaning_qss_access_structure_boundary"
     ]
   },
-  "harlow_facing_interpretation": "For k>1, erasure/survivor channel shadows detect forbidden and qualified regions but not the symplectic type of intermediate observer algebras. Center data alone is still insufficient. Center plus logical commutant dimensions algebraically complete observer-algebra signatures, but the non-tautological open problem is to replace direct commutant input with operational diagnostics."
+  "expert_facing_interpretation": "For k>1, erasure/survivor channel shadows detect forbidden and qualified regions but not the symplectic type of intermediate observer algebras. Center data alone is still insufficient. Center plus logical commutant dimensions algebraically complete observer-algebra signatures, but the non-tautological open problem is to replace direct commutant input with operational diagnostics."
 }

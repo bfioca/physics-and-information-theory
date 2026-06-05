@@ -109,7 +109,7 @@
       "command": "python3 -m json.tool docs/goal8_intrinsic_observer_tomography_certificate_index.json"
     }
   ],
-  "harlow_facing_interpretation": "Goal 8 upgrades the finite observer-algebra tomography atlas by removing labeled logical Pauli queries. In the k=2,n<=4 stabilizer/OA-QEC atlas, natural intrinsic shadows such as erasure/survivor data, survivor fixed-point dimension, local physical-Pauli response spectra, restricted distinguishability dimension, and local center data have bounded-minimal collisions against tau(R). The positive theorem candidate is intrinsic: locally supported code-preserving physical operators recover dim L_R, and commutator experiments internal to R recover the restricted symplectic form, hence tau(R).",
+  "expert_facing_interpretation": "Goal 8 upgrades the finite observer-algebra tomography atlas by removing labeled logical Pauli queries. In the k=2,n<=4 stabilizer/OA-QEC atlas, natural intrinsic shadows such as erasure/survivor data, survivor fixed-point dimension, local physical-Pauli response spectra, restricted distinguishability dimension, and local center data have bounded-minimal collisions against tau(R). The positive theorem candidate is intrinsic: locally supported code-preserving physical operators recover dim L_R, and commutator experiments internal to R recover the restricted symplectic form, hence tau(R).",
   "limitations": "This is exact finite stabilizer/OA-QEC mathematics. Minimality claims are bounded by the declared k, n, and equivalence quotient. The positive completion assumes exact access to code-preserving local Pauli perturbations and exact commutator experiments; it is not a continuum-gravity or approximate-QEC theorem.",
   "frontier": [
     "local-Clifford quotient scans",

@@ -94,7 +94,7 @@ of the Goal 9 Wedderburn signature.
 - Matsumoto/Yamashita stabilizer QSS access structures are the closest
   stabilizer-side overlap: [arXiv:1811.05217](https://arxiv.org/abs/1811.05217).
 
-## Harlow-Facing Summary
+## Expert-Facing Summary
 
 Goal 9 reframes observer algebra as an intrinsically tomographable
 finite-dimensional observable algebra. Weak shadows such as dimension, center

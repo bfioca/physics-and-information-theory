@@ -325,7 +325,7 @@ def goal9_finite_oaqec_intrinsic_tomography_certificate(
             "stabilizer_oaqec": "Goal 8 is the stabilizer/Pauli special case of product/* algebra tomography.",
             "qss_access_structures": "Weak-shadow collisions are finite algebra analogues of intermediate-access information not captured by qualified/forbidden data alone.",
         },
-        "harlow_facing_interpretation": (
+        "expert_facing_interpretation": (
             "Goal 9 reframes observer algebra as an intrinsically tomographable finite-dimensional "
             "observable algebra.  Weak shadows such as dimension, center size, and commutator dimension "
             "do not determine the algebra, but full region-local product/* response does determine "

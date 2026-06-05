@@ -60,7 +60,7 @@ The center-plus-response row is a hybrid completion: entropy response gives
 commutator experiments. The fully operational positive row is response plus
 commutator tomography.
 
-## Harlow-Facing Summary
+## Expert-Facing Summary
 
 We built an equivalence-aware finite stabilizer/OA-QEC observer-algebra
 tomography atlas for `k=2,n<=4`, quotienting by qubit permutations and checking

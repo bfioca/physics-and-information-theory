@@ -39,7 +39,7 @@
   "proof_obligations": [
     {
       "id": "goal4_fast_tomography_certificate",
-      "claim": "The fast Goal 4 certificate emits the theorem-style claim, balanced-bridge prefix records, tomography tiers, and Harlow-facing interpretation.",
+      "claim": "The fast Goal 4 certificate emits the theorem-style claim, balanced-bridge prefix records, tomography tiers, and expert-facing interpretation.",
       "command": "python3 -m qgtoy observer-tomography --max-m 3"
     },
     {
@@ -95,5 +95,5 @@
       "all_stabilizer_oa_qec_observer_classification"
     ]
   },
-  "harlow_facing_interpretation": "S_Ob sets a size scale, but the observer's effective physics is specified by entropy scale, observer algebra, and channel/coarse-graining data. Entropy, horizon, min-cut, and fixed-point shadows alone are incomplete finite invariants."
+  "expert_facing_interpretation": "S_Ob sets a size scale, but the observer's effective physics is specified by entropy scale, observer algebra, and channel/coarse-graining data. Entropy, horizon, min-cut, and fixed-point shadows alone are incomplete finite invariants."
 }

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "Physics and Information Theory Toy Verifier"
+authors:
+  - family-names: "Fioca"
+    given-names: "Brian"
+year: 2026
+repository-code: "https://github.com/bfioca/physics-and-information-theory"
+license: "MIT"
+abstract: "Exact finite stabilizer/QEC certificates for entropy, reconstruction, observer-algebra tomography, and algebraic ER=EPR channel benchmarks."

@@ -1,7 +1,7 @@
 # Goal 8 Related-Work and Novelty Audit
 
 This is a quick primary-source sanity pass, not a comprehensive literature
-review. The purpose is to keep the Goal 8 claim honest before a Harlow-facing
+review. The purpose is to keep the Goal 8 claim honest before an expert-facing
 package.
 
 ## Verdict
@@ -35,7 +35,7 @@ minimality records and certificate-backed witnesses.
 | Weak shadows such as channel, center, and dimension-only response fail for `k>1`. | Likely close to known access-structure/intermediate-information phenomena. | Certificate-backed finite hierarchy; phrase as bounded atlas evidence unless generalized. |
 | Physical response plus commutator tomography determines `tau(R)`. | May reduce to local-centralizer quotient plus symplectic form. | Theorem-style packaging of known ingredients; novelty is the intrinsic operational framing and hierarchy. |
 | Equivalence-aware atlas with minimal collisions and distance-amplified witnesses. | I did not find this exact diagnostic-atlas package in the quick search. | Plausibly new artifact/contribution. |
-| Observer-algebra tomography as Harlow-facing program. | Conceptually adjacent to OAQEC and observer-algebra work, but not found as a named finite-code diagnostic hierarchy. | Plausibly new framing; should be pitched humbly. |
+| Observer-algebra tomography as expert-facing program. | Conceptually adjacent to OAQEC and observer-algebra work, but not found as a named finite-code diagnostic hierarchy. | Plausibly new framing; should be pitched humbly. |
 
 ## Do Not Claim
 
@@ -60,7 +60,7 @@ Avoid:
 
 > We discovered a new way to reconstruct OAQEC algebras.
 
-## Harlow-Facing Pitch
+## Expert-Facing Pitch
 
 > This may be known in QSS/OAQEC language, so I am framing it cautiously. The
 > finite result is an observer-algebra tomography hierarchy: entropy/channel and

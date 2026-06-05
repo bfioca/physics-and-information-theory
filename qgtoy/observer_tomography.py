@@ -697,7 +697,7 @@ def observer_algebra_tomography_certificate(
         "bounded_positive_boundary_scan_complete": skip_boundary_scan
         or (boundary_scan is not None and boundary_scan["status"] == "bounded_scan_complete"),
         "bounded_search_obligations_declared": True,
-        "harlow_facing_interpretation_declared": True,
+        "expert_facing_interpretation_declared": True,
     }
     required_claims = tuple(
         value
@@ -734,7 +734,7 @@ def observer_algebra_tomography_certificate(
             "bounded_strict_cover_audit": f"python3 -m qgtoy cosmology-phase31 --max-bonus {max_bonus}",
             "finite_min_cut_audit": "python3 -m qgtoy holography-phase40",
         },
-        "harlow_facing_interpretation": (
+        "expert_facing_interpretation": (
             "In closed-universe observer language, S_Ob can set a size scale, but it does not "
             "specify the observer's effective quantum mechanics. The finite OA-QEC data needed "
             "to specify observer physics include at least an observer algebra and a channel/coarse-"

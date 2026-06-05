@@ -252,7 +252,7 @@ commutant dimensions. The non-tautological open problem is to replace direct
 logical-commutant input with operational channel, entropy, recovery, or
 commutator probes.
 
-## Harlow-Facing One-Paragraph Version
+## Expert-Facing One-Paragraph Version
 
 We found a strict finite stabilizer/OA-QEC diagnostic hierarchy for observer
 algebras. Entropy/min-cut data and even all-region erasure/survivor channel
@@ -273,7 +273,7 @@ relative-entropy, recovery, channel-spectrum, or commutator-test data.
 | Goal 5 theorem/counterexample certificate | `python3 -m qgtoy observer-tomography-kgt1 --max-n 4` |
 | Direct all-region scan of `[[15,2,3]]` amplified witness | `python3 -m qgtoy observer-tomography-kgt1 --max-n 4 --include-amplified-full-scan` |
 | Goal 4 `k=1` boundary certificate | `python3 -m qgtoy observer-tomography --max-m 3 --scan-max-n 4` |
-| One-page Harlow-facing theorem note | `docs/goal5_harlow_theorem_note.md` |
+| One-page expert-facing theorem note | `docs/goal5_expert_theorem_note.md` |
 
 ## Limitations
 

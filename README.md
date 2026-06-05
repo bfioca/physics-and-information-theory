@@ -1,7 +1,43 @@
 # Physics and Information Theory Toy Verifier
 
-This repository contains an exact, dependency-light verifier for small
-stabilizer states and stabilizer quantum error-correcting codes.
+Exact finite stabilizer/QEC certificates for entropy, reconstruction,
+observer-algebra tomography, and algebraic ER=EPR channel benchmarks.
+
+This repository is a research-code notebook with executable certificates. It
+uses small, exact finite models to test which diagnostics are too coarse to
+identify reconstruction algebras or bridge-channel behavior. The results are
+finite stabilizer/OA-QEC and tensor-network toy results; they are not claims
+about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
+
+## Main Results
+
+- **Goals 1-3:** entropy, horizon, and finite min-cut shadows can agree while
+  reconstruction-visible and channel-visible diagnostics differ.
+- **Goals 4-9:** observer-algebra tomography forms a finite diagnostic
+  hierarchy; weak shadows fail, while sufficiently rich operational/product
+  data recover the finite algebraic signature.
+- **Goal 10:** in a finite ER=EPR channel benchmark, coarse L/R entropy and
+  min-cut count bridge resources but do not determine the named channel;
+  algebraic connectivity does for the declared permutation-EPR family.
+
+## Public Claim Boundary
+
+Use this repo as a finite certificate suite and hypothesis generator. The safe
+claim is:
+
+```text
+finite entropy/min-cut shadows can be incomplete;
+operator-algebraic data can be necessary to predict reconstruction or channel behavior.
+```
+
+Do not read the certificates as continuum-gravity theorems or as novelty claims
+about standard stabilizer/OA-QEC linear algebra. Each memo separates exact
+theorem-style claims, bounded exhaustive evidence, and limitations.
+
+For the public-release audit, see
+[`docs/public_release_checklist.md`](docs/public_release_checklist.md).
+
+## Core Implementation
 
 The current implementation focuses on finite binary symplectic calculations:
 
@@ -26,6 +62,17 @@ The current implementation focuses on finite binary symplectic calculations:
 
 The verifier is intended to treat search systems as hypothesis generators and
 to make every candidate pass exact checks.
+
+## Quickstart
+
+No runtime dependencies are required beyond Python 3.11+.
+
+```bash
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_algebraic_er_epr_channel_benchmark_certificate
+python3 -m qgtoy er-epr-channel --max-pairs 4
+```
+
+For the broader certificate family, run the commands below.
 
 ## Examples
 
@@ -124,10 +171,10 @@ Emit the Goal 4 observer-algebra tomography certificate:
 python3 -m qgtoy observer-tomography --max-m 3
 ```
 
-Read the Harlow-facing theorem note:
+Read the expert-facing theorem note:
 
 ```text
-docs/harlow_facing_observer_algebra_tomography_note.md
+docs/expert_facing_observer_algebra_tomography_note.md
 ```
 
 Run the bounded all-region tomography scan through `n <= 4` and audit the
@@ -143,10 +190,10 @@ Emit the Goal 5 `k>1` observer-algebra tomography certificate:
 python3 -m qgtoy observer-tomography-kgt1 --max-n 4
 ```
 
-Read the Goal 5 Harlow-facing theorem note:
+Read the Goal 5 expert-facing theorem note:
 
 ```text
-docs/goal5_harlow_theorem_note.md
+docs/goal5_expert_theorem_note.md
 ```
 
 Emit the Goal 6 operational observer-algebra tomography certificate:

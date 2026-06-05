@@ -82,7 +82,7 @@ L_R = L iff dim L_R = 2k.
 So physical response plus commutator tomography determines `tau(R)` without
 labeled logical Pauli probes.
 
-## Harlow-Facing Summary
+## Expert-Facing Summary
 
 Goal 8 upgrades the finite observer-algebra tomography atlas by removing
 labeled logical Pauli queries. In the `k=2,n<=4` stabilizer/OA-QEC atlas,

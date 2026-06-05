@@ -519,7 +519,7 @@ def goal5_kgt1_observer_tomography_certificate(
             ),
         },
         "certified_claims": certified_claims,
-        "harlow_facing_interpretation": (
+        "expert_facing_interpretation": (
             "The finite observer-algebra tomography hierarchy separates entropy/min-cut size data from "
             "operator access data. For k>1, erasure/survivor channel shadows detect only forbidden and "
             "qualified regions; intermediate observer algebras require center/commutant information."

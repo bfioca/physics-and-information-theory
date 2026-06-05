@@ -591,7 +591,7 @@ def goal8_intrinsic_observer_tomography_certificate(
                 "physical response plus commutator tomography as the first completion tier in this finite scope."
             ),
         },
-        "harlow_facing_interpretation": (
+        "expert_facing_interpretation": (
             "Goal 8 upgrades the finite observer-algebra tomography atlas by removing labeled logical Pauli "
             "queries. In the k=2,n<=4 stabilizer/OA-QEC atlas, natural intrinsic shadows such as erasure/"
             "survivor data, survivor fixed-point dimension, local physical-Pauli response spectra, restricted "

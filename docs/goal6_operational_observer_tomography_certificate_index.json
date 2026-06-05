@@ -76,5 +76,5 @@
       "stabilizer_entropy_rank_response_under_added_logical_checks"
     ]
   },
-  "harlow_facing_interpretation": "Weak observer shadows fail for k>1, but finite operational probes can complete the observer-algebra signature: single logical perturbation response identifies visible logical probes, and commutator tests recover the symplectic type of the visible algebra."
+  "expert_facing_interpretation": "Weak observer shadows fail for k>1, but finite operational probes can complete the observer-algebra signature: single logical perturbation response identifies visible logical probes, and commutator tests recover the symplectic type of the visible algebra."
 }

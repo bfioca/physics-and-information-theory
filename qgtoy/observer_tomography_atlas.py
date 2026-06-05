@@ -429,7 +429,7 @@ def goal7_observer_tomography_atlas_certificate(
                 "attaches distance-amplification proof obligations."
             ),
         },
-        "harlow_facing_interpretation": (
+        "expert_facing_interpretation": (
             "We built an equivalence-aware finite stabilizer/OA-QEC observer-algebra tomography atlas "
             "for k=2,n<=4, quotienting by qubit permutations and checking all physical regions. The atlas "
             "classifies which operational shadows determine the observer-algebra signature tau(R). It finds "

@@ -1333,7 +1333,7 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         scan = boundary["bounded_all_region_shadow_scan"]
         self.assertEqual(scan["first_no_collision_tier_observed"], "plus_erasure_fixed_points")
         self.assertEqual(scan["k1_erasure_fixed_point_completion_lemma"]["status"], "pass")
-        self.assertIn("S_Ob", certificate["harlow_facing_interpretation"])
+        self.assertIn("S_Ob", certificate["expert_facing_interpretation"])
 
     def test_goal5_kgt1_observer_algebra_tomography_certificate(self):
         certificate = goal5_kgt1_observer_tomography_certificate(max_n=4)
@@ -1465,7 +1465,7 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         theorem = certificate["positive_theorem"]
         self.assertIn("product/* table", theorem["claim"])
         self.assertTrue(all(record["status"] == "pass" for record in theorem["theorem_audit_examples"]))
-        self.assertIn("stabilizer special case", certificate["harlow_facing_interpretation"])
+        self.assertIn("stabilizer special case", certificate["expert_facing_interpretation"])
 
     def test_goal10_algebraic_er_epr_channel_benchmark_certificate(self):
         certificate = goal10_algebraic_er_epr_channel_benchmark_certificate(max_pairs=4)
