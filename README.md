@@ -28,6 +28,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   encoded Clifford couplings transfer probes exactly when the coupling
   activation matches the algebraic bridge map; entropy-matched controls fail
   under wrong activations.
+- **Goal 13:** non-Clifford and scrambling bridge-channel controls preserve
+  the same entropy-blind encoded-mouth setup: algebra-aware Clifford and
+  `T`-dressed activations transfer, while mouth-blind Pauli-twirled scrambling
+  controls fail to produce structured named-mouth capacity.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -98,6 +102,8 @@ PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest
 PYTHONPATH=. python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate
 PYTHONPATH=. python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate
+PYTHONPATH=. python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -312,6 +318,19 @@ Read the Goal 12 theorem note and machine-readable certificate index:
 ```text
 docs/goal12_finite_bridge_channel_dynamics_note.md
 docs/goal12_finite_bridge_channel_dynamics_certificate_index.json
+```
+
+Emit the Goal 13 non-Clifford/scrambling bridge-channel control certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3
+```
+
+Read the Goal 13 theorem note and machine-readable certificate index:
+
+```text
+docs/goal13_non_clifford_scrambling_bridge_channel_controls_note.md
+docs/goal13_non_clifford_scrambling_bridge_channel_controls_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

@@ -1,0 +1,94 @@
+{
+  "package": "Goal 13: Non-Clifford And Scrambling Bridge-Channel Controls",
+  "status": "certificate_available",
+  "core_command": "python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3",
+  "human_note": "docs/goal13_non_clifford_scrambling_bridge_channel_controls_note.md",
+  "scope": {
+    "family": "encoded Bell resources with product five-qubit right-mouth blocks",
+    "representative_mouths": 2,
+    "right_block_code": "[[5,1,3]] five-qubit perfect stabilizer code",
+    "low_order_cutoff": 3,
+    "atlas_max_mouths": 3,
+    "control_protocols": [
+      "identity Clifford bridge activation",
+      "algebra-aware Clifford bridge activation",
+      "algebra-aware non-Clifford logical T-dressed activation",
+      "mouth-blind Pauli-twirled generic scrambling proxy"
+    ]
+  },
+  "core_claim": "Coarse/low-order entropy shadows do not determine naive bridge-channel transfer; algebra-aware Clifford and non-Clifford controls restore transfer, while mouth-blind scrambling controls fail to produce structured named-mouth capacity.",
+  "theorem_style_claims": [
+    {
+      "id": "entropy_blind_naive_transfer_split",
+      "claim": "Aligned and twisted encoded-mouth resources have matching coarse entropy/min-cut and labeled physical entropy through the code distance, but identity activation has different transfer capacity."
+    },
+    {
+      "id": "non_clifford_algebraic_transfer",
+      "claim": "A public algebra-aware activation followed by logical T has full bridge-channel capacity and a non-Clifford Pauli-transfer matrix; a T-dagger phase frame restores identity fidelity."
+    },
+    {
+      "id": "generic_scrambling_control_failure",
+      "claim": "A mouth-blind Pauli-twirled scrambling proxy has zero structured named-mouth Pauli transfer and zero structured transfer capacity on the representative resources and bounded atlas."
+    }
+  ],
+  "bounded_exhaustive_evidence": [
+    {
+      "id": "representative_m2_control_audit",
+      "scope": "aligned and twisted two-mouth encoded resources with identity, algebra-aware Clifford, algebra-aware T-dressed, and mouth-blind twirled controls",
+      "low_order_regions_checked": 299,
+      "low_order_mismatch_count": 0,
+      "first_entropy_mismatch_order": 4,
+      "identity_activation_capacities_qubits": {
+        "aligned": 2,
+        "twisted": 0
+      },
+      "algebra_aware_capacities_qubits": {
+        "twisted_clifford": 2,
+        "twisted_non_clifford_T": 2
+      },
+      "generic_scrambling_capacities_qubits": {
+        "aligned": 0,
+        "twisted": 0
+      }
+    },
+    {
+      "id": "bounded_control_atlas",
+      "scope": "all resource pairings for m<=3 under identity, algebra-aware Clifford, algebra-aware T-dressed, and mouth-blind twirled controls",
+      "first_entropy_matched_naive_transfer_split": "m=2",
+      "algebra_aware_controls_full_capacity_for_all_resources": true,
+      "generic_scrambling_controls_fail_structured_transfer": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "goal13_certificate",
+      "claim": "Emit the Goal 13 non-Clifford/scrambling bridge-channel control certificate.",
+      "command": "python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3"
+    },
+    {
+      "id": "goal13_focused_regression",
+      "claim": "Regression check for the Goal 13 certificate.",
+      "command": "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate"
+    },
+    {
+      "id": "goal13_json_index_validation",
+      "claim": "Validate the machine-readable certificate index.",
+      "command": "python3 -m json.tool docs/goal13_non_clifford_scrambling_bridge_channel_controls_certificate_index.json"
+    }
+  ],
+  "diagnostic_hierarchy": {
+    "coarse_entropy_mincut": "insufficient for naive transfer",
+    "low_order_physical_entropy_through_distance": "insufficient for the encoded mouth map",
+    "algebraic_connectivity_plus_public_activation": "determines transfer in the declared finite family",
+    "non_clifford_pauli_transfer": "distinguishes T-dressed transfer from Clifford identity transfer",
+    "mouth_blind_scrambling_control": "fails to produce structured named-mouth transfer",
+    "otoc_support_growth": "detects structured receiver support for bridge activations but not for the twirled control"
+  },
+  "known_vs_new": {
+    "conceptual_prior_art": "Engelhardt-Liu 2023, Algebraic ER=EPR and Complexity Transfer, is the primary prior art for the broad operator-algebraic ER=EPR framing.",
+    "known_derived": "Standard stabilizer distance, encoded Bell transfer, Clifford Pauli-transfer bookkeeping, logical T channel action, and Pauli twirling.",
+    "new_programmatic_contribution": "Packages a finite bridge-channel control certificate where low-order entropy-matched encoded resources split under naive transfer, algebra-aware Clifford and non-Clifford controls restore capacity, and mouth-blind scrambling controls fail."
+  },
+  "limitations": "This is an exact finite encoded-QEC benchmark. The non-Clifford control is a logical T-dressed transfer, and the generic scrambling control is an exact mouth-blind Pauli-twirled proxy, not a chaotic many-body simulation or continuum-gravity theorem. Full encoded-block diagnostics reveal the mouth map.",
+  "next_frontier": "Replace the Pauli-twirled proxy with richer finite many-body dynamics or tensor-network scramblers and test whether algebraic bridge connectivity still predicts transfer better than entropy shadows."
+}
