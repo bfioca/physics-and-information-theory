@@ -28,6 +28,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   encoded Clifford couplings transfer probes exactly when the coupling
   activation matches the algebraic bridge map; entropy-matched controls fail
   under wrong activations.
+- **Goal 13:** non-Clifford and scrambling bridge-channel controls preserve
+  the same entropy-blind encoded-mouth setup: algebra-aware Clifford and
+  `T`-dressed activations transfer, while mouth-blind Pauli-twirled scrambling
+  controls fail to produce structured named-mouth capacity.
 
 ## Public Claim Boundary
 
@@ -91,6 +95,8 @@ python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_
 python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3
 python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate
 python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3
+python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate
+python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3
 ```
 
 For the broader certificate family, run the commands below.
@@ -303,6 +309,19 @@ Read the Goal 12 theorem note and machine-readable certificate index:
 ```text
 docs/goal12_finite_bridge_channel_dynamics_note.md
 docs/goal12_finite_bridge_channel_dynamics_certificate_index.json
+```
+
+Emit the Goal 13 non-Clifford/scrambling bridge-channel control certificate:
+
+```bash
+python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3
+```
+
+Read the Goal 13 theorem note and machine-readable certificate index:
+
+```text
+docs/goal13_non_clifford_scrambling_bridge_channel_controls_note.md
+docs/goal13_non_clifford_scrambling_bridge_channel_controls_certificate_index.json
 ```
 
 Optionally include the full all-region scan of the distance-amplified

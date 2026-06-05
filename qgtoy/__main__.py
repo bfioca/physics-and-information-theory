@@ -45,6 +45,7 @@ from .family import bridge_family_certificate, bridge_theorem_certificate, lift_
 from .gf2 import mask_to_tuple
 from .graphs import enumerate_graph_state_reps
 from .er_epr_channel import goal10_finite_bridge_channel_benchmark_certificate
+from .er_epr_controls import goal13_non_clifford_scrambling_bridge_controls_certificate
 from .er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
 from .er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
@@ -518,6 +519,20 @@ def run_er_epr_traversable(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             goal12_finite_bridge_channel_dynamics_certificate(
+                mouths=args.mouths,
+                low_order=args.low_order,
+                atlas_max_mouths=args.atlas_max_mouths,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_bridge_channel_controls(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal13_non_clifford_scrambling_bridge_controls_certificate(
                 mouths=args.mouths,
                 low_order=args.low_order,
                 atlas_max_mouths=args.atlas_max_mouths,
@@ -1629,6 +1644,15 @@ def build_parser() -> argparse.ArgumentParser:
     er_epr_traversable.add_argument("--low-order", type=int, default=3)
     er_epr_traversable.add_argument("--atlas-max-mouths", type=int, default=3)
     er_epr_traversable.set_defaults(func=run_er_epr_traversable)
+
+    bridge_channel_controls = subparsers.add_parser(
+        "bridge-channel-controls",
+        help="emit the Goal 13 non-Clifford/scrambling bridge-channel control certificate",
+    )
+    bridge_channel_controls.add_argument("--mouths", type=int, default=2)
+    bridge_channel_controls.add_argument("--low-order", type=int, default=3)
+    bridge_channel_controls.add_argument("--atlas-max-mouths", type=int, default=3)
+    bridge_channel_controls.set_defaults(func=run_bridge_channel_controls)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

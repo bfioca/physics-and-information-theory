@@ -46,6 +46,7 @@ from qgtoy.family import (
     witness_mechanism_summary,
 )
 from qgtoy.er_epr_channel import goal10_finite_bridge_channel_benchmark_certificate
+from qgtoy.er_epr_controls import goal13_non_clifford_scrambling_bridge_controls_certificate
 from qgtoy.er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
 from qgtoy.er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
 from qgtoy.graphs import enumerate_graph_state_reps
@@ -1581,6 +1582,63 @@ class StabilizerDiagnosticsTest(unittest.TestCase):
         self.assertEqual(atlas_split["all_activation_capacity_profile"], {0: 2, 2: 2})
         self.assertIn("activation alpha", certificate["theorem_style_result"]["claim"])
         self.assertIn("capacity equals", certificate["theorem_style_result"]["claim"])
+
+    def test_goal13_non_clifford_scrambling_bridge_controls_certificate(self):
+        certificate = goal13_non_clifford_scrambling_bridge_controls_certificate(
+            mouths=2, low_order=3, atlas_max_mouths=3
+        )
+        self.assertEqual(certificate["status"], "pass")
+        claims = certificate["certified_claims"]
+        self.assertTrue(claims["non_clifford_t_dressed_control_declared"])
+        self.assertTrue(claims["generic_mouth_blind_scrambling_control_declared"])
+        self.assertTrue(claims["coarse_entropy_mincut_shadows_match"])
+        self.assertTrue(claims["low_order_labeled_physical_entropy_matches"])
+        self.assertTrue(claims["naive_identity_transfer_differs"])
+        self.assertTrue(claims["algebra_aware_clifford_coupling_restores_twisted_transfer"])
+        self.assertTrue(claims["non_clifford_algebraic_coupling_preserves_capacity"])
+        self.assertTrue(claims["non_clifford_pauli_transfer_not_clifford_identity"])
+        self.assertTrue(claims["generic_scrambling_control_fails_structured_transfer"])
+        self.assertTrue(claims["otoc_support_growth_records_structure_and_scrambler_failure"])
+
+        witness = certificate["representative_witness"]
+        comparisons = witness["comparisons"]
+        self.assertEqual(comparisons["low_order_physical_entropy_audit"]["mismatch_count"], 0)
+        self.assertEqual(comparisons["low_order_physical_entropy_audit"]["regions_checked"], 299)
+        self.assertEqual(comparisons["first_entropy_mismatch"]["order"], 4)
+        self.assertEqual(comparisons["naive_identity_activation_capacity"], {"aligned": 2, "twisted": 0})
+        self.assertEqual(
+            comparisons["algebra_aware_capacity"],
+            {"twisted_clifford": 2, "twisted_non_clifford_T": 2},
+        )
+        self.assertEqual(comparisons["generic_scrambling_capacity"], {"aligned": 0, "twisted": 0})
+
+        t_run = witness["transfer_diagnostics"]["twisted_algebra_aware_non_clifford_T"]
+        self.assertEqual(t_run["structured_transfer_capacity_qubits"], 2)
+        self.assertTrue(t_run["protocol"]["non_clifford_layer"])
+        first_t_row = t_run["port_channels"][0]
+        self.assertEqual(
+            first_t_row["pauli_transfer_matrix_XYZ"],
+            (
+                ("1/sqrt(2)", "1/sqrt(2)", "0"),
+                ("-1/sqrt(2)", "1/sqrt(2)", "0"),
+                ("0", "0", "1"),
+            ),
+        )
+        self.assertEqual(first_t_row["direct_identity_entanglement_fidelity"], "(2 + sqrt(2))/4")
+        self.assertEqual(first_t_row["phase_corrected_entanglement_fidelity"], "1")
+
+        scrambler = witness["transfer_diagnostics"]["twisted_mouth_blind_scrambler"]
+        self.assertEqual(scrambler["structured_transfer_capacity_qubits"], 0)
+        self.assertTrue(scrambler["protocol"]["mouth_blind"])
+        self.assertEqual(
+            scrambler["port_channels"][0]["pauli_transfer_matrix_XYZ"],
+            ((0, 0, 0), (0, 0, 0), (0, 0, 0)),
+        )
+
+        atlas_split = certificate["bounded_atlas"]["first_entropy_matched_naive_transfer_split"]
+        self.assertEqual(atlas_split["m"], 2)
+        self.assertEqual(atlas_split["mouth_blind_scrambling_capacity_profile"], {0: 2})
+        self.assertIn("non-Clifford logical T", certificate["theorem_style_result"]["claim"])
 
     def test_holography_phase1_stabilizer_tensor_network_seed_certificate(self):
         certificate = bridge_holography_phase1_certificate()
