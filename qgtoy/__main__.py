@@ -49,7 +49,10 @@ from .er_epr_channel import goal10_finite_bridge_channel_benchmark_certificate
 from .er_epr_controls import goal13_non_clifford_scrambling_bridge_controls_certificate
 from .er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
 from .er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
-from .interacting_bridge import goal15_interacting_state_derived_bridge_theorem_certificate
+from .interacting_bridge import (
+    goal15_interacting_state_derived_bridge_theorem_certificate,
+    goal16_paper_style_interacting_bridge_code_theorem_certificate,
+)
 from .state_bridge import goal14_state_derived_bridge_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -568,6 +571,20 @@ def run_interacting_bridge_theorem(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             goal15_interacting_state_derived_bridge_theorem_certificate(
+                mouths=args.mouths,
+                low_order=args.low_order,
+                atlas_max_mouths=args.atlas_max_mouths,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_interacting_bridge_code_theorem(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal16_paper_style_interacting_bridge_code_theorem_certificate(
                 mouths=args.mouths,
                 low_order=args.low_order,
                 atlas_max_mouths=args.atlas_max_mouths,
@@ -1712,6 +1729,15 @@ def build_parser() -> argparse.ArgumentParser:
     interacting_bridge_theorem.add_argument("--low-order", type=int, default=3)
     interacting_bridge_theorem.add_argument("--atlas-max-mouths", type=int, default=3)
     interacting_bridge_theorem.set_defaults(func=run_interacting_bridge_theorem)
+
+    interacting_bridge_code_theorem = subparsers.add_parser(
+        "interacting-bridge-code-theorem",
+        help="emit the Goal 16 paper-style interacting bridge code theorem certificate",
+    )
+    interacting_bridge_code_theorem.add_argument("--mouths", type=int, default=3)
+    interacting_bridge_code_theorem.add_argument("--low-order", type=int, default=3)
+    interacting_bridge_code_theorem.add_argument("--atlas-max-mouths", type=int, default=3)
+    interacting_bridge_code_theorem.set_defaults(func=run_interacting_bridge_code_theorem)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

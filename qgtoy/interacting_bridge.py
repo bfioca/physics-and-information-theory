@@ -1,4 +1,4 @@
-"""Goal 15 interacting state-derived bridge theorem certificates."""
+"""Goal 15/16 interacting state-derived bridge theorem certificates."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ from itertools import combinations, permutations
 
 from .er_epr_controls import BridgeChannelControlProtocol, BridgeChannelControlRun
 from .er_epr_encoded import EncodedMouthBridgeModel
-from .gf2 import mask_to_tuple, masks_of_size, nullspace, rank
+from .gf2 import in_span, mask_to_tuple, masks_of_size, nullspace, rank
 from .quantum_channel import (
     Matrix,
     choi_matrix,
@@ -66,6 +66,30 @@ def _shift_pauli(row: int, *, source_n: int, offset: int, total_n: int) -> int:
 
 def _complete_graph_edges(mouths: int) -> tuple[tuple[int, int], ...]:
     return tuple(combinations(range(mouths), 2))
+
+
+def _normalize_graph_edges(
+    mouths: int,
+    edges: tuple[tuple[int, int], ...],
+) -> tuple[tuple[int, int], ...]:
+    normalized = []
+    for first, second in edges:
+        if first == second:
+            raise ValueError("interaction graph cannot contain self-loops")
+        if not (0 <= first < mouths and 0 <= second < mouths):
+            raise ValueError("interaction edge endpoint outside mouth range")
+        normalized.append(tuple(sorted((first, second))))
+    return tuple(sorted(set(normalized)))
+
+
+def _all_simple_graphs(mouths: int) -> tuple[tuple[tuple[int, int], ...], ...]:
+    edges = tuple(combinations(range(mouths), 2))
+    graphs = []
+    for mask in range(1 << len(edges)):
+        graphs.append(
+            tuple(edge for index, edge in enumerate(edges) if (mask >> index) & 1)
+        )
+    return tuple(graphs)
 
 
 def _neighbors(
@@ -150,6 +174,12 @@ class InteractingEncodedBridgeModel:
                 "interaction_edges",
                 _complete_graph_edges(len(self.pairing)),
             )
+        else:
+            object.__setattr__(
+                self,
+                "interaction_edges",
+                _normalize_graph_edges(len(self.pairing), self.interaction_edges),
+            )
 
     @property
     def base(self) -> EncodedMouthBridgeModel:
@@ -192,12 +222,22 @@ class InteractingEncodedBridgeModel:
     def shifted_logical_pair(self, block: int) -> tuple[int, int]:
         return self.base.shifted_logical_pair(block)
 
-    def dressed_logical_pair(self, block: int) -> tuple[int, int]:
+    def _dressed_logical_pair_for_edges(
+        self,
+        block: int,
+        edges: tuple[tuple[int, int], ...],
+    ) -> tuple[int, int]:
         xbar, zbar = self.shifted_logical_pair(block)
         dressed_x = xbar
-        for neighbor in _neighbors(block, self.interaction_edges or ()):
+        for neighbor in _neighbors(block, edges):
             dressed_x ^= self.shifted_logical_pair(neighbor)[1]
         return dressed_x, zbar
+
+    def dressed_logical_pair(self, block: int) -> tuple[int, int]:
+        return self._dressed_logical_pair_for_edges(
+            block,
+            self.interaction_edges or (),
+        )
 
     def state(self) -> StabilizerState:
         generators: list[int] = []
@@ -312,7 +352,7 @@ class InteractingEncodedBridgeModel:
             ),
         }
 
-    def state_derived_interaction_graph_record(self) -> dict[str, object]:
+    def pairwise_mi_interaction_screen_record(self) -> dict[str, object]:
         rows = self.non_product_witness()["non_product_rows"]
         inferred_edges = []
         for row in rows:
@@ -327,21 +367,115 @@ class InteractingEncodedBridgeModel:
         inferred = tuple(sorted(set(inferred_edges)))
         return {
             "method": (
-                "Infer the logical interaction graph from inter-bridge mutual-information "
+                "Screen for inter-bridge correlations using pairwise mutual-information "
                 "excess relative to the product encoded-mouth resource."
+            ),
+            "pairwise_mi_correlated_edges": inferred,
+            "declared_circuit_interaction_edges": self.interaction_edges,
+            "matches_circuit_interaction_graph": inferred == self.interaction_edges,
+            "complete_for_arbitrary_graphs": False,
+            "interpretation": (
+                "Pairwise MI is a useful non-product detector, but it can close paths into "
+                "extra apparent edges. Goal 16 therefore uses logical Pauli-correlation "
+                "tomography for exact arbitrary-graph recovery."
+            ),
+            "uses_declared_interaction_graph_as_input": False,
+        }
+
+    def logical_pauli_correlation_graph_record(
+        self,
+        *,
+        inferred_pairing: tuple[int, ...] | None = None,
+    ) -> dict[str, object]:
+        state = self.state()
+        pairing = (
+            self.state_derived_pairing_record()["inferred_pairing"]
+            if inferred_pairing is None
+            else inferred_pairing
+        )
+        if not isinstance(pairing, tuple) or len(pairing) != self.m:
+            raise ValueError("inferred pairing must be a full tuple")
+
+        rows = []
+        inferred_edges: set[tuple[int, int]] = set()
+        z_logical_basis = tuple(
+            self.shifted_logical_pair(neighbor)[1] for neighbor in range(self.m)
+        )
+        for left, block in enumerate(pairing):
+            xbar, _ = self.shifted_logical_pair(block)
+            bare_bridge_x = _single_pauli(self.n, left, "X") ^ xbar
+            hits = []
+            for subset_mask in range(1 << self.m):
+                candidate = bare_bridge_x
+                neighbors = []
+                for neighbor in range(self.m):
+                    if (subset_mask >> neighbor) & 1:
+                        candidate ^= self.shifted_logical_pair(neighbor)[1]
+                        neighbors.append(neighbor)
+                if in_span(candidate, state.generators, state.width):
+                    hits.append(tuple(neighbors))
+            inferred_neighbors = hits[0] if len(hits) == 1 else ()
+            for neighbor in inferred_neighbors:
+                if neighbor != block:
+                    inferred_edges.add(tuple(sorted((block, neighbor))))
+            rows.append(
+                {
+                    "left_mouth": f"L{left}",
+                    "paired_right_block": f"B{block}",
+                    "unique_z_dressing_solution": len(hits) == 1,
+                    "inferred_neighbor_blocks": tuple(
+                        f"B{neighbor}" for neighbor in inferred_neighbors
+                    ),
+                    "candidate_stabilizer": pauli_to_string(
+                        bare_bridge_x
+                        ^ combine_rows(
+                            sum(1 << neighbor for neighbor in inferred_neighbors),
+                            z_logical_basis,
+                        ),
+                        self.n,
+                    )
+                    if len(hits) == 1
+                    else None,
+                }
+            )
+
+        inferred = tuple(sorted(inferred_edges))
+        return {
+            "method": (
+                "Infer the right-mouth logical CZ graph from physical-state Pauli "
+                "correlations: for each paired bridge, solve for the unique product of "
+                "right-block logical Z operators that makes X_L Xbar_B a stabilizer."
             ),
             "inferred_right_block_interaction_edges": inferred,
             "declared_circuit_interaction_edges": self.interaction_edges,
             "matches_circuit_interaction_graph": inferred == self.interaction_edges,
+            "unique_solution_for_each_bridge": all(
+                row["unique_z_dressing_solution"] for row in rows
+            ),
             "uses_declared_interaction_graph_as_input": False,
+            "rows": tuple(rows),
+        }
+
+    def state_derived_interaction_graph_record(self) -> dict[str, object]:
+        pauli_record = self.logical_pauli_correlation_graph_record()
+        pairwise_record = self.pairwise_mi_interaction_screen_record()
+        return {
+            **pauli_record,
+            "pairwise_mi_screen": pairwise_record,
         }
 
     def observer_algebra_record(self) -> dict[str, object]:
         inferred_graph = self.state_derived_interaction_graph_record()
+        inferred_edges = inferred_graph["inferred_right_block_interaction_edges"]
+        if not isinstance(inferred_edges, tuple):
+            raise ValueError("inferred interaction graph must be a tuple")
         rows = []
         basis = []
         for block in range(self.m):
-            dressed_x, dressed_z = self.dressed_logical_pair(block)
+            dressed_x, dressed_z = self._dressed_logical_pair_for_edges(
+                block,
+                inferred_edges,
+            )
             basis.extend((dressed_x, dressed_z))
             rows.append(
                 {
@@ -349,6 +483,9 @@ class InteractingEncodedBridgeModel:
                     "neighbors_in_interaction_graph": tuple(
                         f"B{neighbor}"
                         for neighbor in _neighbors(block, self.interaction_edges or ())
+                    ),
+                    "neighbors_in_state_derived_graph": tuple(
+                        f"B{neighbor}" for neighbor in _neighbors(block, inferred_edges)
                     ),
                     "dressed_X": pauli_to_string(dressed_x, self.n),
                     "dressed_Z": pauli_to_string(dressed_z, self.n),
@@ -508,7 +645,17 @@ def transfer_certificate(
     model: InteractingEncodedBridgeModel,
     *,
     inferred_pairing: tuple[int, ...],
+    inferred_interaction_edges: tuple[tuple[int, int], ...] | None = None,
 ) -> dict[str, object]:
+    interaction_edges = (
+        model.state_derived_interaction_graph_record()[
+            "inferred_right_block_interaction_edges"
+        ]
+        if inferred_interaction_edges is None
+        else inferred_interaction_edges
+    )
+    if not isinstance(interaction_edges, tuple):
+        raise ValueError("inferred interaction edges must be a tuple")
     identity = _identity(model.m)
     identity_run = _transfer_run(
         model,
@@ -540,8 +687,9 @@ def transfer_certificate(
             "then routes by the inferred mouth pairing."
         ),
         "logical_interaction_unitary": unitary_channel_certificate(
-            logical_cz_unitary(model.m, model.interaction_edges or ())
+            logical_cz_unitary(model.m, interaction_edges)
         ),
+        "inferred_interaction_edges_used_for_inverse": interaction_edges,
         "identity_activation_after_interaction_removal": identity_run.diagnostics(),
         "state_derived_activation": derived_run.diagnostics(),
         "state_derived_T_dressed_activation": derived_t_run.diagnostics(),
@@ -720,6 +868,149 @@ def _bounded_interacting_atlas(*, max_mouths: int) -> tuple[dict[str, object], .
                     scrambler_capacities
                 )
                 == {0},
+            }
+        )
+    return tuple(records)
+
+
+def _bounded_interacting_graph_family_atlas(
+    *,
+    max_mouths: int,
+    low_order: int,
+) -> tuple[dict[str, object], ...]:
+    records = []
+    for mouths in range(1, max_mouths + 1):
+        pairings = tuple(permutations(range(mouths)))
+        graph_records = []
+        all_pairing_flags = []
+        all_graph_flags = []
+        all_pairwise_flags = []
+        all_low_order_blind_flags = []
+        all_derived_capacities = []
+        all_scrambler_capacities = []
+        first_pairwise_failure = None
+        resource_count = 0
+
+        for graph in _all_simple_graphs(mouths):
+            graph_pairing_flags = []
+            graph_pauli_flags = []
+            graph_pairwise_flags = []
+            graph_profiles = set()
+            for pairing in pairings:
+                model = InteractingEncodedBridgeModel(
+                    name=f"graph_family_m{mouths}_{graph}_{pairing}",
+                    pairing=pairing,
+                    interaction_edges=graph,
+                )
+                resource_count += 1
+                pairing_record = model.state_derived_pairing_record()
+                graph_record = model.state_derived_interaction_graph_record()
+                pairwise_record = graph_record["pairwise_mi_screen"]
+                pairing_ok = (
+                    pairing_record["inferred_pairing"] == model.pairing
+                    and pairing_record["unique_permutation_inferred"] is True
+                )
+                graph_ok = (
+                    graph_record["inferred_right_block_interaction_edges"] == graph
+                    and graph_record["unique_solution_for_each_bridge"] is True
+                )
+                pairwise_ok = (
+                    pairwise_record["pairwise_mi_correlated_edges"] == graph
+                )
+                if not pairwise_ok and first_pairwise_failure is None:
+                    first_pairwise_failure = {
+                        "m": mouths,
+                        "pairing": pairing,
+                        "interaction_graph": graph,
+                        "pairwise_mi_correlated_edges": pairwise_record[
+                            "pairwise_mi_correlated_edges"
+                        ],
+                        "pauli_correlation_edges": graph_record[
+                            "inferred_right_block_interaction_edges"
+                        ],
+                    }
+                graph_pairing_flags.append(pairing_ok)
+                graph_pauli_flags.append(graph_ok)
+                graph_pairwise_flags.append(pairwise_ok)
+                graph_profiles.add(
+                    repr(model.physical_low_order_entropy_profile(low_order))
+                )
+                inferred_pairing = pairing_record["inferred_pairing"]
+                if not isinstance(inferred_pairing, tuple):
+                    raise ValueError("inferred pairing must be a tuple")
+                all_derived_capacities.append(
+                    _transfer_run(
+                        model,
+                        name="state_derived_activation",
+                        kind="clifford_bridge_activation",
+                        activation=inferred_pairing,
+                    ).structured_transfer_capacity()
+                )
+                all_scrambler_capacities.append(
+                    _transfer_run(
+                        model,
+                        name="mouth_blind_pauli_twirled_scrambler",
+                        kind="mouth_blind_pauli_twirled_scrambler",
+                        activation=None,
+                    ).structured_transfer_capacity()
+                )
+
+            low_order_blind = len(graph_profiles) == 1
+            all_pairing_flags.extend(graph_pairing_flags)
+            all_graph_flags.extend(graph_pauli_flags)
+            all_pairwise_flags.extend(graph_pairwise_flags)
+            all_low_order_blind_flags.append(low_order_blind)
+            graph_records.append(
+                {
+                    "interaction_graph": graph,
+                    "pairings_checked": len(pairings),
+                    "all_pairings_recovered": all(graph_pairing_flags),
+                    "pauli_correlation_graph_recovered_for_all_pairings": all(
+                        graph_pauli_flags
+                    ),
+                    "pairwise_mi_graph_exact_for_all_pairings": all(
+                        graph_pairwise_flags
+                    ),
+                    "low_order_entropy_profile_classes_across_pairings": len(
+                        graph_profiles
+                    ),
+                    "low_order_entropy_blind_to_mouth_map": low_order_blind,
+                }
+            )
+
+        records.append(
+            {
+                "m": mouths,
+                "simple_graphs_checked": len(_all_simple_graphs(mouths)),
+                "pairings_per_graph": len(pairings),
+                "resources_checked": resource_count,
+                "all_pairings_recovered_from_full_block_mi": all(all_pairing_flags),
+                "all_interaction_graphs_recovered_from_pauli_correlations": all(
+                    all_graph_flags
+                ),
+                "pairwise_mi_exact_for_every_graph": all(all_pairwise_flags),
+                "pairwise_mi_failure_count": sum(
+                    1 for flag in all_pairwise_flags if not flag
+                ),
+                "first_pairwise_mi_failure": first_pairwise_failure,
+                "low_order_entropy_blind_to_mouth_map_for_each_graph": all(
+                    all_low_order_blind_flags
+                ),
+                "state_derived_activation_capacity_profile": _capacity_profile(
+                    tuple(all_derived_capacities)
+                ),
+                "state_derived_activation_full_capacity": set(
+                    all_derived_capacities
+                )
+                == {mouths},
+                "mouth_blind_scrambling_capacity_profile": _capacity_profile(
+                    tuple(all_scrambler_capacities)
+                ),
+                "mouth_blind_scrambler_zero_structured_capacity": set(
+                    all_scrambler_capacities
+                )
+                == {0},
+                "graph_records": tuple(graph_records),
             }
         )
     return tuple(records)
@@ -964,6 +1255,261 @@ def goal15_interacting_state_derived_bridge_theorem_certificate(
             ),
             "focused_regression": (
                 "PYTHONPATH=. python3 -m unittest tests.test_interacting_bridge"
+            ),
+        },
+        "certified_claims": certified_claims,
+    }
+
+
+def _path_graph_edges(mouths: int) -> tuple[tuple[int, int], ...]:
+    return tuple((index, index + 1) for index in range(mouths - 1))
+
+
+def goal16_paper_style_interacting_bridge_code_theorem_certificate(
+    *,
+    mouths: int = 3,
+    low_order: int = 3,
+    atlas_max_mouths: int = 3,
+) -> dict[str, object]:
+    if mouths < 2:
+        raise ValueError("mouths must be at least two for the theorem witness")
+    if mouths > 3 or atlas_max_mouths > 3:
+        raise ValueError("dense channel checks are limited to at most three mouths")
+    if atlas_max_mouths < mouths:
+        raise ValueError("atlas_max_mouths must be at least mouths")
+
+    interaction_edges = _path_graph_edges(mouths)
+    aligned = InteractingEncodedBridgeModel(
+        name="goal16_aligned_path_resource",
+        pairing=_identity(mouths),
+        interaction_edges=interaction_edges,
+    )
+    twisted = InteractingEncodedBridgeModel(
+        name="goal16_twisted_path_resource",
+        pairing=_swap_first_two(mouths),
+        interaction_edges=interaction_edges,
+    )
+    pairing_record = twisted.state_derived_pairing_record()
+    inferred_pairing = pairing_record["inferred_pairing"]
+    if not isinstance(inferred_pairing, tuple):
+        raise ValueError("inferred pairing must be a tuple")
+    graph_record = twisted.state_derived_interaction_graph_record()
+    inferred_edges = graph_record["inferred_right_block_interaction_edges"]
+    if not isinstance(inferred_edges, tuple):
+        raise ValueError("inferred interaction graph must be a tuple")
+    low_order_audit = _compare_low_order(aligned, twisted, max_order=low_order)
+    first_mismatch = _first_entropy_mismatch_order(
+        aligned,
+        twisted,
+        max_order=twisted.block_distance + 1,
+    )
+    transfer = transfer_certificate(
+        twisted,
+        inferred_pairing=inferred_pairing,
+        inferred_interaction_edges=inferred_edges,
+    )
+    no_go = static_state_transition_no_go(twisted)
+    dynamic_completion = dynamic_completion_certificate()
+    graph_atlas = _bounded_interacting_graph_family_atlas(
+        max_mouths=atlas_max_mouths,
+        low_order=low_order,
+    )
+    first_pairwise_failure = next(
+        (
+            row["first_pairwise_mi_failure"]
+            for row in graph_atlas
+            if row["first_pairwise_mi_failure"] is not None
+        ),
+        None,
+    )
+    explicit_channels = transfer["explicit_channel_certificates"]
+
+    certified_claims = {
+        "paper_theorem_family_stated_for_arbitrary_simple_graphs": True,
+        "representative_pairing_recovered_from_full_block_mi": inferred_pairing
+        == twisted.pairing
+        and pairing_record["unique_permutation_inferred"] is True,
+        "representative_graph_recovered_from_pauli_correlations": inferred_edges
+        == interaction_edges
+        and graph_record["unique_solution_for_each_bridge"] is True,
+        "representative_pairwise_mi_graph_reader_fails_on_path": graph_record[
+            "pairwise_mi_screen"
+        ]["matches_circuit_interaction_graph"]
+        is False
+        and mouths >= 3,
+        "observer_algebra_reconstructed_from_inferred_graph": twisted.observer_algebra_record()[
+            "full_quantum_algebra"
+        ]
+        and twisted.observer_algebra_record()["state_derived_interaction_graph"][
+            "matches_circuit_interaction_graph"
+        ],
+        "low_order_entropy_blind_to_mouth_map_through_distance": bool(
+            low_order_audit["labeled_tables_match"]
+        )
+        and low_order >= twisted.block_distance,
+        "first_entropy_mismatch_at_decoder_scale": first_mismatch is not None
+        and first_mismatch["order"] == twisted.block_distance + 1,
+        "state_derived_inverse_interaction_uses_inferred_graph": transfer[
+            "inferred_interaction_edges_used_for_inverse"
+        ]
+        == inferred_edges,
+        "state_derived_decoder_restores_exact_transfer": transfer["capacities"][
+            "state_derived_activation"
+        ]
+        == mouths
+        and explicit_channels["state_derived_decoder_after_interaction_removal"][
+            "fidelity"
+        ]["entanglement_fidelity_to_identity"]
+        == 1.0,
+        "wrong_mouth_control_fails": transfer["capacities"][
+            "identity_activation_after_interaction_removal"
+        ]
+        < mouths,
+        "mouth_blind_scrambling_control_fails": transfer["capacities"][
+            "mouth_blind_scrambling_control"
+        ]
+        == 0,
+        "bounded_atlas_all_pairings_recovered": all(
+            row["all_pairings_recovered_from_full_block_mi"] for row in graph_atlas
+        ),
+        "bounded_atlas_all_graphs_recovered_by_pauli_correlations": all(
+            row["all_interaction_graphs_recovered_from_pauli_correlations"]
+            for row in graph_atlas
+        ),
+        "bounded_atlas_pairwise_mi_obstruction_minimal_at_m3": first_pairwise_failure
+        is not None
+        and first_pairwise_failure["m"] == 3,
+        "bounded_atlas_low_order_entropy_blind_to_mouth_map": all(
+            row["low_order_entropy_blind_to_mouth_map_for_each_graph"]
+            for row in graph_atlas
+        ),
+        "bounded_atlas_state_derived_activation_full_capacity": all(
+            row["state_derived_activation_full_capacity"] for row in graph_atlas
+        ),
+        "bounded_atlas_mouth_blind_scramblers_zero_capacity": all(
+            row["mouth_blind_scrambler_zero_structured_capacity"]
+            for row in graph_atlas
+        ),
+        "static_state_transition_no_go_certified": no_go[
+            "opposite_recovery_winners_with_same_static_state"
+        ],
+        "screen_isometry_completion_derives_transition": dynamic_completion[
+            "screen_transition"
+        ]["all_probabilities_recovered_from_channels"]
+        and dynamic_completion["screen_transition"]["recovery_and_area_winners_match"],
+        "no_continuum_er_epr_or_de_sitter_claim": True,
+    }
+    certified_claims[
+        "goal16_paper_style_interacting_bridge_code_theorem_certificate"
+    ] = all(certified_claims.values())
+
+    return {
+        "goal": "Goal 16: Paper-Style Interacting Bridge Code Theorem",
+        "status": (
+            "pass"
+            if certified_claims[
+                "goal16_paper_style_interacting_bridge_code_theorem_certificate"
+            ]
+            else "fail"
+        ),
+        "scope": {
+            "paper_theorem_family": (
+                "m encoded mouths, a permutation mouth map pi, right stabilizer "
+                "blocks of distance d, and an arbitrary simple graph-CZ interaction "
+                "on the right logical mouths"
+            ),
+            "executable_dense_certificate_bound": {
+                "mouths": mouths,
+                "atlas_max_mouths": atlas_max_mouths,
+                "low_order": low_order,
+                "right_block_code": "[[5,1,3]] five-qubit perfect stabilizer code",
+            },
+            "representative_interaction_graph": interaction_edges,
+        },
+        "theorem_style_result": {
+            "name": "Interacting Bridge Code Theorem",
+            "family_statement": (
+                "For any number m of encoded mouths, any permutation mouth map pi, "
+                "any distance-d right stabilizer block with a chosen logical Xbar/Zbar "
+                "pair, and any simple right-mouth graph G, the logical-CZ-dressed "
+                "encoded bridge state has a state-derived Pauli-correlation protocol "
+                "that recovers pi and G. The recovered G reconstructs the dressed "
+                "observer algebra. Low-order physical entropy through d is blind to "
+                "pi for fixed G, while inverse CZ_G plus pi restores exact channel "
+                "transfer."
+            ),
+            "diagnostic_no_go": (
+                "Pairwise inter-bridge mutual-information excess is not a complete "
+                "arbitrary-graph reader: already at m=3 a path/star interaction has "
+                "the same pairwise correlated edge set as the triangle screen."
+            ),
+            "static_state_no_go": no_go["theorem"],
+            "proof_sketch": (
+                "The stabilizer generator for bridge i has the form X_Li Xbar_pi(i) "
+                "times the product of Zbar_j over the neighbors of pi(i) in G. Since "
+                "the right-block logical Z classes are independent modulo the block "
+                "stabilizers and the Bell Z checks, there is a unique Z-dressing that "
+                "makes X_Li Xbar_pi(i) a state stabilizer. Solving this dressing for "
+                "each i recovers the neighbor sets of G. Conjugating the right logical "
+                "Pauli algebra by CZ_G gives the observer algebra. The block distance "
+                "hides the logical mouth labels from physical entropy probes of order "
+                "at most d; exact Choi/Kraus checks certify channel transfer after the "
+                "inferred inverse interaction and routing."
+            ),
+        },
+        "representative_witness": {
+            "aligned": aligned.certificate_record(),
+            "twisted": twisted.certificate_record(),
+            "comparisons": {
+                "coarse_entropy_mincut_match": aligned.coarse_entropy_mincut_shadow()
+                == twisted.coarse_entropy_mincut_shadow(),
+                "low_order_physical_entropy_audit": low_order_audit,
+                "first_entropy_mismatch": first_mismatch,
+                "state_derived_pairing": pairing_record,
+                "pairwise_mi_screen": graph_record["pairwise_mi_screen"],
+                "pauli_correlation_graph": graph_record,
+                "observer_algebra": twisted.observer_algebra_record(),
+            },
+            "transfer_certificate": transfer,
+        },
+        "bounded_all_graph_atlas": {
+            "records": graph_atlas,
+            "first_pairwise_mi_graph_recovery_failure": first_pairwise_failure,
+        },
+        "transition_no_go": no_go,
+        "dynamic_screen_completion": dynamic_completion,
+        "claim_separation": {
+            "exact_theorem_style_claims": (
+                "Pauli-correlation graph recovery, dressed observer algebra "
+                "reconstruction, low-order entropy blindness through distance d, "
+                "exact inverse-interaction channel transfer, and static-state "
+                "transition non-identifiability."
+            ),
+            "bounded_exhaustive_evidence": (
+                "All simple graphs and all mouth permutations for m <= atlas_max_mouths "
+                "are checked under the declared dense-channel scope."
+            ),
+            "diagnostic_obstruction": (
+                "Pairwise MI is retained as an explicit failing weaker diagnostic, not "
+                "used as the arbitrary-graph theorem reader."
+            ),
+        },
+        "limitations": (
+            "The family proof is finite stabilizer/QEC mathematics. The executable atlas "
+            "is bounded to dense checks for m <= 3, though the Pauli-correlation argument "
+            "is stated as a symbolic theorem family. This is a finite bridge-channel "
+            "benchmark under Engelhardt-Liu-style algebraic ER=EPR motivation, not a "
+            "continuum wormhole, de Sitter, or many-body chaos theorem."
+        ),
+        "reproducibility": {
+            "goal16_certificate": (
+                f"PYTHONPATH=. python3 -m qgtoy interacting-bridge-code-theorem "
+                f"--mouths {mouths} --low-order {low_order} "
+                f"--atlas-max-mouths {atlas_max_mouths}"
+            ),
+            "focused_regression": (
+                "PYTHONPATH=. python3 -m unittest tests.test_interacting_bridge "
+                "tests.test_interacting_bridge_code_theorem"
             ),
         },
         "certified_claims": certified_claims,
