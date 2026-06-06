@@ -43,6 +43,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Finite dS/CFT-ER=EPR compatibility benchmark | Two static-patch screen realizations can share screen entropy, horizon overlap, diagonal correlator, and screen-transfer shadows while differing in algebraic bridge connectivity. | screen/CFT-visible vs bridge-algebra-visible |
 | Finite dS/CFT-ER=EPR single-dynamics benchmark | One finite screen operator-transfer family derives both screen shadows and bridge channels; screen-restricted dynamics can still collide while full operator response recovers the bridge algebra. | screen-restricted-dynamics-visible vs full-operator-dynamics-visible |
 | Regulated static-patch dS/CFT testbed | Cutoff spherical screen modes and one geometric transfer kernel replace the abstract switch; low-order screen data still collide, while full operator response determines the bridge with explicit cutoff errors. | low-order-cutoff-visible vs intrinsic-operator-response-visible |
+| Conditional dS ER=EPR theorem ledger | The regulated static-patch benchmark is organized as a conditional finite-to-continuum theorem ledger: screen-shadow sequences still fail, full response has vanishing model error, and the missing dS ER=EPR promotion assumptions are explicit. | finite-regulated-visible vs continuum-promotion-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -347,6 +348,42 @@ kernel from a static-patch Hamiltonian or path integral, identify a boundary
 operator dictionary, prove cutoff-error control, and replace the finite Type-I
 algebra with the appropriate Type-II/Type-III observer-algebra limit.
 
+## Goal 24 update
+
+Goal 24 turns the Goal 23 continuum gate into a theorem ledger. For each cutoff
+`L`, it formalizes the finite screen/static-patch system:
+
+```text
+A_L = C^N,  O_N,L = M_N,  O_S,L = M_N,  H_L = C^N,
+K_L(alpha): E_ij -> alpha exp(-distance(i,j)/(L+1)^2) E_ij.
+```
+
+It then proves two finite-regulated statements. First, the Goal 23 theorem is
+recovered as the finite cutoff layer. Second, screen-visible data remain
+insufficient at the sequence level: the quantum and classical/dephased kernels
+agree term-by-term on screen entropy, finite-order diagonal correlators,
+horizon-overlap data, and screen-restricted transfer data, while the bridge
+algebras remain `M_N` versus `C^N`.
+
+The positive theorem is explicitly conditional. Inside the regulated model, the
+operator-response error obeys
+
+```text
+epsilon_L <= 2L/(L+1)^2 -> 0.
+```
+
+If a physical static-patch/dS-CFT continuum limit also supplies the required
+operator dictionary, positivity/unitarity control, observer-algebra limit,
+relative-entropy/OA-QEC recovery stability, horizon/QES data, and algebraic
+ER=EPR interpretation, then limiting algebraic connectivity is equivalent to a
+nontrivial recoverable observer bridge channel.
+
+The first obstruction is not hidden: `K_L` is still a regulated benchmark
+kernel, not one derived from an actual static-patch Hamiltonian, path integral,
+or controlled dS/CFT regulator. Goal 24 therefore does not claim de Sitter
+ER=EPR. It says exactly what has been proved finitely and exactly what must be
+proved before that phrase becomes honest.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -365,5 +402,6 @@ algebra with the appropriate Type-II/Type-III observer-algebra limit.
 | Goal 21 finite dS/CFT-ER=EPR compatibility benchmark | `PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr --max-dim 5 --screen-probability 0.75` |
 | Goal 22 finite dS/CFT-ER=EPR single-dynamics benchmark | `PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr-dynamics --max-dim 5 --screen-probability 0.75 --low-order 2` |
 | Goal 23 regulated static-patch dS/CFT testbed | `PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-probability 0.75 --low-order 2` |
+| Goal 24 conditional dS ER=EPR theorem ledger | `PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |

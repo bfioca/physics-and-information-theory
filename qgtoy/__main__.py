@@ -44,6 +44,7 @@ from .cosmology import (
     bridge_cosmology_phase31_certificate,
     de_sitter_qec_toy_model_certificate,
 )
+from .conditional_ds_er_epr import goal24_conditional_ds_er_epr_certificate
 from .family import bridge_family_certificate, bridge_theorem_certificate, lift_frontier, witness_mechanism_summary
 from .gf2 import mask_to_tuple
 from .graphs import enumerate_graph_state_reps
@@ -700,6 +701,20 @@ def run_regulated_static_patch(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             goal23_regulated_static_patch_ds_cft_certificate(
+                max_cutoff=args.max_cutoff,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_conditional_ds_er_epr(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal24_conditional_ds_er_epr_certificate(
                 max_cutoff=args.max_cutoff,
                 screen_probability=args.screen_probability,
                 low_order=args.low_order,
@@ -1924,6 +1939,15 @@ def build_parser() -> argparse.ArgumentParser:
     regulated_static_patch.add_argument("--screen-probability", type=float, default=0.75)
     regulated_static_patch.add_argument("--low-order", type=int, default=2)
     regulated_static_patch.set_defaults(func=run_regulated_static_patch)
+
+    conditional_ds_er_epr = subparsers.add_parser(
+        "conditional-ds-er-epr",
+        help="emit the Goal 24 conditional dS ER=EPR theorem ledger certificate",
+    )
+    conditional_ds_er_epr.add_argument("--max-cutoff", type=int, default=5)
+    conditional_ds_er_epr.add_argument("--screen-probability", type=float, default=0.75)
+    conditional_ds_er_epr.add_argument("--low-order", type=int, default=2)
+    conditional_ds_er_epr.set_defaults(func=run_conditional_ds_er_epr)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -76,6 +76,11 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   low-order dS/CFT-like screen data remain insufficient, while full intrinsic
   operator response recovers the bridge channel with explicit cutoff errors and
   a continuum gate.
+- **Goal 24:** the regulated static-patch benchmark is promoted to a
+  conditional theorem ledger: the Goal 23 finite theorem is recovered,
+  screen-visible cutoff sequences remain insufficient term-by-term, full
+  operator response has a vanishing model error inside the regulator, and the
+  missing assumptions for a literal dS ER=EPR theorem are named explicitly.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -173,6 +178,8 @@ PYTHONPATH=. python3 -m unittest tests.test_ds_cft_dynamics
 PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr-dynamics --max-dim 5 --screen-probability 0.75 --low-order 2
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_testbed
 PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-probability 0.75 --low-order 2
+PYTHONPATH=. python3 -m unittest tests.test_conditional_ds_er_epr
+PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
