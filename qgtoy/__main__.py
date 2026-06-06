@@ -63,6 +63,7 @@ from .interacting_bridge import (
     goal16_paper_style_interacting_bridge_code_theorem_certificate,
 )
 from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
+from .physical_static_patch_kernel import goal25_physical_static_patch_kernel_certificate
 from .relative_entropy_bridge import major_unlock_relative_entropy_observer_bridge_certificate
 from .static_patch_testbed import goal23_regulated_static_patch_ds_cft_certificate
 from .state_bridge import goal14_state_derived_bridge_dynamics_certificate
@@ -733,6 +734,21 @@ def run_static_patch_kernel_audit(args: argparse.Namespace) -> None:
         json.dumps(
             static_patch_kernel_cp_preflight_certificate(
                 max_cutoff=args.max_cutoff,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_physical_static_patch_kernel(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal25_physical_static_patch_kernel_certificate(
+                max_cutoff=args.max_cutoff,
+                noise_strength=args.noise_strength,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
             ),
             indent=2,
             sort_keys=True,
@@ -1970,6 +1986,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
     static_patch_kernel_audit.add_argument("--max-cutoff", type=int, default=6)
     static_patch_kernel_audit.set_defaults(func=run_static_patch_kernel_audit)
+
+    physical_static_patch_kernel = subparsers.add_parser(
+        "physical-static-patch-kernel",
+        help="emit the Goal 25 physical static-patch kernel search certificate",
+    )
+    physical_static_patch_kernel.add_argument("--max-cutoff", type=int, default=5)
+    physical_static_patch_kernel.add_argument("--noise-strength", type=float, default=1.0)
+    physical_static_patch_kernel.add_argument("--screen-probability", type=float, default=0.75)
+    physical_static_patch_kernel.add_argument("--low-order", type=int, default=2)
+    physical_static_patch_kernel.set_defaults(func=run_physical_static_patch_kernel)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -84,6 +84,12 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   A CP preflight now certifies the finite Schur kernel is completely positive,
   trace preserving, unital, and composition-closed in the broadened damping
   family.
+- **Goal 25:** the hand-built Schur kernel is replaced by a physically
+  motivated fuzzy-sphere/static-patch Hamiltonian dephasing candidate: the
+  finite Lindblad channel is CPTP/unital, screen-visible data still collide,
+  off-diagonal response recovers the `M_N` versus `C^N` bridge distinction, and
+  the remaining obstruction is deriving the kernel from actual de Sitter
+  static-patch dynamics.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -184,6 +190,8 @@ PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-pro
 PYTHONPATH=. python3 -m unittest tests.test_conditional_ds_er_epr
 PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2
 PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit --max-cutoff 6
+PYTHONPATH=. python3 -m unittest tests.test_physical_static_patch_kernel
+PYTHONPATH=. python3 -m qgtoy physical-static-patch-kernel --max-cutoff 5 --noise-strength 1.0 --screen-probability 0.75 --low-order 2
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -568,6 +576,19 @@ Read the Goal 24 theorem note and machine-readable certificate index:
 ```text
 docs/goal24_conditional_ds_er_epr_theorem_note.md
 docs/goal24_conditional_ds_er_epr_theorem_certificate_index.json
+```
+
+Emit the Goal 25 physical static-patch kernel search certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy physical-static-patch-kernel --max-cutoff 5 --noise-strength 1.0 --screen-probability 0.75 --low-order 2
+```
+
+Read the Goal 25 theorem note and machine-readable certificate index:
+
+```text
+docs/goal25_physical_static_patch_kernel_note.md
+docs/goal25_physical_static_patch_kernel_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:
