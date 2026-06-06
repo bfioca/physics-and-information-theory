@@ -41,6 +41,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Algebraic connectivity order parameter | Noisy finite bridge channels are classified by approximate recoverable observer algebra: relative-entropy response plus product/commutator closure separates quantum, classical, and null phases. | static entropy-visible vs algebraic-connectivity-visible |
 | General finite-dimensional stability no-go | In arbitrary finite dimension, response-plus-closure on a proper probe algebra certifies that subalgebra but does not determine the maximal recoverable observer algebra. | certified-subalgebra-visible vs maximal-algebra-visible |
 | Finite dS/CFT-ER=EPR compatibility benchmark | Two static-patch screen realizations can share screen entropy, horizon overlap, diagonal correlator, and screen-transfer shadows while differing in algebraic bridge connectivity. | screen/CFT-visible vs bridge-algebra-visible |
+| Finite dS/CFT-ER=EPR single-dynamics benchmark | One finite screen operator-transfer family derives both screen shadows and bridge channels; screen-restricted dynamics can still collide while full operator response recovers the bridge algebra. | screen-restricted-dynamics-visible vs full-operator-dynamics-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -285,6 +286,34 @@ pin down what a future controlled dS/CFT or static-patch model would need to
 derive: not just screen entropy or horizon overlap, but the observer algebraic
 channel connecting patches.
 
+## Goal 22 update
+
+Goal 22 removes one more loophole in the finite benchmark. Instead of comparing
+a screen shadow to a separately attached bridge channel, it uses one finite
+operator-transfer family. Diagonal matrix units are fixed for both realizations,
+while off-diagonal matrix units are either fixed or projected to zero:
+
+```text
+offdiag_coupling = 1: identity bridge on M_d
+offdiag_coupling = 0: dephasing bridge onto C^d
+```
+
+The same transfer process derives the screen-restricted data and the bridge
+channel. Entropy, diagonal correlators, horizon overlap, low-order screen
+correlators, and screen-restricted transfer spectra match. The maximal bridge
+algebras differ.
+
+The completion is not another entropy: it is full intrinsic operator dynamics,
+including off-diagonal relative-entropy response and commutator/OTOC-style
+growth. Inside this finite family, that data recovers the bridge algebra.
+
+This is still not dS/CFT, but it states the next finite lesson cleanly:
+
+```text
+boundary-like screen dynamics must carry operator-algebraic response data,
+not only screen-restricted correlators, to determine ER=EPR-style connectivity.
+```
+
 ## Reproducibility
 
 | Claim | Command |
@@ -301,5 +330,6 @@ channel connecting patches.
 | Goal 19 algebraic connectivity order parameter | `PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order` |
 | Goal 20 general finite-dimensional no-go | `PYTHONPATH=. python3 -m qgtoy general-algebraic-connectivity --max-dim 5` |
 | Goal 21 finite dS/CFT-ER=EPR compatibility benchmark | `PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr --max-dim 5 --screen-probability 0.75` |
+| Goal 22 finite dS/CFT-ER=EPR single-dynamics benchmark | `PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr-dynamics --max-dim 5 --screen-probability 0.75 --low-order 2` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |

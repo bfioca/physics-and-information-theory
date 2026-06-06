@@ -51,6 +51,7 @@ from .er_epr_channel import goal10_finite_bridge_channel_benchmark_certificate
 from .er_epr_controls import goal13_non_clifford_scrambling_bridge_controls_certificate
 from .er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
 from .er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
+from .ds_cft_dynamics import goal22_ds_cft_er_epr_single_dynamics_certificate
 from .ds_cft_er_epr import goal21_ds_cft_er_epr_compatibility_certificate
 from .general_algebraic_connectivity import goal20_general_algebraic_connectivity_stability_certificate
 from .interacting_bridge import (
@@ -673,6 +674,20 @@ def run_ds_cft_er_epr(args: argparse.Namespace) -> None:
             goal21_ds_cft_er_epr_compatibility_certificate(
                 max_dim=args.max_dim,
                 screen_probability=args.screen_probability,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_ds_cft_er_epr_dynamics(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal22_ds_cft_er_epr_single_dynamics_certificate(
+                max_dim=args.max_dim,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
             ),
             indent=2,
             sort_keys=True,
@@ -1876,6 +1891,15 @@ def build_parser() -> argparse.ArgumentParser:
     ds_cft_er_epr.add_argument("--max-dim", type=int, default=5)
     ds_cft_er_epr.add_argument("--screen-probability", type=float, default=0.75)
     ds_cft_er_epr.set_defaults(func=run_ds_cft_er_epr)
+
+    ds_cft_er_epr_dynamics = subparsers.add_parser(
+        "ds-cft-er-epr-dynamics",
+        help="emit the Goal 22 finite dS/CFT-ER=EPR single-dynamics benchmark certificate",
+    )
+    ds_cft_er_epr_dynamics.add_argument("--max-dim", type=int, default=5)
+    ds_cft_er_epr_dynamics.add_argument("--screen-probability", type=float, default=0.75)
+    ds_cft_er_epr_dynamics.add_argument("--low-order", type=int, default=2)
+    ds_cft_er_epr_dynamics.set_defaults(func=run_ds_cft_er_epr_dynamics)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",
