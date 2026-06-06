@@ -25,7 +25,7 @@ operator-algebraic data can be necessary to predict reconstruction or channel be
 
 ## Result spine
 
-The benchmark arc has nine finite pieces.
+The benchmark arc now has a theorem target above the finite bridge-screen stack.
 
 | Layer | Finite statement | Main diagnostic split |
 | --- | --- | --- |
@@ -37,14 +37,15 @@ The benchmark arc has nine finite pieces.
 | Interacting bridge code theorem | For arbitrary right-mouth graph-`CZ` interactions, pairwise inter-bridge MI fails as a graph reader, but state-derived Pauli-correlation tomography recovers the graph, observer algebra, and exact transfer. | weak correlation-visible vs Pauli-correlation/algebra-visible |
 | Inseparable bridge-screen dynamics | The graph-`CZ` bridge and north/south screen router are one declared finite dynamics family; the same record derives the bridge algebra, bridge channel, screen channels, and recovery/area-analogue transition. | static-state-visible vs unified-dynamics-visible |
 | Intrinsic local bridge-screen dynamics | The declared screen router is replaced by a star-local tensor network; screen channels and the recovery/area transition are derived by partial trace from local transfer tensors. | declared-router-visible vs local-channel-visible |
+| Relative-entropy observer-bridge theorem | Exact finite-dimensional observer-bridge reconstruction is formulated through relative-entropy preservation, not labeled logical probes or supplied product tables. | static entropy-visible vs distinguishability/recovery-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
-The strongest exact benchmark theorem currently packaged is Goal 18. It keeps
-Goal 16's arbitrary graph-`CZ` bridge-code theorem and Goal 17's bridge-screen
-unification, but replaces the declared screen router with a star-local tensor
-network. The result derives the bridge map, interaction graph, dressed observer
-algebra, exact bridge transfer, north/south screen channels, and equal-bare-area
-recovery/area-analogue transition from one finite local interaction pattern.
+The strongest finite bridge-screen certificate currently packaged is Goal 18.
+The more ambitious theorem target above it is the relative-entropy
+observer-bridge statement: in exact finite dimension, the observer algebra is
+the algebra whose state-space distinguishability is preserved by the region
+channel, and the transferred bridge algebra is the largest algebra preserved by
+the composed observer-to-observer channel.
 
 ## What is standard vs new here
 
@@ -166,6 +167,26 @@ The useful claim is therefore finite and operational: local channel structure,
 not entropy alone and not a static bridge state alone, determines the oriented
 screen recovery in this benchmark.
 
+## Major theorem target
+
+The next theorem layer replaces stabilizer-specific Pauli response with
+relative-entropy response. For a finite-dimensional region channel `N_R`,
+relative-entropy preservation on an algebra's full-rank state pairs is
+equivalent, by Petz/OAQEC recovery, to exact reconstructability of that algebra
+on `R`. For bridge dynamics, the composed channel selects the transferred
+observer algebra by the same criterion.
+
+This is not advertised as a new Petz theorem. The contribution is the
+observer-bridge diagnostic packaging: entropy/static shadows can agree while
+relative-entropy response separates quantum, classical, and null observer
+bridges. It is also the cleanest route from the finite stabilizer certificates
+toward the Harlow-adjacent question: what operational data specify an
+observer's effective algebra and channel?
+
+The major open frontier is the approximate/noisy version with quantitative
+recovery bounds. That is the version that could stop being a finite benchmark
+and start becoming a real observer-program tool.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -178,5 +199,6 @@ screen recovery in this benchmark.
 | Goal 16 interacting bridge code theorem | `PYTHONPATH=. python3 -m qgtoy interacting-bridge-code-theorem --mouths 3 --low-order 3 --atlas-max-mouths 3` |
 | Goal 17 inseparable bridge-screen dynamics | `PYTHONPATH=. python3 -m qgtoy bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3` |
 | Goal 18 intrinsic local bridge-screen dynamics | `PYTHONPATH=. python3 -m qgtoy local-bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3` |
+| Relative-entropy observer-bridge theorem | `PYTHONPATH=. python3 -m qgtoy relative-entropy-bridge-theorem` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |

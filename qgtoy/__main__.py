@@ -55,6 +55,7 @@ from .interacting_bridge import (
     goal16_paper_style_interacting_bridge_code_theorem_certificate,
 )
 from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
+from .relative_entropy_bridge import major_unlock_relative_entropy_observer_bridge_certificate
 from .state_bridge import goal14_state_derived_bridge_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -618,6 +619,18 @@ def run_local_bridge_screen_dynamics(args: argparse.Namespace) -> None:
                 mouths=args.mouths,
                 low_order=args.low_order,
                 atlas_max_mouths=args.atlas_max_mouths,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_relative_entropy_bridge_theorem(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            major_unlock_relative_entropy_observer_bridge_certificate(
+                bloch_radius=args.bloch_radius,
             ),
             indent=2,
             sort_keys=True,
@@ -1786,6 +1799,13 @@ def build_parser() -> argparse.ArgumentParser:
     local_bridge_screen_dynamics.add_argument("--low-order", type=int, default=3)
     local_bridge_screen_dynamics.add_argument("--atlas-max-mouths", type=int, default=3)
     local_bridge_screen_dynamics.set_defaults(func=run_local_bridge_screen_dynamics)
+
+    relative_entropy_bridge_theorem = subparsers.add_parser(
+        "relative-entropy-bridge-theorem",
+        help="emit the major-unlock finite relative-entropy observer-bridge theorem certificate",
+    )
+    relative_entropy_bridge_theorem.add_argument("--bloch-radius", type=float, default=0.5)
+    relative_entropy_bridge_theorem.set_defaults(func=run_relative_entropy_bridge_theorem)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

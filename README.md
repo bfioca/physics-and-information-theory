@@ -51,6 +51,11 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   network: screen channels are derived by partial trace from local transfer
   tensors, while the same finite dynamics record derives `pi`, `G`, the dressed
   algebra, bridge transfer, and the recovery/area-analogue transition.
+- **Major unlock theorem target:** exact finite-dimensional observer-bridge
+  reconstruction can be formulated through relative-entropy response rather
+  than labeled logical probes or supplied product tables: static entropy shadows
+  collide, while relative-entropy preservation separates quantum, classical,
+  and null observer bridges.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -136,6 +141,8 @@ PYTHONPATH=. python3 -m unittest tests.test_bridge_screen_dynamics
 PYTHONPATH=. python3 -m qgtoy bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_local_bridge_screen
 PYTHONPATH=. python3 -m qgtoy local-bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_relative_entropy_bridge
+PYTHONPATH=. python3 -m qgtoy relative-entropy-bridge-theorem
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -428,6 +435,19 @@ Read the Goal 18 theorem note and machine-readable certificate index:
 ```text
 docs/goal18_intrinsic_local_bridge_screen_dynamics_note.md
 docs/goal18_intrinsic_local_bridge_screen_dynamics_certificate_index.json
+```
+
+Emit the relative-entropy observer-bridge theorem certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy relative-entropy-bridge-theorem
+```
+
+Read the major-unlock theorem note and machine-readable certificate index:
+
+```text
+docs/major_unlock_relative_entropy_observer_bridge_theorem_note.md
+docs/major_unlock_relative_entropy_observer_bridge_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:
