@@ -54,6 +54,7 @@ from .interacting_bridge import (
     goal15_interacting_state_derived_bridge_theorem_certificate,
     goal16_paper_style_interacting_bridge_code_theorem_certificate,
 )
+from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
 from .state_bridge import goal14_state_derived_bridge_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -600,6 +601,20 @@ def run_bridge_screen_dynamics(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             goal17_inseparable_bridge_screen_dynamics_certificate(
+                mouths=args.mouths,
+                low_order=args.low_order,
+                atlas_max_mouths=args.atlas_max_mouths,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_local_bridge_screen_dynamics(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal18_intrinsic_local_bridge_screen_dynamics_certificate(
                 mouths=args.mouths,
                 low_order=args.low_order,
                 atlas_max_mouths=args.atlas_max_mouths,
@@ -1762,6 +1777,15 @@ def build_parser() -> argparse.ArgumentParser:
     bridge_screen_dynamics.add_argument("--low-order", type=int, default=3)
     bridge_screen_dynamics.add_argument("--atlas-max-mouths", type=int, default=3)
     bridge_screen_dynamics.set_defaults(func=run_bridge_screen_dynamics)
+
+    local_bridge_screen_dynamics = subparsers.add_parser(
+        "local-bridge-screen-dynamics",
+        help="emit the Goal 18 intrinsic local bridge-screen dynamics certificate",
+    )
+    local_bridge_screen_dynamics.add_argument("--mouths", type=int, default=3)
+    local_bridge_screen_dynamics.add_argument("--low-order", type=int, default=3)
+    local_bridge_screen_dynamics.add_argument("--atlas-max-mouths", type=int, default=3)
+    local_bridge_screen_dynamics.set_defaults(func=run_local_bridge_screen_dynamics)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

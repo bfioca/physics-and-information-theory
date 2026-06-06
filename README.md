@@ -47,6 +47,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   one finite dynamics family: the same declared channel/circuit record derives
   `pi`, `G`, the dressed algebra, bridge transfer, screen channels, and the
   equal-bare-area recovery/area-analogue transition.
+- **Goal 18:** the declared screen router is replaced by a star-local tensor
+  network: screen channels are derived by partial trace from local transfer
+  tensors, while the same finite dynamics record derives `pi`, `G`, the dressed
+  algebra, bridge transfer, and the recovery/area-analogue transition.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -130,6 +134,8 @@ PYTHONPATH=. python3 -m unittest tests.test_interacting_bridge_code_theorem
 PYTHONPATH=. python3 -m qgtoy interacting-bridge-code-theorem --mouths 3 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_bridge_screen_dynamics
 PYTHONPATH=. python3 -m qgtoy bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_local_bridge_screen
+PYTHONPATH=. python3 -m qgtoy local-bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -409,6 +415,19 @@ Read the Goal 17 theorem note and machine-readable certificate index:
 ```text
 docs/goal17_inseparable_bridge_screen_dynamics_note.md
 docs/goal17_inseparable_bridge_screen_dynamics_certificate_index.json
+```
+
+Emit the Goal 18 intrinsic local bridge-screen dynamics certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy local-bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
+```
+
+Read the Goal 18 theorem note and machine-readable certificate index:
+
+```text
+docs/goal18_intrinsic_local_bridge_screen_dynamics_note.md
+docs/goal18_intrinsic_local_bridge_screen_dynamics_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

@@ -25,7 +25,7 @@ operator-algebraic data can be necessary to predict reconstruction or channel be
 
 ## Result spine
 
-The benchmark arc has eight finite pieces.
+The benchmark arc has nine finite pieces.
 
 | Layer | Finite statement | Main diagnostic split |
 | --- | --- | --- |
@@ -36,14 +36,15 @@ The benchmark arc has eight finite pieces.
 | Interacting bridge theorem | Logical-`CZ` dressing makes the bridge resource non-product; the state determines observer algebra and mouth map, while a static-state no-go isolates the need for screen dynamics. | interacting-state-visible vs static-transition-visible |
 | Interacting bridge code theorem | For arbitrary right-mouth graph-`CZ` interactions, pairwise inter-bridge MI fails as a graph reader, but state-derived Pauli-correlation tomography recovers the graph, observer algebra, and exact transfer. | weak correlation-visible vs Pauli-correlation/algebra-visible |
 | Inseparable bridge-screen dynamics | The graph-`CZ` bridge and north/south screen router are one declared finite dynamics family; the same record derives the bridge algebra, bridge channel, screen channels, and recovery/area-analogue transition. | static-state-visible vs unified-dynamics-visible |
+| Intrinsic local bridge-screen dynamics | The declared screen router is replaced by a star-local tensor network; screen channels and the recovery/area transition are derived by partial trace from local transfer tensors. | declared-router-visible vs local-channel-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
-The strongest exact benchmark theorem currently packaged is Goal 17. It keeps
-Goal 16's arbitrary graph-`CZ` bridge-code theorem, but adds the screen router
-inside the same declared finite dynamics. The result derives the bridge map,
-interaction graph, dressed observer algebra, exact bridge transfer, north/south
-screen channels, and equal-bare-area recovery/area-analogue transition from one
-finite channel/circuit family.
+The strongest exact benchmark theorem currently packaged is Goal 18. It keeps
+Goal 16's arbitrary graph-`CZ` bridge-code theorem and Goal 17's bridge-screen
+unification, but replaces the declared screen router with a star-local tensor
+network. The result derives the bridge map, interaction graph, dressed observer
+algebra, exact bridge transfer, north/south screen channels, and equal-bare-area
+recovery/area-analogue transition from one finite local interaction pattern.
 
 ## What is standard vs new here
 
@@ -116,7 +117,9 @@ state stabilizer. That unique dressing recovers the right-mouth graph `G`, and
 therefore the dressed observer algebra and inverse-interaction channel decoder.
 
 Goal 16 still left the screen dynamics as a separate completion. Goal 17 below
-is the finite benchmark that removes that separation.
+packages the bridge and screen in one declared dynamics family. Goal 18 then
+removes the declared screen-router layer by deriving the screen channels from a
+star-local tensor network.
 
 ## Goal 17 update
 
@@ -141,6 +144,28 @@ no-go returns: opposite screen-channel completions share the same bridge
 signature. If an external bare-area bias is appended after the channel is
 fixed, the area crossing shifts while the recovery crossing does not.
 
+## Goal 18 update
+
+Goal 18 replaces the explicit screen router with local tensor factors. A coin
+source and independent north/south transfer tensors define a star-local
+isometry for one recovered logical payload qubit. There is no direct
+north/south tensor, no separately declared screen recovery isometry, and no
+external area bias. The north and south screen channels are obtained by partial
+trace and are verified to be exact qutrit erasure channels.
+
+The representative witness keeps the three-mouth path graph, twisted pairing
+`(1,0,2)`, and `[[5,1,3]]` right blocks. It recovers `pi`, `G`, the dressed
+observer algebra, and exact bridge transfer as before. The new screen theorem
+checks that local branch probability is recovered from the reduced channels,
+that recovery fidelity and the finite quantum-area analogue transition together
+at `p=1/2`, and that entropy-only data cannot orient the transition: at
+`p=0.75`, north and south screen entropies tie while channel recovery favors
+north.
+
+The useful claim is therefore finite and operational: local channel structure,
+not entropy alone and not a static bridge state alone, determines the oriented
+screen recovery in this benchmark.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -152,5 +177,6 @@ fixed, the area crossing shifts while the recovery crossing does not.
 | Goal 15 interacting bridge theorem | `PYTHONPATH=. python3 -m qgtoy interacting-bridge-theorem --mouths 2 --low-order 3 --atlas-max-mouths 3` |
 | Goal 16 interacting bridge code theorem | `PYTHONPATH=. python3 -m qgtoy interacting-bridge-code-theorem --mouths 3 --low-order 3 --atlas-max-mouths 3` |
 | Goal 17 inseparable bridge-screen dynamics | `PYTHONPATH=. python3 -m qgtoy bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3` |
+| Goal 18 intrinsic local bridge-screen dynamics | `PYTHONPATH=. python3 -m qgtoy local-bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
