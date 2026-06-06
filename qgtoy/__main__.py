@@ -7,6 +7,7 @@ import json
 from typing import Any
 
 from .bridge_proof import bridge_symbolic_proof_check
+from .bridge_screen import goal17_inseparable_bridge_screen_dynamics_certificate
 from .bilayer import bilayer_reconstruction_program_certificate
 from .cosmology import (
     bridge_cosmology_phase1_certificate,
@@ -585,6 +586,20 @@ def run_interacting_bridge_code_theorem(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             goal16_paper_style_interacting_bridge_code_theorem_certificate(
+                mouths=args.mouths,
+                low_order=args.low_order,
+                atlas_max_mouths=args.atlas_max_mouths,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_bridge_screen_dynamics(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal17_inseparable_bridge_screen_dynamics_certificate(
                 mouths=args.mouths,
                 low_order=args.low_order,
                 atlas_max_mouths=args.atlas_max_mouths,
@@ -1738,6 +1753,15 @@ def build_parser() -> argparse.ArgumentParser:
     interacting_bridge_code_theorem.add_argument("--low-order", type=int, default=3)
     interacting_bridge_code_theorem.add_argument("--atlas-max-mouths", type=int, default=3)
     interacting_bridge_code_theorem.set_defaults(func=run_interacting_bridge_code_theorem)
+
+    bridge_screen_dynamics = subparsers.add_parser(
+        "bridge-screen-dynamics",
+        help="emit the Goal 17 inseparable bridge-screen dynamics certificate",
+    )
+    bridge_screen_dynamics.add_argument("--mouths", type=int, default=3)
+    bridge_screen_dynamics.add_argument("--low-order", type=int, default=3)
+    bridge_screen_dynamics.add_argument("--atlas-max-mouths", type=int, default=3)
+    bridge_screen_dynamics.set_defaults(func=run_bridge_screen_dynamics)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

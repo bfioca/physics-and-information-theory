@@ -43,6 +43,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   graph-`CZ` code family: pairwise inter-bridge MI is certified insufficient as
   a graph reader, while state-derived logical Pauli-correlation tomography
   recovers the interaction graph, dressed observer algebra, and exact transfer.
+- **Goal 17:** the bridge and north/south screen transition are packaged into
+  one finite dynamics family: the same declared channel/circuit record derives
+  `pi`, `G`, the dressed algebra, bridge transfer, screen channels, and the
+  equal-bare-area recovery/area-analogue transition.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -124,6 +128,8 @@ PYTHONPATH=. python3 -m unittest tests.test_interacting_bridge
 PYTHONPATH=. python3 -m qgtoy interacting-bridge-theorem --mouths 2 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_interacting_bridge_code_theorem
 PYTHONPATH=. python3 -m qgtoy interacting-bridge-code-theorem --mouths 3 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_bridge_screen_dynamics
+PYTHONPATH=. python3 -m qgtoy bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -390,6 +396,19 @@ Read the Goal 16 theorem note and machine-readable certificate index:
 ```text
 docs/goal16_paper_style_interacting_bridge_code_theorem_note.md
 docs/goal16_paper_style_interacting_bridge_code_theorem_certificate_index.json
+```
+
+Emit the Goal 17 inseparable bridge-screen dynamics certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
+```
+
+Read the Goal 17 theorem note and machine-readable certificate index:
+
+```text
+docs/goal17_inseparable_bridge_screen_dynamics_note.md
+docs/goal17_inseparable_bridge_screen_dynamics_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:
