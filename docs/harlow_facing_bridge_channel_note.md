@@ -39,6 +39,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Intrinsic local bridge-screen dynamics | The declared screen router is replaced by a star-local tensor network; screen channels and the recovery/area transition are derived by partial trace from local transfer tensors. | declared-router-visible vs local-channel-visible |
 | Relative-entropy observer-bridge theorem | Exact finite-dimensional observer-bridge reconstruction is formulated through relative-entropy preservation, not labeled logical probes or supplied product tables. | static entropy-visible vs distinguishability/recovery-visible |
 | Algebraic connectivity order parameter | Noisy finite bridge channels are classified by approximate recoverable observer algebra: relative-entropy response plus product/commutator closure separates quantum, classical, and null phases. | static entropy-visible vs algebraic-connectivity-visible |
+| General finite-dimensional stability no-go | In arbitrary finite dimension, response-plus-closure on a proper probe algebra certifies that subalgebra but does not determine the maximal recoverable observer algebra. | certified-subalgebra-visible vs maximal-algebra-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -47,7 +48,10 @@ observer-bridge statement: in exact finite dimension, the observer algebra is
 the algebra whose state-space distinguishability is preserved by the region
 channel, and the transferred bridge algebra is the largest algebra preserved by
 the composed observer-to-observer channel. Goal 19 turns that statement into a
-finite noisy order parameter for Pauli-diagonal bridges.
+finite noisy order parameter for Pauli-diagonal bridges. Goal 20 then removes
+the hidden Pauli-completeness assumption: response and closure certify the
+algebra that was actually probed, but maximal observer-algebra recovery needs
+an informationally complete probe atlas or an explicit maximality test.
 
 ## What is standard vs new here
 
@@ -216,6 +220,40 @@ This is still finite and Pauli-diagonal. The next true lift is a general
 finite-dimensional OA-QEC stability theorem beyond Pauli channels, with
 dimension/error constants and a many-body simulation signature.
 
+## Goal 20 update
+
+Goal 20 gives the first general finite-dimensional obstruction. For every
+`d >= 2`, compare two CPTP observer channels on `M_d`:
+
+- identity on `M_d`;
+- complete dephasing onto the diagonal algebra `C^d`.
+
+If the intrinsic probe algebra is only the diagonal `C^d`, then every diagonal
+state-pair relative entropy is preserved by both channels, product closure is
+pointwise exact, commutators vanish for both, and the maximally mixed entropy
+shadow agrees. But the maximal recoverable observer algebras differ:
+
+```text
+identity:  M_d
+dephasing: C^d
+```
+
+An off-diagonal matrix-unit coherence probe separates them immediately. The
+finite lesson is therefore not that algebraic connectivity fails; it is that
+the order parameter must report both the certified recoverable algebra and the
+maximality evidence behind that certification.
+
+The revised principle is:
+
+```text
+algebraic connectivity = certified recoverable algebra + maximality evidence.
+```
+
+This recovers Goal 19 as the Pauli special case where the chosen `X,Y,Z` probes
+are informationally complete for `M_2`, and it marks the next serious frontier:
+approximate finite-dimensional OA-QEC stability with explicit net size and
+dimension-dependent error constants.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -230,5 +268,6 @@ dimension/error constants and a many-body simulation signature.
 | Goal 18 intrinsic local bridge-screen dynamics | `PYTHONPATH=. python3 -m qgtoy local-bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3` |
 | Relative-entropy observer-bridge theorem | `PYTHONPATH=. python3 -m qgtoy relative-entropy-bridge-theorem` |
 | Goal 19 algebraic connectivity order parameter | `PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order` |
+| Goal 20 general finite-dimensional no-go | `PYTHONPATH=. python3 -m qgtoy general-algebraic-connectivity --max-dim 5` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |

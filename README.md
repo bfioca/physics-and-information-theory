@@ -60,6 +60,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   parameter: relative-entropy response plus product/commutator closure separates
   quantum, classical, and null bridge phases while static entropy shadows remain
   blind.
+- **Goal 20:** beyond the Pauli special case, exact finite-dimensional
+  response-plus-closure data on a proper probe algebra can certify that
+  subalgebra without determining the maximal recoverable observer algebra; an
+  informationally complete/maximality diagnostic is necessary.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -149,6 +153,8 @@ PYTHONPATH=. python3 -m unittest tests.test_relative_entropy_bridge
 PYTHONPATH=. python3 -m qgtoy relative-entropy-bridge-theorem
 PYTHONPATH=. python3 -m unittest tests.test_algebraic_connectivity
 PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order
+PYTHONPATH=. python3 -m unittest tests.test_general_algebraic_connectivity
+PYTHONPATH=. python3 -m qgtoy general-algebraic-connectivity --max-dim 5
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -467,6 +473,19 @@ Read the Goal 19 theorem note and machine-readable certificate index:
 ```text
 docs/goal19_algebraic_connectivity_order_parameter_note.md
 docs/goal19_algebraic_connectivity_order_parameter_certificate_index.json
+```
+
+Emit the Goal 20 general finite-dimensional algebraic connectivity certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy general-algebraic-connectivity --max-dim 5
+```
+
+Read the Goal 20 theorem note and machine-readable certificate index:
+
+```text
+docs/goal20_general_algebraic_connectivity_stability_note.md
+docs/goal20_general_algebraic_connectivity_stability_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:
