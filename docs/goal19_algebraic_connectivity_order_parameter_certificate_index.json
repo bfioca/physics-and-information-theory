@@ -1,0 +1,113 @@
+{
+  "package": "Goal 19: Algebraic Connectivity Order Parameter",
+  "status": "certificate_available",
+  "core_command": "PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order",
+  "human_note": "docs/goal19_algebraic_connectivity_order_parameter_note.md",
+  "scope": {
+    "setting": "finite noisy unital one-qubit Pauli-diagonal observer-bridge channels",
+    "order_parameter": "approximate recoverable observer algebra",
+    "probe_family": "full-rank antipodal qubit states (I +/- rP)/2 for P in {X,Y,Z}",
+    "default_bloch_radius": 0.5,
+    "default_epsilon_bits": 0.25,
+    "response_only_control_epsilon_bits": 0.4,
+    "claim_boundary": "finite Pauli-channel theorem/certificate; not continuum ER=EPR, de Sitter, dS/CFT, or type-III algebra"
+  },
+  "core_claim": "Algebraic connectivity is measured by approximate recoverable observer algebra: relative-entropy response plus product/commutator closure separates quantum, classical, and null bridge phases while static entropy shadows remain blind.",
+  "exact_theorem_style_claims": [
+    {
+      "id": "pauli_diagonal_stability_bound",
+      "claim": "For a nonnegative Pauli-diagonal bridge, if all three Pauli-axis relative-entropy defects are at most epsilon, each axis shrink is at least mu and the bridge has explicit fidelity and product/commutator stability bounds.",
+      "default_bounds": {
+        "mu_lower_bound": 0.839956192704,
+        "average_gate_fidelity_to_identity_lower_bound": 0.919978096352,
+        "product_commutator_defect_upper_bound": 0.294473594339
+      }
+    },
+    {
+      "id": "phase_rule",
+      "claim": "Three stable noncommuting axes with closure define a quantum bridge; one stable commuting axis defines a classical bridge; no stable axis defines a null bridge."
+    },
+    {
+      "id": "response_only_no_go",
+      "claim": "Axis-wise response alone can preserve two noncommuting probes while missing their commutator axis, so product/commutator closure is necessary."
+    }
+  ],
+  "finite_certificate_evidence": [
+    {
+      "id": "representative_noisy_bridges",
+      "records": [
+        {
+          "bridge": "clean_quantum_bridge",
+          "shrinks": [1.0, 1.0, 1.0],
+          "phase": "quantum_bridge",
+          "static_entropy_shadow": [1.0, 1.0]
+        },
+        {
+          "bridge": "stable_noisy_quantum_bridge",
+          "shrinks": [0.9, 0.9, 0.85],
+          "phase": "quantum_bridge",
+          "static_entropy_shadow": [1.0, 1.0],
+          "worst_axis_recovery_fidelity_lower_bound": 0.921458812852
+        },
+        {
+          "bridge": "classical_z_bridge",
+          "shrinks": [0.0, 0.0, 1.0],
+          "phase": "classical_bridge",
+          "static_entropy_shadow": [1.0, 1.0]
+        },
+        {
+          "bridge": "null_depolarizing_bridge",
+          "shrinks": [0.0, 0.0, 0.0],
+          "phase": "null_bridge",
+          "static_entropy_shadow": [1.0, 1.0]
+        }
+      ]
+    },
+    {
+      "id": "response_only_no_go_witness",
+      "shrinks": [0.75, 0.75, 0.5],
+      "coarse_epsilon_bits": 0.4,
+      "response_only_preserved_axes": ["X", "Y"],
+      "missing_commutator_axes": ["Z"],
+      "algebraic_phase": "not_a_stable_algebra"
+    },
+    {
+      "id": "bounded_pauli_grid",
+      "grid_values": [0.0, 0.25, 0.5, 0.75, 1.0],
+      "cptp_channels_checked": 65,
+      "all_static_entropy_shadows_match": true,
+      "phase_counts_at_epsilon_0_25": {
+        "quantum_bridge": 1,
+        "classical_bridge": 12,
+        "null_bridge": 52
+      },
+      "response_only_incomplete_shadow_count_at_epsilon_0_4": 3
+    }
+  ],
+  "simulation_signature": {
+    "proposal": "Prepare full-rank antipodal probe pairs for noncommuting observer operators in a random-circuit, tensor-network, or quantum-simulator bridge; estimate relative-entropy response and product/commutator closure.",
+    "falsifiable_signal": "same coarse entropy/static shadow, different algebraic connectivity phase"
+  },
+  "known_vs_new": {
+    "known_substrate": "OA-QEC, relative entropy recovery, universal recovery bounds, and finite preserved-information algebra structure.",
+    "new_programmatic_contribution": "Defines and certifies a finite noisy bridge order parameter based on recoverable observer algebra; records entropy-blind quantum/classical/null transitions and a response-only closure no-go."
+  },
+  "proof_obligations": [
+    {
+      "id": "goal19_certificate",
+      "claim": "Emit the Goal 19 algebraic connectivity order-parameter certificate.",
+      "command": "PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order"
+    },
+    {
+      "id": "focused_regression",
+      "claim": "Run focused regression for the Goal 19 certificate.",
+      "command": "PYTHONPATH=. python3 -m unittest tests.test_algebraic_connectivity"
+    },
+    {
+      "id": "json_validation",
+      "claim": "Validate the machine-readable Goal 19 certificate index.",
+      "command": "python3 -m json.tool docs/goal19_algebraic_connectivity_order_parameter_certificate_index.json"
+    }
+  ],
+  "limitations": "Finite noisy Pauli-channel theorem/certificate only. The next lift is a general finite-dimensional OA-QEC stability theorem beyond Pauli-diagonal bridges."
+}

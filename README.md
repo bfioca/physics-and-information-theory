@@ -56,6 +56,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   than labeled logical probes or supplied product tables: static entropy shadows
   collide, while relative-entropy preservation separates quantum, classical,
   and null observer bridges.
+- **Goal 19:** algebraic connectivity is promoted to a finite noisy order
+  parameter: relative-entropy response plus product/commutator closure separates
+  quantum, classical, and null bridge phases while static entropy shadows remain
+  blind.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -143,6 +147,8 @@ PYTHONPATH=. python3 -m unittest tests.test_local_bridge_screen
 PYTHONPATH=. python3 -m qgtoy local-bridge-screen-dynamics --mouths 3 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_relative_entropy_bridge
 PYTHONPATH=. python3 -m qgtoy relative-entropy-bridge-theorem
+PYTHONPATH=. python3 -m unittest tests.test_algebraic_connectivity
+PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -448,6 +454,19 @@ Read the major-unlock theorem note and machine-readable certificate index:
 ```text
 docs/major_unlock_relative_entropy_observer_bridge_theorem_note.md
 docs/major_unlock_relative_entropy_observer_bridge_certificate_index.json
+```
+
+Emit the Goal 19 algebraic connectivity order-parameter certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order
+```
+
+Read the Goal 19 theorem note and machine-readable certificate index:
+
+```text
+docs/goal19_algebraic_connectivity_order_parameter_note.md
+docs/goal19_algebraic_connectivity_order_parameter_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

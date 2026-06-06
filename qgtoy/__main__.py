@@ -6,6 +6,7 @@ import argparse
 import json
 from typing import Any
 
+from .algebraic_connectivity import goal19_algebraic_connectivity_order_parameter_certificate
 from .bridge_proof import bridge_symbolic_proof_check
 from .bridge_screen import goal17_inseparable_bridge_screen_dynamics_certificate
 from .bilayer import bilayer_reconstruction_program_certificate
@@ -631,6 +632,20 @@ def run_relative_entropy_bridge_theorem(args: argparse.Namespace) -> None:
         json.dumps(
             major_unlock_relative_entropy_observer_bridge_certificate(
                 bloch_radius=args.bloch_radius,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_algebraic_connectivity_order(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal19_algebraic_connectivity_order_parameter_certificate(
+                bloch_radius=args.bloch_radius,
+                epsilon_bits=args.epsilon_bits,
+                response_only_epsilon_bits=args.response_only_epsilon_bits,
             ),
             indent=2,
             sort_keys=True,
@@ -1806,6 +1821,19 @@ def build_parser() -> argparse.ArgumentParser:
     )
     relative_entropy_bridge_theorem.add_argument("--bloch-radius", type=float, default=0.5)
     relative_entropy_bridge_theorem.set_defaults(func=run_relative_entropy_bridge_theorem)
+
+    algebraic_connectivity_order = subparsers.add_parser(
+        "algebraic-connectivity-order",
+        help="emit the Goal 19 algebraic connectivity order-parameter certificate",
+    )
+    algebraic_connectivity_order.add_argument("--bloch-radius", type=float, default=0.5)
+    algebraic_connectivity_order.add_argument("--epsilon-bits", type=float, default=0.25)
+    algebraic_connectivity_order.add_argument(
+        "--response-only-epsilon-bits",
+        type=float,
+        default=0.4,
+    )
+    algebraic_connectivity_order.set_defaults(func=run_algebraic_connectivity_order)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

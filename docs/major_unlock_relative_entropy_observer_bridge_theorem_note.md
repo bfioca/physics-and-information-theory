@@ -1,7 +1,7 @@
 # Major Unlock: Relative-Entropy Observer-Bridge Theorem
 
 This note is the aggressive next target after Goal 18. Instead of asking only
-for stabilizer/Puali response or product-table tomography, it asks for a
+for stabilizer/Pauli response or product-table tomography, it asks for a
 basis-independent operational diagnostic:
 
 ```text
