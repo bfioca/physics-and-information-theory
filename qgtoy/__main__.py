@@ -44,7 +44,10 @@ from .cosmology import (
     bridge_cosmology_phase31_certificate,
     de_sitter_qec_toy_model_certificate,
 )
-from .conditional_ds_er_epr import goal24_conditional_ds_er_epr_certificate
+from .conditional_ds_er_epr import (
+    goal24_conditional_ds_er_epr_certificate,
+    static_patch_kernel_cp_preflight_certificate,
+)
 from .family import bridge_family_certificate, bridge_theorem_certificate, lift_frontier, witness_mechanism_summary
 from .gf2 import mask_to_tuple
 from .graphs import enumerate_graph_state_reps
@@ -718,6 +721,18 @@ def run_conditional_ds_er_epr(args: argparse.Namespace) -> None:
                 max_cutoff=args.max_cutoff,
                 screen_probability=args.screen_probability,
                 low_order=args.low_order,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_static_patch_kernel_audit(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            static_patch_kernel_cp_preflight_certificate(
+                max_cutoff=args.max_cutoff,
             ),
             indent=2,
             sort_keys=True,
@@ -1948,6 +1963,13 @@ def build_parser() -> argparse.ArgumentParser:
     conditional_ds_er_epr.add_argument("--screen-probability", type=float, default=0.75)
     conditional_ds_er_epr.add_argument("--low-order", type=int, default=2)
     conditional_ds_er_epr.set_defaults(func=run_conditional_ds_er_epr)
+
+    static_patch_kernel_audit = subparsers.add_parser(
+        "static-patch-kernel-audit",
+        help="emit the Goal 24.1 CP/TP/unital/composition audit for the static-patch Schur kernel",
+    )
+    static_patch_kernel_audit.add_argument("--max-cutoff", type=int, default=6)
+    static_patch_kernel_audit.set_defaults(func=run_static_patch_kernel_audit)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

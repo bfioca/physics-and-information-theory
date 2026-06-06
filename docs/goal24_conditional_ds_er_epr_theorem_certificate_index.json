@@ -9,7 +9,7 @@
     "bounded_family": "1 <= L <= 5, N=(L+1)^2",
     "claim_boundary": "finite regulated theorem ledger; not literal continuum dS/CFT, de Sitter quantum gravity, Type-II/Type-III observer algebra, or ER=EPR in de Sitter"
   },
-  "core_claim": "Goal 24 recovers the Goal 23 finite theorem, proves that screen-visible shadow sequences remain insufficient, records an analytic vanishing cutoff error for full operator-response completion inside the regulated family, and identifies the physical assumptions required before a continuum dS ER=EPR claim.",
+  "core_claim": "Goal 24 recovers the Goal 23 finite theorem, proves that screen-visible shadow sequences remain insufficient, certifies that the finite Schur kernel is CP/TP/unital with controlled composition behavior, records an analytic vanishing cutoff error for full operator-response completion inside the regulated family, and identifies the physical assumptions required before a continuum dS ER=EPR claim.",
   "exact_finite_theorem_style_claims": [
     {
       "id": "cutoff_sequence_formalization",
@@ -18,6 +18,10 @@
     {
       "id": "goal23_recovery",
       "claim": "The Goal 23 regulated finite static-patch theorem is recovered as the finite-cutoff theorem."
+    },
+    {
+      "id": "finite_schur_kernel_cp_preflight",
+      "claim": "For 0<=alpha<=1 and damping step s>=0, the finite static-patch Schur multiplier is completely positive, trace preserving, and unital; composition is closed in the broadened Schur-damping family."
     },
     {
       "id": "screen_shadow_sequence_no_go",
@@ -75,6 +79,11 @@
       "id": "focused_regression",
       "claim": "Run focused regression for Goal 24.",
       "command": "PYTHONPATH=. python3 -m unittest tests.test_conditional_ds_er_epr"
+    },
+    {
+      "id": "kernel_cp_preflight",
+      "claim": "Run the finite Schur-kernel CP/TP/unital/composition preflight certificate.",
+      "command": "PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit --max-cutoff 6"
     },
     {
       "id": "goal23_recovery_regression",

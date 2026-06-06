@@ -56,6 +56,36 @@ epsilon_L = 1 - min_offdiag_shrink <= 2L/(L+1)^2 -> 0.
 Inside the regulated family, full intrinsic operator response therefore
 recovers the bridge algebra with vanishing cutoff error.
 
+## Kernel CP Preflight
+
+The regulated kernel is a Schur multiplier, so complete positivity reduces to
+positive semidefiniteness of the coefficient matrix. For
+`0 <= alpha <= 1`, define
+
+```text
+C_alpha,s(i,j) = 1                                      i=j
+C_alpha,s(i,j) = alpha exp(-s distance(i,j)/(L+1)^2)   i!=j.
+```
+
+The proof is finite and analytic:
+
+- `exp(-t|n-n'|)` is positive definite on `Z`;
+- the product kernel on `(ell,m)` is positive definite on `Z^2`;
+- restricting to the finite static-patch mode set preserves PSD;
+- `C_alpha,s = (1-alpha)I + alpha G_s` is PSD for `0 <= alpha <= 1`;
+- a PSD Schur coefficient matrix with unit diagonal gives a completely
+  positive, trace-preserving, unital Schur multiplier.
+
+The certificate also checks bounded numeric PSD via dependency-free Cholesky
+tests. Composition is closed in the broadened Schur-damping family:
+
+```text
+C_alpha,s o C_beta,r = C_{alpha beta, s+r}.
+```
+
+The fixed single-step subfamily `s=1` is not generically closed under
+composition, which is recorded explicitly rather than hidden.
+
 ## Conditional Theorem
 
 If the cutoff sequence has a physical continuum limit satisfying the listed
@@ -87,7 +117,9 @@ derive K_L from an actual static-patch Hamiltonian, path integral, or controlled
 dS/CFT regulator.
 ```
 
-After that, the promotion checklist still requires:
+The CP preflight proves the finite benchmark channel is mathematically valid.
+It does not derive the channel from de Sitter physics. After that, the promotion
+checklist still requires:
 
 - positivity/unitarity or controlled non-unitarity;
 - a continuum screen/operator dictionary;
@@ -114,6 +146,7 @@ survive the promotion.
 | Claim | Command |
 | --- | --- |
 | Goal 24 certificate | `PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2` |
+| Kernel CP preflight | `PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit --max-cutoff 6` |
 | Focused regression | `PYTHONPATH=. python3 -m unittest tests.test_conditional_ds_er_epr` |
 | Goal 23 recovery regression | `PYTHONPATH=. python3 -m unittest tests.test_static_patch_testbed` |
 | JSON certificate index validation | `python3 -m json.tool docs/goal24_conditional_ds_er_epr_theorem_certificate_index.json` |

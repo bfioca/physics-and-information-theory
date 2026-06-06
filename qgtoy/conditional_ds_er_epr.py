@@ -9,7 +9,7 @@ The module deliberately separates three layers:
 
 from __future__ import annotations
 
-from math import exp
+from math import exp, sqrt
 
 from .relative_entropy_bridge import _rounded
 from .static_patch_testbed import (
@@ -36,14 +36,376 @@ def _validate_probability(screen_probability: float) -> None:
         raise ValueError("screen_probability must lie in [0,1]")
 
 
+def _validate_alpha(alpha: float) -> None:
+    if not 0.0 <= alpha <= 1.0:
+        raise ValueError("alpha must lie in [0,1]")
+
+
+def _validate_damping_steps(damping_steps: int) -> None:
+    if damping_steps < 0:
+        raise ValueError("damping_steps must be nonnegative")
+
+
+def _static_patch_mode_distance(
+    first: tuple[int, int],
+    second: tuple[int, int],
+) -> int:
+    return abs(first[0] - second[0]) + abs(first[1] - second[1])
+
+
 def max_static_patch_mode_distance(cutoff: int) -> int:
     """Maximum mode-distance used by the Goal 23 geometric kernel."""
     labels = static_patch_mode_labels(cutoff)
     return max(
-        abs(first[0] - second[0]) + abs(first[1] - second[1])
+        _static_patch_mode_distance(first, second)
         for first in labels
         for second in labels
     )
+
+
+def static_patch_schur_coefficient(
+    cutoff: int,
+    first: tuple[int, int],
+    second: tuple[int, int],
+    *,
+    alpha: float,
+    damping_steps: int = 1,
+) -> float:
+    """Coefficient for the regulated Schur multiplier K_L(alpha,s)."""
+    _validate_alpha(alpha)
+    _validate_damping_steps(damping_steps)
+    if first == second:
+        return 1.0
+    exponent = -damping_steps * _static_patch_mode_distance(first, second)
+    exponent /= float((cutoff + 1) ** 2)
+    return alpha * exp(exponent)
+
+
+def static_patch_schur_coefficient_matrix(
+    cutoff: int,
+    *,
+    alpha: float,
+    damping_steps: int = 1,
+) -> tuple[tuple[float, ...], ...]:
+    """Finite coefficient matrix for the static-patch Schur multiplier."""
+    labels = static_patch_mode_labels(cutoff)
+    return tuple(
+        tuple(
+            static_patch_schur_coefficient(
+                cutoff,
+                first,
+                second,
+                alpha=alpha,
+                damping_steps=damping_steps,
+            )
+            for second in labels
+        )
+        for first in labels
+    )
+
+
+def _cholesky_psd_summary(
+    matrix: tuple[tuple[float, ...], ...],
+    *,
+    tolerance: float = 1e-10,
+) -> dict[str, object]:
+    """Small dependency-free PSD check for symmetric floating matrices."""
+    size = len(matrix)
+    lower = [[0.0 for _ in range(size)] for _ in range(size)]
+    min_pivot = float("inf")
+    for row in matrix:
+        if len(row) != size:
+            raise ValueError("matrix must be square")
+    for i in range(size):
+        for j in range(i + 1):
+            value = matrix[i][j] - sum(lower[i][k] * lower[j][k] for k in range(j))
+            if i == j:
+                min_pivot = min(min_pivot, value)
+                if value < -tolerance:
+                    return {
+                        "psd": False,
+                        "min_cholesky_pivot": _rounded(value),
+                        "failure_index": i,
+                    }
+                lower[i][j] = sqrt(max(value, 0.0))
+            elif lower[j][j] > tolerance:
+                lower[i][j] = value / lower[j][j]
+            elif abs(value) > tolerance:
+                return {
+                    "psd": False,
+                    "min_cholesky_pivot": _rounded(min_pivot),
+                    "failure_index": (i, j),
+                }
+    return {
+        "psd": True,
+        "min_cholesky_pivot": _rounded(min_pivot if size else 0.0),
+        "failure_index": None,
+    }
+
+
+def static_patch_schur_channel_audit(
+    cutoff: int,
+    *,
+    alpha: float,
+    damping_steps: int = 1,
+) -> dict[str, object]:
+    """Audit CP/TP/unital properties for one finite Schur channel."""
+    _validate_alpha(alpha)
+    _validate_damping_steps(damping_steps)
+    matrix = static_patch_schur_coefficient_matrix(
+        cutoff,
+        alpha=alpha,
+        damping_steps=damping_steps,
+    )
+    size = len(matrix)
+    diagonal_fixed = all(abs(matrix[index][index] - 1.0) <= 1e-12 for index in range(size))
+    symmetric = all(
+        abs(matrix[i][j] - matrix[j][i]) <= 1e-12
+        for i in range(size)
+        for j in range(size)
+    )
+    psd_summary = _cholesky_psd_summary(matrix)
+    return {
+        "cutoff_L": cutoff,
+        "mode_count": size,
+        "alpha": alpha,
+        "damping_steps": damping_steps,
+        "coefficient_matrix": {
+            "diagonal_entries_equal_one": diagonal_fixed,
+            "symmetric_real": symmetric,
+            "positive_semidefinite_numeric": psd_summary["psd"],
+            "min_cholesky_pivot": psd_summary["min_cholesky_pivot"],
+        },
+        "analytic_cp_proof": {
+            "exp_abs_kernel_positive_definite_on_Z": True,
+            "product_kernel_positive_definite_on_Z2": True,
+            "finite_mode_restriction_preserves_psd": True,
+            "convex_identity_mixture_preserves_psd_for_alpha_in_unit_interval": True,
+            "proof_text": (
+                "exp(-t|n-n'|) is the covariance kernel of a stationary "
+                "AR(1)-type process on Z for t>0; at t=0 it is the constant "
+                "PSD kernel. The product over (ell,m) is positive definite "
+                "on Z^2. Restricting to the finite static-patch mode set "
+                "preserves PSD, and C_alpha=(1-alpha)I+alpha G is PSD for "
+                "0<=alpha<=1."
+            ),
+        },
+        "schur_multiplier_channel_properties": {
+            "complete_positive": bool(psd_summary["psd"]),
+            "trace_preserving": diagonal_fixed,
+            "unital": diagonal_fixed,
+            "finite_dimensional": True,
+            "cptp_unital": bool(psd_summary["psd"] and diagonal_fixed),
+        },
+    }
+
+
+def static_patch_schur_composition_audit(
+    cutoff: int,
+    *,
+    first_alpha: float,
+    second_alpha: float,
+    first_damping_steps: int = 1,
+    second_damping_steps: int = 1,
+) -> dict[str, object]:
+    """Audit composition of two static-patch Schur multipliers."""
+    _validate_alpha(first_alpha)
+    _validate_alpha(second_alpha)
+    _validate_damping_steps(first_damping_steps)
+    _validate_damping_steps(second_damping_steps)
+    labels = static_patch_mode_labels(cutoff)
+    composed_alpha = first_alpha * second_alpha
+    composed_damping_steps = first_damping_steps + second_damping_steps
+    max_error = 0.0
+    max_fixed_step_error = 0.0
+    for first in labels:
+        for second in labels:
+            first_coeff = static_patch_schur_coefficient(
+                cutoff,
+                first,
+                second,
+                alpha=first_alpha,
+                damping_steps=first_damping_steps,
+            )
+            second_coeff = static_patch_schur_coefficient(
+                cutoff,
+                first,
+                second,
+                alpha=second_alpha,
+                damping_steps=second_damping_steps,
+            )
+            target = static_patch_schur_coefficient(
+                cutoff,
+                first,
+                second,
+                alpha=composed_alpha,
+                damping_steps=composed_damping_steps,
+            )
+            fixed_step_target = static_patch_schur_coefficient(
+                cutoff,
+                first,
+                second,
+                alpha=composed_alpha,
+                damping_steps=1,
+            )
+            product = first_coeff * second_coeff
+            max_error = max(max_error, abs(product - target))
+            max_fixed_step_error = max(max_fixed_step_error, abs(product - fixed_step_target))
+    target_audit = static_patch_schur_channel_audit(
+        cutoff,
+        alpha=composed_alpha,
+        damping_steps=composed_damping_steps,
+    )
+    return {
+        "cutoff_L": cutoff,
+        "first": {
+            "alpha": first_alpha,
+            "damping_steps": first_damping_steps,
+        },
+        "second": {
+            "alpha": second_alpha,
+            "damping_steps": second_damping_steps,
+        },
+        "composition": {
+            "alpha": composed_alpha,
+            "damping_steps": composed_damping_steps,
+            "max_entrywise_error_against_broadened_family": _rounded(max_error),
+            "closed_in_broadened_schur_damping_family": max_error <= 1e-12,
+            "strict_single_step_family_error": _rounded(max_fixed_step_error),
+            "strict_single_step_family_closed": max_fixed_step_error <= 1e-12,
+            "cptp_unital": target_audit["schur_multiplier_channel_properties"][
+                "cptp_unital"
+            ],
+        },
+    }
+
+
+def static_patch_kernel_cp_preflight_certificate(
+    *,
+    max_cutoff: int = 6,
+    alphas: tuple[float, ...] = (0.0, 0.25, 0.5, 0.75, 1.0),
+    damping_steps: tuple[int, ...] = (0, 1, 2),
+) -> dict[str, object]:
+    """Certificate for CP, TP, unitality, and composition behavior."""
+    _validate_max_cutoff(max_cutoff)
+    for alpha in alphas:
+        _validate_alpha(alpha)
+    for steps in damping_steps:
+        _validate_damping_steps(steps)
+
+    channel_rows = tuple(
+        static_patch_schur_channel_audit(
+            cutoff,
+            alpha=alpha,
+            damping_steps=steps,
+        )
+        for cutoff in range(1, max_cutoff + 1)
+        for alpha in alphas
+        for steps in damping_steps
+    )
+    composition_rows = tuple(
+        static_patch_schur_composition_audit(
+            cutoff,
+            first_alpha=first_alpha,
+            second_alpha=second_alpha,
+        )
+        for cutoff in range(1, max_cutoff + 1)
+        for first_alpha, second_alpha in ((0.0, 1.0), (0.5, 0.75), (1.0, 1.0))
+    )
+    all_channels_cptp_unital = all(
+        row["schur_multiplier_channel_properties"]["cptp_unital"]
+        for row in channel_rows
+    )
+    all_compositions_cptp_unital = all(
+        row["composition"]["cptp_unital"] for row in composition_rows
+    )
+    all_compositions_closed_broadened = all(
+        row["composition"]["closed_in_broadened_schur_damping_family"]
+        for row in composition_rows
+    )
+    nontrivial_single_step_not_closed = any(
+        not row["composition"]["strict_single_step_family_closed"]
+        for row in composition_rows
+        if row["composition"]["alpha"] not in (0.0,)
+        and row["composition"]["damping_steps"] > 1
+    )
+    certified_claims = {
+        "analytic_psd_proof_recorded": all(
+            row["analytic_cp_proof"]["exp_abs_kernel_positive_definite_on_Z"]
+            and row["analytic_cp_proof"]["product_kernel_positive_definite_on_Z2"]
+            and row["analytic_cp_proof"]["finite_mode_restriction_preserves_psd"]
+            and row["analytic_cp_proof"][
+                "convex_identity_mixture_preserves_psd_for_alpha_in_unit_interval"
+            ]
+            for row in channel_rows
+        ),
+        "bounded_numeric_psd_checks_pass": all(
+            row["coefficient_matrix"]["positive_semidefinite_numeric"]
+            for row in channel_rows
+        ),
+        "trace_preserving_and_unital_for_all_checked_channels": all_channels_cptp_unital,
+        "composition_closed_in_broadened_schur_damping_family": (
+            all_compositions_closed_broadened and all_compositions_cptp_unital
+        ),
+        "strict_single_step_subfamily_not_generically_closed": (
+            nontrivial_single_step_not_closed
+        ),
+    }
+    certified_claims["static_patch_kernel_cp_preflight_certificate"] = all(
+        certified_claims.values()
+    )
+    return {
+        "goal": "Goal 24.1: Static-Patch Schur Kernel CP Preflight",
+        "status": (
+            "pass"
+            if certified_claims["static_patch_kernel_cp_preflight_certificate"]
+            else "fail"
+        ),
+        "scope": {
+            "max_cutoff": max_cutoff,
+            "alphas": alphas,
+            "damping_steps": damping_steps,
+            "channel_family": (
+                "Schur multipliers C_{alpha,s}(i,j) with diagonal one and "
+                "off-diagonal alpha*exp(-s*distance(i,j)/(L+1)^2)"
+            ),
+        },
+        "theorem_record": {
+            "statement": (
+                "For 0<=alpha<=1 and integer damping step s>=0, the regulated "
+                "static-patch Schur multiplier is completely positive, trace "
+                "preserving, and unital. Compositions remain in the broadened "
+                "Schur-damping family with alpha multiplied and damping steps "
+                "added."
+            ),
+            "proof": (
+                "exp(-t|n-n'|) is positive definite on Z for t>=0; the "
+                "product kernel on (ell,m) is positive definite on Z^2; "
+                "finite restriction preserves PSD; "
+                "C_{alpha,s}=(1-alpha)I+alpha G_s is PSD. A PSD Schur "
+                "coefficient matrix with unit diagonal defines a CP, "
+                "trace-preserving, unital Schur multiplier."
+            ),
+            "composition": (
+                "C_{alpha,s} o C_{beta,r} has coefficient matrix "
+                "C_{alpha*beta,s+r}. Thus the broadened damping family is "
+                "composition closed; the fixed s=1 subfamily is not "
+                "generically closed."
+            ),
+        },
+        "channel_audit_rows": channel_rows,
+        "composition_audit_rows": composition_rows,
+        "reproducibility": {
+            "certificate": (
+                "PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit "
+                f"--max-cutoff {max_cutoff}"
+            ),
+            "focused_regression": (
+                "PYTHONPATH=. python3 -m unittest tests.test_conditional_ds_er_epr"
+            ),
+        },
+        "certified_claims": certified_claims,
+    }
 
 
 def exact_geometric_cutoff_error(cutoff: int) -> float:
@@ -207,6 +569,16 @@ def continuum_assumption_catalog() -> tuple[dict[str, object], ...]:
             "assumption": (
                 "The quantum kernels converge on the regulated local operator "
                 "net with the analytic bound epsilon_L <= 2L/(L+1)^2."
+            ),
+        },
+        {
+            "id": "finite_schur_kernel_cptp",
+            "kind": "mathematical",
+            "status": "verified_inside_regulated_model",
+            "assumption": (
+                "For 0<=alpha<=1, the finite Schur coefficient matrices are "
+                "positive semidefinite with unit diagonal, so K_L is CP, trace "
+                "preserving, and unital."
             ),
         },
         {
@@ -485,11 +857,15 @@ def goal24_conditional_ds_er_epr_certificate(
         screen_probability=screen_probability,
         low_order=low_order,
     )
+    cp_preflight = static_patch_kernel_cp_preflight_certificate(
+        max_cutoff=max_cutoff,
+    )
     obstruction = obstruction_theorem_record()
     prior_art = prior_art_positioning()
     taxonomy = {
         "exact_finite_results": (
             "Goal 23 finite-cutoff theorem",
+            "Goal 24.1 finite Schur-kernel CP/TP/unital/composition audit",
             "Goal 24 screen-shadow sequence no-go inside the regulated family",
             "Goal 24 analytic cutoff-error bound inside the regulated family",
         ),
@@ -511,6 +887,7 @@ def goal24_conditional_ds_er_epr_certificate(
             "analytic_vanishing_error"
         ]["exact_errors_below_bounds"]
         and sequence["analytic_vanishing_error"]["limit"].endswith("= 0"),
+        "finite_schur_kernel_cp_preflight_passes": cp_preflight["status"] == "pass",
         "screen_visible_sequence_no_go_proved": no_go[
             "all_cutoff_collisions_hold"
         ]
@@ -549,6 +926,7 @@ def goal24_conditional_ds_er_epr_certificate(
             "goal23_command": goal23["reproducibility"]["certificate"],
         },
         "conditional_theorem": conditional,
+        "finite_kernel_cp_preflight": cp_preflight,
         "screen_shadow_no_go": no_go,
         "obstruction_theorem": obstruction,
         "prior_art_positioning": prior_art,

@@ -8,6 +8,11 @@ from qgtoy.conditional_ds_er_epr import (
     goal24_conditional_ds_er_epr_certificate,
     prior_art_positioning,
     screen_shadow_sequence_no_go,
+    static_patch_kernel_cp_preflight_certificate,
+    static_patch_schur_channel_audit,
+    static_patch_schur_coefficient,
+    static_patch_schur_coefficient_matrix,
+    static_patch_schur_composition_audit,
 )
 
 
@@ -59,6 +64,59 @@ class ConditionalDsErEprTheoremLedgerTest(unittest.TestCase):
             "analytic_vanishing_error"
         ]
         self.assertEqual(limit_record["limit"], "lim_{L->infinity} 2L/(L+1)^2 = 0")
+
+    def test_schur_kernel_cp_trace_unital_audit(self):
+        audit = static_patch_schur_channel_audit(
+            3,
+            alpha=0.5,
+            damping_steps=1,
+        )
+        props = audit["schur_multiplier_channel_properties"]
+        self.assertTrue(props["complete_positive"])
+        self.assertTrue(props["trace_preserving"])
+        self.assertTrue(props["unital"])
+        self.assertTrue(props["cptp_unital"])
+        self.assertTrue(audit["coefficient_matrix"]["positive_semidefinite_numeric"])
+        self.assertTrue(audit["analytic_cp_proof"]["product_kernel_positive_definite_on_Z2"])
+
+        matrix = static_patch_schur_coefficient_matrix(
+            2,
+            alpha=0.75,
+            damping_steps=2,
+        )
+        self.assertEqual(len(matrix), 9)
+        for index in range(len(matrix)):
+            self.assertAlmostEqual(matrix[index][index], 1.0)
+            for other in range(len(matrix)):
+                self.assertAlmostEqual(matrix[index][other], matrix[other][index])
+
+    def test_schur_kernel_composition_audit(self):
+        audit = static_patch_schur_composition_audit(
+            3,
+            first_alpha=0.5,
+            second_alpha=0.75,
+        )
+        composition = audit["composition"]
+        self.assertEqual(composition["alpha"], 0.375)
+        self.assertEqual(composition["damping_steps"], 2)
+        self.assertTrue(composition["closed_in_broadened_schur_damping_family"])
+        self.assertTrue(composition["cptp_unital"])
+        self.assertFalse(composition["strict_single_step_family_closed"])
+        self.assertGreater(composition["strict_single_step_family_error"], 0.0)
+
+    def test_static_patch_kernel_cp_preflight_certificate(self):
+        audit = static_patch_kernel_cp_preflight_certificate(max_cutoff=4)
+        self.assertEqual(audit["status"], "pass")
+        self.assertTrue(all(audit["certified_claims"].values()))
+        self.assertIn(
+            "composition closed",
+            audit["theorem_record"]["composition"],
+        )
+        self.assertTrue(
+            self.certificate["certified_claims"][
+                "finite_schur_kernel_cp_preflight_passes"
+            ]
+        )
 
     def test_screen_visible_sequence_no_go(self):
         no_go = screen_shadow_sequence_no_go(
@@ -127,6 +185,13 @@ class ConditionalDsErEprTheoremLedgerTest(unittest.TestCase):
             goal24_conditional_ds_er_epr_certificate(screen_probability=-0.1)
         with self.assertRaises(ValueError):
             goal24_conditional_ds_er_epr_certificate(low_order=-1)
+        with self.assertRaises(ValueError):
+            static_patch_schur_coefficient(
+                1,
+                (0, 0),
+                (1, 0),
+                alpha=1.25,
+            )
 
 
 if __name__ == "__main__":

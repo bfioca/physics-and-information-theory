@@ -378,6 +378,19 @@ relative-entropy/OA-QEC recovery stability, horizon/QES data, and algebraic
 ER=EPR interpretation, then limiting algebraic connectivity is equivalent to a
 nontrivial recoverable observer bridge channel.
 
+The finite kernel itself now has a CP preflight. The Schur coefficient matrix is
+proved positive semidefinite because it is a finite restriction of a product
+positive-definite kernel on `(ell,m)`, then mixed with the identity:
+
+```text
+C_alpha,s = (1-alpha)I + alpha G_s.
+```
+
+Unit diagonal gives trace preservation and unitality, and bounded numeric
+Cholesky checks backstop the analytic proof. Composition is closed in the
+broadened damping family `C_alpha,s o C_beta,r = C_{alpha beta,s+r}`, while the
+fixed single-step subfamily is not generically closed.
+
 The first obstruction is not hidden: `K_L` is still a regulated benchmark
 kernel, not one derived from an actual static-patch Hamiltonian, path integral,
 or controlled dS/CFT regulator. Goal 24 therefore does not claim de Sitter
@@ -403,5 +416,6 @@ proved before that phrase becomes honest.
 | Goal 22 finite dS/CFT-ER=EPR single-dynamics benchmark | `PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr-dynamics --max-dim 5 --screen-probability 0.75 --low-order 2` |
 | Goal 23 regulated static-patch dS/CFT testbed | `PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-probability 0.75 --low-order 2` |
 | Goal 24 conditional dS ER=EPR theorem ledger | `PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2` |
+| Goal 24.1 static-patch kernel CP preflight | `PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit --max-cutoff 6` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
 | Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
