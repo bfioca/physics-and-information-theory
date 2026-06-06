@@ -1,0 +1,96 @@
+{
+  "package": "Goal 15: Interacting State-Derived Bridge Theorem",
+  "status": "certificate_available",
+  "core_command": "PYTHONPATH=. python3 -m qgtoy interacting-bridge-theorem --mouths 2 --low-order 3 --atlas-max-mouths 3",
+  "human_note": "docs/goal15_interacting_state_derived_bridge_theorem_note.md",
+  "scope": {
+    "family": "encoded-mouth stabilizer bridge states dressed by a complete logical-CZ interaction graph on right encoded mouths",
+    "representative_mouths": 2,
+    "right_block_code": "[[5,1,3]] five-qubit perfect stabilizer code",
+    "low_order_cutoff": 3,
+    "atlas_max_mouths": 3,
+    "interaction": "logical CZ between right encoded mouths",
+    "result_type": "positive interacting bridge theorem plus static-state transition no-go"
+  },
+  "core_claim": "A non-product logical-CZ-dressed encoded bridge state determines its observer algebra and mouth map while low-order entropy remains blind; state-derived decoding restores transfer, wrong-mouth and mouth-blind controls fail, and static state data alone provably do not determine a north/south recovery transition.",
+  "theorem_style_claims": [
+    {
+      "id": "interacting_encoded_bridge_positive_theorem",
+      "claim": "The logical-CZ-dressed encoded bridge is non-product; full-block MI infers the mouth map; the inferred interaction graph dresses the observer algebra; state-derived decoding restores exact transfer."
+    },
+    {
+      "id": "low_order_entropy_blindness",
+      "claim": "Aligned and twisted interacting witnesses match through physical entropy order d=3, with first split at d+1=4."
+    },
+    {
+      "id": "static_state_transition_no_go",
+      "claim": "The same static state signature is compatible with opposite north- and south-favored recovery channel completions, so static state data alone do not determine the screen transition."
+    },
+    {
+      "id": "screen_isometry_completion",
+      "claim": "When the screen isometry is included as dynamics, success probabilities are read from induced channels and the equal-area entropy analogue matches recovery ordering."
+    }
+  ],
+  "bounded_exhaustive_evidence": [
+    {
+      "id": "representative_two_mouth_interacting_witness",
+      "scope": "aligned and twisted two-mouth logical-CZ-dressed encoded resources",
+      "low_order_regions_checked": 299,
+      "low_order_mismatch_count": 0,
+      "first_entropy_mismatch_order": 4,
+      "twisted_state_derived_pairing": [1, 0],
+      "inferred_interaction_edges": [[0, 1]],
+      "non_product_bridge_component_mi": 2,
+      "identity_activation_capacity_qubits": 0,
+      "state_derived_activation_capacity_qubits": 2,
+      "mouth_blind_scrambling_capacity_qubits": 0
+    },
+    {
+      "id": "bounded_interacting_atlas",
+      "scope": "all pairings for m<=3 under complete logical-CZ interaction",
+      "first_non_product_entropy_matched_transfer_split": "m=2",
+      "all_pairings_recovered_from_interacting_state": true,
+      "state_derived_activation_full_capacity_for_all_resources": true,
+      "mouth_blind_scramblers_zero_capacity": true
+    },
+    {
+      "id": "transition_no_go",
+      "scope": "same static state signature with opposite screen-channel completions",
+      "opposite_recovery_winners_with_same_static_state": true,
+      "minimal_inserted_ingredient": "screen dynamics/isometry or equivalent recovery rule"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "goal15_certificate",
+      "claim": "Emit the Goal 15 interacting bridge theorem certificate.",
+      "command": "PYTHONPATH=. python3 -m qgtoy interacting-bridge-theorem --mouths 2 --low-order 3 --atlas-max-mouths 3"
+    },
+    {
+      "id": "goal15_focused_regression",
+      "claim": "Regression check for the Goal 15 certificate.",
+      "command": "PYTHONPATH=. python3 -m unittest tests.test_interacting_bridge"
+    },
+    {
+      "id": "goal15_json_index_validation",
+      "claim": "Validate the machine-readable certificate index.",
+      "command": "python3 -m json.tool docs/goal15_interacting_state_derived_bridge_theorem_certificate_index.json"
+    }
+  ],
+  "diagnostic_hierarchy": {
+    "coarse_entropy_mincut": "insufficient for the interacting mouth map",
+    "low_order_physical_entropy_through_distance": "insufficient through order d",
+    "full_encoded_block_mi": "infers the mouth map",
+    "inter_bridge_mi_excess": "infers the logical-CZ interaction graph in the declared family",
+    "dressed_observer_algebra": "recovered by conjugating right logical algebra through the inferred interaction graph",
+    "state_derived_decoder": "restores exact transfer",
+    "static_state_data": "insufficient for screen recovery transition",
+    "screen_isometry": "minimal dynamics needed for the recovery/area transition"
+  },
+  "known_vs_new": {
+    "known_derived": "Standard stabilizer codes, logical CZ conjugation, stabilizer entropy, mutual information, Bell teleportation, Choi/Kraus channel checks, and erasure-channel recovery.",
+    "new_programmatic_contribution": "Packages the first non-product finite bridge certificate in this sequence and identifies a sharp static-state-only obstruction for recovery/area transitions."
+  },
+  "limitations": "This is an exact finite stabilizer/QEC theorem and dense-channel certificate. It is not continuum ER=EPR, de Sitter physics, dS/CFT, or a chaotic many-body simulation. The positive theorem is for logical-CZ-dressed encoded-mouth resources; the transition theorem is a no-go unless screen dynamics are supplied.",
+  "next_frontier": "Replace the logical-CZ dressing and erasure screen completion with a single interacting finite circuit whose screen isometry is inseparable from the bridge dynamics."
+}

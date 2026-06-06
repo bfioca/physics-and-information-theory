@@ -35,6 +35,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
 - **Goal 14:** state-derived bridge dynamics infer the encoded mouth map from
   the resource state and the screen recovery transition from induced channel
   data; wrong-mouth, mouth-blind, and external-area-bias controls fail.
+- **Goal 15:** an interacting logical-`CZ` encoded bridge gives a non-product
+  theorem: state-derived algebra and mouth map restore transfer while low-order
+  entropy remains blind; static state data alone cannot determine the screen
+  recovery transition without an explicit screen dynamics/isometry.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -112,6 +116,8 @@ PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest
 PYTHONPATH=. python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_state_bridge
 PYTHONPATH=. python3 -m qgtoy state-bridge-dynamics --mouths 2 --low-order 3 --atlas-max-mouths 3
+PYTHONPATH=. python3 -m unittest tests.test_interacting_bridge
+PYTHONPATH=. python3 -m qgtoy interacting-bridge-theorem --mouths 2 --low-order 3 --atlas-max-mouths 3
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -352,6 +358,19 @@ Read the Goal 14 theorem note and machine-readable certificate index:
 ```text
 docs/goal14_state_derived_bridge_dynamics_note.md
 docs/goal14_state_derived_bridge_dynamics_certificate_index.json
+```
+
+Emit the Goal 15 interacting state-derived bridge theorem certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy interacting-bridge-theorem --mouths 2 --low-order 3 --atlas-max-mouths 3
+```
+
+Read the Goal 15 theorem note and machine-readable certificate index:
+
+```text
+docs/goal15_interacting_state_derived_bridge_theorem_note.md
+docs/goal15_interacting_state_derived_bridge_theorem_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

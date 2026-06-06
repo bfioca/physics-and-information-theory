@@ -25,7 +25,7 @@ operator-algebraic data can be necessary to predict reconstruction or channel be
 
 ## Result spine
 
-The benchmark arc has five finite pieces.
+The benchmark arc has six finite pieces.
 
 | Layer | Finite statement | Main diagnostic split |
 | --- | --- | --- |
@@ -33,6 +33,7 @@ The benchmark arc has five finite pieces.
 | Encoded mouths | Right mouths are encoded in independent `[[5,1,3]]` blocks; low-order physical entropy through the code distance is blind to the logical mouth pairing. | low-order entropy-visible vs decoder/channel-visible |
 | Bridge controls | Algebra-aware Clifford and `T`-dressed activations transfer to the algebraically correct mouth; wrong-mouth and mouth-blind Pauli-twirled controls fail. | generic resource-visible vs coupling/channel-visible |
 | State-derived dynamics | The mouth map is inferred from the encoded resource state, and the north/south recovery transition is inferred from induced screen channels. | low-order entropy-visible vs state/channel-visible |
+| Interacting bridge theorem | Logical-`CZ` dressing makes the bridge resource non-product; the state determines observer algebra and mouth map, while a static-state no-go isolates the need for screen dynamics. | interacting-state-visible vs static-transition-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest exact benchmark theorem currently packaged is the Goal 13 control
@@ -89,31 +90,37 @@ quantum-area crossing without shifting the recovery crossing. A real de
 Sitter-like theorem must derive both the recovery channel and the area
 competition from one controlled static-patch construction.
 
-## Goal 14 update
+## Goal 15 update
 
-The first state-derived bridge-dynamics certificate now removes two inserted
-diagnostics from the earlier benchmark layer. The encoded mouth map is inferred
-from the resource state's full encoded-block mutual information, and the
-north/south routing probabilities are inferred from the screen channels
-induced by the coherent isometry. Low-order entropy remains blind, wrong-mouth
-and mouth-blind controls still fail, and an external area bias not encoded in
-the state/channel data is recorded as a no-go.
+Goal 15 adds the first non-product interacting bridge theorem in this sequence.
+The right encoded mouths are dressed by a logical `CZ` interaction graph. The
+resulting stabilizer state is not a tensor product of independent bridges:
+inter-bridge mutual information detects the interaction graph, full-block
+mutual information infers the mouth map, and the dressed observer algebra is
+computed by conjugating the right logical algebra through the inferred graph.
 
-The remaining next theorem target is to replace the product encoded-mouth
-resource plus coherent erasure router with one interacting finite circuit or
-tensor network:
+The positive theorem says that the state-derived decoder, which removes the
+inferred interaction and routes by the inferred mouth map, restores exact
+transfer while wrong-mouth and mouth-blind controls fail. The no-go theorem says
+the same static state does not determine a north/south recovery transition:
+opposite screen-channel completions have the same static state signature. The
+minimal missing ingredient is an explicit screen dynamics/isometry.
+
+The remaining next theorem target is to make that screen isometry inseparable
+from the bridge dynamics:
 
 ```text
-Next target: interacting state-derived bridge dynamics
+Next target: inseparable interacting bridge/screen dynamics
 
-Find a non-product finite circuit or tensor network whose observer algebra,
-bridge-channel transfer, screen recovery transition, and area-like diagnostic
-are all derived from the same dynamics.
+Replace the logical-CZ bridge dressing plus separate screen-isometry completion
+with one finite interacting circuit or tensor network whose bridge transfer,
+observer algebra, and screen recovery transition are all outputs of the same
+non-product dynamics.
 ```
 
 Success would still not prove ER=EPR in de Sitter, but it would move the finite
-benchmark from state-derived diagnostics to genuinely interacting
-state-derived dynamics.
+benchmark from an interacting bridge theorem plus transition no-go to a fully
+inseparable bridge/screen dynamics theorem.
 
 ## Reproducibility
 
@@ -123,5 +130,6 @@ state-derived dynamics.
 | Goal 12 coupling-activated transfer | `PYTHONPATH=. python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3` |
 | Goal 13 non-Clifford/scrambling controls | `PYTHONPATH=. python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3` |
 | Goal 14 state-derived bridge dynamics | `PYTHONPATH=. python3 -m qgtoy state-bridge-dynamics --mouths 2 --low-order 3 --atlas-max-mouths 3` |
+| Goal 15 interacting bridge theorem | `PYTHONPATH=. python3 -m qgtoy interacting-bridge-theorem --mouths 2 --low-order 3 --atlas-max-mouths 3` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
