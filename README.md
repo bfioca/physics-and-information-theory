@@ -64,6 +64,9 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   response-plus-closure data on a proper probe algebra can certify that
   subalgebra without determining the maximal recoverable observer algebra; an
   informationally complete/maximality diagnostic is necessary.
+- **Goal 21:** a finite dS/CFT-ER=EPR compatibility benchmark shows that
+  screen-visible horizon data can agree while algebraic bridge connectivity
+  differs; intrinsic off-diagonal response supplies the completion diagnostic.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -155,6 +158,8 @@ PYTHONPATH=. python3 -m unittest tests.test_algebraic_connectivity
 PYTHONPATH=. python3 -m qgtoy algebraic-connectivity-order
 PYTHONPATH=. python3 -m unittest tests.test_general_algebraic_connectivity
 PYTHONPATH=. python3 -m qgtoy general-algebraic-connectivity --max-dim 5
+PYTHONPATH=. python3 -m unittest tests.test_ds_cft_er_epr
+PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr --max-dim 5 --screen-probability 0.75
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -486,6 +491,19 @@ Read the Goal 20 theorem note and machine-readable certificate index:
 ```text
 docs/goal20_general_algebraic_connectivity_stability_note.md
 docs/goal20_general_algebraic_connectivity_stability_certificate_index.json
+```
+
+Emit the Goal 21 finite dS/CFT-ER=EPR compatibility benchmark certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr --max-dim 5 --screen-probability 0.75
+```
+
+Read the Goal 21 theorem note and machine-readable certificate index:
+
+```text
+docs/goal21_ds_cft_er_epr_compatibility_benchmark_note.md
+docs/goal21_ds_cft_er_epr_compatibility_benchmark_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:
