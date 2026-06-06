@@ -25,13 +25,14 @@ operator-algebraic data can be necessary to predict reconstruction or channel be
 
 ## Result spine
 
-The benchmark arc has four finite pieces.
+The benchmark arc has five finite pieces.
 
 | Layer | Finite statement | Main diagnostic split |
 | --- | --- | --- |
 | Observer-algebra tomography | Finite stabilizer/OA-QEC shadows form a strict hierarchy; weak entropy/channel data do not determine observer algebras, while richer response/commutator data can recover the finite algebraic signature. | entropy/channel-visible vs reconstruction-visible |
 | Encoded mouths | Right mouths are encoded in independent `[[5,1,3]]` blocks; low-order physical entropy through the code distance is blind to the logical mouth pairing. | low-order entropy-visible vs decoder/channel-visible |
 | Bridge controls | Algebra-aware Clifford and `T`-dressed activations transfer to the algebraically correct mouth; wrong-mouth and mouth-blind Pauli-twirled controls fail. | generic resource-visible vs coupling/channel-visible |
+| State-derived dynamics | The mouth map is inferred from the encoded resource state, and the north/south recovery transition is inferred from induced screen channels. | low-order entropy-visible vs state/channel-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest exact benchmark theorem currently packaged is the Goal 13 control
@@ -88,26 +89,31 @@ quantum-area crossing without shifting the recovery crossing. A real de
 Sitter-like theorem must derive both the recovery channel and the area
 competition from one controlled static-patch construction.
 
-## Best next theorem target
+## Goal 14 update
 
-The next research goal should remove the remaining inserted data:
+The first state-derived bridge-dynamics certificate now removes two inserted
+diagnostics from the earlier benchmark layer. The encoded mouth map is inferred
+from the resource state's full encoded-block mutual information, and the
+north/south routing probabilities are inferred from the screen channels
+induced by the coherent isometry. Low-order entropy remains blind, wrong-mouth
+and mouth-blind controls still fail, and an external area bias not encoded in
+the state/channel data is recorded as a no-go.
+
+The remaining next theorem target is to replace the product encoded-mouth
+resource plus coherent erasure router with one interacting finite circuit or
+tensor network:
 
 ```text
-Goal 14: State-Derived Bridge Dynamics
+Next target: interacting state-derived bridge dynamics
 
-Replace hand-declared bridge maps and routing parameters with state-derived
-finite dynamics. Build finite QEC/stabilizer/tensor-network models where the
-bridge-channel map, screen recovery transition, and entropy/area analogue are
-computed from one shared state or circuit, not inserted as separate inputs.
-Test whether algebraic connectivity predicts transfer while entropy/min-cut
-shadows remain incomplete. Produce exact certificates, wrong-mouth controls,
-scrambling controls, and a Harlow-facing theorem note.
+Find a non-product finite circuit or tensor network whose observer algebra,
+bridge-channel transfer, screen recovery transition, and area-like diagnostic
+are all derived from the same dynamics.
 ```
 
-Success would not prove ER=EPR in de Sitter. It would produce a more serious
-finite theorem program: a controlled model where the observer algebra, bridge
-channel, and area-like transition are mutually derived rather than separately
-declared.
+Success would still not prove ER=EPR in de Sitter, but it would move the finite
+benchmark from state-derived diagnostics to genuinely interacting
+state-derived dynamics.
 
 ## Reproducibility
 
@@ -116,5 +122,6 @@ declared.
 | Goal 11 encoded-mouth entropy blindness | `PYTHONPATH=. python3 -m qgtoy er-epr-encoded --mouths 2 --low-order 3 --atlas-max-mouths 3` |
 | Goal 12 coupling-activated transfer | `PYTHONPATH=. python3 -m qgtoy er-epr-traversable --mouths 2 --low-order 3 --atlas-max-mouths 3` |
 | Goal 13 non-Clifford/scrambling controls | `PYTHONPATH=. python3 -m qgtoy bridge-channel-controls --mouths 2 --low-order 3 --atlas-max-mouths 3` |
+| Goal 14 state-derived bridge dynamics | `PYTHONPATH=. python3 -m qgtoy state-bridge-dynamics --mouths 2 --low-order 3 --atlas-max-mouths 3` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |

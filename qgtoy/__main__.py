@@ -49,6 +49,7 @@ from .er_epr_channel import goal10_finite_bridge_channel_benchmark_certificate
 from .er_epr_controls import goal13_non_clifford_scrambling_bridge_controls_certificate
 from .er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
 from .er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
+from .state_bridge import goal14_state_derived_bridge_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
 from .observer_tomography_intrinsic import goal8_intrinsic_observer_tomography_certificate
@@ -546,6 +547,20 @@ def run_bridge_channel_controls(args: argparse.Namespace) -> None:
 
 def run_bilayer_program(args: argparse.Namespace) -> None:
     print(json.dumps(bilayer_reconstruction_program_certificate(), indent=2, sort_keys=True))
+
+
+def run_state_bridge_dynamics(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal14_state_derived_bridge_dynamics_certificate(
+                mouths=args.mouths,
+                low_order=args.low_order,
+                atlas_max_mouths=args.atlas_max_mouths,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
 
 
 def run_cosmology_phase1(args: argparse.Namespace) -> None:
@@ -1664,6 +1679,15 @@ def build_parser() -> argparse.ArgumentParser:
         help="emit the finite static-patch bilayer reconstruction research certificate",
     )
     bilayer_program.set_defaults(func=run_bilayer_program)
+
+    state_bridge_dynamics = subparsers.add_parser(
+        "state-bridge-dynamics",
+        help="emit the Goal 14 state-derived bridge dynamics certificate",
+    )
+    state_bridge_dynamics.add_argument("--mouths", type=int, default=2)
+    state_bridge_dynamics.add_argument("--low-order", type=int, default=3)
+    state_bridge_dynamics.add_argument("--atlas-max-mouths", type=int, default=3)
+    state_bridge_dynamics.set_defaults(func=run_state_bridge_dynamics)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

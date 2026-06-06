@@ -629,11 +629,11 @@ def goal13_non_clifford_scrambling_bridge_controls_certificate(
         ),
         "reproducibility": {
             "goal13_certificate": (
-                f"python3 -m qgtoy bridge-channel-controls --mouths {mouths} --low-order {low_order} "
+                f"PYTHONPATH=. python3 -m qgtoy bridge-channel-controls --mouths {mouths} --low-order {low_order} "
                 f"--atlas-max-mouths {atlas_max_mouths}"
             ),
             "focused_regression": (
-                "python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
+                "PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest."
                 "test_goal13_non_clifford_scrambling_bridge_controls_certificate"
             ),
         },
