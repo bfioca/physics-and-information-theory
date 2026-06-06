@@ -60,6 +60,7 @@ from .interacting_bridge import (
 )
 from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
 from .relative_entropy_bridge import major_unlock_relative_entropy_observer_bridge_certificate
+from .static_patch_testbed import goal23_regulated_static_patch_ds_cft_certificate
 from .state_bridge import goal14_state_derived_bridge_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -686,6 +687,20 @@ def run_ds_cft_er_epr_dynamics(args: argparse.Namespace) -> None:
         json.dumps(
             goal22_ds_cft_er_epr_single_dynamics_certificate(
                 max_dim=args.max_dim,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_regulated_static_patch(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal23_regulated_static_patch_ds_cft_certificate(
+                max_cutoff=args.max_cutoff,
                 screen_probability=args.screen_probability,
                 low_order=args.low_order,
             ),
@@ -1900,6 +1915,15 @@ def build_parser() -> argparse.ArgumentParser:
     ds_cft_er_epr_dynamics.add_argument("--screen-probability", type=float, default=0.75)
     ds_cft_er_epr_dynamics.add_argument("--low-order", type=int, default=2)
     ds_cft_er_epr_dynamics.set_defaults(func=run_ds_cft_er_epr_dynamics)
+
+    regulated_static_patch = subparsers.add_parser(
+        "regulated-static-patch",
+        help="emit the Goal 23 regulated static-patch dS/CFT algebraic ER=EPR testbed certificate",
+    )
+    regulated_static_patch.add_argument("--max-cutoff", type=int, default=4)
+    regulated_static_patch.add_argument("--screen-probability", type=float, default=0.75)
+    regulated_static_patch.add_argument("--low-order", type=int, default=2)
+    regulated_static_patch.set_defaults(func=run_regulated_static_patch)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -71,6 +71,11 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   dynamics: the same screen process derives both screen-restricted shadows and
   the bridge channel, yet low-order screen data can still hide the bridge
   algebra; full intrinsic operator response and commutator growth recover it.
+- **Goal 23:** the abstract transfer switch is replaced by a regulated
+  static-patch screen model with cutoff spherical modes and a geometric kernel;
+  low-order dS/CFT-like screen data remain insufficient, while full intrinsic
+  operator response recovers the bridge channel with explicit cutoff errors and
+  a continuum gate.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -166,6 +171,8 @@ PYTHONPATH=. python3 -m unittest tests.test_ds_cft_er_epr
 PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr --max-dim 5 --screen-probability 0.75
 PYTHONPATH=. python3 -m unittest tests.test_ds_cft_dynamics
 PYTHONPATH=. python3 -m qgtoy ds-cft-er-epr-dynamics --max-dim 5 --screen-probability 0.75 --low-order 2
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_testbed
+PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-probability 0.75 --low-order 2
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -523,6 +530,19 @@ Read the Goal 22 theorem note and machine-readable certificate index:
 ```text
 docs/goal22_ds_cft_er_epr_single_dynamics_benchmark_note.md
 docs/goal22_ds_cft_er_epr_single_dynamics_benchmark_certificate_index.json
+```
+
+Emit the Goal 23 regulated static-patch dS/CFT testbed certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-probability 0.75 --low-order 2
+```
+
+Read the Goal 23 theorem note and machine-readable certificate index:
+
+```text
+docs/goal23_regulated_static_patch_ds_cft_testbed_note.md
+docs/goal23_regulated_static_patch_ds_cft_testbed_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

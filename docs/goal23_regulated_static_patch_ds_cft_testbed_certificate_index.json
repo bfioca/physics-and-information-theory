@@ -1,0 +1,101 @@
+{
+  "package": "Goal 23: Regulated Static-Patch dS/CFT Algebraic ER=EPR Testbed",
+  "status": "certificate_available",
+  "core_command": "PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-probability 0.75 --low-order 2",
+  "human_note": "docs/goal23_regulated_static_patch_ds_cft_testbed_note.md",
+  "scope": {
+    "setting": "regulated finite static-patch screen model with angular cutoff L, finite screen mode algebra C^N, observer algebras M_N, shared horizon C^N, and one geometric transfer kernel",
+    "result_type": "finite-cutoff screen-data no-go plus intrinsic operator-response completion",
+    "bounded_family": "1 <= L <= 4, N=(L+1)^2",
+    "claim_boundary": "regulated finite testbed; not continuum dS/CFT, de Sitter quantum gravity, Type-II/Type-III observer algebra, or ER=EPR in de Sitter"
+  },
+  "core_claim": "At finite cutoff, dS/CFT-like screen entropy, low-order correlator, horizon-overlap, and screen-restricted transfer data do not determine the induced algebraic bridge channel; full intrinsic operator response does inside the regulated kernel family.",
+  "exact_theorem_style_claims": [
+    {
+      "id": "finite_cutoff_nonidentifiability",
+      "claim": "For every cutoff L>=1 in the regulated static-patch screen family, the offdiag-coupled and dephased kernels agree on screen-visible data but induce different epsilon-recoverable bridge algebras M_N and C^N."
+    },
+    {
+      "id": "explicit_cutoff_error",
+      "claim": "The offdiag-coupled kernel has geometric shrink exp(-distance/(L+1)^2) and cutoff error epsilon_L=1-min_offdiag_shrink."
+    },
+    {
+      "id": "intrinsic_completion",
+      "claim": "Full transfer response, off-diagonal relative-entropy response, modular response, and commutator/OTOC-style growth determine the bridge phase inside the regulated family."
+    },
+    {
+      "id": "zero_geometry_limit",
+      "claim": "Setting the geometric shrink to one recovers the Goal 22 zero-geometry finite transfer family."
+    }
+  ],
+  "finite_certificate_evidence": [
+    {
+      "id": "minimal_cutoff_witness",
+      "cutoff_L": 1,
+      "mode_count": 4,
+      "screen_data_collide": true,
+      "quantum_bridge_algebra": "M_4",
+      "classical_bridge_algebra": "C^4",
+      "cutoff_error_epsilon": 0.393469340287,
+      "response_gap_lower_bound_bits": 0.033889311368
+    },
+    {
+      "id": "representative_cutoff_witness",
+      "cutoff_L": 3,
+      "mode_count": 16,
+      "screen_data_collide": true,
+      "quantum_bridge_algebra": "M_16",
+      "classical_bridge_algebra": "C^16",
+      "cutoff_error_epsilon": 0.312710721209,
+      "response_gap_lower_bound_bits": 0.010878684288
+    },
+    {
+      "id": "bounded_cutoff_family",
+      "cutoffs_checked": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "all_screen_visible_data_collide": true,
+      "all_bridge_channels_differ": true,
+      "all_intrinsic_completions_determine_bridge": true
+    }
+  ],
+  "continuum_gate": {
+    "status": "not_passed",
+    "remaining_obligations": [
+      "derive the regulated kernel from an actual static-patch path integral or Hamiltonian",
+      "prove reflection-positivity/unitarity or control non-unitarity",
+      "identify a continuum boundary operator dictionary and scaling dimensions",
+      "show cutoff errors vanish in a controlled large-L limit",
+      "replace finite Type-I algebras with the appropriate Type-II/Type-III limit",
+      "derive generalized entropy or QES data from the same dynamics",
+      "prove the ER=EPR bridge interpretation in the continuum model"
+    ]
+  },
+  "relationship_to_prior_goals": {
+    "goal21": "screen-visible horizon data can hide bridge algebra",
+    "goal22": "one finite transfer dynamics can derive both screen shadow and bridge channel while screen-restricted data still collide",
+    "goal23": "the transfer family is replaced by cutoff spherical modes and a geometric kernel with explicit finite-cutoff errors"
+  },
+  "proof_obligations": [
+    {
+      "id": "goal23_certificate",
+      "claim": "Emit the Goal 23 regulated static-patch certificate.",
+      "command": "PYTHONPATH=. python3 -m qgtoy regulated-static-patch --max-cutoff 4 --screen-probability 0.75 --low-order 2"
+    },
+    {
+      "id": "focused_regression",
+      "claim": "Run focused regression for Goal 23.",
+      "command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_testbed"
+    },
+    {
+      "id": "json_validation",
+      "claim": "Validate the machine-readable Goal 23 certificate index.",
+      "command": "python3 -m json.tool docs/goal23_regulated_static_patch_ds_cft_testbed_certificate_index.json"
+    }
+  ],
+  "harlow_facing_summary": "A regulated finite static-patch testbed with cutoff spherical screen modes and one geometric transfer kernel shows that low-order dS/CFT-like screen data remain insufficient for algebraic ER=EPR connectivity, while full intrinsic operator response recovers the bridge channel with explicit cutoff errors.",
+  "limitations": "This is finite QEC/OA-QEC mathematics with a regulator. It does not construct a continuum CFT dual, de Sitter quantum gravity, Type-II/Type-III observer algebra, QES formula, or literal ER=EPR-in-dS theorem."
+}
