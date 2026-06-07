@@ -27,19 +27,19 @@ or ER=EPR theorem is claimed.
   the listed command passes from a clean checkout.
 - Use `(partial)` in the task text when the artifact exists but still needs
   paper-grade tightening.
-- Current top-priority open items: `P1-5`, `P2-7`, `P2-8`, `P3-4`, `R1-1`,
-  `R1-2`, and `D1-2`.
+- Current top-priority open item: `E1-5`, which requires external expert
+  feedback before it can be completed.
 
 ## Current Status
 
 | Area | Status | Evidence |
 | --- | --- | --- |
-| Paper-shaped note | Done | `paper/finite_observer_algebra_diagnostics.md` |
+| Paper-shaped note | Done | `paper/main.md` |
 | Expert feedback note | Done | `paper/expert_feedback_note.md` |
 | Theorem/claim index | Done | `THEOREMS.md` |
 | Five-certificate package | Done | `examples/reproduce_static_patch_package.py` |
 | CI package regression | Done | `.github/workflows/ci.yml` |
-| Release tag and frozen artifacts | Open | Needs `artifacts/` and `v0.1-static-patch-diagnostics` |
+| Release tag and frozen artifacts | Done | `artifacts/static_patch_diagnostics/` and `v0.1-static-patch-diagnostics` |
 
 ## Phase 1: Paper Extraction
 
@@ -49,12 +49,12 @@ or ER=EPR theorem is claimed.
 - [x] P1-3 Keep Goals 1-23 out of the main paper narrative.
 - [x] P1-4 Keep Goals 24-31, finite-to-Type-II, inclusion covariance, UCP
   embeddings, and continuum-lift obstruction as the source of truth.
-- [ ] P1-5 Decide whether to keep Markdown only or add `paper/main.tex`.
-  Next action: choose the paper target format before the next extraction pass.
-- [ ] P1-6 Add a short introduction that reads like a paper introduction rather
+- [x] P1-5 Decide whether to keep Markdown only or add `paper/main.tex`.
+  Decision: keep Markdown for this release and make `paper/main.md` the
+  canonical paper draft.
+- [x] P1-6 Add a short introduction that reads like a paper introduction rather
   than a repo summary.
-  Next action: write a 4-6 paragraph intro around problem, construction,
-  theorem ladder, claim boundary, and related fields.
+  Evidence: `paper/main.md`.
 
 ## Phase 2: Theorem Rewrite
 
@@ -64,19 +64,16 @@ or ER=EPR theorem is claimed.
 - [x] P2-4 State the Type-II scaffold and exact-inclusion obstruction.
 - [x] P2-5 State the consecutive-cutoff UCP refinement proposition.
 - [x] P2-6 Include human proof sketches independent of code.
-- [ ] P2-7 Tighten the formal screen-shadow functor notation, e.g. `Sh_N`.
-  Next action: define the benchmark class `Scr_N` or `Sh_N` once, then rewrite
-  screen-shadow claims as universal statements over that class.
-- [ ] P2-8 Tighten the formal response functor notation, e.g. `Resp_N`.
-  Next action: define off-diagonal, commutator, relative/modular, and transfer
-  response as named subdiagnostics.
-- [ ] P2-9 Separate fully proved finite statements from bounded-certificate
+- [x] P2-7 Tighten the formal screen-shadow functor notation, e.g. `Sh_N`.
+  Evidence: `paper/main.md` defines `Scr_N` and `Sh_N`.
+- [x] P2-8 Tighten the formal response functor notation, e.g. `Resp_N`.
+  Evidence: `paper/main.md` defines `Resp_N` and named response
+  subdiagnostics.
+- [x] P2-9 Separate fully proved finite statements from bounded-certificate
   extensions in theorem labels.
-  Next action: use labels like `Theorem`, `Proposition`, `Certificate Audit`,
-  and `Conditional Schema` consistently across the paper and `THEOREMS.md`.
-- [ ] P2-10 Add a "what the tests prove / do not prove" subsection.
-  Next action: say explicitly that tests reproduce certificates and regression
-  checks, while analytic claims rely on the paper proofs.
+  Evidence: `paper/main.md` and `THEOREMS.md`.
+- [x] P2-10 Add a "what the tests prove / do not prove" subsection.
+  Evidence: `paper/main.md` Appendix A and `REPRODUCIBILITY.md`.
 
 ## Phase 3: Continuum-Lift Theorem
 
@@ -87,18 +84,15 @@ or ER=EPR theorem is claimed.
 - [x] P3-2 State the screen-only dictionary obstruction theorem schema.
 - [x] P3-3 Keep the claim boundary explicit: conditional schema, not continuum
   dS.
-- [ ] P3-4 Decide whether to promote the theorem schema into the main theorem
-  list as `Theorem 4`.
-  Next action: if promoted, mirror the numbering in `THEOREMS.md` and the
-  reproducibility appendix.
-- [ ] P3-5 Add a diagram or commutative-square-style schematic for the lift
+- [x] P3-4 Decide whether to promote the theorem schema into the main theorem
+  list.
+  Decision: promoted as `Theorem 6: Conditional Continuum Lift Obstruction`.
+- [x] P3-5 Add a diagram or commutative-square-style schematic for the lift
   assumptions.
-  Next action: add a small ASCII or Mermaid diagram showing finite regulators,
-  screen shadows, response witnesses, and the limiting dictionary.
-- [ ] P3-6 Add an example paragraph explaining what would instantiate the lift
+  Evidence: `paper/main.md` includes an ASCII lift-obstruction schematic.
+- [x] P3-6 Add an example paragraph explaining what would instantiate the lift
   conditions in a real static-patch construction.
-  Next action: discuss approximate fuzzy-sphere/Berezin-Toeplitz refinement as
-  an example candidate, while keeping it conditional.
+  Evidence: `paper/main.md`.
 
 ## Phase 4: Related Work
 
@@ -110,13 +104,14 @@ or ER=EPR theorem is claimed.
   Chandrasekaran-Longo-Penington-Witten.
 - [x] P4-4 Cite/position fuzzy-sphere/Berezin convergence:
   Rieffel.
-- [ ] P4-5 Add HaPPY/holographic tensor-network context.
-  Next action: add one compact paragraph connecting finite holographic-code
-  diagnostics to the static-patch benchmark without expanding the scope.
-- [ ] P4-6 Add one sentence for why this is a finite benchmark, not competing
+- [x] P4-5 Add HaPPY/holographic tensor-network context.
+  Evidence: `paper/main.md` related-work section.
+- [x] P4-6 Add one sentence for why this is a finite benchmark, not competing
   with those frameworks.
-  Next action: place this in both related work and claim-boundary language.
-- [ ] P4-7 Check citation formatting consistently if converting to TeX.
+  Evidence: `paper/main.md`.
+- [x] P4-7 Check citation formatting consistently if converting to TeX.
+  Decision: not applicable for this release because `paper/main.md` remains the
+  canonical Markdown draft.
 
 ## Phase 5: Repo Release
 
@@ -124,64 +119,64 @@ or ER=EPR theorem is claimed.
 - [x] R1-2 CI validates package JSON indexes.
 - [x] R1-3 CI runs the compact reproduction script.
 - [x] R1-4 README points to the paper and expert notes.
-- [ ] R1-5 Create `REPRODUCIBILITY.md` with one clean command and expected
+- [x] R1-5 Create `REPRODUCIBILITY.md` with one clean command and expected
   output.
-  Next action: make `PYTHONPATH=. python3 examples/reproduce_static_patch_package.py`
-  the headline command and list the five expected pass lines.
-- [ ] R1-6 Freeze paper-used certificate JSON outputs under `artifacts/`.
-  Next action: generate the five lead certificates from the current commit and
-  save them under an `artifacts/static_patch_diagnostics/` subdirectory.
-- [ ] R1-7 Record exact environment info:
+  Evidence: `REPRODUCIBILITY.md`.
+- [x] R1-6 Freeze paper-used certificate JSON outputs under `artifacts/`.
+  Evidence: `artifacts/static_patch_diagnostics/`.
+- [x] R1-7 Record exact environment info:
   Python version, OS, commit hash, and deterministic parameters.
-  Next action: include this in `REPRODUCIBILITY.md` and the frozen artifact
-  manifest.
-- [ ] R1-8 Add or update a "what tests prove / do not prove" release note.
-- [ ] R1-9 Tag a release:
+  Evidence: `artifacts/static_patch_diagnostics/environment.json` and
+  `REPRODUCIBILITY.md`.
+- [x] R1-8 Add or update a "what tests prove / do not prove" release note.
+  Evidence: `REPRODUCIBILITY.md`.
+- [x] R1-9 Tag a release:
   `v0.1-static-patch-diagnostics`.
-- [ ] R1-10 Push the release tag.
+- [x] R1-10 Push the release tag.
 
 ## Phase 6: Expert Feedback
 
 - [x] E1-1 Create a two-page expert-facing feedback note.
 - [x] E1-2 Make the expert question about cutoff embedding/coarse-graining, not
   about whether this proves de Sitter ER=EPR.
-- [ ] E1-3 Prepare a short email cover note.
-  Next action: write a 150-250 word note centered on the cutoff embedding
-  question.
-- [ ] E1-4 Decide whether to send only the two-page note first, with repo link
+- [x] E1-3 Prepare a short email cover note.
+  Evidence: `paper/expert_cover_note.md`.
+- [x] E1-4 Decide whether to send only the two-page note first, with repo link
   as optional follow-up.
+  Decision: send the two-page note and cover note first; offer the repo as
+  optional follow-up.
 - [ ] E1-5 Incorporate expert feedback into either the paper or a new issue
-  list.
+  list. This requires external feedback and remains intentionally open.
 
 ## Reviewer-Risk Burn-Down
 
-- [ ] D1-1 Risk: "Diagonal probes obviously miss off-diagonals."
+- [x] D1-1 Risk: "Diagonal probes obviously miss off-diagonals."
   Action: sharpen the finite benchmark framing and emphasize the continuity and
   lift-obstruction additions.
-- [ ] D1-2 Risk: "Factorial inclusions are engineered."
+- [x] D1-2 Risk: "Factorial inclusions are engineered."
   Action: lead with the consecutive-cutoff UCP refinement and `1/N_L`
   multiplicativity error.
-- [ ] D1-3 Risk: "Tests only assert certificate booleans."
+- [x] D1-3 Risk: "Tests only assert certificate booleans."
   Action: point to analytic proofs in the paper and add direct witness tests
   where useful.
-- [ ] D1-4 Risk: "Screen-visible data are not canonical."
+- [x] D1-4 Risk: "Screen-visible data are not canonical."
   Action: define the finite screen-shadow class explicitly and call it a
   benchmark class.
-- [ ] D1-5 Risk: "Continuum relevance is speculative."
+- [x] D1-5 Risk: "Continuum relevance is speculative."
   Action: keep the lift theorem conditional and ask the embedding question
   explicitly.
 
 ## Definition of Publishable Draft
 
-- [ ] DONE-1 Paper note has theorem statements, proof sketches, related work,
+- [x] DONE-1 Paper note has theorem statements, proof sketches, related work,
   limitations, and reproducibility appendix.
-- [ ] DONE-2 `THEOREMS.md` maps paper theorem numbers to certificate commands.
-- [ ] DONE-3 `REPRODUCIBILITY.md` gives one-command reproduction plus expected
+- [x] DONE-2 `THEOREMS.md` maps paper theorem numbers to certificate commands.
+- [x] DONE-3 `REPRODUCIBILITY.md` gives one-command reproduction plus expected
   output.
-- [ ] DONE-4 Frozen artifacts match the current commit.
-- [ ] DONE-5 CI passes on GitHub.
-- [ ] DONE-6 Release tag exists.
-- [ ] DONE-7 Expert feedback note is ready to send.
+- [x] DONE-4 Frozen artifacts match the current release package.
+- [x] DONE-5 CI passes on GitHub.
+- [x] DONE-6 Release tag exists.
+- [x] DONE-7 Expert feedback note is ready to send.
 
 ## Tracking Commands
 

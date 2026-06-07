@@ -40,7 +40,7 @@ definition of a gravitational screen.
 
 ## Exact Finite Claims
 
-### Theorem A: Screen-Shadow Collision
+### Theorem 1: Screen-Shadow Collision
 
 There are finite static-patch benchmark pairs whose screen-visible diagnostics
 agree while the recoverable algebra differs as `M_N` versus `C^N`.
@@ -50,6 +50,7 @@ Status: exact finite theorem/certificate stack plus bounded regulator checks.
 Primary artifacts:
 
 - `docs/goals24_31_static_patch_bridge_theorem_note.md`
+- `paper/main.md`
 - `docs/goals24_31_static_patch_bridge_certificate_index.json`
 - `qgtoy/conditional_ds_er_epr.py`
 - `qgtoy/static_patch_testbed.py`
@@ -60,7 +61,31 @@ Representative command:
 PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2
 ```
 
-### Theorem B: Strong-Continuity Gate
+### Proposition 2: Finite Regulator Dynamics Preserve the Split
+
+The finite Schur/random-unitary regulator channels preserve the declared
+screen shadow while retaining the audited quantum/off-diagonal response in the
+matrix-algebra model.
+
+Status: finite theorem plus bounded regulator-class certificate stack.
+
+Primary artifacts:
+
+- `paper/main.md`
+- `docs/goal26_derived_static_patch_dynamics_note.md`
+- `docs/goal27_static_patch_regulator_universality_note.md`
+- `docs/goal26_derived_static_patch_dynamics_certificate_index.json`
+- `docs/goal27_static_patch_regulator_universality_certificate_index.json`
+- `qgtoy/derived_static_patch_dynamics.py`
+- `qgtoy/static_patch_regulator_universality.py`
+
+Representative command:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy static-patch-regulator-universality --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+```
+
+### Theorem 3: Strong-Continuity Gate
 
 Let `Lambda_L(delta)=exp(delta G_L)` be an identity-starting finite semigroup
 with `||G_L|| <= Gamma_L`. If the cutoff lapse satisfies
@@ -89,7 +114,7 @@ Representative command:
 PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 ```
 
-### Proposition C: Cofinal Full-Matrix Inclusion Scaffold
+### Proposition 4: Cofinal Full-Matrix Inclusion Scaffold
 
 Consecutive spherical cutoffs `N_L=(L+1)^2` do not admit exact unital
 trace-preserving full-matrix inclusions `M_{N_L} -> M_{N_{L+1}}` for `L >= 1`,
@@ -124,7 +149,7 @@ PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-con
 
 ## Bounded Certificate Evidence
 
-### Audit D: Inclusion-Covariant Dynamics
+### Certificate Audit A: Inclusion-Covariant Dynamics
 
 Exact finite covariance fails for the raw fuzzy-sphere Hamiltonians under the
 rank-ordered block embedding. The conditional-expectation version,
@@ -154,7 +179,7 @@ Representative command:
 PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 ```
 
-### Proposition E: Consecutive UCP Cutoff Refinement
+### Proposition 5: Consecutive UCP Cutoff Refinement
 
 Exact unital full-matrix inclusions are too rigid for consecutive spherical
 cutoffs. For any `n <= m`, the trace-filled map
@@ -189,7 +214,7 @@ Representative command:
 PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5
 ```
 
-### Theorem Schema F: Continuum Lift Obstruction
+### Theorem 6: Conditional Continuum Lift Obstruction
 
 Suppose finite regulator sequences satisfy explicit lift conditions:
 embedding/coarse-graining maps, trace/state convergence, screen-shadow
@@ -199,7 +224,8 @@ identical limiting screen shadows but a nonzero limiting response gap, then no
 dictionary that factors only through screen-shadow data can determine the
 observer algebra.
 
-Status: conditional lift-obstruction theorem schema.
+Status: conditional theorem; the conditions are explicit lift assumptions, not
+continuum claims.
 
 Primary artifacts:
 

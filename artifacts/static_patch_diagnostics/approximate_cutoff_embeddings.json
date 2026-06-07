@@ -1,0 +1,242 @@
+{
+  "certified_claims": {
+    "consecutive_full_matrix_star_inclusions_refuted": true,
+    "consecutive_ucp_refinements_exist": true,
+    "declared_screen_shadows_preserved": true,
+    "not_claimed_as_canonical_static_patch_embedding": true,
+    "operator_response_witness_persists": true,
+    "ucp_multiplicativity_errors_decrease": true
+  },
+  "claim_boundary": "finite approximate embedding audit only; not a canonical continuum static-patch embedding",
+  "consecutive_records": [
+    {
+      "approximate_embedding": {
+        "complement_dim": 5,
+        "completely_positive": true,
+        "embedding_id": "trace_filled_ucp_embedding",
+        "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+        "is_star_homomorphism": false,
+        "multiplicativity_witness": {
+          "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+          "goes_to_zero_for_static_patch_cutoffs": true,
+          "operator_norm_error": 0.25,
+          "witness": "A=e_12, B=e_21"
+        },
+        "normalized_trace_preserving": true,
+        "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+        "operator_response": {
+          "commutator_operator_norm": 1.0,
+          "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+          "dephased_control_commutator_norm": 0.0,
+          "off_diagonal_matrix_unit_norm_preserved": true
+        },
+        "screen_shadow": {
+          "coarse_grain_after_refinement_identity": true,
+          "diagonal_trace_preserved": true,
+          "screen_shadow_preserved_for_declared_diagonal_tests": true
+        },
+        "source_dim": 4,
+        "target_dim": 9,
+        "unital": true
+      },
+      "cutoff_L": 1,
+      "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
+      "exact_unital_star_inclusion_exists": false,
+      "source_dim": 4,
+      "target_dim": 9
+    },
+    {
+      "approximate_embedding": {
+        "complement_dim": 7,
+        "completely_positive": true,
+        "embedding_id": "trace_filled_ucp_embedding",
+        "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+        "is_star_homomorphism": false,
+        "multiplicativity_witness": {
+          "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+          "goes_to_zero_for_static_patch_cutoffs": true,
+          "operator_norm_error": 0.111111111111,
+          "witness": "A=e_12, B=e_21"
+        },
+        "normalized_trace_preserving": true,
+        "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+        "operator_response": {
+          "commutator_operator_norm": 1.0,
+          "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+          "dephased_control_commutator_norm": 0.0,
+          "off_diagonal_matrix_unit_norm_preserved": true
+        },
+        "screen_shadow": {
+          "coarse_grain_after_refinement_identity": true,
+          "diagonal_trace_preserved": true,
+          "screen_shadow_preserved_for_declared_diagonal_tests": true
+        },
+        "source_dim": 9,
+        "target_dim": 16,
+        "unital": true
+      },
+      "cutoff_L": 2,
+      "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
+      "exact_unital_star_inclusion_exists": false,
+      "source_dim": 9,
+      "target_dim": 16
+    },
+    {
+      "approximate_embedding": {
+        "complement_dim": 9,
+        "completely_positive": true,
+        "embedding_id": "trace_filled_ucp_embedding",
+        "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+        "is_star_homomorphism": false,
+        "multiplicativity_witness": {
+          "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+          "goes_to_zero_for_static_patch_cutoffs": true,
+          "operator_norm_error": 0.0625,
+          "witness": "A=e_12, B=e_21"
+        },
+        "normalized_trace_preserving": true,
+        "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+        "operator_response": {
+          "commutator_operator_norm": 1.0,
+          "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+          "dephased_control_commutator_norm": 0.0,
+          "off_diagonal_matrix_unit_norm_preserved": true
+        },
+        "screen_shadow": {
+          "coarse_grain_after_refinement_identity": true,
+          "diagonal_trace_preserved": true,
+          "screen_shadow_preserved_for_declared_diagonal_tests": true
+        },
+        "source_dim": 16,
+        "target_dim": 25,
+        "unital": true
+      },
+      "cutoff_L": 3,
+      "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
+      "exact_unital_star_inclusion_exists": false,
+      "source_dim": 16,
+      "target_dim": 25
+    },
+    {
+      "approximate_embedding": {
+        "complement_dim": 11,
+        "completely_positive": true,
+        "embedding_id": "trace_filled_ucp_embedding",
+        "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+        "is_star_homomorphism": false,
+        "multiplicativity_witness": {
+          "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+          "goes_to_zero_for_static_patch_cutoffs": true,
+          "operator_norm_error": 0.04,
+          "witness": "A=e_12, B=e_21"
+        },
+        "normalized_trace_preserving": true,
+        "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+        "operator_response": {
+          "commutator_operator_norm": 1.0,
+          "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+          "dephased_control_commutator_norm": 0.0,
+          "off_diagonal_matrix_unit_norm_preserved": true
+        },
+        "screen_shadow": {
+          "coarse_grain_after_refinement_identity": true,
+          "diagonal_trace_preserved": true,
+          "screen_shadow_preserved_for_declared_diagonal_tests": true
+        },
+        "source_dim": 25,
+        "target_dim": 36,
+        "unital": true
+      },
+      "cutoff_L": 4,
+      "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
+      "exact_unital_star_inclusion_exists": false,
+      "source_dim": 25,
+      "target_dim": 36
+    },
+    {
+      "approximate_embedding": {
+        "complement_dim": 13,
+        "completely_positive": true,
+        "embedding_id": "trace_filled_ucp_embedding",
+        "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+        "is_star_homomorphism": false,
+        "multiplicativity_witness": {
+          "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+          "goes_to_zero_for_static_patch_cutoffs": true,
+          "operator_norm_error": 0.027777777778,
+          "witness": "A=e_12, B=e_21"
+        },
+        "normalized_trace_preserving": true,
+        "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+        "operator_response": {
+          "commutator_operator_norm": 1.0,
+          "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+          "dephased_control_commutator_norm": 0.0,
+          "off_diagonal_matrix_unit_norm_preserved": true
+        },
+        "screen_shadow": {
+          "coarse_grain_after_refinement_identity": true,
+          "diagonal_trace_preserved": true,
+          "screen_shadow_preserved_for_declared_diagonal_tests": true
+        },
+        "source_dim": 36,
+        "target_dim": 49,
+        "unital": true
+      },
+      "cutoff_L": 5,
+      "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
+      "exact_unital_star_inclusion_exists": false,
+      "source_dim": 36,
+      "target_dim": 49
+    }
+  ],
+  "embedding_candidate_table": [
+    {
+      "candidate": "rank_ordered_factorial_star_inclusion",
+      "embedding_type": "exact *-homomorphism on a cofinal subsequence",
+      "status": "implemented_baseline",
+      "strength": "gives UHF/Type-II candidate scaffold",
+      "weakness": "factorial subsequence is physically noncanonical"
+    },
+    {
+      "candidate": "trace_filled_ucp_consecutive_refinement",
+      "embedding_type": "unital completely positive trace-preserving map",
+      "status": "implemented_in_this_audit",
+      "strength": "works for consecutive spherical cutoffs",
+      "weakness": "approximately multiplicative, not an exact inclusion"
+    },
+    {
+      "acceptance_tests": [
+        "trace/state convergence",
+        "screen-shadow preservation",
+        "strong-continuity compatibility",
+        "operator-response persistence"
+      ],
+      "candidate": "spherical_harmonic_projection_refinement",
+      "embedding_type": "mode-label projection/refinement through low harmonics",
+      "status": "program_target"
+    },
+    {
+      "acceptance_tests": [
+        "complete positivity",
+        "trace/state convergence",
+        "approximate multiplicativity on low modes",
+        "static-patch covariance error"
+      ],
+      "candidate": "berezin_toeplitz_fuzzy_sphere_channel",
+      "embedding_type": "symbol/quantization channel via the continuum sphere",
+      "status": "program_target"
+    }
+  ],
+  "goal": "Approximate Static-Patch Cutoff Embedding Audit",
+  "interpretation": "Exact unital full-matrix inclusions are too rigid for consecutive spherical cutoffs. Consecutive UCP trace-preserving refinements exist and have vanishing matrix-unit multiplicativity error.",
+  "multiplicativity_errors": [
+    0.25,
+    0.111111111111,
+    0.0625,
+    0.04,
+    0.027777777778
+  ],
+  "result_type": "consecutive_ucp_cutoff_refinement_theorem_candidate",
+  "status": "pass"
+}

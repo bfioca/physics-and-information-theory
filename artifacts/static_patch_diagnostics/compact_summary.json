@@ -1,0 +1,41 @@
+{
+  "certificates": [
+    {
+      "all_certified_claims_true": true,
+      "claim_boundary": "Finite semigroup theorem gate only; no continuum de Sitter or dS/CFT theorem is claimed.",
+      "name": "strong_continuity_gate",
+      "result_type": "finite_static_patch_strong_continuity_theorem_gate",
+      "status": "pass"
+    },
+    {
+      "all_certified_claims_true": true,
+      "claim_boundary": "Finite-to-von-Neumann-algebra theorem candidate. This uses standard UHF/trace closure facts and does not prove continuum de Sitter, dS/CFT, or literal ER=EPR.",
+      "name": "finite_to_typeii_scaffold",
+      "result_type": "finite_to_von_neumann_algebra_theorem_candidate",
+      "status": "pass"
+    },
+    {
+      "all_certified_claims_true": true,
+      "claim_boundary": "Finite/asymptotic theorem candidate; no continuum de Sitter, dS/CFT, or literal ER=EPR theorem is claimed.",
+      "name": "inclusion_covariant_dynamics",
+      "result_type": "asymptotic_inclusion_covariant_generator_theorem_candidate",
+      "status": "pass"
+    },
+    {
+      "all_certified_claims_true": true,
+      "claim_boundary": "finite approximate embedding audit only; not a canonical continuum static-patch embedding",
+      "name": "approximate_cutoff_embeddings",
+      "result_type": "consecutive_ucp_cutoff_refinement_theorem_candidate",
+      "status": "pass"
+    },
+    {
+      "all_certified_claims_true": true,
+      "claim_boundary": "conditional lift-obstruction theorem schema only; it does not construct continuum de Sitter, dS/CFT, or ER=EPR",
+      "name": "continuum_lift_obstruction",
+      "result_type": "conditional_continuum_lift_obstruction_schema",
+      "status": "pass"
+    }
+  ],
+  "claim_boundary": "finite certificate suite; not continuum de Sitter, dS/CFT, or literal ER=EPR",
+  "package": "static_patch_observer_algebra"
+}
