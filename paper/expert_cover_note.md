@@ -19,11 +19,16 @@ factors only through screen-shadow data would be incomplete if the stated lift
 conditions hold.
 
 The question where expert guidance would be most valuable is the cutoff
-embedding/coarse-graining: is that problem physically meaningful here, or is
-this just a finite restatement of known diagonal forgetfulness? If it is
-meaningful, should the finite maps be organized through harmonic projection,
-heat-kernel coarse graining, Berezin-Toeplitz-style quantization, or another
-conditional expectation?
+embedding/coarse-graining problem. Are the continuum-lift obstruction and
+cutoff embedding problem meaningful ways to formalize the limitation of
+diagonal/screen-shadow data? If so, should the finite maps be organized
+through harmonic projection, heat-kernel coarse graining,
+Berezin-Toeplitz-style quantization, or another conditional expectation?
 
-I would be grateful for feedback on whether this is known, trivial, or worth
-formalizing further.
+To keep the first pass short, I am attaching only the short feedback note. The
+TeX paper draft and executable certificate repository are available as
+supporting material.
+
+I would be grateful for feedback on whether this is already known in the
+operator-algebra/QEC literature, and whether the lift/embedding formulation is
+worth formalizing further.

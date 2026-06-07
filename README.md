@@ -32,6 +32,7 @@ v0.1-static-patch-diagnostics
 | File | Purpose |
 | --- | --- |
 | [`paper/main.md`](paper/main.md) | Canonical paper-style draft. |
+| [`paper/main.tex`](paper/main.tex) | Attachment-ready TeX version of the focused note. |
 | [`THEOREMS.md`](THEOREMS.md) | Theorem and claim index with certificate commands. |
 | [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) | One-command reproduction, expected output, and test boundary. |
 | [`artifacts/static_patch_diagnostics/MANIFEST.md`](artifacts/static_patch_diagnostics/MANIFEST.md) | Frozen certificate artifacts for the packaged result. |
@@ -45,8 +46,11 @@ Expert feedback bundle:
 ```text
 paper/expert_cover_note.md
 paper/expert_feedback_note.md
-paper/main.md
 ```
+
+Mention that `paper/main.tex`, `paper/main.md`, and the executable certificate
+repository are available as supporting material. Do not lead with the full
+repository or goal history.
 
 ## Quick Reproduction
 

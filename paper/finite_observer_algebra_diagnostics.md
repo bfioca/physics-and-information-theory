@@ -36,14 +36,14 @@ definition of holography or algebraic ER=EPR. It is a linked finite benchmark
 and obstruction ledger designed to make a common pitfall executable: a
 screen-only diagnostic can miss the noncommutative observer algebra.
 
-The results below are separated into four categories.
+The results below are separated into four claim categories:
 
-| Category | Meaning |
-| --- | --- |
-| Exact finite theorem | A statement about the finite objects defined here. |
-| Bounded certificate | A checked finite family or implementation-backed audit. |
-| Conditional lift theorem schema | A theorem form that becomes continuum-relevant only if stated lift conditions are supplied. |
-| Continuum speculation | Motivation only; not claimed as proved here. |
+- **Exact finite theorem:** a statement about the finite objects defined here.
+- **Bounded certificate:** a checked finite family or implementation-backed
+  audit.
+- **Conditional lift theorem schema:** a theorem form that becomes
+  continuum-relevant only if stated lift conditions are supplied.
+- **Continuum speculation:** motivation only; not claimed as proved here.
 
 ## 2. Finite Observer Model
 

@@ -34,7 +34,7 @@ or ER=EPR theorem is claimed.
 
 | Area | Status | Evidence |
 | --- | --- | --- |
-| Paper-shaped note | Done | `paper/main.md` |
+| Paper-shaped note | Done | `paper/main.md` and `paper/main.tex` |
 | Expert feedback note | Done | `paper/expert_feedback_note.md` |
 | Theorem/claim index | Done | `THEOREMS.md` |
 | Five-certificate package | Done | `examples/reproduce_static_patch_package.py` |
@@ -50,8 +50,8 @@ or ER=EPR theorem is claimed.
 - [x] P1-4 Keep Goals 24-31, finite-to-Type-II, inclusion covariance, UCP
   embeddings, and continuum-lift obstruction as the source of truth.
 - [x] P1-5 Decide whether to keep Markdown only or add `paper/main.tex`.
-  Decision: keep Markdown for this release and make `paper/main.md` the
-  canonical paper draft.
+  Decision: keep `paper/main.md` as the canonical editable paper draft and add
+  `paper/main.tex` as the attachment-ready expert-sharing version.
 - [x] P1-6 Add a short introduction that reads like a paper introduction rather
   than a repo summary.
   Evidence: `paper/main.md`.
@@ -110,8 +110,8 @@ or ER=EPR theorem is claimed.
   with those frameworks.
   Evidence: `paper/main.md`.
 - [x] P4-7 Check citation formatting consistently if converting to TeX.
-  Decision: not applicable for this release because `paper/main.md` remains the
-  canonical Markdown draft.
+  Evidence: `paper/main.tex` uses inline reference notes rather than a
+  bibliography database.
 
 ## Phase 5: Repo Release
 
@@ -139,6 +139,9 @@ or ER=EPR theorem is claimed.
 - [x] E1-1 Create a two-page expert-facing feedback note.
 - [x] E1-2 Make the expert question about cutoff embedding/coarse-graining, not
   about whether this proves de Sitter ER=EPR.
+  Evidence: `paper/expert_cover_note.md` and `paper/expert_feedback_note.md`
+  ask whether the continuum-lift obstruction and cutoff embedding problem are
+  meaningful formalizations of diagonal/screen-shadow limitations.
 - [x] E1-3 Prepare a short email cover note.
   Evidence: `paper/expert_cover_note.md`.
 - [x] E1-4 Decide whether to send only the two-page note first, with repo link

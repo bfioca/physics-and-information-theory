@@ -108,8 +108,8 @@ We do not claim:
 The current finite package isolates the remaining load-bearing physics choice:
 
 ```text
-Is the cutoff embedding/coarse-graining problem physically meaningful here, or
-is this just a finite restatement of known diagonal forgetfulness?
+Are the continuum-lift obstruction and cutoff embedding/coarse-graining problem
+meaningful ways to formalize the limitation of diagonal/screen-shadow data?
 ```
 
 Candidates include:
@@ -138,4 +138,5 @@ The paper-shaped note is:
 
 ```text
 paper/main.md
+paper/main.tex
 ```

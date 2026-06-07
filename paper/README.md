@@ -6,6 +6,7 @@ than the full repository.
 Start with:
 
 - `main.md`
+- `main.tex`
 - `expert_feedback_note.md`
 - `expert_cover_note.md`
 - `PUBLISHING_CHECKLIST.md`
@@ -13,8 +14,9 @@ Start with:
 Use `PUBLISHING_CHECKLIST.md` as the live tracker for turning the current note
 into a publishable draft and release package.
 
-`main.md` is the canonical paper draft. The finite-observer note is retained as
-the earlier extraction artifact.
+`main.md` is the canonical editable paper draft. `main.tex` is the
+attachment-ready technical-note version for wider expert sharing. The
+finite-observer note is retained as the earlier extraction artifact.
 
 ## Expert Send Bundle
 
@@ -22,9 +24,10 @@ Send only:
 
 - `expert_cover_note.md`
 - `expert_feedback_note.md`
-- `main.md`
 
-Do not lead with the full repository or goal history.
+Do not lead with the full repository or goal history. In the cover note, say
+that `main.tex`, `main.md`, and the executable certificate repository are
+available as supporting material.
 
 Supporting repo entrypoints:
 

@@ -103,8 +103,8 @@ The audit is stronger than the trace-filled baseline, but it still does not
 derive a canonical static-patch cutoff. The open question is:
 
 ```text
-Is one of these cutoff/coarse-graining structures physically meaningful, or is
-the benchmark only a finite restatement of diagonal forgetfulness?
+Are the continuum-lift obstruction and cutoff embedding/coarse-graining problem
+meaningful ways to formalize the limitation of diagonal/screen-shadow data?
 ```
 
 ## Reproducibility
