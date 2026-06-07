@@ -115,6 +115,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   while short-time static-patch locality, fuzzy-sphere heat scaling, or
   shrinking Euclidean cap thickness are anti-tautological sufficient conditions
   for the needed approximate-identity behavior.
+- **Goal 31:** the short-time locality gate is refined to a finite semigroup
+  theorem: identity-starting strong continuity with generator norm `Gamma_L`
+  and lapse `delta_L Gamma_L -> 0` derives approximate identity, while
+  stationary twirling and fixed-lapse thermalization remain no-go controls.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -227,6 +231,8 @@ PYTHONPATH=. python3 -m unittest tests.test_modular_kms_continuity
 PYTHONPATH=. python3 -m qgtoy modular-kms-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_physical_continuity
 PYTHONPATH=. python3 -m qgtoy static-patch-physical-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity
+PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -689,6 +695,19 @@ Read the Goal 30 theorem note and machine-readable certificate index:
 ```text
 docs/goal30_static_patch_physical_continuity_note.md
 docs/goal30_static_patch_physical_continuity_certificate_index.json
+```
+
+Emit the Goal 31 static-patch strong-continuity theorem certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+```
+
+Read the Goal 31 theorem note and machine-readable certificate index:
+
+```text
+docs/goal31_static_patch_strong_continuity_note.md
+docs/goal31_static_patch_strong_continuity_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

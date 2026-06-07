@@ -50,6 +50,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Axiomatic static-patch selection | Independent finite static-patch axioms select the regulator class without using bridge/response data, and total dephasing identifies vanishing cutoff continuity as necessary. | declared-class-visible vs axiom-selected-visible |
 | Modular/KMS continuity audit | KMS/detailed balance alone is too weak: stationary modular twirling passes the KMS-looking gates but collapses to complete dephasing. Localized modular-time approximate identity is sufficient. | KMS-visible vs continuity-visible |
 | Physical continuity gate | The remaining finite physics assumption is sharpened to short-time static-patch locality: finite-lapse modular averaging, fuzzy-sphere heat scaling, or shrinking Euclidean cap thickness imply the needed approximate identity. | thermal-visible vs short-time-locality-visible |
+| Strong-continuity theorem gate | Identity-starting finite semigroup dynamics with generator norm `Gamma_L` and lapse `delta_L Gamma_L -> 0` derives approximate identity; stationary twirling and fixed-lapse thermalization are no-go controls. | KMS-compatible vs strongly-continuous-local-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -592,6 +593,38 @@ screen-shadow data remain insufficient, the quantum/classical bridge split is
 preserved, and the actual unresolved physics question is whether a controlled
 static-patch/dS-CFT construction enforces short-time locality.
 
+## Goal 31 update
+
+Goal 31 replaces the phrase "short-time locality" with a finite semigroup
+theorem. For identity-starting finite static-patch dynamics
+
+```text
+Lambda_L(delta)=exp(delta G_L),
+```
+
+the elementary bound
+
+```text
+||Lambda_L(delta_L)-id|| <= exp(delta_L ||G_L||)-1
+```
+
+shows that `delta_L Gamma_L -> 0` derives the approximate-identity gate. This
+is enough for local modular evolution with `Gamma_L` controlled by the cutoff
+Hamiltonian gap, and for heat/Euclidean transfer with `Gamma_L` controlled by
+the squared gap.
+
+The no-go side is also sharper. Stationary modular twirling is not a strongly
+continuous identity-starting finite-time dynamics: it jumps by norm one on a
+matrix-unit witness. A fixed positive thermal lapse is still insufficient even
+for a continuous semigroup, because the lapse-generator product need not
+vanish with the cutoff. Thus the isolated finite physics axiom is:
+
+```text
+cutoff_compatible_strong_continuity
+```
+
+This remains a finite theorem gate, not a continuum dS/CFT derivation.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -618,5 +651,6 @@ static-patch/dS-CFT construction enforces short-time locality.
 | Goal 28 axiomatic static-patch selection | `PYTHONPATH=. python3 -m qgtoy axiomatic-static-patch-selection --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Goal 29 modular/KMS continuity | `PYTHONPATH=. python3 -m qgtoy modular-kms-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Goal 30 physical static-patch continuity gate | `PYTHONPATH=. python3 -m qgtoy static-patch-physical-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
+| Goal 31 static-patch strong-continuity theorem gate | `PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_axiomatic_static_patch_selection tests.test_modular_kms_continuity tests.test_static_patch_physical_continuity tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_axiomatic_static_patch_selection tests.test_modular_kms_continuity tests.test_static_patch_physical_continuity tests.test_static_patch_strong_continuity tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
