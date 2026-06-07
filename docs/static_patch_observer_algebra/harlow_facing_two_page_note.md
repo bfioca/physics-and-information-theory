@@ -79,6 +79,15 @@ modular, heat/Lindblad, conditional-expectation, and short-time semigroup
 covariance errors along the factorial subsequence. The dephased screen control
 is exactly inclusion-covariant and abelian.
 
+**Continuum-lift update.** The exact inclusion obstruction is also softened by
+an approximate consecutive-cutoff route. For `n <= m`, the trace-filled UCP map
+`Phi(A)=VAV^*+tau_n(A)(I_m-VV^*)` is unital, completely positive, and
+normalized-trace preserving. It is not an exact inclusion, but its matrix-unit
+multiplicativity error is `1/n`, hence vanishes for `n=(L+1)^2`. This gives a
+finite lift-condition schema: any proposed continuum/static-patch dictionary
+that factors only through convergent screen shadows is incomplete if a
+commutator or off-diagonal response witness remains separated.
+
 ## What Is New Versus Standard
 
 Standard ingredients include finite matrix algebras, diagonal subalgebras,

@@ -154,6 +154,66 @@ Representative command:
 PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 ```
 
+### Proposition E: Consecutive UCP Cutoff Refinement
+
+Exact unital full-matrix inclusions are too rigid for consecutive spherical
+cutoffs. For any `n <= m`, the trace-filled map
+
+```text
+Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)
+```
+
+is unital, completely positive, and normalized-trace preserving. For the
+matrix-unit witness `A=e_12`, `B=e_21`,
+
+```text
+||Phi(AB)-Phi(A)Phi(B)|| = 1/n.
+```
+
+For static-patch dimensions `n=(L+1)^2`, this error tends to zero while the
+off-diagonal commutator witness remains visible in the quantum corner.
+
+Status: finite approximate embedding theorem candidate, not a canonical
+continuum embedding.
+
+Primary artifacts:
+
+- `docs/canonical_embedding_program.md`
+- `docs/static_patch_embedding_channels_certificate_index.json`
+- `qgtoy/embedding_channels.py`
+- `tests/test_embedding_channels.py`
+
+Representative command:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5
+```
+
+### Theorem Schema F: Continuum Lift Obstruction
+
+Suppose finite regulator sequences satisfy explicit lift conditions:
+embedding/coarse-graining maps, trace/state convergence, screen-shadow
+convergence, strong-continuity or generator control, response-witness
+persistence, and observer-algebra limit compatibility. If two sequences have
+identical limiting screen shadows but a nonzero limiting response gap, then no
+dictionary that factors only through screen-shadow data can determine the
+observer algebra.
+
+Status: conditional lift-obstruction theorem schema.
+
+Primary artifacts:
+
+- `docs/continuum_lift_conditions.md`
+- `docs/continuum_lift_obstruction_certificate_index.json`
+- `qgtoy/continuum_lift.py`
+- `tests/test_continuum_lift_obstruction.py`
+
+Representative command:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy continuum-lift-obstruction --max-cutoff 5
+```
+
 ## Conditional Assumptions
 
 The packaged Type-II/static-patch interpretation depends on:
@@ -163,6 +223,8 @@ The packaged Type-II/static-patch interpretation depends on:
 - the physical interpretation of the finite matrix inclusions as cutoff
   refinement;
 - the `rank_ordered_static_patch_embedding` used in the current dynamics audit.
+- the choice between exact cofinal inclusions and approximate consecutive UCP
+  refinement maps.
 
 The main open question is whether a more canonical inclusion or conditional
 expectation should come from angular-momentum branching, Berezin-Toeplitz
@@ -186,6 +248,7 @@ Run the focused package regression:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 -m unittest tests.test_embedding_channels tests.test_continuum_lift_obstruction
 ```
 
 Run the compact example script:
@@ -193,4 +256,3 @@ Run the compact example script:
 ```bash
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
 ```
-

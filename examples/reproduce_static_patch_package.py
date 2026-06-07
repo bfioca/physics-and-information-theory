@@ -12,6 +12,8 @@ from typing import Any
 from qgtoy.inclusion_covariant_dynamics import (
     inclusion_covariant_static_patch_dynamics_certificate,
 )
+from qgtoy.embedding_channels import approximate_static_patch_embedding_certificate
+from qgtoy.continuum_lift import continuum_lift_obstruction_certificate
 from qgtoy.static_patch_strong_continuity import (
     goal31_static_patch_strong_continuity_certificate,
 )
@@ -66,6 +68,8 @@ def main() -> None:
         low_order=2,
         perturbation_radius=0.05,
     )
+    embeddings = approximate_static_patch_embedding_certificate(max_cutoff=5)
+    lift = continuum_lift_obstruction_certificate(max_cutoff=5)
     payload = {
         "package": "static_patch_observer_algebra",
         "claim_boundary": (
@@ -76,6 +80,8 @@ def main() -> None:
             compact_status("strong_continuity_gate", strong),
             compact_status("finite_to_typeii_scaffold", typeii),
             compact_status("inclusion_covariant_dynamics", dynamics),
+            compact_status("approximate_cutoff_embeddings", embeddings),
+            compact_status("continuum_lift_obstruction", lift),
         ],
     }
     print(json.dumps(payload, indent=2, sort_keys=True))
@@ -83,4 +89,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

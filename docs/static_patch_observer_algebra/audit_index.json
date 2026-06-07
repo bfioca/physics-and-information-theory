@@ -72,22 +72,56 @@
         "qgtoy/inclusion_covariant_dynamics.py"
       ],
       "remaining_assumption": "rank_ordered_static_patch_embedding"
+    },
+    {
+      "id": "approximate_cutoff_embeddings",
+      "claim": "Consecutive spherical cutoffs admit trace-filled UCP refinements with decreasing 1/N_L multiplicativity error while preserving declared screen shadows and off-diagonal response witnesses.",
+      "status": "finite approximate embedding theorem candidate",
+      "primary_note": "docs/canonical_embedding_program.md",
+      "certificate_index": "docs/static_patch_embedding_channels_certificate_index.json",
+      "representative_command": "PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5",
+      "supporting_tests": [
+        "PYTHONPATH=. python3 -m unittest tests.test_embedding_channels"
+      ],
+      "source_modules": [
+        "qgtoy/embedding_channels.py"
+      ],
+      "claim_boundary": "not a canonical continuum static-patch embedding"
+    },
+    {
+      "id": "continuum_lift_obstruction",
+      "claim": "Under explicit lift conditions, any continuum dictionary factoring only through screen-shadow data is incomplete when response witnesses remain separated.",
+      "status": "conditional theorem schema",
+      "primary_note": "docs/continuum_lift_conditions.md",
+      "certificate_index": "docs/continuum_lift_obstruction_certificate_index.json",
+      "representative_command": "PYTHONPATH=. python3 -m qgtoy continuum-lift-obstruction --max-cutoff 5",
+      "supporting_tests": [
+        "PYTHONPATH=. python3 -m unittest tests.test_continuum_lift_obstruction"
+      ],
+      "source_modules": [
+        "qgtoy/continuum_lift.py"
+      ],
+      "claim_boundary": "conditional schema only; not a continuum dS/CFT construction"
     }
   ],
   "package_regression": {
-    "command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics",
+    "command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction",
     "compact_reproduction_command": "PYTHONPATH=. python3 examples/reproduce_static_patch_package.py",
     "covers": [
       "strong_continuity_gate",
       "finite_to_typeii_scaffold",
-      "inclusion_covariant_dynamics"
+      "inclusion_covariant_dynamics",
+      "approximate_cutoff_embeddings",
+      "continuum_lift_obstruction"
     ]
   },
   "json_validation_commands": [
     "python3 -m json.tool docs/static_patch_observer_algebra/audit_index.json",
     "python3 -m json.tool docs/goals24_31_static_patch_bridge_certificate_index.json",
     "python3 -m json.tool docs/major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json",
-    "python3 -m json.tool docs/inclusion_covariant_static_patch_dynamics_certificate_index.json"
+    "python3 -m json.tool docs/inclusion_covariant_static_patch_dynamics_certificate_index.json",
+    "python3 -m json.tool docs/static_patch_embedding_channels_certificate_index.json",
+    "python3 -m json.tool docs/continuum_lift_obstruction_certificate_index.json"
   ],
   "expert_question": "Is rank_ordered_static_patch_embedding a physically natural finite approximation to static-patch mode refinement, or should the inclusion/conditional expectation come from angular-momentum branching, coherent-state/Berezin-Toeplitz refinement, heat-kernel coarse graining, continuum L2(S2) projections, or approximate embeddings?",
   "not_claimed": [

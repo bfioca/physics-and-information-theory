@@ -1,0 +1,36 @@
+{
+  "goal": "Continuum Lift Conditions and Screen-Only Dictionary Obstruction",
+  "human_note": "docs/continuum_lift_conditions.md",
+  "certificate_command": "PYTHONPATH=. python3 -m qgtoy continuum-lift-obstruction --max-cutoff 5",
+  "focused_regression_command": "PYTHONPATH=. python3 -m unittest tests.test_continuum_lift_obstruction",
+  "json_validation_command": "python3 -m json.tool docs/continuum_lift_obstruction_certificate_index.json",
+  "result_type": "conditional_continuum_lift_obstruction_schema",
+  "claim_boundary": "conditional lift-obstruction theorem schema only; no continuum de Sitter, dS/CFT, or ER=EPR construction is claimed",
+  "major_claims": [
+    {
+      "claim": "The finite-to-continuum lift conditions are explicit.",
+      "status": "theorem schema",
+      "certificate_field": "certified_claims.lift_conditions_are_explicit"
+    },
+    {
+      "claim": "Approximate consecutive UCP embeddings are available as a finite replacement for exact full-matrix inclusions.",
+      "status": "inherited finite construction",
+      "certificate_field": "certified_claims.approximate_consecutive_embedding_available"
+    },
+    {
+      "claim": "The approximate embedding errors decrease in the bounded family.",
+      "status": "bounded check",
+      "certificate_field": "certified_claims.embedding_errors_decrease"
+    },
+    {
+      "claim": "A screen-only dictionary is incomplete under the lift conditions when screen shadows collide and response witnesses stay separated.",
+      "status": "conditional obstruction theorem schema",
+      "certificate_field": "certified_claims.screen_only_dictionary_is_incomplete_under_lift_conditions"
+    }
+  ],
+  "frontier": [
+    "instantiate the lift conditions with a canonical fuzzy-sphere/static-patch embedding",
+    "prove response-witness persistence for a physical regulator family",
+    "upgrade the theorem schema to a continuum operator-algebra theorem"
+  ]
+}

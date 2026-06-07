@@ -12,6 +12,8 @@ and as a focused arXiv-style benchmark note, not as a continuum-gravity claim.
 - Added a paper-shaped technical note: `paper/finite_observer_algebra_diagnostics.md`.
 - Added a compact reproduction script:
   `examples/reproduce_static_patch_package.py`.
+- Added approximate consecutive-cutoff embedding and continuum-lift obstruction
+  notes, with focused tests and certificate indexes.
 - Added a focused GitHub Actions workflow for the packaged static-patch result.
 - Removed private audience labels from the public-facing docs.
 - Checked tracked files for common secret patterns:

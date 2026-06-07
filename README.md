@@ -155,6 +155,10 @@ The rest of this README preserves the research trail and reproduction commands.
   fuzzy-sphere Hamiltonians under the rank-ordered block embedding, but the
   modular, heat, conditional-expectation, and short-time semigroup covariance
   errors decrease along the factorial subsequence.
+- **Approximate cutoff embedding and continuum-lift obstruction:** consecutive
+  spherical cutoffs admit trace-filled UCP refinement maps with decreasing
+  `1/N_L` multiplicativity error, and the resulting lift-condition schema says
+  any screen-only dictionary is incomplete when response witnesses persist.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -228,10 +232,13 @@ Fast path for the packaged static-patch observer-algebra result:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 -m unittest tests.test_embedding_channels tests.test_continuum_lift_obstruction
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
 PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5
+PYTHONPATH=. python3 -m qgtoy continuum-lift-obstruction --max-cutoff 5
 ```
 
 Full current regression/certificate slice:

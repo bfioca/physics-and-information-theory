@@ -35,6 +35,10 @@ Type II_1 candidate regulator from an abelian dephased control.
 | `major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json` | Certificate index for the finite-to-Type-II scaffold. |
 | `inclusion_covariant_static_patch_dynamics_note.md` | Dynamics audit: exact covariance no-go plus conditional-expectation covariance evidence. |
 | `inclusion_covariant_static_patch_dynamics_certificate_index.json` | Certificate index for inclusion-covariant dynamics. |
+| `canonical_embedding_program.md` | Approximate consecutive cutoff embeddings and UCP refinement audit. |
+| `static_patch_embedding_channels_certificate_index.json` | Certificate index for approximate embedding channels. |
+| `continuum_lift_conditions.md` | Conditional lift conditions and screen-only dictionary obstruction schema. |
+| `continuum_lift_obstruction_certificate_index.json` | Certificate index for the continuum-lift obstruction schema. |
 | `public_release_checklist.md` | Public claim-boundary and release audit. |
 
 ## Background Trail
@@ -46,6 +50,7 @@ Type II_1 candidate regulator from an abelian dephased control.
 | Goals 21-23 | dS/CFT-ER=EPR compatibility benchmarks and regulated finite static-patch testbeds. |
 | Goals 24-31 | Static-patch regulator selection, KMS/continuity obstruction, and strong-continuity theorem gate. |
 | Type-II and inclusion-covariance audits | Large-cutoff operator-algebra scaffold and dynamics compatibility checks. |
+| Approximate embedding and continuum lift | Consecutive UCP refinements and a screen-only dictionary obstruction schema. |
 
 ## Claim Boundary
 

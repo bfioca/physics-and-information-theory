@@ -1,0 +1,41 @@
+{
+  "goal": "Approximate Static-Patch Cutoff Embedding Audit",
+  "human_note": "docs/canonical_embedding_program.md",
+  "certificate_command": "PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5",
+  "focused_regression_command": "PYTHONPATH=. python3 -m unittest tests.test_embedding_channels",
+  "json_validation_command": "python3 -m json.tool docs/static_patch_embedding_channels_certificate_index.json",
+  "result_type": "consecutive_ucp_cutoff_refinement_theorem_candidate",
+  "claim_boundary": "finite approximate embedding audit only; not a canonical continuum static-patch embedding",
+  "major_claims": [
+    {
+      "claim": "Consecutive spherical cutoffs fail exact unital full-matrix star-inclusion divisibility.",
+      "status": "finite no-go",
+      "certificate_field": "certified_claims.consecutive_full_matrix_star_inclusions_refuted"
+    },
+    {
+      "claim": "Trace-filled UCP refinements exist for consecutive cutoffs.",
+      "status": "finite construction",
+      "certificate_field": "certified_claims.consecutive_ucp_refinements_exist"
+    },
+    {
+      "claim": "The matrix-unit multiplicativity error is 1/N_L and decreases across the bounded family.",
+      "status": "finite theorem candidate plus bounded check",
+      "certificate_field": "certified_claims.ucp_multiplicativity_errors_decrease"
+    },
+    {
+      "claim": "Declared diagonal screen shadows are preserved by the UCP refinement/coarse-graining pair.",
+      "status": "finite construction",
+      "certificate_field": "certified_claims.declared_screen_shadows_preserved"
+    },
+    {
+      "claim": "The off-diagonal commutator response witness persists in the quantum corner.",
+      "status": "finite witness",
+      "certificate_field": "certified_claims.operator_response_witness_persists"
+    }
+  ],
+  "frontier": [
+    "replace the trace-filled UCP refinement with spherical-harmonic projection/refinement maps",
+    "implement Berezin-Toeplitz fuzzy-sphere symbol/quantization channels",
+    "compare covariance and strong-continuity errors across embedding candidates"
+  ]
+}

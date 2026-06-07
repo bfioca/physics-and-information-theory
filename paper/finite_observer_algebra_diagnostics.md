@@ -129,6 +129,39 @@ screen dynamics is exactly inclusion-covariant and abelian.
 This audit isolates the remaining load-bearing assumption:
 `rank_ordered_static_patch_embedding`.
 
+### Proposition 5: Approximate Consecutive Cutoff Refinement
+
+The factorial subsequence is not the only possible regulator bridge. If exact
+`*-inclusions` are replaced by unital completely positive trace-preserving
+maps, consecutive spherical cutoffs can be related directly. For `n <= m`,
+
+```text
+Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)
+```
+
+is unital, CP, and normalized-trace preserving. It is not multiplicative, but
+for the matrix-unit witness `A=e_12`, `B=e_21`, the multiplicativity error is
+`1/n`, hence vanishes for `n=(L+1)^2`. The off-diagonal commutator witness
+survives in the quantum corner, while the dephased control still has zero
+commutator.
+
+This addresses the exact-divisibility weakness without claiming a canonical
+continuum embedding.
+
+### Theorem Schema 6: Continuum Lift Obstruction
+
+If finite regulator sequences satisfy explicit lift conditions and converge to
+a continuum observer-algebra setting, then any dictionary that factors only
+through the limiting screen-shadow data is incomplete whenever a response
+witness gap persists.
+
+This is the direct continuum-facing lesson of the finite benchmark:
+
+```text
+screen-only dictionaries cannot determine observer algebra under the lift
+conditions.
+```
+
 ## 4. Why The Benchmark Is Not Trivialized
 
 A fair criticism is that diagonal probes cannot see off-diagonal structure by
@@ -175,6 +208,7 @@ Focused package regression:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 -m unittest tests.test_embedding_channels tests.test_continuum_lift_obstruction
 ```
 
 Compact certificate summary:
@@ -188,4 +222,3 @@ Machine-readable package index:
 ```bash
 python3 -m json.tool docs/static_patch_observer_algebra/audit_index.json
 ```
-

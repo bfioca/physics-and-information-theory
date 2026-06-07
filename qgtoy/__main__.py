@@ -59,12 +59,14 @@ from .er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificat
 from .ds_cft_dynamics import goal22_ds_cft_er_epr_single_dynamics_certificate
 from .ds_cft_er_epr import goal21_ds_cft_er_epr_compatibility_certificate
 from .derived_static_patch_dynamics import goal26_derived_static_patch_dynamics_certificate
+from .embedding_channels import approximate_static_patch_embedding_certificate
 from .general_algebraic_connectivity import goal20_general_algebraic_connectivity_stability_certificate
 from .interacting_bridge import (
     goal15_interacting_state_derived_bridge_theorem_certificate,
     goal16_paper_style_interacting_bridge_code_theorem_certificate,
 )
 from .inclusion_covariant_dynamics import inclusion_covariant_static_patch_dynamics_certificate
+from .continuum_lift import continuum_lift_obstruction_certificate
 from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
 from .modular_kms_continuity import goal29_modular_kms_continuity_certificate
 from .physical_static_patch_kernel import goal25_physical_static_patch_kernel_certificate
@@ -906,6 +908,30 @@ def run_inclusion_covariant_dynamics(args: argparse.Namespace) -> None:
                 screen_probability=args.screen_probability,
                 low_order=args.low_order,
                 perturbation_radius=args.perturbation_radius,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_embedding_channels(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            approximate_static_patch_embedding_certificate(
+                max_cutoff=args.max_cutoff,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_continuum_lift(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            continuum_lift_obstruction_certificate(
+                max_cutoff=args.max_cutoff,
             ),
             indent=2,
             sort_keys=True,
@@ -2262,6 +2288,20 @@ def build_parser() -> argparse.ArgumentParser:
     inclusion_covariant_dynamics.add_argument("--low-order", type=int, default=2)
     inclusion_covariant_dynamics.add_argument("--perturbation-radius", type=float, default=0.05)
     inclusion_covariant_dynamics.set_defaults(func=run_inclusion_covariant_dynamics)
+
+    embedding_channels = subparsers.add_parser(
+        "static-patch-embedding-channels",
+        help="emit the approximate static-patch cutoff embedding audit",
+    )
+    embedding_channels.add_argument("--max-cutoff", type=int, default=5)
+    embedding_channels.set_defaults(func=run_embedding_channels)
+
+    continuum_lift = subparsers.add_parser(
+        "continuum-lift-obstruction",
+        help="emit the conditional continuum-lift screen-only dictionary obstruction schema",
+    )
+    continuum_lift.add_argument("--max-cutoff", type=int, default=5)
+    continuum_lift.set_defaults(func=run_continuum_lift)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

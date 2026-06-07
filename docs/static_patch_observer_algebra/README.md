@@ -36,6 +36,8 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | Finite-to-Type-II scaffold | conditional operator-algebra theorem candidate | A cofinal factorial cutoff sequence gives a UHF quantum limit whose tracial closure is a hyperfinite Type `II_1` candidate. |
 | Abelian control | exact levelwise control | The dephased diagonal sequence keeps the same screen shadows but has an abelian von Neumann limit. |
 | Inclusion-covariant dynamics | bounded asymptotic audit | Exact covariance fails for raw Hamiltonians, while conditional-expectation and short-time covariance errors decrease along the factorial subsequence. |
+| Approximate cutoff embeddings | finite approximate embedding audit | Consecutive cutoffs admit trace-filled UCP refinements with `1/N_L` multiplicativity error. |
+| Continuum lift obstruction | conditional theorem schema | Under explicit lift conditions, any dictionary factoring only through screen shadows is incomplete when response witnesses persist. |
 | Remaining assumption | open physics/math question | Is `rank_ordered_static_patch_embedding` the right cutoff embedding, or should a canonical fuzzy-sphere/static-patch embedding replace it? |
 
 ## Fast Reproduction
@@ -44,6 +46,7 @@ Run the static-patch package regression:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 -m unittest tests.test_embedding_channels tests.test_continuum_lift_obstruction
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
 ```
 
@@ -53,6 +56,8 @@ Emit the three lead certificates:
 PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5
+PYTHONPATH=. python3 -m qgtoy continuum-lift-obstruction --max-cutoff 5
 ```
 
 Validate the packaged indexes:
@@ -74,3 +79,7 @@ The compact package depends on these existing artifacts:
 - `docs/major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json`
 - `docs/inclusion_covariant_static_patch_dynamics_note.md`
 - `docs/inclusion_covariant_static_patch_dynamics_certificate_index.json`
+- `docs/canonical_embedding_program.md`
+- `docs/static_patch_embedding_channels_certificate_index.json`
+- `docs/continuum_lift_conditions.md`
+- `docs/continuum_lift_obstruction_certificate_index.json`
