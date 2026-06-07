@@ -119,6 +119,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   theorem: identity-starting strong continuity with generator norm `Gamma_L`
   and lapse `delta_L Gamma_L -> 0` derives approximate identity, while
   stationary twirling and fixed-lapse thermalization remain no-go controls.
+- **Goals 24-31 capstone:** the static-patch ladder is packaged as a finite
+  theorem note: screen shadows do not determine bridge algebra, and
+  cutoff-compatible strong continuity is the non-tautological finite gate that
+  rules out instantaneous dephasing.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -708,6 +712,13 @@ Read the Goal 31 theorem note and machine-readable certificate index:
 ```text
 docs/goal31_static_patch_strong_continuity_note.md
 docs/goal31_static_patch_strong_continuity_certificate_index.json
+```
+
+Read the Goals 24-31 static-patch capstone note and certificate index:
+
+```text
+docs/goals24_31_static_patch_bridge_theorem_note.md
+docs/goals24_31_static_patch_bridge_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

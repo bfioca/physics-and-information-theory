@@ -1,0 +1,61 @@
+{
+  "package": "Goals 24-31 finite static-patch bridge theorem package",
+  "human_note": "docs/goals24_31_static_patch_bridge_theorem_note.md",
+  "claim_boundary": "finite mathematical-physics benchmark only; no continuum de Sitter, dS/CFT, or literal ER=EPR theorem is claimed",
+  "headline": "screen shadows do not determine bridge algebra; cutoff-compatible strong continuity is a non-tautological finite gate preserving the quantum bridge split",
+  "major_claims": [
+    {
+      "claim": "Screen-visible cutoff data can match while bridge algebra differs.",
+      "status": "exact finite theorem/certificate",
+      "command": "PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2",
+      "note": "Goal 24 theorem ledger"
+    },
+    {
+      "claim": "The physical static-patch Schur kernel is CPTP/unital and preserves the bridge split.",
+      "status": "bounded certificate",
+      "command": "PYTHONPATH=. python3 -m qgtoy physical-static-patch-kernel --max-cutoff 5 --noise-strength 1.0 --screen-probability 0.75 --low-order 2",
+      "note": "Goal 25 physical kernel"
+    },
+    {
+      "claim": "A finite Hamiltonian/environment trace derives a random-unitary static-patch regulator.",
+      "status": "exact finite construction",
+      "command": "PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2",
+      "note": "Goal 26 derived dynamics"
+    },
+    {
+      "claim": "A finite class of positive-definite Schur regulators preserves the no-go under bounded perturbations.",
+      "status": "bounded certificate",
+      "command": "PYTHONPATH=. python3 -m qgtoy static-patch-regulator-universality --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "note": "Goal 27 regulator-class stability"
+    },
+    {
+      "claim": "Static-patch-looking axioms select the regulator class only with vanishing cutoff continuity included.",
+      "status": "finite axiom audit",
+      "command": "PYTHONPATH=. python3 -m qgtoy axiomatic-static-patch-selection --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "note": "Goal 28 axiomatic selection"
+    },
+    {
+      "claim": "KMS/detailed balance alone is insufficient; stationary modular twirling is a counterexample.",
+      "status": "exact finite no-go",
+      "command": "PYTHONPATH=. python3 -m qgtoy modular-kms-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "note": "Goal 29 modular/KMS continuity audit"
+    },
+    {
+      "claim": "Short-time static-patch locality, fuzzy-sphere heat scaling, or shrinking Euclidean cap thickness imply approximate identity.",
+      "status": "finite theorem gate",
+      "command": "PYTHONPATH=. python3 -m qgtoy static-patch-physical-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "note": "Goal 30 physical continuity gate"
+    },
+    {
+      "claim": "Identity-starting strong continuity plus delta_L Gamma_L -> 0 derives approximate identity and excludes stationary twirling/fixed-lapse controls.",
+      "status": "finite semigroup theorem gate",
+      "command": "PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "note": "Goal 31 strong-continuity theorem gate"
+    }
+  ],
+  "frontier": [
+    "derive cutoff-compatible strong continuity from continuum static-patch modular/thermal dynamics",
+    "derive the gate from a Euclidean cap or path-integral construction",
+    "study the Type-II/Type-III observer-algebra limit of the finite M_N versus C^N split"
+  ]
+}

@@ -625,6 +625,22 @@ cutoff_compatible_strong_continuity
 
 This remains a finite theorem gate, not a continuum dS/CFT derivation.
 
+## Goals 24-31 capstone
+
+The static-patch ladder is now packaged as:
+
+```text
+docs/goals24_31_static_patch_bridge_theorem_note.md
+docs/goals24_31_static_patch_bridge_certificate_index.json
+```
+
+The capstone claim is finite and deliberately bounded: screen shadows do not
+determine bridge algebra, and cutoff-compatible strong continuity is the
+non-tautological finite gate that rules out instantaneous dephasing while
+preserving the quantum/classical bridge split. The open frontier is deriving
+that gate from continuum static-patch modular/thermal dynamics, Euclidean
+preparation, or an observer-algebra limit.
+
 ## Reproducibility
 
 | Claim | Command |
