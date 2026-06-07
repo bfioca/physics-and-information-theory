@@ -135,6 +135,7 @@ from .tensor_network import (
     bridge_holography_phase39_certificate,
     bridge_holography_phase40_certificate,
 )
+from .typeii_static_patch_limit import major_goal_finite_to_typeii_static_patch_certificate
 
 
 def pauli_rows(rows: tuple[int, ...], n: int) -> tuple[str, ...]:
@@ -855,6 +856,27 @@ def run_static_patch_strong_continuity(args: argparse.Namespace) -> None:
         json.dumps(
             goal31_static_patch_strong_continuity_certificate(
                 max_cutoff=args.max_cutoff,
+                noise_strength=args.noise_strength,
+                fixed_lapse=args.fixed_lapse,
+                environment_qubits=args.environment_qubits,
+                temperature_scale=args.temperature_scale,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
+                perturbation_radius=args.perturbation_radius,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_finite_typeii_static_patch(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            major_goal_finite_to_typeii_static_patch_certificate(
+                max_level=args.max_level,
+                max_consecutive_cutoff=args.max_consecutive_cutoff,
+                bridge_cert_max_cutoff=args.bridge_cert_max_cutoff,
                 noise_strength=args.noise_strength,
                 fixed_lapse=args.fixed_lapse,
                 environment_qubits=args.environment_qubits,
@@ -2186,6 +2208,22 @@ def build_parser() -> argparse.ArgumentParser:
     static_patch_strong_continuity.add_argument("--low-order", type=int, default=2)
     static_patch_strong_continuity.add_argument("--perturbation-radius", type=float, default=0.05)
     static_patch_strong_continuity.set_defaults(func=run_static_patch_strong_continuity)
+
+    finite_typeii_static_patch = subparsers.add_parser(
+        "finite-typeii-static-patch",
+        help="emit the finite-to-Type-II static-patch observer algebra certificate",
+    )
+    finite_typeii_static_patch.add_argument("--max-level", type=int, default=4)
+    finite_typeii_static_patch.add_argument("--max-consecutive-cutoff", type=int, default=5)
+    finite_typeii_static_patch.add_argument("--bridge-cert-max-cutoff", type=int, default=5)
+    finite_typeii_static_patch.add_argument("--noise-strength", type=float, default=1.0)
+    finite_typeii_static_patch.add_argument("--fixed-lapse", type=float, default=1.0)
+    finite_typeii_static_patch.add_argument("--environment-qubits", type=int, default=4)
+    finite_typeii_static_patch.add_argument("--temperature-scale", type=float, default=1.0)
+    finite_typeii_static_patch.add_argument("--screen-probability", type=float, default=0.75)
+    finite_typeii_static_patch.add_argument("--low-order", type=int, default=2)
+    finite_typeii_static_patch.add_argument("--perturbation-radius", type=float, default=0.05)
+    finite_typeii_static_patch.set_defaults(func=run_finite_typeii_static_patch)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

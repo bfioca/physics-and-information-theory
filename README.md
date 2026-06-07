@@ -123,6 +123,11 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   theorem note: screen shadows do not determine bridge algebra, and
   cutoff-compatible strong continuity is the non-tautological finite gate that
   rules out instantaneous dephasing.
+- **Finite-to-Type-II static-patch observer algebra:** the raw consecutive
+  cutoff dimensions fail the divisibility condition for unital matrix
+  inclusions, but a cofinal factorial cutoff subsequence gives
+  trace-preserving inclusions whose quantum tracial GNS closure is a
+  hyperfinite Type `II_1` candidate while the dephased control is abelian.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -237,6 +242,8 @@ PYTHONPATH=. python3 -m unittest tests.test_static_patch_physical_continuity
 PYTHONPATH=. python3 -m qgtoy static-patch-physical-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity
 PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m unittest tests.test_typeii_static_patch_limit
+PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -719,6 +726,19 @@ Read the Goals 24-31 static-patch capstone note and certificate index:
 ```text
 docs/goals24_31_static_patch_bridge_theorem_note.md
 docs/goals24_31_static_patch_bridge_certificate_index.json
+```
+
+Emit the finite-to-Type-II static-patch observer algebra certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+```
+
+Read the finite-to-Type-II theorem note and machine-readable certificate index:
+
+```text
+docs/major_goal_finite_to_typeii_static_patch_observer_algebra_note.md
+docs/major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:
