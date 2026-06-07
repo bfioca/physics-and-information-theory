@@ -85,6 +85,7 @@ from .observer_tomography_atlas import goal7_observer_tomography_atlas_certifica
 from .observer_tomography_intrinsic import goal8_intrinsic_observer_tomography_certificate
 from .observer_tomography_kgt1 import goal5_kgt1_observer_tomography_certificate
 from .observer_tomography_operational import goal6_operational_observer_tomography_certificate
+from .observer_local_subsystem import observer_local_noncommutative_subsystem_certificate
 from .oaqec_tomography import goal9_finite_oaqec_intrinsic_tomography_certificate
 from .robust import (
     ENTROPY_KEY_MODES,
@@ -960,6 +961,19 @@ def run_canonical_noncommutative_refinement(args: argparse.Namespace) -> None:
         json.dumps(
             canonical_noncommutative_refinement_certificate(
                 max_cutoff=args.max_cutoff,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_observer_local_subsystem(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            observer_local_noncommutative_subsystem_certificate(
+                max_cutoff=args.max_cutoff,
+                excitation_cutoff=args.excitation_cutoff,
             ),
             indent=2,
             sort_keys=True,
@@ -2348,6 +2362,14 @@ def build_parser() -> argparse.ArgumentParser:
     canonical_noncommutative_refinement.set_defaults(
         func=run_canonical_noncommutative_refinement
     )
+
+    observer_local_subsystem = subparsers.add_parser(
+        "observer-local-subsystem",
+        help="audit observer-local tangent-plane noncommutative subsystem candidates",
+    )
+    observer_local_subsystem.add_argument("--max-cutoff", type=int, default=12)
+    observer_local_subsystem.add_argument("--excitation-cutoff", type=int, default=2)
+    observer_local_subsystem.set_defaults(func=run_observer_local_subsystem)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

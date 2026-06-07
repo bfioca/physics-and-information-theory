@@ -30,6 +30,8 @@ Next-path planning branch:
 - `physical_static_patch_lift_hinge.md`
 - `canonical_noncommutative_refinement_note.md`
 - `canonical_noncommutative_refinement_certificate_index.json`
+- `observer_local_subsystem_note.md`
+- `observer_local_subsystem_certificate_index.json`
 
 One-line summary:
 
@@ -68,6 +70,8 @@ Type II_1 candidate regulator from an abelian dephased control.
 | `physical_static_patch_lift_hinge.md` | Next-phase physics hinge audit selecting the minimal missing assumption for a physically natural static-patch lift. |
 | `canonical_noncommutative_refinement_note.md` | Sharpened hinge audit showing scalar fuzzy-sphere routes classicalize and a fixed noncommutative subsystem must be canonically selected. |
 | `canonical_noncommutative_refinement_certificate_index.json` | Machine-readable claim-to-command map for the canonical noncommutative refinement audit. |
+| `observer_local_subsystem_note.md` | Observer-local tangent-plane theorem candidate with nonzero commutator lower bounds. |
+| `observer_local_subsystem_certificate_index.json` | Machine-readable claim-to-command map for the observer-local subsystem audit. |
 | `public_release_checklist.md` | Public claim-boundary and release audit. |
 
 ## Background Trail

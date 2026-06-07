@@ -36,6 +36,8 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | `../physical_static_patch_lift_hinge.md` | Physics-hinge audit for physically natural static-patch lift maps and the minimal missing assumption. |
 | `../canonical_noncommutative_refinement_note.md` | Sharpened audit of which physically selected subsystems can carry a cutoff-independent noncommutative response. |
 | `../canonical_noncommutative_refinement_certificate_index.json` | Machine-readable claim-to-command map for the canonical refinement audit. |
+| `../observer_local_subsystem_note.md` | Observer-local tangent-plane theorem candidate with nonzero commutator lower bounds. |
+| `../observer_local_subsystem_certificate_index.json` | Machine-readable claim-to-command map for the observer-local subsystem audit. |
 | `expert_feedback_two_page_note.md` | Short expert-facing theorem note and open question. |
 | `audit_index.json` | Machine-readable map from major claims to commands, source files, and tests. |
 | `journey_map.md` | How the earlier goals support the packaged result without becoming the lead. |
@@ -53,6 +55,7 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | Continuum lift obstruction | proof-ready conditional theorem candidate | Under explicit lift conditions, any dictionary factoring only through screen shadows is incomplete when response witnesses persist. |
 | Physical static-patch lift hinge | minimal missing assumption | Harmonic and heat routes are bounded-positive but noncanonical; KMS alone and common commutative screens give no-gos; a norm-faithful noncommutative cutoff refinement is the missing physics input. |
 | Canonical noncommutative refinement | sharper minimal missing assumption | Scalar fuzzy-sphere low modes are canonical but classicalize; the next required input is a canonical fixed noncommutative subsystem with nonzero commutator scale. |
+| Observer-local tangent subsystem | theorem candidate | Coherent-state tangent-plane scaling gives a fixed low-excitation window with commutator lower bound `1 - 2R/L`, leaving Type-II/static-patch interpretation conditional. |
 | Remaining assumption | open physics/math question | Is `rank_ordered_static_patch_embedding` the right cutoff embedding, or should a canonical fuzzy-sphere/static-patch embedding replace it? |
 
 ## Fast Reproduction

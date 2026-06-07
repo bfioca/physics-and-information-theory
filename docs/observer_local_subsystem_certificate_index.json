@@ -1,0 +1,45 @@
+{
+  "package": "observer_local_subsystem",
+  "status": "A_theorem_candidate",
+  "lead_command": "PYTHONPATH=. python3 -m qgtoy observer-local-subsystem --max-cutoff 12 --excitation-cutoff 2",
+  "focused_test": "PYTHONPATH=. python3 -m unittest tests.test_observer_local_subsystem",
+  "claim_boundary": "finite observer-local theorem candidate under declared SU(2) coherent-patch scaling; not a continuum de Sitter theorem, dS/CFT construction, or ER=EPR proof",
+  "major_claims": [
+    {
+      "claim_id": "tangent_plane_commutator_bound",
+      "claim": "For fixed excitation cutoff R and L > 2R, the observer-local tangent-plane operators obey [a_L,a_L^*] >= (1 - 2R/L) I on the low-excitation window.",
+      "certificate_field": "certified_claims.tangent_plane_has_nonzero_commutator_lower_bound",
+      "command": "PYTHONPATH=. python3 -m qgtoy observer-local-subsystem --max-cutoff 12 --excitation-cutoff 2",
+      "test": "tests.test_observer_local_subsystem.ObserverLocalSubsystemTest.test_tangent_plane_commutator_lower_bound"
+    },
+    {
+      "claim_id": "tangent_plane_bounds_improve",
+      "claim": "For fixed R, the tangent-plane commutator lower bounds increase and the local strong-continuity bounds decrease along the audited cutoff family.",
+      "certificate_field": "certified_claims.tangent_plane_commutator_bounds_increase",
+      "command": "PYTHONPATH=. python3 -m qgtoy observer-local-subsystem --max-cutoff 12 --excitation-cutoff 2",
+      "test": "tests.test_observer_local_subsystem.ObserverLocalSubsystemTest.test_tangent_plane_family_bounds_improve"
+    },
+    {
+      "claim_id": "finite_lift_gates",
+      "claim": "The tangent-plane candidate passes the finite anti-tautology, CP/trace refinement, covariance, screen-shadow, norm-faithfulness, commutator, and strong-continuity gates, leaving only Type-II/static-patch interpretation conditional.",
+      "certificate_field": "certified_claims.tangent_plane_passes_finite_lift_gates",
+      "command": "PYTHONPATH=. python3 -m qgtoy observer-local-subsystem --max-cutoff 12 --excitation-cutoff 2",
+      "test": "tests.test_observer_local_subsystem.ObserverLocalSubsystemTest.test_tangent_plane_gate_statuses"
+    },
+    {
+      "claim_id": "local_block_norm_faithful",
+      "claim": "The local low-excitation matrix block is norm-faithful under the observer-local isometric refinement.",
+      "certificate_field": "certified_claims.local_matrix_block_is_norm_faithful",
+      "command": "PYTHONPATH=. python3 -m qgtoy observer-local-subsystem --max-cutoff 12 --excitation-cutoff 2",
+      "test": "tests.test_observer_local_subsystem.ObserverLocalSubsystemTest.test_certificate_selects_a_theorem_candidate"
+    },
+    {
+      "claim_id": "fiber_modular_conditional",
+      "claim": "Matrix-valued screen fibers and modular crossed-product shifts remain conditional because their physical origin is not derived from scalar screen data alone.",
+      "certificate_field": "certified_claims.fiber_and_modular_routes_remain_conditional",
+      "command": "PYTHONPATH=. python3 -m qgtoy observer-local-subsystem --max-cutoff 12 --excitation-cutoff 2",
+      "test": "tests.test_observer_local_subsystem.ObserverLocalSubsystemTest.test_fiber_and_modular_routes_are_conditional"
+    }
+  ],
+  "expert_question": "Is the coherent-state tangent-plane sector the right finite static-patch analogue of the observer-local algebra, or should the noncommutative subsystem instead come from an edge-mode fiber or modular crossed product?"
+}
