@@ -22,8 +22,10 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | File | Use |
 | --- | --- |
 | `../../THEOREMS.md` | Reviewer-facing theorem and claim index. |
-| `../../paper/finite_observer_algebra_diagnostics.md` | Paper-shaped technical note. |
+| `../../paper/main.md` | Canonical paper-shaped technical note. |
+| `../../REPRODUCIBILITY.md` | One-command reproduction and frozen artifact validation. |
 | `../../paper/expert_feedback_note.md` | Two-page expert-facing feedback note. |
+| `../../paper/expert_cover_note.md` | Short cover note for expert feedback. |
 | `harlow_facing_two_page_note.md` | Short expert-facing theorem note and open question. |
 | `audit_index.json` | Machine-readable map from major claims to commands, source files, and tests. |
 | `journey_map.md` | How the earlier goals support the packaged result without becoming the lead. |
