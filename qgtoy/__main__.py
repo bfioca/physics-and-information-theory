@@ -61,6 +61,9 @@ from .ds_cft_er_epr import goal21_ds_cft_er_epr_compatibility_certificate
 from .derived_static_patch_dynamics import goal26_derived_static_patch_dynamics_certificate
 from .embedding_channels import approximate_static_patch_embedding_certificate
 from .general_algebraic_connectivity import goal20_general_algebraic_connectivity_stability_certificate
+from .canonical_noncommutative_refinement import (
+    canonical_noncommutative_refinement_certificate,
+)
 from .interacting_bridge import (
     goal15_interacting_state_derived_bridge_theorem_certificate,
     goal16_paper_style_interacting_bridge_code_theorem_certificate,
@@ -944,6 +947,18 @@ def run_physical_static_patch_lift(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             physical_static_patch_lift_certificate(
+                max_cutoff=args.max_cutoff,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_canonical_noncommutative_refinement(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            canonical_noncommutative_refinement_certificate(
                 max_cutoff=args.max_cutoff,
             ),
             indent=2,
@@ -2322,6 +2337,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     physical_static_patch_lift.add_argument("--max-cutoff", type=int, default=5)
     physical_static_patch_lift.set_defaults(func=run_physical_static_patch_lift)
+
+    canonical_noncommutative_refinement = subparsers.add_parser(
+        "canonical-noncommutative-refinement",
+        help="audit fixed noncommutative subsystem refinement candidates",
+    )
+    canonical_noncommutative_refinement.add_argument(
+        "--max-cutoff", type=int, default=6
+    )
+    canonical_noncommutative_refinement.set_defaults(
+        func=run_canonical_noncommutative_refinement
+    )
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -34,6 +34,8 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | `../continuum_lift_decision_ledger.md` | Decision ledger selecting the theorem-candidate endpoint. |
 | `../continuum_lift_obstruction_theorem.md` | Proof-ready screen-only dictionary obstruction theorem under explicit lift hypotheses. |
 | `../physical_static_patch_lift_hinge.md` | Physics-hinge audit for physically natural static-patch lift maps and the minimal missing assumption. |
+| `../canonical_noncommutative_refinement_note.md` | Sharpened audit of which physically selected subsystems can carry a cutoff-independent noncommutative response. |
+| `../canonical_noncommutative_refinement_certificate_index.json` | Machine-readable claim-to-command map for the canonical refinement audit. |
 | `expert_feedback_two_page_note.md` | Short expert-facing theorem note and open question. |
 | `audit_index.json` | Machine-readable map from major claims to commands, source files, and tests. |
 | `journey_map.md` | How the earlier goals support the packaged result without becoming the lead. |
@@ -50,6 +52,7 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | Cutoff-refinement embeddings | finite physical-motivation audit | Consecutive cutoffs admit trace-filled, harmonic, heat-kernel, and Berezin-inspired refinements with vanishing error bounds and persistent response witnesses. |
 | Continuum lift obstruction | proof-ready conditional theorem candidate | Under explicit lift conditions, any dictionary factoring only through screen shadows is incomplete when response witnesses persist. |
 | Physical static-patch lift hinge | minimal missing assumption | Harmonic and heat routes are bounded-positive but noncanonical; KMS alone and common commutative screens give no-gos; a norm-faithful noncommutative cutoff refinement is the missing physics input. |
+| Canonical noncommutative refinement | sharper minimal missing assumption | Scalar fuzzy-sphere low modes are canonical but classicalize; the next required input is a canonical fixed noncommutative subsystem with nonzero commutator scale. |
 | Remaining assumption | open physics/math question | Is `rank_ordered_static_patch_embedding` the right cutoff embedding, or should a canonical fuzzy-sphere/static-patch embedding replace it? |
 
 ## Fast Reproduction

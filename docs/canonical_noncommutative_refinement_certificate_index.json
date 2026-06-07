@@ -1,0 +1,52 @@
+{
+  "package": "canonical_noncommutative_refinement",
+  "status": "C_sharper_minimal_assumption",
+  "lead_command": "PYTHONPATH=. python3 -m qgtoy canonical-noncommutative-refinement --max-cutoff 6",
+  "focused_test": "PYTHONPATH=. python3 -m unittest tests.test_canonical_noncommutative_refinement",
+  "claim_boundary": "finite theorem/no-go audit plus sharpened missing assumption; not a continuum de Sitter theorem, dS/CFT construction, or ER=EPR proof",
+  "major_claims": [
+    {
+      "claim_id": "candidate_subsystems_audited",
+      "claim": "Five anti-tautological subsystem candidates are audited: low angular modes, fuzzy coordinate polynomials, coherent localized patches, matrix-valued Toeplitz fibers, and heat-stable low-energy systems.",
+      "certificate_field": "certified_claims.all_candidate_subsystems_audited",
+      "command": "PYTHONPATH=. python3 -m qgtoy canonical-noncommutative-refinement --max-cutoff 6",
+      "test": "tests.test_canonical_noncommutative_refinement.CanonicalNoncommutativeRefinementTest.test_candidate_audit_covers_declared_subsystems"
+    },
+    {
+      "claim_id": "scalar_routes_classicalize",
+      "claim": "Canonical scalar fuzzy-sphere routes can preserve screen data and norms while their commutator scale vanishes in the large-cutoff limit.",
+      "certificate_field": "certified_claims.scalar_canonical_routes_classicalize",
+      "command": "PYTHONPATH=. python3 -m qgtoy canonical-noncommutative-refinement --max-cutoff 6",
+      "test": "tests.test_canonical_noncommutative_refinement.CanonicalNoncommutativeRefinementTest.test_scalar_canonical_routes_classicalize"
+    },
+    {
+      "claim_id": "screen_norm_not_enough",
+      "claim": "Screen-shadow preservation and norm faithfulness do not imply persistent noncommutative response.",
+      "certificate_field": "certified_claims.screen_and_norm_do_not_imply_noncommutative_response",
+      "command": "PYTHONPATH=. python3 -m qgtoy canonical-noncommutative-refinement --max-cutoff 6",
+      "test": "tests.test_canonical_noncommutative_refinement.CanonicalNoncommutativeRefinementTest.test_scalar_canonical_routes_classicalize"
+    },
+    {
+      "claim_id": "conditional_noncommutative_routes",
+      "claim": "Coherent patches, matrix-valued Toeplitz fibers, and heat-stable low-energy routes can support the desired theorem only after a canonical noncommutative selection principle is supplied.",
+      "certificate_field": "certified_claims.conditional_noncommutative_routes_need_canonical_selection",
+      "command": "PYTHONPATH=. python3 -m qgtoy canonical-noncommutative-refinement --max-cutoff 6",
+      "test": "tests.test_canonical_noncommutative_refinement.CanonicalNoncommutativeRefinementTest.test_conditional_routes_need_noncommutative_selection"
+    },
+    {
+      "claim_id": "heat_not_enough",
+      "claim": "Heat stability and strong continuity are not enough unless the selected low-energy sector contains a fixed noncommutative subsystem.",
+      "certificate_field": "certified_claims.heat_route_is_not_enough_without_noncommutative_sector",
+      "command": "PYTHONPATH=. python3 -m qgtoy canonical-noncommutative-refinement --max-cutoff 6",
+      "test": "tests.test_canonical_noncommutative_refinement.CanonicalNoncommutativeRefinementTest.test_heat_route_is_not_enough_by_itself"
+    },
+    {
+      "claim_id": "sharper_minimal_assumption",
+      "claim": "The minimal missing assumption is sharpened to a canonical noncommutative subsystem with nonzero large-cutoff commutator lower bound.",
+      "certificate_field": "certified_claims.minimal_assumption_sharpened",
+      "command": "PYTHONPATH=. python3 -m qgtoy canonical-noncommutative-refinement --max-cutoff 6",
+      "test": "tests.test_canonical_noncommutative_refinement.CanonicalNoncommutativeRefinementTest.test_certificate_selects_sharper_minimal_assumption"
+    }
+  ],
+  "expert_question": "Does static-patch/fuzzy-sphere physics supply a canonical noncommutative matrix fiber, coherent patch, or heat-stable operator subsystem with cutoff-independent commutator scale, or must the observer algebra be added as extra non-screen data?"
+}
