@@ -70,6 +70,7 @@ from .continuum_lift import continuum_lift_obstruction_certificate
 from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
 from .modular_kms_continuity import goal29_modular_kms_continuity_certificate
 from .physical_static_patch_kernel import goal25_physical_static_patch_kernel_certificate
+from .physical_static_patch_lift import physical_static_patch_lift_certificate
 from .static_patch_physical_continuity import goal30_static_patch_physical_continuity_certificate
 from .static_patch_strong_continuity import goal31_static_patch_strong_continuity_certificate
 from .relative_entropy_bridge import major_unlock_relative_entropy_observer_bridge_certificate
@@ -931,6 +932,18 @@ def run_continuum_lift(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             continuum_lift_obstruction_certificate(
+                max_cutoff=args.max_cutoff,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_physical_static_patch_lift(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            physical_static_patch_lift_certificate(
                 max_cutoff=args.max_cutoff,
             ),
             indent=2,
@@ -2302,6 +2315,13 @@ def build_parser() -> argparse.ArgumentParser:
     )
     continuum_lift.add_argument("--max-cutoff", type=int, default=5)
     continuum_lift.set_defaults(func=run_continuum_lift)
+
+    physical_static_patch_lift = subparsers.add_parser(
+        "physical-static-patch-lift",
+        help="audit physical static-patch continuum-lift candidate structures",
+    )
+    physical_static_patch_lift.add_argument("--max-cutoff", type=int, default=5)
+    physical_static_patch_lift.set_defaults(func=run_physical_static_patch_lift)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -27,6 +27,7 @@ Next-path planning branch:
 - `lift_map_obligations.md`
 - `continuum_lift_decision_ledger.md`
 - `continuum_lift_obstruction_theorem.md`
+- `physical_static_patch_lift_hinge.md`
 
 One-line summary:
 
@@ -62,6 +63,7 @@ Type II_1 candidate regulator from an abelian dephased control.
 | `lift_map_obligations.md` | Status ledger for trace-filled, harmonic, heat-kernel, and Berezin-inspired lift maps. |
 | `continuum_lift_decision_ledger.md` | A/B/C decision ledger selecting the theorem-candidate outcome. |
 | `continuum_lift_obstruction_theorem.md` | Final proof-ready obstruction theorem under explicit lift hypotheses. |
+| `physical_static_patch_lift_hinge.md` | Next-phase physics hinge audit selecting the minimal missing assumption for a physically natural static-patch lift. |
 | `public_release_checklist.md` | Public claim-boundary and release audit. |
 
 ## Background Trail
