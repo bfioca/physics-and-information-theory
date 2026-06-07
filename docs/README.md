@@ -18,6 +18,10 @@ Current packaged result:
 - `docs/static_patch_observer_algebra/audit_index.json`
 - `docs/static_patch_observer_algebra/journey_map.md`
 
+Next-path planning branch:
+
+- `breakthrough_continuum_lift_obstruction_plan.md`
+
 One-line summary:
 
 ```text
@@ -45,6 +49,7 @@ Type II_1 candidate regulator from an abelian dephased control.
 | `static_patch_embedding_channels_certificate_index.json` | Certificate index for approximate embedding channels. |
 | `continuum_lift_conditions.md` | Conditional lift conditions and screen-only dictionary obstruction schema. |
 | `continuum_lift_obstruction_certificate_index.json` | Certificate index for the continuum-lift obstruction schema. |
+| `breakthrough_continuum_lift_obstruction_plan.md` | Actionable branch plan for turning the schema into a theorem candidate, no-go, or weakest-added-assumption result. |
 | `public_release_checklist.md` | Public claim-boundary and release audit. |
 
 ## Background Trail
