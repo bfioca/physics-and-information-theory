@@ -14,7 +14,7 @@ Current packaged result:
 - `paper/expert_feedback_note.md`
 - `paper/expert_cover_note.md`
 - `docs/static_patch_observer_algebra/README.md`
-- `docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`
+- `docs/static_patch_observer_algebra/expert_feedback_two_page_note.md`
 - `docs/static_patch_observer_algebra/audit_index.json`
 - `docs/static_patch_observer_algebra/journey_map.md`
 

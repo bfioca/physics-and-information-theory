@@ -247,7 +247,7 @@ def goal20_general_algebraic_connectivity_stability_certificate(
                 "explicit maximality and informationally complete diagnostics."
             ),
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "Recoverable algebra is still the right order parameter, but finite "
             "observer diagnostics must distinguish certified subalgebra recovery "
             "from maximal observer-algebra recovery. Entropy and static shadows "

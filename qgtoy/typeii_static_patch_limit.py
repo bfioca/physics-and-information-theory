@@ -322,7 +322,7 @@ def major_goal_finite_to_typeii_static_patch_certificate(
                 "bridge_diagnostic_preserved"
             ],
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "The raw consecutive fuzzy-sphere cutoffs do not form a unital "
             "matrix-algebra inductive system. Passing to a cofinal factorial "
             "cutoff subsequence gives trace-preserving inclusions whose "

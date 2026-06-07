@@ -509,7 +509,7 @@ def goal31_static_patch_strong_continuity_certificate(
                 "delta_L Gamma_L -> 0."
             ),
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "The finite obstruction has been localized further. KMS excludes "
             "nothing like stationary twirling, but an identity-starting, "
             "strongly continuous static-patch semigroup with cutoff-local "

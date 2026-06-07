@@ -150,8 +150,8 @@
       }
     ]
   },
+  "expert_feedback_summary": "The Type-II scaffold now has a dynamics audit. Arbitrary exact finite covariance is false, but rank-ordered static-patch embeddings give decreasing modular and heat generator covariance errors, while the dephased diagonal control stays exactly screen-covariant and abelian.",
   "goal": "Inclusion-Covariant Dynamics for Finite-to-Type-II Static-Patch Regulators",
-  "harlow_facing_summary": "The Type-II scaffold now has a dynamics audit. Arbitrary exact finite covariance is false, but rank-ordered static-patch embeddings give decreasing modular and heat generator covariance errors, while the dephased diagonal control stays exactly screen-covariant and abelian.",
   "relationship_to_typeii_limit": {
     "refinement": "The remaining assumption is partially discharged for the rank-ordered embedding: exact covariance fails, but the operator-norm and conditional-expectation errors decrease with an explicit asymptotic bound.",
     "typeii_remaining_assumption": "inclusion_covariant_static_patch_generators",

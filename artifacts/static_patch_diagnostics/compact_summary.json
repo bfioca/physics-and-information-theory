@@ -23,9 +23,9 @@
     },
     {
       "all_certified_claims_true": true,
-      "claim_boundary": "finite approximate embedding audit only; not a canonical continuum static-patch embedding",
+      "claim_boundary": "finite physically motivated cutoff-refinement audit only; not a canonical continuum static-patch embedding",
       "name": "approximate_cutoff_embeddings",
-      "result_type": "consecutive_ucp_cutoff_refinement_theorem_candidate",
+      "result_type": "physically_motivated_cutoff_refinement_audit",
       "status": "pass"
     },
     {

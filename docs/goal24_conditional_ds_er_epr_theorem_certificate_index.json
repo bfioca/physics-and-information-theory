@@ -96,6 +96,6 @@
       "command": "python3 -m json.tool docs/goal24_conditional_ds_er_epr_theorem_certificate_index.json"
     }
   ],
-  "harlow_facing_summary": "A finite regulated static-patch benchmark can be organized as a conditional theorem ledger: screen-visible cutoff data remain insufficient term-by-term, full intrinsic operator response has a vanishing model error, and literal dS ER=EPR is blocked precisely by explicit physical continuum-promotion assumptions.",
+  "expert_feedback_summary": "A finite regulated static-patch benchmark can be organized as a conditional theorem ledger: screen-visible cutoff data remain insufficient term-by-term, full intrinsic operator response has a vanishing model error, and literal dS ER=EPR is blocked precisely by explicit physical continuum-promotion assumptions.",
   "limitations": "This is finite QEC/OA-QEC-inspired research code and a conditional theorem schema. It does not construct continuum dS/CFT, de Sitter quantum gravity, Type-II/Type-III observer algebras, QES data, or a literal ER=EPR-in-dS theorem."
 }

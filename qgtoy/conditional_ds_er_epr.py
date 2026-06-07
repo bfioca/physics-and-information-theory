@@ -939,7 +939,7 @@ def goal24_conditional_ds_er_epr_certificate(
             }
             for assumption in continuum_assumption_catalog()
         ),
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "Goal 24 turns the regulated finite static-patch benchmark into a "
             "conditional theorem ledger: screen-visible cutoff data remain "
             "insufficient term-by-term, full operator response has a vanishing "

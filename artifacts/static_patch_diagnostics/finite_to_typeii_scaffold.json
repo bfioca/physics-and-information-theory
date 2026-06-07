@@ -13,6 +13,7 @@
     "strong_continuity_gate_preserved": true
   },
   "claim_boundary": "Finite-to-von-Neumann-algebra theorem candidate. This uses standard UHF/trace closure facts and does not prove continuum de Sitter, dS/CFT, or literal ER=EPR.",
+  "expert_feedback_summary": "The raw consecutive fuzzy-sphere cutoffs do not form a unital matrix-algebra inductive system. Passing to a cofinal factorial cutoff subsequence gives trace-preserving inclusions whose quantum tracial GNS closure is the hyperfinite Type II_1 factor, while the dephased diagonal control has the same screen shadows and an abelian von Neumann limit. The remaining physical input is inclusion-covariant modular/static-patch dynamics.",
   "factorial_subsequence_certificate": {
     "max_level": 4,
     "records": [
@@ -82,7 +83,6 @@
     ]
   },
   "goal": "Major Goal: Finite-to-Type-II Static-Patch Observer Algebra",
-  "harlow_facing_summary": "The raw consecutive fuzzy-sphere cutoffs do not form a unital matrix-algebra inductive system. Passing to a cofinal factorial cutoff subsequence gives trace-preserving inclusions whose quantum tracial GNS closure is the hyperfinite Type II_1 factor, while the dephased diagonal control has the same screen shadows and an abelian von Neumann limit. The remaining physical input is inclusion-covariant modular/static-patch dynamics.",
   "raw_consecutive_cutoff_no_go": [
     {
       "cutoff_L": 1,

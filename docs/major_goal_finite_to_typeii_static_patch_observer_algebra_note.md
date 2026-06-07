@@ -69,7 +69,7 @@ meaning the Hamiltonians or semigroup generators must be compatible with the
 chosen cutoff embeddings up to vanishing error. This is the next physics
 question, not something the current finite certificate claims to derive.
 
-## Harlow-Facing Summary
+## Expert Feedback Summary
 
 The raw finite static-patch regulator ladder does not automatically define a
 matrix-algebra limit; consecutive cutoffs fail the divisibility condition.

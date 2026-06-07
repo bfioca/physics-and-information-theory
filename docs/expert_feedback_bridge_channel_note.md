@@ -203,7 +203,7 @@ This is not advertised as a new Petz theorem. The contribution is the
 observer-bridge diagnostic packaging: entropy/static shadows can agree while
 relative-entropy response separates quantum, classical, and null observer
 bridges. It is also the cleanest route from the finite stabilizer certificates
-toward the Harlow-adjacent question: what operational data specify an
+toward the operator-algebra/QEC question: what operational data specify an
 observer's effective algebra and channel?
 
 ## Goal 19 update

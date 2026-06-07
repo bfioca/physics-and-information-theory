@@ -1141,7 +1141,7 @@ def goal27_static_patch_regulator_universality_certificate(
                 "not promoted to observer bridge channels"
             ),
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "Goal 27 turns the Goal 26 single finite dynamics into a "
             "finite-regulator universality statement: several canonical "
             "positive-definite static-patch Schur regulators, and bounded "

@@ -6,7 +6,6 @@ than the full repository.
 Start with:
 
 - `main.md`
-- `finite_observer_algebra_diagnostics.md`
 - `expert_feedback_note.md`
 - `expert_cover_note.md`
 - `PUBLISHING_CHECKLIST.md`
@@ -16,6 +15,16 @@ into a publishable draft and release package.
 
 `main.md` is the canonical paper draft. The finite-observer note is retained as
 the earlier extraction artifact.
+
+## Expert Send Bundle
+
+Send only:
+
+- `expert_cover_note.md`
+- `expert_feedback_note.md`
+- `main.md`
+
+Do not lead with the full repository or goal history.
 
 Supporting repo entrypoints:
 

@@ -96,6 +96,6 @@
       "command": "python3 -m json.tool docs/goal23_regulated_static_patch_ds_cft_testbed_certificate_index.json"
     }
   ],
-  "harlow_facing_summary": "A regulated finite static-patch testbed with cutoff spherical screen modes and one geometric transfer kernel shows that low-order dS/CFT-like screen data remain insufficient for algebraic ER=EPR connectivity, while full intrinsic operator response recovers the bridge channel with explicit cutoff errors.",
+  "expert_feedback_summary": "A regulated finite static-patch testbed with cutoff spherical screen modes and one geometric transfer kernel shows that low-order dS/CFT-like screen data remain insufficient for algebraic ER=EPR connectivity, while full intrinsic operator response recovers the bridge channel with explicit cutoff errors.",
   "limitations": "This is finite QEC/OA-QEC mathematics with a regulator. It does not construct a continuum CFT dual, de Sitter quantum gravity, Type-II/Type-III observer algebra, QES formula, or literal ER=EPR-in-dS theorem."
 }

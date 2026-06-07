@@ -87,6 +87,6 @@
       "command": "python3 -m json.tool docs/goal28_axiomatic_static_patch_selection_certificate_index.json"
     }
   ],
-  "harlow_facing_summary": "Goal 28 replaces the declared Goal 27 regulator class by a finite axiomatic selection rule. Static-patch covariance, positive-definite time averages, screen-preserving CPTP/unitality, KMS/heat balance, finite dilation, and vanishing cutoff continuity select the class; total dephasing shows why the continuity axiom is necessary.",
+  "expert_feedback_summary": "Goal 28 replaces the declared Goal 27 regulator class by a finite axiomatic selection rule. Static-patch covariance, positive-definite time averages, screen-preserving CPTP/unitality, KMS/heat balance, finite dilation, and vanishing cutoff continuity select the class; total dephasing shows why the continuity axiom is necessary.",
   "limitations": "The result is finite and axiomatic. It does not derive the axioms from continuum de Sitter gravity, a path integral, observer modular theory, or dS/CFT."
 }

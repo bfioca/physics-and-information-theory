@@ -80,6 +80,6 @@
       "command": "python3 -m json.tool docs/goal21_ds_cft_er_epr_compatibility_benchmark_certificate_index.json"
     }
   ],
-  "harlow_facing_summary": "In a finite two-observer static-patch benchmark, dS/CFT-like screen data restricted to the shared horizon do not determine algebraic ER=EPR connectivity. The missing datum is intrinsic observer-algebra response/commutator tomography.",
+  "expert_feedback_summary": "In a finite two-observer static-patch benchmark, dS/CFT-like screen data restricted to the shared horizon do not determine algebraic ER=EPR connectivity. The missing datum is intrinsic observer-algebra response/commutator tomography.",
   "limitations": "This is finite QEC/OA-QEC mathematics. It does not construct a continuum CFT dual, de Sitter quantum gravity, type-III observer algebra, or literal ER=EPR-in-dS theorem."
 }

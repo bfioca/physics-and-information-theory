@@ -179,10 +179,10 @@ Representative command:
 PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 ```
 
-### Proposition 5: Consecutive UCP Cutoff Refinement
+### Proposition 5: Consecutive Cutoff Refinement Audit
 
 Exact unital full-matrix inclusions are too rigid for consecutive spherical
-cutoffs. For any `n <= m`, the trace-filled map
+cutoffs. The baseline replacement is the trace-filled map. For any `n <= m`,
 
 ```text
 Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)
@@ -198,8 +198,13 @@ matrix-unit witness `A=e_12`, `B=e_21`,
 For static-patch dimensions `n=(L+1)^2`, this error tends to zero while the
 off-diagonal commutator witness remains visible in the quantum corner.
 
-Status: finite approximate embedding theorem candidate, not a canonical
-continuum embedding.
+The current audit also compares harmonic mode-label refinement, heat-kernel
+Schur coarse graining, and a Berezin-Toeplitz-inspired smoothing surrogate.
+They preserve or converge on declared screen shadows and retain off-diagonal
+response witnesses, but none is claimed to be canonical.
+
+Status: finite physically motivated cutoff-refinement audit, not a canonical
+continuum embedding theorem.
 
 Primary artifacts:
 

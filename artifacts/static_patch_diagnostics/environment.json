@@ -14,10 +14,10 @@
     "screen_probability": 0.75,
     "temperature_scale": 1.0
   },
-  "generated_utc": "2026-06-07T06:01:54Z",
-  "generation_baseline_commit": "ebf4a2e3d27ffb806bc99da8795e5fce21e68d8b",
+  "generated_utc": "2026-06-07T15:50:12Z",
+  "generation_baseline_commit": "13adf275fb8242a3cd6275b1b10a134f806c62c2",
   "os_uname": "Darwin Brians-Mac-Studio-2.local 25.5.0 Darwin Kernel Version 25.5.0: Mon Apr 27 20:41:15 PDT 2026; root:xnu-12377.121.6~2/RELEASE_ARM64_T6041 arm64 arm",
   "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
   "python_version": "3.14.2",
-  "release_identifier": "v0.1-static-patch-diagnostics"
+  "release_identifier": "post-v0.1-expert-cleanup-and-embedding-audit"
 }

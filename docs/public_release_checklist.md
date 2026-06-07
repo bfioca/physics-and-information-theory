@@ -9,7 +9,7 @@ and as a focused arXiv-style benchmark note, not as a continuum-gravity claim.
 - Added citation metadata.
 - Added a public claim boundary to the README.
 - Added a top-level theorem/claim index: `THEOREMS.md`.
-- Added a paper-shaped technical note: `paper/finite_observer_algebra_diagnostics.md`.
+- Added a paper-shaped technical note: `paper/main.md`.
 - Added a compact reproduction script:
   `examples/reproduce_static_patch_package.py`.
 - Added approximate consecutive-cutoff embedding and continuum-lift obstruction

@@ -9,10 +9,11 @@ control with algebra `C^N` have identical diagonal/screen shadows, while
 intrinsic operator response distinguishes them by the commutator witness
 `[e_12,e_21]=e_11-e_22`. The benchmark includes finite derived dynamics,
 strong-continuity gates, a conditional Type-`II_1` scaffold, and an approximate
-consecutive-cutoff UCP refinement. The result is not a continuum de Sitter
-theorem. The purpose of this note is to ask which cutoff embedding or
-coarse-graining should be considered physically natural for static-patch
-observer algebras.
+consecutive-cutoff embedding audit comparing a trace-filled UCP baseline with
+harmonic, heat-kernel, and Berezin-Toeplitz-inspired refinements. The result is
+not a continuum de Sitter theorem. The purpose of this note is to ask which
+cutoff embedding or coarse-graining should be considered physically natural for
+static-patch observer algebras.
 
 ## What Is Claimed
 
@@ -61,7 +62,8 @@ algebra facts; the dephased path has the same screen shadows and an abelian
 limit. This is a scaffold, not a canonical de Sitter static patch.
 
 **Approximate consecutive refinement.** The exact-inclusion obstruction can be
-softened by replacing `*-inclusions` with UCP trace-preserving maps. For
+softened by replacing `*-inclusions` with UCP trace-preserving maps. The
+baseline map is: for
 `n <= m`,
 
 ```text
@@ -77,6 +79,12 @@ multiplicative, but for `A=e_12`, `B=e_21`,
 
 Thus consecutive spherical cutoffs can be related with vanishing
 multiplicativity error `1/N_L`.
+
+The current audit also tests three more structured finite maps: harmonic
+mode-label refinement, harmonic refinement followed by heat-kernel Schur
+coarse graining, and a Berezin-Toeplitz-inspired CP smoothing surrogate. These
+are not claimed canonical, but they show the obstruction is not only an
+artifact of the factorial-subsequence scaffold.
 
 **Conditional continuum-lift obstruction.** If finite regulator sequences lift
 to a continuum/static-patch setting while screen shadows converge and a
@@ -100,8 +108,8 @@ We do not claim:
 The current finite package isolates the remaining load-bearing physics choice:
 
 ```text
-what cutoff embedding/coarse-graining is natural for static-patch observer
-algebras?
+Is the cutoff embedding/coarse-graining problem physically meaningful here, or
+is this just a finite restatement of known diagonal forgetfulness?
 ```
 
 Candidates include:
@@ -129,5 +137,5 @@ PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests
 The paper-shaped note is:
 
 ```text
-paper/finite_observer_algebra_diagnostics.md
+paper/main.md
 ```

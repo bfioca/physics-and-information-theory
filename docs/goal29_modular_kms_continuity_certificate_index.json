@@ -89,6 +89,6 @@
       "command": "python3 -m json.tool docs/goal29_modular_kms_continuity_certificate_index.json"
     }
   ],
-  "harlow_facing_summary": "Goal 29 refines the Goal 28 continuity axiom. KMS/detailed balance alone is insufficient because stationary modular twirling gives total dephasing. KMS plus modular-time approximate identity is sufficient for the finite regulator class and preserves the screen-shadow no-go and M_N versus C^N bridge distinction.",
+  "expert_feedback_summary": "Goal 29 refines the Goal 28 continuity axiom. KMS/detailed balance alone is insufficient because stationary modular twirling gives total dephasing. KMS plus modular-time approximate identity is sufficient for the finite regulator class and preserves the screen-shadow no-go and M_N versus C^N bridge distinction.",
   "limitations": "The result is finite and modular/KMS-axiomatic. It does not derive modular-time approximate identity from continuum de Sitter gravity, observer modular theory, a path integral, or dS/CFT."
 }

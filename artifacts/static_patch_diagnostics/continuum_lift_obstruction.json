@@ -11,14 +11,19 @@
   "claim_boundary": "conditional lift-obstruction theorem schema only; it does not construct continuum de Sitter, dS/CFT, or ER=EPR",
   "embedding_certificate": {
     "certified_claims": {
+      "berezin_inspired_smoothing_refinements_exist": true,
       "consecutive_full_matrix_star_inclusions_refuted": true,
       "consecutive_ucp_refinements_exist": true,
       "declared_screen_shadows_preserved": true,
+      "harmonic_projection_refinements_exist": true,
+      "heat_kernel_refinements_exist": true,
       "not_claimed_as_canonical_static_patch_embedding": true,
       "operator_response_witness_persists": true,
+      "physical_candidate_multiplicativity_bounds_decrease": true,
+      "physical_candidate_screen_errors_decrease_or_are_zero": true,
       "ucp_multiplicativity_errors_decrease": true
     },
-    "claim_boundary": "finite approximate embedding audit only; not a canonical continuum static-patch embedding",
+    "claim_boundary": "finite physically motivated cutoff-refinement audit only; not a canonical continuum static-patch embedding",
     "consecutive_records": [
       {
         "approximate_embedding": {
@@ -53,6 +58,138 @@
         "cutoff_L": 1,
         "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
         "exact_unital_star_inclusion_exists": false,
+        "physically_motivated_candidates": [
+          {
+            "candidate": "trace_filled_ucp_baseline",
+            "record": {
+              "complement_dim": 5,
+              "completely_positive": true,
+              "embedding_id": "trace_filled_ucp_embedding",
+              "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+              "is_star_homomorphism": false,
+              "multiplicativity_witness": {
+                "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+                "goes_to_zero_for_static_patch_cutoffs": true,
+                "operator_norm_error": 0.25,
+                "witness": "A=e_12, B=e_21"
+              },
+              "normalized_trace_preserving": true,
+              "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+              "operator_response": {
+                "commutator_operator_norm": 1.0,
+                "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+                "dephased_control_commutator_norm": 0.0,
+                "off_diagonal_matrix_unit_norm_preserved": true
+              },
+              "screen_shadow": {
+                "coarse_grain_after_refinement_identity": true,
+                "diagonal_trace_preserved": true,
+                "screen_shadow_preserved_for_declared_diagonal_tests": true
+              },
+              "source_dim": 4,
+              "target_dim": 9,
+              "unital": true
+            },
+            "status": "implemented_baseline"
+          },
+          {
+            "candidate": "harmonic_projection_refinement",
+            "map_properties": {
+              "completely_positive": true,
+              "exact_star_homomorphism": false,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.25,
+              "witness": "A=e_12, B=e_21"
+            },
+            "operator_response": {
+              "commutator_response_retention": 1.0,
+              "off_diagonal_matrix_unit_norm_retention": 1.0,
+              "response_witness_persists": true
+            },
+            "physical_motivation": "consecutive cutoff refinement by preserving spherical-harmonic mode labels ell <= L inside the ell <= L+1 mode space",
+            "screen_shadow": {
+              "low_harmonic_diagonal_observables_preserved_exactly": true,
+              "new_high_modes_trace_filled": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 1,
+            "source_dim": 4,
+            "source_labels_match_target_prefix": true,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 2,
+            "target_dim": 9
+          },
+          {
+            "candidate": "heat_kernel_coarse_graining",
+            "heat_time": 0.111111111111,
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "normalized_trace_preserving": true,
+              "positive_definite_source": "Gaussian heat-time average",
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.25,
+              "witness": "A=e_12, B=e_21 after harmonic refinement and heat damping"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.987730216236,
+              "off_diagonal_matrix_unit_norm_retention": 0.993846173326,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "harmonic mode refinement composed with a positive-definite heat-kernel Schur channel generated by normalized Laplacian gaps",
+            "screen_shadow": {
+              "diagonal_observables_preserved_exactly": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 1,
+            "source_dim": 4,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 2,
+            "target_dim": 9,
+            "witness_energy_gap": 0.333333333333
+          },
+          {
+            "candidate": "berezin_toeplitz_inspired_smoothing",
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "convex_mixture_of_ucp_maps": true,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.361111111111,
+              "witness": "A=e_12, B=e_21 under O(1/N) smoothing"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.79012345679,
+              "off_diagonal_matrix_unit_norm_retention": 0.888888888889,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "finite CP smoothing surrogate for symbol/quantization refinement; implemented as harmonic trace-filled refinement mixed with a trace-to-uniform channel at O(1/N) weight",
+            "screen_shadow": {
+              "exact_screen_preservation_not_claimed": true,
+              "screen_shadow_error_bound": 0.111111111111,
+              "screen_shadow_error_vanishes": true
+            },
+            "smoothing_epsilon": 0.111111111111,
+            "source_cutoff": 1,
+            "source_dim": 4,
+            "status": "implemented_surrogate_not_canonical",
+            "target_cutoff": 2,
+            "target_dim": 9
+          }
+        ],
         "source_dim": 4,
         "target_dim": 9
       },
@@ -89,6 +226,138 @@
         "cutoff_L": 2,
         "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
         "exact_unital_star_inclusion_exists": false,
+        "physically_motivated_candidates": [
+          {
+            "candidate": "trace_filled_ucp_baseline",
+            "record": {
+              "complement_dim": 7,
+              "completely_positive": true,
+              "embedding_id": "trace_filled_ucp_embedding",
+              "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+              "is_star_homomorphism": false,
+              "multiplicativity_witness": {
+                "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+                "goes_to_zero_for_static_patch_cutoffs": true,
+                "operator_norm_error": 0.111111111111,
+                "witness": "A=e_12, B=e_21"
+              },
+              "normalized_trace_preserving": true,
+              "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+              "operator_response": {
+                "commutator_operator_norm": 1.0,
+                "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+                "dephased_control_commutator_norm": 0.0,
+                "off_diagonal_matrix_unit_norm_preserved": true
+              },
+              "screen_shadow": {
+                "coarse_grain_after_refinement_identity": true,
+                "diagonal_trace_preserved": true,
+                "screen_shadow_preserved_for_declared_diagonal_tests": true
+              },
+              "source_dim": 9,
+              "target_dim": 16,
+              "unital": true
+            },
+            "status": "implemented_baseline"
+          },
+          {
+            "candidate": "harmonic_projection_refinement",
+            "map_properties": {
+              "completely_positive": true,
+              "exact_star_homomorphism": false,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.111111111111,
+              "witness": "A=e_12, B=e_21"
+            },
+            "operator_response": {
+              "commutator_response_retention": 1.0,
+              "off_diagonal_matrix_unit_norm_retention": 1.0,
+              "response_witness_persists": true
+            },
+            "physical_motivation": "consecutive cutoff refinement by preserving spherical-harmonic mode labels ell <= L inside the ell <= L+1 mode space",
+            "screen_shadow": {
+              "low_harmonic_diagonal_observables_preserved_exactly": true,
+              "new_high_modes_trace_filled": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 2,
+            "source_dim": 9,
+            "source_labels_match_target_prefix": true,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 3,
+            "target_dim": 16
+          },
+          {
+            "candidate": "heat_kernel_coarse_graining",
+            "heat_time": 0.0625,
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "normalized_trace_preserving": true,
+              "positive_definite_source": "Gaussian heat-time average",
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.111111111111,
+              "witness": "A=e_12, B=e_21 after harmonic refinement and heat damping"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.998265395058,
+              "off_diagonal_matrix_unit_norm_retention": 0.999132321096,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "harmonic mode refinement composed with a positive-definite heat-kernel Schur channel generated by normalized Laplacian gaps",
+            "screen_shadow": {
+              "diagonal_observables_preserved_exactly": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 2,
+            "source_dim": 9,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 3,
+            "target_dim": 16,
+            "witness_energy_gap": 0.166666666667
+          },
+          {
+            "candidate": "berezin_toeplitz_inspired_smoothing",
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "convex_mixture_of_ucp_maps": true,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.173611111111,
+              "witness": "A=e_12, B=e_21 under O(1/N) smoothing"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.87890625,
+              "off_diagonal_matrix_unit_norm_retention": 0.9375,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "finite CP smoothing surrogate for symbol/quantization refinement; implemented as harmonic trace-filled refinement mixed with a trace-to-uniform channel at O(1/N) weight",
+            "screen_shadow": {
+              "exact_screen_preservation_not_claimed": true,
+              "screen_shadow_error_bound": 0.0625,
+              "screen_shadow_error_vanishes": true
+            },
+            "smoothing_epsilon": 0.0625,
+            "source_cutoff": 2,
+            "source_dim": 9,
+            "status": "implemented_surrogate_not_canonical",
+            "target_cutoff": 3,
+            "target_dim": 16
+          }
+        ],
         "source_dim": 9,
         "target_dim": 16
       },
@@ -125,6 +394,138 @@
         "cutoff_L": 3,
         "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
         "exact_unital_star_inclusion_exists": false,
+        "physically_motivated_candidates": [
+          {
+            "candidate": "trace_filled_ucp_baseline",
+            "record": {
+              "complement_dim": 9,
+              "completely_positive": true,
+              "embedding_id": "trace_filled_ucp_embedding",
+              "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+              "is_star_homomorphism": false,
+              "multiplicativity_witness": {
+                "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+                "goes_to_zero_for_static_patch_cutoffs": true,
+                "operator_norm_error": 0.0625,
+                "witness": "A=e_12, B=e_21"
+              },
+              "normalized_trace_preserving": true,
+              "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+              "operator_response": {
+                "commutator_operator_norm": 1.0,
+                "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+                "dephased_control_commutator_norm": 0.0,
+                "off_diagonal_matrix_unit_norm_preserved": true
+              },
+              "screen_shadow": {
+                "coarse_grain_after_refinement_identity": true,
+                "diagonal_trace_preserved": true,
+                "screen_shadow_preserved_for_declared_diagonal_tests": true
+              },
+              "source_dim": 16,
+              "target_dim": 25,
+              "unital": true
+            },
+            "status": "implemented_baseline"
+          },
+          {
+            "candidate": "harmonic_projection_refinement",
+            "map_properties": {
+              "completely_positive": true,
+              "exact_star_homomorphism": false,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.0625,
+              "witness": "A=e_12, B=e_21"
+            },
+            "operator_response": {
+              "commutator_response_retention": 1.0,
+              "off_diagonal_matrix_unit_norm_retention": 1.0,
+              "response_witness_persists": true
+            },
+            "physical_motivation": "consecutive cutoff refinement by preserving spherical-harmonic mode labels ell <= L inside the ell <= L+1 mode space",
+            "screen_shadow": {
+              "low_harmonic_diagonal_observables_preserved_exactly": true,
+              "new_high_modes_trace_filled": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 3,
+            "source_dim": 16,
+            "source_labels_match_target_prefix": true,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 4,
+            "target_dim": 25
+          },
+          {
+            "candidate": "heat_kernel_coarse_graining",
+            "heat_time": 0.04,
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "normalized_trace_preserving": true,
+              "positive_definite_source": "Gaussian heat-time average",
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.0625,
+              "witness": "A=e_12, B=e_21 after harmonic refinement and heat damping"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.999600079989,
+              "off_diagonal_matrix_unit_norm_retention": 0.999800019999,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "harmonic mode refinement composed with a positive-definite heat-kernel Schur channel generated by normalized Laplacian gaps",
+            "screen_shadow": {
+              "diagonal_observables_preserved_exactly": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 3,
+            "source_dim": 16,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 4,
+            "target_dim": 25,
+            "witness_energy_gap": 0.1
+          },
+          {
+            "candidate": "berezin_toeplitz_inspired_smoothing",
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "convex_mixture_of_ucp_maps": true,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.1025,
+              "witness": "A=e_12, B=e_21 under O(1/N) smoothing"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.9216,
+              "off_diagonal_matrix_unit_norm_retention": 0.96,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "finite CP smoothing surrogate for symbol/quantization refinement; implemented as harmonic trace-filled refinement mixed with a trace-to-uniform channel at O(1/N) weight",
+            "screen_shadow": {
+              "exact_screen_preservation_not_claimed": true,
+              "screen_shadow_error_bound": 0.04,
+              "screen_shadow_error_vanishes": true
+            },
+            "smoothing_epsilon": 0.04,
+            "source_cutoff": 3,
+            "source_dim": 16,
+            "status": "implemented_surrogate_not_canonical",
+            "target_cutoff": 4,
+            "target_dim": 25
+          }
+        ],
         "source_dim": 16,
         "target_dim": 25
       },
@@ -161,6 +562,138 @@
         "cutoff_L": 4,
         "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
         "exact_unital_star_inclusion_exists": false,
+        "physically_motivated_candidates": [
+          {
+            "candidate": "trace_filled_ucp_baseline",
+            "record": {
+              "complement_dim": 11,
+              "completely_positive": true,
+              "embedding_id": "trace_filled_ucp_embedding",
+              "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+              "is_star_homomorphism": false,
+              "multiplicativity_witness": {
+                "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+                "goes_to_zero_for_static_patch_cutoffs": true,
+                "operator_norm_error": 0.04,
+                "witness": "A=e_12, B=e_21"
+              },
+              "normalized_trace_preserving": true,
+              "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+              "operator_response": {
+                "commutator_operator_norm": 1.0,
+                "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+                "dephased_control_commutator_norm": 0.0,
+                "off_diagonal_matrix_unit_norm_preserved": true
+              },
+              "screen_shadow": {
+                "coarse_grain_after_refinement_identity": true,
+                "diagonal_trace_preserved": true,
+                "screen_shadow_preserved_for_declared_diagonal_tests": true
+              },
+              "source_dim": 25,
+              "target_dim": 36,
+              "unital": true
+            },
+            "status": "implemented_baseline"
+          },
+          {
+            "candidate": "harmonic_projection_refinement",
+            "map_properties": {
+              "completely_positive": true,
+              "exact_star_homomorphism": false,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.04,
+              "witness": "A=e_12, B=e_21"
+            },
+            "operator_response": {
+              "commutator_response_retention": 1.0,
+              "off_diagonal_matrix_unit_norm_retention": 1.0,
+              "response_witness_persists": true
+            },
+            "physical_motivation": "consecutive cutoff refinement by preserving spherical-harmonic mode labels ell <= L inside the ell <= L+1 mode space",
+            "screen_shadow": {
+              "low_harmonic_diagonal_observables_preserved_exactly": true,
+              "new_high_modes_trace_filled": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 4,
+            "source_dim": 25,
+            "source_labels_match_target_prefix": true,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 5,
+            "target_dim": 36
+          },
+          {
+            "candidate": "heat_kernel_coarse_graining",
+            "heat_time": 0.027777777778,
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "normalized_trace_preserving": true,
+              "positive_definite_source": "Gaussian heat-time average",
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.04,
+              "witness": "A=e_12, B=e_21 after harmonic refinement and heat damping"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.99987655083,
+              "off_diagonal_matrix_unit_norm_retention": 0.99993827351,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "harmonic mode refinement composed with a positive-definite heat-kernel Schur channel generated by normalized Laplacian gaps",
+            "screen_shadow": {
+              "diagonal_observables_preserved_exactly": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 4,
+            "source_dim": 25,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 5,
+            "target_dim": 36,
+            "witness_energy_gap": 0.066666666667
+          },
+          {
+            "candidate": "berezin_toeplitz_inspired_smoothing",
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "convex_mixture_of_ucp_maps": true,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.067777777778,
+              "witness": "A=e_12, B=e_21 under O(1/N) smoothing"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.945216049383,
+              "off_diagonal_matrix_unit_norm_retention": 0.972222222222,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "finite CP smoothing surrogate for symbol/quantization refinement; implemented as harmonic trace-filled refinement mixed with a trace-to-uniform channel at O(1/N) weight",
+            "screen_shadow": {
+              "exact_screen_preservation_not_claimed": true,
+              "screen_shadow_error_bound": 0.027777777778,
+              "screen_shadow_error_vanishes": true
+            },
+            "smoothing_epsilon": 0.027777777778,
+            "source_cutoff": 4,
+            "source_dim": 25,
+            "status": "implemented_surrogate_not_canonical",
+            "target_cutoff": 5,
+            "target_dim": 36
+          }
+        ],
         "source_dim": 25,
         "target_dim": 36
       },
@@ -197,6 +730,138 @@
         "cutoff_L": 5,
         "exact_inclusion_obstruction": "N_L does not divide N_{L+1}; use UCP refinement instead",
         "exact_unital_star_inclusion_exists": false,
+        "physically_motivated_candidates": [
+          {
+            "candidate": "trace_filled_ucp_baseline",
+            "record": {
+              "complement_dim": 13,
+              "completely_positive": true,
+              "embedding_id": "trace_filled_ucp_embedding",
+              "formula": "Phi(A)=V A V^* + tau_n(A)(I_m - V V^*)",
+              "is_star_homomorphism": false,
+              "multiplicativity_witness": {
+                "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
+                "goes_to_zero_for_static_patch_cutoffs": true,
+                "operator_norm_error": 0.027777777778,
+                "witness": "A=e_12, B=e_21"
+              },
+              "normalized_trace_preserving": true,
+              "not_a_full_matrix_inclusion_when_complement_nonzero": true,
+              "operator_response": {
+                "commutator_operator_norm": 1.0,
+                "commutator_witness": "[e_12,e_21]=e_11-e_22 in the embedded corner",
+                "dephased_control_commutator_norm": 0.0,
+                "off_diagonal_matrix_unit_norm_preserved": true
+              },
+              "screen_shadow": {
+                "coarse_grain_after_refinement_identity": true,
+                "diagonal_trace_preserved": true,
+                "screen_shadow_preserved_for_declared_diagonal_tests": true
+              },
+              "source_dim": 36,
+              "target_dim": 49,
+              "unital": true
+            },
+            "status": "implemented_baseline"
+          },
+          {
+            "candidate": "harmonic_projection_refinement",
+            "map_properties": {
+              "completely_positive": true,
+              "exact_star_homomorphism": false,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.027777777778,
+              "witness": "A=e_12, B=e_21"
+            },
+            "operator_response": {
+              "commutator_response_retention": 1.0,
+              "off_diagonal_matrix_unit_norm_retention": 1.0,
+              "response_witness_persists": true
+            },
+            "physical_motivation": "consecutive cutoff refinement by preserving spherical-harmonic mode labels ell <= L inside the ell <= L+1 mode space",
+            "screen_shadow": {
+              "low_harmonic_diagonal_observables_preserved_exactly": true,
+              "new_high_modes_trace_filled": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 5,
+            "source_dim": 36,
+            "source_labels_match_target_prefix": true,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 6,
+            "target_dim": 49
+          },
+          {
+            "candidate": "heat_kernel_coarse_graining",
+            "heat_time": 0.020408163265,
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "normalized_trace_preserving": true,
+              "positive_definite_source": "Gaussian heat-time average",
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.027777777778,
+              "witness": "A=e_12, B=e_21 after harmonic refinement and heat damping"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.999953724057,
+              "off_diagonal_matrix_unit_norm_retention": 0.999976861761,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "harmonic mode refinement composed with a positive-definite heat-kernel Schur channel generated by normalized Laplacian gaps",
+            "screen_shadow": {
+              "diagonal_observables_preserved_exactly": true,
+              "screen_shadow_error_bound": 0.0
+            },
+            "source_cutoff": 5,
+            "source_dim": 36,
+            "status": "implemented_physical_motivation_audit",
+            "target_cutoff": 6,
+            "target_dim": 49,
+            "witness_energy_gap": 0.047619047619
+          },
+          {
+            "candidate": "berezin_toeplitz_inspired_smoothing",
+            "map_properties": {
+              "completely_positive": true,
+              "controlled_non_multiplicative": true,
+              "convex_mixture_of_ucp_maps": true,
+              "normalized_trace_preserving": true,
+              "unital": true
+            },
+            "multiplicativity": {
+              "goes_to_zero_for_static_patch_cutoffs": true,
+              "operator_norm_error_bound": 0.048185941043,
+              "witness": "A=e_12, B=e_21 under O(1/N) smoothing"
+            },
+            "operator_response": {
+              "commutator_response_retention": 0.959600166597,
+              "off_diagonal_matrix_unit_norm_retention": 0.979591836735,
+              "response_witness_persists": true,
+              "retention_tends_to_one_under_cutoff_scaling": true
+            },
+            "physical_motivation": "finite CP smoothing surrogate for symbol/quantization refinement; implemented as harmonic trace-filled refinement mixed with a trace-to-uniform channel at O(1/N) weight",
+            "screen_shadow": {
+              "exact_screen_preservation_not_claimed": true,
+              "screen_shadow_error_bound": 0.020408163265,
+              "screen_shadow_error_vanishes": true
+            },
+            "smoothing_epsilon": 0.020408163265,
+            "source_cutoff": 5,
+            "source_dim": 36,
+            "status": "implemented_surrogate_not_canonical",
+            "target_cutoff": 6,
+            "target_dim": 49
+          }
+        ],
         "source_dim": 36,
         "target_dim": 49
       }
@@ -225,22 +890,33 @@
         ],
         "candidate": "spherical_harmonic_projection_refinement",
         "embedding_type": "mode-label projection/refinement through low harmonics",
-        "status": "program_target"
+        "status": "implemented_physical_motivation_audit"
       },
       {
         "acceptance_tests": [
           "complete positivity",
           "trace/state convergence",
-          "approximate multiplicativity on low modes",
-          "static-patch covariance error"
+          "diagonal screen preservation",
+          "off-diagonal response persistence"
         ],
-        "candidate": "berezin_toeplitz_fuzzy_sphere_channel",
-        "embedding_type": "symbol/quantization channel via the continuum sphere",
-        "status": "program_target"
+        "candidate": "heat_kernel_coarse_graining",
+        "embedding_type": "harmonic refinement composed with heat-kernel Schur damping",
+        "status": "implemented_physical_motivation_audit"
+      },
+      {
+        "acceptance_tests": [
+          "complete positivity",
+          "screen-shadow convergence",
+          "approximate multiplicativity on low modes",
+          "operator-response persistence"
+        ],
+        "candidate": "berezin_toeplitz_inspired_smoothing",
+        "embedding_type": "CP smoothing surrogate for symbol/quantization refinement",
+        "status": "implemented_surrogate_not_canonical"
       }
     ],
     "goal": "Approximate Static-Patch Cutoff Embedding Audit",
-    "interpretation": "Exact unital full-matrix inclusions are too rigid for consecutive spherical cutoffs. Consecutive UCP trace-preserving refinements exist and have vanishing matrix-unit multiplicativity error.",
+    "interpretation": "Exact unital full-matrix inclusions are too rigid for consecutive spherical cutoffs. Consecutive UCP trace-preserving refinements, harmonic mode refinements, heat-kernel coarse grainings, and a Berezin-Toeplitz-inspired smoothing surrogate preserve or converge on declared screen shadows while retaining operator-response witnesses. None is claimed as the canonical static-patch map.",
     "multiplicativity_errors": [
       0.25,
       0.111111111111,
@@ -248,7 +924,21 @@
       0.04,
       0.027777777778
     ],
-    "result_type": "consecutive_ucp_cutoff_refinement_theorem_candidate",
+    "physical_candidate_error_bounds": [
+      0.361111111111,
+      0.173611111111,
+      0.1025,
+      0.067777777778,
+      0.048185941043
+    ],
+    "result_type": "physically_motivated_cutoff_refinement_audit",
+    "screen_shadow_error_bounds": [
+      0.111111111111,
+      0.0625,
+      0.04,
+      0.027777777778,
+      0.020408163265
+    ],
     "status": "pass"
   },
   "goal": "Continuum Lift Conditions and Screen-Only Dictionary Obstruction",

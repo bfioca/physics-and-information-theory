@@ -32,6 +32,11 @@ approximate_cutoff_embeddings
 continuum_lift_obstruction
 ```
 
+The `approximate_cutoff_embeddings` entry covers the trace-filled UCP baseline
+plus harmonic projection/refinement, heat-kernel coarse graining, and a
+Berezin-Toeplitz-inspired smoothing surrogate. These are finite audits, not
+canonical continuum static-patch embeddings.
+
 The frozen output of this command is:
 
 ```text

@@ -81,6 +81,6 @@
       "command": "python3 -m json.tool docs/goal22_ds_cft_er_epr_single_dynamics_benchmark_certificate_index.json"
     }
   ],
-  "harlow_facing_summary": "A finite dS/CFT-inspired screen transfer process can generate identical screen-restricted dynamics while inducing different observer bridge algebras. The ER=EPR-like bridge datum appears in full intrinsic operator response and commutator growth, not in entropy or low-order screen correlators alone.",
+  "expert_feedback_summary": "A finite dS/CFT-inspired screen transfer process can generate identical screen-restricted dynamics while inducing different observer bridge algebras. The ER=EPR-like bridge datum appears in full intrinsic operator response and commutator growth, not in entropy or low-order screen correlators alone.",
   "limitations": "This is finite QEC/OA-QEC mathematics. It does not construct a continuum CFT dual, de Sitter quantum gravity, type-III observer algebra, or literal ER=EPR-in-dS theorem."
 }

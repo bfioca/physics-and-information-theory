@@ -555,7 +555,7 @@ def goal30_static_patch_physical_continuity_certificate(
                 "routes imply it."
             ),
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "The finite program now isolates the next physics assumption: not "
             "KMS itself, but short-time static-patch locality. KMS/detailed "
             "balance permits stationary twirling; a shrinking local modular or "

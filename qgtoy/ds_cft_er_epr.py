@@ -338,7 +338,7 @@ def goal21_ds_cft_er_epr_compatibility_certificate(
                 "the ER=EPR bridge algebra."
             ),
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "In a finite two-observer static-patch benchmark, dS/CFT-like "
             "screen data restricted to the shared horizon do not determine "
             "algebraic ER=EPR connectivity. The missing datum is intrinsic "

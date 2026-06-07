@@ -40,6 +40,14 @@ v0.1-static-patch-diagnostics
 | [`paper/PUBLISHING_CHECKLIST.md`](paper/PUBLISHING_CHECKLIST.md) | Publishing checklist; only external-feedback follow-up remains open. |
 | [`docs/README.md`](docs/README.md) | Map of the broader research trail. |
 
+Expert feedback bundle:
+
+```text
+paper/expert_cover_note.md
+paper/expert_feedback_note.md
+paper/main.md
+```
+
 ## Quick Reproduction
 
 No runtime dependencies are required beyond Python 3.11+.

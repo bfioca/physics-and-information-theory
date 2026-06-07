@@ -815,8 +815,8 @@
     "stationary_twirl_excluded_by_strong_continuity": true
   },
   "claim_boundary": "Finite semigroup theorem gate only; no continuum de Sitter or dS/CFT theorem is claimed.",
+  "expert_feedback_summary": "The finite obstruction has been localized further. KMS excludes nothing like stationary twirling, but an identity-starting, strongly continuous static-patch semigroup with cutoff-local generator bound and shrinking lapse does derive the needed approximate identity. Without this extra axiom, fixed-time thermalization can still erase the bridge-relevant algebra while leaving screen shadows unchanged.",
   "goal": "Goal 31: Static-Patch Strong-Continuity Theorem Gate",
-  "harlow_facing_summary": "The finite obstruction has been localized further. KMS excludes nothing like stationary twirling, but an identity-starting, strongly continuous static-patch semigroup with cutoff-local generator bound and shrinking lapse does derive the needed approximate identity. Without this extra axiom, fixed-time thermalization can still erase the bridge-relevant algebra while leaving screen shadows unchanged.",
   "relationship_to_goal30": {
     "goal30_result_type": "finite_physical_continuity_gate",
     "goal30_status": "pass",

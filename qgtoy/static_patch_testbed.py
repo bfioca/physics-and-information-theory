@@ -482,7 +482,7 @@ def goal23_regulated_static_patch_ds_cft_certificate(
             "goal22_command": goal22["reproducibility"]["certificate"],
         },
         "continuum_gate": continuum_gate,
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "The regulated static-patch testbed replaces the abstract finite "
             "bridge switch by cutoff spherical screen modes and one geometric "
             "transfer kernel. Low-order dS/CFT-like screen data remain "

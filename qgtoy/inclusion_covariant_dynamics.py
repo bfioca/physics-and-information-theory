@@ -375,7 +375,7 @@ def inclusion_covariant_static_patch_dynamics_certificate(
                 "with an explicit asymptotic bound."
             ),
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "The Type-II scaffold now has a dynamics audit. Arbitrary exact "
             "finite covariance is false, but rank-ordered static-patch "
             "embeddings give decreasing modular and heat generator covariance "

@@ -621,7 +621,7 @@ def goal28_axiomatic_static_patch_selection_certificate(
             "all_screen_visible_data_collide": all_screen_collisions,
             "all_offdiagonal_responses_separate_bridge": all_response_separates,
         },
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "Goal 28 replaces the declared Goal 27 regulator class by a "
             "finite axiomatic selection rule: static-patch covariance, "
             "positive-definite time averages, screen-preserving CPTP/unitality, "

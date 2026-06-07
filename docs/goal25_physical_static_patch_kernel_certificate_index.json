@@ -84,6 +84,6 @@
       "role": "dephasing as a quantum Markov semigroup phenomenon"
     }
   ],
-  "harlow_facing_summary": "Goal 25 replaces the hand-built static-patch Schur kernel with a fuzzy-sphere Hamiltonian Lindblad-dephasing kernel. The finite channel is CPTP/unital, keeps screen-visible data blind, and preserves the M_N versus C^N bridge distinction via off-diagonal response.",
+  "expert_feedback_summary": "Goal 25 replaces the hand-built static-patch Schur kernel with a fuzzy-sphere Hamiltonian Lindblad-dephasing kernel. The finite channel is CPTP/unital, keeps screen-visible data blind, and preserves the M_N versus C^N bridge distinction via off-diagonal response.",
   "limitations": "The kernel is physically motivated but not derived from actual de Sitter static-patch quantum gravity, a path integral, or a continuum dS/CFT screen dictionary."
 }

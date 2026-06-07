@@ -4,8 +4,8 @@
   "certificate_command": "PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5",
   "focused_regression_command": "PYTHONPATH=. python3 -m unittest tests.test_embedding_channels",
   "json_validation_command": "python3 -m json.tool docs/static_patch_embedding_channels_certificate_index.json",
-  "result_type": "consecutive_ucp_cutoff_refinement_theorem_candidate",
-  "claim_boundary": "finite approximate embedding audit only; not a canonical continuum static-patch embedding",
+  "result_type": "physically_motivated_cutoff_refinement_audit",
+  "claim_boundary": "finite physically motivated cutoff-refinement audit only; not a canonical continuum static-patch embedding",
   "major_claims": [
     {
       "claim": "Consecutive spherical cutoffs fail exact unital full-matrix star-inclusion divisibility.",
@@ -31,11 +31,31 @@
       "claim": "The off-diagonal commutator response witness persists in the quantum corner.",
       "status": "finite witness",
       "certificate_field": "certified_claims.operator_response_witness_persists"
+    },
+    {
+      "claim": "Harmonic projection/refinement preserves low-harmonic diagonal shadows and response witnesses across consecutive cutoffs.",
+      "status": "finite physical-motivation audit",
+      "certificate_field": "certified_claims.harmonic_projection_refinements_exist"
+    },
+    {
+      "claim": "Heat-kernel coarse graining gives UCP trace-preserving refinements with exact diagonal screen preservation and positive response retention.",
+      "status": "finite physical-motivation audit",
+      "certificate_field": "certified_claims.heat_kernel_refinements_exist"
+    },
+    {
+      "claim": "The Berezin-Toeplitz-inspired smoothing surrogate is UCP, has vanishing screen-shadow error, and retains commutator response.",
+      "status": "finite surrogate audit, not canonical",
+      "certificate_field": "certified_claims.berezin_inspired_smoothing_refinements_exist"
+    },
+    {
+      "claim": "The implemented physical-candidate multiplicativity error bounds decrease across the bounded cutoff family.",
+      "status": "bounded check",
+      "certificate_field": "certified_claims.physical_candidate_multiplicativity_bounds_decrease"
     }
   ],
   "frontier": [
-    "replace the trace-filled UCP refinement with spherical-harmonic projection/refinement maps",
-    "implement Berezin-Toeplitz fuzzy-sphere symbol/quantization channels",
+    "replace the Berezin-Toeplitz-inspired surrogate with a canonical symbol/quantization theorem",
+    "derive a static-patch modular or heat-kernel conditional expectation from physical dynamics",
     "compare covariance and strong-continuity errors across embedding candidates"
   ]
 }

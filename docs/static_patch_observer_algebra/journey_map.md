@@ -8,9 +8,9 @@ the goal-by-goal history.
 Read first:
 
 1. `THEOREMS.md`
-2. `paper/finite_observer_algebra_diagnostics.md`
+2. `paper/main.md`
 3. `docs/static_patch_observer_algebra/README.md`
-4. `docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`
+4. `docs/static_patch_observer_algebra/expert_feedback_two_page_note.md`
 5. `docs/static_patch_observer_algebra/audit_index.json`
 
 The lead story is:
@@ -52,7 +52,7 @@ For public claim boundaries, audit:
 
 - `README.md`
 - `docs/public_release_checklist.md`
-- `docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`
+- `docs/static_patch_observer_algebra/expert_feedback_two_page_note.md`
 
 ## What Not To Lead With
 

@@ -75,6 +75,6 @@
       "command": "python3 -m json.tool docs/goal26_derived_static_patch_dynamics_certificate_index.json"
     }
   ],
-  "harlow_facing_summary": "Goal 26 derives the finite static-patch bridge kernel from an explicit Hamiltonian plus finite environment trace. The derived random-unitary channel remains CPTP/unital, keeps screen-visible data blind, and preserves the M_N versus C^N bridge distinction via off-diagonal response.",
+  "expert_feedback_summary": "Goal 26 derives the finite static-patch bridge kernel from an explicit Hamiltonian plus finite environment trace. The derived random-unitary channel remains CPTP/unital, keeps screen-visible data blind, and preserves the M_N versus C^N bridge distinction via off-diagonal response.",
   "limitations": "The derivation is finite and explicit, but it does not derive the Hamiltonian/environment coupling from actual de Sitter static-patch quantum gravity, a path integral, or a continuum dS/CFT screen dictionary."
 }

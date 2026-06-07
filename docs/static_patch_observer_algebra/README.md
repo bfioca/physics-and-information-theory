@@ -26,7 +26,7 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | `../../REPRODUCIBILITY.md` | One-command reproduction and frozen artifact validation. |
 | `../../paper/expert_feedback_note.md` | Two-page expert-facing feedback note. |
 | `../../paper/expert_cover_note.md` | Short cover note for expert feedback. |
-| `harlow_facing_two_page_note.md` | Short expert-facing theorem note and open question. |
+| `expert_feedback_two_page_note.md` | Short expert-facing theorem note and open question. |
 | `audit_index.json` | Machine-readable map from major claims to commands, source files, and tests. |
 | `journey_map.md` | How the earlier goals support the packaged result without becoming the lead. |
 
@@ -39,7 +39,7 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | Finite-to-Type-II scaffold | conditional operator-algebra theorem candidate | A cofinal factorial cutoff sequence gives a UHF quantum limit whose tracial closure is a hyperfinite Type `II_1` candidate. |
 | Abelian control | exact levelwise control | The dephased diagonal sequence keeps the same screen shadows but has an abelian von Neumann limit. |
 | Inclusion-covariant dynamics | bounded asymptotic audit | Exact covariance fails for raw Hamiltonians, while conditional-expectation and short-time covariance errors decrease along the factorial subsequence. |
-| Approximate cutoff embeddings | finite approximate embedding audit | Consecutive cutoffs admit trace-filled UCP refinements with `1/N_L` multiplicativity error. |
+| Cutoff-refinement embeddings | finite physical-motivation audit | Consecutive cutoffs admit trace-filled, harmonic, heat-kernel, and Berezin-inspired refinements with vanishing error bounds and persistent response witnesses. |
 | Continuum lift obstruction | conditional theorem schema | Under explicit lift conditions, any dictionary factoring only through screen shadows is incomplete when response witnesses persist. |
 | Remaining assumption | open physics/math question | Is `rank_ordered_static_patch_embedding` the right cutoff embedding, or should a canonical fuzzy-sphere/static-patch embedding replace it? |
 

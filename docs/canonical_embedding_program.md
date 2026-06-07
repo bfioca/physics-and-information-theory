@@ -22,7 +22,7 @@ do not usually satisfy `N_L | N_{L+1}`. Thus exact unital full-matrix
 That is mathematically clean but physically suspicious: a static-patch cutoff
 should not need factorial jumps just to refine modes.
 
-## Finite Repair: Consecutive UCP Refinement
+## Finite Repair 1: Consecutive UCP Refinement
 
 For any `n <= m`, choose the standard isometry `V:C^n -> C^m` and define
 
@@ -56,14 +56,56 @@ The embedded off-diagonal response witness survives:
 has operator norm `1` in the quantum corner, while the dephased control has
 zero commutator.
 
+## Finite Repair 2: Physically Motivated Cutoff Maps
+
+The current audit also compares three more structured finite maps. These are
+not claimed to be canonical static-patch embeddings, but they address the
+weakest version of the critique: the obstruction no longer rests only on a
+factorial subsequence or a bare trace-filled gadget.
+
+### Harmonic Projection/Refinement
+
+The spherical-harmonic labels with `ell <= L` are identified with the same
+labels inside the `ell <= L+1` cutoff. The complement is trace-filled. This map
+is UCP and normalized-trace preserving, preserves low-harmonic diagonal
+observables exactly, has the same `1/N_L` matrix-unit multiplicativity
+witness, and keeps the commutator response visible.
+
+### Heat-Kernel Coarse Graining
+
+Harmonic refinement is composed with a positive-definite heat-kernel Schur
+channel whose coefficients depend on normalized Laplacian energy gaps. The map
+is UCP and trace preserving, fixes diagonal screen data, and damps off-diagonal
+response by a positive retention factor that tends to one under the declared
+cutoff scaling.
+
+### Berezin-Toeplitz-Inspired Smoothing
+
+As a finite surrogate for symbol/quantization smoothing, harmonic trace-filled
+refinement is mixed with a trace-to-uniform channel at `O(1/N)` weight. This
+convex mixture is UCP and trace preserving. Exact screen preservation is not
+claimed, but the screen-shadow perturbation and multiplicativity error bounds
+vanish while commutator response persists.
+
 ## Candidate Embedding Table
 
 | Candidate | Status | Role |
 | --- | --- | --- |
 | Rank-ordered factorial `*-inclusion` | implemented baseline | Gives UHF/Type-II candidate scaffold, but uses a noncanonical cofinal subsequence. |
 | Trace-filled UCP consecutive refinement | implemented in this audit | Works at consecutive cutoffs; unital, CP, trace-preserving, approximately multiplicative. |
-| Spherical-harmonic projection/refinement | program target | Should test mode-label preservation, screen shadows, continuity, and response persistence. |
-| Berezin-Toeplitz fuzzy-sphere channel | program target | More physically natural route through symbol/quantization maps and approximate multiplicativity. |
+| Spherical-harmonic projection/refinement | implemented physical-motivation audit | Preserves mode labels and low-harmonic diagonal shadows across consecutive cutoffs. |
+| Heat-kernel coarse graining | implemented physical-motivation audit | Adds positive-definite Laplacian damping while preserving diagonal screen data. |
+| Berezin-Toeplitz-inspired smoothing | implemented surrogate, not canonical | Tests `O(1/N)` CP smoothing with vanishing screen error and persistent response. |
+
+## Remaining Open Question
+
+The audit is stronger than the trace-filled baseline, but it still does not
+derive a canonical static-patch cutoff. The open question is:
+
+```text
+Is one of these cutoff/coarse-graining structures physically meaningful, or is
+the benchmark only a finite restatement of diagonal forgetfulness?
+```
 
 ## Reproducibility
 

@@ -72,6 +72,6 @@
     }
   ],
   "numeric_audit_note": "Complete positivity is certified analytically from positive-definite time averages or finite random-unitary/Stinespring constructions. Bounded Cholesky PSD checks are numeric sanity checks only and can be near-singular at larger cutoffs.",
-  "harlow_facing_summary": "Goal 27 turns the Goal 26 single derived finite dynamics into a finite-regulator universality statement: fuzzy heat, finite phase-kick, KMS/Cauchy, and CP-completed Euclidean Schur regulators all preserve the same screen-shadow no-go and M_N versus C^N bridge-algebra distinction under bounded perturbations.",
+  "expert_feedback_summary": "Goal 27 turns the Goal 26 single derived finite dynamics into a finite-regulator universality statement: fuzzy heat, finite phase-kick, KMS/Cauchy, and CP-completed Euclidean Schur regulators all preserve the same screen-shadow no-go and M_N versus C^N bridge-algebra distinction under bounded perturbations.",
   "limitations": "The result is a finite regulator-class theorem. It does not show that continuum de Sitter static-patch physics, dS/CFT, or quantum gravity selects this class."
 }

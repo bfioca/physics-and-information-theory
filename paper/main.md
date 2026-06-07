@@ -10,11 +10,12 @@ quantum model and the abelian control have identical screen shadows, while
 intrinsic operator response distinguishes their observer algebras. We then
 record three stabilizing structures: a cutoff-compatible strong-continuity gate
 that excludes instantaneous dephasing, a finite-to-Type-`II_1` scaffold via
-cofinal matrix inclusions, and a consecutive-cutoff UCP refinement with
-multiplicativity error `1/N`. Finally, we formulate a conditional
-continuum-lift obstruction: any proposed static-patch or dS/CFT dictionary that
-factors only through convergent screen shadows is incomplete whenever an
-operator-response witness persists.
+cofinal matrix inclusions, and a consecutive-cutoff embedding audit comparing
+a trace-filled UCP baseline with harmonic, heat-kernel, and
+Berezin-Toeplitz-inspired finite refinements. Finally, we formulate a
+conditional continuum-lift obstruction: any proposed static-patch or dS/CFT
+dictionary that factors only through convergent screen shadows is incomplete
+whenever an operator-response witness persists.
 
 This is a finite benchmark note with reproducible code. It is not a continuum
 de Sitter theorem, not a dS/CFT construction, and not a proof of ER=EPR in de
@@ -76,7 +77,36 @@ The results below are separated into four categories.
 | Conditional lift theorem schema | A theorem form that becomes continuum-relevant only if stated lift conditions are supplied. |
 | Continuum speculation | Motivation only; not claimed as proved here. |
 
-## 2. Finite Observer Model
+## 2. Known, Standard, New, and Open
+
+This note uses standard finite-dimensional ingredients: matrix algebras,
+diagonal conditional expectations, Schur multipliers, UCP maps, UHF inductive
+limits, and operator-algebra/QEC language for reconstructable observables.
+The fact that a diagonal screen map forgets off-diagonal matrix units is also
+standard and elementary.
+
+The benchmark contribution is narrower. It packages that elementary
+forgetfulness into a reproducible finite diagnostic obstruction, adds a
+strong-continuity gate that excludes instantaneous dephasing without assuming
+the desired response, and audits consecutive cutoff maps that are more
+structured than a bare factorial inclusion. In particular, the embedding audit
+now compares:
+
+- a trace-filled UCP baseline;
+- harmonic mode-label refinement across consecutive cutoffs;
+- heat-kernel Schur coarse graining after harmonic refinement;
+- a Berezin-Toeplitz-inspired CP smoothing surrogate.
+
+The open physics question is whether any of these finite cutoff maps, or a
+different one, is the right approximation to a static-patch observer algebra.
+The sharp expert-feedback question is:
+
+```text
+Is the cutoff embedding/coarse-graining problem physically meaningful here, or
+is this just a finite restatement of known diagonal forgetfulness?
+```
+
+## 3. Finite Observer Model
 
 Fix a cutoff `L` and let `N=N_L`. The finite benchmark compares:
 
@@ -93,7 +123,7 @@ E_diag : M_N -> C^N
 
 be the diagonal conditional expectation in a chosen screen basis.
 
-### Definition 2.1: Screen-Shadow Functor `Sh_N`
+### Definition 3.1: Screen-Shadow Functor `Sh_N`
 
 For this benchmark, let `Scr_N` be the class of declared finite
 screen-visible diagnostics. An element `F in Scr_N` is any functional that
@@ -115,7 +145,7 @@ the same declared low-order screen-transfer records, then their `Sh_N` values
 agree. This is a finite benchmark definition, not a canonical continuum
 definition of a gravitational screen.
 
-### Definition 2.2: Operator-Response Functor `Resp_N`
+### Definition 3.2: Operator-Response Functor `Resp_N`
 
 Let `Resp_N` be the finite operator-response diagnostic tuple. Unlike `Sh_N`,
 it may query non-diagonal algebraic structure:
@@ -134,7 +164,7 @@ The basic commutator subdiagnostic is:
 Its operator norm is `1` inside `M_N`, while every commutator vanishes inside
 the abelian control `C^N`.
 
-## 3. Main Results
+## 4. Main Results
 
 ### Theorem 1: Screen-Shadow Collision
 
@@ -239,11 +269,14 @@ screen atom into equal subatoms, preserving diagonal trace data. The UHF/trace
 closure statement is standard operator-algebra input; the finite certificate
 does not claim it is the canonical de Sitter static-patch algebra. QED.
 
-### Proposition 5: Consecutive UCP Cutoff Refinement
+### Proposition 5: Consecutive Cutoff Refinement Audit
 
-Exact full-matrix inclusions are too rigid for consecutive cutoffs, but
-consecutive cutoffs admit a unital completely positive trace-preserving
-refinement with controlled multiplicativity error. For `n <= m`, choose an
+Exact full-matrix inclusions are too rigid for consecutive cutoffs. The
+finite audit therefore compares consecutive UCP or controlled-positive
+refinements that preserve or converge on the declared screen-shadow data while
+retaining an operator-response witness.
+
+The baseline trace-filled refinement is as follows. For `n <= m`, choose an
 isometry `V:C^n -> C^m`, let `P=VV^*`, let `Q=I_m-P`, and define
 
 ```text
@@ -287,9 +320,23 @@ whose operator norm is `1/n` when `m>n`. The off-diagonal matrix units remain
 visible in the embedded corner, so the commutator witness persists there while
 the dephased control remains abelian. QED.
 
-This is not a canonical fuzzy-sphere embedding. It is a finite replacement for
-the divisibility obstruction and a test harness for more physical approximate
-embeddings, such as harmonic projection or Berezin-Toeplitz refinement.
+The audit then adds three more structured finite refinements. Harmonic
+projection preserves spherical-harmonic labels with `ell <= L` inside the
+`ell <= L+1` cutoff and uses the same trace-filled complement, so low-harmonic
+diagonal observables are preserved exactly and the `1/n` multiplicativity
+witness remains. Heat-kernel coarse graining composes harmonic refinement with
+a positive-definite Schur heat channel; diagonal screen data are fixed exactly,
+while off-diagonal response is retained by a positive heat-kernel factor that
+tends to one under the chosen cutoff scaling. The Berezin-Toeplitz-inspired
+smoothing surrogate is a convex mixture of harmonic trace-filled refinement
+with a trace-to-uniform channel at `O(1/N)` weight; it is UCP and trace
+preserving, has vanishing screen-shadow perturbation, and retains commutator
+response with retention tending to one.
+
+None of these maps is claimed as the canonical static-patch embedding. The
+point is that the finite obstruction survives a small family of more
+physically motivated cutoff/coarse-graining audits rather than only the
+factorial inclusion scaffold.
 
 ### Theorem 6: Conditional Continuum Lift Obstruction
 
@@ -338,7 +385,7 @@ heat-kernel coarse graining, or Berezin-Toeplitz refinement are plausible
 candidate mechanisms; the trace-filled UCP map in Proposition 5 is only a
 finite benchmark replacement for the exact divisibility obstruction.
 
-## 4. Why This Is Not Trivialized By Diagonal Blindness
+## 5. Why This Is Not Trivialized By Diagonal Blindness
 
 The finite collision is intentionally sharp: screen shadows are diagonal or
 screen-restricted, while the response witness is noncommutative. A skeptical
@@ -351,15 +398,16 @@ The nontrivial part is the package surrounding that elementary observation:
 - the response witness is algebraic and exact;
 - KMS/detailed-balance-looking conditions are separated from strong continuity;
 - finite derived dynamics and regulator-class certificates preserve the split;
-- exact cofinal inclusions and approximate consecutive UCP refinements are both
-  audited;
+- exact cofinal inclusions, approximate consecutive UCP refinements, harmonic
+  mode refinement, heat-kernel coarse graining, and Berezin-inspired smoothing
+  are audited;
 - the continuum-lift obstruction states what any screen-only dictionary would
   fail to see under explicit lift assumptions.
 
 The result is best read as a calibration rig for proposed observer/screen
 dictionaries.
 
-## 5. Related Work and Positioning
+## 6. Related Work and Positioning
 
 Operator-algebra quantum error correction is the natural finite language for
 reconstructable observable algebras; see Beny, Kempf, and Kribs,
@@ -390,7 +438,7 @@ quantum Gromov-Hausdorff distance (arXiv:math/0108005). The present UCP
 refinement is only a finite benchmark gadget; it is not asserted to be the
 canonical Berezin-Toeplitz or static-patch refinement.
 
-## 6. Limitations
+## 7. Limitations
 
 The note does not prove:
 
@@ -398,12 +446,14 @@ The note does not prove:
 - a dS/CFT dictionary;
 - literal ER=EPR in de Sitter;
 - that the factorial subsequence is physically canonical;
-- that the trace-filled UCP map is the correct fuzzy-sphere refinement;
+- that the trace-filled, harmonic, heat-kernel, or Berezin-inspired cutoff maps
+  are the correct fuzzy-sphere/static-patch refinement;
 - approximate QEC stability in a Type-II or Type-III limit.
 
-The next mathematical target is to replace the trace-filled UCP refinement with
-a more physical harmonic, heat-kernel, or Berezin-Toeplitz cutoff map and rerun
-the screen-shadow, response, continuity, and covariance tests.
+The next mathematical target is to replace the finite surrogate map family with
+a canonical construction, for example a proven Berezin-Toeplitz or
+static-patch modular conditional expectation, and rerun the screen-shadow,
+response, continuity, and covariance tests.
 
 ## Appendix A: What the Tests Prove and Do Not Prove
 

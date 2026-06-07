@@ -651,7 +651,7 @@ def goal29_modular_kms_continuity_certificate(
         },
         "modular_kms_model_atlas": atlas,
         "obstruction_audit": obstruction_audit,
-        "harlow_facing_summary": (
+        "expert_feedback_summary": (
             "Goal 29 refines the Goal 28 load-bearing continuity axiom. "
             "KMS/detailed balance alone is insufficient because stationary "
             "modular twirling gives total dephasing. KMS plus modular-time "
