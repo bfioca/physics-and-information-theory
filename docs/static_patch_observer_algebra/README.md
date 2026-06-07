@@ -28,6 +28,11 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | `../../paper/expert_cover_note.md` | Short cover note for expert feedback. |
 | `../breakthrough_continuum_lift_obstruction_plan.md` | Next-path plan for turning the conditional lift schema into a theorem candidate, no-go, or weakest-added-assumption result. |
 | `../continuum_lift_obstruction_execution_goal.md` | Short execution goal for completing the continuum-lift obstruction branch step by step. |
+| `../screen_shadow_functor_spec.md` | Formal finite `Sh_L` definition and screen-shadow equality proof. |
+| `../response_witness_spec.md` | Operator-norm response witness and persistence topology. |
+| `../lift_map_obligations.md` | Lift-map theorem/certificate/assumption ledger. |
+| `../continuum_lift_decision_ledger.md` | Decision ledger selecting the theorem-candidate endpoint. |
+| `../continuum_lift_obstruction_theorem.md` | Proof-ready screen-only dictionary obstruction theorem under explicit lift hypotheses. |
 | `expert_feedback_two_page_note.md` | Short expert-facing theorem note and open question. |
 | `audit_index.json` | Machine-readable map from major claims to commands, source files, and tests. |
 | `journey_map.md` | How the earlier goals support the packaged result without becoming the lead. |
@@ -42,7 +47,7 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | Abelian control | exact levelwise control | The dephased diagonal sequence keeps the same screen shadows but has an abelian von Neumann limit. |
 | Inclusion-covariant dynamics | bounded asymptotic audit | Exact covariance fails for raw Hamiltonians, while conditional-expectation and short-time covariance errors decrease along the factorial subsequence. |
 | Cutoff-refinement embeddings | finite physical-motivation audit | Consecutive cutoffs admit trace-filled, harmonic, heat-kernel, and Berezin-inspired refinements with vanishing error bounds and persistent response witnesses. |
-| Continuum lift obstruction | conditional theorem schema | Under explicit lift conditions, any dictionary factoring only through screen shadows is incomplete when response witnesses persist. |
+| Continuum lift obstruction | proof-ready conditional theorem candidate | Under explicit lift conditions, any dictionary factoring only through screen shadows is incomplete when response witnesses persist. |
 | Remaining assumption | open physics/math question | Is `rank_ordered_static_patch_embedding` the right cutoff embedding, or should a canonical fuzzy-sphere/static-patch embedding replace it? |
 
 ## Fast Reproduction
@@ -51,7 +56,7 @@ Run the static-patch package regression:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
-PYTHONPATH=. python3 -m unittest tests.test_embedding_channels tests.test_continuum_lift_obstruction
+PYTHONPATH=. python3 -m unittest tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
 ```
 
@@ -88,3 +93,8 @@ The compact package depends on these existing artifacts:
 - `docs/static_patch_embedding_channels_certificate_index.json`
 - `docs/continuum_lift_conditions.md`
 - `docs/continuum_lift_obstruction_certificate_index.json`
+- `docs/screen_shadow_functor_spec.md`
+- `docs/response_witness_spec.md`
+- `docs/lift_map_obligations.md`
+- `docs/continuum_lift_decision_ledger.md`
+- `docs/continuum_lift_obstruction_theorem.md`

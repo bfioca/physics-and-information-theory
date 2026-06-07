@@ -276,8 +276,9 @@ gap, the two limiting observer-algebra candidates are distinguishable by
 operator response. Therefore `D` cannot be a complete invariant of the
 observer algebra. QED.
 
-This is a conditional theorem schema. It is the continuum-facing lesson of the
-finite benchmark, not a construction of the continuum theory.
+This is a proof-ready conditional obstruction theorem under explicit lift
+hypotheses. It is the continuum-facing lesson of the finite benchmark, not a
+construction of the continuum theory.
 
 ## 4. Why This Is Not Trivialized By Diagonal Blindness
 
@@ -343,7 +344,7 @@ the screen-shadow, response, continuity, and covariance tests.
 Run the focused package regression:
 
 ```bash
-PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics
 ```
 
 Run the compact certificate summary:

@@ -188,5 +188,5 @@ Use these commands for quick local audits:
 ```bash
 rg -n "P[1-4]-|R1-|E1-|D1-|DONE-" paper/PUBLISHING_CHECKLIST.md
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
-PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics
 ```

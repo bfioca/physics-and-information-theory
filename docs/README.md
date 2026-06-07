@@ -22,6 +22,11 @@ Next-path planning branch:
 
 - `breakthrough_continuum_lift_obstruction_plan.md`
 - `continuum_lift_obstruction_execution_goal.md`
+- `screen_shadow_functor_spec.md`
+- `response_witness_spec.md`
+- `lift_map_obligations.md`
+- `continuum_lift_decision_ledger.md`
+- `continuum_lift_obstruction_theorem.md`
 
 One-line summary:
 
@@ -52,6 +57,11 @@ Type II_1 candidate regulator from an abelian dephased control.
 | `continuum_lift_obstruction_certificate_index.json` | Certificate index for the continuum-lift obstruction schema. |
 | `breakthrough_continuum_lift_obstruction_plan.md` | Actionable branch plan for turning the schema into a theorem candidate, no-go, or weakest-added-assumption result. |
 | `continuum_lift_obstruction_execution_goal.md` | Smaller step-by-step execution goal for driving the branch to a theorem, no-go, or weakest-added-assumption endpoint. |
+| `screen_shadow_functor_spec.md` | Formal finite `Sh_L` definition and equality proof for the declared screen-shadow class. |
+| `response_witness_spec.md` | Operator-norm noncommutativity witness and persistence topology. |
+| `lift_map_obligations.md` | Status ledger for trace-filled, harmonic, heat-kernel, and Berezin-inspired lift maps. |
+| `continuum_lift_decision_ledger.md` | A/B/C decision ledger selecting the theorem-candidate outcome. |
+| `continuum_lift_obstruction_theorem.md` | Final proof-ready obstruction theorem under explicit lift hypotheses. |
 | `public_release_checklist.md` | Public claim-boundary and release audit. |
 
 ## Background Trail

@@ -92,21 +92,28 @@
     {
       "id": "continuum_lift_obstruction",
       "claim": "Under explicit lift conditions, any continuum dictionary factoring only through screen-shadow data is incomplete when response witnesses remain separated.",
-      "status": "conditional theorem schema",
-      "primary_note": "docs/continuum_lift_conditions.md",
+      "status": "proof-ready conditional theorem candidate",
+      "primary_note": "docs/continuum_lift_obstruction_theorem.md",
       "certificate_index": "docs/continuum_lift_obstruction_certificate_index.json",
       "representative_command": "PYTHONPATH=. python3 -m qgtoy continuum-lift-obstruction --max-cutoff 5",
       "supporting_tests": [
-        "PYTHONPATH=. python3 -m unittest tests.test_continuum_lift_obstruction"
+        "PYTHONPATH=. python3 -m unittest tests.test_continuum_lift_obstruction tests.test_lift_diagnostics"
       ],
       "source_modules": [
-        "qgtoy/continuum_lift.py"
+        "qgtoy/continuum_lift.py",
+        "qgtoy/lift_diagnostics.py"
       ],
-      "claim_boundary": "conditional schema only; not a continuum dS/CFT construction"
+      "supporting_notes": [
+        "docs/screen_shadow_functor_spec.md",
+        "docs/response_witness_spec.md",
+        "docs/lift_map_obligations.md",
+        "docs/continuum_lift_decision_ledger.md"
+      ],
+      "claim_boundary": "proof-ready obstruction theorem under explicit lift hypotheses; not a continuum dS/CFT construction"
     }
   ],
   "package_regression": {
-    "command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction",
+    "command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics",
     "compact_reproduction_command": "PYTHONPATH=. python3 examples/reproduce_static_patch_package.py",
     "covers": [
       "strong_continuity_gate",

@@ -363,6 +363,25 @@ observer algebra. QED.
 This is a conditional theorem. Its assumptions are the lift data; it is not a
 construction of the continuum theory.
 
+The continuum-lift theorem sprint formalizes the two finite diagnostics used
+in this proof. The declared screen-shadow functor `Sh_L` is the tuple of all
+screen-visible functionals that factor through diagonal/screen data, and the
+operator-response witness is the operator-norm noncommutativity functional
+
+```text
+nu(A_L)=sup { ||[a,b]|| : ||a||<=1, ||b||<=1 }.
+```
+
+For the finite benchmark, `Sh_L(M_N)=Sh_L(C^N)` by screen factorization, while
+`nu(M_N)>=1` using `a=e_12,b=e_21` and `nu(C^N)=0`. The response topology is
+operator norm; the rank-one trace-`L^2` matrix-unit witness is explicitly not
+used as the persistence topology because it can vanish with `N`.
+
+The branch decision ledger selects the theorem-candidate endpoint: the
+obstruction theorem is proof-ready under explicit lift hypotheses, while a
+canonical static-patch realization of those hypotheses remains conditional
+operator-algebra input.
+
 One way to visualize the obstruction is:
 
 ```text
@@ -462,7 +481,10 @@ implementation: the declared certificate fields are regenerated, the lead
 JSON indexes parse, the compact package script reports all five certificate
 families as passing, and the focused regression tests exercise the finite
 strong-continuity, Type-II scaffold, inclusion-covariance, UCP embedding, and
-continuum-lift modules.
+continuum-lift modules. The `tests.test_lift_diagnostics` suite additionally
+checks the formal `Sh_L` equality, operator-norm response separation, response
+lower bounds under implemented lift maps, and theorem-candidate decision
+record.
 
 The tests do not replace the human proofs above. They also do not prove a
 canonical continuum static-patch embedding, a dS/CFT dictionary, approximate
@@ -474,7 +496,7 @@ finite theorem package auditable and regression-safe.
 Run the focused package regression:
 
 ```bash
-PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics
 ```
 
 Run the compact certificate summary:

@@ -39,7 +39,7 @@ class ContinuumLiftObstructionTest(unittest.TestCase):
         self.assertEqual(certificate["status"], "pass")
         self.assertEqual(
             certificate["result_type"],
-            "conditional_continuum_lift_obstruction_schema",
+            "proof_ready_conditional_continuum_lift_obstruction_theorem",
         )
         self.assertTrue(all(certificate["certified_claims"].values()))
         self.assertTrue(

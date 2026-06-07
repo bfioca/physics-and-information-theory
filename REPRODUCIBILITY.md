@@ -48,13 +48,13 @@ artifacts/static_patch_diagnostics/compact_summary.json
 Run the focused package test suite:
 
 ```bash
-PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics
 ```
 
 Expected result:
 
 ```text
-Ran 34 tests
+Ran 42 tests
 OK
 ```
 
@@ -135,6 +135,10 @@ The tests and frozen artifacts prove reproducibility of the finite benchmark:
 the certificate constructors run, the declared finite claims remain internally
 consistent, the JSON outputs parse, and the compact package summary reports the
 five lead certificate families as passing.
+
+The `tests.test_lift_diagnostics` suite directly checks the finite
+screen-shadow equality, operator-norm response separation, response lower
+bounds under implemented lift maps, and the theorem-candidate decision record.
 
 They do not replace the paper proofs. They also do not prove a canonical
 continuum static-patch embedding, a continuum de Sitter theorem, a dS/CFT

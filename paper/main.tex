@@ -264,6 +264,24 @@ limiting observer-algebra candidates are distinguishable by operator response.
 Therefore $D$ cannot be a complete invariant of the observer algebra.
 \end{proof}
 
+The continuum-lift theorem sprint formalizes the two finite diagnostics used
+in this proof. The declared screen-shadow functor $\Sh_L$ is the tuple of all
+screen-visible functionals that factor through diagonal/screen data, and the
+operator-response witness is the operator-norm noncommutativity functional
+\[
+  \nu(A_L)=\sup\{\|[a,b]\|:\|a\|\le1,\|b\|\le1\}.
+\]
+For the finite benchmark, $\Sh_L(M_N)=\Sh_L(\mathbb{C}^N)$ by screen
+factorization, while $\nu(M_N)\ge1$ using $a=e_{12},b=e_{21}$ and
+$\nu(\mathbb{C}^N)=0$. The response topology is operator norm; the rank-one
+trace-$L^2$ matrix-unit witness is explicitly not used as the persistence
+topology because it can vanish with $N$.
+
+The branch decision ledger selects the theorem-candidate endpoint: the
+obstruction theorem is proof-ready under explicit lift hypotheses, while a
+canonical static-patch realization of those hypotheses remains conditional
+operator-algebra input.
+
 \section{Why This Is Not Trivialized by Diagonal Blindness}
 
 The finite collision is intentionally sharp: screen shadows are diagonal or
@@ -328,7 +346,8 @@ PYTHONPATH=. python3 -m unittest \
   tests.test_typeii_static_patch_limit \
   tests.test_inclusion_covariant_dynamics \
   tests.test_embedding_channels \
-  tests.test_continuum_lift_obstruction
+  tests.test_continuum_lift_obstruction \
+  tests.test_lift_diagnostics
 \end{verbatim}
 The repository contains the frozen certificate artifacts and command index.
 The tests make the finite theorem package auditable and regression-safe; they

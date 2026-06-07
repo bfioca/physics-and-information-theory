@@ -36,7 +36,7 @@ Run the existing package before changing anything:
 
 ```bash
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
-PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics
 ```
 
 Done when the baseline passes and the starting claim boundary is unchanged.
@@ -187,7 +187,7 @@ Run:
 
 ```bash
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
-PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction tests.test_lift_diagnostics
 python3 -m json.tool docs/static_patch_observer_algebra/audit_index.json
 ```
 
@@ -206,14 +206,11 @@ Stop and write a no-go if:
 
 ## Final Deliverable Checklist
 
-- [ ] `docs/screen_shadow_functor_spec.md`
-- [ ] `docs/response_witness_spec.md`
-- [ ] `docs/lift_map_obligations.md`
-- [ ] direct finite tests for the witness and lift-map claims
-- [ ] `docs/continuum_lift_decision_ledger.md`
-- [ ] one final A/B/C artifact:
-  - [ ] theorem;
-  - [ ] no-go;
-  - [ ] weakest-added-assumption result
-- [ ] updated `paper/main.md` and `paper/main.tex`, if the result is stable
-- [ ] reproduction and focused tests pass
+- [x] `docs/screen_shadow_functor_spec.md`
+- [x] `docs/response_witness_spec.md`
+- [x] `docs/lift_map_obligations.md`
+- [x] direct finite tests for the witness and lift-map claims
+- [x] `docs/continuum_lift_decision_ledger.md`
+- [x] one final A/B/C artifact: `docs/continuum_lift_obstruction_theorem.md`
+- [x] updated `paper/main.md` and `paper/main.tex`, if the result is stable
+- [x] reproduction and focused tests pass
