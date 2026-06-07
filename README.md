@@ -22,6 +22,8 @@ Type II_1 candidate regulator from an abelian dephased control.
 
 Read these first:
 
+- [`THEOREMS.md`](THEOREMS.md)
+- [`paper/finite_observer_algebra_diagnostics.md`](paper/finite_observer_algebra_diagnostics.md)
 - [`docs/static_patch_observer_algebra/README.md`](docs/static_patch_observer_algebra/README.md)
 - [`docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`](docs/static_patch_observer_algebra/harlow_facing_two_page_note.md)
 - [`docs/static_patch_observer_algebra/audit_index.json`](docs/static_patch_observer_algebra/audit_index.json)
@@ -226,6 +228,7 @@ Fast path for the packaged static-patch observer-algebra result:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
 PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05

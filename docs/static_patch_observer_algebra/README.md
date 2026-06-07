@@ -21,6 +21,8 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 
 | File | Use |
 | --- | --- |
+| `../../THEOREMS.md` | Reviewer-facing theorem and claim index. |
+| `../../paper/finite_observer_algebra_diagnostics.md` | Paper-shaped technical note. |
 | `harlow_facing_two_page_note.md` | Short expert-facing theorem note and open question. |
 | `audit_index.json` | Machine-readable map from major claims to commands, source files, and tests. |
 | `journey_map.md` | How the earlier goals support the packaged result without becoming the lead. |
@@ -42,6 +44,7 @@ Run the static-patch package regression:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
 ```
 
 Emit the three lead certificates:
@@ -71,4 +74,3 @@ The compact package depends on these existing artifacts:
 - `docs/major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json`
 - `docs/inclusion_covariant_static_patch_dynamics_note.md`
 - `docs/inclusion_covariant_static_patch_dynamics_certificate_index.json`
-

@@ -120,3 +120,6 @@ dynamics, or is a different operator-algebraic axiom the natural one?
 Machine-readable certificate indexes are listed in
 `docs/static_patch_observer_algebra/audit_index.json`.
 
+For a paper-shaped version of this note, see
+`paper/finite_observer_algebra_diagnostics.md`. For a theorem-by-theorem claim
+index, see `THEOREMS.md`.

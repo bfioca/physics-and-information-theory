@@ -1,13 +1,18 @@
 # Public Release Checklist
 
-This repository is intended to be publishable as finite research-code support,
-not as a polished paper or a continuum-gravity claim.
+This repository is intended to be publishable as finite research-code support
+and as a focused arXiv-style benchmark note, not as a continuum-gravity claim.
 
 ## Completed Before Public Release
 
 - Added an MIT license.
 - Added citation metadata.
 - Added a public claim boundary to the README.
+- Added a top-level theorem/claim index: `THEOREMS.md`.
+- Added a paper-shaped technical note: `paper/finite_observer_algebra_diagnostics.md`.
+- Added a compact reproduction script:
+  `examples/reproduce_static_patch_package.py`.
+- Added a focused GitHub Actions workflow for the packaged static-patch result.
 - Removed private audience labels from the public-facing docs.
 - Checked tracked files for common secret patterns:
   API keys, tokens, passwords, private keys, database URLs, and cloud credentials.
@@ -35,3 +40,6 @@ The repository does not claim:
 - Historical commit metadata includes local author email addresses.
 - The README preserves the project's goal/phase provenance for reproducibility.
 - Several notes are theorem-program memos rather than paper-ready exposition.
+- The Type-II/static-patch interpretation still depends on the chosen cutoff
+  inclusion and `rank_ordered_static_patch_embedding`; this is an open
+  assumption, not a canonical continuum construction.

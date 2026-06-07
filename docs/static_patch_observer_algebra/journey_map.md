@@ -7,9 +7,11 @@ the goal-by-goal history.
 
 Read first:
 
-1. `docs/static_patch_observer_algebra/README.md`
-2. `docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`
-3. `docs/static_patch_observer_algebra/audit_index.json`
+1. `THEOREMS.md`
+2. `paper/finite_observer_algebra_diagnostics.md`
+3. `docs/static_patch_observer_algebra/README.md`
+4. `docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`
+5. `docs/static_patch_observer_algebra/audit_index.json`
 
 The lead story is:
 
@@ -71,4 +73,3 @@ Lead with the focused operator-algebra question:
 What finite operational data determine the observer's algebra rather than only
 its screen shadow?
 ```
-

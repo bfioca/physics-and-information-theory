@@ -1,9 +1,13 @@
 {
   "package": "static_patch_observer_algebra",
   "version": 1,
+  "theorem_index": "THEOREMS.md",
+  "paper_note": "paper/finite_observer_algebra_diagnostics.md",
   "lead_note": "docs/static_patch_observer_algebra/harlow_facing_two_page_note.md",
   "landing_page": "docs/static_patch_observer_algebra/README.md",
   "journey_map": "docs/static_patch_observer_algebra/journey_map.md",
+  "ci_workflow": ".github/workflows/ci.yml",
+  "compact_reproduction_script": "examples/reproduce_static_patch_package.py",
   "claim_boundary": "Finite regulator theorem program and certificate suite. Not a continuum de Sitter theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.",
   "major_claims": [
     {
@@ -72,6 +76,7 @@
   ],
   "package_regression": {
     "command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics",
+    "compact_reproduction_command": "PYTHONPATH=. python3 examples/reproduce_static_patch_package.py",
     "covers": [
       "strong_continuity_gate",
       "finite_to_typeii_scaffold",
@@ -93,4 +98,3 @@
     "canonical static-patch cutoff embedding"
   ]
 }
-
