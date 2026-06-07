@@ -1,0 +1,96 @@
+{
+  "package": "static_patch_observer_algebra",
+  "version": 1,
+  "lead_note": "docs/static_patch_observer_algebra/harlow_facing_two_page_note.md",
+  "landing_page": "docs/static_patch_observer_algebra/README.md",
+  "journey_map": "docs/static_patch_observer_algebra/journey_map.md",
+  "claim_boundary": "Finite regulator theorem program and certificate suite. Not a continuum de Sitter theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.",
+  "major_claims": [
+    {
+      "id": "screen_shadow_no_go",
+      "claim": "Finite screen-visible data can agree while the bridge/observer algebra differs as M_N versus C^N.",
+      "status": "finite theorem stack plus bounded certificates",
+      "primary_note": "docs/goals24_31_static_patch_bridge_theorem_note.md",
+      "certificate_index": "docs/goals24_31_static_patch_bridge_certificate_index.json",
+      "representative_command": "PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2",
+      "supporting_tests": [
+        "PYTHONPATH=. python3 -m unittest tests.test_conditional_ds_er_epr"
+      ],
+      "source_modules": [
+        "qgtoy/conditional_ds_er_epr.py",
+        "qgtoy/static_patch_testbed.py"
+      ]
+    },
+    {
+      "id": "strong_continuity_gate",
+      "claim": "Identity-starting finite semigroups with generator norm Gamma_L and lapse delta_L Gamma_L -> 0 derive approximate identity and rule out instant dephasing.",
+      "status": "finite semigroup theorem gate",
+      "primary_note": "docs/goal31_static_patch_strong_continuity_note.md",
+      "certificate_index": "docs/goal31_static_patch_strong_continuity_certificate_index.json",
+      "representative_command": "PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "supporting_tests": [
+        "PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity"
+      ],
+      "source_modules": [
+        "qgtoy/static_patch_strong_continuity.py"
+      ]
+    },
+    {
+      "id": "finite_to_typeii_scaffold",
+      "claim": "A cofinal factorial cutoff subsequence gives trace-preserving full-matrix inclusions whose quantum UHF tracial closure is a hyperfinite Type II_1 candidate, while the dephased control has the same screen shadows and an abelian limit.",
+      "status": "conditional operator-algebra theorem candidate",
+      "primary_note": "docs/major_goal_finite_to_typeii_static_patch_observer_algebra_note.md",
+      "certificate_index": "docs/major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json",
+      "representative_command": "PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "supporting_tests": [
+        "PYTHONPATH=. python3 -m unittest tests.test_typeii_static_patch_limit"
+      ],
+      "source_modules": [
+        "qgtoy/typeii_static_patch_limit.py"
+      ],
+      "conditional_assumptions": [
+        "cofinal factorial cutoff subsequence",
+        "standard UHF trace-closure theorem",
+        "static-patch interpretation of the chosen cutoff inclusions"
+      ]
+    },
+    {
+      "id": "inclusion_covariant_dynamics",
+      "claim": "Exact finite generator covariance fails for raw fuzzy-sphere Hamiltonians under the rank-ordered block embedding, but conditional-expectation and short-time semigroup covariance errors decrease along the factorial subsequence.",
+      "status": "bounded asymptotic theorem/no-go audit",
+      "primary_note": "docs/inclusion_covariant_static_patch_dynamics_note.md",
+      "certificate_index": "docs/inclusion_covariant_static_patch_dynamics_certificate_index.json",
+      "representative_command": "PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+      "supporting_tests": [
+        "PYTHONPATH=. python3 -m unittest tests.test_inclusion_covariant_dynamics"
+      ],
+      "source_modules": [
+        "qgtoy/inclusion_covariant_dynamics.py"
+      ],
+      "remaining_assumption": "rank_ordered_static_patch_embedding"
+    }
+  ],
+  "package_regression": {
+    "command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics",
+    "covers": [
+      "strong_continuity_gate",
+      "finite_to_typeii_scaffold",
+      "inclusion_covariant_dynamics"
+    ]
+  },
+  "json_validation_commands": [
+    "python3 -m json.tool docs/static_patch_observer_algebra/audit_index.json",
+    "python3 -m json.tool docs/goals24_31_static_patch_bridge_certificate_index.json",
+    "python3 -m json.tool docs/major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json",
+    "python3 -m json.tool docs/inclusion_covariant_static_patch_dynamics_certificate_index.json"
+  ],
+  "expert_question": "Is rank_ordered_static_patch_embedding a physically natural finite approximation to static-patch mode refinement, or should the inclusion/conditional expectation come from angular-momentum branching, coherent-state/Berezin-Toeplitz refinement, heat-kernel coarse graining, continuum L2(S2) projections, or approximate embeddings?",
+  "not_claimed": [
+    "continuum de Sitter quantum gravity",
+    "dS/CFT construction",
+    "literal ER=EPR in de Sitter",
+    "novelty of standard UHF or stabilizer/OAQEC background facts",
+    "canonical static-patch cutoff embedding"
+  ]
+}
+

@@ -10,6 +10,27 @@ identify reconstruction algebras or bridge-channel behavior. The results are
 finite stabilizer/OA-QEC and tensor-network toy results; they are not claims
 about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
 
+## Start Here: Packaged Static-Patch Result
+
+The current packaged result is:
+
+```text
+finite static-patch screen shadows do not determine the observer algebra;
+strong continuity and inclusion-aware operator response distinguish a quantum
+Type II_1 candidate regulator from an abelian dephased control.
+```
+
+Read these first:
+
+- [`docs/static_patch_observer_algebra/README.md`](docs/static_patch_observer_algebra/README.md)
+- [`docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`](docs/static_patch_observer_algebra/harlow_facing_two_page_note.md)
+- [`docs/static_patch_observer_algebra/audit_index.json`](docs/static_patch_observer_algebra/audit_index.json)
+- [`docs/static_patch_observer_algebra/journey_map.md`](docs/static_patch_observer_algebra/journey_map.md)
+
+The note separates exact finite theorem-style claims, bounded certificate
+evidence, conditional operator-algebra assumptions, and continuum speculation.
+The rest of this README preserves the research trail and reproduction commands.
+
 ## Main Results
 
 - **Goals 1-3:** entropy, horizon, and finite min-cut shadows can agree while
@@ -165,7 +186,10 @@ encoded channel controls, and coupling-activated transfer checks.
 For the public-release audit, see
 [`docs/public_release_checklist.md`](docs/public_release_checklist.md).
 
-For the current expert-facing bridge-channel summary, see
+For the current packaged static-patch observer-algebra result, see
+[`docs/static_patch_observer_algebra/README.md`](docs/static_patch_observer_algebra/README.md).
+
+For the longer bridge-channel background summary, see
 [`docs/harlow_facing_bridge_channel_note.md`](docs/harlow_facing_bridge_channel_note.md).
 
 ## Core Implementation
@@ -197,6 +221,17 @@ to make every candidate pass exact checks.
 ## Quickstart
 
 No runtime dependencies are required beyond Python 3.11+.
+
+Fast path for the packaged static-patch observer-algebra result:
+
+```bash
+PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+```
+
+Full current regression/certificate slice:
 
 ```bash
 PYTHONPATH=. python3 -m unittest tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal10_finite_bridge_channel_benchmark_certificate

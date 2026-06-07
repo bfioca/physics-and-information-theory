@@ -1,5 +1,9 @@
 # Finite Bridge-Channel Benchmarks For Algebraic ER=EPR Diagnostics
 
+> Current front door: the packaged static-patch observer-algebra result lives in
+> `docs/static_patch_observer_algebra/`. This longer note is background for the
+> finite bridge-channel and algebraic ER=EPR diagnostic arc.
+
 ## One-line pitch
 
 Engelhardt and Liu propose that ER=EPR connectivity should be associated with
