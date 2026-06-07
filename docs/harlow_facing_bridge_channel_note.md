@@ -48,6 +48,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Derived static-patch dynamics | The kernel is derived from a finite static-patch Hamiltonian plus finite environment phase-kick trace; screen shadows still collide while off-diagonal response separates `M_N` from `C^N`. | derived-finite-dynamics-visible vs continuum-static-patch-visible |
 | Static-patch regulator universality | A declared finite class of positive-definite static-patch Schur regulators preserves the same screen-shadow no-go and `M_N` versus `C^N` bridge distinction under bounded perturbations. | single-regulator-visible vs regulator-class-stability-visible |
 | Axiomatic static-patch selection | Independent finite static-patch axioms select the regulator class without using bridge/response data, and total dephasing identifies vanishing cutoff continuity as necessary. | declared-class-visible vs axiom-selected-visible |
+| Modular/KMS continuity audit | Finite KMS detailed balance alone permits modular-twirl dephasing, but KMS plus modular-time approximate identity gives the needed cutoff continuity for the selected class. | KMS-visible vs localized-modular-time-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -528,6 +529,43 @@ axioms. The next physics gap is deriving those axioms from actual static-patch
 gravity, observer modular theory, a path integral, or a dS/CFT screen
 dictionary.
 
+## Goal 29 update
+
+Goal 29 attacks the load-bearing Goal 28 axiom:
+
+```text
+vanishing_cutoff_error_continuity
+```
+
+The result is deliberately two-sided. Finite KMS/detailed-balance modular
+structure alone does not force continuity. A stationary modular twirl is
+CPTP/unital, diagonal screen preserving, modular-flow covariant, and
+KMS-self-adjoint, but it is complete dephasing and fails the continuity axiom.
+A fixed-width modular noise model gives the same lesson.
+
+The positive theorem adds the missing physical condition:
+
+```text
+modular_time_approximate_identity
+```
+
+For finite modular-time averages
+
+```text
+Phi_L(A)=int sigma_t(A) dmu_L(t),
+```
+
+localized measures `mu_L -> delta_0` on bounded cutoff energy gaps produce
+positive-definite energy-difference Schur channels with CP/TP/unitality,
+diagonal screen preservation, KMS detailed balance, and vanishing cutoff error.
+The certified models are Gaussian modular heat, finite Rademacher phase kicks,
+KMS/Cauchy modular jitter, and Euclidean/Brownian cap completion.
+
+Thus the current finite answer is: KMS alone is too weak, but localized
+modular-time KMS averaging is sufficient for the Goal 28 regulator class and
+preserves the `M_N` versus `C^N` bridge distinction. The next continuum gap is
+deriving modular-time approximate identity from actual static-patch physics.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -552,5 +590,6 @@ dictionary.
 | Goal 26 derived finite static-patch dynamics | `PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2` |
 | Goal 27 static-patch regulator universality | `PYTHONPATH=. python3 -m qgtoy static-patch-regulator-universality --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Goal 28 axiomatic static-patch selection | `PYTHONPATH=. python3 -m qgtoy axiomatic-static-patch-selection --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
+| Goal 29 modular/KMS continuity | `PYTHONPATH=. python3 -m qgtoy modular-kms-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_axiomatic_static_patch_selection tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_axiomatic_static_patch_selection tests.test_modular_kms_continuity tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
