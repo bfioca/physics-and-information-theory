@@ -7,6 +7,7 @@ import json
 from typing import Any
 
 from .algebraic_connectivity import goal19_algebraic_connectivity_order_parameter_certificate
+from .axiomatic_static_patch_selection import goal28_axiomatic_static_patch_selection_certificate
 from .bridge_proof import bridge_symbolic_proof_check
 from .bridge_screen import goal17_inseparable_bridge_screen_dynamics_certificate
 from .bilayer import bilayer_reconstruction_program_certificate
@@ -778,6 +779,24 @@ def run_static_patch_regulator_universality(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             goal27_static_patch_regulator_universality_certificate(
+                max_cutoff=args.max_cutoff,
+                noise_strength=args.noise_strength,
+                environment_qubits=args.environment_qubits,
+                temperature_scale=args.temperature_scale,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
+                perturbation_radius=args.perturbation_radius,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_axiomatic_static_patch_selection(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal28_axiomatic_static_patch_selection_certificate(
                 max_cutoff=args.max_cutoff,
                 noise_strength=args.noise_strength,
                 environment_qubits=args.environment_qubits,
@@ -2056,6 +2075,19 @@ def build_parser() -> argparse.ArgumentParser:
     static_patch_regulator_universality.add_argument("--low-order", type=int, default=2)
     static_patch_regulator_universality.add_argument("--perturbation-radius", type=float, default=0.05)
     static_patch_regulator_universality.set_defaults(func=run_static_patch_regulator_universality)
+
+    axiomatic_static_patch_selection = subparsers.add_parser(
+        "axiomatic-static-patch-selection",
+        help="emit the Goal 28 finite axiomatic static-patch regulator selection certificate",
+    )
+    axiomatic_static_patch_selection.add_argument("--max-cutoff", type=int, default=5)
+    axiomatic_static_patch_selection.add_argument("--noise-strength", type=float, default=1.0)
+    axiomatic_static_patch_selection.add_argument("--environment-qubits", type=int, default=4)
+    axiomatic_static_patch_selection.add_argument("--temperature-scale", type=float, default=1.0)
+    axiomatic_static_patch_selection.add_argument("--screen-probability", type=float, default=0.75)
+    axiomatic_static_patch_selection.add_argument("--low-order", type=int, default=2)
+    axiomatic_static_patch_selection.add_argument("--perturbation-radius", type=float, default=0.05)
+    axiomatic_static_patch_selection.set_defaults(func=run_axiomatic_static_patch_selection)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

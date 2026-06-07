@@ -100,6 +100,11 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   phase-kick traces, KMS/modular Cauchy averages, and CP/TP-completed
   Euclidean Schur transfers all preserve the screen-shadow no-go and `M_N`
   versus `C^N` bridge distinction under bounded perturbations.
+- **Goal 28:** the Goal 27 regulator class is selected by finite
+  static-patch-looking axioms rather than declared directly: covariance,
+  energy-difference Schur form, CPTP/unital screen preservation, KMS/heat
+  balance, finite dilation, locality scaling, and vanishing cutoff continuity
+  select the class without using bridge/response data as axioms.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -206,6 +211,8 @@ PYTHONPATH=. python3 -m unittest tests.test_derived_static_patch_dynamics
 PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2
 PYTHONPATH=. python3 -m unittest tests.test_static_patch_regulator_universality
 PYTHONPATH=. python3 -m qgtoy static-patch-regulator-universality --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m unittest tests.test_axiomatic_static_patch_selection
+PYTHONPATH=. python3 -m qgtoy axiomatic-static-patch-selection --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -629,6 +636,19 @@ Read the Goal 27 theorem note and machine-readable certificate index:
 ```text
 docs/goal27_static_patch_regulator_universality_note.md
 docs/goal27_static_patch_regulator_universality_certificate_index.json
+```
+
+Emit the Goal 28 axiomatic static-patch regulator selection certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy axiomatic-static-patch-selection --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+```
+
+Read the Goal 28 theorem note and machine-readable certificate index:
+
+```text
+docs/goal28_axiomatic_static_patch_selection_note.md
+docs/goal28_axiomatic_static_patch_selection_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

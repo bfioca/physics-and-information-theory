@@ -47,6 +47,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Physical static-patch kernel search | A fuzzy-sphere/static-patch Hamiltonian Lindblad-dephasing kernel replaces the hand-built Schur distance kernel and preserves the screen-shadow no-go plus `M_N` versus `C^N` bridge distinction. | physically-motivated-kernel-visible vs actual-dS-dynamics-visible |
 | Derived static-patch dynamics | The kernel is derived from a finite static-patch Hamiltonian plus finite environment phase-kick trace; screen shadows still collide while off-diagonal response separates `M_N` from `C^N`. | derived-finite-dynamics-visible vs continuum-static-patch-visible |
 | Static-patch regulator universality | A declared finite class of positive-definite static-patch Schur regulators preserves the same screen-shadow no-go and `M_N` versus `C^N` bridge distinction under bounded perturbations. | single-regulator-visible vs regulator-class-stability-visible |
+| Axiomatic static-patch selection | Independent finite static-patch axioms select the regulator class without using bridge/response data, and total dephasing identifies vanishing cutoff continuity as necessary. | declared-class-visible vs axiom-selected-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -496,6 +497,37 @@ gap is canonical selection: showing that continuum static-patch dynamics,
 observer modular structure, a path integral, or a dS/CFT dictionary selects
 this class or a strict subclass.
 
+## Goal 28 update
+
+Goal 28 moves the canonical-selection question one step up. Instead of
+declaring the Goal 27 regulator class, it audits finite primitive candidates
+against independent static-patch-looking axioms:
+
+- fuzzy-sphere covariance or controlled axis breaking;
+- energy-difference Schur form;
+- CPTP/unital diagonal screen preservation;
+- KMS/modular or heat-kernel balance;
+- finite Stinespring or time-average dilation;
+- locality/spectral-gap scaling;
+- vanishing cutoff-error continuity;
+- an anti-tautology rule forbidding bridge/response data in the axioms.
+
+These axioms select the same four finite regulator subclasses from Goal 27:
+Gaussian/fuzzy heat, finite phase-kick traces, KMS/Cauchy modular jitter, and
+CP/TP-completed Euclidean Schur transfer. The bridge distinction is then
+derived by the Goal 27 diagnostic: screen shadows collide, while nonzero
+off-diagonal retention separates `M_N` from `C^N`.
+
+The important obstruction is sharp. Instant total dephasing satisfies the other
+static-patch/channel requirements but fails vanishing cutoff continuity, so
+CP/TP/unital covariance and screen preservation alone are insufficient. A
+response-oracle kernel is also rejected by the anti-tautology gate.
+
+This is still finite axiomatic selection, not a continuum derivation of the
+axioms. The next physics gap is deriving those axioms from actual static-patch
+gravity, observer modular theory, a path integral, or a dS/CFT screen
+dictionary.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -519,5 +551,6 @@ this class or a strict subclass.
 | Goal 25 physical static-patch kernel search | `PYTHONPATH=. python3 -m qgtoy physical-static-patch-kernel --max-cutoff 5 --noise-strength 1.0 --screen-probability 0.75 --low-order 2` |
 | Goal 26 derived finite static-patch dynamics | `PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2` |
 | Goal 27 static-patch regulator universality | `PYTHONPATH=. python3 -m qgtoy static-patch-regulator-universality --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
+| Goal 28 axiomatic static-patch selection | `PYTHONPATH=. python3 -m qgtoy axiomatic-static-patch-selection --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_axiomatic_static_patch_selection tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
