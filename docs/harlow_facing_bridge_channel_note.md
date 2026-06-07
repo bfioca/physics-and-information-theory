@@ -45,6 +45,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Regulated static-patch dS/CFT testbed | Cutoff spherical screen modes and one geometric transfer kernel replace the abstract switch; low-order screen data still collide, while full operator response determines the bridge with explicit cutoff errors. | low-order-cutoff-visible vs intrinsic-operator-response-visible |
 | Conditional dS ER=EPR theorem ledger | The regulated static-patch benchmark is organized as a conditional finite-to-continuum theorem ledger: screen-shadow sequences still fail, full response has vanishing model error, and the missing dS ER=EPR promotion assumptions are explicit. | finite-regulated-visible vs continuum-promotion-visible |
 | Physical static-patch kernel search | A fuzzy-sphere/static-patch Hamiltonian Lindblad-dephasing kernel replaces the hand-built Schur distance kernel and preserves the screen-shadow no-go plus `M_N` versus `C^N` bridge distinction. | physically-motivated-kernel-visible vs actual-dS-dynamics-visible |
+| Derived static-patch dynamics | The kernel is derived from a finite static-patch Hamiltonian plus finite environment phase-kick trace; screen shadows still collide while off-diagonal response separates `M_N` from `C^N`. | derived-finite-dynamics-visible vs continuum-static-patch-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -430,6 +431,39 @@ Sitter static-patch quantum gravity. The next obstruction is deriving this, or
 a better replacement, from a controlled static-patch Hamiltonian, path integral,
 or dS/CFT screen dictionary.
 
+## Goal 26 update
+
+Goal 26 derives a finite static-patch kernel from explicit dynamics. The
+Hamiltonian is the same cutoff fuzzy-sphere/static-patch spectrum, but the
+channel is no longer introduced as a Lindblad ansatz. Instead, couple `H_L` to
+`q` finite Rademacher environment phase kicks and trace the environment:
+
+```text
+U_z = exp[-i H_L sum_r lambda_L z_r],
+Phi_L(rho)=E_z[U_z rho U_z^\dagger].
+```
+
+On matrix units,
+
+```text
+E_ij -> cos(lambda_L(E_i-E_j))^q E_ij.
+```
+
+This is a finite random-unitary channel, so CP, trace preservation, and
+unitality are immediate. The classical control is also derived from a finite
+Stinespring dephasing map `V|i>=|i>|i>`.
+
+For `1 <= L <= 5`, the derived quantum channel and the classical control still
+agree on screen entropy, low-order diagonal correlators, horizon-overlap data,
+and screen-restricted transfer data. They differ in recoverable bridge algebra:
+`M_N` versus `C^N`. The Goal 25 Gaussian/Lindblad kernel is recovered as the
+many-kick small-angle limit, not assumed as the primitive.
+
+This is the strongest finite static-patch result so far: the detector and the
+signal source are now both finite and explicit. The remaining obstruction is
+still real: deriving the finite Hamiltonian/environment coupling from actual de
+Sitter static-patch dynamics, a path integral, or a dS/CFT screen dictionary.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -451,5 +485,6 @@ or dS/CFT screen dictionary.
 | Goal 24 conditional dS ER=EPR theorem ledger | `PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-probability 0.75 --low-order 2` |
 | Goal 24.1 static-patch kernel CP preflight | `PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit --max-cutoff 6` |
 | Goal 25 physical static-patch kernel search | `PYTHONPATH=. python3 -m qgtoy physical-static-patch-kernel --max-cutoff 5 --noise-strength 1.0 --screen-probability 0.75 --low-order 2` |
+| Goal 26 derived finite static-patch dynamics | `PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |

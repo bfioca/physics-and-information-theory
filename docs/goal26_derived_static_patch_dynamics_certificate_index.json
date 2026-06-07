@@ -1,0 +1,80 @@
+{
+  "package": "Goal 26: Derive The Static-Patch Kernel From Dynamics",
+  "status": "certificate_available",
+  "core_command": "PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2",
+  "human_note": "docs/goal26_derived_static_patch_dynamics_note.md",
+  "scope": {
+    "setting": "finite cutoff spherical modes with fuzzy-sphere Hamiltonian spectrum, finite Rademacher environment phase kicks, and a classical finite-Stinespring dephasing control",
+    "result_type": "derived finite static-patch dynamics preserving the Goal 24/25 screen-shadow no-go and M_N versus C^N bridge distinction",
+    "bounded_family": "1 <= L <= 5, N=(L+1)^2, environment dimension 2^4",
+    "claim_boundary": "finite derived dynamics; not continuum dS/CFT, de Sitter quantum gravity, or literal ER=EPR in de Sitter"
+  },
+  "core_claim": "A finite static-patch Hamiltonian plus finite environment phase-kick trace derives a CPTP unital bridge channel whose screen-visible data collide with a classical dephased control while off-diagonal response separates M_N from C^N.",
+  "exact_finite_theorem_style_claims": [
+    {
+      "id": "finite_environment_trace_derivation",
+      "claim": "The quantum channel is Phi(rho)=E_z[U_z rho U_z^dagger] with U_z=exp(-i H_L sum_r lambda_L z_r) over finitely many Rademacher environment branches."
+    },
+    {
+      "id": "classical_stinespring_control",
+      "claim": "The classical control is derived from V|i>=|i>|i> followed by environment trace, giving complete dephasing onto C^N."
+    },
+    {
+      "id": "cptp_unital",
+      "claim": "The quantum channel is a finite convex average of unitary conjugations and the classical control is a finite Stinespring channel; both are CP, trace preserving, and unital."
+    },
+    {
+      "id": "screen_shadow_collision",
+      "claim": "Screen entropy, low-order diagonal correlators, horizon-overlap data, and screen-restricted transfer data collide for the derived quantum channel and classical control."
+    },
+    {
+      "id": "bridge_algebra_separation",
+      "claim": "The induced recoverable bridge algebras differ: M_N for the derived quantum channel and C^N for the classical dephased control."
+    },
+    {
+      "id": "goal25_limit_relation",
+      "claim": "The finite phase-kick coefficient cos(lambda_L DeltaE)^q approaches the Goal 25 Gaussian/Lindblad factor exp[-noise_strength DeltaE^2/(2(L+1)^2)] in the many-kick small-angle limit."
+    }
+  ],
+  "candidate_atlas": [
+    {
+      "candidate_id": "static_patch_hamiltonian_finite_environment_trace",
+      "status": "success_derived_finite_dynamics",
+      "bridge_algebra": "M_N"
+    },
+    {
+      "candidate_id": "goal25_gaussian_lindblad_limit",
+      "status": "recovered_as_many_kick_limit_not_finite_environment_exact",
+      "bridge_algebra": "M_N"
+    },
+    {
+      "candidate_id": "euclidean_heat_screen_transfer_without_dilation",
+      "status": "rejected_without_stinespring_or_normalized_channel_completion",
+      "bridge_algebra": "not a trace-preserving observer bridge channel"
+    },
+    {
+      "candidate_id": "modular_flow_unitary_only",
+      "status": "partial_success_no_environment_trace_or_dephasing_scaling",
+      "bridge_algebra": "M_N"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "goal26_certificate",
+      "claim": "Emit the Goal 26 derived static-patch dynamics certificate.",
+      "command": "PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2"
+    },
+    {
+      "id": "focused_regression",
+      "claim": "Run focused regression for Goal 26.",
+      "command": "PYTHONPATH=. python3 -m unittest tests.test_derived_static_patch_dynamics"
+    },
+    {
+      "id": "json_validation",
+      "claim": "Validate the Goal 26 certificate index.",
+      "command": "python3 -m json.tool docs/goal26_derived_static_patch_dynamics_certificate_index.json"
+    }
+  ],
+  "harlow_facing_summary": "Goal 26 derives the finite static-patch bridge kernel from an explicit Hamiltonian plus finite environment trace. The derived random-unitary channel remains CPTP/unital, keeps screen-visible data blind, and preserves the M_N versus C^N bridge distinction via off-diagonal response.",
+  "limitations": "The derivation is finite and explicit, but it does not derive the Hamiltonian/environment coupling from actual de Sitter static-patch quantum gravity, a path integral, or a continuum dS/CFT screen dictionary."
+}

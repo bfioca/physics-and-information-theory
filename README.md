@@ -90,6 +90,11 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   off-diagonal response recovers the `M_N` versus `C^N` bridge distinction, and
   the remaining obstruction is deriving the kernel from actual de Sitter
   static-patch dynamics.
+- **Goal 26:** the physical kernel is derived from explicit finite dynamics:
+  a cutoff static-patch Hamiltonian coupled to finite Rademacher environment
+  phase kicks and traced out. The resulting random-unitary channel is CPTP,
+  preserves the screen-shadow no-go, separates `M_N` from `C^N`, and recovers
+  the Goal 25 Lindblad kernel as a many-kick limit.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -192,6 +197,8 @@ PYTHONPATH=. python3 -m qgtoy conditional-ds-er-epr --max-cutoff 5 --screen-prob
 PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit --max-cutoff 6
 PYTHONPATH=. python3 -m unittest tests.test_physical_static_patch_kernel
 PYTHONPATH=. python3 -m qgtoy physical-static-patch-kernel --max-cutoff 5 --noise-strength 1.0 --screen-probability 0.75 --low-order 2
+PYTHONPATH=. python3 -m unittest tests.test_derived_static_patch_dynamics
+PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -589,6 +596,19 @@ Read the Goal 25 theorem note and machine-readable certificate index:
 ```text
 docs/goal25_physical_static_patch_kernel_note.md
 docs/goal25_physical_static_patch_kernel_certificate_index.json
+```
+
+Emit the Goal 26 derived finite static-patch dynamics certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2
+```
+
+Read the Goal 26 theorem note and machine-readable certificate index:
+
+```text
+docs/goal26_derived_static_patch_dynamics_note.md
+docs/goal26_derived_static_patch_dynamics_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

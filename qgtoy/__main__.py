@@ -57,6 +57,7 @@ from .er_epr_encoded import goal11_encoded_mouth_bridge_channel_certificate
 from .er_epr_traversable import goal12_finite_bridge_channel_dynamics_certificate
 from .ds_cft_dynamics import goal22_ds_cft_er_epr_single_dynamics_certificate
 from .ds_cft_er_epr import goal21_ds_cft_er_epr_compatibility_certificate
+from .derived_static_patch_dynamics import goal26_derived_static_patch_dynamics_certificate
 from .general_algebraic_connectivity import goal20_general_algebraic_connectivity_stability_certificate
 from .interacting_bridge import (
     goal15_interacting_state_derived_bridge_theorem_certificate,
@@ -747,6 +748,22 @@ def run_physical_static_patch_kernel(args: argparse.Namespace) -> None:
             goal25_physical_static_patch_kernel_certificate(
                 max_cutoff=args.max_cutoff,
                 noise_strength=args.noise_strength,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_derived_static_patch_dynamics(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal26_derived_static_patch_dynamics_certificate(
+                max_cutoff=args.max_cutoff,
+                noise_strength=args.noise_strength,
+                environment_qubits=args.environment_qubits,
                 screen_probability=args.screen_probability,
                 low_order=args.low_order,
             ),
@@ -1996,6 +2013,17 @@ def build_parser() -> argparse.ArgumentParser:
     physical_static_patch_kernel.add_argument("--screen-probability", type=float, default=0.75)
     physical_static_patch_kernel.add_argument("--low-order", type=int, default=2)
     physical_static_patch_kernel.set_defaults(func=run_physical_static_patch_kernel)
+
+    derived_static_patch_dynamics = subparsers.add_parser(
+        "derived-static-patch-dynamics",
+        help="emit the Goal 26 derived finite static-patch dynamics certificate",
+    )
+    derived_static_patch_dynamics.add_argument("--max-cutoff", type=int, default=5)
+    derived_static_patch_dynamics.add_argument("--noise-strength", type=float, default=1.0)
+    derived_static_patch_dynamics.add_argument("--environment-qubits", type=int, default=4)
+    derived_static_patch_dynamics.add_argument("--screen-probability", type=float, default=0.75)
+    derived_static_patch_dynamics.add_argument("--low-order", type=int, default=2)
+    derived_static_patch_dynamics.set_defaults(func=run_derived_static_patch_dynamics)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",
