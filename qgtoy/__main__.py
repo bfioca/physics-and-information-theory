@@ -67,6 +67,7 @@ from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_c
 from .physical_static_patch_kernel import goal25_physical_static_patch_kernel_certificate
 from .relative_entropy_bridge import major_unlock_relative_entropy_observer_bridge_certificate
 from .static_patch_testbed import goal23_regulated_static_patch_ds_cft_certificate
+from .static_patch_regulator_universality import goal27_static_patch_regulator_universality_certificate
 from .state_bridge import goal14_state_derived_bridge_dynamics_certificate
 from .observer_tomography import observer_algebra_tomography_certificate
 from .observer_tomography_atlas import goal7_observer_tomography_atlas_certificate
@@ -766,6 +767,24 @@ def run_derived_static_patch_dynamics(args: argparse.Namespace) -> None:
                 environment_qubits=args.environment_qubits,
                 screen_probability=args.screen_probability,
                 low_order=args.low_order,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_static_patch_regulator_universality(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            goal27_static_patch_regulator_universality_certificate(
+                max_cutoff=args.max_cutoff,
+                noise_strength=args.noise_strength,
+                environment_qubits=args.environment_qubits,
+                temperature_scale=args.temperature_scale,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
+                perturbation_radius=args.perturbation_radius,
             ),
             indent=2,
             sort_keys=True,
@@ -2024,6 +2043,19 @@ def build_parser() -> argparse.ArgumentParser:
     derived_static_patch_dynamics.add_argument("--screen-probability", type=float, default=0.75)
     derived_static_patch_dynamics.add_argument("--low-order", type=int, default=2)
     derived_static_patch_dynamics.set_defaults(func=run_derived_static_patch_dynamics)
+
+    static_patch_regulator_universality = subparsers.add_parser(
+        "static-patch-regulator-universality",
+        help="emit the Goal 27 finite static-patch regulator universality certificate",
+    )
+    static_patch_regulator_universality.add_argument("--max-cutoff", type=int, default=5)
+    static_patch_regulator_universality.add_argument("--noise-strength", type=float, default=1.0)
+    static_patch_regulator_universality.add_argument("--environment-qubits", type=int, default=4)
+    static_patch_regulator_universality.add_argument("--temperature-scale", type=float, default=1.0)
+    static_patch_regulator_universality.add_argument("--screen-probability", type=float, default=0.75)
+    static_patch_regulator_universality.add_argument("--low-order", type=int, default=2)
+    static_patch_regulator_universality.add_argument("--perturbation-radius", type=float, default=0.05)
+    static_patch_regulator_universality.set_defaults(func=run_static_patch_regulator_universality)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",

@@ -46,6 +46,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Conditional dS ER=EPR theorem ledger | The regulated static-patch benchmark is organized as a conditional finite-to-continuum theorem ledger: screen-shadow sequences still fail, full response has vanishing model error, and the missing dS ER=EPR promotion assumptions are explicit. | finite-regulated-visible vs continuum-promotion-visible |
 | Physical static-patch kernel search | A fuzzy-sphere/static-patch Hamiltonian Lindblad-dephasing kernel replaces the hand-built Schur distance kernel and preserves the screen-shadow no-go plus `M_N` versus `C^N` bridge distinction. | physically-motivated-kernel-visible vs actual-dS-dynamics-visible |
 | Derived static-patch dynamics | The kernel is derived from a finite static-patch Hamiltonian plus finite environment phase-kick trace; screen shadows still collide while off-diagonal response separates `M_N` from `C^N`. | derived-finite-dynamics-visible vs continuum-static-patch-visible |
+| Static-patch regulator universality | A declared finite class of positive-definite static-patch Schur regulators preserves the same screen-shadow no-go and `M_N` versus `C^N` bridge distinction under bounded perturbations. | single-regulator-visible vs regulator-class-stability-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -464,6 +465,37 @@ signal source are now both finite and explicit. The remaining obstruction is
 still real: deriving the finite Hamiltonian/environment coupling from actual de
 Sitter static-patch dynamics, a path integral, or a dS/CFT screen dictionary.
 
+## Goal 27 update
+
+Goal 27 turns Goal 26's one derived finite dynamics into a finite
+regulator-class stability theorem. The accepted class consists of
+positive-definite energy-difference Schur channels with unit diagonal,
+double-scaled cutoff damping, and nonzero off-diagonal retention. The certified
+subclasses are:
+
+- fuzzy-sphere Laplacian heat/Lindblad dephasing;
+- finite Rademacher environment phase-kick traces;
+- KMS/modular Cauchy time-jitter averages;
+- CP/TP-completed Euclidean cap Schur transfers.
+
+For `1 <= L <= 5`, all accepted regulators and the classical dephased control
+agree on screen entropy, low-order diagonal correlators, horizon-overlap data,
+and screen-restricted transfer data. All accepted quantum regulators retain
+off-diagonal response and therefore certify the benchmark bridge algebra
+`M_N`; the classical control remains `C^N`.
+
+The certificate also checks bounded perturbations of Hamiltonian spectrum,
+coupling/noise strength, KMS/temperature weight, and cutoff geometry. At radius
+`0.05`, the diagnostic survives for the accepted regulator class. Raw Euclidean
+heat attenuation and dS/CFT-like screen-only maps are recorded as obstructions,
+not promoted to bridge channels.
+
+This is the current strongest finite static-patch statement: the bridge
+distinction is no longer tied to one convenient kernel. The remaining physics
+gap is canonical selection: showing that continuum static-patch dynamics,
+observer modular structure, a path integral, or a dS/CFT dictionary selects
+this class or a strict subclass.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -486,5 +518,6 @@ Sitter static-patch dynamics, a path integral, or a dS/CFT screen dictionary.
 | Goal 24.1 static-patch kernel CP preflight | `PYTHONPATH=. python3 -m qgtoy static-patch-kernel-audit --max-cutoff 6` |
 | Goal 25 physical static-patch kernel search | `PYTHONPATH=. python3 -m qgtoy physical-static-patch-kernel --max-cutoff 5 --noise-strength 1.0 --screen-probability 0.75 --low-order 2` |
 | Goal 26 derived finite static-patch dynamics | `PYTHONPATH=. python3 -m qgtoy derived-static-patch-dynamics --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --screen-probability 0.75 --low-order 2` |
+| Goal 27 static-patch regulator universality | `PYTHONPATH=. python3 -m qgtoy static-patch-regulator-universality --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
