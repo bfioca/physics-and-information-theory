@@ -1,0 +1,57 @@
+{
+  "goal": "Inclusion-Covariant Dynamics for Finite-to-Type-II Static-Patch Regulators",
+  "human_note": "docs/inclusion_covariant_static_patch_dynamics_note.md",
+  "certificate_command": "PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+  "focused_regression_command": "PYTHONPATH=. python3 -m unittest tests.test_inclusion_covariant_dynamics",
+  "json_validation_command": "python3 -m json.tool docs/inclusion_covariant_static_patch_dynamics_certificate_index.json",
+  "result_type": "asymptotic_inclusion_covariant_generator_theorem_candidate",
+  "claim_boundary": "finite/asymptotic theorem candidate only; no continuum de Sitter, dS/CFT, or literal ER=EPR theorem is claimed",
+  "major_claims": [
+    {
+      "claim": "The finite-to-Type-II scaffold is retained.",
+      "status": "inherited finite certificate",
+      "certificate_field": "certified_claims.finite_typeii_scaffold_retained"
+    },
+    {
+      "claim": "Exact finite covariance fails for the raw fuzzy-sphere Hamiltonians under the rank-ordered block embedding.",
+      "status": "finite no-go",
+      "certificate_field": "certified_claims.exact_covariance_refuted_at_finite_levels"
+    },
+    {
+      "claim": "Conditional-expectation covariance errors decrease along the factorial subsequence.",
+      "status": "bounded asymptotic certificate",
+      "certificate_field": "certified_claims.conditional_covariance_errors_decrease"
+    },
+    {
+      "claim": "Rank-ordered embedding errors obey an explicit asymptotic bound.",
+      "status": "bounded asymptotic certificate",
+      "certificate_field": "certified_claims.rank_ordered_asymptotic_bound_certified"
+    },
+    {
+      "claim": "Heat/Lindblad generator covariance bounds decrease.",
+      "status": "bounded asymptotic certificate",
+      "certificate_field": "certified_claims.heat_lindblad_covariance_bounds_decrease"
+    },
+    {
+      "claim": "Short-time semigroup covariance bounds decrease.",
+      "status": "bounded asymptotic certificate",
+      "certificate_field": "certified_claims.short_time_semigroup_covariance_bounds_decrease"
+    },
+    {
+      "claim": "The dephased screen dynamics is exactly inclusion-covariant and abelian.",
+      "status": "finite control theorem",
+      "certificate_field": "certified_claims.dephased_screen_dynamics_exactly_covariant"
+    },
+    {
+      "claim": "The bridge diagnostic is preserved through the Type-II scaffold.",
+      "status": "inherited finite certificate",
+      "certificate_field": "certified_claims.bridge_diagnostic_preserved"
+    }
+  ],
+  "remaining_assumption": "rank_ordered_static_patch_embedding",
+  "frontier": [
+    "prove the asymptotic energy-compatibility bound analytically for arbitrary levels",
+    "compare rank-ordered embeddings with more physical fuzzy-sphere inclusions",
+    "upgrade bounded covariance evidence to a limiting semigroup theorem on the UHF/Type-II candidate"
+  ]
+}

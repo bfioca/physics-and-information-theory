@@ -52,6 +52,7 @@ The benchmark arc now has a theorem target above the finite bridge-screen stack.
 | Physical continuity gate | The remaining finite physics assumption is sharpened to short-time static-patch locality: finite-lapse modular averaging, fuzzy-sphere heat scaling, or shrinking Euclidean cap thickness imply the needed approximate identity. | thermal-visible vs short-time-locality-visible |
 | Strong-continuity theorem gate | Identity-starting finite semigroup dynamics with generator norm `Gamma_L` and lapse `delta_L Gamma_L -> 0` derives approximate identity; stationary twirling and fixed-lapse thermalization are no-go controls. | KMS-compatible vs strongly-continuous-local-visible |
 | Finite-to-Type-II static-patch limit | Consecutive cutoffs fail as unital matrix inclusions, but a cofinal factorial subsequence gives a hyperfinite Type `II_1` quantum candidate and an abelian dephased control with identical screen shadows. | screen-shadow-visible vs von-Neumann-algebra-visible |
+| Inclusion-covariant dynamics | Exact finite generator covariance fails, but rank-ordered embeddings give decreasing modular, heat, conditional-expectation, and short-time semigroup covariance errors. | exact-covariance-visible vs asymptotic-dynamics-visible |
 | Static-patch bilayer substrate | A coherent two-screen erasure model gives explicit north/south recovery channels and an exact symmetric recovery/quantum-area-analogue crossing, plus a no-go for independent area bias. | recovery-visible vs inserted-geometry-visible |
 
 The strongest finite bridge-screen certificate currently packaged is Goal 18.
@@ -661,6 +662,27 @@ limit. This is still not continuum de Sitter; the remaining assumption is
 `inclusion_covariant_static_patch_generators`, namely compatible Hamiltonian or
 semigroup data along the chosen inclusions.
 
+## Inclusion-covariant dynamics update
+
+The dynamics audit gives a two-sided result. Exact finite covariance
+
+```text
+G_{k+1} iota_k = iota_k G_k
+```
+
+fails for the raw fuzzy-sphere Hamiltonians under the rank-ordered block
+embedding. However, with `E_k=id tensor tau_fiber`, the conditional version
+
+```text
+E_k G_{k+1} iota_k(x) ≈ G_k(x)
+```
+
+has decreasing certified errors along the factorial subsequence. The same
+bounded improvement holds for the heat/Lindblad generator and short-time
+semigroup covariance bounds. The extra finite assumption is now concrete:
+`rank_ordered_static_patch_embedding`. This is still a finite/asymptotic
+theorem candidate, not a continuum static-patch proof.
+
 ## Reproducibility
 
 | Claim | Command |
@@ -689,5 +711,6 @@ semigroup data along the chosen inclusions.
 | Goal 30 physical static-patch continuity gate | `PYTHONPATH=. python3 -m qgtoy static-patch-physical-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Goal 31 static-patch strong-continuity theorem gate | `PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Finite-to-Type-II static-patch observer algebra | `PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
+| Inclusion-covariant static-patch dynamics | `PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05` |
 | Static-patch bilayer certificate | `PYTHONPATH=. python3 -m qgtoy bilayer-program` |
-| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_axiomatic_static_patch_selection tests.test_modular_kms_continuity tests.test_static_patch_physical_continuity tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |
+| Focused merged regression slice | `PYTHONPATH=. python3 -m unittest tests.test_bilayer tests.test_state_bridge tests.test_interacting_bridge tests.test_interacting_bridge_code_theorem tests.test_bridge_screen_dynamics tests.test_local_bridge_screen tests.test_relative_entropy_bridge tests.test_algebraic_connectivity tests.test_general_algebraic_connectivity tests.test_ds_cft_er_epr tests.test_ds_cft_dynamics tests.test_static_patch_testbed tests.test_conditional_ds_er_epr tests.test_physical_static_patch_kernel tests.test_derived_static_patch_dynamics tests.test_static_patch_regulator_universality tests.test_axiomatic_static_patch_selection tests.test_modular_kms_continuity tests.test_static_patch_physical_continuity tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal11_encoded_mouth_bridge_channel_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal12_finite_bridge_channel_dynamics_certificate tests.test_stabilizer.StabilizerDiagnosticsTest.test_goal13_non_clifford_scrambling_bridge_controls_certificate` |

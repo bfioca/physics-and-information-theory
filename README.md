@@ -128,6 +128,10 @@ about continuum quantum gravity, AdS/CFT, de Sitter space, or approximate QEC.
   inclusions, but a cofinal factorial cutoff subsequence gives
   trace-preserving inclusions whose quantum tracial GNS closure is a
   hyperfinite Type `II_1` candidate while the dephased control is abelian.
+- **Inclusion-covariant dynamics:** exact finite covariance fails for the raw
+  fuzzy-sphere Hamiltonians under the rank-ordered block embedding, but the
+  modular, heat, conditional-expectation, and short-time semigroup covariance
+  errors decrease along the factorial subsequence.
 - **Static-patch bilayer program:** explicit CPTP teleportation channels,
   label-invariant complete-entropy/reconstruction searches, and a tunable
   complementary two-screen recovery transition provide the next research
@@ -244,6 +248,8 @@ PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity
 PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m unittest tests.test_typeii_static_patch_limit
 PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+PYTHONPATH=. python3 -m unittest tests.test_inclusion_covariant_dynamics
+PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
 PYTHONPATH=. python3 -m unittest tests.test_bilayer
 PYTHONPATH=. python3 -m qgtoy bilayer-program
 ```
@@ -739,6 +745,19 @@ Read the finite-to-Type-II theorem note and machine-readable certificate index:
 ```text
 docs/major_goal_finite_to_typeii_static_patch_observer_algebra_note.md
 docs/major_goal_finite_to_typeii_static_patch_observer_algebra_certificate_index.json
+```
+
+Emit the inclusion-covariant static-patch dynamics certificate:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
+```
+
+Read the inclusion-covariant dynamics theorem note and certificate index:
+
+```text
+docs/inclusion_covariant_static_patch_dynamics_note.md
+docs/inclusion_covariant_static_patch_dynamics_certificate_index.json
 ```
 
 Emit the finite static-patch bilayer research certificate:

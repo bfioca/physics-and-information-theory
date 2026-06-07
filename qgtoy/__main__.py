@@ -64,6 +64,7 @@ from .interacting_bridge import (
     goal15_interacting_state_derived_bridge_theorem_certificate,
     goal16_paper_style_interacting_bridge_code_theorem_certificate,
 )
+from .inclusion_covariant_dynamics import inclusion_covariant_static_patch_dynamics_certificate
 from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
 from .modular_kms_continuity import goal29_modular_kms_continuity_certificate
 from .physical_static_patch_kernel import goal25_physical_static_patch_kernel_certificate
@@ -874,6 +875,27 @@ def run_finite_typeii_static_patch(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             major_goal_finite_to_typeii_static_patch_certificate(
+                max_level=args.max_level,
+                max_consecutive_cutoff=args.max_consecutive_cutoff,
+                bridge_cert_max_cutoff=args.bridge_cert_max_cutoff,
+                noise_strength=args.noise_strength,
+                fixed_lapse=args.fixed_lapse,
+                environment_qubits=args.environment_qubits,
+                temperature_scale=args.temperature_scale,
+                screen_probability=args.screen_probability,
+                low_order=args.low_order,
+                perturbation_radius=args.perturbation_radius,
+            ),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_inclusion_covariant_dynamics(args: argparse.Namespace) -> None:
+    print(
+        json.dumps(
+            inclusion_covariant_static_patch_dynamics_certificate(
                 max_level=args.max_level,
                 max_consecutive_cutoff=args.max_consecutive_cutoff,
                 bridge_cert_max_cutoff=args.bridge_cert_max_cutoff,
@@ -2224,6 +2246,22 @@ def build_parser() -> argparse.ArgumentParser:
     finite_typeii_static_patch.add_argument("--low-order", type=int, default=2)
     finite_typeii_static_patch.add_argument("--perturbation-radius", type=float, default=0.05)
     finite_typeii_static_patch.set_defaults(func=run_finite_typeii_static_patch)
+
+    inclusion_covariant_dynamics = subparsers.add_parser(
+        "inclusion-covariant-dynamics",
+        help="emit the inclusion-covariant static-patch dynamics certificate",
+    )
+    inclusion_covariant_dynamics.add_argument("--max-level", type=int, default=4)
+    inclusion_covariant_dynamics.add_argument("--max-consecutive-cutoff", type=int, default=5)
+    inclusion_covariant_dynamics.add_argument("--bridge-cert-max-cutoff", type=int, default=5)
+    inclusion_covariant_dynamics.add_argument("--noise-strength", type=float, default=1.0)
+    inclusion_covariant_dynamics.add_argument("--fixed-lapse", type=float, default=1.0)
+    inclusion_covariant_dynamics.add_argument("--environment-qubits", type=int, default=4)
+    inclusion_covariant_dynamics.add_argument("--temperature-scale", type=float, default=1.0)
+    inclusion_covariant_dynamics.add_argument("--screen-probability", type=float, default=0.75)
+    inclusion_covariant_dynamics.add_argument("--low-order", type=int, default=2)
+    inclusion_covariant_dynamics.add_argument("--perturbation-radius", type=float, default=0.05)
+    inclusion_covariant_dynamics.set_defaults(func=run_inclusion_covariant_dynamics)
 
     cosmology_phase1 = subparsers.add_parser(
         "cosmology-phase1",
