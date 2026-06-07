@@ -25,6 +25,7 @@ Read these first:
 - [`THEOREMS.md`](THEOREMS.md)
 - [`paper/finite_observer_algebra_diagnostics.md`](paper/finite_observer_algebra_diagnostics.md)
 - [`paper/expert_feedback_note.md`](paper/expert_feedback_note.md)
+- [`paper/PUBLISHING_CHECKLIST.md`](paper/PUBLISHING_CHECKLIST.md)
 - [`docs/static_patch_observer_algebra/README.md`](docs/static_patch_observer_algebra/README.md)
 - [`docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`](docs/static_patch_observer_algebra/harlow_facing_two_page_note.md)
 - [`docs/static_patch_observer_algebra/audit_index.json`](docs/static_patch_observer_algebra/audit_index.json)

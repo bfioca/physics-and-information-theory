@@ -7,6 +7,10 @@ Start with:
 
 - `finite_observer_algebra_diagnostics.md`
 - `expert_feedback_note.md`
+- `PUBLISHING_CHECKLIST.md`
+
+Use `PUBLISHING_CHECKLIST.md` as the live tracker for turning the current note
+into a publishable draft and release package.
 
 Supporting repo entrypoints:
 
