@@ -1,0 +1,54 @@
+{
+  "goal": "Goal 30: Physical Static-Patch Continuity Gate",
+  "certificate_command": "PYTHONPATH=. python3 -m qgtoy static-patch-physical-continuity --max-cutoff 5 --noise-strength 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05",
+  "focused_regression_command": "PYTHONPATH=. python3 -m unittest tests.test_static_patch_physical_continuity",
+  "json_validation_command": "python3 -m json.tool docs/goal30_static_patch_physical_continuity_certificate_index.json",
+  "result_type": "finite_physical_continuity_gate",
+  "major_claims": [
+    {
+      "claim": "KMS/detailed balance alone does not force vanishing cutoff-continuity.",
+      "status": "exact finite no-go inherited from Goal 29",
+      "certificate_field": "certified_claims.goal29_obstruction_retained"
+    },
+    {
+      "claim": "Thermal correlation scale without shrinking modular-time localization is insufficient.",
+      "status": "exact finite obstruction",
+      "certificate_field": "certified_claims.kms_and_thermal_decay_alone_refuted"
+    },
+    {
+      "claim": "Finite-lapse modular locality is sufficient for modular-time approximate identity.",
+      "status": "finite sufficient theorem gate",
+      "certificate_field": "certified_claims.finite_lapse_modular_locality_suffices"
+    },
+    {
+      "claim": "Fuzzy-sphere local heat scaling is sufficient for cutoff continuity.",
+      "status": "finite sufficient theorem gate",
+      "certificate_field": "certified_claims.fuzzy_sphere_locality_suffices"
+    },
+    {
+      "claim": "Shrinking Euclidean cap preparation is sufficient for cutoff continuity.",
+      "status": "finite sufficient theorem gate",
+      "certificate_field": "certified_claims.euclidean_cap_shrinking_thickness_suffices"
+    },
+    {
+      "claim": "The accepted physical gates preserve the screen-shadow no-go and M_N versus C^N bridge distinction.",
+      "status": "bounded certificate plus inherited finite theorem",
+      "certificate_field": "certified_claims.bridge_diagnostic_preserved"
+    },
+    {
+      "claim": "The result is not claimed as a continuum dS ER=EPR theorem.",
+      "status": "claim boundary",
+      "certificate_field": "certified_claims.not_claimed_as_continuum_ds_er_epr"
+    }
+  ],
+  "bounded_scope": {
+    "max_cutoff": 5,
+    "noise_strength": 1.0,
+    "environment_qubits": 4,
+    "temperature_scale": 1.0,
+    "screen_probability": 0.75,
+    "low_order": 2,
+    "perturbation_radius": 0.05
+  },
+  "human_note": "docs/goal30_static_patch_physical_continuity_note.md"
+}
