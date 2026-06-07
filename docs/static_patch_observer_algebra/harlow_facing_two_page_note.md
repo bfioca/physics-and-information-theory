@@ -131,4 +131,5 @@ Machine-readable certificate indexes are listed in
 
 For a paper-shaped version of this note, see
 `paper/finite_observer_algebra_diagnostics.md`. For a theorem-by-theorem claim
-index, see `THEOREMS.md`.
+index, see `THEOREMS.md`. For the shortest expert-feedback version, see
+`paper/expert_feedback_note.md`.

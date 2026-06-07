@@ -10,6 +10,7 @@ Current packaged result:
 
 - `THEOREMS.md`
 - `paper/finite_observer_algebra_diagnostics.md`
+- `paper/expert_feedback_note.md`
 - `docs/static_patch_observer_algebra/README.md`
 - `docs/static_patch_observer_algebra/harlow_facing_two_page_note.md`
 - `docs/static_patch_observer_algebra/audit_index.json`
@@ -29,6 +30,7 @@ Type II_1 candidate regulator from an abelian dephased control.
 | --- | --- |
 | `../THEOREMS.md` | Reviewer-facing theorem and claim index. |
 | `../paper/finite_observer_algebra_diagnostics.md` | Paper-shaped technical note. |
+| `../paper/expert_feedback_note.md` | Two-page expert-facing feedback note. |
 | `goals24_31_static_patch_bridge_theorem_note.md` | Finite screen-shadow no-go plus strong-continuity gate. |
 | `goals24_31_static_patch_bridge_certificate_index.json` | Machine-readable index for the Goals 24-31 theorem stack. |
 | `major_goal_finite_to_typeii_static_patch_observer_algebra_note.md` | Cofinal finite-matrix inclusions and Type `II_1` candidate limit. |
