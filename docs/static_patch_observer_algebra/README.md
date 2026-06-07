@@ -27,6 +27,7 @@ theorem, not a dS/CFT construction, and not a proof of ER=EPR in de Sitter.
 | `../../paper/expert_feedback_note.md` | Two-page expert-facing feedback note. |
 | `../../paper/expert_cover_note.md` | Short cover note for expert feedback. |
 | `../breakthrough_continuum_lift_obstruction_plan.md` | Next-path plan for turning the conditional lift schema into a theorem candidate, no-go, or weakest-added-assumption result. |
+| `../continuum_lift_obstruction_execution_goal.md` | Short execution goal for completing the continuum-lift obstruction branch step by step. |
 | `expert_feedback_two_page_note.md` | Short expert-facing theorem note and open question. |
 | `audit_index.json` | Machine-readable map from major claims to commands, source files, and tests. |
 | `journey_map.md` | How the earlier goals support the packaged result without becoming the lead. |

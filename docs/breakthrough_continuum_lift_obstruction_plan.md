@@ -52,6 +52,9 @@ A successful branch must produce one of:
 
 Do not add new toy examples unless they decide one of these three outcomes.
 
+For the smaller step-by-step execution surface, use
+`docs/continuum_lift_obstruction_execution_goal.md`.
+
 ## Phase 1: Formalize the Objects
 
 ### 1.1 Screen-Shadow Functor
