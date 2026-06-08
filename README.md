@@ -38,12 +38,14 @@ v0.1-static-patch-diagnostics
 | [`artifacts/static_patch_diagnostics/MANIFEST.md`](artifacts/static_patch_diagnostics/MANIFEST.md) | Frozen certificate artifacts for the packaged result. |
 | [`paper/expert_feedback_note.md`](paper/expert_feedback_note.md) | Two-page expert-facing note. |
 | [`paper/expert_cover_note.md`](paper/expert_cover_note.md) | Short cover note for expert feedback. |
+| [`paper/expert_feedback_packet.pdf`](paper/expert_feedback_packet.pdf) | PDF packet containing the cover note and expert feedback note. |
 | [`paper/PUBLISHING_CHECKLIST.md`](paper/PUBLISHING_CHECKLIST.md) | Publishing checklist; only external-feedback follow-up remains open. |
 | [`docs/README.md`](docs/README.md) | Map of the broader research trail. |
 
 Expert feedback bundle:
 
 ```text
+paper/expert_feedback_packet.pdf
 paper/expert_cover_note.md
 paper/expert_feedback_note.md
 ```

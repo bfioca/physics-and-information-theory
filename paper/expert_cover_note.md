@@ -12,6 +12,11 @@ two cases. It also includes a Type-`II_1` scaffold and a consecutive-cutoff
 embedding audit comparing a trace-filled UCP baseline with harmonic,
 heat-kernel, and Berezin-Toeplitz-inspired finite refinements.
 
+A latest finite audit sharpens the embedding question: global scalar
+fuzzy-sphere low modes preserve screen data but their commutators vanish,
+whereas an observer-local coherent-state/tangent-plane scaling has a nonzero
+finite commutator lower bound on fixed low-excitation windows.
+
 I am not claiming a continuum de Sitter theorem, a dS/CFT construction, or
 ER=EPR in de Sitter. The intended contribution is a finite diagnostic
 benchmark and a conditional lift obstruction: any proposed dictionary that
@@ -23,7 +28,8 @@ embedding/coarse-graining problem. Are the continuum-lift obstruction and
 cutoff embedding problem meaningful ways to formalize the limitation of
 diagonal/screen-shadow data? If so, should the finite maps be organized
 through harmonic projection, heat-kernel coarse graining,
-Berezin-Toeplitz-style quantization, or another conditional expectation?
+Berezin-Toeplitz-style quantization, observer-local tangent-plane scaling, or
+another conditional expectation?
 
 To keep the first pass short, I am attaching only the short feedback note. The
 TeX paper draft and executable certificate repository are available as

@@ -91,6 +91,21 @@ to a continuum/static-patch setting while screen shadows converge and a
 response witness remains separated, then any dictionary that factors only
 through screen shadows is incomplete.
 
+**Observer-local tangent audit.** A later finite audit checks the next hinge.
+Canonical scalar fuzzy-sphere low modes preserve screen data but their
+commutator scale vanishes. By contrast, for a fixed observer pole and fixed
+excitation cutoff `R`, the coherent-state tangent-plane scaling
+`a_L=J_+/sqrt(2j)` obeys
+
+```text
+[a_L,a_L^*] >= (1 - 2R/L) I
+```
+
+on the low-excitation window. This is a finite observer-local theorem
+candidate, not a continuum static-patch theorem; it shifts the question to
+whether this tangent-plane sector is the right approximation to the observer
+algebra.
+
 ## What Is Not Claimed
 
 We do not claim:
@@ -116,6 +131,7 @@ Candidates include:
 
 - angular-momentum branching or mode-label refinement;
 - coherent-state or Berezin-Toeplitz symbol/quantization maps;
+- observer-local coherent-state/tangent-plane scaling;
 - heat-kernel coarse graining;
 - continuum `L^2(S^2)` projection maps;
 - approximate UCP embeddings rather than exact full-matrix inclusions;
