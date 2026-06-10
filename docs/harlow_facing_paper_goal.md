@@ -1,8 +1,9 @@
 # Harlow-Facing Paper Goal
 
-Status: active Paper U research program after the bounded Paper R route ended
-in **INCONCLUSIVE STOP**. The Harlow packet remains a GO for conceptual review;
-Paper A is the publishable fallback candidate.
+Status: G1/G2 audit-ready; G3-G6 remain open in the active Paper U program.
+The bounded Paper R route ended in **INCONCLUSIVE STOP**. The Harlow packet
+remains a GO for conceptual review; Paper A is the publishable fallback
+candidate.
 
 ## Working title
 
@@ -31,24 +32,28 @@ The paper is complete only when it:
 5. eliminates the auxiliary budgets into one dimensionless compatibility or
    obstruction inequality with a complete error ledger.
 
-The supported massive Skyrmion is the explicit realization. It is not the
-scope of the operational theorem and does not belong in the headline.
+The supported massive Skyrmion is candidate realization support. It is not the
+scope of the operational theorem, does not yet realize every premise, and does
+not belong in the headline.
 
 ## Theorem target
 
-Freeze a declared model class `C_dir` consisting of:
+Freeze the physical subclass `C_dir^PaperU subset C_dir^op` consisting of:
 
 - a localized directional register `O` with a unitary `SO(3)` action;
 - a localized target or detector `D` carrying physical orientation markers;
 - a static-patch field environment `E` in a specified KMS state;
-- one local action for `O+D+E` and the supporting membrane;
+- one local action for `O+D+E` and all declared support degrees of freedom;
 - one controlled family of initial states;
 - one preparation, storage, and relational readout protocol;
 - explicit proper-time and optical-support conventions; and
 - a declared gauge-invariant gravitational budget or disturbance criterion.
 
-For every admissible model, state, and allowed protocol in `C_dir`, prove a
-statement of the schematic form
+Here `C_dir^op` is the orbit/protocol class used by G1/G2, while
+`C_dir^PaperU` additionally requires the common KMS action, localization,
+energy, and gravitational ledgers defined in
+`docs/observer_register_model_class.md`. For every admissible model, state, and
+allowed protocol in `C_dir^PaperU`, prove a statement of the schematic form
 
 ```text
 R_rel(T) >= F_record[S_dir, Gamma(T), eta_channel],
@@ -63,7 +68,7 @@ Here:
 
 ```text
 R_rel(T)   Haar-prior global risk for alignment of D relative to O
-S_dir      directional-record information, initially A_SO3(rho_O)
+S_dir      A_SO3 of the complete accessible encoded state
 Gamma(T)   derived record-degradation exposure
 eta_channel finite-time physical-to-effective channel error
 E_K        Killing energy of the same observer configuration
@@ -74,12 +79,12 @@ G_cap      selected gauge-invariant gravitational capacity/disturbance variable
 theta      declared model and approximation parameters
 ```
 
-`S_dir` is directional record information, not thermodynamic entropy by
-definition. For a covariant orientation ensemble it is naturally represented
-by relative entropy of rotational asymmetry,
+`S_dir` is the joint operational rotational-asymmetry resource, not classical
+record information or thermodynamic entropy by definition. For the covariant
+orientation ensemble it is
 
 ```text
-S_dir=A_SO3(rho)=S(G_SO3[rho])-S(rho).
+S_dir=A_SO3(rho_acc)=D(rho_acc || G_SO3[rho_acc]).
 ```
 
 The existing theorem already gives
@@ -95,10 +100,12 @@ and hence the necessary information allocation
 S_dir >= (3/2) log(c_SO3/R_rel)
 ```
 
-whenever the right-hand side is positive. The manuscript must separately
-prove any comparison between `S_dir`, effective record dimension, coarse-
-grained observer entropy, and the `S_Ob` used in observer-rule frameworks.
-They must not be identified by notation.
+whenever the right-hand side is positive. Here `rho_acc` includes every
+pre-correlated memory or charged controller that can re-enter the protocol.
+The manuscript must separately prove any comparison between `S_dir`, a
+declared finite classical record dimension, coarse-grained observer entropy,
+and the `S_Ob` used in observer-rule frameworks. They must not be identified by
+notation.
 
 ## Relational and record definitions
 
@@ -108,8 +115,9 @@ to the Haar prior and loss over all of `SO(3)`.
 
 The record criterion is also not long-lived quantum coherence. Define record
 stability operationally: after storage time `T`, the best allowed relational
-readout must retain risk at most `epsilon`, or equivalently preserve a declared
-number of distinguishable directional hypotheses to a declared error.
+readout must retain risk at most `epsilon`. A statement about a number of
+distinguishable hypotheses is equivalent only after a finite classical record
+or hypothesis model is declared.
 
 The same interaction should, within one controlled approximation:
 
@@ -150,29 +158,34 @@ question for external critique.
 
 ## Completion gates
 
-### G1. Theorem domain
+### G1. Theorem domain - audit-ready
 
 Write the exact quantifiers for `C_dir`, including randomized and adaptive
 protocols, treatment of postselection, tunable parameters, approximation
 order, and pointwise versus asymptotic scope.
 
+The binding specification is `docs/observer_register_model_class.md`.
+
 Pass condition: a reader can construct a counterexample candidate without
 guessing what an "observer" means.
 
-### G2. Entropy and record dictionary
+### G2. Entropy and record dictionary - audit-ready
 
-Prove the chain
+Prove the fork
 
 ```text
 target relational risk
-  -> required A_SO3
-  -> required effective directional record dimension/information
-  -> model energy and representation cost.
+  -> required accessible readout information
+       -> finite classical record size, only for a declared bottleneck
+  -> required joint A_SO3
+       -> representation and energy cost under named model assumptions.
 ```
 
-Pass condition: every arrow is a named inequality. No Casimir, QFI, asymmetry,
-Hilbert-space dimension, or thermodynamic entropy is silently substituted for
-another.
+Pass condition: every arrow is a named inequality, and no converse is inferred
+from an upper resource bound. No Casimir, QFI, asymmetry, classical outcome
+alphabet, Hilbert-space dimension, thermodynamic entropy, or `S_Ob` is silently
+substituted for another. The binding ledger is
+`docs/directional_record_resource_dictionary.md`.
 
 ### G3. Physical finite-time record channel
 
@@ -212,8 +225,9 @@ new proof strategy must produce a full interval excluding zero.
 
 ### G5. Common parameter window
 
-Evaluate capacity, lifetime, support, channel error, and response on one state
-family and one parameter box.
+Evaluate capacity, lifetime, support, channel error, and the selected
+gravitational functional with its error budget on one state family and one
+parameter box.
 
 Pass condition: all assumptions hold simultaneously at the same perturbative
 order. Combining bounds from incompatible regimes does not pass.
@@ -221,7 +235,8 @@ order. Combining bounds from incompatible regimes does not pass.
 ### G6. Eliminated theorem and manuscript
 
 Eliminate internal budgets into one dimensionless inequality, state its escape
-routes, and include the Skyrmion only as the theorem's realization.
+routes, and include the Skyrmion only as removable candidate realization
+support.
 
 Pass condition: a 15-25 page main manuscript can be read without the interval
 audit details. Certificates and the profile proof live in appendices or a
@@ -252,8 +267,8 @@ Publication approval belongs to authors, editors, and referees.
    to choose or refine the gravitational quantity before building the next
    expensive bridge.
 3. If the `S_dir` to observer-entropy comparison is not meaningful, retain
-   `S_dir` as operational directional information and ask what quantity should
-   replace it.
+   `S_dir` only as an operational rotational-asymmetry resource and ask what
+   quantity, if any, should replace it.
 4. Prioritize the common-action record channel and the narrower Paper U theorem
    that can be stated without uncertified response evidence.
 5. Keep the validated profile theorem as a technical companion or independent
@@ -272,9 +287,9 @@ The review packet should contain:
 6. exactly three questions:
 
 ```text
-1. Is A_SO3/effective directional record information meaningfully comparable
-   to the observer entropy in the observer rule, or are they different
-   resources?
+1. Is the joint rotational asymmetry A_SO3 meaningfully comparable to the
+   observer entropy in the observer rule? Separately, does the entropy or
+   alphabet size of a declared finite classical record enter that framework?
 
 2. Which gauge-invariant gravitational quantity should replace or refine the
    provisional fixed-background Weyl witness when constraining a finite

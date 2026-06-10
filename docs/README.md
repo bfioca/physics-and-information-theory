@@ -8,6 +8,11 @@ artifacts.
 
 Active research program:
 
+- `observer_register_model_class.md`
+- `directional_record_resource_dictionary.md`
+- `observer_register_counterexample_checklist.md`
+- `observer_register_goal_audit.md`
+- `harlow_redirection_branches.md`
 - `universal_static_patch_observer_tradeoff_plan.md`
 - `conditional_universal_observer_tradeoff.md`
 - `universal_observer_claim_dependency_ledger.md`
@@ -78,6 +83,11 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 
 | Artifact | Purpose |
 | --- | --- |
+| `observer_register_model_class.md` | Exact G1 quantifiers over systems, joint states, side information, controls, protocols, postselection, localization, errors, and gravitational-budget interfaces. |
+| `directional_record_resource_dictionary.md` | Status-labeled G2 fork from Haar risk to readout information, joint asymmetry, declared classical records, and model-dependent representation/energy costs. |
+| `observer_register_counterexample_checklist.md` | Adversarial tests for high-spin mixtures, rare tails, bounded spectra, stabilizers, postselection, hidden memories, pre-correlations, and QFI/global-risk mismatches. |
+| `observer_register_goal_audit.md` | Requirement-by-requirement G1/G2 completion audit, focused test record, exact arrow disposition, and remaining assumptions. |
+| `harlow_redirection_branches.md` | Three bounded research pivots if the observer-entropy comparison, gravitational budget, or semiclassical register framing is rejected. |
 | `research_execution_plan.md` | Concise gate-based publication ladder, pass criteria, and pivot conditions for the active physics program. |
 | `paper_worthy_observer_algebra_research_program.md` | Active plan for replacing the finite benchmark with a physically derived, quantitative theorem program. |
 | `observer_algebra_model_choice.md` | Phase 0 decision between the genuine fuzzy-sphere algebra and the truncated one-particle control. |

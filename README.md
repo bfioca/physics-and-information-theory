@@ -39,14 +39,15 @@ The massive Skyrmion is a certified test realization, not the headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
-| Universal observer theorem | Open headline: eliminate the resource, lifetime, localization, and gravity budgets into one inequality. | [`universal_static_patch_observer_tradeoff_plan.md`](docs/universal_static_patch_observer_tradeoff_plan.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
-| Operational reference bounds | Rigorous global-risk and named-matter capacity results; the common-action preparation/storage/readout channel remains open. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
+| Universal observer theorem | G1/G2 now have an audit-ready model domain and resource dictionary; the common-action channel and gravity closure remain open. | [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`directional_record_resource_dictionary.md`](docs/directional_record_resource_dictionary.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
+| Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md), [`observer_register_counterexample_checklist.md`](docs/observer_register_counterexample_checklist.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**; effective-channel components remain conditional, and neither supplies the final observer-capacity bound. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
 | Certified matter realization | The supported Skyrmion supplies controlled profile, spectral, and response subproblems without being identified with the observer theorem. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
 
-**Claim boundary.** Global orientation-risk bounds, a confined-orbital
-localization-energy bridge, supported-profile subproblems, and the completed
-Paper R viability decision are rigorous on their declared domains. The signed
+**Claim boundary.** The G1/G2 protocol domain, global orientation-risk bounds,
+a confined-orbital localization-energy bridge, supported-profile subproblems,
+and the completed Paper R viability decision are rigorous on their declared
+domains. The signed
 response estimator is suggestive, but the full certified interval contains
 zero. The `S_dir`-to-`S_Ob` dictionary, one-action physical channel,
 gravitational capacity invariant, Weyl zero-exclusion, and self-consistent

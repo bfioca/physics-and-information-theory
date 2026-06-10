@@ -1,236 +1,321 @@
-# Localization, Orientation, And Gravity In A Static Patch
+# Finite Directional Records In A de Sitter Static Patch
 
-Status: primary manuscript outline; theorem-design stage
+Status: claim-hygiene manuscript skeleton. Gates G1 and G2 are specified at an
+audit-ready level; the common-action record channel and gravitational capacity
+variable remain open. This is an outline, not full manuscript prose.
 
-## Target Theorem
+## 1. Claim capsule
 
-The abstract composition theorem is exact: any declared observer class with
-`C2<=C_max(a,beta)`, `a<=A(s_opt,rho,beta)`, and isotropic heat exposure
-`Gamma` obeys
+The paper studies one relational task: estimating the orientation of a
+localized target relative to a localized finite register under Haar-prior
+full-frame chordal loss.
 
-```text
-R(T)>=3/4[1-exp(-2Gamma)]
-      +exp(-2Gamma)/[16C_max(A,beta)+8].
-```
-
-The paper-worthy physics conjecture is that one local static-patch matter/KMS
-action supplies all three premise maps with useful constants and a named
-metric/stress backreaction margin. The confined-orbital compactness corollary
-is proved, but is not yet that relativistic one-action realization.
-
-## Claim Discipline
-
-This paper will not claim a theorem over arbitrary observers. It will specify:
-
-- the covariant `SO(3)` orientation task and Bayes cost;
-- the matter representation and Hamiltonian/stress assumptions;
-- proper and optical support variables;
-- the local bath coupling and allowed controls;
-- three separate gravitational margins: compactness, local stress/junction
-  control, and support-region metric perturbation; and
-- the asymptotic path on which simultaneous improvement is excluded.
-
-Casimir, quantum Fisher information, relative entropy of asymmetry, and diamond
-recovery error are not synonyms. Each conversion used in the proof must be a
-named lemma.
-
-The paper also does not claim the first finite-reference backreaction effect,
-the first accuracy-duration-gravity bound, or the first de Sitter spectral
-observer-admissibility criterion. Recent non-ideal-QRF, microscopic-clock, and
-Euclidean-de-Sitter Schur-complement results already establish those themes.
-The proposed distinction is the quantitative `SO(3)` orientation-risk chain
-with optical localization and KMS coherence under common matter assumptions.
-
-## Theorem Stack
-
-1. **Operational reference lemma (complete).** For Haar-prior full-frame
-   chordal cost, prove the direct fusion/Hardy bound
-   `R_ref>=1/(16<J^2>+8)` and independently bound risk by relative entropy of
-   `SO(3)` asymmetry and mean spin using the exact `(2j+1)^2` Gibbs partition
-   function.
-   For a declared spin-1 estimate-and-correct protocol, use the two-sided
-   comparison `(8/9)R_ref<=epsilon_rec<=2sqrt(R_ref)`.
-2. **Quantum capacity lemma (named orbital matter class complete; relativistic
-   bridge open).** For confined spinless nonrelativistic orbital matter,
-   mass-weighted Cauchy-Schwarz proves
-   `<L^2><=2Ma^2E_ex`, giving `R_ref>=1/(32Ma^2E_ex+8)` for arbitrary states,
-   rare tails, and rotation-trivial multiplicity. The general spectral theorem
-   gives `A_SO3<=beta E+log Z_H(beta)` when the rotational sector-floor
-   partition function is finite; a fixed bounded-spectrum counterexample shows
-   this premise cannot be inferred from covariance alone. Jensen also converts
-   the existing spherical-top mean-Casimir compactness budget into the
-   mean-spin input of Lemma 1. For the fixed-profile fermionic
-   Skyrmion, compactness and slow-rotation control now eliminate the coupling
-   and give a finite projective cutoff and strict global risk floor independent
-   of the `e`/`f_pi` co-scaling. More strongly, the exact supported hedgehog
-   densities give `I<=[4/(3N_w)]Ma^2` for every radial profile, hence the
-   relaxed collective floor `E_j>=sqrt(3N_w j(j+1)/2)/a` and a finite
-   projective rotational partition function. Extend this from the collective
-   band to the full rotating field/wall spectrum with controlled projection,
-   stress, and metric response. The exact Feshbach lemma now shows that it is
-   sufficient to construct a quantum collective projector with compression
-   floor `a_j`, complement floor `d_j`, and coupling `v_j` satisfying either
-   `v_j^2<=eta(d_j-a_j)a_j` or the scale condition
-   `d_j>=gamma a_j`, `v_j<=rho a_j`, `rho^2<gamma`. Positive two-band
-   completions prove that collective data alone cannot replace these inputs.
-   In the fixed-wall radial channel, authenticated correlated Newton-tube replay
-   and a nonsingular regular-origin Barta audit prove `L_Jacobi>=1` on the full
-   physical form domain. Since `W<=(x_w^2+8)/N_w=25`, this gives the first
-   physical complement input `omega_hat_rad>=1/5`. For the spherical moving
-   membrane, exact Young-Laplace cancellation and a compatible Barta witness
-   now prove the unconditional coupled floor `omega_hat_l0>=1/50`. The anchor,
-   nonspherical channels, collective projector/compression, and off-band
-   couplings remain open. A branch-coordinate certificate could sharpen the
-   radial number but is no longer needed for positivity.
-3. **Classical gravity lemma (spherical response and external `l=2` resolvent
-   complete; conserved matter projection open).** The exact local variable
-   `q=2Gm/[r(1-r^2/R^2)]` controls positivity of the radial metric factor and
-   relative `g_rr` distortion. A concentrated-core counterexample proves that
-   wall compactness alone is insufficient. Authenticated cumulative Skyrmion
-   energy gives `H_bulk<=29.246335626859388`, and its fixed-field mass equation
-   has the fixed-background profile as a supersolution. Add the collective
-   rotational energy, lapse control, and membrane junction before calling this
-   an Einstein-matter observer theorem. In the leading fixed-field collective
-   sector, the rotational step is now closed conditionally: a radial budget
-   `q<=beta` bounds the static mass below and inertia above, and AM-GM eliminates
-   `e` to give a finite `<J^2>` capacity and global risk floor. The authenticated
-   default gives `R_ref>=3.79327245124592e-9` without a separate compactness
-   proxy, but at that stage the lapse, nonspherical stress, and collective
-   projection remained open; the next two results close the static lapse and
-   leading rotational source pieces.
-   For the nonrotating bulk, the exact enthalpy cancellation now controls the
-   lapse as well: `D<=43.445333`. The default `beta=1/2` point has a `g_tt` ratio
-   diagnostic only `0.1131949426`, so it is not yet a negligible-backreaction
-   window. The leading rotational source has now been resolved into its exact
-   monopole plus quadrupole form. Positivity of the spin second moment bounds
-   `||Q||_op<=2<J^2>/3` and the integrated absolute `l=2` energy by
-   `E_rot/sqrt(5)`, while a pure spin-2 second-order-anticoherent state has
-   `Q=0` and full-rank local QFI. Thus a universal inevitable-quadrupole claim
-   is false. The `Q=0` branch preserves spherical gravity through quadratic
-   collective order; the all-state branch requires a horizon-regular
-   static-patch `l=2` Einstein response bound. The following result supplies
-   it for a conserved master source on fixed pure de Sitter. Higher-order
-   stress and the membrane junction remain open on both branches. The explicit
-   spin-2 state
-   is not a global escape: its half-turn stabilizer gives the exact all-POVM
-   floor `R_ref>=1/2`. A viable isotropic branch must instead provide a
-   globally accurate asymptotically free `Q=0` family.
-   On the all-state branch, the fixed pure-de Sitter response operator is now
-   exact: `A_2>=6/R^2`, its Green kernel is positive and closed form, and its
-   diagonal response grows as `R log(2R/rho)-3R/2` near the horizon. A
-   density-only composition is impossible: pure gauge defeats coordinate
-   metric norms, and conserved spatial stress can have zero density but
-   nonzero curvature. The complete fixed-profile rigid stress has now been
-   tested against the exact static conservation identities and fails them:
-   `j=0` but `p_perp-2pi` is generically nonzero, with a strict hard-wall
-   asymptotic. The centrifugal response is now known to be a rank-two
-   quadrupole in regular fields `(f,g)`. Its exact local Hessian/source and
-   moving-mirror pure-tension Robin law are derived, and the tangential source
-   is generically nonzero. Authenticated inner/outer Liouville certificates
-   and the weighted-form theorem now give a positive self-adjoint global
-   operator with `||A^-1||<=100`. The exact origin source proves a unique
-   nonzero weak deformation and positive conjugate susceptibility. The default
-   point values `max|f|=0.3054`, `max|g|=0.2736`, and wall-shape coefficient
-   `-0.28735` remain floating response diagnostics. Its same-action
-   rigid-plus-deformation bulk stress now closes both conservation equations
-   with second-order mesh decay, reaching `7.55e-4` of the rigid residual at
-   801 nodes. The moving Nambu-Goto shell then closes the full distributional
-   conservation law below `1.19e-12`. An exact frozen-convention source map now
-   gives a stable nonzero off-wall master response, and its contact-free shell
-   form obeys exact field/flux transmission conditions. Restoring Skyrme and
-   collective units gives
-   `Psi_phys=(8piG e^3 f_pi/c_I^2)psi0 QJ_ab n_a n_b`. Exterior vacuum
-   reconstruction then gives the local gauge-invariant tidal observable
-   `delta E_rr=-6Psi Y/r^3`. In the semiclassical Jacobi limit this yields a
-   nonzero-versus-zero gradiometer contrast for equal-leading-energy spin-2 cat
-   and anticoherent states, showing directly that Casimir does not determine
-   gravitational disturbance. The exterior response has been reduced to one
-   amplitude with an exact primal-adjoint product enclosure and exact
-   conforming archived trials; tight full-domain interval residuals remain
-   open. The remaining matter gates are that observable
-   certificate, independent membrane second variation, tensorial Israel
-   matching, self-consistent geometry, and common-action detector inputs.
-   The tensorial promotion gate is now exact: identical de Sitter geometry on
-   both sides cannot support nonzero pure tension, while a de Sitter/Kottler
-   benchmark closes both spherical Israel equations. After spherical matching,
-   the Skyrmion calculation must reconstruct and match three physical-shell
-   first-form and three mixed-extrinsic-curvature amplitudes; the scalar master
-   transmission alone is not sufficient.
-   The finite-time detector transfer is now exact inside the declared
-   heat/Jacobi/Gaussian model: the rank-two tidal moment decays as the cube of
-   the rank-one orientation multiplier, and its mean displacement has a closed
-   double-integral kernel. The common-action rate, noise, and detector
-   backreaction remain open.
-4. **Optical locality lemma.** Prove that the selected local KMS channel cannot
-   meet its common-mode error budget beyond a stated optical separation.
-5. **Coherence lemma (conditional heat model complete).** The spin-1 score
-   attenuates exactly by `e^(-2 gamma tau)`, giving a closed risk interpolation
-   and coherence ceiling. The leading Skyrmion/KMS current now gives
-   `gamma_prop=g^2 N^-3 j_Sky(0)`. AU.3a certifies conservative global spectral
-   moments. The authenticated AU.3b baseline is presently tail dominated and
-   weaker, while useful tail/product bounds and the finite-coupling
-   approximation error remain open.
-6. **Elimination theorem (composite branch complete).** Combine the common
-   variables into a proper-radius interval and coherence ceiling. Promote the
-   current necessary compatibility theorem to a one-action result. The
-   conditional fixed-profile Skyrmion observer-capacity proposition is the
-   first same-profile compactness/slow-rotation proxy obstruction for exactly
-   hard-supported states. Authenticated directed substitution gives `J<=352`
-   and `R_ref>=1.9689304688982673e-5`; total mass includes the ideal shell,
-   whereas inertia is interior only and omits wall inertia. It is not yet a
-   gravitational backreaction theorem or a dynamical cutoff result. The new
-   spherical mass-function certificate replaces the bulk endpoint proxy by a
-   local radial-constraint bound. Its leading collective composition now gives
-   a direct gravity-to-Casimir-to-risk theorem, but not yet the full rotating
-   Einstein-matter or local-channel result.
-7. **Skyrmion corollary.** Insert certified profile, inertia, spectral, stress,
-   and lifetime constants from one supported massive-Skyrmion action. Use the
-   completed half-integer projective fusion theorem, not the integer `SO(3)`
-   bound.
-
-The first two lemmas now establish, inside the spherical-top class, the global
-chain
+The closed theorem spine is:
 
 ```text
-small global orientation risk -> relative asymmetry/mean-spin budget
- -> localized energy cost.
+small global relational risk
+  -> large actual readout information                       PROVED
+  -> finite classical record size, if a classical bottleneck is declared
+                                                              CONDITIONAL
+
+small global relational risk
+  -> large joint SO(3) asymmetry                           PROVED
+  -> representation and energy cost under named matter/spectral premises
+                                                              CONDITIONAL
 ```
 
-The first arrow is global and tail robust; it does not use a local Cramer-Rao
-bound. Large `J^2` alone is still not sufficient: a maximally mixed high-spin state carries
-Casimir without orientation information. Local QFI is also insufficient without
-a tail condition: a vanishing high-spin amplitude can make QFI diverge while
-the entire orbit converges to an invariant state.
+The proposed Paper U physics theorem would add a common local action that also
+controls record lifetime, optical and proper support, and one physically
+justified gauge-invariant gravitational budget. That final conjunction is not
+yet proved.
 
-## Two Honest Outcomes
+## 2. Exact domain
 
-**Construction.** A certified open parameter box satisfies the theorem premises
-and gives a localized, long-lived reference with a nonzero observable response.
+The theorem domain is `C_dir` from
+`docs/observer_register_model_class.md`. Its headline quantifiers range over:
 
-**Obstruction.** A controlled scaling family or open region is excluded because
-one invariant combination of accuracy, support, coherence, and gravity crosses
-the theorem bound. Failure of one numerical point does not qualify.
+- a gauge-fixed relational `SO(3)` orbit of localized register `O` and target
+  `D`;
+- arbitrary normal joint states, including invariant correlated memories when
+  they are included in the priced state;
+- a specified KMS environment and, for physical subclasses, one local action;
+- randomized and adaptive protocols whose complete controls and side
+  information are inside the resource boundary;
+- arbitrary readout POVMs and estimators;
+- unconditional risk, or success-weighted postselected performance;
+- distinct proper support, optical support, and horizon distance;
+- pointwise claims unless an explicit uniformly controlled sequence is stated;
+  and
+- separately composed operational, perturbative, and gravitational errors.
 
-## Section Order
+Charged controllers, hidden frames, and memories that re-enter at readout are
+not free. A pre-correlated invariant memory is allowed, but `S_dir` is evaluated
+on the complete accessible state and the physical memory enters the action,
+support, energy, and gravity ledgers.
 
-1. Operational statement and theorem domain.
-2. Covariant orientation risk and non-Abelian resource requirement.
-3. The quantum `J^2` versus classical `J` gap.
-4. Localized matter, size-energy-angular-momentum inequalities, and gravity.
-5. Static-patch optical locality and coherence.
-6. Combined theorem and escape routes.
-7. Certified massive-Skyrmion realization.
-8. Numerical constants, protocol window, and observable discriminator.
-9. Boundary-regularity and common-mode fallback results.
+## 3. Definitions
 
-The numerical boundary-value problem belongs in the realization section, not
-in the opening claim.
+For `G~Haar(SO(3))`, orbit state `rho_g=V(g)rho V(g)^*`, readout `Y`, and
+estimate `g_hat(Y)`, define
 
-## Submission Gate
+```text
+R_Haar = E sin^2[theta(g_hat^-1 G)/2],
+S_dir  = A_SO3(rho)=D(rho || G_SO3[rho]),
+I_out  = I(G:Y),
+C2     = Tr(rho J^2),
+K1     = sum_j j Tr(P_j rho).                            (3.1)
+```
 
-The quantum capacity lemma now closes under physically recognizable confined
-orbital-matter hypotheses. Proceed as the primary paper only when at least one
-matter family also realizes the local channel, coherence, stress, and gravity
-premises with a common error ledger. Otherwise publish the strongest completed fallback: optical
-common-mode no-go, boundary-regularity spectral universality, or the conditional
-normalized prescribed-switch Skyrmion ULE certificate.
+If the protocol declares a finite discrete classical record `C_T`, also define
+
+```text
+d_eff^cl(C_T)=exp[H(C_T)],
+m_C=|support(C_T)|.                                     (3.2)
+```
+
+The superscript `cl` is mandatory. No quantum, continuous-outcome,
+thermodynamic, or gravitational dimension is meant by (3.2).
+
+`S_dir`, `I_out`, `d_eff^cl`, `C2`, `K1`, QFI, thermodynamic entropy, and
+Harlow's `S_Ob` are distinct quantities. The complete dictionary and arrow
+statuses are in `docs/directional_record_resource_dictionary.md`.
+
+## 4. Main theorem stack
+
+### Theorem U1. Global risk requires readout information - PROVED
+
+Let
+
+```text
+c_SO3=6/(e pi^(5/3)),
+L(epsilon)=[(3/2)log(c_SO3/epsilon)]_+.
+```
+
+Every state and readout in `C_dir^op` obeys
+
+```text
+R_Haar<=epsilon => I_out>=L(epsilon).                    (U1)
+```
+
+The proof is the `SO(3)` rate-distortion inequality. Its exact dual lower-bound
+form retains `sup_lambda{-lambda epsilon-log Z(lambda)}`; equality with the
+optimal rate-distortion function is not assumed.
+
+### Theorem U2. Global risk requires joint rotational asymmetry - PROVED
+
+Holevo and relative-entropy data processing give
+
+```text
+I_out<=I_acc<=S_dir,
+R_Haar>=c_SO3 exp(-2S_dir/3).                            (U2)
+```
+
+This holds with arbitrary rotation-trivial multiplicity. It is necessary-only:
+large asymmetry does not guarantee a useful protocol or stable record.
+
+### Corollary U3. Finite classical record requirement - CONDITIONAL
+
+If a finite discrete `C_T` is the sole retained information before readout,
+
+```text
+G -> C_T -> Y,
+```
+
+then
+
+```text
+R_Haar<=epsilon
+  => H(C_T)>=L(epsilon)
+  => d_eff^cl(C_T)>=exp[L(epsilon)]
+  => m_C>=ceil(exp[L(epsilon)]).                         (U3)
+```
+
+This corollary does not follow from `S_dir` alone. Its classical-bottleneck
+assumption must appear in the abstract and theorem statement if U3 is used.
+
+### Theorem U4. Global risk requires representation capacity - PROVED
+
+Independent all-state bounds give
+
+```text
+R_Haar>=1/(16C2+8),
+S_dir<=B(K1),
+K1(K1+1)<=C2.                                           (U4)
+```
+
+Thus target risk requires both a mean-Casimir allocation and, through the
+asymmetry route, a mean representation-label allocation. Neither allocation is
+sufficient for good orientation.
+
+### Corollary U5. Spectral energy cost - CONDITIONAL
+
+For an invariant `H_dir` on the same complete state and representation used in
+`S_dir`, with sector floors `epsilon_j` satisfying
+
+```text
+Z_H(beta)=sum_j(2j+1)^2 exp(-beta epsilon_j)<infinity,
+```
+
+the proved Gibbs inequality yields
+
+```text
+S_dir<=beta E_dir+log Z_H(beta),
+E_dir>=sup_(beta>0: Z_H(beta)<infinity)
+       [L(epsilon)-log Z_H(beta)]_+/beta.                (U5)
+```
+
+Covariance alone does not supply the sector growth. The bounded-spectrum
+counterexample must be presented next to U5.
+
+### Corollary U6. Confined orbital matter - PROVED on a named domain
+
+For hard-confined spinless nonrelativistic orbital matter with
+`H_ex>=sum_i p_i^2/(2m_i)`, total rest mass `M`, and radius `a`,
+
+```text
+C2<=2Ma^2E_ex,
+R_Haar>=1/(32Ma^2E_ex+8).                               (U6)
+```
+
+Under the separately declared proxy `2G(M+E_ex)/a<=chi<1`, this implies
+
+```text
+R_Haar>=1/[8+2chi^2a^4/G^2].                            (U6a)
+```
+
+U6 is the cleanest populated matter subclass. U6a is compactness
+admissibility, not a complete gravitational-backreaction theorem.
+
+### Corollary U7. Effective heat exposure - CONDITIONAL
+
+If the actual reduced dynamics is an isotropic rotational heat channel, or is
+within operational distance `eta_op` of one, then
+
+```text
+R_physical(T)
+ >= 3/4[1-exp(-2Gamma)]
+    +exp(-2Gamma)/(16C_max+8)-eta_op.                   (U7)
+```
+
+This is an exposure theorem, not a universal elapsed-time limit. Paper U still
+needs to derive `Gamma` and `eta_op` from the same acquisition/storage/readout
+action.
+
+## 5. Counterexamples and escape routes
+
+The main text includes a compact version of
+`docs/observer_register_counterexample_checklist.md`:
+
+| Counterexample | Claim it excludes | Theorem response |
+| --- | --- | --- |
+| invariant high-spin mixture | Casimir, energy, Hilbert dimension, or von Neumann entropy is sufficient | all such arrows remain necessary-only |
+| rare high-spin tail | local QFI certifies global quality | use global asymmetry/mean-label risk |
+| bounded-spectrum Hamiltonian | finite energy universally caps orientation | require growing sector floors |
+| nontrivial stabilizer | local sensitivity removes global ambiguity | use full-group Haar risk or declare a quotient task |
+| success-only postselection | conditional accuracy has its average cost | retain abort or include `p_s` and retries |
+| hidden frame or memory | subsystem budgets price an open protocol | close the accessible resource boundary |
+| pre-correlated encoder | reduced-register asymmetry prices joint decoding | compute joint `S_dir` |
+| QFI/global mismatch | one local metric substitutes for U1-U2 | QFI is absent from the main chain |
+
+These are theorem-design constraints, not afterthoughts.
+
+## 6. What G1 and G2 establish
+
+G1 and G2 establish an audit-ready operational theorem domain, exact
+risk-information and risk-asymmetry necessities, a conditional finite
+classical-record corollary, and named representation/energy costs.
+
+They do not establish:
+
+- `S_dir=S_Ob` or an inequality between them;
+- a classical record dimension for a general quantum register;
+- sufficiency of asymmetry, Casimir, mean spin, QFI, or energy;
+- a preparation/storage/readout channel from one local action;
+- a nonzero physical decoherence rate;
+- a preferred gauge-invariant gravitational capacity variable;
+- self-consistent static-patch gravity; or
+- a certified nonzero exterior Weyl response.
+
+## 7. Remaining Paper U gates
+
+### U8. Common-action record channel - OPEN
+
+Derive preparation, storage, and readout from one local action and prove a
+strategy- or diamond-norm error below the operational risk margin on a nonempty
+parameter box.
+
+### U9. Gravitational budget - OPEN
+
+Select a gauge-invariant functional relevant to finite observer capacity and
+derive it from the same state, stress, boundary, and approximation order. Do
+not substitute compactness, exterior curvature, horizon displacement, and
+generalized entropy for one another.
+
+### U10. Common parameter elimination - OPEN
+
+Evaluate U1-U9 on one state family and eliminate internal budgets into a
+dimensionless compatibility or obstruction inequality. A one-point failure is
+not a no-go; a positive construction requires an open parameter box.
+
+## 8. Manuscript section order
+
+1. **Question, claim, and exclusions.** State the relational task, theorem
+   statuses, and non-identifications on the first page.
+2. **Observer-register domain.** Define `C_dir`, closed resource boundary,
+   protocol rules, postselection, localization, and errors.
+3. **Global risk and information.** Prove U1 and U2.
+4. **Classical record corollary.** Prove U3 only under the explicit Markov
+   bottleneck.
+5. **Representation and energy.** Prove U4-U6 and present the bounded-spectrum
+   obstruction.
+6. **Counterexamples and escape routes.** State the forbidden converses and
+   the model assumptions that close each loophole.
+7. **Finite-time channel.** State U7 and identify the exact common-action gap.
+8. **Gravity interface.** Separate proved compactness proxies from the open
+   choice of gravitational functional.
+9. **Combined theorem or obstruction.** Include only after U8-U10 close.
+10. **Discussion for observer frameworks.** Ask whether any comparison to
+   `S_Ob` is meaningful; do not assume one.
+
+Appendices contain the rate-distortion proof, fusion/Hardy proof, Gibbs
+inversion, postselection lemma, error-composition proof, and machine-readable
+certificates.
+
+## 9. Removable realization support
+
+The supported massive Skyrmion may appear in a realization appendix only if it
+helps populate a premise of U5, U7, U8, or U9. Deleting that appendix must leave
+U1-U7 and the paper's logical statement intact. The Skyrmion is not part of the
+title, abstract claim, or definition of `C_dir`.
+
+The current validated profile and collective calculations are evidence that a
+nontrivial localized rotor model exists. They do not identify `S_dir` with
+`S_Ob` and do not close the common-action observer theorem.
+
+## 10. Paper R diagnostic
+
+Paper R is recorded only as **INCONCLUSIVE STOP**. Its corrected response
+estimator is negative, but the certified full interval contains zero and the
+current primal proof object misses zero exclusion by roughly a factor of 9.50
+in norm. This is proof-resolution failure, not a vanishing-response theorem.
+
+Consequences for this manuscript:
+
+- no nonzero `B_W` appears as a premise;
+- no gradiometer contrast is described as certified;
+- no further interval subdivision is a Paper U work package; and
+- a future response calculation can return only as optional realization
+  evidence after a materially different proof object succeeds.
+
+## 11. Submission gate
+
+The G1/G2 material is suitable for expert conceptual review now. It becomes a
+Paper U submission only if either:
+
+1. U8-U10 close for one declared common-action model on an open parameter box;
+   or
+2. a controlled family is excluded by a dimensionless theorem whose physical
+   premises are jointly realized.
+
+Until then, the correct artifact is a theorem specification and research
+manuscript skeleton, not a claimed universal observer-gravity result.
