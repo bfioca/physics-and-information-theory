@@ -11,13 +11,13 @@
       .header { fill: #14283d; }
       .card { fill: #ffffff; stroke: #cdd6df; stroke-width: 1.2; }
       .side-card { fill: #f4f7fa; stroke: #bfcbd6; stroke-width: 1.2; }
-      .title { font: 700 24px sans-serif; fill: #ffffff; }
-      .subtitle { font: 400 12px sans-serif; fill: #d9e5ef; }
-      .section { font: 700 12px sans-serif; letter-spacing: 1.2px; fill: #556575; }
-      .node-title { font: 700 15px sans-serif; fill: #172331; }
-      .node-body { font: 400 11.5px sans-serif; fill: #485767; }
-      .side-title { font: 700 13px sans-serif; fill: #172331; }
-      .side-body { font: 400 10.2px sans-serif; fill: #485767; }
+      .title { font: 700 25px "DejaVu Sans", sans-serif; fill: #ffffff; }
+      .subtitle { font: 400 12.5px "DejaVu Sans", sans-serif; fill: #d9e5ef; }
+      .section { font: 700 12.4px "DejaVu Sans", sans-serif; letter-spacing: 1.2px; fill: #556575; }
+      .node-title { font: 700 15.5px "DejaVu Sans", sans-serif; fill: #172331; }
+      .node-body { font: 400 12px "DejaVu Sans", sans-serif; fill: #485767; }
+      .side-title { font: 700 13.3px "DejaVu Sans", sans-serif; fill: #172331; }
+      .side-body { font: 400 10.6px "DejaVu Sans", sans-serif; fill: #485767; }
       .tiny { font: 400 9.4px sans-serif; fill: #5a6877; }
       .status { font: 700 9px sans-serif; letter-spacing: 0.45px; fill: #ffffff; }
       .status-dark { font: 700 9px sans-serif; letter-spacing: 0.35px; fill: #172331; }
