@@ -55,6 +55,10 @@ def test_origin_residual_has_exact_x_cubed_weight() -> None:
     result = validated_origin_strong_residual_cell(coefficients, trial)
     assert result.radius_cutoff == Fraction(1, 2)
     assert result.residual_hat == (_point(-2), _point(2))
+    assert result.cutoff_derivative_residual == (
+        _point(Fraction(1, 4)),
+        _point(Fraction(-1, 4)),
+    )
     assert result.l2_squared_upper == Fraction(1, 3)
 
 

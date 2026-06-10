@@ -1,0 +1,61 @@
+{
+  "authenticated_inputs": {
+    "experiments/centrifugal_skyrmion_rational_response_trials.json": "9dd83028d00b55c85d280087a696884338941b6602e3f9148a41d524f5ace921",
+    "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431"
+  },
+  "certified_claims": {
+    "archived_adjoint_origin_trial_is_loaded": true,
+    "loaded_origin_l2_squared_upper_below_1e_minus_8": true,
+    "origin_squared_v_star_contribution_below_1e_minus_6": true,
+    "regular_origin_master_load_is_included": true,
+    "two_cells_cover_authenticated_slope_family": true,
+    "weak_load_hats_retain_the_exact_center_factor": true,
+    "weak_master_load_is_nonzero": true
+  },
+  "claim_boundary": "This certifies the exterior-master-loaded adjoint strong residual on the authenticated regular-origin cell. The exact conormal interface theorem, positive-radius completed-square lift, and wall load are separate certificates. This artifact does not improve the dominant positive-radius interval wrapping or prove response zero exclusion.",
+  "goal": "Validated Regular-Origin Exterior-Master Adjoint Load",
+  "load_hulls": {
+    "coordinate_source_hat": {
+      "lower": "-0.000020341717591757",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000000000000000000"
+    },
+    "derivative_source_hat": {
+      "lower": "-0.000006355707957815",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000000000000000000"
+    },
+    "loaded_residual_hat": {
+      "lower": "-0.003904068458675411",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.003905230735618879"
+    }
+  },
+  "loaded_origin_l2_squared_upper": {
+    "lower": "0.000000002481492320",
+    "representation": "outward_decimal_enclosure_18_places",
+    "upper": "0.000000002481492321"
+  },
+  "origin_squared_v_star_contribution_upper": {
+    "lower": "0.000000248149232002",
+    "representation": "outward_decimal_enclosure_18_places",
+    "upper": "0.000000248149232003"
+  },
+  "parameters": {
+    "completed_potential_lower_bound": "1/100",
+    "green_series_terms": 8,
+    "origin_cutoff": "1/16",
+    "profile_kernel_terms": 4,
+    "slope_cells": 2,
+    "time_horizon": "1/256"
+  },
+  "result_type": "loaded_regular_origin_adjoint_strong_residual",
+  "source_sha256": {
+    "experiments/validated_centrifugal_origin_adjoint_load_audit.py": "99dcae234a4f4a93d8d0977d1bab25a2090f7b1bb3db693579f723b907aa8708",
+    "qgtoy/centrifugal_skyrmion_origin_master_kernel.py": "180cde83094da92c8b07b050315957a1d9f3c899c79c62f12cb8967259b00916",
+    "qgtoy/validated_centrifugal_origin_adjoint_load.py": "a3744f48b031f1c3a161e3d4189070e93e683a0f5e4e10d129b79440753f29f1",
+    "qgtoy/validated_centrifugal_origin_profile_jets.py": "c71257e6d0f460f30ab93aa8f3f885e1311b498b9affc49f213d9358af722664",
+    "qgtoy/validated_centrifugal_origin_response_residual.py": "24e04157b673137696b4d03b73bb706657ae4cc394908ad396bb088b2fed9fba"
+  },
+  "status": "pass"
+}

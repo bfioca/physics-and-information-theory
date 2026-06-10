@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from fractions import Fraction
 
+from .validated_interval import RationalInterval
+
 
 @dataclass(frozen=True)
 class DualWeightedResponseInterval:
@@ -14,6 +16,22 @@ class DualWeightedResponseInterval:
     error_upper: Fraction
     response_lower: Fraction
     response_upper: Fraction
+    excludes_zero: bool
+    sign: int
+
+
+@dataclass(frozen=True)
+class DirectedDualWeightedResponseInterval:
+    """Dual-weighted enclosure with a directed corrected-estimator interval."""
+
+    corrected_estimate: RationalInterval
+    corrected_center: Fraction
+    estimator_radius: Fraction
+    primal_energy_dual_residual_upper: Fraction
+    adjoint_energy_dual_residual_upper: Fraction
+    residual_product_error_upper: Fraction
+    total_radius: Fraction
+    response: RationalInterval
     excludes_zero: bool
     sign: int
 
@@ -61,6 +79,48 @@ def certify_dual_weighted_response_interval(
         error_upper=error,
         response_lower=lower,
         response_upper=upper,
+        excludes_zero=excludes_zero,
+        sign=sign,
+    )
+
+
+def certify_directed_dual_weighted_response_interval(
+    *,
+    corrected_estimate: RationalInterval,
+    primal_energy_dual_residual_upper: Fraction,
+    adjoint_energy_dual_residual_upper: Fraction,
+) -> DirectedDualWeightedResponseInterval:
+    """Compose estimator width and the exact primal-adjoint product bound."""
+    if not isinstance(corrected_estimate, RationalInterval):
+        raise TypeError("corrected_estimate must be a RationalInterval")
+    residuals = (
+        primal_energy_dual_residual_upper,
+        adjoint_energy_dual_residual_upper,
+    )
+    if not all(isinstance(value, Fraction) for value in residuals):
+        raise TypeError("residual upper bounds must be exact Fractions")
+    if any(value < 0 for value in residuals):
+        raise ValueError("residual upper bounds must be nonnegative")
+
+    product = (
+        primal_energy_dual_residual_upper
+        * adjoint_energy_dual_residual_upper
+    )
+    center = corrected_estimate.midpoint
+    estimator_radius = corrected_estimate.width / 2
+    total_radius = estimator_radius + product
+    response = RationalInterval(center - total_radius, center + total_radius)
+    excludes_zero = not response.contains_zero()
+    sign = 1 if response.lower > 0 else -1 if response.upper < 0 else 0
+    return DirectedDualWeightedResponseInterval(
+        corrected_estimate=corrected_estimate,
+        corrected_center=center,
+        estimator_radius=estimator_radius,
+        primal_energy_dual_residual_upper=primal_energy_dual_residual_upper,
+        adjoint_energy_dual_residual_upper=adjoint_energy_dual_residual_upper,
+        residual_product_error_upper=product,
+        total_radius=total_radius,
+        response=response,
         excludes_zero=excludes_zero,
         sign=sign,
     )

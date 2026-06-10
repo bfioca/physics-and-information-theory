@@ -1,0 +1,248 @@
+{
+  "adjoint_energy_dual": {
+    "complete_norm_upper": {
+      "exact": "193916733722366143781011701758438934426449397549072366993/6277101735386680763835789423207666416102355444464034512896",
+      "float": 0.030892717992632712,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.030892717992632714"
+    },
+    "complete_squared_upper": {
+      "exact": "954360024972333/1000000000000000000",
+      "float": 0.000954360024972333,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.000954360024972333"
+    },
+    "positive_radius_plus_weak_wall_squared_upper": {
+      "exact": "477050898470717/500000000000000000",
+      "float": 0.000954101796941434,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.000954101796941434"
+    },
+    "representation": "weak completed-square bulk, origin, and wall",
+    "weak_loaded_origin_squared_upper": {
+      "exact": "258228030899/1000000000000000000",
+      "float": 2.58228030899e-07,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.000000258228030899"
+    }
+  },
+  "authenticated_inputs": {
+    "experiments/centrifugal_skyrmion_rational_response_trials.json": "9dd83028d00b55c85d280087a696884338941b6602e3f9148a41d524f5ace921"
+  },
+  "certified_claims": {
+    "adjoint_norm_uses_weak_origin_bulk_and_wall": true,
+    "all_component_artifacts_are_source_bound_and_passing": true,
+    "corrected_estimator_is_strictly_negative": true,
+    "decision_ratio_is_between_three_and_ten": true,
+    "full_response_interval_contains_zero": true,
+    "origin_cutoff_trace_is_included": true,
+    "predeclared_decision_is_inconclusive_stop": true,
+    "primal_norm_uses_all_strong_bulk_and_conormal_wall": true,
+    "rotational_derivative_load_is_continuous_at_internal_joins": true,
+    "rotational_derivative_load_vanishes_at_the_wall": true,
+    "signed_outer_estimator_is_strictly_negative": true,
+    "theorem_r1_is_not_certified": true,
+    "theorem_r2_is_not_certified": true,
+    "weak_wall_completion_contains_no_conormal": true,
+    "weyl_normalization_has_no_numeric_inertia_error": true
+  },
+  "claim_boundary": "This closes the predeclared Paper-R viability sprint with an INCONCLUSIVE_STOP decision. The directed corrected estimator is negative, but the rigorous residual-product response interval contains zero. Therefore neither a nonzero leading exterior-Weyl theorem nor the equal-energy state-sensitive nonzero corollary is certified. No finite-Omega, self-gravity, detector, or tensorial Israel-matching statement is made.",
+  "component_artifact_sha256": {
+    "adjoint_origin": "3e7d4ed151c417d076872c59947027a12aa5acd295b780182c7d7f5fa6af2e6d",
+    "adjoint_outer_wall": "86424d4430c540970051e1815c30ca3b51fc24c03b55840c41472c1fe83b1f00",
+    "primal_origin": "51a6d1e66de43e89c10471c0f3962030b172e37faccad6f56cff6421fd844300",
+    "primal_outer_wall": "c845afa6c0cedc18a08f25b9ca5d02314888306189eed29d7012f819f2dec5a4",
+    "signed_origin": "f7ce2946b2cc2c97bbe75cb5dbc379975a2fc7985efd0ce2ed2953c776189156",
+    "signed_outer": "078e596f394aabcee86a8f8d89d6282ffef37342b9fa9a1a5f155577b3cb8c9a",
+    "wall_master": "4be9f09ffda9acd5708ae608d33393e8f913587cd1245cb35b83acc660709797"
+  },
+  "decision": "INCONCLUSIVE_STOP",
+  "decision_reason": "the bounded sprint forbids a second general redesign",
+  "frozen_scope": {
+    "background": "pure de Sitter",
+    "completed_potential_floor": "1/100",
+    "curvature": "1/400",
+    "patch_radius": "20",
+    "pion_mass_squared": "1",
+    "principal_floor": "1/100",
+    "quantity": "leading O(Omega^2) fixed-background exterior amplitude",
+    "wall_model": "ideal positive-tension Nambu-Goto membrane",
+    "wall_radius": "4"
+  },
+  "full_response": {
+    "estimator_radius": {
+      "exact": "526622925759335542997114559701059391383/2000000000000000000000000000000000000000000",
+      "float": 0.00026331146287966777,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.000263311462879668"
+    },
+    "excludes_zero": false,
+    "exterior_amplitude": {
+      "lower": "-0.027341192151999246",
+      "lower_exact": "-48989833093850683520721374465110821102342722690361138390483594265811336991897019235890311929530470022432844966911525876163274701570363115766939/1791795793742243368445953824454755422497316397787719627919991280771033496944128756304701994617285692620800000000000000000000000000000000000000000",
+      "lower_float": -0.027341192151999247,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "0.021708706437937767",
+      "upper_exact": "194487844415410244046966344932582284545779755863603094845690498996753282113553984820281648892806354243666976392451492945500035276120772712666887/8958978968711216842229769122273777112486581988938598139599956403855167484720643781523509973086428463104000000000000000000000000000000000000000000",
+      "upper_float": 0.021708706437937767
+    },
+    "relative_radius": {
+      "exact": "219718504942331830825286608629068195028746684657704393399054235162904983536519540499866604270229352177915600613504561163158204391986294145750791/25230660526921586778320263696485910482966928794101298553363736166151701422965555679584955377422997934248624221053068217658169115865521433083904",
+      "float": 8.708392897914349,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "8.708392897914348130"
+    },
+    "residual_product_error_upper": {
+      "exact": "955957204194643124845928050865900747722228219324969496744104902568104802322286271764156941432036104415894297713023/39402006196394479212279040100143613805079739270465446667948293404245721771497210611414266254884915640806627990306816",
+      "float": 0.024261637832088838,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.024261637832088839"
+    },
+    "sign": 0,
+    "total_radius": {
+      "exact": "219718504942331830825286608629068195028746684657704393399054235162904983536519540499866604270229352177915600613504561163158204391986294145750791/8958978968711216842229769122273777112486581988938598139599956403855167484720643781523509973086428463104000000000000000000000000000000000000000000",
+      "float": 0.024524949294968505,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.024524949294968507"
+    }
+  },
+  "future_improvement_diagnostic": {
+    "current_to_required_primal_norm_factor": {
+      "exact": "31051357583453186142635917962054163182536422655336975391560531617613404391129158146868476947411055218250316937266916283988393843173980712890625/3267379809823151278783582971685265390282171817679390413604746046648649803478588886828241391295861754869320309773845863202674518013870325366784",
+      "float": 9.50344293923205,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "9.503442939232050245"
+    },
+    "dominant_primal_cell": {
+      "lower": "1/2",
+      "upper": "11/16"
+    },
+    "interpretation": "A future proof attempt needs a materially better certified primal trial or Riesz representation, not another general subdivision of the present bounded sprint.",
+    "required_primal_norm_if_adjoint_is_held_fixed": {
+      "exact": "520523634562675253848869853454536884803850470000794109811650761655620093861590728704/6298794353771561866032233727779090467734977130446050295859095058403909206390380859375",
+      "float": 0.08263861388822745,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.082638613888227453"
+    },
+    "zero_exclusion_product_limit": {
+      "exact": "1276465697075535937730293452004758624911/500000000000000000000000000000000000000000",
+      "float": 0.002552931394151072,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.002552931394151072"
+    }
+  },
+  "goal": "Bounded Paper-R Viability Sprint",
+  "primal_energy_dual": {
+    "complete_norm_upper": {
+      "exact": "4929730332418362445991654738978111733304345632298356317711/6277101735386680763835789423207666416102355444464034512896",
+      "float": 0.7853513516639988,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.785351351663998829"
+    },
+    "complete_squared_upper": {
+      "exact": "154194186390117489/250000000000000000",
+      "float": 0.6167767455604699,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.616776745560469956"
+    },
+    "positive_radius_plus_strong_wall_squared_upper": {
+      "exact": "153660934557651589/250000000000000000",
+      "float": 0.6146437382306064,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.614643738230606356"
+    },
+    "representation": "all-strong bulk; continuous residual derivative load cancels internal traces; conormal wall residual closes the endpoint",
+    "strong_origin_squared_upper": {
+      "exact": "5332518324659/2500000000000000",
+      "float": 0.0021330073298636,
+      "representation": "exact_fraction_plus_outward_upper_18_places",
+      "upper": "0.002133007329863600"
+    }
+  },
+  "result_type": "source_bound_inconclusive_stop_decision",
+  "signed_estimator": {
+    "complete": {
+      "lower": "-0.003079554319910408",
+      "lower_exact": "-615910863982081483691540292742115328241/200000000000000000000000000000000000000000",
+      "lower_float": -0.0030795543199104076,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "-0.002552931394151071",
+      "upper_exact": "-1276465697075535937730293452004758624911/500000000000000000000000000000000000000000",
+      "upper_float": -0.002552931394151072
+    },
+    "positive_radius": {
+      "lower": "-0.003042643730098509",
+      "lower_exact": "-3042643730098509/1000000000000000000",
+      "lower_float": -0.003042643730098509,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "-0.002524677921219318",
+      "upper_exact": "-1262338960609659/500000000000000000",
+      "upper_float": -0.002524677921219318
+    },
+    "regular_origin_with_cutoff_trace": {
+      "lower": "-0.000000306130830876",
+      "lower_exact": "-76532707719/250000000000000000",
+      "lower_float": -3.06130830876e-07,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "0.000000334063053909",
+      "upper_exact": "334063053909/1000000000000000000",
+      "upper_float": 3.34063053909e-07
+    },
+    "weak_wall": {
+      "lower": "-0.000036604458981023",
+      "lower_exact": "-7320891796204483691540292742115328241/200000000000000000000000000000000000000000",
+      "lower_float": -3.6604458981022416e-05,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "-0.000028587535985662",
+      "upper_exact": "-14293767992831437730293452004758624911/500000000000000000000000000000000000000000",
+      "upper_float": -2.8587535985662875e-05
+    }
+  },
+  "source_sha256": {
+    "experiments/paper_r_response_certificate_audit.py": "1b3c2018b69f228a8998c8098ed58184211972b5016e7f81ed960e25deb6fbdd",
+    "qgtoy/centrifugal_skyrmion_rational_response_trials.py": "3f0735151fc7a785c528fc290588133e085ed7e5b8bc339097696d373a055af0",
+    "qgtoy/dual_weighted_response_enclosure.py": "7a6043a1ab6c26f411e3b3d2dedff4d0f4c98bf7a7e0a65d7deae1ffc77d09e9",
+    "qgtoy/paper_r_response_certificate.py": "9857d837077f938b5b6b757a8b3f51de6070d2326a893113a5c2cb8723826bcd",
+    "qgtoy/paper_r_state_transfer.py": "142dc86b0c306780d78d1083e20d47b1cc7ae53cc482d95a2471f1c7fc07b73f",
+    "qgtoy/paper_r_wall_composition.py": "fbc946446e919265ed71fe91accbd3ded30f0b10f0ffe542fbe95d591013ded2",
+    "qgtoy/paper_r_weyl_observable.py": "653b80e7dd15399c68c30686460e6d511aef345f31ed8896bf395a3a1bb0511a",
+    "qgtoy/validated_centrifugal_response_residual.py": "a3b75ba537f302db6349f62c54458eb44f94ca4afed6d51b0f263755e646b654",
+    "qgtoy/validated_centrifugal_wall_master_load.py": "bacd9cf4080f399529bb92e5ad7bec6304e8723a01bc434956c1f53d2e116302",
+    "qgtoy/validated_interval.py": "dcc91000cd46134454f76fe73e88587757d102b98445dccb2a97d3a13ff5a929"
+  },
+  "status": "pass",
+  "weyl_and_state_transfer": {
+    "annular_rms_factor": "25/2",
+    "anticoherent_weyl_footprint": {
+      "lower": "0.000000000000000000",
+      "lower_exact": "0",
+      "lower_float": 0.0,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "0.000000000000000000",
+      "upper_exact": "0",
+      "upper_float": 0.0
+    },
+    "cat_weyl_footprint": {
+      "lower": "0.000000000000000000",
+      "lower_exact": "0",
+      "lower_float": 0.0,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "0.837149621647326000",
+      "upper_exact": "17538033336986659976925159225644436185086833236134614779600668328765090915235960048379320520379936018897875980892902797769753365885309519297690193261062482109492608415572922749192025046166059/20949699890535307968084414059696634574186509094675614652693064755815256296989917151252928590885786605765674778416384454458990441893666515541302576572006400000000000000000000000000000000000000",
+      "upper_float": 0.837149621647326
+    },
+    "conclusion": "not certified: the supplied exterior-amplitude interval does not establish a nonzero cat-state footprint",
+    "equal_casimir_and_leading_energy": true,
+    "normalization_note": "The normalized B_W removes c_I algebraically; no numerical inertia interval is added to this transfer.",
+    "state_sensitive_nonzero_conclusion": false,
+    "unit_tensor_weyl_footprint": {
+      "lower": "0.000000000000000000",
+      "lower_exact": "0",
+      "lower_float": 0.0,
+      "representation": "exact_fraction_plus_outward_decimal_18_places",
+      "upper": "0.341764901899990572",
+      "upper_exact": "48989833093850683520721374465110821102342722690361138390483594265811336991897019235890311929530470022432844966911525876163274701570363115766939/143343663499379469475676305956380433799785311823017570233599302461682679755530300504376159569382855409664000000000000000000000000000000000000000",
+      "upper_float": 0.3417649018999906
+    }
+  }
+}

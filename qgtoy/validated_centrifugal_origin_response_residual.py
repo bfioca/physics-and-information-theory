@@ -53,11 +53,11 @@ class _IntervalTimeJet:
     derivative: RationalInterval
 
     @classmethod
-    def constant(
-        cls, value: RationalInterval | int | Fraction
-    ) -> _IntervalTimeJet:
+    def constant(cls, value: RationalInterval | int | Fraction) -> _IntervalTimeJet:
         interval = (
-            value if isinstance(value, RationalInterval) else RationalInterval.point(value)
+            value
+            if isinstance(value, RationalInterval)
+            else RationalInterval.point(value)
         )
         return cls(interval, RationalInterval.point(0))
 
@@ -106,10 +106,7 @@ class _IntervalTimeJet:
         right = self._coerce(other)
         return _IntervalTimeJet(
             self.value / right.value,
-            (
-                self.derivative * right.value
-                - self.value * right.derivative
-            )
+            (self.derivative * right.value - self.value * right.derivative)
             / right.value.power(2),
         )
 
@@ -160,9 +157,7 @@ def _matrix_value(matrix: MatrixJet2) -> IntervalMatrix2:
 
 
 def _matrix_derivative(matrix: MatrixJet2) -> IntervalMatrix2:
-    return tuple(
-        tuple(entry.derivative for entry in row) for row in matrix
-    )  # type: ignore[return-value]
+    return tuple(tuple(entry.derivative for entry in row) for row in matrix)  # type: ignore[return-value]
 
 
 def validated_origin_conormal_cell_from_profile(
@@ -277,12 +272,8 @@ class RationalOriginTrialCell:
         return (root * a, root * v), (f_p, g_p)
 
 
-def _matrix_vector(
-    matrix: IntervalMatrix2, vector: IntervalVector2
-) -> IntervalVector2:
-    return tuple(
-        row[0] * vector[0] + row[1] * vector[1] for row in matrix
-    )  # type: ignore[return-value]
+def _matrix_vector(matrix: IntervalMatrix2, vector: IntervalVector2) -> IntervalVector2:
+    return tuple(row[0] * vector[0] + row[1] * vector[1] for row in matrix)  # type: ignore[return-value]
 
 
 def _transpose(matrix: IntervalMatrix2) -> IntervalMatrix2:
@@ -294,6 +285,7 @@ class ValidatedOriginStrongResidual:
     time: RationalInterval
     radius_cutoff: Fraction
     residual_hat: IntervalVector2
+    cutoff_derivative_residual: IntervalVector2
     l2_squared_upper: Fraction
 
 
@@ -317,11 +309,7 @@ def validated_origin_strong_residual_cell(
         v + t * v_t * 2,
     )
     d_t = (
-        u * 3
-        - v_t * 3
-        + t * u_t * 7
-        - t * v_tt * 2
-        + t.power(2) * u_tt * 2,
+        u * 3 - v_t * 3 + t * u_t * 7 - t * v_tt * 2 + t.power(2) * u_tt * 2,
         v_t * 3 + t * v_tt * 2,
     )
     mixed_t = _transpose(coefficients.mixed)
@@ -336,11 +324,7 @@ def validated_origin_strong_residual_cell(
         )
     )
     z_t = tuple(
-        principal_t_d
-        + principal_d_t
-        + mixed_t_a
-        + mixed_a_t
-        - source_t
+        principal_t_d + principal_d_t + mixed_t_a + mixed_a_t - source_t
         for principal_t_d, principal_d_t, mixed_t_a, mixed_a_t, source_t in zip(
             _matrix_vector(coefficients.principal_time_derivative, d),
             _matrix_vector(coefficients.principal, d_t),
@@ -361,6 +345,22 @@ def validated_origin_strong_residual_cell(
             strict=True,
         )
     )
+    endpoint_value, endpoint_derivative = trial.physical_endpoint_jet()
+    endpoint_a = tuple(RationalInterval.point(entry / root) for entry in endpoint_value)
+    endpoint_d = tuple(RationalInterval.point(entry) for entry in endpoint_derivative)
+    endpoint_z = tuple(
+        principal + mixed - source
+        for principal, mixed, source in zip(
+            _matrix_vector(coefficients.principal, endpoint_d),
+            _matrix_vector(_transpose(coefficients.mixed), endpoint_a),
+            coefficients.derivative_source_hat,
+            strict=True,
+        )
+    )
+    # The weak derivative residual is
+    # r1=s1-M^T y-P y'=-t Z.  Retain its physical cutoff value because a
+    # strong-form origin action requires the boundary term r1(x0) dot v(x0).
+    cutoff_derivative_residual = tuple(-entry.scale(horizon) for entry in endpoint_z)
     weight_integral = horizon * root / 3
     square_upper = weight_integral * sum(
         _absolute_upper(entry) ** 2 for entry in residual_hat
@@ -369,6 +369,7 @@ def validated_origin_strong_residual_cell(
         time=coefficients.time,
         radius_cutoff=root,
         residual_hat=residual_hat,  # type: ignore[arg-type]
+        cutoff_derivative_residual=cutoff_derivative_residual,  # type: ignore[arg-type]
         l2_squared_upper=square_upper,
     )
 

@@ -125,6 +125,19 @@ class _CenteredTaylorModel:
     def range(self) -> RationalInterval:
         return self.polynomial_range() + self.remainder
 
+    def symmetric_integral(self) -> RationalInterval:
+        """Enclose the integral over the normalized coordinate ``[-1, 1]``.
+
+        Polynomial coefficients are constant intervals, so odd monomials
+        integrate to zero exactly. The pointwise Taylor remainder contributes
+        twice its interval enclosure.
+        """
+        total = RationalInterval.point(0)
+        for power, coefficient in enumerate(self.coefficients):
+            if power % 2 == 0:
+                total += coefficient.scale(Fraction(2, power + 1))
+        return total + self.remainder.scale(2)
+
     def with_added_remainder(self, radius: Fraction) -> _CenteredTaylorModel:
         if radius < 0:
             raise ValueError("remainder radius must be nonnegative")

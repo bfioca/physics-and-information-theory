@@ -46,9 +46,12 @@ it is far above the roughly `0.04` design target. The next improvement must
 retain radial/profile/trial correlations in the weak load and completed-square
 multiplier, just as the centered primal theorem did.
 
-The regular-origin master load is deliberately absent. Consequently this is
-not a full loaded adjoint norm and cannot be inserted as `delta_z` in the
-dual-weighted zero-exclusion theorem.
+The artifact described on this page deliberately omits the regular-origin
+master load and is therefore a partial bound. The follow-up certificate
+`validated_centrifugal_origin_adjoint_load.md` closes that omission: its
+contribution to the squared dual bound is below
+`0.000000248149232003`. The dominant positive-radius wrapping and the need for
+a correlation-preserving redesign are unchanged.
 
 Reproduce with
 

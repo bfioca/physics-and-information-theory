@@ -1,0 +1,126 @@
+{
+  "authenticated_inputs": {
+    "experiments/centrifugal_skyrmion_rational_response_trials.json": "9dd83028d00b55c85d280087a696884338941b6602e3f9148a41d524f5ace921",
+    "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431"
+  },
+  "certified_claims": {
+    "archived_primal_and_adjoint_origin_trials_are_used": true,
+    "origin_cutoff_trace_is_included": true,
+    "origin_interval_alone_does_not_exclude_zero": true,
+    "rigid_plus_primal_origin_contribution_below_1e_minus_9": true,
+    "signed_complete_primal_residual_action_below_1e_minus_6": true,
+    "signed_origin_corrected_contribution_is_directly_enclosed": true,
+    "two_cells_cover_authenticated_slope_family": true
+  },
+  "claim_boundary": "This certifies only the two signed regular-origin contributions to J_rigid+B(y_h)+R_y(z_h), including the r1(x0) dot z_h(x0) cutoff trace required when the outer residual remains in weak form. The interval is intentionally reported even though it contains zero. Positive-radius and wall estimator terms, residual-product error, collective normalization, and response zero exclusion are not claimed.",
+  "goal": "Signed Regular-Origin Corrected-Estimator Contributions",
+  "parameters": {
+    "green_series_terms": 8,
+    "master_radial_weight_x4": "1/5242880",
+    "origin_cutoff": "1/16",
+    "profile_kernel_terms": 4,
+    "residual_action_radial_weight_x2": "1/12288",
+    "slope_cells": 2,
+    "time_horizon": "1/256"
+  },
+  "result_type": "validated_origin_corrected_estimator_terms",
+  "signed_origin_hulls": {
+    "J_rigid_plus_B_y_h": {
+      "lower": "-0.000000000097819258",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000000000094165448"
+    },
+    "R_y_of_z_h": {
+      "lower": "-0.000000306033011618",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000000333968888461"
+    },
+    "R_y_of_z_h_cutoff_trace": {
+      "lower": "-0.000000108845953434",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000000135509776212"
+    },
+    "R_y_of_z_h_strong_volume": {
+      "lower": "-0.000000197187058185",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000000198459112250"
+    },
+    "corrected_sum": {
+      "lower": "-0.000000306130830876",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000000334063053909"
+    }
+  },
+  "slope_cells": [
+    {
+      "J_rigid_plus_B_y_h": {
+        "lower": "-0.000000000096825456",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000000093228518"
+      },
+      "R_y_of_z_h": {
+        "lower": "-0.000000303405920836",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000331338627979"
+      },
+      "R_y_of_z_h_cutoff_trace": {
+        "lower": "-0.000000107843527386",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000134523984532"
+      },
+      "R_y_of_z_h_strong_volume": {
+        "lower": "-0.000000195562393450",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000196814643447"
+      },
+      "corrected_sum": {
+        "lower": "-0.000000303502746291",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000331431856496"
+      },
+      "shooting_slopes": {
+        "lower": "546684696508091/347185136818875",
+        "upper": "1462763601523/925827031517"
+      }
+    },
+    {
+      "J_rigid_plus_B_y_h": {
+        "lower": "-0.000000000097819258",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000000094165448"
+      },
+      "R_y_of_z_h": {
+        "lower": "-0.000000306033011618",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000333968888461"
+      },
+      "R_y_of_z_h_cutoff_trace": {
+        "lower": "-0.000000108845953434",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000135509776212"
+      },
+      "R_y_of_z_h_strong_volume": {
+        "lower": "-0.000000197187058185",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000198459112250"
+      },
+      "corrected_sum": {
+        "lower": "-0.000000306130830876",
+        "representation": "outward_decimal_enclosure_18_places",
+        "upper": "0.000000334063053909"
+      },
+      "shooting_slopes": {
+        "lower": "1462763601523/925827031517",
+        "upper": "550388004634159/347185136818875"
+      }
+    }
+  ],
+  "source_sha256": {
+    "experiments/validated_centrifugal_origin_corrected_estimator_audit.py": "24e60d487d54e134be7b675a2b9b3b83bde6bf2a14e8e214fea1f169f0696975",
+    "qgtoy/validated_centrifugal_origin_adjoint_load.py": "a3744f48b031f1c3a161e3d4189070e93e683a0f5e4e10d129b79440753f29f1",
+    "qgtoy/validated_centrifugal_origin_corrected_estimator.py": "034286a1cbf8c0165583f61897099e205cd59ce679590045f6696dccc11b13b5",
+    "qgtoy/validated_centrifugal_origin_profile_jets.py": "c71257e6d0f460f30ab93aa8f3f885e1311b498b9affc49f213d9358af722664",
+    "qgtoy/validated_centrifugal_origin_response_residual.py": "24e04157b673137696b4d03b73bb706657ae4cc394908ad396bb088b2fed9fba"
+  },
+  "status": "pass"
+}

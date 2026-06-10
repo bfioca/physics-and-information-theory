@@ -21,8 +21,7 @@ from qgtoy.validated_interval import RationalInterval, RationalPolynomial
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = (
-    ROOT
-    / "experiments/validated_centrifugal_origin_response_residual_certificate.json"
+    ROOT / "experiments/validated_centrifugal_origin_response_residual_certificate.json"
 )
 SOURCES = (
     "qgtoy/validated_centrifugal_origin_response_residual.py",
@@ -87,13 +86,13 @@ def build_record() -> dict[str, object]:
     claims = {
         "regular_residual_factor_is_exact": origin.residual_hat
         == (_point(-2), _point(2)),
-        "origin_x_cubed_weight_is_exact": origin.l2_squared_upper
-        == Fraction(1, 3),
-        "origin_and_outer_norms_compose": full.l2_squared_upper
-        == Fraction(1, 3),
-        "coercivity_lift_is_positive_and_finite": 0
-        < full.bulk_energy_dual_upper
-        < 6,
+        "weak_cutoff_derivative_residual_is_retained": (
+            origin.cutoff_derivative_residual
+            == (_point(Fraction(1, 4)), _point(Fraction(-1, 4)))
+        ),
+        "origin_x_cubed_weight_is_exact": origin.l2_squared_upper == Fraction(1, 3),
+        "origin_and_outer_norms_compose": full.l2_squared_upper == Fraction(1, 3),
+        "coercivity_lift_is_positive_and_finite": 0 < full.bulk_energy_dual_upper < 6,
         "zero_wall_mismatch_stays_zero": full.wall_energy_dual_upper == 0,
     }
     return {
@@ -103,6 +102,10 @@ def build_record() -> dict[str, object]:
         "certified_claims": claims,
         "residual_hat": [
             [str(value.lower), str(value.upper)] for value in origin.residual_hat
+        ],
+        "cutoff_derivative_residual": [
+            [str(value.lower), str(value.upper)]
+            for value in origin.cutoff_derivative_residual
         ],
         "radius_cutoff": str(origin.radius_cutoff),
         "origin_l2_squared_upper": str(origin.l2_squared_upper),

@@ -70,8 +70,9 @@ python -m pytest -q \
 
 The first residual is an authenticated primal origin contribution. The
 adjoint-shaped calculation deliberately uses zero load and therefore encloses
-only the homogeneous operator action. It is not an adjoint residual until the
-exterior-amplitude load is derived and enclosed. The conormal match at
-`x=1/16`, loaded adjoint residual, full-domain energy-dual interval, and
-nonzero exterior response remain open. A separate source-bound artifact now
-certifies the primal wall conormal mismatch.
+only the homogeneous operator action. The follow-up
+`validated_centrifugal_origin_adjoint_load.md` derives the exterior-amplitude
+load and certifies the loaded adjoint residual, while the exact conormal
+interface certificate includes the join at `x=1/16`. A sufficiently sharp
+full-domain energy-dual interval and nonzero exterior response remain open. A
+separate source-bound artifact certifies the primal wall conormal mismatch.

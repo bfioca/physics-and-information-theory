@@ -1,0 +1,60 @@
+{
+  "authenticated_inputs": {
+    "experiments/centrifugal_skyrmion_rational_response_trials.json": "9dd83028d00b55c85d280087a696884338941b6602e3f9148a41d524f5ace921",
+    "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431"
+  },
+  "certified_claims": {
+    "adjoint_origin_dual_norm_is_below_one_over_1000": true,
+    "adjoint_origin_squared_dual_is_below_one_over_one_million": true,
+    "loaded_adjoint_origin_uses_weak_fuchs_hats": true,
+    "primal_origin_squared_dual_is_below_one_over_400": true,
+    "primal_rotational_origin_uses_weak_fuchs_hats": true,
+    "principal_lower_bound_is_certified_on_every_cell": true,
+    "two_cells_cover_authenticated_slope_family": true,
+    "weak_origin_join_requires_no_cutoff_conormal_trace": true
+  },
+  "claim_boundary": "This certifies weak completed-square origin residual bounds for the archived primal rotational and loaded adjoint trials over the authenticated slope family. The weak adjoint origin can join the weak positive-radius residual without a cutoff conormal trace. Outer bulk, wall, signed estimator, and zero exclusion remain separate compositions.",
+  "goal": "Validated Regular-Origin Weak Form-Dual Bounds",
+  "loaded_adjoint_master": {
+    "energy_dual_upper": "0.000508161422088081",
+    "energy_dual_upper_float": 0.0005081614220880804,
+    "load": "master",
+    "maximum_derivative_squared_upper": "0.000000013913328472",
+    "maximum_value_squared_upper": "0.000000244314702428",
+    "squared_dual_upper": "0.000000258228030899",
+    "trial_name": "adjoint"
+  },
+  "parameters": {
+    "completed_potential_lower_bound": "1/100",
+    "exact_radial_weight": "x0^3/3",
+    "green_series_terms": 8,
+    "origin_cutoff": "1/16",
+    "principal_lower_bound": "1/100",
+    "profile_kernel_terms": 4,
+    "slope_cells": 2,
+    "time_horizon": "1/256"
+  },
+  "primal_rotational": {
+    "energy_dual_upper": "0.047110141518572811",
+    "energy_dual_upper_float": 0.04711014151857281,
+    "load": "rotational",
+    "maximum_derivative_squared_upper": "0.000122212236774107",
+    "maximum_value_squared_upper": "0.002097153197125852",
+    "squared_dual_upper": "0.002219365433899958",
+    "trial_name": "primal"
+  },
+  "result_type": "exact_rational_fuchs_weak_completed_square_bound",
+  "source_sha256": {
+    "experiments/validated_centrifugal_origin_weak_dual_audit.py": "3436ab362c76f2c0d457ebd73aaa7bc8febdaa84453c2acaffad87a6553f6484",
+    "qgtoy/centrifugal_skyrmion_conormal_blocks.py": "5a69e5241d66f7224105a1a17b62b3d35f89cddf8a2df5dde0ad44cac32ad018",
+    "qgtoy/centrifugal_skyrmion_origin_master_kernel.py": "180cde83094da92c8b07b050315957a1d9f3c899c79c62f12cb8967259b00916",
+    "qgtoy/centrifugal_skyrmion_rational_response_trials.py": "3f0735151fc7a785c528fc290588133e085ed7e5b8bc339097696d373a055af0",
+    "qgtoy/validated_centrifugal_origin_adjoint_load.py": "a3744f48b031f1c3a161e3d4189070e93e683a0f5e4e10d129b79440753f29f1",
+    "qgtoy/validated_centrifugal_origin_profile_jets.py": "c71257e6d0f460f30ab93aa8f3f885e1311b498b9affc49f213d9358af722664",
+    "qgtoy/validated_centrifugal_origin_response_residual.py": "24e04157b673137696b4d03b73bb706657ae4cc394908ad396bb088b2fed9fba",
+    "qgtoy/validated_centrifugal_origin_weak_dual.py": "8cbfd80ff4a4988c55b2b7d3f8589ca1af9b7475db6a3acd207575379547137e",
+    "qgtoy/validated_interval.py": "dcc91000cd46134454f76fe73e88587757d102b98445dccb2a97d3a13ff5a929",
+    "qgtoy/validated_skyrmion_quintic_family.py": "73a3969c1a965767492eecd41dae88b0441b95e91f585eda93c48d31066fdd97"
+  },
+  "status": "pass"
+}

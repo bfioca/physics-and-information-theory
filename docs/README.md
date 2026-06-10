@@ -59,6 +59,13 @@ Active paper draft:
 - `../paper/skyrmion_ule_outline.md` (realization/fallback)
 - `../paper/relational_observer_draft.md`
 
+Completed bounded side sprint:
+
+- `paper_r_viability_contract.md` (frozen model and decision rule)
+- `paper_r_viability_decision.md` (**INCONCLUSIVE STOP**)
+- `../paper/paper_r_manuscript_outline.md` (retained technical architecture,
+  not promoted to a paper draft)
+
 One-line summary:
 
 ```text
@@ -177,6 +184,12 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `validated_centrifugal_adjoint_bulk_load.md` | Exact weak exterior-master bulk load, positive Green enclosure, and authenticated coefficient-level adjoint residual. |
 | `validated_centrifugal_correlated_residual.md` | Common-coordinate Taylor enclosure reducing the certified outer primal residual square by more than `30000`. |
 | `validated_centrifugal_adjoint_energy_dual.md` | Direct completed-square partial adjoint `V*` bound with an explicit dominant-cell diagnostic and origin omission. |
+| `validated_centrifugal_origin_adjoint_load.md` | Exact center-factored exterior-master adjoint load and authenticated loaded regular-origin residual. |
+| `validated_centrifugal_origin_corrected_estimator.md` | Signed regular-origin contributions to `J_rigid+B(y_h)` and `R_y(z_h)` over the authenticated slope family. |
+| `validated_centrifugal_origin_weak_dual.md` | Weak completed-square origin bounds that compose with the weak loaded-adjoint outer residual without an artificial cutoff trace. |
+| `validated_centrifugal_correlated_adjoint.md` | Correlation-preserving local-matrix primal and loaded-adjoint diagnostics with representation-compatible wall terms. |
+| `paper_r_viability_contract.md` | Frozen leading-response model, Weyl observable, theorem targets, and predeclared GO/REASSESS/STOP/PIVOT thresholds. |
+| `paper_r_viability_decision.md` | Source-bound final `INCONCLUSIVE STOP` decision, full response interval, bottleneck, and future improvement requirement. |
 | `colleague_research_status_brief.md` | Candid colleague-facing assessment of proved results, publication options, open claims, and decision gates. |
 | `harlow_facing_paper_goal.md` | Theorem-shaped completion goal for a relational directional record with derived lifetime, localization, capacity, and gravitational footprint. |
 | `harlow_review_packet_codex_goal.md` | Copy-paste Codex objective for producing an audited, sendable Harlow critique packet without overclaiming paper completion. |

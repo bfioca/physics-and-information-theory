@@ -4,9 +4,20 @@
     "origin_and_outer_norms_compose": true,
     "origin_x_cubed_weight_is_exact": true,
     "regular_residual_factor_is_exact": true,
+    "weak_cutoff_derivative_residual_is_retained": true,
     "zero_wall_mismatch_stays_zero": true
   },
   "claim_boundary": "This certifies the cancellation-safe origin residual theorem and its exact composition rule on supplied regular coefficients and trials. It does not construct authenticated physical origin profile boxes, matched primal/adjoint trials, or a nonzero exterior response interval.",
+  "cutoff_derivative_residual": [
+    [
+      "1/4",
+      "1/4"
+    ],
+    [
+      "-1/4",
+      "-1/4"
+    ]
+  ],
   "full_bulk_energy_dual_upper": "3164243864002783526805103492435547124370471010825/548063113999088594326381812268606132370974703616",
   "goal": "Cancellation-Safe Origin Response Residual",
   "origin_l2_squared_upper": "1/3",
@@ -23,8 +34,8 @@
   ],
   "result_type": "exact_origin_factorization_and_weighted_residual_norm",
   "source_sha256": {
-    "experiments/validated_centrifugal_origin_response_residual_audit.py": "c05dc4f713368eecea5e92333bcadd663a82bda45011e873f7f0bf60a46595fc",
-    "qgtoy/validated_centrifugal_origin_response_residual.py": "44da2cb7d73357c84577d9c0673c4b62fd5801a65fc773cc92038d96896d7932"
+    "experiments/validated_centrifugal_origin_response_residual_audit.py": "abb9b273ce0e68d2bf8a8d484073af23e6af8607dde01ed4aac667b2dbc96504",
+    "qgtoy/validated_centrifugal_origin_response_residual.py": "24e04157b673137696b4d03b73bb706657ae4cc394908ad396bb088b2fed9fba"
   },
   "status": "pass"
 }

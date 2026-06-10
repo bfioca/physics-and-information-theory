@@ -9,6 +9,21 @@ from qgtoy.validated_interval import RationalInterval, RationalPolynomial
 from qgtoy.validated_skyrmion_bvp import SkyrmionPolynomialCell
 
 
+def test_centered_taylor_model_integrates_odd_terms_exactly() -> None:
+    model = _CenteredTaylorModel(
+        coefficients=tuple(
+            RationalInterval.point(value)
+            for value in (Fraction(3), Fraction(7), Fraction(5), Fraction(-11))
+        ),
+        remainder=RationalInterval(Fraction(-1, 10), Fraction(1, 5)),
+    )
+
+    assert model.symmetric_integral() == RationalInterval(
+        Fraction(3) * 2 + Fraction(5) * Fraction(2, 3) - Fraction(1, 5),
+        Fraction(3) * 2 + Fraction(5) * Fraction(2, 3) + Fraction(2, 5),
+    )
+
+
 def test_centered_model_multiplication_contains_endpoint_products() -> None:
     model = _CenteredTaylorModel.from_polynomial(
         RationalPolynomial((Fraction(2), Fraction(1), Fraction(-1, 3))),
