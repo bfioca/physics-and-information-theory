@@ -1,7 +1,8 @@
 # Harlow-Facing Paper Goal
 
-Status: proposed paper-level completion goal under the active observer-algebra
-research program
+Status: active Paper U research program after the bounded Paper R route ended
+in **INCONCLUSIVE STOP**. The Harlow packet remains a GO for conceptual review;
+Paper A is the publishable fallback candidate.
 
 ## Working title
 
@@ -24,8 +25,9 @@ The paper is complete only when it:
    local interaction used to create or access that record;
 3. upper-bounds the available directional-record information using the same
    model's localization, energy, and weak-backreaction budgets;
-4. certifies that the supported reference produces a nonzero normalized
-   exterior electric-Weyl response on fixed de Sitter; and
+4. identifies and controls a gauge-invariant gravitational quantity relevant
+   to the register's capacity or disturbance, without assuming that the
+   provisional fixed-background Weyl witness is the correct quantity; and
 5. eliminates the auxiliary budgets into one dimensionless compatibility or
    obstruction inequality with a complete error ledger.
 
@@ -43,18 +45,18 @@ Freeze a declared model class `C_dir` consisting of:
 - one controlled family of initial states;
 - one preparation, storage, and relational readout protocol;
 - explicit proper-time and optical-support conventions; and
-- a fixed-background weak-response criterion.
+- a declared gauge-invariant gravitational budget or disturbance criterion.
 
 For every admissible model, state, and allowed protocol in `C_dir`, prove a
 statement of the schematic form
 
 ```text
 R_rel(T) >= F_record[S_dir, Gamma(T), eta_channel],
-S_dir    <= F_capacity[E_K, a, s_opt, rho_h, B_W; theta],
+S_dir    <= F_capacity[E_K, a, s_opt, rho_h, G_cap; theta],
 
 therefore
 
-Phi(R_rel(T), T, s_opt, rho_h, B_W; theta) >= 0.
+Phi(R_rel(T), T, s_opt, rho_h, G_cap; theta) >= 0.
 ```
 
 Here:
@@ -68,7 +70,7 @@ E_K        Killing energy of the same observer configuration
 a          proper enclosing radius
 s_opt      optical support radius
 rho_h      proper horizon distance
-B_W        normalized gauge-invariant exterior electric-Weyl footprint
+G_cap      selected gauge-invariant gravitational capacity/disturbance variable
 theta      declared model and approximation parameters
 ```
 
@@ -117,10 +119,9 @@ The same interaction should, within one controlled approximation:
 - implement or justify the readout channel; and
 - contribute to the stress-energy ledger.
 
-## Frozen gravitational observable
+## Provisional gravitational diagnostic
 
-For this paper, use a fixed-background quantity that the repository can
-actually certify:
+The repository has an exact fixed-background diagnostic architecture:
 
 ```text
 B_W = normalized l=2 electric-Weyl response on a fixed exterior annulus,
@@ -135,11 +136,17 @@ The normalization must remove master-field convention and state clearly:
 - the source-to-master and master-to-Weyl maps; and
 - the perturbative smallness regime.
 
-This establishes that the directional register is not gravitationally
-invisible. It does not claim that `B_W` is the final entropy bottleneck in a
-closed-universe observer rule. Whether horizon shift, QES displacement,
-collapse, or another invariant should replace it is a central question for
-external critique.
+The exact source, transmission, and reconstruction maps do not establish that
+the completed directional register is gravitationally non-invisible. The
+bounded Paper R sprint found a stably negative corrected estimator, but the
+rigorous full interval contains zero. Its primal certificate would need about
+a `9.50`-fold norm improvement, so this route is stopped pending a genuinely
+different proof object.
+
+Accordingly, `B_W` is suggestive design evidence and a diagnostic appendix,
+not a premise of Paper U. Whether collapse, horizon or QES displacement,
+backreaction energy, or another invariant should define `G_cap` is a central
+question for external critique.
 
 ## Completion gates
 
@@ -181,18 +188,27 @@ eta_channel < operational risk margin
 
 on a nonempty open parameter set. A stipulated heat rate does not pass.
 
-### G4. Certified gravitational footprint
+### G4. Gravitational quantity and controlled budget
 
-Complete the current dual-weighted response enclosure and prove a normalized
-lower bound
+Choose a gauge-invariant quantity `G_cap` that is physically relevant to a
+finite observer register and derive its dependence on the same localized state
+family and action. A fixed-background Weyl lower bound remains one possible
+diagnostic, but is no longer silently assumed to be the capacity variable.
+
+The completed Paper R sprint tested
 
 ```text
-|B_W| >= b_min > 0.
+|B_W| >= b_min > 0
 ```
 
-Pass condition: the interval excludes zero after origin, bulk, wall, and
-finite-response errors are included. The current floating value is design
-evidence only.
+and did not pass: the corrected estimator is negative, while the rigorous full
+response interval contains zero. This is a proof-resolution failure in the
+frozen representation, not a physical no-go.
+
+Pass condition for Paper U: `G_cap` is conceptually justified, gauge invariant
+on the declared domain, quantitatively controlled with the other budgets, and
+does not depend on an uncertified Paper R conclusion. If `B_W` is retained, a
+new proof strategy must produce a full interval excluding zero.
 
 ### G5. Common parameter window
 
@@ -229,18 +245,19 @@ Publication approval belongs to authors, editors, and referees.
 
 ## Decision rules
 
-1. If G4 closes, freeze the fixed-background response theorem rather than
-   immediately expanding into full self-gravity.
-2. If G3 cannot produce a controlled physical record channel, publish Paper R
-   separately and keep the lifetime theorem conditional.
+1. Treat the completed Paper R route as **INCONCLUSIVE STOP**. Do not promote
+   it or resume generic subdivision; return only with a better primal trial, a
+   certified Riesz solve, or a structural decomposition.
+2. Do not make Paper U depend on a nonzero `B_W` theorem. Use external review
+   to choose or refine the gravitational quantity before building the next
+   expensive bridge.
 3. If the `S_dir` to observer-entropy comparison is not meaningful, retain
    `S_dir` as operational directional information and ask what quantity should
    replace it.
-4. If interval widths remain large, improve one correlation-aware
-   representation. Do not reinterpret an upper-bound failure as a physical
-   no-go.
+4. Prioritize the common-action record channel and the narrower Paper U theorem
+   that can be stated without uncertified response evidence.
 5. Keep the validated profile theorem as a technical companion or independent
-   fallback, not as the reason the observer paper matters.
+   Paper A fallback, subject to novelty and hard-wall positioning review.
 
 ## Harlow review packet
 
@@ -259,8 +276,9 @@ The review packet should contain:
    to the observer entropy in the observer rule, or are they different
    resources?
 
-2. Which gauge-invariant gravitational quantity should cap the capacity of a
-   finite observer register in a de Sitter causal patch?
+2. Which gauge-invariant gravitational quantity should replace or refine the
+   provisional fixed-background Weyl witness when constraining a finite
+   observer register in a de Sitter causal patch?
 
 3. Would a one-action semiclassical model deriving relational records,
    lifetime, localization, and gravitational footprint clarify the observer
@@ -272,4 +290,5 @@ The review packet should contain:
 **Deliver a theorem-first paper in which one localized finite directional
 register acquires, stores, and reads a relational orientation record with
 quantified information and lifetime, while the same controlled model fixes its
-support, energy cost, and nonzero gauge-invariant gravitational footprint.**
+support, energy cost, and a physically justified gauge-invariant gravitational
+budget.**

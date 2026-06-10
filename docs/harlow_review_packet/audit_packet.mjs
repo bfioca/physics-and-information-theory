@@ -87,12 +87,20 @@ check(!/approve publication|approval for publication|endorse (?:the|this) paper/
   "email appears to request approval or endorsement");
 check(/S_dir[^<]{0,80}(?:not|!=)[^<]{0,80}S_Ob|S_dir\s*!=\s*S_Ob/.test(html),
   "packet does not state that S_dir is distinct from S_Ob");
-check(/(?:does not (?:yet )?exclude zero|no rigorous.{0,120}interval.{0,120}excludes? zero)/i.test(textOnly(html)),
-  "packet does not state the current Weyl zero-exclusion boundary");
+check(/(?:does not (?:yet )?exclude zero|no rigorous.{0,120}interval.{0,120}excludes? zero|full.{0,80}interval.{0,80}contains zero)/i.test(textOnly(html)),
+  "packet does not state that the completed response interval contains zero");
 check(/common-action.{0,120}(?:open|missing)/i.test(textOnly(html)),
   "packet does not identify the common-action channel as open");
-check(/fixed-background/i.test(html) && /not (?:a |the )?capacity bound/i.test(html),
+check(/fixed-background/i.test(html) && /not (?:a |the )?(?:observer-)?capacity bound/i.test(html),
   "packet does not distinguish the fixed-background witness from a capacity bound");
+check(/INCONCLUSIVE STOP/.test(textOnly(html)),
+  "packet does not record the predeclared Paper R INCONCLUSIVE STOP");
+check(/9\.50(?:x|-fold)/.test(textOnly(html)),
+  "packet does not quantify the roughly 9.50-fold primal certificate gap");
+check(/Paper R.{0,120}(?:not promoted|frozen as a viability memo|stopped as a viability test)/i.test(textOnly(html)),
+  "packet does not state that Paper R is stopped and not promoted");
+check(!/(?:regular-origin master load is absent|present zero-exclusion gate|remaining interval calculation)/i.test(textOnly(html)),
+  "packet retains stale pre-sprint response language");
 check(/\[PROVED\]/.test(appendix) && /\[CONDITIONAL\]/.test(appendix) && /\[OPEN\]/.test(appendix),
   "technical appendix is missing one or more status labels");
 check((bibliography.match(/https:\/\/arxiv\.org\/abs\//g) ?? []).length === 12,

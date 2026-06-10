@@ -3,7 +3,7 @@
      width="8.5in" height="11in" viewBox="0 0 816 1056"
      role="img" aria-labelledby="title desc">
   <title id="title">Dependency map for a finite directional observer register</title>
-  <desc id="desc">A status-labeled dependency chain from relational alignment risk to a proposed observer tradeoff, with separate Paper A realization support and Paper R fixed-background gravitational-witness branches.</desc>
+  <desc id="desc">A status-labeled dependency chain from relational alignment risk to a proposed observer tradeoff, with Paper A as realization support and the stopped Paper R sprint as a fixed-background response diagnostic.</desc>
 
   <defs>
     <style>
@@ -159,29 +159,29 @@
   <rect x="600" y="377" width="176" height="22" rx="11" fill="#fbfcfd" stroke="#ae6811" stroke-width="1"/>
   <text class="status-dark" x="688" y="392" text-anchor="middle">[CONDITIONAL] candidate source</text>
 
-  <!-- Paper R gravitational witness card -->
+  <!-- Paper R response diagnostic card -->
   <rect class="side-card" x="596" y="421" width="184" height="262" rx="9"/>
-  <text class="side-title" x="610" y="445">Paper R: Weyl witness</text>
-  <rect class="conditional" x="654" y="454" width="112" height="20" rx="10"/>
-  <text class="status" x="710" y="468" text-anchor="middle">[CONDITIONAL]</text>
-  <text class="side-body" x="610" y="492">Fixed-background response only.</text>
+  <text class="side-title" x="610" y="445">Paper R: STOP diagnostic</text>
+  <rect class="proved" x="686" y="454" width="80" height="20" rx="10"/>
+  <text class="status" x="726" y="468" text-anchor="middle">[PROVED]</text>
+  <text class="side-body" x="610" y="492">Bounded fixed-background sprint.</text>
   <line class="divider" x1="610" y1="503" x2="766" y2="503"/>
 
-  <rect class="proved" x="610" y="516" width="66" height="18" rx="9"/>
-  <text class="status" x="643" y="529" text-anchor="middle">[PROVED]</text>
-  <text class="side-body" x="610" y="550">Exact master, transmission,</text>
-  <text class="side-body" x="610" y="564">and electric-Weyl maps.</text>
+  <rect class="conditional" x="610" y="516" width="98" height="18" rx="9"/>
+  <text class="status" x="659" y="529" text-anchor="middle">[CONDITIONAL]</text>
+  <text class="side-body" x="610" y="550">Signed estimator is stably</text>
+  <text class="side-body" x="610" y="564">negative.</text>
 
-  <rect class="conditional" x="610" y="576" width="98" height="18" rx="9"/>
-  <text class="status" x="659" y="589" text-anchor="middle">[CONDITIONAL]</text>
-  <text class="side-body" x="610" y="610">Source-bound floating target</text>
-  <text class="side-body" x="610" y="624">is stable and nonzero.</text>
+  <rect class="proved" x="610" y="576" width="66" height="18" rx="9"/>
+  <text class="status" x="643" y="589" text-anchor="middle">[PROVED]</text>
+  <text class="side-body" x="610" y="610">Full rigorous response interval</text>
+  <text class="side-body" x="610" y="624">contains zero.</text>
 
   <rect class="open" x="610" y="637" width="62" height="18" rx="9"/>
   <text class="status" x="641" y="650" text-anchor="middle">[OPEN]</text>
   <text class="side-body" x="680" y="650">B_W zero exclusion</text>
-  <text class="tiny" x="610" y="669">B_W is a candidate witness,</text>
-  <text class="tiny" x="610" y="680">not a capacity bound.</text>
+  <text class="tiny" x="610" y="669">INCONCLUSIVE STOP; not promoted</text>
+  <text class="tiny" x="610" y="680">and not a physical no-go.</text>
 
   <!-- Paper R to theorem connector -->
   <path class="branch open-line" d="M 780 642 L 796 642 L 796 793 L 510 793"/>

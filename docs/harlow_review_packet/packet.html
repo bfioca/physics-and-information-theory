@@ -295,8 +295,8 @@
     <div class="note-body">
       <div class="note-block">
         <h2>The observer-level question</h2>
-        <p>Quantum-gravity observer rules assign finite operational content to an observer subsystem, while de Sitter observer algebras include the observer in the construction <a href="#ref1">[1]</a>-<a href="#ref4">[4]</a>. We ask whether a narrow physical register can make some assumptions auditable: one localized system records the relative orientation of another, stores it for a stated proper time, and permits later relational readout.</p>
-        <p>The aim is not to identify a rotor with an observer, but to expose which information, dynamics, localization, and gravitational inputs an observer rule needs.</p>
+        <p>Quantum-gravity observer rules give finite operational content to an observer, while de Sitter algebras include it in the construction <a href="#ref1">[1]</a>-<a href="#ref4">[4]</a>. We ask whether a localized register can make assumptions auditable by storing another system's relative orientation for later readout.</p>
+        <p>The aim is not to identify a rotor with an observer, but to expose the needed information, dynamics, localization, and gravity.</p>
       </div>
 
       <div class="note-block">
@@ -327,14 +327,14 @@
       </div>
 
       <div class="note-block">
-        <h2>What gravity and the realization add</h2>
-        <p>On fixed de Sitter, exact conserved-source, transmission, and electric-Weyl maps define a gauge-invariant exterior witness <a href="#ref11">[11]</a>. No rigorous completed-source interval yet excludes zero. Even after zero exclusion, this is not a capacity bound; collapse, horizon or quantum-extremal-surface displacement, or another invariant may be relevant.</p>
-        <p>A supported massive Skyrmion supplies one certified matter candidate, alongside curved and gravitating de Sitter Skyrmions <a href="#ref12">[12]</a>. It establishes only that the supported-profile subproblem is nonempty; the architecture must survive rejection of this wall, membrane, or field model.</p>
+        <h2>What gravity adds, and what the sprint decided</h2>
+        <p>Exact fixed-de Sitter maps define a Weyl witness <a href="#ref11">[11]</a>. Its estimator is negative, but the bounded sprint's full interval contains zero because the primal certificate is about an order of magnitude too broad. Paper R stops as a viability test: a proof limitation, not physical cancellation. The witness remains suggestive, not a theorem or capacity bound.</p>
+        <p>A supported massive Skyrmion supplies one certified matter candidate <a href="#ref12">[12]</a>. It only makes the supported-profile subproblem nonempty; the architecture must survive rejection of this realization.</p>
       </div>
 
       <div class="note-block">
         <h2>Why request feedback now</h2>
-        <p>The project is at a fork before its most expensive bridge. We seek direction on the <code>S_dir</code>-to-<code>S_Ob</code> relation, the gravitational quantity constraining a finite register, and whether a one-action semiclassical model clarifies the observer rule without starting from a closed-universe path integral. We seek criticism and redirection, not endorsement or a publication decision.</p>
+        <p>The STOP makes the fork explicit. We ask whether finite directional records are useful, how <code>S_dir</code> relates to <code>S_Ob</code>, what gravitational quantity constrains the register, and whether a one-action model helps without a closed-universe path integral. We seek redirection, not endorsement or a publication decision.</p>
         <div class="boundary">Claim boundary: <code>S_dir != S_Ob</code>; record stability is not quantum coherence; measurement back-action is not gravitational backreaction; fixed-background response is not self-consistent gravity.</div>
       </div>
     </div>
@@ -354,11 +354,11 @@
     </div>
     <div class="eyebrow">The purpose of this packet</div>
     <h1>Where the observer model should connect to quantum gravity</h1>
-    <p class="questions-intro">These questions are intentionally upstream of the remaining interval calculation. A negative answer to any one of them would redirect the architecture while that redirection is still inexpensive.</p>
+    <p class="questions-intro">The response sprint did not certify zero exclusion. These questions decide whether a different bridge is worth building.</p>
 
     <ol class="question-list">
       <li class="review-question">Is <code>S_dir</code>, used here as an operational <code>SO(3)</code>-asymmetry resource for a covariant alignment task, meaningfully comparable to the observer entropy <code>S_Ob</code> in the observer rule, or are these fundamentally different resources?</li>
-      <li class="review-question">Which gauge-invariant gravitational quantity should constrain the capacity of a finite observer register in a de Sitter causal patch: collapse, horizon or quantum-extremal-surface displacement, exterior response, or something else?</li>
+      <li class="review-question">Which gauge-invariant quantity should replace or refine the fixed-background Weyl witness as a capacity constraint in a de Sitter patch: collapse, horizon or quantum-extremal-surface displacement, or another invariant?</li>
       <li class="review-question">Would a one-action semiclassical model deriving relational record formation, lifetime, localization, readout, and gravitational footprint clarify the observer rule, or is a closed-universe gravitational path integral essential from the outset?</li>
     </ol>
 
@@ -383,7 +383,7 @@
     <div class="footer"><span>Technical appendix A</span><span>4 / 9</span></div>
   </section>
 
-  <section class="sheet appendix-sheet" data-page="5">
+  <section class="sheet appendix-sheet" id="technical-capacity-profile" data-page="5">
     <div class="running-head"><span>Technical appendix</span><span>Capacity and realization</span></div>
     <h2>B. Capacity from localization and energy</h2>
     <p><span class="status proved">[PROVED]</span> For finitely many spinless nonrelativistic particles of total mass <code>M</code>, hard support <code>|x_i|&lt;=a</code>, and a ground-subtracted excitation Hamiltonian satisfying the quadratic-form inequality <code>H_ex&gt;=sum_i p_i^2/(2m_i)</code>, every form-domain state obeys</p>
@@ -402,7 +402,7 @@
     <div class="footer"><span>Technical appendix B-C</span><span>5 / 9</span></div>
   </section>
 
-  <section class="sheet appendix-sheet" data-page="6">
+  <section class="sheet appendix-sheet" id="technical-witness" data-page="6">
     <div class="running-head"><span>Technical appendix</span><span>Fixed-background witness</span></div>
     <h2>D. Conserved source, master field, and electric Weyl</h2>
     <p><span class="status proved">[PROVED]</span> A static quadrupolar source cannot be specified by energy density alone. W3n gives the exact static even-parity bulk conservation equations and wall tractions. W3o shows that the undeformed rigid rotational Skyrmion stress fails this gate. This rejects the rigid source, not rotating Skyrmions: the centrifugal matter deformation and moving support must be included.</p>
@@ -411,40 +411,32 @@
     <p><span class="status proved">[PROVED]</span> Once a valid conserved stress is supplied, the source, propagation, and readout maps are exact in one frozen convention. On fixed pure de Sitter, for the static <code>ell=2</code> normalization, regular center behavior, and no-log horizon condition,</p>
     <div class="equation">A_2 Psi = F, &nbsp; A_2=-d/dr[(1-r^2/R^2)d/dr]+6/r^2,<br>F=8piG[-r^2 N rho'/6+r(1+4r^2/R^2)rho/6<br>-r p_r/2-j+2r pi], &nbsp; delta E_rr=-6 Psi(r)Y_2/r^3. <span style="float:right">(D.1)</span></div>
     <p>The Friedrichs operator has a positive exact Green kernel and <code>A_2&gt;=6/R^2</code>. W3t, W3v, and W3x prove the stress-to-master identity, ideal-shell transmission, and exterior master-to-electric-Weyl reconstruction. Their artifact prefixes are <code class="hash">3be17612134b</code>, <code class="hash">c83536779d2a</code>, and <code class="hash">3025d65fe825</code>. Exact maps do not certify a nonzero completed input amplitude.</p>
-    <p><span class="status conditional">[CONDITIONAL]</span> Source-bound floating calculations reduce the exterior response to one scalar amplitude and give a stable nonzero target in the declared normalization. The feasibility artifact prefix is <code class="hash">584a22ea3ae9</code>. This is design evidence, not a continuum interval including profile, origin, bulk, and wall errors.</p>
+    <p><span class="status conditional">[CONDITIONAL]</span> The completed signed estimator is stably negative, <code>J_hat in [-0.0030795543,-0.0025529313]</code>, after including origin, correlated positive-radius, and compatible weak-wall terms. This is encouraging design evidence, not the response theorem: the rigorous residual-product interval on page 7 contains zero.</p>
     <div class="scope-box"><strong>Witness boundary.</strong> If nonzero, the proposed <code>B_W</code> would witness non-invisibility on a fixed background. It is not the observer-capacity bound, a self-consistent geometry, or a substitute for collapse, horizon/QES displacement, or full junction data.</div>
     <div class="footer"><span>Technical appendix D</span><span>6 / 9</span></div>
   </section>
 
-  <section class="sheet appendix-sheet" data-page="7">
-    <div class="running-head"><span>Technical appendix</span><span>Present zero-exclusion gate</span></div>
-    <h2>E. What remains in the response certificate</h2>
+  <section class="sheet appendix-sheet" id="technical-response-decision" data-page="7">
+    <div class="running-head"><span>Technical appendix</span><span>Bounded response decision</span></div>
+    <h2>E. Why Paper R stopped</h2>
     <p><span class="status proved">[PROVED]</span> The certification architecture is exact. Outside the compact source, the fixed-background response factorizes into one amplitude <code>A_ext=J_rigid+B(y)</code>. If the symmetric weak form obeys <code>q(y,v)=ell(v)</code> and the adjoint obeys <code>q(v,z)=B(v)</code>, arbitrary conforming trials satisfy</p>
     <div class="equation">J_hat=J_rigid+B(y_h)+R_y(z_h),<br>|A_ext-J_hat| &lt;= ||R_y||_(q*) ||R_z||_(q*). <span style="float:right">(E.1)</span></div>
-    <p>Zero exclusion therefore requires the distance of the corrected-amplitude interval from zero to exceed the product of the full primal and adjoint dual-residual bounds. This is W3z.17; its physical premises are not yet all closed.</p>
-    <p><span class="status proved">[PROVED]</span> The current interval program certifies a positive-radius primal residual-square bound, an origin primal bound, exact internal conormal cancellation, the moving-wall adjoint load, and the positive-radius weak adjoint bulk load. The corresponding artifact hashes are:</p>
-    <ul class="compact-list">
-      <li><code class="hash">814da74d5c21</code> (correlated outer primal residual),</li>
-      <li><code class="hash">7924fb7da3bb</code> (origin primal residual),</li>
-      <li><code class="hash">1ee677788edc</code> (conormal interface),</li>
-      <li><code class="hash">ee73b3527750</code> (wall master load), and</li>
-      <li><code class="hash">3db6d390d521</code> (positive-radius adjoint bulk load).</li>
-    </ul>
-    <p>These are certified proof components, not a response interval.</p>
-    <p><span class="status proved">[PROVED]</span> W3z.29 gives the current direct positive-radius-plus-wall adjoint form-dual estimate</p>
-    <div class="equation">delta_z,partial^2 &lt;= 0.592007476516919181,<br>delta_z,partial &lt;= 0.769420221021594403. <span style="float:right">(E.2)</span></div>
-    <p>More than 99 percent of this bound comes from the adjusted bulk value coefficient, concentrated near the first positive-radius cells; the wall term is small. The exact artifact prefix is <code class="hash">500e56b5aa36</code>.</p>
-    <p><span class="status open">[OPEN]</span> The regular-origin master load is absent, so (E.2) is not a full <code>delta_z</code>. Even before that term is added, the conservative partial bound is too broad for zero exclusion. This quantified interval loss is a representation diagnostic, not a physical no-go.</p>
-    <p><span class="status open">[OPEN]</span> No rigorous interval for the completed normalized electric-Weyl amplitude <code>B_W</code> presently excludes zero. The exact maps, favorable floating response, and unfinished physical zero-exclusion theorem are three separate facts.</p>
+    <p>Zero exclusion requires the distance of the corrected-estimator interval from zero to exceed the product of the full primal and adjoint dual-residual bounds. This is W3z.17.</p>
+    <p><span class="status proved">[PROVED]</span> The bounded sprint completed every origin, bulk, and wall term. The all-strong primal and weak completed-square adjoint certificates give</p>
+    <div class="equation">delta_y &lt; 0.785351351663998829, &nbsp; delta_z &lt; 0.030892717992632714,<br>delta_y delta_z &lt; 0.024261637832088839,<br>A_ext in [-0.027341192151999246,0.021708706437937767]. <span style="float:right">(E.2)</span></div>
+    <p>The full interval contains zero. Under the predeclared bounded-sprint rule, the result is <strong>INCONCLUSIVE STOP</strong>: no nonzero exterior-Weyl theorem or equal-energy state-discrimination corollary is certified. The decision artifact prefix is <code class="hash">bcbb4a1af96b</code>.</p>
+    <p><span class="status proved">[PROVED]</span> Holding the estimator and adjoint bound fixed, zero exclusion would require <code>delta_y&lt;0.082638613888227453</code>, about a <code>9.50x</code> reduction from the present primal norm. The dominant primal cell is <code>[1/2,11/16]</code>; the global coercivity floor is not the main loss.</p>
+    <p><span class="status open">[OPEN]</span> Paper R is frozen as a viability memo and not promoted as a manuscript. A future attempt needs a materially different proof object, such as a better conforming primal trial, a certified Riesz solve, or a structural decomposition. More general subdivision of the present representation is deferred.</p>
+    <div class="scope-box"><strong>Interpretation boundary.</strong> The negative estimator is suggestive; the zero-containing theorem interval is binding. This certifies failure of the present proof representation, not physical cancellation or a no-go theorem.</div>
     <div class="footer"><span>Technical appendix E</span><span>7 / 9</span></div>
   </section>
 
-  <section class="sheet appendix-sheet" data-page="8">
+  <section class="sheet appendix-sheet" id="technical-boundary" data-page="8">
     <div class="running-head"><span>Technical appendix</span><span>Claim boundary and reproduction</span></div>
     <h2>F. External claim boundary</h2>
     <p><span class="status proved">[PROVED]</span> The defensible mathematical core is: global relational <code>SO(3)</code> risk requires asymmetry and rotational resources; named localized matter classes convert rotational capacity into energy/support cost; one hard-wall profile and its fixed-background centrifugal inverse exist; and a valid conserved quadrupolar source has exact master, transmission, and Weyl maps.</p>
-    <p><span class="status conditional">[CONDITIONAL]</span> The defensible physical construction is narrower: a hard-supported Skyrmion is a plausible semiclassical realization, a stipulated heat channel gives an exact degradation law, and source-bound floating calculations favor a nonzero fixed-background exterior response.</p>
-    <p><span class="status open">[OPEN]</span> The project has not identified <code>S_dir</code> with <code>S_Ob</code>; derived acquisition-through-readout from one action; proved a common parameter window; interval-certified <code>|B_W|&gt;0</code>; completed tensorial Israel matching; solved a rotating self-gravitating Einstein-Skyrme-de Sitter geometry; or shown that exterior Weyl response caps observer information. A closed-universe path integral is outside the present claims.</p>
+    <p><span class="status conditional">[CONDITIONAL]</span> The defensible physical construction is narrower: a hard-supported Skyrmion is a plausible semiclassical realization, a stipulated heat channel gives an exact degradation law, and the signed fixed-background estimator favors a nonzero exterior response. The completed rigorous interval does not certify that response.</p>
+    <p><span class="status open">[OPEN]</span> The project has not identified <code>S_dir</code> with <code>S_Ob</code>; derived acquisition-through-readout from one action; proved a common parameter window; certified <code>|B_W|&gt;0</code>; completed tensorial Israel matching; solved a rotating self-gravitating Einstein-Skyrme-de Sitter geometry; or shown that exterior Weyl response caps observer information. A closed-universe path integral is outside the present claims.</p>
     <p><span class="status open">[OPEN]</span> Novelty, priority, venue fit, and publishability are not mathematical outputs of the repository. The separate literature matrix gives the primary-source comparison. Search absence is not used as proof of priority.</p>
 
     <h2>G. Reproducibility map</h2>
@@ -457,12 +449,12 @@
         <tr><td>[PROVED]</td><td>Supported collective sector floor</td><td>W3b; <code>docs/supported_skyrmion_collective_spectral_floor.md</code></td></tr>
         <tr><td>[PROVED]</td><td>Validated hard-wall profile</td><td>AU.1; exact Newton certificate listed on page 5</td></tr>
         <tr><td>[PROVED]</td><td>Fixed-background source/master/Weyl maps</td><td>W3t, W3v, W3x; artifact hashes on page 6</td></tr>
-        <tr><td>[CONDITIONAL]</td><td>Floating completed response</td><td>W3u, W3z.17; feasibility hash on page 6</td></tr>
-        <tr><td>[PROVED]</td><td>Certified residual components</td><td>W3z.24-W3z.29; hashes on page 7</td></tr>
-        <tr><td>[OPEN]</td><td>Full Weyl zero exclusion</td><td>Needs full primal and adjoint form-dual residuals, including regular-origin adjoint load</td></tr>
+        <tr><td>[PROVED]</td><td>Paper R viability decision</td><td><code>docs/paper_r_viability_decision.md</code>; decision hash on page 7</td></tr>
+        <tr><td>[CONDITIONAL]</td><td>Signed nonzero response evidence</td><td>Corrected estimator on page 6; the full interval contains zero</td></tr>
+        <tr><td>[OPEN]</td><td>Nonzero Weyl theorem</td><td>Needs a new primal proof object with about a 9.50-fold norm improvement</td></tr>
       </tbody>
     </table>
-    <p style="margin-top:8px"><span class="status proved">[PROVED]</span> The complete wording guardrail, exact artifact index, and 219-test focused verification record are in <code>docs/harlow_review_packet/claim_evidence_ledger.md</code>. The full source comparison and its unresolved search limits are in <code>literature_matrix.md</code> and <code>source_verification_log.md</code>.</p>
+    <p style="margin-top:8px"><span class="status proved">[PROVED]</span> The complete wording guardrail, exact artifact index, and focused verification record are in <code>docs/harlow_review_packet/claim_evidence_ledger.md</code>. The full source comparison and its unresolved search limits are in <code>literature_matrix.md</code> and <code>source_verification_log.md</code>.</p>
     <div class="scope-box"><strong>Adversarial distinctions.</strong> Absolute orientation versus relational alignment; quantum coherence versus classical record stability; <code>S_dir</code> versus <code>S_Ob</code>; measurement back-action versus gravitational backreaction; and fixed-background response versus self-consistent gravity are audited separately.</div>
     <div class="footer"><span>Technical appendix F-G</span><span>8 / 9</span></div>
   </section>

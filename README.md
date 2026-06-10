@@ -17,6 +17,8 @@ Send these two files:
 
 Attach the PDF and use the email draft. Do not lead with the raw branch URL;
 offer the executable repository and certificates only if they would be useful.
+The packet includes the completed Paper R **INCONCLUSIVE STOP** and does not
+present fixed-background Weyl response as an established theorem.
 
 This repository is a research-code benchmark suite. It uses small exact models
 to test when screen-visible data, entropy shadows, min-cut shadows, or
@@ -39,15 +41,16 @@ The massive Skyrmion is a certified test realization, not the headline claim.
 | --- | --- | --- |
 | Universal observer theorem | Open headline: eliminate the resource, lifetime, localization, and gravity budgets into one inequality. | [`universal_static_patch_observer_tradeoff_plan.md`](docs/universal_static_patch_observer_tradeoff_plan.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results; the common-action preparation/storage/readout channel remains open. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
-| Gravity and channel bridge | Fixed-background response and effective-channel components exist, but neither supplies the final observer-capacity bound. | [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md), [`static_patch_l2_weyl_reconstruction.md`](docs/static_patch_l2_weyl_reconstruction.md) |
+| Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**; effective-channel components remain conditional, and neither supplies the final observer-capacity bound. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
 | Certified matter realization | The supported Skyrmion supplies controlled profile, spectral, and response subproblems without being identified with the observer theorem. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
 
 **Claim boundary.** Global orientation-risk bounds, a confined-orbital
-localization-energy bridge, and supported-profile subproblems are rigorous on
-their declared domains. The effective record channel and fixed-background
-gravitational response remain conditional. The `S_dir`-to-`S_Ob` dictionary,
-one-action physical channel, gravitational capacity invariant, Weyl
-zero-exclusion, and self-consistent gravity remain open.
+localization-energy bridge, supported-profile subproblems, and the completed
+Paper R viability decision are rigorous on their declared domains. The signed
+response estimator is suggestive, but the full certified interval contains
+zero. The `S_dir`-to-`S_Ob` dictionary, one-action physical channel,
+gravitational capacity invariant, Weyl zero-exclusion, and self-consistent
+gravity remain open.
 
 Use the [`research execution plan`](docs/research_execution_plan.md) for the
 current ordering, the

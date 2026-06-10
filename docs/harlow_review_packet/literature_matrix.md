@@ -82,9 +82,9 @@ and a fixed-background Weyl response is not self-consistent gravity.
 
 | Primary source | Verified contribution | Relevance and narrow distinction |
 | --- | --- | --- |
-| Hideo Kodama and Akihiro Ishibashi, [*A master equation for gravitational perturbations of maximally symmetric black holes in higher dimensions*](https://arxiv.org/abs/hep-th/0305147) (2003) | Reduces gravitational perturbations, including nonzero-cosmological-constant cases, to gauge-invariant master equations. | Gauge-invariant master variables on static maximally symmetric backgrounds are standard. The repository's possible contribution is a source-specific, normalized, computer-certified nonzero response, not the formalism itself. |
+| Hideo Kodama and Akihiro Ishibashi, [*A master equation for gravitational perturbations of maximally symmetric black holes in higher dimensions*](https://arxiv.org/abs/hep-th/0305147) (2003) | Reduces gravitational perturbations, including nonzero-cosmological-constant cases, to gauge-invariant master equations. | Gauge-invariant master variables on static maximally symmetric backgrounds are standard. A future source-specific certified nonzero response could be a narrow contribution, but the completed bounded sprint here did not exclude zero. |
 | Karl Martel and Eric Poisson, [*Gravitational perturbations of the Schwarzschild spacetime: A practical covariant and gauge-invariant formalism*](https://arxiv.org/abs/gr-qc/0502028) (2005) | Gives covariant gauge-invariant even/odd master functions with source terms derived from material stress energy. | Establishes the sourced master-equation pattern. It is Schwarzschild rather than the project's pure-de-Sitter supported source and contains no finite observer-resource theorem. |
-| Lam Hui, Austin Joyce, Riccardo Penco, Luca Santoni, and Adam R. Solomon, [*Static response and Love numbers of Schwarzschild black holes*](https://arxiv.org/abs/2010.00593) (2021) | Derives actions for physical perturbations on Schwarzschild-(A)dS and computes static response/Love numbers. | Static gravitational response on a prescribed background is established and publishable in its own right. A certified material-source Weyl signal is a narrower source theorem, not a new concept of response and not self-consistent Einstein-Skyrme gravity. |
+| Lam Hui, Austin Joyce, Riccardo Penco, Luca Santoni, and Adam R. Solomon, [*Static response and Love numbers of Schwarzschild black holes*](https://arxiv.org/abs/2010.00593) (2021) | Derives actions for physical perturbations on Schwarzschild-(A)dS and computes static response/Love numbers. | Static gravitational response on a prescribed background is established and publishable in its own right. The present signed material-source estimator is suggestive, but its rigorous interval contains zero; even a later zero-exclusion theorem would not be self-consistent Einstein-Skyrme gravity. |
 
 ## 6. Curved-space, gravitating, and spinning Skyrmions
 
@@ -110,7 +110,7 @@ and a fixed-background Weyl response is not self-consistent gravity.
 | A directional register may concretize part of a finite gravitational observer. | Harlow-Usatyuk-Zhao; Harlow; CLPW; Chen-Xu | A research question, not an established dictionary. `S_dir -> S_Ob` remains **OPEN**. |
 | Small relational orientation risk requires finite directional information and that record degrades. | Bagan-Baig-Muñoz-Tapia; Bartlett et al.; Gour-Spekkens; Garmier et al. | Finite-resource orientation and degradation are prior art. The packet may report its proved risk bounds, but not claim the general idea. |
 | Accuracy, duration, localization, and gravity may obey one physical tradeoff. | Costa-Sanchez; Espíndola-Ali; Chen-Giacomini | Such tradeoffs and admissibility criteria exist for clocks/reference fields. The narrower unproved target is one rotational static-patch model with a common protocol and error ledger. |
-| A supported directional register has a nonzero gauge-invariant exterior footprint. | Kodama-Ishibashi; Martel-Poisson; Hui et al. | The formal response machinery is standard. A source-specific certified zero exclusion could be a focused result; until its final interval excludes zero it remains **OPEN**. |
+| A supported directional register may have a nonzero gauge-invariant exterior footprint. | Kodama-Ishibashi; Martel-Poisson; Hui et al. | The formal response machinery is standard. The bounded Paper R sprint produced a negative estimator but a zero-containing full interval and therefore stopped inconclusively. A future zero-exclusion theorem requires a new proof object and remains **OPEN**. |
 | The hard-wall Skyrmion supplies a controlled realization. | Brihaye-Delsate; Hata-Kikuchi; Giacomini et al.; van den Berg et al.; Liu-Nakao-Oishi | Curved/cavity/spinning Skyrmions and validated BVP methods are established separately. Only the exact source-bound certificate may be stated as **PROVED**; priority and robustness under smoothing remain unverified. |
 
 ## Safe wording for the packet
@@ -119,10 +119,10 @@ and a fixed-background Weyl response is not self-consistent gravity.
 > algebras, finite and degrading reference frames, physical clock limits, and
 > de Sitter open-system dynamics. We ask whether these ingredients can be made
 > quantitatively compatible in one deliberately narrow sector: a localized
-> relational directional record with a controlled gravitational witness. We do
+> relational directional record with a controlled gravitational budget. We do
 > not yet know whether its directional asymmetry is related to observer entropy
-> or whether the fixed-background Weyl response is the relevant gravitational
-> bottleneck.
+> or which invariant should replace or refine the provisional fixed-background
+> Weyl witness.
 
 ## Priority status
 

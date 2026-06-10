@@ -224,16 +224,18 @@ and
 These exact maps do not certify that the completed Skyrmion produces a
 nonzero input amplitude.
 
-**[CONDITIONAL]** Source-bound floating calculations reduce the completed
-exterior response to one scalar amplitude and give a stable dual-weighted
-target near `-0.002818947812` in the declared dimensionless normalization.
-The floating feasibility artifact has SHA256
-`584a22ea3ae9807dcc9da8cd6cc20274c943c52bb23c38923cbe8e6dcf986bf7`.
-This is design evidence only: the quoted fine-discrete residual product is
-exact relative to an assembled Galerkin system, not a continuum interval that
-includes the authenticated profile, origin, bulk, and wall errors.
+**[CONDITIONAL]** The completed signed estimator is stably negative,
 
-## E. Present zero-exclusion gate
+```text
+J_hat in [-0.003079554319910408,-0.002552931394151071].
+```
+
+This interval includes the regular-origin cutoff trace, correlated
+positive-radius contribution, and compatible weak-wall completion. It is
+encouraging design evidence, but it is not the response theorem because the
+continuum residual-product enclosure below contains zero.
+
+## E. Completed bounded response sprint
 
 **[PROVED]** The certification architecture itself is exact. Outside the
 compact source, the fixed-background response factorizes into one amplitude
@@ -247,51 +249,41 @@ J_hat = J_rigid+B(y_h)+R_y(z_h),
 ```
 
 Thus zero exclusion requires a corrected-amplitude interval whose distance
-from zero is larger than the product of full primal and adjoint dual-residual
-bounds. Equation (E.1) is Research Proposition W3z.17; satisfying its premises
-for the physical coefficients is the unfinished task.
+from zero is larger than the product of the full primal and adjoint
+dual-residual bounds. Equation (E.1) is Research Proposition W3z.17.
 
-**[PROVED]** The current interval program certifies the positive-radius primal
-residual square
-`<=0.010027698207072146`, the origin primal residual square
-`<=2.1330073298636e-5`, exact internal conormal cancellation, the moving-wall
-adjoint load, and the positive-radius weak adjoint bulk load. The respective
-artifact SHA256 values are
-`814da74d5c21cf96b45e9967dd5b8d297d90480a46c3f3ae7fd82ba3ffaad3e7`,
-`7924fb7da3bb96e92fb43f68cf9311b9ac9a6077292e69474fccf5579abab504`,
-`1ee677788edc45190c9b164c45bc4a76a1b9e395d172f12b5aa13241748200e2`,
-`ee73b3527750f91bcb2ed585df3d1d58376cbe0f4ff8db47919356872a86ed42`,
-and
-`3db6d390d521494d192c5df6b4bc5dfd1ee09f6d441f0bd69c3be2d18add44f5`.
-These are certified components of the proof, not a response interval.
-
-**[PROVED]** Research Proposition W3z.29 currently gives the direct
-positive-radius-plus-wall adjoint form-dual estimate
+**[PROVED]** The bounded sprint completed every term in that enclosure. The
+all-strong primal representation and the weak completed-square adjoint give
 
 ```text
-delta_z,partial^2 <= 0.592007476516919181,
-delta_z,partial   <= 0.769420221021594403.               (E.2)
+delta_y < 0.785351351663998829,
+delta_z < 0.030892717992632714,
+delta_y delta_z < 0.024261637832088839,
+A_ext in [-0.027341192151999246,0.021708706437937767].    (E.2)
 ```
 
-The wall contribution to the squared estimate is below `0.000175`. More than
-99 percent of the bound comes from the adjusted bulk value coefficient, with
-the dominant cell `[1/2,67/128]`. The exact artifact has SHA256
-`500e56b5aa36c64846100dc59a7383b2051a12c6676fcf8e6d49574f61142d0e`.
-Equation (E.2) is a rigorous representation diagnostic, not evidence of a
-physical obstruction.
+The result includes the regular-origin primal and loaded-adjoint terms,
+internal conormal cancellation, the strong primal wall residual, and the weak
+adjoint wall completion. The source-bound decision artifact is
+`experiments/paper_r_response_certificate.json`, SHA256
+`bcbb4a1af96b445b84464ddeda83cb6a568b0061bbc5146dd8fc11e72e124292`.
 
-**[OPEN]** The regular-origin master load is absent from (E.2), so it is not a
-full `delta_z`. Even before that missing origin term is added, the conservative
-partial adjoint bound is too broad to combine with the current primal bound
-and exclude zero in (E.1). The dominant quantified loss is the positive-radius
-adjusted bulk value coefficient, not the wall trace. A successful refinement
-must control this coefficient with stronger correlations or a better
-Riesz/adjoint representation and then add the regular-origin load.
+**[PROVED]** The full interval in (E.2) contains zero. Under the predeclared
+decision rule this is **INCONCLUSIVE STOP**: Paper R is retained as a viability
+memo and is not promoted to a response theorem or manuscript. The result does
+not establish cancellation or any physical no-go.
 
-**[OPEN]** No rigorous interval for the completed normalized electric-Weyl
-amplitude `B_W` presently excludes zero. The packet must therefore distinguish
-three facts: the source-to-Weyl maps are exact, the floating completed response
-is favorable, and the physical zero-exclusion theorem is not closed.
+**[PROVED]** Holding the estimator and completed adjoint bound fixed, zero
+exclusion would require `delta_y<0.082638613888227453`, an improvement factor
+of about `9.503442939232050245` over the present certified primal norm. The
+dominant primal cell is `[1/2,11/16]`; the global coercivity floor is not the
+main loss. Further general subdivision of the present representation is not
+justified by this diagnostic.
+
+**[OPEN]** A future Paper R attempt would need a materially different proof
+object, such as a better conforming primal trial, a direct certified Riesz
+solve, or a structural decomposition. No rigorous nonzero lower bound for the
+completed normalized electric-Weyl amplitude `B_W` is presently proved.
 
 ## F. Claim boundary for external review
 
@@ -303,12 +295,13 @@ valid conserved quadrupolar source has exact master/transmission/Weyl maps.
 
 **[CONDITIONAL]** The defensible physical construction is narrower: a
 hard-supported Skyrmion is a plausible semiclassical realization, a stipulated
-heat channel gives an exact degradation law, and source-bound floating
-calculations favor a nonzero fixed-background exterior response.
+heat channel gives an exact degradation law, and the signed fixed-background
+response estimator favors a nonzero exterior response. The completed rigorous
+interval does not certify that response.
 
 **[OPEN]** The project has not identified `S_dir` with `S_Ob`, derived a
 preparation-through-readout record channel from one action, proved a common
-parameter window, interval-certified `|B_W|>0`, established tensorial Israel
+parameter window, certified `|B_W|>0`, established tensorial Israel
 matching, solved a rotating self-gravitating Einstein-Skyrme-de Sitter system,
 or shown that exterior Weyl response is the gravitational quantity that caps
 observer information. Collapse, horizon or quantum-extremal-surface
@@ -332,9 +325,9 @@ be audited from:
 | **[PROVED]** | Supported collective sector floor | `THEOREMS.md` W3b; `docs/supported_skyrmion_collective_spectral_floor.md` |
 | **[PROVED]** | Validated hard-wall profile | `THEOREMS.md` AU.1; `experiments/skyrmion_newton_reduced_hessian_rounded_exact_certificate.json`, SHA256 `c4c95db47470392f0963266e37b491ae49a09381464f3da97c3f97bd14e74eff` |
 | **[PROVED]** | Fixed-background source/master/Weyl maps | `THEOREMS.md` W3t, W3v, W3x; artifacts listed under (D.1) |
-| **[CONDITIONAL]** | Floating completed response | `THEOREMS.md` W3u, W3z.17; feasibility SHA256 `584a22ea3ae9807dcc9da8cd6cc20274c943c52bb23c38923cbe8e6dcf986bf7` |
-| **[PROVED]** | Certified residual components | `THEOREMS.md` W3z.24-W3z.29; artifacts listed under (E.2) |
-| **[OPEN]** | Full Weyl zero exclusion | Requires full primal and adjoint `V*` residuals, including the regular-origin adjoint load, with product below the corrected-amplitude margin |
+| **[PROVED]** | Bounded response viability decision | `docs/paper_r_viability_decision.md`; `experiments/paper_r_response_certificate.json`, SHA256 `bcbb4a1af96b445b84464ddeda83cb6a568b0061bbc5146dd8fc11e72e124292` |
+| **[CONDITIONAL]** | Signed nonzero response evidence | Corrected estimator interval in (E.2); the full response interval contains zero |
+| **[OPEN]** | Nonzero Weyl theorem | Requires a new primal proof object with about a `9.50`-fold norm improvement; more general subdivision is deferred |
 
 **[PROVED]** The complete wording guardrail, including the distinction between
 exact theorems, exact maps with conditional inputs, floating evidence, and

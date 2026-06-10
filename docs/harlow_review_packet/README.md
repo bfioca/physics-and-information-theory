@@ -54,6 +54,9 @@ HTML links, bibliography links, diagram statuses, PDF signature/page count,
 link annotations, title metadata, and source/output hashes.
 
 The packet deliberately does not claim a complete physical observer theorem.
-The common-action record channel, the `S_dir`-to-`S_Ob` dictionary, the choice
-of gravitational capacity variable, and rigorous Skyrmion Weyl zero exclusion
-remain open.
+The bounded Paper R sprint ended in **INCONCLUSIVE STOP**: its corrected
+fixed-background response estimator is stably negative, but the rigorous full
+interval contains zero. Paper R is therefore retained as a viability memo, not
+promoted as a theorem or manuscript. The common-action record channel, the
+`S_dir`-to-`S_Ob` dictionary, and the gravitational quantity relevant to
+observer capacity remain open.
