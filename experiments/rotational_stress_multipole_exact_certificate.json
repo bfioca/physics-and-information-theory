@@ -1,0 +1,200 @@
+{
+  "anticoherent_integrated_spin_two_energy": {
+    "claim_boundary": "Uses the leading fixed-profile hedgehog inertia projector. It is an energy-source norm, not yet a metric perturbation bound.",
+    "leading_spin_two_energy_vanishes": true,
+    "local_energy_form": "dE_rot/drdOmega=3 i(r)[2C/3-nQn]/(16 pi I^2)",
+    "mean_casimir": 6.0,
+    "moment_of_inertia": 1.0,
+    "radially_integrated_l1_spin_two_energy_upper_bound": 0.0,
+    "spin_two_to_total_energy_ratio_upper_bound": 0.0,
+    "total_leading_rotor_energy": 3.0,
+    "universal_l1_spin_two_energy_upper_bound": 1.3416407864998738,
+    "universal_ratio_upper_bound": 0.4472135954999579
+  },
+  "anticoherent_stress_source": {
+    "angular_rms_l2_source": 0.0,
+    "decomposition": "n_a n_b S_ab=C/3+n_a n_b Q_ab; the first term is monopole and the second is the complete leading spin-two source",
+    "leading_l2_source_vanishes": true,
+    "mean_casimir": 6.0,
+    "pointwise_l2_source_upper_bound": 0.0,
+    "quadrupole_frobenius_norm": 0.0,
+    "radial_quadrupole_coefficient": 1.0
+  },
+  "cat_integrated_spin_two_energy": {
+    "claim_boundary": "Uses the leading fixed-profile hedgehog inertia projector. It is an energy-source norm, not yet a metric perturbation bound.",
+    "leading_spin_two_energy_vanishes": false,
+    "local_energy_form": "dE_rot/drdOmega=3 i(r)[2C/3-nQn]/(16 pi I^2)",
+    "mean_casimir": 110.0,
+    "moment_of_inertia": 1.0,
+    "radially_integrated_l1_spin_two_energy_upper_bound": 21.242645786248,
+    "spin_two_to_total_energy_ratio_upper_bound": 0.3862299233863273,
+    "total_leading_rotor_energy": 55.0,
+    "universal_l1_spin_two_energy_upper_bound": 24.596747752497684,
+    "universal_ratio_upper_bound": 0.4472135954999579
+  },
+  "cat_stress_source": {
+    "angular_rms_l2_source": 28.323527714997333,
+    "decomposition": "n_a n_b S_ab=C/3+n_a n_b Q_ab; the first term is monopole and the second is the complete leading spin-two source",
+    "leading_l2_source_vanishes": false,
+    "mean_casimir": 110.0,
+    "pointwise_l2_source_upper_bound": 73.33333333333333,
+    "quadrupole_frobenius_norm": 77.56717518813397,
+    "radial_quadrupole_coefficient": 1.0
+  },
+  "certified_claims": {
+    "anticoherent_pure_state_has_zero_quadrupole": true,
+    "anticoherent_spin_two_energy_vanishes": true,
+    "anticoherent_state_has_full_rank_local_qfi": true,
+    "cat_approaches_sharp_operator_bound": true,
+    "cat_quadrupole_is_traceless": true,
+    "leading_stress_fork_is_nontrivial": true,
+    "spin_two_energy_is_uniformly_bounded_by_rotor_energy": true
+  },
+  "claim_boundary": "The angular theorem uses only quadratic collective rotation and hedgehog covariance. It does not derive the radial stress coefficient, solve the spin-two Einstein equations, remove discrete stabilizer ambiguities, or control Omega^4 and collective-projection errors.",
+  "goal": "Leading Rotational Stress Multipole Theorem",
+  "paper_consequence": "A universal observer no-go cannot assume that accurate rotational references necessarily source a leading quadrupolar metric response. The all-state branch needs a Casimir-controlled l=2 response bound; the Q=0 branch retains the spherical theorem at quadratic order.",
+  "result_type": "casimir_bounded_spin_two_stress_with_anticoherent_escape",
+  "source_sha256": {
+    "experiments/rotational_stress_multipole_audit.py": "163afac4d836835c5d7f2ad69ba71f98f0396f8bbb6bdcaeeeb54b4186d24183",
+    "qgtoy/rotational_stress_multipole.py": "5d1b1c0d2a7c11859eed386ec1c57df9989b78bc00a1ed6b062608c68a4d1468"
+  },
+  "spin_cat": {
+    "asymptotic_operator_norm_to_casimir_ratio": "2/3",
+    "mean_casimir": {
+      "exact": "110",
+      "value": 110.0
+    },
+    "operator_norm_to_casimir_ratio": {
+      "exact": "19/33",
+      "value": 0.5757575757575758
+    },
+    "quadrupole_eigenvalues": [
+      {
+        "exact": "-95/3",
+        "value": -31.666666666666668
+      },
+      {
+        "exact": "-95/3",
+        "value": -31.666666666666668
+      },
+      {
+        "exact": "190/3",
+        "value": 63.333333333333336
+      }
+    ],
+    "quadrupole_frobenius_norm_squared": {
+      "exact": "18050/3",
+      "value": 6016.666666666667
+    },
+    "quadrupole_operator_norm": {
+      "exact": "190/3",
+      "value": 63.333333333333336
+    },
+    "quadrupole_trace": {
+      "exact": "0",
+      "value": 0.0
+    },
+    "spin_j": {
+      "exact": "10",
+      "value": 10.0
+    },
+    "state": "(|j,j>+|j,-j>)/sqrt(2)",
+    "symmetric_second_moment_eigenvalues": [
+      {
+        "exact": "5",
+        "value": 5.0
+      },
+      {
+        "exact": "5",
+        "value": 5.0
+      },
+      {
+        "exact": "100",
+        "value": 100.0
+      }
+    ]
+  },
+  "spin_two_tetrahedral_anticoherent": {
+    "interpretation": "The leading spin-two stress vanishes although the local rotational orbit is sensitive in all three directions. The finite tetrahedral stabilizer can still create global orientation ambiguities.",
+    "mean_angular_momentum": [
+      {
+        "exact": "0",
+        "value": 0.0
+      },
+      {
+        "exact": "0",
+        "value": 0.0
+      },
+      {
+        "exact": "0",
+        "value": 0.0
+      }
+    ],
+    "mean_casimir": {
+      "exact": "6",
+      "value": 6.0
+    },
+    "normalization_squared": {
+      "exact": "1",
+      "value": 1.0
+    },
+    "pure_state_rotational_qfi_eigenvalues": [
+      {
+        "exact": "8",
+        "value": 8.0
+      },
+      {
+        "exact": "8",
+        "value": 8.0
+      },
+      {
+        "exact": "8",
+        "value": 8.0
+      }
+    ],
+    "quadrupole_eigenvalues": [
+      {
+        "exact": "0",
+        "value": 0.0
+      },
+      {
+        "exact": "0",
+        "value": 0.0
+      },
+      {
+        "exact": "0",
+        "value": 0.0
+      }
+    ],
+    "quadrupole_frobenius_norm_squared": {
+      "exact": "0",
+      "value": 0.0
+    },
+    "rotational_qfi_rank": 3,
+    "spin_j": 2,
+    "state": "(|2,2>+|2,-2>)/2+i|2,0>/sqrt(2)",
+    "symmetric_second_moment_eigenvalues": [
+      {
+        "exact": "2",
+        "value": 2.0
+      },
+      {
+        "exact": "2",
+        "value": 2.0
+      },
+      {
+        "exact": "2",
+        "value": 2.0
+      }
+    ]
+  },
+  "status": "pass",
+  "universal_bounds": {
+    "angular_rms_nQn_upper_bound": 32.79566366999691,
+    "mean_casimir": 110.0,
+    "pointwise_nQn_absolute_upper_bound": 73.33333333333333,
+    "proof": "S is positive semidefinite with trace C. Thus Tr(S^2)<=C^2, Tr(Q^2)=Tr(S^2)-C^2/3<=2C^2/3, and ||Q||op<=2C/3. The sphere identity <(nQn)^2>=2 Tr(Q^2)/15 gives the RMS bound.",
+    "quadrupole_frobenius_norm_upper_bound": 89.81462390204986,
+    "quadrupole_operator_norm_upper_bound": 73.33333333333333
+  }
+}

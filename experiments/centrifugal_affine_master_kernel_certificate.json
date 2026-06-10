@@ -1,0 +1,39 @@
+{
+  "bulk_master_coefficients": [
+    "-557044479/2375000000",
+    "4903916013/4287500000",
+    "-125765693/490000000",
+    "43681/400000",
+    "-1337029341/1715000000",
+    "3249/50000"
+  ],
+  "certified_claims": {
+    "bulk_affine_reconstruction_is_exact_rational": true,
+    "effective_wall_endpoint_cancellation_is_exact": true,
+    "origin_affine_reconstruction_is_exact_rational": true,
+    "origin_center_evaluation_is_exact_fraction": true,
+    "positive_radius_origin_factorization_closes": true,
+    "wall_displacement_and_response_traces_are_distinct": true
+  },
+  "claim_boundary": "This certifies local affine algebra and center regularity only. It does not enclose continuum primal/adjoint fields, wall terms, integrals, residual norms, or a nonzero exterior amplitude.",
+  "goal": "Affine Completed-Stress And Origin-Regular Master Kernel",
+  "origin_center_master_coefficients": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "positive_radius_factorization_error": 5.273559366969494e-16,
+  "response_wall_trace_gamma_b": "16289369217/10497500000",
+  "result_type": "exact_affine_local_algebra_and_origin_factorization",
+  "source_sha256": {
+    "experiments/centrifugal_affine_master_kernel_audit.py": "3a5d05367cedad0b97a4a9435872805779b25b6fe217300d2c559b4b021bcf19",
+    "qgtoy/centrifugal_skyrmion_affine_master_kernel.py": "371cebe12d7064b4a6211dcd5e7bcbcc3ab35528c39046f4fbeafdf338290353",
+    "qgtoy/centrifugal_skyrmion_origin_master_kernel.py": "180cde83094da92c8b07b050315957a1d9f3c899c79c62f12cb8967259b00916"
+  },
+  "status": "pass",
+  "wall_displacement_per_radial_field": "5/2"
+}

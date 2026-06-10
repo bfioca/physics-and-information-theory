@@ -1,0 +1,170 @@
+{
+  "certified_claims": {
+    "axis_radial_displacement_matches_direct_basis": true,
+    "comoving_wall_cancels_both_pullback_sectors": true,
+    "coupled_hessian_is_symmetric": true,
+    "coupled_hessian_reproduces_scalar_principal_coefficient": true,
+    "coupled_mirror_tension_robin_condition_balances_sample": true,
+    "equivariant_quadrupole_deformation_has_rank_two": true,
+    "fixed_wall_pullback_conditions_are_sufficient": true,
+    "generic_fixed_wall_deformation_needs_quadrupole_reaction": true,
+    "movable_pure_tension_wall_can_balance_sample_traction": true,
+    "pure_tension_shape_has_nonzero_quadrupole_response": true,
+    "rotational_source_forces_tangential_channel": true,
+    "scalar_restriction_leaves_an_independent_angular_gate": true,
+    "scalar_source_matches_rigid_radial_hilbert_defect": true
+  },
+  "claim_boundary": "Exact O(Omega^2) equivariant kinematics, scalar radial diagnostic, and fixed-background ideal-mirror/pure-tension boundary algebra. No coupled two-channel bulk operator, existence theorem, Israel junction, or Zerilli source is supplied.",
+  "coupled_mirror_tension_boundary": {
+    "angular_laplacian_contribution": 0.38273277230987157,
+    "centered_curvature_derivative": -0.13023545724433128,
+    "convention": "delta K=coefficient*xi*Y for outward coordinate displacement xi",
+    "derivative_of_a_minus_c_at_wall": -0.010236037233500035,
+    "ell": 2,
+    "function_a_minus_c_at_wall": 0.01,
+    "matter_quadrupole_pressure_on_moving_wall": 0.0003121722714660845,
+    "membrane_quadrupole_curvature_pressure": 0.00031217227146608463,
+    "mirror_required_wall_quadrupole_displacement": 0.64,
+    "normal_force_is_balanced": true,
+    "normal_force_residual": -1.0842021724855044e-19,
+    "required_derivative_of_a_minus_c_at_wall": -0.010236037233500035,
+    "robin_condition": "D'(a)=[N'/(2N)-3/a-4 sigma k2/(N F_w'^2)]D(a)",
+    "robin_multiplier": -1.0236037233500035,
+    "scope": "linear fixed-background ideal mirror plus pure tension; no surface elasticity, exterior pressure, or Israel junction",
+    "shape_curvature_coefficient": 0.2524973150655403,
+    "tangential_boundary_condition": "The physical tangential field g must vanish at the ideal mirror; this is automatic for finite C because g=sin(F)a^2 C.",
+    "wall_metric_factor": 0.96
+  },
+  "coupled_static_hessian": {
+    "normalization": "angular average for Q=Omega Omega-delta/3 and Omega^2=1; multiply by 4pi for the sphere integral",
+    "radial_field_principal_coefficient": 0.14217786338535612,
+    "symmetric_hessian_matrix": [
+      [
+        0.5142310350190291,
+        -0.5022497038890669,
+        -0.06207470433796648,
+        0.08616662884432863
+      ],
+      [
+        -0.5022497038890669,
+        0.846161340139616,
+        0.17233325768865715,
+        -0.023278014126737682
+      ],
+      [
+        -0.06207470433796647,
+        0.17233325768865715,
+        0.14217786338535612,
+        2.0816681711721685e-17
+      ],
+      [
+        0.08616662884432863,
+        -0.02327801412673769,
+        1.3877787807814457e-17,
+        0.12263339753901713
+      ]
+    ],
+    "tangential_field_principal_coefficient": 0.12263339753901713,
+    "variable_order": [
+      "f",
+      "g",
+      "f_prime",
+      "g_prime"
+    ]
+  },
+  "fixed_wall_pullback": {
+    "fixed_wall_condition": "A(r_w)=C(r_w) and B(r_w)=0",
+    "function_a_minus_c": 0.0,
+    "ideal_mirror_pullback_is_satisfied": true,
+    "monopole_pullback_residual": 0.0,
+    "quadrupole_basis": "delta r=d0 Omega^2+d2[(Omega.n)^2-Omega^2/3]; delta y_perp=t2 (Omega.n)[Omega-(Omega.n)n]",
+    "quadrupole_coefficient_map_determinant": -1.0,
+    "quadrupole_pullback_residual": 0.0,
+    "quadrupole_response_rank": 2,
+    "radial_monopole_coefficient": 0.0,
+    "radial_quadrupole_coefficient": -0.0,
+    "radius": 4.0,
+    "scope": "kinematic decomposition through O(Omega^2)",
+    "tangential_note": "C(r_w) is not fixed by U=1 because the internal direction is degenerate where sin(F)=0.",
+    "tangential_quadrupole_coefficient": 0.8,
+    "wall_monopole_displacement_coefficient": 0.0,
+    "wall_quadrupole_displacement_coefficient": 0.0
+  },
+  "fixed_wall_traction": {
+    "additional_fixed_wall_condition": "(A-C)'(r_w)=0 unless an ell=2 anchor or wall deformation supplies the reaction",
+    "quadrupole_radial_pressure_coefficient": -0.0237224638171843,
+    "unanchored_fixed_spherical_wall_is_force_balanced": false
+  },
+  "goal": "Centrifugal Skyrmion Deformation And Wall Kinematic Gate",
+  "hard_wall_background_pressure_derivative": {
+    "background_pressure_radial_derivative": -0.0009073533523825374,
+    "scope": "local derivative on the fixed static hard-wall profile",
+    "wall_metric_factor": 0.96,
+    "wall_metric_factor_derivative": -0.02,
+    "wall_profile_derivative": -0.0878757998
+  },
+  "pure_tension_wall_shape_balance": {
+    "angular_laplacian_contribution": 0.38273277230987157,
+    "background_pressure_radial_derivative": -0.0009073533523825374,
+    "centered_curvature_derivative": -0.13023545724433128,
+    "convention": "delta K=coefficient*xi*Y for outward coordinate displacement xi",
+    "ell": 2,
+    "intrinsic_pressure_multipole": 0.0001,
+    "membrane_tension": 0.001931779647,
+    "normal_force_is_balanced": true,
+    "normal_force_residual": 1.3552527156068805e-20,
+    "required_wall_displacement_coefficient": 0.07167829211919641,
+    "scope": "linear fixed-background pure-tension Young-Laplace equation; no Israel junction or surface elasticity",
+    "shape_balance_denominator": -0.0013951225265482945,
+    "shape_curvature_coefficient": 0.2524973150655403,
+    "wall_displacement_coefficient": 0.07167829211919641,
+    "wall_metric_factor": 0.96
+  },
+  "required_comoving_wall": {
+    "pullback_check_passes": true,
+    "required_wall_monopole_displacement_coefficient": 0.21333333333333343,
+    "required_wall_quadrupole_displacement_coefficient": 0.6399999999999999
+  },
+  "required_next_step": "Derive and solve the coupled two-channel static-patch ell=2 deformation equations in regular physical variables (f,g), with the dynamical wall Robin condition or a declared quadrupole anchor, then audit full stress conservation.",
+  "result_type": "rank_two_quadrupole_deformation_and_wall_gate",
+  "rotational_source_covector": {
+    "normalization": "Q=Omega Omega-delta/3, Omega^2=1, <q^2>=4/45",
+    "radial_field_coefficient": -0.07660607018270793,
+    "radial_field_derivative_coefficient": 0.02517594376083809,
+    "source_density": "s_f f+s_g g+s_fprime f'; multiply by 4pi for the sphere integral",
+    "tangential_field_coefficient": 0.1183373310713117,
+    "tangential_field_derivative_coefficient": 0.0,
+    "variable_order": "(f,g,f',g')"
+  },
+  "sample_multipoles": {
+    "function_a_minus_c": 2.0,
+    "quadrupole_basis": "delta r=d0 Omega^2+d2[(Omega.n)^2-Omega^2/3]; delta y_perp=t2 (Omega.n)[Omega-(Omega.n)n]",
+    "quadrupole_coefficient_map_determinant": -1.0,
+    "quadrupole_response_rank": 2,
+    "radial_monopole_coefficient": 2.666666666666666,
+    "radial_quadrupole_coefficient": -16.0,
+    "radius": 2.0,
+    "scope": "kinematic decomposition through O(Omega^2)",
+    "tangential_quadrupole_coefficient": 8.0
+  },
+  "scalar_quadrupole_diagnostic": {
+    "boundary_conditions": "scalar-only regularity f=O(r^3); fixed mirror f(a)=0; moving mirror f(a)+F'(a)xi2=0",
+    "claim_boundary": "The scalar equation enforces only the radial projection. The tangential quadrupole field and its Euler-Lagrange equation are required for full stress conservation.",
+    "ell2_angular_potential": 22.99376203856571,
+    "ell2_equation_source": -4.564699008909991,
+    "ell2_jacobi_potential": 22.751889434921114,
+    "jacobi_principal_coefficient": 6.398003852341026,
+    "operator": "L2 f=-(P f')'+Q2 f=-4 E_H",
+    "radial_hilbert_identity_residual": 0.0,
+    "radial_jacobi_potential": -0.24187260364459595,
+    "rigid_angular_conservation_residual_coefficient": 0.3734153644354303,
+    "rigid_radial_conservation_residual_coefficient": 0.45646990089099915,
+    "rigid_rotational_routhian_density": 0.40997208191710055,
+    "routhian_euler_derivative": 1.1411747522274978
+  },
+  "source_sha256": {
+    "experiments/centrifugal_skyrmion_deformation_audit.py": "9935783eeafe22050beb8a9b38cf7140276f7e0598062d51934220e9a934aea7",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290"
+  },
+  "status": "pass"
+}

@@ -1,0 +1,45 @@
+{
+  "claim_boundary": "Exact regular blocks, source factorization, A-A0 order, and t^3 conormal residual divisibility. Quantitative interval bounds on A-A0 and the scaled residual e are still required for the finite-cell radii inequality.",
+  "conormal_residual_checks": {
+    "cubic_homogeneous": true,
+    "forced_particular": true,
+    "linear_homogeneous": true
+  },
+  "euler_residual_order": "O(x^7) from the exact p=1,3,5 recurrence",
+  "executable_checks": {
+    "all_three_conormal_residuals_divisible_by_t_cubed": true,
+    "hatted_source_vanishes_at_origin": true,
+    "positive_radius_hessian_replay_below_1e_11": true,
+    "positive_radius_source_replay_below_1e_11": true,
+    "regular_blocks_match_established_origin_matrix": true
+  },
+  "floating_replay_diagnostics": {
+    "maximum_absolute_hessian_error": 7.105427357601002e-15,
+    "maximum_absolute_source_error": 1.691355389077387e-17
+  },
+  "fuchs_variation_order": "A(t)-A(0)=O(t)",
+  "physical_block_scaling": "C=Cbar, M=x Mbar, P=t Pbar",
+  "regular_density": "H_static/t=a^T Cbar a+2a^T Mbar d+d^T Pbar d, with a=y/x and d=y'",
+  "residual_transfer_identity": "lower conormal residual = - Euler residual / x",
+  "result_type": "exact_regular_conormal_blocks_and_residual_divisibility",
+  "source_order": "q(t)=O(t)",
+  "source_sha256": {
+    "experiments/centrifugal_skyrmion_conormal_blocks_audit.py": "3e05e22d8164b0270bab725857d37df17cf49b76a69ed113dba7dacd27c185a2",
+    "experiments/validated_centrifugal_origin_transfer_certificate.json": "c10651881cd99ca85c4c1f282092668e6d92597f7f2a785156fdcee1401da7b3",
+    "experiments/validated_skyrmion_quintic_family_certificate.json": "125232b3856d2cf4d17647b90983a4f0a6865ead8149ad07401cbabf5fbb9294",
+    "qgtoy/centrifugal_skyrmion_conormal_blocks.py": "5a69e5241d66f7224105a1a17b62b3d35f89cddf8a2df5dde0ad44cac32ad018",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290",
+    "qgtoy/centrifugal_skyrmion_frobenius.py": "e6a083a06e93261f4309140b396fce9ff351ac24d6c1b7f681736033b58876fe",
+    "qgtoy/centrifugal_skyrmion_origin.py": "95f8b2704654fca2b557ff3979ab8136684cfb459e210290ef17f3ca321ef92d",
+    "qgtoy/validated_centrifugal_origin_transfer.py": "95d4090375fb9902d06394ea84863d9ec6928a3b0b91c548ca2b3aff711a2f2f"
+  },
+  "status": "pass",
+  "validated_profile_dependency": {
+    "path": "experiments/validated_skyrmion_quintic_family_certificate.json",
+    "sha256": "125232b3856d2cf4d17647b90983a4f0a6865ead8149ad07401cbabf5fbb9294"
+  },
+  "validated_transfer_dependency": {
+    "path": "experiments/validated_centrifugal_origin_transfer_certificate.json",
+    "sha256": "c10651881cd99ca85c4c1f282092668e6d92597f7f2a785156fdcee1401da7b3"
+  }
+}

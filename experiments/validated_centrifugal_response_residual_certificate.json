@@ -1,0 +1,32 @@
+{
+  "analytic_residual": [
+    [
+      "-2",
+      "-2"
+    ],
+    [
+      "0",
+      "0"
+    ]
+  ],
+  "bulk_energy_dual_upper": "20",
+  "certified_claims": {
+    "analytic_cell_residual_is_exact": true,
+    "analytic_l2_square_upper_is_exact": true,
+    "bulk_coercivity_lift_is_exact": true,
+    "energy_dual_bound_composes_bulk_and_wall": true,
+    "wall_mismatch_is_kept_outside_bulk_l2": true
+  },
+  "claim_boundary": "This certifies the residual theorem on supplied positive-radius cells. It does not provide authenticated physical primal/adjoint trials, the origin residual, or a nonzero response interval.",
+  "goal": "Validated Positive-Radius Centrifugal Response Residual",
+  "l2_norm_upper": "2",
+  "l2_squared_upper": "4",
+  "result_type": "exact_rational_C1_residual_and_energy_dual_composition",
+  "source_sha256": {
+    "experiments/validated_centrifugal_response_residual_audit.py": "e7a147475cdb653de05fda095d869b696ef2419a0a19de1b6c41bc906e6b61fc",
+    "qgtoy/validated_centrifugal_response_residual.py": "a3b75ba537f302db6349f62c54458eb44f94ca4afed6d51b0f263755e646b654"
+  },
+  "status": "pass",
+  "total_energy_dual_upper": "26",
+  "wall_energy_dual_upper": "6"
+}

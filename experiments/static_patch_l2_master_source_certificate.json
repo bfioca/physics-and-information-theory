@@ -1,0 +1,56 @@
+{
+  "canonical_distribution_example": {
+    "contact_definition": "Psi=Psi_offwall+contact*delta(r-a); subtract A2(contact*delta) from F to obtain the contact-free source",
+    "contact_free_delta_coefficient": 0.2653,
+    "contact_free_delta_prime_coefficient": 0.133,
+    "contact_free_delta_second_coefficient": 0.0,
+    "master_field_contact_delta_coefficient": 0.07466666666666666,
+    "master_source_delta_coefficient": 0.29329999999999995,
+    "master_source_delta_prime_coefficient": 0.13150666666666666,
+    "master_source_delta_second_coefficient": -0.07168
+  },
+  "certified_claims": {
+    "contact_subtraction_preserves_both_off_wall_branches": true,
+    "direct_einstein_elimination_identity_closes": true,
+    "general_delta_jet_projection_matches_frozen_oracle": true,
+    "quadratic_rotation_harmonic_norm_is_sixteen_pi_over_forty_five": true,
+    "stress_source_matches_metric_master_operator": true
+  },
+  "claim_boundary": "Exact direct Regge--Wheeler-gauge Einstein elimination in fixed pure de Sitter and the declared Zerilli--Moncrief normalization. A separate Kodama--Ishibashi convention cross-check, self-gravity, Israel matching, physical collective normalization, and an invariant curvature reconstruction remain open.",
+  "contact_subtraction_checks": [
+    {
+      "contact_free_response": 0.033109999468401485,
+      "difference": 0.0,
+      "observation_radius": 2.0,
+      "raw_distribution_response": 0.033109999468401485
+    },
+    {
+      "contact_free_response": 0.05827992454367189,
+      "difference": 6.938893903907228e-18,
+      "observation_radius": 6.0,
+      "raw_distribution_response": 0.05827992454367188
+    }
+  ],
+  "goal": "Conserved Stress To Static-Patch Quadrupole Master Source",
+  "master_source_formula": "F=kappa[-r^2 N rho'/6+r(1+4r^2/R^2)rho/6-r p_r/2-j+2r pi]",
+  "metric_identity": {
+    "einstein_angular_tracefree_amplitude": 0.06104437869822484,
+    "einstein_radial_angular_amplitude": -0.09804413630769229,
+    "einstein_radial_pressure_amplitude": 0.12691715727810648,
+    "einstein_source_combination": 0.0845111609428564,
+    "einstein_time_time_amplitude": -0.04391689443786986,
+    "einstein_time_time_amplitude_derivative": -0.36081049376422386,
+    "identity": "A2 Psi=(r^2 N/6)(delta G^t_t)'-r(1+4r^2/R^2)delta G^t_t/6-r delta G^r_r/2-delta G^r_A+2r delta G_TF",
+    "identity_residual": 0.0,
+    "master_field": 0.03735999769666667,
+    "master_operator": 0.0845111609428564
+  },
+  "result_type": "exact_rw_zerilli_moncrief_source_and_contact_map",
+  "source_sha256": {
+    "experiments/static_patch_l2_master_source_audit.py": "7860247f9e5ac48fa12df7c3b77da18959ea083702a37d3491904d302bcd2fdc",
+    "qgtoy/static_patch_l2_master_source.py": "c42011b1a0e4bb893f7e4ac6d7640ee25df984ac85e92b1bb38a48096ca0b9de",
+    "qgtoy/static_patch_l2_response.py": "2c0e81b655b8ab69fa911f496cfb50ac8d39d35e69905cf4bab918186acf2181"
+  },
+  "status": "pass",
+  "stress_source": 0.0845111609428564
+}

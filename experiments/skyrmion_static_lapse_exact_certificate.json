@@ -1,0 +1,38 @@
+{
+  "authenticated_inputs": {
+    "au2_sha256": "1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9",
+    "constraint_sources_rehashed": true,
+    "snapshot_sha256": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431",
+    "snapshot_sources_rehashed": true,
+    "spherical_constraint_sha256": "a180610fbdea4eecd75cdc7628216adab9289d5561704f60f750f7105fcaca47"
+  },
+  "claim_boundary": "Directed fixed-profile coefficient for the static spherical lapse equation. It excludes collective rotation, the membrane junction, field deformation, and nonspherical stress.",
+  "directed_bounds": {
+    "lapse_coefficient_D_upper": "43445333/1000000",
+    "lapse_coefficient_D_upper_float": 43.445333,
+    "maximum_log_lapse_drop_exact": "43445333/58492672",
+    "maximum_log_lapse_drop_float": 0.742748305291986,
+    "minimum_gtt_ratio_float_diagnostic": 0.1131949425712049,
+    "radial_metric_budget_beta": "1/2",
+    "radial_shape_H_upper": "456974/15625",
+    "radial_shape_H_upper_float": 29.246336,
+    "rounding_denominator": "1000000"
+  },
+  "goal": "Authenticated Static Skyrmion Bulk Lapse Control",
+  "replay": {
+    "origin_subdivisions": 64,
+    "positive_radius_cell_count": 86,
+    "radial_subdivisions_per_parent": 2
+  },
+  "result_type": "authenticated_spherical_static_lapse_bound",
+  "source_sha256": {
+    "experiments/skyrmion_static_lapse_audit.py": "4a2732d76e2f0ee2134f957553beb73bd40a02afcbfe50459864caf32ad7ab1f",
+    "qgtoy/skyrmion_lapse_control.py": "0c16b0da652374ef57316598f545ce727a69c5b5d56d709e4083326cbddf93dd",
+    "qgtoy/validated_interval.py": "dcc91000cd46134454f76fe73e88587757d102b98445dccb2a97d3a13ff5a929",
+    "qgtoy/validated_skyrmion_lapse.py": "82a93b8aaf55220832718ed1f1d5f530890fb2430293b5e7c74f32e943b6ed6b",
+    "qgtoy/validated_skyrmion_origin.py": "ef76d90f1be0465684a861fb31bf9e87e7a9a27307f1322b9fb887b1d20f65b6",
+    "qgtoy/validated_skyrmion_sharp_profile.py": "9f4839b104e4cf576e00e24a064718827172e9e566a564cc3c0d3ee3bd634d2d"
+  },
+  "status": "complete_fixed_field_static_bulk_lapse_certificate",
+  "theorem": "For the fixed static Skyrmion field, rho+p_r=A F'^2(1/4+2sin^2(F)/x^2), so A cancels from the spherical lapse equation. Under the sufficient alpha H<=beta radial constraint, the bulk log lapse drop is at most beta D/H."
+}

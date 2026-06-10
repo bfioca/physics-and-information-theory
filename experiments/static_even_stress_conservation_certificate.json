@@ -1,0 +1,39 @@
+{
+  "certified_claims": {
+    "hard_truncation_requires_membrane_traction": true,
+    "manufactured_bulk_source_is_conserved": true,
+    "quadrupole_zero_momentum_relation_is_p_perp_equals_two_pi": true
+  },
+  "claim_boundary": "This is a kinematic conservation checker in the -+++ gravity convention. It does not derive the amplitudes from the +--- Skyrme action, convert conventions, or supply the membrane stress.",
+  "goal": "Conserved Static Even-Parity Matter Source Gate",
+  "hard_wall_jump": {
+    "angular_conservation_delta_coefficient": -0.25,
+    "bulk_truncation_is_distributionally_conserved": false,
+    "radial_conservation_delta_coefficient": -2.0,
+    "required_completion": "Add membrane stress whose intrinsic divergence and normal traction cancel these coefficients, or impose vanishing bulk traction.",
+    "wall_radius": 4.0
+  },
+  "manufactured_conserved_source": {
+    "angular_conservation_residual": 0.0,
+    "angular_eigenvalue": 6,
+    "bulk_source_is_conserved": true,
+    "convention": "mixed stress components on ds^2=-f dt^2+dr^2/f+r^2dOmega^2",
+    "ell": 2,
+    "radial_conservation_residual": 0.0
+  },
+  "result_type": "exact_bulk_conservation_and_wall_traction_gate",
+  "source_sha256": {
+    "experiments/static_even_stress_conservation_audit.py": "38ddafd32247929b3bb6731f5dc0731bb9256a85da418f70050f9c73b3f54fba",
+    "qgtoy/static_even_stress_conservation.py": "42c761fd26c6a4fa2b3762a35931850f6ff4fb43eb78fc56873e81e3612da0b8"
+  },
+  "status": "pass",
+  "zero_momentum_quadrupole_relation": {
+    "angular_conservation_residual": 0.0,
+    "angular_tracefree_stress": 0.5,
+    "ell": 2,
+    "quadrupole_specialization": "For ell=2 and j=0, conservation requires p_perp=2 pi.",
+    "required_tangential_pressure": 1.0,
+    "tangential_pressure": 1.0,
+    "zero_momentum_source_is_angularly_conserved": true
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "authenticated_slope_interval": {
+    "lower": "546684696508091/347185136818875",
+    "upper": "550388004634159/347185136818875"
+  },
+  "branch_order": [
+    "linear_homogeneous",
+    "cubic_homogeneous",
+    "forced_particular"
+  ],
+  "claim_boundary": "Validated affine conormal-state transfer through t=1/256 for the two homogeneous and one forced columns. Export to a direct physical (f,g,f',g') endpoint tube, Friedrichs-domain equivalence, and the global continuum inverse remain open.",
+  "dependencies": {
+    "conormal_scaffold": {
+      "path": "experiments/validated_centrifugal_origin_transfer_certificate.json",
+      "sha256": "c10651881cd99ca85c4c1f282092668e6d92597f7f2a785156fdcee1401da7b3"
+    },
+    "quintic_profile_family": {
+      "path": "experiments/validated_skyrmion_quintic_family_certificate.json",
+      "sha256": "125232b3856d2cf4d17647b90983a4f0a6865ead8149ad07401cbabf5fbb9294"
+    },
+    "regular_blocks": {
+      "path": "experiments/centrifugal_skyrmion_conormal_blocks_certificate.json",
+      "sha256": "f87766d639f721b6227cab436d394e09f4059741fdbc5a057eba4e379d67f984"
+    }
+  },
+  "executable_checks": {
+    "all_branch_radii_inequalities_close": true,
+    "coefficient_variation_below_3_over_20": true,
+    "contraction_below_3_over_40": true,
+    "green_majorant_below_51_over_100": true,
+    "maximum_endpoint_state_error_below_1_over_10000": true,
+    "two_cells_cover_authenticated_slope_interval": true
+  },
+  "maximum_branch_endpoint_state_error_bounds": [
+    [
+      {
+        "lower": "0.000076209309",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000076209310"
+      },
+      {
+        "lower": "0.000077267772",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000077267773"
+      },
+      {
+        "lower": "0.000034400035",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000034400036"
+      },
+      {
+        "lower": "0.000038633886",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000038633887"
+      }
+    ],
+    [
+      {
+        "lower": "0.000028149048",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000028149049"
+      },
+      {
+        "lower": "0.000028540007",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000028540008"
+      },
+      {
+        "lower": "0.000012706167",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000012706168"
+      },
+      {
+        "lower": "0.000014270003",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000014270004"
+      }
+    ],
+    [
+      {
+        "lower": "0.000002173901",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000002173902"
+      },
+      {
+        "lower": "0.000002204094",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000002204095"
+      },
+      {
+        "lower": "0.000000981274",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000000981275"
+      },
+      {
+        "lower": "0.000001102047",
+        "representation": "outward_decimal_enclosure_12_places",
+        "upper": "0.000001102048"
+      }
+    ]
+  ],
+  "maximum_branch_remainder_radii": [
+    {
+      "lower": "887.902812191968",
+      "representation": "outward_decimal_enclosure_12_places",
+      "upper": "887.902812191969"
+    },
+    {
+      "lower": "327.960181027253",
+      "representation": "outward_decimal_enclosure_12_places",
+      "upper": "327.960181027254"
+    },
+    {
+      "lower": "25.327785103929",
+      "representation": "outward_decimal_enclosure_12_places",
+      "upper": "25.327785103930"
+    }
+  ],
+  "maximum_branch_residual_bounds": [
+    {
+      "lower": "825.124694255436",
+      "representation": "outward_decimal_enclosure_12_places",
+      "upper": "825.124694255437"
+    },
+    {
+      "lower": "304.772144408484",
+      "representation": "outward_decimal_enclosure_12_places",
+      "upper": "304.772144408485"
+    },
+    {
+      "lower": "23.537014021224",
+      "representation": "outward_decimal_enclosure_12_places",
+      "upper": "23.537014021225"
+    }
+  ],
+  "maximum_coefficient_variation_bound": {
+    "lower": "0.145444516710",
+    "representation": "outward_decimal_enclosure_12_places",
+    "upper": "0.145444516711"
+  },
+  "maximum_contraction_bound": {
+    "lower": "0.072575768421",
+    "representation": "outward_decimal_enclosure_12_places",
+    "upper": "0.072575768422"
+  },
+  "maximum_endpoint_state_error": {
+    "lower": "0.000077267772",
+    "representation": "outward_decimal_enclosure_12_places",
+    "upper": "0.000077267773"
+  },
+  "maximum_green_majorant": {
+    "lower": "0.500309235695",
+    "representation": "outward_decimal_enclosure_12_places",
+    "upper": "0.500309235696"
+  },
+  "parameters": {
+    "cutoff": "1/16",
+    "green_subcells_per_profile_cell": 4,
+    "kernel_terms": 5,
+    "profile_slope_cells": 2,
+    "state_weights": [
+      "36/25",
+      "73/50",
+      "13/20",
+      "73/100"
+    ]
+  },
+  "result_type": "validated_finite_cell_conormal_origin_transfer",
+  "source_sha256": {
+    "experiments/centrifugal_skyrmion_conormal_blocks_certificate.json": "f87766d639f721b6227cab436d394e09f4059741fdbc5a057eba4e379d67f984",
+    "experiments/validated_centrifugal_conormal_remainder_audit.py": "2c6264898e89cac3a3835781290abe35eff226fad4cb8b4da412e8dc11989465",
+    "experiments/validated_centrifugal_origin_transfer_certificate.json": "c10651881cd99ca85c4c1f282092668e6d92597f7f2a785156fdcee1401da7b3",
+    "experiments/validated_skyrmion_quintic_family_certificate.json": "125232b3856d2cf4d17647b90983a4f0a6865ead8149ad07401cbabf5fbb9294",
+    "qgtoy/centrifugal_skyrmion_conormal_blocks.py": "5a69e5241d66f7224105a1a17b62b3d35f89cddf8a2df5dde0ad44cac32ad018",
+    "qgtoy/validated_centrifugal_conormal_remainder.py": "8034e0c03a1540aacbf1bbd10259ab64994f3817a260edf3d155873da5c2040b",
+    "qgtoy/validated_centrifugal_origin_transfer.py": "95d4090375fb9902d06394ea84863d9ec6928a3b0b91c548ca2b3aff711a2f2f",
+    "qgtoy/validated_interval.py": "dcc91000cd46134454f76fe73e88587757d102b98445dccb2a97d3a13ff5a929",
+    "qgtoy/validated_skyrmion_quintic_family.py": "73a3969c1a965767492eecd41dae88b0441b95e91f585eda93c48d31066fdd97"
+  },
+  "status": "pass"
+}

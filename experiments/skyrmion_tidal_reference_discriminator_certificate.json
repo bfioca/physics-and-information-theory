@@ -1,0 +1,173 @@
+{
+  "axial_observation": {
+    "anticoherent_gradiometer": {
+      "equation": "delta(ddot(xi)/xi)=-delta E_rr",
+      "fractional_acceleration_dimension": "inverse_length_squared",
+      "fractional_relative_acceleration": -0.0,
+      "linearized_relative_acceleration": -0.0,
+      "physical_proof_mass_separation": 1.0,
+      "radial_electric_weyl_contraction": 0.0,
+      "relative_acceleration_dimension": "inverse_length",
+      "scope": "Jacobi limit, first order in proof-mass separation, relative to pure de Sitter in natural units; no finite-time detector transfer function"
+    },
+    "anticoherent_quadrupole": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "claim_boundary": "Instantaneous Jacobi-limit geodesic deviation on the fixed-background exterior branch. Finite-separation gradients, preparation, readout noise, finite interrogation time, Omega^4 energy, stress/metric fluctuations, single-shot quantum response, self-gravity, and tensorial Israel matching remain open.",
+    "linearized_relative_acceleration_contrast": -1.3605783525460437e-10,
+    "observable_statement": "Semiclassical mean fields of equal-Casimir, equal-leading-rotor-energy fixed-spin references can have different exterior tidal signals because gravity resolves <QJ_ab>, not Casimir alone.",
+    "observation_direction": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "observation_radius_x": 5.0,
+    "physical_proof_mass_separation": 1.0,
+    "same_casimir_check": true,
+    "same_inertia_and_energy_check": true,
+    "shared_casimir_expectation": 6.0,
+    "shared_leading_rigid_rotor_energy": 0.08754982647859967,
+    "shared_physical_rotor_inertia": 34.26620155247604,
+    "shared_spin": 2.0,
+    "spin_cat_gradiometer": {
+      "equation": "delta(ddot(xi)/xi)=-delta E_rr",
+      "fractional_acceleration_dimension": "inverse_length_squared",
+      "fractional_relative_acceleration": -1.3605783525460437e-10,
+      "linearized_relative_acceleration": -1.3605783525460437e-10,
+      "physical_proof_mass_separation": 1.0,
+      "radial_electric_weyl_contraction": 1.3605783525460437e-10,
+      "relative_acceleration_dimension": "inverse_length",
+      "scope": "Jacobi limit, first order in proof-mass separation, relative to pure de Sitter in natural units; no finite-time detector transfer function"
+    },
+    "spin_cat_quadrupole": [
+      [
+        -1.0000000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0000000000000002,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.9999999999999991
+      ]
+    ]
+  },
+  "certified_claims": {
+    "anticoherent_state_has_zero_leading_gradiometer_signal": true,
+    "cat_tidal_tensor_has_expected_axis_ratio": true,
+    "equal_leading_rotor_energy_mean_fields_are_tidally_distinguishable": true,
+    "spin_cat_has_nonzero_axial_gradiometer_signal": true,
+    "states_have_identical_fixed_spin_casimir": true,
+    "states_have_identical_inertia_and_rotor_energy": true
+  },
+  "claim_boundary": "Source-hashed floating Jacobi-limit geodesic-deviation contrast on the fixed-background exterior branch. It is a semiclassical mean signal at leading rigid-rotor order, not a single-shot quantum metric prediction. No finite-time detector transfer function, Omega^4 energy, noise/fluctuation model, interval validation, self-gravity, or tensorial Israel matching is supplied.",
+  "goal": "Operational Equal-Leading-Rotor-Energy Reference Discriminator",
+  "result_type": "instantaneous_exterior_tidal_gradiometer_contrast",
+  "source_sha256": {
+    "experiments/skyrmion_tidal_reference_discriminator_audit.py": "922362a33717df0164bde6b5d843627f1192e12abbd976c55a390765581e293d",
+    "qgtoy/centrifugal_skyrmion_bvp.py": "d8d7af70c015f87f3822494dfc5bd4eb56ece14c31ab3cdf29b33bf8c699f29d",
+    "qgtoy/centrifugal_skyrmion_completed_stress.py": "ac52209e805fcbc05eae5fb9c61643440019bec0b86c3b749e59c54a562e82c5",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290",
+    "qgtoy/centrifugal_skyrmion_master_response.py": "19d4c987a9420df60e5ba448d046adc2c8fc79565888f56e509b602eff54d182",
+    "qgtoy/centrifugal_skyrmion_membrane_stress.py": "e8d6c8db52870994b06ebb875694b07689350fb37011bc24afb9abe14abe36bb",
+    "qgtoy/centrifugal_skyrmion_physical_response.py": "a962056280eeeea6e5c084d805f069b232ff37188a9bd4c7fdff291bc8219cd3",
+    "qgtoy/massive_skyrmion_profile.py": "bc6e15c3d72fdbe45302af4715c5a34c5a7b6693e4d0181b93c2fb3f9087cb43",
+    "qgtoy/massive_skyrmion_worldtube.py": "a7cff678b908c91b76c95fac921f198c9101ce845b1ee35e9a63616624a02996",
+    "qgtoy/skyrmion_tidal_reference_discriminator.py": "abbc4fca94a8217c2a92b9f9186adb65fdb6df56f2983bd200ed5579e3fc0817",
+    "qgtoy/static_patch_l2_master_source.py": "c42011b1a0e4bb893f7e4ac6d7640ee25df984ac85e92b1bb38a48096ca0b9de",
+    "qgtoy/static_patch_l2_response.py": "2c0e81b655b8ab69fa911f496cfb50ac8d39d35e69905cf4bab918186acf2181",
+    "qgtoy/static_patch_l2_weyl_reconstruction.py": "d615880ca1224ff7577588eac40b03f8a5c84fee24895149ddb9a077649d7827"
+  },
+  "status": "pass",
+  "transverse_observation": {
+    "anticoherent_gradiometer": {
+      "equation": "delta(ddot(xi)/xi)=-delta E_rr",
+      "fractional_acceleration_dimension": "inverse_length_squared",
+      "fractional_relative_acceleration": -0.0,
+      "linearized_relative_acceleration": -0.0,
+      "physical_proof_mass_separation": 1.0,
+      "radial_electric_weyl_contraction": 0.0,
+      "relative_acceleration_dimension": "inverse_length",
+      "scope": "Jacobi limit, first order in proof-mass separation, relative to pure de Sitter in natural units; no finite-time detector transfer function"
+    },
+    "anticoherent_quadrupole": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "claim_boundary": "Instantaneous Jacobi-limit geodesic deviation on the fixed-background exterior branch. Finite-separation gradients, preparation, readout noise, finite interrogation time, Omega^4 energy, stress/metric fluctuations, single-shot quantum response, self-gravity, and tensorial Israel matching remain open.",
+    "linearized_relative_acceleration_contrast": 6.802891762730224e-11,
+    "observable_statement": "Semiclassical mean fields of equal-Casimir, equal-leading-rotor-energy fixed-spin references can have different exterior tidal signals because gravity resolves <QJ_ab>, not Casimir alone.",
+    "observation_direction": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "observation_radius_x": 5.0,
+    "physical_proof_mass_separation": 1.0,
+    "same_casimir_check": true,
+    "same_inertia_and_energy_check": true,
+    "shared_casimir_expectation": 6.0,
+    "shared_leading_rigid_rotor_energy": 0.08754982647859967,
+    "shared_physical_rotor_inertia": 34.26620155247604,
+    "shared_spin": 2.0,
+    "spin_cat_gradiometer": {
+      "equation": "delta(ddot(xi)/xi)=-delta E_rr",
+      "fractional_acceleration_dimension": "inverse_length_squared",
+      "fractional_relative_acceleration": 6.802891762730224e-11,
+      "linearized_relative_acceleration": 6.802891762730224e-11,
+      "physical_proof_mass_separation": 1.0,
+      "radial_electric_weyl_contraction": -6.802891762730224e-11,
+      "relative_acceleration_dimension": "inverse_length",
+      "scope": "Jacobi limit, first order in proof-mass separation, relative to pure de Sitter in natural units; no finite-time detector transfer function"
+    },
+    "spin_cat_quadrupole": [
+      [
+        -1.0000000000000002,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0000000000000002,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.9999999999999991
+      ]
+    ]
+  }
+}

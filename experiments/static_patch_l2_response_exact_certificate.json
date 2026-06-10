@@ -1,0 +1,38 @@
+{
+  "boundary_conditions": "Psi=O(r^3) at the center and f Psi'->0 at the horizon; the Friedrichs domain excludes the logarithmic horizon branch",
+  "certified_claims": {
+    "center_solution_has_cubic_normalization": true,
+    "coercive_inverse_bound_is_R_squared_over_six": true,
+    "green_kernel_has_unit_flux_jump": true,
+    "green_kernel_is_positive": true,
+    "near_horizon_susceptibility_has_logarithmic_finite_part": true,
+    "wronskian_is_minus_fifteen_over_two": true
+  },
+  "claim_boundary": "Fixed pure de Sitter, linearized, static, even parity, l=2, and a conserved compact master source. This is not a response theorem for the energy density alone, the non-negligibly deformed Skyrmion background, or the membrane-completed stress tensor.",
+  "coercive_response": {
+    "inverse_operator_norm_upper_bound": 0.6666666666666666,
+    "master_field_L2_dr_norm_upper_bound": 2.0,
+    "master_form_energy_upper_bound": 6.0,
+    "operator_lower_bound": 1.5,
+    "source_L2_dr_norm": 3.0,
+    "theorem": "The Friedrichs quadratic form is integral[f|Psi'|^2+6|Psi|^2/r^2]dr and is at least (6/R^2)||Psi||_2^2."
+  },
+  "goal": "Static-Patch Quadrupole Einstein Master Response",
+  "observable_prediction": "For master sources moved toward the horizon, the diagonal static susceptibility grows as R log(2R/rho)-3R/2+o(R), where rho is proper horizon distance.",
+  "operator": "A_2=-d/dr[(1-r^2/R^2)d/dr]+6/r^2",
+  "renormalized_horizon_susceptibility": -1.4999999419174284,
+  "result_type": "fixed_de_sitter_static_l2_zerilli_resolvent",
+  "sample_wronskians": [
+    -7.5,
+    -7.5,
+    -7.500000000000011,
+    -7.499999999999998,
+    -7.500000000000001
+  ],
+  "source_sha256": {
+    "experiments/static_patch_l2_response_audit.py": "2d2394279c7a5fe2b6a0fac369271fa2114bb5499cf7f862c0eb0f78e342da50",
+    "qgtoy/static_patch_l2_response.py": "2c0e81b655b8ab69fa911f496cfb50ac8d39d35e69905cf4bab918186acf2181"
+  },
+  "status": "pass",
+  "unit_flux_jump": 1.0
+}

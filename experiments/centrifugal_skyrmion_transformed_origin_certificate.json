@@ -1,0 +1,46 @@
+{
+  "center_reduced_density": "H_hat(0)=v(0)^2/6",
+  "change_of_variables": {
+    "profile": "F=pi-x w(t)",
+    "radial_coordinate": "t=x^2",
+    "radial_field": "f=x[-v(t)+t u(t)]",
+    "tangential_field": "g=x v(t)"
+  },
+  "claim_boundary": "Exact term-by-term algebraic desingularization of the full local K=2 static Hessian density. The transformed action retains the regular-singular sqrt(t) weight. This does not prove the Friedrichs-domain equivalence, a finite-cutoff Frobenius remainder, the two-parameter transfer map, coercivity, or a validated forced response.",
+  "density_factorization": "H_static=x^2 H_hat(t)",
+  "entire_kernels": [
+    "s(t)=sin(sqrt(t) w(t))/sqrt(t), with s(0)=w(0)",
+    "c(t)=cos(sqrt(t) w(t))"
+  ],
+  "exact_fraction_center_checks": [
+    true,
+    true
+  ],
+  "floating_direct_replay_relative_errors": [
+    9.147955830346444e-20,
+    2.6020852139652106e-18,
+    1.734723475976807e-18
+  ],
+  "forced_cubic_compatibility": {
+    "cubic_indicial_rows_have_ratio_minus_three_halves": [
+      true,
+      true
+    ],
+    "interpretation": "The zero-linear-amplitude forced particular branch admits a log-free cubic start; no x^3 log(x) term is forced by the leading rotational source.",
+    "leading_original_source": "F_3=b(1-4b^2)(1,-3/2)/45",
+    "particular_cubic_initial_relation": "(10+56b^2)v_t(0)-(4+56b^2)u(0)=b(1-4b^2)",
+    "particular_cubic_initial_relation_verified": true,
+    "source_has_same_ratio": true,
+    "source_is_in_range_of_K3": true
+  },
+  "maximum_floating_direct_replay_relative_error": 2.6020852139652106e-18,
+  "negative_powers_of_t_in_H_hat": 0,
+  "result_type": "exact_transformed_origin_density_identity",
+  "source_sha256": {
+    "experiments/centrifugal_skyrmion_transformed_origin_audit.py": "cffb80adbc5d314a43c3a7007baa7b780dc42cea431d7a460c6e0d21d9418878",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290",
+    "qgtoy/centrifugal_skyrmion_origin.py": "95f8b2704654fca2b557ff3979ab8136684cfb459e210290ef17f3ca321ef92d",
+    "qgtoy/centrifugal_skyrmion_transformed_origin.py": "9d50134e1ac64469f1ea46d0db6c56ae404dce15962df9ee1d7db0dc7804ab58"
+  },
+  "transformed_action_measure": "H_static dx=(sqrt(t)/2) H_hat(t) dt"
+}

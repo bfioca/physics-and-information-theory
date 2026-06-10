@@ -292,6 +292,19 @@ For `A=e_12` and `B=e_21`,
 
 For static-patch dimensions `n=N_L=(L+1)^2`, the error tends to zero.
 
+This is a selected matrix-unit witness, not a uniform approximate-
+homomorphism estimate. For even `n<m`, the balanced-sign unitary
+`A=diag(I_{n/2},-I_{n/2})` satisfies `tau_n(A)=0` and `A^2=I_n`, giving
+
+```text
+||Phi(A^2)-Phi(A)^2|| = ||I_m-VV^*|| = 1.
+```
+
+Thus the trace-filled map is not uniformly asymptotically multiplicative on
+the full unit ball. Its role is limited to a finite selected-witness audit. A
+continuum construction requires uniform control on a physically specified
+low-energy operator system or a separately justified weaker topology.
+
 **Proof.** Unitality follows from
 
 ```text

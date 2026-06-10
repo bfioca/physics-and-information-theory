@@ -1,0 +1,38 @@
+{
+  "barta_lower_bound": 1.0235900944571767,
+  "boundary_derivative_error_upper_bound": 0.05782376205254868,
+  "certified_trace_upper_bound": 9.895351050897547,
+  "corrected_auxiliary_norm_bounds": {
+    "c0": 0.0738601508930242,
+    "c1": 8.490094209841963,
+    "c2": 1131.636765910181
+  },
+  "corrected_schur_enclosure": [
+    2.9014354731562104,
+    3.017938531159798
+  ],
+  "declared_schur_lower_bound": 2.8,
+  "mesh_cell_count": 43,
+  "graph_resolvent_bounds": {
+    "c0": 1.9539071458684116,
+    "c1": 1117.028419047634,
+    "c2": 177527.30674407186,
+    "potential_l1": 44.620789665416204,
+    "potential_supremum": 49.26080369977171,
+    "principal_derivative_supremum": 12.877616865124033,
+    "principal_lower_bound": 0.08157570409823414
+  },
+  "raw_schur_enclosure": [
+    2.9592592352087594,
+    2.9601147691072494
+  ],
+  "result_type": "trusted_graded_trace_sharpened_schur_audit_summary",
+  "schur_residual_supremum_upper_bound": 0.005843528112861022,
+  "scope": "exact approximate profile Jacobi operator, certified derivative trace representer, and affinely lifted auxiliary family only; no nonlinear BVP existence conclusion",
+  "trace_residual_supremum_upper_bound": 0.08913332184493121,
+  "worst_schur_residual_radius": [
+    0.0625,
+    0.0703125
+  ],
+  "worst_schur_residual_source_cell": 0
+}

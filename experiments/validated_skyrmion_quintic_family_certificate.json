@@ -1,0 +1,67 @@
+{
+  "authenticated_profile_dependency": {
+    "path": "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json",
+    "sha256": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431"
+  },
+  "authenticated_slope_interval": {
+    "lower": "546684696508091/347185136818875",
+    "upper": "550388004634159/347185136818875"
+  },
+  "claim_boundary": "Uniform exact-rational quintic profile tube on the finite origin cell. This does not yet validate the centrifugal field transfer, the global continuum inverse, or a nonzero tidal response.",
+  "derivative_at_cutoff": {
+    "lower": "-1.583442475158770",
+    "representation": "outward_decimal_enclosure_15_places",
+    "upper": "-1.572800725062452"
+  },
+  "executable_checks": {
+    "cells_cover_authenticated_slope_interval": true,
+    "contraction_below_3_over_5": true,
+    "derivative_at_cutoff_negative": true,
+    "profile_at_cutoff_positive": true,
+    "radii_inequality_closes": true,
+    "radii_left_below_9_over_10": true,
+    "sixteen_cells": true,
+    "volterra_denominator_above_20": true
+  },
+  "maximum_contraction_bound": {
+    "lower": "0.584075357702495",
+    "representation": "outward_decimal_enclosure_15_places",
+    "upper": "0.584075357702496"
+  },
+  "maximum_residual_bound": {
+    "lower": "0.135431319545604",
+    "representation": "outward_decimal_enclosure_15_places",
+    "upper": "0.135431319545605"
+  },
+  "minimum_volterra_denominator": {
+    "lower": "20.755931201011749",
+    "representation": "outward_decimal_enclosure_15_places",
+    "upper": "20.755931201011750"
+  },
+  "parameters": {
+    "curvature": "1/400",
+    "cutoff": "1/16",
+    "pion_mass_squared": "1/1",
+    "remainder_radius": "13/10",
+    "slope_cells": 16
+  },
+  "profile_at_cutoff": {
+    "lower": "3.042550683073835",
+    "representation": "outward_decimal_enclosure_15_places",
+    "upper": "3.043216827508735"
+  },
+  "radii_left_side": {
+    "lower": "0.894729284558848",
+    "representation": "outward_decimal_enclosure_15_places",
+    "upper": "0.894729284558849"
+  },
+  "result_type": "validated_uniform_skyrmion_quintic_origin_family",
+  "source_sha256": {
+    "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431",
+    "experiments/validated_skyrmion_quintic_family_audit.py": "0ae959e1479d87888f33314c4db8f5c46f5e64fcde97d2359ac614787c1ca109",
+    "qgtoy/validated_interval.py": "dcc91000cd46134454f76fe73e88587757d102b98445dccb2a97d3a13ff5a929",
+    "qgtoy/validated_skyrmion_origin.py": "ef76d90f1be0465684a861fb31bf9e87e7a9a27307f1322b9fb887b1d20f65b6",
+    "qgtoy/validated_skyrmion_quintic_family.py": "73a3969c1a965767492eecd41dae88b0441b95e91f585eda93c48d31066fdd97"
+  },
+  "status": "pass"
+}

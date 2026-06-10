@@ -1,0 +1,326 @@
+{
+  "augmented_inverse_upper_bound": {
+    "denominator_bits": 305233,
+    "numerator_bits": 305235,
+    "value": 3.0211687552648834
+  },
+  "barta_lower_bound": {
+    "denominator_bits": 36638,
+    "numerator_bits": 36638,
+    "value": 1.0235900944571767
+  },
+  "boundary_slope_residual_absolute_upper_bound": {
+    "denominator_bits": 1395,
+    "numerator_bits": 1371,
+    "value": 9.13088574490963e-08
+  },
+  "dimensionless_rotor_inertia_enclosure": {
+    "lower": {
+      "denominator_bits": 2696801,
+      "numerator_bits": 2696806,
+      "value": 21.149277305080002
+    },
+    "upper": {
+      "denominator_bits": 2673791,
+      "numerator_bits": 2673796,
+      "value": 48.92018613501725
+    }
+  },
+  "generation_seconds": 12.5744469598867,
+  "green_c0_upper_bound": {
+    "denominator_bits": 349596,
+    "numerator_bits": 349594,
+    "value": 0.22813715684064623
+  },
+  "green_c1_upper_bound": {
+    "denominator_bits": 349343,
+    "numerator_bits": 349343,
+    "value": 1.4321231091914504
+  },
+  "green_c2_upper_bound": {
+    "denominator_bits": 554690,
+    "numerator_bits": 554696,
+    "value": 59.31251557489701
+  },
+  "green_corrected_auxiliary_c0": {
+    "denominator_bits": 403415,
+    "numerator_bits": 403411,
+    "value": 0.06388681054238657
+  },
+  "green_corrected_auxiliary_c1": {
+    "denominator_bits": 403352,
+    "numerator_bits": 403353,
+    "value": 1.9717742291670635
+  },
+  "green_corrected_auxiliary_c2": {
+    "denominator_bits": 596923,
+    "numerator_bits": 596929,
+    "value": 94.62647469433571
+  },
+  "green_operator_defect": {
+    "denominator_bits": 349343,
+    "numerator_bits": 349339,
+    "value": 0.08901403484568955
+  },
+  "interior_operator_mismatch_upper_bound": {
+    "denominator_bits": 613419,
+    "numerator_bits": 613405,
+    "value": 7.796465066309884e-05
+  },
+  "mesh_cell_count": 43,
+  "negative_wall_slope_verified": true,
+  "newton_defect_upper_bound": {
+    "denominator_bits": 32520,
+    "numerator_bits": 32511,
+    "value": 0.0022951016014775287
+  },
+  "newton_tube_best_radius": {
+    "denominator_bits": 8,
+    "numerator_bits": 1,
+    "value": 0.004
+  },
+  "newton_tube_contraction_bound": {
+    "denominator_bits": 3036222,
+    "numerator_bits": 3036220,
+    "value": 0.31498946679323525
+  },
+  "newton_tube_contraction_verified": true,
+  "newton_tube_interior_hessian": {
+    "denominator_bits": 3035867,
+    "numerator_bits": 3035873,
+    "value": 78.72787553564304
+  },
+  "newton_tube_interior_hessian_trace": {
+    "denominator_bits": 4721956,
+    "numerator_bits": 4721961,
+    "value": 22.848240930113477
+  },
+  "newton_tube_minimum_linearized_radius": {
+    "denominator_bits": 640303,
+    "numerator_bits": 640295,
+    "value": 0.002295280552223957
+  },
+  "newton_tube_radii_polynomial": {
+    "denominator_bits": 3052923,
+    "numerator_bits": 3052913,
+    "value": -0.0010747635356346745
+  },
+  "newton_tube_schur_composed_hessian": {
+    "denominator_bits": 3035867,
+    "numerator_bits": 3035873,
+    "value": 78.72787553564304
+  },
+  "newton_tube_self_map_verified": true,
+  "newton_tube_skip_reason": null,
+  "newton_tube_sweep": [
+    {
+      "contraction_bound": {
+        "denominator_bits": 3036222,
+        "numerator_bits": 3036220,
+        "value": 0.31498946679323525
+      },
+      "contraction_verified": true,
+      "interior_hessian": {
+        "denominator_bits": 3035867,
+        "numerator_bits": 3035873,
+        "value": 78.72787553564304
+      },
+      "radii_polynomial": {
+        "denominator_bits": 3052923,
+        "numerator_bits": 3052913,
+        "value": -0.0010747635356346745
+      },
+      "radius": {
+        "denominator_bits": 8,
+        "numerator_bits": 1,
+        "value": 0.004
+      },
+      "self_map_verified": true,
+      "worst_hessian_components": {
+        "affine_lift_jacobi": {
+          "denominator_bits": 2003976,
+          "numerator_bits": 2003982,
+          "value": 60.59773251082283
+        },
+        "augmented": {
+          "denominator_bits": 3035867,
+          "numerator_bits": 3035873,
+          "value": 78.72787553564304
+        },
+        "center_equation": {
+          "denominator_bits": 2953103,
+          "numerator_bits": 2953110,
+          "value": 77.69181969460884
+        },
+        "center_equation_forcing": {
+          "denominator_bits": 434800,
+          "numerator_bits": 434800,
+          "value": 1.0039900056946054
+        },
+        "direct_nonlinear": {
+          "denominator_bits": 2948617,
+          "numerator_bits": 2948624,
+          "value": 122.57654290636464
+        },
+        "local_auxiliary_c0": {
+          "denominator_bits": 403435,
+          "numerator_bits": 403431,
+          "value": 0.06251105607121123
+        },
+        "local_auxiliary_c1": {
+          "denominator_bits": 403352,
+          "numerator_bits": 403353,
+          "value": 1.9717742291670635
+        },
+        "local_auxiliary_c2": {
+          "denominator_bits": 596923,
+          "numerator_bits": 596929,
+          "value": 94.62647469433571
+        },
+        "local_graph_c0": {
+          "denominator_bits": 349343,
+          "numerator_bits": 349336,
+          "value": 0.010837919614753536
+        },
+        "local_graph_c1": {
+          "denominator_bits": 349343,
+          "numerator_bits": 349343,
+          "value": 1.4321231091914504
+        },
+        "local_graph_c2": {
+          "denominator_bits": 554690,
+          "numerator_bits": 554696,
+          "value": 59.31251557489701
+        },
+        "nonlinear": {
+          "denominator_bits": 2953103,
+          "numerator_bits": 2953110,
+          "value": 77.69181969460884
+        }
+      },
+      "worst_hessian_radius": [
+        0.0625,
+        0.0703125
+      ],
+      "worst_hessian_source_cell": 0
+    }
+  ],
+  "nonlinear_residual_supremum": {
+    "denominator_bits": 32520,
+    "numerator_bits": 32511,
+    "value": 0.0022951016014775287
+  },
+  "nonlinear_residual_trace": {
+    "denominator_bits": 1016519,
+    "numerator_bits": 1016509,
+    "value": 0.0010073629801010296
+  },
+  "omega_sweep": [
+    {
+      "augmented_inverse_upper_bound": {
+        "denominator_bits": 305233,
+        "numerator_bits": 305235,
+        "value": 3.0211687552648834
+      },
+      "interior_operator_mismatch_upper_bound": {
+        "denominator_bits": 613419,
+        "numerator_bits": 613405,
+        "value": 7.796465066309884e-05
+      },
+      "omega": {
+        "denominator_bits": 3,
+        "numerator_bits": 2,
+        "value": 0.75
+      },
+      "z0_upper_bound": {
+        "denominator_bits": 613419,
+        "numerator_bits": 613405,
+        "value": 7.796465066309884e-05
+      }
+    }
+  ],
+  "operator_mismatch_trace_upper_bound": {
+    "denominator_bits": 1145719,
+    "numerator_bits": 1145705,
+    "value": 6.78870793233345e-05
+  },
+  "origin_branch_identified": true,
+  "origin_momentum_nesting_bound": {
+    "denominator_bits": 467,
+    "numerator_bits": 465,
+    "value": 0.22752550597147597
+  },
+  "origin_profile_nesting_bound": {
+    "denominator_bits": 472,
+    "numerator_bits": 467,
+    "value": 0.04521492262286662
+  },
+  "phase_seconds": {
+    "green": 325.75022313417867,
+    "green_sharpening_and_endpoint": 114.57225609314628,
+    "newton_tube_sweep": 10378.790155973984,
+    "operator_mismatch_and_reweighting": 149.42719514900818,
+    "origin_second_sensitivity": 17.15479337493889,
+    "physical_observables": 2850.805553429993,
+    "schur": 584.088522644015
+  },
+  "positive_finite_inertia_verified": true,
+  "result_type": "trusted_skyrmion_newton_linearization_audit",
+  "schur_lower_bound": {
+    "denominator_bits": 305231,
+    "numerator_bits": 305233,
+    "value": 2.891838938724358
+  },
+  "scope": "derivative mismatch between the exact approximate-profile operator and its endpoint-corrected center family only; no nonlinear Newton-radius conclusion",
+  "selected_omega": {
+    "denominator_bits": 3,
+    "numerator_bits": 2,
+    "value": 0.75
+  },
+  "strict_monotonicity_verified": true,
+  "trace_upper_bound": {
+    "denominator_bits": 205595,
+    "numerator_bits": 205598,
+    "value": 10.648977929243188
+  },
+  "validation_seconds": 14420.588713265024,
+  "wall_slope_enclosure": {
+    "lower": {
+      "denominator_bits": 517220,
+      "numerator_bits": 517217,
+      "value": -0.09464497277004298
+    },
+    "upper": {
+      "denominator_bits": 517219,
+      "numerator_bits": 517215,
+      "value": -0.08746648576347145
+    }
+  },
+  "worst_coefficient_differences": {
+    "potential": {
+      "denominator_bits": 4309,
+      "numerator_bits": 4290,
+      "value": 1.2993132939150864e-06
+    },
+    "principal": {
+      "denominator_bits": 1402,
+      "numerator_bits": 1381,
+      "value": 4.139157528814649e-07
+    },
+    "principal_derivative": {
+      "denominator_bits": 2829,
+      "numerator_bits": 2807,
+      "value": 1.9304386864008042e-07
+    }
+  },
+  "worst_mismatch_radius": [
+    3.875,
+    4.0
+  ],
+  "worst_mismatch_source_cell": 42,
+  "z0_upper_bound": {
+    "denominator_bits": 613419,
+    "numerator_bits": 613405,
+    "value": 7.796465066309884e-05
+  }
+}

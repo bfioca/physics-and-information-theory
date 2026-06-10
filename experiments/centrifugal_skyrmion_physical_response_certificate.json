@@ -1,0 +1,701 @@
+{
+  "anisotropic_spin_two_cat": {
+    "claim_boundary": "Physical normalization of the frozen O(Omega^2), linear-gravity master amplitude. It is not an Israel-matched metric, a local Weyl observable, or a controlled collective-band truncation.",
+    "collective_state": {
+      "Qhat_over_QJ_factor": 0.0008516635684925458,
+      "dimensionless_angular_velocity_quadrupole_Qhat_ab": [
+        [
+          -0.000851663568492546,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.000851663568492546,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.001703327136985091
+        ]
+      ],
+      "fixed_spin_j": 2.0,
+      "leading_quadrupole_response_vanishes": false,
+      "quantization": "Omega_hat=e^2 J/c_I; QJ_ab=<J_(a J_b)>-delta_ab<J^2>/3",
+      "slow_rotation_parameter_e_squared_sqrt_j_jplus1_over_c_I": 0.07148413398059232,
+      "state_casimir_expectation_C": 6.0,
+      "state_density_matrix_spectrum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999998
+      ],
+      "state_quadrupole_frobenius_norm_squared": 5.999999999999997,
+      "state_second_moment_S_ab": [
+        [
+          0.9999999999999998,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.999999999999999
+        ]
+      ],
+      "state_traceless_quadrupole_QJ_ab": [
+        [
+          -1.0000000000000002,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0000000000000002,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.9999999999999991
+        ]
+      ]
+    },
+    "inertia_constant_c_I": 34.26620155247604,
+    "normalization_identity": "Psi_phys=(8 pi G e^3 f_pi/c_I^2) psi0(x) QJ_ab n_a n_b",
+    "physical_master_prefactor_per_psi0_and_QJ": 2.1404640080849996e-08,
+    "physical_rotor_inertia": 34.26620155247604,
+    "physical_units": {
+      "bulk_stress_unit_T0": 1.0,
+      "convention": "natural units; x=e f_pi r, tau=e f_pi t, kappa_hat=8 pi G f_pi^2",
+      "dimensionless_einstein_coupling_kappa_hat": 2.5132741228718343e-05,
+      "inverse_length_scale_e_f_pi": 1.0,
+      "length_unit_L0": 1.0,
+      "membrane_tension_unit_sigma0": 1.0,
+      "newton_constant_G": 1e-06,
+      "physical_pion_mass": 1.0,
+      "physical_static_patch_radius": 20.0,
+      "physical_wall_radius": 4.0,
+      "pion_decay_constant_f_pi": 1.0,
+      "skyrme_coupling_e": 1.0
+    },
+    "response_samples": [
+      {
+        "dimensionless_master_coefficient_psi0": -0.2208886317324907,
+        "dimensionless_master_signal_rms_Psi_over_r": 4.228889021050192e-09,
+        "dimensionless_radius_x": 1.0,
+        "physical_master_angular_integral": 2.2473071844250544e-16,
+        "physical_master_angular_rms": 4.228889021050192e-09,
+        "physical_master_tensor_Psi_ab": [
+          [
+            4.728041660185386e-09,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            4.728041660185386e-09,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -9.456083320370766e-09
+          ]
+        ],
+        "physical_radius": 1.0,
+        "universal_pointwise_absolute_upper_bound": 1.891216664074154e-08
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.33021200860693134,
+        "dimensionless_master_signal_rms_Psi_over_r": 3.1609366377621985e-09,
+        "dimensionless_radius_x": 2.0,
+        "physical_master_angular_integral": 5.0222859479411e-16,
+        "physical_master_angular_rms": 6.321873275524397e-09,
+        "physical_master_tensor_Psi_ab": [
+          [
+            7.068069194605908e-09,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            7.068069194605908e-09,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -1.4136138389211806e-08
+          ]
+        ],
+        "physical_radius": 2.0,
+        "universal_pointwise_absolute_upper_bound": 2.8272276778423625e-08
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.17618969156643796,
+        "dimensionless_master_signal_rms_Psi_over_r": 1.1243775448342575e-09,
+        "dimensionless_radius_x": 3.0,
+        "physical_master_angular_integral": 1.4298046355214989e-16,
+        "physical_master_angular_rms": 3.3731326345027724e-09,
+        "physical_master_tensor_Psi_ab": [
+          [
+            3.771276933935578e-09,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            3.771276933935578e-09,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -7.54255386787115e-09
+          ]
+        ],
+        "physical_radius": 3.0,
+        "universal_pointwise_absolute_upper_bound": 1.5085107735742308e-08
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.06621317209175806,
+        "dimensionless_master_signal_rms_Psi_over_r": 2.5352880708396906e-10,
+        "dimensionless_radius_x": 5.0,
+        "physical_master_angular_integral": 2.019316986727432e-17,
+        "physical_master_angular_rms": 1.2676440354198453e-09,
+        "physical_master_tensor_Psi_ab": [
+          [
+            1.4172691172354634e-09,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            1.4172691172354634e-09,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -2.8345382344709246e-09
+          ]
+        ],
+        "physical_radius": 5.0,
+        "universal_pointwise_absolute_upper_bound": 5.669076468941852e-09
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.015496699851262527,
+        "dimensionless_master_signal_rms_Psi_over_r": 2.9668264658762335e-11,
+        "dimensionless_radius_x": 10.0,
+        "physical_master_angular_integral": 1.106099390647439e-18,
+        "physical_master_angular_rms": 2.9668264658762336e-10,
+        "physical_master_tensor_Psi_ab": [
+          [
+            3.317012827572361e-10,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            3.317012827572361e-10,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -6.634025655144718e-10
+          ]
+        ],
+        "physical_radius": 10.0,
+        "universal_pointwise_absolute_upper_bound": 1.3268051310289441e-09
+      }
+    ]
+  },
+  "anticoherent_spin_two": {
+    "claim_boundary": "Physical normalization of the frozen O(Omega^2), linear-gravity master amplitude. It is not an Israel-matched metric, a local Weyl observable, or a controlled collective-band truncation.",
+    "collective_state": {
+      "Qhat_over_QJ_factor": 0.0008516635684925458,
+      "dimensionless_angular_velocity_quadrupole_Qhat_ab": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "fixed_spin_j": 2.0,
+      "leading_quadrupole_response_vanishes": true,
+      "quantization": "Omega_hat=e^2 J/c_I; QJ_ab=<J_(a J_b)>-delta_ab<J^2>/3",
+      "slow_rotation_parameter_e_squared_sqrt_j_jplus1_over_c_I": 0.07148413398059232,
+      "state_casimir_expectation_C": 6.0,
+      "state_density_matrix_spectrum": [
+        -5.551115123125783e-17,
+        -1.5586221558084623e-17,
+        0.0,
+        9.885294840497133e-17,
+        1.0
+      ],
+      "state_quadrupole_frobenius_norm_squared": 0.0,
+      "state_second_moment_S_ab": [
+        [
+          1.9999999999999996,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.9999999999999996,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "state_traceless_quadrupole_QJ_ab": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "inertia_constant_c_I": 34.26620155247604,
+    "normalization_identity": "Psi_phys=(8 pi G e^3 f_pi/c_I^2) psi0(x) QJ_ab n_a n_b",
+    "physical_master_prefactor_per_psi0_and_QJ": 2.1404640080849996e-08,
+    "physical_rotor_inertia": 34.26620155247604,
+    "physical_units": {
+      "bulk_stress_unit_T0": 1.0,
+      "convention": "natural units; x=e f_pi r, tau=e f_pi t, kappa_hat=8 pi G f_pi^2",
+      "dimensionless_einstein_coupling_kappa_hat": 2.5132741228718343e-05,
+      "inverse_length_scale_e_f_pi": 1.0,
+      "length_unit_L0": 1.0,
+      "membrane_tension_unit_sigma0": 1.0,
+      "newton_constant_G": 1e-06,
+      "physical_pion_mass": 1.0,
+      "physical_static_patch_radius": 20.0,
+      "physical_wall_radius": 4.0,
+      "pion_decay_constant_f_pi": 1.0,
+      "skyrme_coupling_e": 1.0
+    },
+    "response_samples": [
+      {
+        "dimensionless_master_coefficient_psi0": -0.2208886317324907,
+        "dimensionless_master_signal_rms_Psi_over_r": 0.0,
+        "dimensionless_radius_x": 1.0,
+        "physical_master_angular_integral": 0.0,
+        "physical_master_angular_rms": 0.0,
+        "physical_master_tensor_Psi_ab": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "physical_radius": 1.0,
+        "universal_pointwise_absolute_upper_bound": 1.891216664074154e-08
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.33021200860693134,
+        "dimensionless_master_signal_rms_Psi_over_r": 0.0,
+        "dimensionless_radius_x": 2.0,
+        "physical_master_angular_integral": 0.0,
+        "physical_master_angular_rms": 0.0,
+        "physical_master_tensor_Psi_ab": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "physical_radius": 2.0,
+        "universal_pointwise_absolute_upper_bound": 2.8272276778423625e-08
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.17618969156643796,
+        "dimensionless_master_signal_rms_Psi_over_r": 0.0,
+        "dimensionless_radius_x": 3.0,
+        "physical_master_angular_integral": 0.0,
+        "physical_master_angular_rms": 0.0,
+        "physical_master_tensor_Psi_ab": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "physical_radius": 3.0,
+        "universal_pointwise_absolute_upper_bound": 1.5085107735742308e-08
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.06621317209175806,
+        "dimensionless_master_signal_rms_Psi_over_r": 0.0,
+        "dimensionless_radius_x": 5.0,
+        "physical_master_angular_integral": 0.0,
+        "physical_master_angular_rms": 0.0,
+        "physical_master_tensor_Psi_ab": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "physical_radius": 5.0,
+        "universal_pointwise_absolute_upper_bound": 5.669076468941852e-09
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.015496699851262527,
+        "dimensionless_master_signal_rms_Psi_over_r": 0.0,
+        "dimensionless_radius_x": 10.0,
+        "physical_master_angular_integral": 0.0,
+        "physical_master_angular_rms": 0.0,
+        "physical_master_tensor_Psi_ab": [
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -0.0
+          ]
+        ],
+        "physical_radius": 10.0,
+        "universal_pointwise_absolute_upper_bound": 1.3268051310289441e-09
+      }
+    ]
+  },
+  "certified_claims": {
+    "angular_integral_uses_exact_traceless_tensor_norm": true,
+    "anisotropic_state_has_nonzero_physical_master_rms": true,
+    "anticoherent_state_has_zero_quadrupole_response": true,
+    "dimensionless_einstein_coupling_is_eight_pi_G_f_pi_squared": true,
+    "master_amplitude_scales_as_e_cubed_at_fixed_dimensionless_model": true,
+    "master_over_radius_scales_as_e_fourth_at_fixed_dimensionless_model": true,
+    "same_profile_inertia_is_positive_and_finite": true,
+    "spin_cat_is_inside_declared_slow_rotation_budget": true
+  },
+  "claim_boundary": "Source-hashed physical and collective normalization of the frozen fixed-background master response. The state-dependent master amplitude is not yet an Israel-matched metric or local Weyl detector observable, and collective-band errors remain open. The e-scaling audit holds fixed the dimensionless model, so it co-varies physical masses and radii.",
+  "coupling_rescaled_spin_two_cat": {
+    "claim_boundary": "Physical normalization of the frozen O(Omega^2), linear-gravity master amplitude. It is not an Israel-matched metric, a local Weyl observable, or a controlled collective-band truncation.",
+    "collective_state": {
+      "Qhat_over_QJ_factor": 0.013626617095880733,
+      "dimensionless_angular_velocity_quadrupole_Qhat_ab": [
+        [
+          -0.013626617095880736,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -0.013626617095880736,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.027253234191761455
+        ]
+      ],
+      "fixed_spin_j": 2.0,
+      "leading_quadrupole_response_vanishes": false,
+      "quantization": "Omega_hat=e^2 J/c_I; QJ_ab=<J_(a J_b)>-delta_ab<J^2>/3",
+      "slow_rotation_parameter_e_squared_sqrt_j_jplus1_over_c_I": 0.2859365359223693,
+      "state_casimir_expectation_C": 6.0,
+      "state_density_matrix_spectrum": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999998
+      ],
+      "state_quadrupole_frobenius_norm_squared": 5.999999999999997,
+      "state_second_moment_S_ab": [
+        [
+          0.9999999999999998,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.9999999999999998,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          3.999999999999999
+        ]
+      ],
+      "state_traceless_quadrupole_QJ_ab": [
+        [
+          -1.0000000000000002,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.0000000000000002,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.9999999999999991
+        ]
+      ]
+    },
+    "inertia_constant_c_I": 34.26620155247604,
+    "normalization_identity": "Psi_phys=(8 pi G e^3 f_pi/c_I^2) psi0(x) QJ_ab n_a n_b",
+    "physical_master_prefactor_per_psi0_and_QJ": 1.7123712064679997e-07,
+    "physical_rotor_inertia": 4.283275194059505,
+    "physical_units": {
+      "bulk_stress_unit_T0": 4.0,
+      "convention": "natural units; x=e f_pi r, tau=e f_pi t, kappa_hat=8 pi G f_pi^2",
+      "dimensionless_einstein_coupling_kappa_hat": 2.5132741228718343e-05,
+      "inverse_length_scale_e_f_pi": 2.0,
+      "length_unit_L0": 0.5,
+      "membrane_tension_unit_sigma0": 2.0,
+      "newton_constant_G": 1e-06,
+      "physical_pion_mass": 2.0,
+      "physical_static_patch_radius": 10.0,
+      "physical_wall_radius": 2.0,
+      "pion_decay_constant_f_pi": 1.0,
+      "skyrme_coupling_e": 2.0
+    },
+    "response_samples": [
+      {
+        "dimensionless_master_coefficient_psi0": -0.2208886317324907,
+        "dimensionless_master_signal_rms_Psi_over_r": 6.766222433680307e-08,
+        "dimensionless_radius_x": 1.0,
+        "physical_master_angular_integral": 1.438276598032035e-14,
+        "physical_master_angular_rms": 3.3831112168401535e-08,
+        "physical_master_tensor_Psi_ab": [
+          [
+            3.782433328148309e-08,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            3.782433328148309e-08,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -7.564866656296613e-08
+          ]
+        ],
+        "physical_radius": 0.5,
+        "universal_pointwise_absolute_upper_bound": 1.5129733312593233e-07
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.33021200860693134,
+        "dimensionless_master_signal_rms_Psi_over_r": 5.0574986204195176e-08,
+        "dimensionless_radius_x": 2.0,
+        "physical_master_angular_integral": 3.214263006682304e-14,
+        "physical_master_angular_rms": 5.0574986204195176e-08,
+        "physical_master_tensor_Psi_ab": [
+          [
+            5.654455355684726e-08,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            5.654455355684726e-08,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -1.1308910711369445e-07
+          ]
+        ],
+        "physical_radius": 1.0,
+        "universal_pointwise_absolute_upper_bound": 2.26178214227389e-07
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.17618969156643796,
+        "dimensionless_master_signal_rms_Psi_over_r": 1.799004071734812e-08,
+        "dimensionless_radius_x": 3.0,
+        "physical_master_angular_integral": 9.150749667337593e-15,
+        "physical_master_angular_rms": 2.698506107602218e-08,
+        "physical_master_tensor_Psi_ab": [
+          [
+            3.017021547148462e-08,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            3.017021547148462e-08,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -6.03404309429692e-08
+          ]
+        ],
+        "physical_radius": 1.5,
+        "universal_pointwise_absolute_upper_bound": 1.2068086188593846e-07
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.06621317209175806,
+        "dimensionless_master_signal_rms_Psi_over_r": 4.056460913343505e-09,
+        "dimensionless_radius_x": 5.0,
+        "physical_master_angular_integral": 1.2923628715055565e-15,
+        "physical_master_angular_rms": 1.0141152283358762e-08,
+        "physical_master_tensor_Psi_ab": [
+          [
+            1.1338152937883707e-08,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            1.1338152937883707e-08,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -2.2676305875767397e-08
+          ]
+        ],
+        "physical_radius": 2.5,
+        "universal_pointwise_absolute_upper_bound": 4.5352611751534814e-08
+      },
+      {
+        "dimensionless_master_coefficient_psi0": -0.015496699851262527,
+        "dimensionless_master_signal_rms_Psi_over_r": 4.746922345401974e-10,
+        "dimensionless_radius_x": 10.0,
+        "physical_master_angular_integral": 7.07903610014361e-17,
+        "physical_master_angular_rms": 2.373461172700987e-09,
+        "physical_master_tensor_Psi_ab": [
+          [
+            2.6536102620578887e-09,
+            -0.0,
+            -0.0
+          ],
+          [
+            -0.0,
+            2.6536102620578887e-09,
+            -0.0
+          ],
+          [
+            -0.0,
+            -0.0,
+            -5.307220524115774e-09
+          ]
+        ],
+        "physical_radius": 5.0,
+        "universal_pointwise_absolute_upper_bound": 1.0614441048231553e-08
+      }
+    ]
+  },
+  "dimensionless_inertia_c_I": 34.26620155247604,
+  "dimensionless_response_parameters": {
+    "curvature_lambda": 0.0025,
+    "membrane_tension": 0.001931779647,
+    "mesh_width": 0.00995,
+    "node_count": 401,
+    "origin_radius": 0.02,
+    "pion_mass_mu": 1.0,
+    "profile_step": 0.002,
+    "static_patch_radius": 20.0,
+    "wall_radius": 4.0
+  },
+  "goal": "Physical Collective Normalization Of The Skyrmion Master Response",
+  "result_type": "physical_state_dependent_skyrmion_master_amplitude",
+  "source_sha256": {
+    "experiments/centrifugal_skyrmion_physical_response_audit.py": "5c5acc9cb3bfdbfdd6077cb2efab66104e82925955d8c766db10887e2f18587b",
+    "qgtoy/centrifugal_skyrmion_bvp.py": "d8d7af70c015f87f3822494dfc5bd4eb56ece14c31ab3cdf29b33bf8c699f29d",
+    "qgtoy/centrifugal_skyrmion_completed_stress.py": "ac52209e805fcbc05eae5fb9c61643440019bec0b86c3b749e59c54a562e82c5",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290",
+    "qgtoy/centrifugal_skyrmion_master_response.py": "19d4c987a9420df60e5ba448d046adc2c8fc79565888f56e509b602eff54d182",
+    "qgtoy/centrifugal_skyrmion_membrane_stress.py": "e8d6c8db52870994b06ebb875694b07689350fb37011bc24afb9abe14abe36bb",
+    "qgtoy/centrifugal_skyrmion_physical_response.py": "a962056280eeeea6e5c084d805f069b232ff37188a9bd4c7fdff291bc8219cd3",
+    "qgtoy/massive_skyrmion_profile.py": "bc6e15c3d72fdbe45302af4715c5a34c5a7b6693e4d0181b93c2fb3f9087cb43",
+    "qgtoy/massive_skyrmion_worldtube.py": "a7cff678b908c91b76c95fac921f198c9101ce845b1ee35e9a63616624a02996",
+    "qgtoy/static_patch_l2_master_source.py": "c42011b1a0e4bb893f7e4ac6d7640ee25df984ac85e92b1bb38a48096ca0b9de",
+    "qgtoy/static_patch_l2_response.py": "2c0e81b655b8ab69fa911f496cfb50ac8d39d35e69905cf4bab918186acf2181"
+  },
+  "status": "pass"
+}

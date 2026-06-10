@@ -1,0 +1,25 @@
+{
+  "boundary_slope_residual": [
+    -0.000023462001836132805,
+    0.00001633679528688307
+  ],
+  "left_value_correction": [
+    -1.9634290383109999e-07,
+    2.9956774070015e-07
+  ],
+  "mesh_cell_count": 43,
+  "nonlinear_residual_supremum_upper_bound": 0.002295967024672295,
+  "result_type": "trusted_endpoint_corrected_nonlinear_residual_audit_summary",
+  "right_value_correction": -5.373551113492872e-08,
+  "scope": "endpoint-corrected approximate-profile family at one selected shooting slope only; no nonlinear BVP existence conclusion",
+  "worst_family_error_upper_bound": 8.674264800271255e-07,
+  "worst_midpoint_residual": [
+    -0.0022950995981922675,
+    0.0020162408286363677
+  ],
+  "worst_residual_radius": [
+    2.0,
+    2.1875
+  ],
+  "worst_residual_source_cell": 32
+}

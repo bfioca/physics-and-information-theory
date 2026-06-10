@@ -1,0 +1,47 @@
+{
+  "affine_combination_rule": "combine column centers linearly; scale each column-tube error by the absolute value of its affine amplitude before summing",
+  "authenticated_slope_interval": {
+    "lower": "546684696508091/347185136818875",
+    "upper": "550388004634159/347185136818875"
+  },
+  "branch_order": [
+    "linear_homogeneous",
+    "cubic_homogeneous",
+    "forced_particular"
+  ],
+  "claim_boundary": "Validated columnwise physical (f,g,f',g') endpoint tubes at x=1/16. Friedrichs trace-space equivalence, the global continuum inverse, and a validated nonzero exterior response remain open.",
+  "cutoff": "1/16",
+  "executable_checks": {
+    "all_three_affine_columns_present": true,
+    "finite_cell_enclosure": true,
+    "formal_field_and_derivative_centers_contained": true,
+    "maximum_derivative_width_below_3_over_2": true,
+    "maximum_field_width_below_3_over_50": true,
+    "two_cells_cover_authenticated_slope_interval": true
+  },
+  "maximum_derivative_interval_width": {
+    "lower": "1.394046986221",
+    "representation": "outward_decimal_enclosure_12_places",
+    "upper": "1.394046986222"
+  },
+  "maximum_field_interval_width": {
+    "lower": "0.051138809101",
+    "representation": "outward_decimal_enclosure_12_places",
+    "upper": "0.051138809102"
+  },
+  "result_type": "validated_physical_centrifugal_origin_transfer",
+  "source_sha256": {
+    "experiments/validated_centrifugal_conormal_remainder_certificate.json": "7b8be07c712f142f95219057a2348d11e80fbf73fd428d527f96a43257adb5c0",
+    "experiments/validated_centrifugal_physical_origin_transfer_audit.py": "0ba022f08053e8651a31abe039289270b069e3c2176edd22d65ba7a85b9304bc",
+    "qgtoy/validated_centrifugal_conormal_remainder.py": "8034e0c03a1540aacbf1bbd10259ab64994f3817a260edf3d155873da5c2040b",
+    "qgtoy/validated_centrifugal_origin_transfer.py": "95d4090375fb9902d06394ea84863d9ec6928a3b0b91c548ca2b3aff711a2f2f",
+    "qgtoy/validated_centrifugal_physical_origin_transfer.py": "86ec677186e95fcbe08e04b8064a7d9ec7078b70a138e16defc63b278eff5923",
+    "qgtoy/validated_interval.py": "dcc91000cd46134454f76fe73e88587757d102b98445dccb2a97d3a13ff5a929",
+    "qgtoy/validated_skyrmion_quintic_family.py": "73a3969c1a965767492eecd41dae88b0441b95e91f585eda93c48d31066fdd97"
+  },
+  "status": "pass",
+  "validated_conormal_dependency": {
+    "path": "experiments/validated_centrifugal_conormal_remainder_certificate.json",
+    "sha256": "7b8be07c712f142f95219057a2348d11e80fbf73fd428d527f96a43257adb5c0"
+  }
+}

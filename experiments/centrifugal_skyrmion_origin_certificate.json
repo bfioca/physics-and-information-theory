@@ -1,0 +1,184 @@
+{
+  "authenticated_profile_dependency": {
+    "path": "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json",
+    "sha256": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431"
+  },
+  "authenticated_slope_interval": {
+    "lower": "546684696508091/347185136818875",
+    "upper": "550388004634159/347185136818875"
+  },
+  "claim_boundary": "Exact leading indicial identity for the declared K=2 Hessian. It also encloses the leading regular-subspace Robin matrix over the authenticated slope interval, but does not include its finite-cutoff Frobenius remainder. It does not yet prove the transformed full nonlinear-coefficient operator is regular, identify its Friedrichs form domain, or bound the exact finite-radius transfer.",
+  "cubic_mode_polynomial_residuals": [
+    [
+      "0"
+    ],
+    [
+      "0"
+    ]
+  ],
+  "cubic_mode_polynomial_vector": [
+    [
+      "2/15"
+    ],
+    [
+      "4/45",
+      "0",
+      "56/45"
+    ]
+  ],
+  "indicial_roots": [
+    1,
+    3,
+    -2,
+    -4
+  ],
+  "leading_hessian_polynomials": [
+    [
+      [
+        "8/45",
+        "0",
+        "56/45"
+      ],
+      [
+        "2/15",
+        "0",
+        "4/3"
+      ],
+      [
+        "0",
+        "0",
+        "16/45"
+      ],
+      [
+        "0",
+        "0",
+        "4/15"
+      ]
+    ],
+    [
+      [
+        "2/15",
+        "0",
+        "4/3"
+      ],
+      [
+        "1/5",
+        "0",
+        "26/15"
+      ],
+      [
+        "0",
+        "0",
+        "8/15"
+      ],
+      [
+        "0",
+        "0",
+        "2/15"
+      ]
+    ],
+    [
+      [
+        "0",
+        "0",
+        "16/45"
+      ],
+      [
+        "0",
+        "0",
+        "8/15"
+      ],
+      [
+        "1/45",
+        "0",
+        "8/45"
+      ],
+      [
+        "0"
+      ]
+    ],
+    [
+      [
+        "0",
+        "0",
+        "4/15"
+      ],
+      [
+        "0",
+        "0",
+        "2/15"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1/30",
+        "0",
+        "2/15"
+      ]
+    ]
+  ],
+  "leading_robin_cutoff": "1/16",
+  "leading_robin_matrix_enclosure": [
+    [
+      {
+        "lower": "156925879513154228684226380251888/9084642354204493573836811171993",
+        "upper": "155105745897589924431157054747888/8970884003231724558019978327993",
+        "width": "1316366344101024064959004980253848293127991236814866000000000/81497272770414485926546560355026257816151112481145282889500049"
+      },
+      {
+        "lower": "11571601845882331502837401500000/9084642354204493573836811171993",
+        "upper": "11571601845882331502837401500000/8970884003231724558019978327993",
+        "width": "1316366344101024064959004980253848293127991236814866000000000/81497272770414485926546560355026257816151112481145282889500049"
+      }
+    ],
+    [
+      {
+        "lower": "275496686257532854353801904995776/8970884003231724558019978327993",
+        "upper": "279136953488661462859940556003776/9084642354204493573836811171993",
+        "width": "1316366344101024064959004980253848293127991236814866000000000/81497272770414485926546560355026257816151112481145282889500049"
+      },
+      {
+        "lower": "419030830309240447282121558243664/8970884003231724558019978327993",
+        "upper": "424491231155933360041329534755664/9084642354204493573836811171993",
+        "width": "1316366344101024064959004980253848293127991236814866000000000/81497272770414485926546560355026257816151112481145282889500049"
+      }
+    ]
+  ],
+  "linear_mode_polynomial_residuals": [
+    [
+      "0"
+    ],
+    [
+      "0"
+    ]
+  ],
+  "linear_regular_mode": "(f,g)=(-1,1)x",
+  "principal_block_positive_for_every_real_slope": true,
+  "principal_determinant_polynomial": [
+    "1/1350",
+    "0",
+    "2/225",
+    "0",
+    "16/675"
+  ],
+  "quartic_factorization": "det K(p)=det(P0)(p-1)(p-3)(p+2)(p+4)",
+  "quartic_factorization_verified": true,
+  "reference_cubic_mode_f_over_g": "857155692287580111321289/20541759098303407401463130",
+  "reference_slope": "1462763601523/925827031517",
+  "regular_origin_change_of_variables": "g=x v(x^2), f=-x v(x^2)+x^3 u(x^2)",
+  "result_type": "exact_rational_origin_indicial_identity",
+  "root_determinant_polynomials_vanish": {
+    "-4": true,
+    "-2": true,
+    "1": true,
+    "3": true
+  },
+  "slope_variable": "b in F=pi-b x+O(x^3)",
+  "source_sha256": {
+    "experiments/centrifugal_skyrmion_origin_audit.py": "12d342743d46957ef9478224f1469d64f35c8264b2d570d92099dc87b0a48fc6",
+    "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290",
+    "qgtoy/centrifugal_skyrmion_origin.py": "95f8b2704654fca2b557ff3979ab8136684cfb459e210290ef17f3ca321ef92d"
+  }
+}

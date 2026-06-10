@@ -7,6 +7,7 @@ from qgtoy.embedding_channels import (
     harmonic_projection_refinement_record,
     heat_kernel_coarse_graining_record,
     trace_filled_ucp_embedding_record,
+    trace_filled_uniform_multiplicativity_obstruction_record,
 )
 
 
@@ -30,6 +31,20 @@ class EmbeddingChannelsTest(unittest.TestCase):
             record["operator_response"]["commutator_operator_norm"],
             1.0,
         )
+        self.assertEqual(
+            record["multiplicativity_witness"]["scope"],
+            "selected_matrix_unit_pair_only",
+        )
+        self.assertFalse(
+            record["multiplicativity_witness"]["uniform_unit_ball_control_claimed"]
+        )
+
+    def test_trace_filled_map_has_uniform_multiplicativity_obstruction(self):
+        record = trace_filled_uniform_multiplicativity_obstruction_record(4, 9)
+        self.assertEqual(record["normalized_trace_A"], 0.0)
+        self.assertEqual(record["operator_norm_defect"], 1.0)
+        self.assertTrue(record["unit_ball_witness"])
+        self.assertTrue(record["blocks_uniform_asymptotic_multiplicativity"])
 
     def test_consecutive_cutoff_replaces_star_inclusion_with_ucp_refinement(self):
         record = consecutive_cutoff_embedding_record(1)
@@ -53,6 +68,16 @@ class EmbeddingChannelsTest(unittest.TestCase):
         ):
             self.assertAlmostEqual(actual, expected)
         self.assertEqual(len(certificate["physical_candidate_error_bounds"]), 5)
+        self.assertEqual(
+            certificate["multiplicativity_error_scope"],
+            "selected_matrix_unit_pair_only",
+        )
+        self.assertTrue(certificate["uniform_multiplicativity_obstructions"])
+        self.assertTrue(
+            certificate["certified_claims"][
+                "trace_filled_map_not_uniformly_asymptotically_multiplicative"
+            ]
+        )
         self.assertTrue(
             certificate["certified_claims"][
                 "physical_candidate_multiplicativity_bounds_decrease"
@@ -128,6 +153,10 @@ class EmbeddingChannelsTest(unittest.TestCase):
             trace_filled_ucp_embedding_record(1, 2)
         with self.assertRaises(ValueError):
             trace_filled_ucp_embedding_record(4, 3)
+        with self.assertRaises(ValueError):
+            trace_filled_uniform_multiplicativity_obstruction_record(3, 4)
+        with self.assertRaises(ValueError):
+            trace_filled_uniform_multiplicativity_obstruction_record(4, 4)
         with self.assertRaises(ValueError):
             consecutive_cutoff_embedding_record(0)
         with self.assertRaises(ValueError):

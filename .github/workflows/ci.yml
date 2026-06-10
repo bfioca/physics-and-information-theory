@@ -20,6 +20,60 @@ jobs:
             tests.test_typeii_static_patch_limit \
             tests.test_inclusion_covariant_dynamics \
             tests.test_embedding_channels \
+            tests.test_fuzzy_sphere \
+            tests.test_fuzzy_screen \
+            tests.test_fuzzy_algebra_inference \
+            tests.test_fuzzy_berezin \
+            tests.test_relational_observer \
+            tests.test_edge_symmetry_robustness \
+            tests.test_core_edge_obstruction \
+            tests.test_interacting_kms_edge \
+            tests.test_charged_reference_recovery \
+            tests.test_operational_phase_reference \
+            tests.test_su2_directional_reference_no_go \
+            tests.test_operational_su2_reference \
+            tests.test_geometric_thermal_type_no_go \
+            tests.test_static_patch_weyl_regulator \
+            tests.test_static_patch_phase_space \
+            tests.test_static_patch_uv_removal \
+            tests.test_static_patch_all_angular \
+            tests.test_static_patch_lorentzian_hadamard \
+            tests.test_scalar_clock_rotation_no_go \
+            tests.test_redshifted_frame_capacity \
+            tests.test_redshifted_rotation_reference_tradeoff \
+            tests.test_covariant_observer_energy_no_go \
+            tests.test_finite_size_static_patch_observer \
+            tests.test_finite_time_rotation_diffusion \
+            tests.test_common_mode_locality_mismatch \
+            tests.test_static_patch_scalar_common_mode \
+            tests.test_static_patch_radial_smearing \
+            tests.test_static_patch_gradient_torque \
+            tests.test_static_patch_higher_spin_gradient \
+            tests.test_static_patch_pseudoscalar_gyroscope \
+            tests.test_static_patch_hard_current_multipole \
+            tests.test_static_patch_localization_backreaction \
+            tests.test_static_patch_overlapping_ule \
+            tests.test_static_patch_worldtube_ule \
+            tests.test_static_patch_smooth_worldtube_ule \
+            tests.test_static_patch_skyrmion_bath \
+            tests.test_static_patch_skyrmion_signed_ule \
+            tests.test_static_patch_skyrmion_tail \
+            tests.test_static_patch_finite_switching_ule \
+            tests.test_static_patch_skyrmion_offcenter \
+            tests.test_validated_interval \
+            tests.test_validated_skyrmion_origin \
+            tests.test_validated_skyrmion_profile \
+            tests.test_validated_skyrmion_bvp \
+            tests.test_skyrmion_taylor_certificate_generator \
+            tests.test_skyrmion_global_bvp_certificate_generator \
+            tests.test_massive_skyrmion_profile \
+            tests.test_massive_skyrmion_worldtube \
+            tests.test_skyrmion_projective_reference \
+            tests.test_skyrmion_joint_scaling_no_go \
+            tests.test_skyrmion_current_moments \
+            tests.test_skyrmion_worldtube_stability \
+            tests.test_finite_clock_crossed_product \
+            tests.test_modular_manybody_regulator \
             tests.test_continuum_lift_obstruction
       - name: Validate package indexes
         run: |

@@ -1,0 +1,93 @@
+{
+  "certified_claims": {
+    "de_sitter_kottler_benchmark_closes_both_israel_equations": true,
+    "identical_de_sitter_nonzero_tension_is_obstructed": true,
+    "tensorial_gate_accepts_matching_first_and_second_forms": true,
+    "tensorial_gate_rejects_hidden_tracefree_jump": true
+  },
+  "claim_boundary": "The spherical algebra and tensorial acceptance conditions are exact. The audit does not reconstruct the six physical-shell amplitudes from the Skyrmion master solution and therefore does not certify the Skyrmion Israel junction.",
+  "closed_linearized_tensorial_example": {
+    "first_form_jump_amplitudes": {
+      "angular_trace": 0.0,
+      "angular_tracefree": 0.0,
+      "temporal_scalar": 0.0
+    },
+    "identity": "delta S_i^j=0 for constant tension; hence [delta q_ij]=0 and [delta K_i^j]=0 after the spherical Israel equations hold",
+    "maximum_tensorial_junction_residual": 0.0,
+    "mixed_extrinsic_curvature_jump_amplitudes": {
+      "angular_trace": 0.0,
+      "angular_tracefree": 0.0,
+      "temporal_scalar": 0.0
+    },
+    "required_inputs": "physical-shell pullbacks including displacement and gauge terms",
+    "tensorial_linearized_israel_matching_closes": true,
+    "tolerance": 1e-11
+  },
+  "goal": "Tensorial Israel Junction Gate",
+  "identical_geometry_no_go": {
+    "angular_extrinsic_curvature_jump": 0.0,
+    "angular_reduced_israel_residual": 0.0009658898235,
+    "angular_tensor_israel_residual": -0.001931779647,
+    "claim": "Identical inner and outer extrinsic curvatures have zero jump, whereas a positive-tension shell requires -kappa*sigma/2.",
+    "exact_reduced_obstruction": 0.0009658898235,
+    "identity": "[K_i^j]-delta_i^j[K]=kappa*sigma*delta_i^j iff [K_t^t]=[K_theta^theta]=-kappa*sigma/2",
+    "israel_matching_closes": false,
+    "maximum_israel_residual": 0.001931779647,
+    "nonzero_tension_is_obstructed": true,
+    "required_principal_jump": -0.0009658898235,
+    "temporal_extrinsic_curvature_jump": 0.0,
+    "temporal_reduced_israel_residual": 0.0009658898235,
+    "temporal_tensor_israel_residual": -0.001931779647,
+    "trace_jump": 0.0
+  },
+  "result_type": "exact_spherical_no_go_and_linearized_tensorial_gate",
+  "scalar_subsystem_false_positive_example": {
+    "first_form_jump_amplitudes": {
+      "angular_trace": 0.0,
+      "angular_tracefree": 0.0,
+      "temporal_scalar": 0.0
+    },
+    "identity": "delta S_i^j=0 for constant tension; hence [delta q_ij]=0 and [delta K_i^j]=0 after the spherical Israel equations hold",
+    "maximum_tensorial_junction_residual": 0.001,
+    "mixed_extrinsic_curvature_jump_amplitudes": {
+      "angular_trace": 0.0,
+      "angular_tracefree": 0.001,
+      "temporal_scalar": 0.0
+    },
+    "required_inputs": "physical-shell pullbacks including displacement and gauge terms",
+    "tensorial_linearized_israel_matching_closes": false,
+    "tolerance": 1e-11
+  },
+  "self_consistent_vacuum_shell_benchmark": {
+    "alpha=kappa*sigma/2": 0.1178511301977579,
+    "benchmark_closes": true,
+    "claim_boundary": "Exact vacuum thin-shell benchmark only; it does not include the Skyrmion interior or its ell=2 perturbation.",
+    "inner_lapse_at_wall": 0.5,
+    "israel": {
+      "angular_extrinsic_curvature_jump": -0.11785113019775792,
+      "angular_reduced_israel_residual": -1.3877787807814457e-17,
+      "angular_tensor_israel_residual": 5.551115123125783e-17,
+      "identity": "[K_i^j]-delta_i^j[K]=kappa*sigma*delta_i^j iff [K_t^t]=[K_theta^theta]=-kappa*sigma/2",
+      "israel_matching_closes": true,
+      "maximum_israel_residual": 5.551115123125783e-17,
+      "required_principal_jump": -0.1178511301977579,
+      "temporal_extrinsic_curvature_jump": -0.11785113019775795,
+      "temporal_reduced_israel_residual": -4.163336342344337e-17,
+      "temporal_tensor_israel_residual": 2.7755575615628914e-17,
+      "trace_jump": -0.3535533905932738
+    },
+    "kottler_mass_length_GM": 0.8888888888888888,
+    "outer_lapse_at_wall": 0.05555555555555558,
+    "outer_lapse_is_positive": true,
+    "root_lapse_identity_error": -5.551115123125783e-17,
+    "static_patch_radius": 5.65685424949238,
+    "surface_tension": 0.2357022603955158,
+    "u=a^2/R^2": 0.5,
+    "wall_radius": 4.0
+  },
+  "source_sha256": {
+    "experiments/israel_junction_gate_audit.py": "e2a48d4ce90f6d3b34fc959aecf92371a398ca9aedf5eed36a74b1967761e027",
+    "qgtoy/israel_junction_gate.py": "bb0a56521c1b7312e76a22a986e6cca663287ee669627619b8de3a8f760c893e"
+  },
+  "status": "pass"
+}

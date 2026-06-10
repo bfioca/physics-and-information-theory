@@ -1,0 +1,443 @@
+{
+  "certified_claims": {
+    "background_profile_refinement_is_stable": true,
+    "master_response_is_nonzero_in_the_fixed_convention": true,
+    "origin_cutoff_refinement_is_stable": true,
+    "response_sign_is_stable_at_declared_sample_points": true,
+    "thin_shell_contact_is_explicitly_removed_off_wall": true,
+    "two_finest_meshes_agree": true
+  },
+  "claim_boundary": "Source-hashed floating fixed-background response per kappa and per q=Q_ab n_a n_b. Bulk derivatives are finite differences and the origin interval is truncated. No interval enclosure, physical collective normalization, Israel matching, deformed background, or Weyl/worldtube reconstruction is supplied.",
+  "fine_mesh_maximum_relative_difference": 0.00010630882625470048,
+  "fine_origin_maximum_relative_difference": 2.9872021203044543e-05,
+  "fine_profile_maximum_relative_difference": 2.8720465508943734e-07,
+  "goal": "Completed Skyrmion Static Quadrupole Master Response",
+  "mesh_records": [
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159681792231503,
+      "bulk_master_source_maximum_absolute": 1.6362725055073088,
+      "contact_free_delta_coefficient": -0.0023609688944662964,
+      "contact_free_delta_prime_coefficient": 0.002488090714147028,
+      "label": 101,
+      "raw_delta_second_coefficient": -0.001413353305097572,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22082968706490474,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.2208432842493984,
+          "wall_master_response_over_kappa": -1.3597184493653416e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.3300447613726138,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33015424396788745,
+          "wall_master_response_over_kappa": -0.00010948259527363528
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17592739836272045,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.1763009358231283,
+          "wall_master_response_over_kappa": -0.00037353746040784505
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06405818582283186,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06627538909820332,
+          "wall_master_response_over_kappa": -0.002217203275371459
+        },
+        {
+          "bulk_master_response_over_kappa": -0.01499234136279044,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015511261278302909,
+          "wall_master_response_over_kappa": -0.0005189199155124692
+        }
+      ]
+    },
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159313406982664,
+      "bulk_master_source_maximum_absolute": 1.6358915742636992,
+      "contact_free_delta_coefficient": -0.0023614780738373743,
+      "contact_free_delta_prime_coefficient": 0.0024636556936968434,
+      "label": 201,
+      "raw_delta_second_coefficient": -0.0013994730567943123,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22088259020725326,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.2208963467319266,
+          "wall_master_response_over_kappa": -1.3756524673323392e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.33007633591552366,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33018710149525704,
+          "wall_master_response_over_kappa": -0.00011076557973337982
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17583688080375548,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.17621479560611103,
+          "wall_master_response_over_kappa": -0.0003779148023555575
+        },
+        {
+          "bulk_master_response_over_kappa": -0.0640223814216343,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06623011083162521,
+          "wall_master_response_over_kappa": -0.0022077294099909096
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014983961609318669,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015500664237188882,
+          "wall_master_response_over_kappa": -0.0005167026278702128
+        }
+      ]
+    },
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159056472180315,
+      "bulk_master_source_maximum_absolute": 1.6357932578862784,
+      "contact_free_delta_coefficient": -0.002361791062071643,
+      "contact_free_delta_prime_coefficient": 0.002451046209898502,
+      "label": 401,
+      "raw_delta_second_coefficient": -0.001392310273098112,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22087479236083674,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.2208886317324907,
+          "wall_master_response_over_kappa": -1.383937165397739e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.3301005759550951,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33021200860693134,
+          "wall_master_response_over_kappa": -0.00011143265183619769
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17580950081859012,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.17618969156643796,
+          "wall_master_response_over_kappa": -0.0003801907478478317
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06401030551371632,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06621317209175806,
+          "wall_master_response_over_kappa": -0.0022028665780417407
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014981135332997438,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015496699851262527,
+          "wall_master_response_over_kappa": -0.0005155645182650883
+        }
+      ]
+    },
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.315890887029184,
+      "bulk_master_source_maximum_absolute": 1.6358041655242106,
+      "contact_free_delta_coefficient": -0.0023619607003594377,
+      "contact_free_delta_prime_coefficient": 0.00244464546505522,
+      "label": 801,
+      "raw_delta_second_coefficient": -0.0013886743470332378,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22088206956827316,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.22089595112718385,
+          "wall_master_response_over_kappa": -1.388155891068819e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.33009522951312203,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.3302070018507479,
+          "wall_master_response_over_kappa": -0.00011177233762587935
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17580027880602894,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.1761816285085663,
+          "wall_master_response_over_kappa": -0.0003813497025373619
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06400573007042368,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06620613379538341,
+          "wall_master_response_over_kappa": -0.0022004037249597403
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014980064484567244,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015495052590408885,
+          "wall_master_response_over_kappa": -0.0005149881058416414
+        }
+      ]
+    }
+  ],
+  "normalization": "Psi coefficient per kappa=8pi G and per q=Q_ab n_a n_b; dimensionless Skyrme radius x and stress normalization",
+  "observation_radii": [
+    1.0,
+    2.0,
+    3.0,
+    5.0,
+    10.0
+  ],
+  "origin_records": [
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159009219183653,
+      "bulk_master_source_maximum_absolute": 1.6358297590964088,
+      "contact_free_delta_coefficient": -0.002361792694337597,
+      "contact_free_delta_prime_coefficient": 0.0024509821664207834,
+      "label": 0.04,
+      "raw_delta_second_coefficient": -0.0013922738933711228,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22089192651987177,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.22090576631283151,
+          "wall_master_response_over_kappa": -1.383979295973762e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.330099920734629,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33021135677875924,
+          "wall_master_response_over_kappa": -0.00011143604413024619
+        },
+        {
+          "bulk_master_response_over_kappa": -0.1758096447780115,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.1761898470998351,
+          "wall_master_response_over_kappa": -0.0003802023218235916
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06401025362458898,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06621309552645695,
+          "wall_master_response_over_kappa": -0.0022028419018679662
+        },
+        {
+          "bulk_master_response_over_kappa": -0.01498112318873359,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015496681931723965,
+          "wall_master_response_over_kappa": -0.0005155587429903751
+        }
+      ]
+    },
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159056472180315,
+      "bulk_master_source_maximum_absolute": 1.6357932578862784,
+      "contact_free_delta_coefficient": -0.002361791062071643,
+      "contact_free_delta_prime_coefficient": 0.002451046209898502,
+      "label": 0.02,
+      "raw_delta_second_coefficient": -0.001392310273098112,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22087479236083674,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.2208886317324907,
+          "wall_master_response_over_kappa": -1.383937165397739e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.3301005759550951,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33021200860693134,
+          "wall_master_response_over_kappa": -0.00011143265183619769
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17580950081859012,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.17618969156643796,
+          "wall_master_response_over_kappa": -0.0003801907478478317
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06401030551371632,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06621317209175806,
+          "wall_master_response_over_kappa": -0.0022028665780417407
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014981135332997438,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015496699851262527,
+          "wall_master_response_over_kappa": -0.0005155645182650883
+        }
+      ]
+    },
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159059700689775,
+      "bulk_master_source_maximum_absolute": 1.6358208120914826,
+      "contact_free_delta_coefficient": -0.002361790149526095,
+      "contact_free_delta_prime_coefficient": 0.0024510781287630746,
+      "label": 0.01,
+      "raw_delta_second_coefficient": -0.0013923284045241416,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22087975458523915,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.22089359374569295,
+          "wall_master_response_over_kappa": -1.3839160453800475e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.33009071385017813,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33020214480146054,
+          "wall_master_response_over_kappa": -0.00011143095128241748
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17580961412436424,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.17618979907018903,
+          "wall_master_response_over_kappa": -0.00038018494582479093
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06401032813787218,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06621320696295269,
+          "wall_master_response_over_kappa": -0.0022028788250805084
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014981140628012637,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015496708012605947,
+          "wall_master_response_over_kappa": -0.0005155673845933105
+        }
+      ]
+    }
+  ],
+  "profile_records": [
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.315905360311989,
+      "bulk_master_source_maximum_absolute": 1.6357937002501461,
+      "contact_free_delta_coefficient": -0.0023617964027137063,
+      "contact_free_delta_prime_coefficient": 0.002451051724658438,
+      "label": 0.004,
+      "raw_delta_second_coefficient": -0.0013923134065359321,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22087474921059239,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.22088858861371446,
+          "wall_master_response_over_kappa": -1.3839403122074195e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.33010066926491277,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.3302121021701256,
+          "wall_master_response_over_kappa": -0.0001114329052128367
+        },
+        {
+          "bulk_master_response_over_kappa": -0.1758096775197908,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.17618986913212,
+          "wall_master_response_over_kappa": -0.0003801916123292227
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06401037762827175,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06621324917654059,
+          "wall_master_response_over_kappa": -0.0022028715482688434
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014981152210872112,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015496717892381842,
+          "wall_master_response_over_kappa": -0.0005155656815097293
+        }
+      ]
+    },
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159056472180315,
+      "bulk_master_source_maximum_absolute": 1.6357932578862784,
+      "contact_free_delta_coefficient": -0.002361791062071643,
+      "contact_free_delta_prime_coefficient": 0.002451046209898502,
+      "label": 0.002,
+      "raw_delta_second_coefficient": -0.001392310273098112,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22087479236083674,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.2208886317324907,
+          "wall_master_response_over_kappa": -1.383937165397739e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.3301005759550951,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33021200860693134,
+          "wall_master_response_over_kappa": -0.00011143265183619769
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17580950081859012,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.17618969156643796,
+          "wall_master_response_over_kappa": -0.0003801907478478317
+        },
+        {
+          "bulk_master_response_over_kappa": -0.06401030551371632,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06621317209175806,
+          "wall_master_response_over_kappa": -0.0022028665780417407
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014981135332997438,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.015496699851262527,
+          "wall_master_response_over_kappa": -0.0005155645182650883
+        }
+      ]
+    },
+    {
+      "bulk_master_source_l1_on_resolved_interval": 2.3159057180403706,
+      "bulk_master_source_maximum_absolute": 1.6357929446369142,
+      "contact_free_delta_coefficient": -0.0023617897373488734,
+      "contact_free_delta_prime_coefficient": 0.002451044836852747,
+      "label": 0.001,
+      "raw_delta_second_coefficient": -0.001392309492555224,
+      "response_samples": [
+        {
+          "bulk_master_response_over_kappa": -0.22087480238523632,
+          "radius": 1.0,
+          "total_master_response_over_kappa": -0.22088864174911693,
+          "wall_master_response_over_kappa": -1.3839363880609635e-05
+        },
+        {
+          "bulk_master_response_over_kappa": -0.33010055463340715,
+          "radius": 2.0,
+          "total_master_response_over_kappa": -0.33021198722265327,
+          "wall_master_response_over_kappa": -0.00011143258924614636
+        },
+        {
+          "bulk_master_response_over_kappa": -0.17580945667421893,
+          "radius": 3.0,
+          "total_master_response_over_kappa": -0.17618964720851932,
+          "wall_master_response_over_kappa": -0.00038019053430038364
+        },
+        {
+          "bulk_master_response_over_kappa": -0.0640102877318795,
+          "radius": 5.0,
+          "total_master_response_over_kappa": -0.06621315307503227,
+          "wall_master_response_over_kappa": -0.0022028653431527736
+        },
+        {
+          "bulk_master_response_over_kappa": -0.014981131171290948,
+          "radius": 10.0,
+          "total_master_response_over_kappa": -0.01549669540053947,
+          "wall_master_response_over_kappa": -0.0005155642292485215
+        }
+      ]
+    }
+  ],
+  "result_type": "floating_conserved_skyrmion_zerilli_moncrief_response",
+  "source_sha256": {
+    "experiments/centrifugal_skyrmion_master_response_audit.py": "b927a2bea8ed67de90bec02ce321c1fc6c29e317c95382b474026473a2ef0c9c",
+    "qgtoy/centrifugal_skyrmion_bvp.py": "d8d7af70c015f87f3822494dfc5bd4eb56ece14c31ab3cdf29b33bf8c699f29d",
+    "qgtoy/centrifugal_skyrmion_completed_stress.py": "ac52209e805fcbc05eae5fb9c61643440019bec0b86c3b749e59c54a562e82c5",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290",
+    "qgtoy/centrifugal_skyrmion_master_response.py": "19d4c987a9420df60e5ba448d046adc2c8fc79565888f56e509b602eff54d182",
+    "qgtoy/centrifugal_skyrmion_membrane_stress.py": "e8d6c8db52870994b06ebb875694b07689350fb37011bc24afb9abe14abe36bb",
+    "qgtoy/massive_skyrmion_profile.py": "bc6e15c3d72fdbe45302af4715c5a34c5a7b6693e4d0181b93c2fb3f9087cb43",
+    "qgtoy/massive_skyrmion_worldtube.py": "a7cff678b908c91b76c95fac921f198c9101ce845b1ee35e9a63616624a02996",
+    "qgtoy/static_patch_l2_master_source.py": "c42011b1a0e4bb893f7e4ac6d7640ee25df984ac85e92b1bb38a48096ca0b9de",
+    "qgtoy/static_patch_l2_response.py": "2c0e81b655b8ab69fa911f496cfb50ac8d39d35e69905cf4bab918186acf2181"
+  },
+  "status": "pass"
+}

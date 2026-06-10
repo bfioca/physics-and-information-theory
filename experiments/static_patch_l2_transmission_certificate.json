@@ -1,0 +1,63 @@
+{
+  "certified_claims": {
+    "completed_skyrmion_field_jump_is_nonzero": true,
+    "completed_skyrmion_flux_jump_is_nonzero": true,
+    "green_response_has_predicted_field_jump": true,
+    "green_response_has_predicted_flux_jump": true,
+    "literal_delta_jet_recomposes_from_contact_and_jumps": true
+  },
+  "claim_boundary": "Exact transmission identity for the frozen fixed-de-Sitter master operator and source convention. It checks the master equation but does not replace tensorial Israel matching, metric reconstruction, or a finite-thickness membrane limit.",
+  "distribution_transmission_over_kappa": {
+    "contact_free_delta_coefficient": -0.002361791062071643,
+    "contact_free_delta_prime_coefficient": 0.002451046209898502,
+    "distribution_recomposition_maximum_error": 0.0,
+    "identity": "Psi=c delta+Psi_off, c=-D2/N; [Psi_off]=-D1_off/N; [N Psi_off']=-D0_off",
+    "master_field_contact_delta_coefficient": 0.0014503232011438666,
+    "off_wall_master_field_jump": -0.0025531731353109397,
+    "off_wall_master_flux_jump": 0.002361791062071643,
+    "recomposed_delta_coefficient": -0.0018179198616426933,
+    "recomposed_delta_prime_coefficient": 0.0024220397458756247,
+    "recomposed_delta_second_coefficient": -0.001392310273098112,
+    "wall_lapse": 0.96,
+    "wall_lapse_derivative": -0.02
+  },
+  "goal": "Static-Patch Quadrupole Shell Transmission",
+  "green_transmission_over_kappa": {
+    "expected_off_wall_master_field_jump": -0.0025531731353109397,
+    "expected_off_wall_master_flux_jump": 0.002361791062071643,
+    "field_jump_error": 4.336808689942018e-19,
+    "flux_jump_error": 0.0,
+    "identity": "D0 G-D1 d_a G has [Psi]=-D1/N and [N Psi']=-D0",
+    "off_wall_master_field_inner_limit": -0.0009151699875632909,
+    "off_wall_master_field_jump": -0.0025531731353109393,
+    "off_wall_master_field_outer_limit": -0.0034683431228742304,
+    "off_wall_master_flux_jump": 0.002361791062071643,
+    "off_wall_master_radial_derivative_inner_limit": -0.0007025927107239488,
+    "off_wall_master_radial_derivative_outer_limit": 0.0017576063122673464
+  },
+  "result_type": "exact_master_contact_and_off_wall_jump_identity",
+  "source_distribution_over_kappa": {
+    "contact_definition": "Psi=Psi_offwall+contact*delta(r-a); subtract A2(contact*delta) from F to obtain the contact-free source",
+    "contact_free_delta_coefficient": -0.002361791062071643,
+    "contact_free_delta_prime_coefficient": 0.002451046209898502,
+    "contact_free_delta_second_coefficient": 0.0,
+    "master_field_contact_delta_coefficient": 0.0014503232011438666,
+    "master_source_delta_coefficient": -0.0018179198616426933,
+    "master_source_delta_prime_coefficient": 0.0024220397458756247,
+    "master_source_delta_second_coefficient": -0.001392310273098112
+  },
+  "source_sha256": {
+    "experiments/static_patch_l2_transmission_audit.py": "19700710647f9aecbe80a99e8c764a91db5f7765016a26e5750164ac59d15209",
+    "qgtoy/centrifugal_skyrmion_bvp.py": "d8d7af70c015f87f3822494dfc5bd4eb56ece14c31ab3cdf29b33bf8c699f29d",
+    "qgtoy/centrifugal_skyrmion_completed_stress.py": "ac52209e805fcbc05eae5fb9c61643440019bec0b86c3b749e59c54a562e82c5",
+    "qgtoy/centrifugal_skyrmion_deformation.py": "8ac78a513aaf6038e9edb40b224d72132414d9620545a73c8a5fd26dbdfb2290",
+    "qgtoy/centrifugal_skyrmion_master_response.py": "19d4c987a9420df60e5ba448d046adc2c8fc79565888f56e509b602eff54d182",
+    "qgtoy/centrifugal_skyrmion_membrane_stress.py": "e8d6c8db52870994b06ebb875694b07689350fb37011bc24afb9abe14abe36bb",
+    "qgtoy/massive_skyrmion_profile.py": "bc6e15c3d72fdbe45302af4715c5a34c5a7b6693e4d0181b93c2fb3f9087cb43",
+    "qgtoy/massive_skyrmion_worldtube.py": "a7cff678b908c91b76c95fac921f198c9101ce845b1ee35e9a63616624a02996",
+    "qgtoy/static_patch_l2_master_source.py": "c42011b1a0e4bb893f7e4ac6d7640ee25df984ac85e92b1bb38a48096ca0b9de",
+    "qgtoy/static_patch_l2_response.py": "2c0e81b655b8ab69fa911f496cfb50ac8d39d35e69905cf4bab918186acf2181",
+    "qgtoy/static_patch_l2_transmission.py": "92665f7183ac719d2cd6ccff52d9ebeb96772179c931468161e845d7fd996ea6"
+  },
+  "status": "pass"
+}

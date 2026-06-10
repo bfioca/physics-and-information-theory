@@ -1,0 +1,45 @@
+{
+  "adjoint_weak_residual_coefficient_absolute_upper": {
+    "test_derivative_coefficient": "0.009194661537655243",
+    "test_value_coefficient": "0.012135653554083077"
+  },
+  "authenticated_inputs": {
+    "experiments/centrifugal_skyrmion_rational_response_trials.json": "9dd83028d00b55c85d280087a696884338941b6602e3f9148a41d524f5ace921",
+    "experiments/skyrmion_au2_global_tail_exact_certificate.json": "1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9",
+    "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431"
+  },
+  "certified_claims": {
+    "adjoint_weak_residual_retains_derivative_test_term": true,
+    "all_344_positive_radius_cells_are_enclosed": true,
+    "archived_adjoint_bulk_functional_is_enclosed": true,
+    "archived_primal_bulk_functional_is_enclosed": true,
+    "weak_load_uses_only_profile_value_and_first_derivative": true
+  },
+  "claim_boundary": "This certifies the positive-radius weak master load b0 dot v + b1 dot v' and its coefficient-level subtraction from the archived adjoint trial on 344 authenticated cells. It does not cover the regular-origin bulk load, convert the derivative-test coefficient to an energy-dual norm, certify the full loaded adjoint residual, or exclude zero exterior response.",
+  "goal": "Validated Positive-Radius Exterior-Master Adjoint Bulk Load",
+  "parameters": {
+    "green_series_terms": 8,
+    "positive_radius_cell_count": 344,
+    "subdivisions_per_authenticated_cell": 8,
+    "trigonometric_terms": 8
+  },
+  "positive_radius_bulk_functional_enclosure": {
+    "adjoint": {
+      "lower": "0.000012035950858950",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.000083040071016445"
+    },
+    "primal": {
+      "lower": "-0.002249596437198199",
+      "representation": "outward_decimal_enclosure_18_places",
+      "upper": "0.001052714255862833"
+    }
+  },
+  "result_type": "exact_weak_load_and_adjoint_residual_coefficient_boxes",
+  "source_sha256": {
+    "experiments/validated_centrifugal_adjoint_bulk_load_audit.py": "91058aacc79a9b25376cb8b5c43c809b4eaf5c1bf59d395ad31374121b4e7f03",
+    "qgtoy/centrifugal_skyrmion_affine_master_kernel.py": "371cebe12d7064b4a6211dcd5e7bcbcc3ab35528c39046f4fbeafdf338290353",
+    "qgtoy/validated_centrifugal_adjoint_bulk_load.py": "a5e7407e5a92d0ef871994ba87a4c5fa2b7d409770c1e5617bb223a841c5ce40"
+  },
+  "status": "pass"
+}

@@ -1,0 +1,36 @@
+{
+  "certified_claims": {
+    "curvature_response_scales_independently_of_density": true,
+    "density_only_bound_has_conserved_stress_counterexample": true,
+    "gauge_dependent_metric_norm_has_zero_source_counterexample": true
+  },
+  "claim_boundary": "The density-only counterexample is exact in the local Minkowski limit and therefore rules out a bound claimed uniformly as the worldtube size over de Sitter radius tends to zero. It is not the static-patch l=2 Green function and does not prove that the full Skyrmion stress lacks a finite response bound.",
+  "density_only_counterexample": {
+    "divergence_identity": "partial_i[(delta_ij Delta-partial_i partial_j)chi]=partial_j Delta chi-Delta partial_j chi=0",
+    "energy_density_T00": 0.0,
+    "energy_density_norm": 0.0,
+    "four_divergence_vanishes": true,
+    "linearized_scalar_curvature": -301.59289474462014,
+    "nonzero_curvature_at_zero_energy_density": true,
+    "potential_laplacian": 2.0,
+    "quadrupole_choice": "Choosing chi=f(r)Y_2m with a smooth compact radial bump makes the trace and curvature response purely l=2.",
+    "spatial_stress_trace": 12.0,
+    "stress_amplitude": 3.0
+  },
+  "goal": "Well-Posed Nonspherical Einstein Response Inputs",
+  "pure_gauge_counterexample": {
+    "arbitrarily_scalable_at_zero_source": true,
+    "compact_vector_field_amplitude": 10.0,
+    "consequence": "No coordinate-component metric norm can satisfy a source-response bound before a gauge is fixed or pure gauges are quotiented.",
+    "coordinate_metric_component_scale": 10.0,
+    "identity": "On an Einstein background, h=L_xi g lies in the kernel of the linearized Einstein operator by diffeomorphism covariance.",
+    "linearized_einstein_source_norm": 0.0
+  },
+  "required_replacement": "Choose a gauge-invariant output or a fully fixed gauge, impose linearized stress conservation, and bound density, radial and tangential pressure, momentum, and shear in a response-compatible source norm.",
+  "result_type": "gauge_and_density_only_response_no_go",
+  "source_sha256": {
+    "experiments/density_only_einstein_response_no_go_audit.py": "8f99c16f35aa6a22d796668ba4e11be0b5d557e5511bff31052b8a184db7ca4f",
+    "qgtoy/density_only_einstein_response_no_go.py": "2ca2ae75f31bbfd5fba40305095f146c476bc3015c3264b07314182772c3b7c9"
+  },
+  "status": "pass"
+}

@@ -216,8 +216,9 @@ preserving. For $A=e_{12}$ and $B=e_{21}$,
 \[
   \|\Phi(AB)-\Phi(A)\Phi(B)\|=1/n.
 \]
-For static-patch dimensions $n=N_L=(L+1)^2$, this multiplicativity error tends
-to zero.
+For static-patch dimensions $n=N_L=(L+1)^2$, this selected matrix-unit error
+tends to zero. This is not a uniform approximate-homomorphism estimate on the
+full unit ball.
 \end{proposition}
 
 \begin{proof}
@@ -237,6 +238,16 @@ $\tau_n(A)=\tau_n(B)=0$, so
   \Phi(AB)-\Phi(A)\Phi(B)=\frac{1}{n}Q,
 \]
 whose operator norm is $1/n$ when $m>n$.
+
+For even $n<m$, let $A=\operatorname{diag}(I_{n/2},-I_{n/2})$. Then
+$\tau_n(A)=0$ and $A^2=I_n$, so
+\[
+  \|\Phi(A^2)-\Phi(A)^2\|=\|I_m-VV^*\|=1.
+\]
+Thus the trace-filled map is not uniformly asymptotically multiplicative. Its
+role is a selected-witness finite audit; a continuum construction requires
+uniform control on a physically specified low-energy operator system or a
+separately justified weaker topology.
 \end{proof}
 
 The executable audit also compares harmonic mode-label refinement,

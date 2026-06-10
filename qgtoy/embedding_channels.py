@@ -62,6 +62,8 @@ def trace_filled_ucp_embedding_record(
             "error": "Phi(AB)-Phi(A)Phi(B)=(1/n)(I_m - V V^*)",
             "operator_norm_error": _rounded(multiplicativity_error),
             "goes_to_zero_for_static_patch_cutoffs": True,
+            "scope": "selected_matrix_unit_pair_only",
+            "uniform_unit_ball_control_claimed": False,
         },
         "screen_shadow": {
             "diagonal_trace_preserved": True,
@@ -74,6 +76,40 @@ def trace_filled_ucp_embedding_record(
             "commutator_operator_norm": 1.0,
             "dephased_control_commutator_norm": 0.0,
         },
+    }
+
+
+def trace_filled_uniform_multiplicativity_obstruction_record(
+    source_dim: int,
+    target_dim: int,
+) -> dict[str, object]:
+    """Return a unit-ball witness that blocks uniform asymptotic multiplicativity.
+
+    For even n<m, take the traceless self-adjoint unitary with n/2 diagonal
+    entries +1 and n/2 entries -1. Then tau_n(A)=0 and A^2=I, so the
+    trace-filled map satisfies Phi(A)^2=P while Phi(A^2)=I. The defect is the
+    nonzero complement projection Q and has operator norm one.
+    """
+    _validate_dimensions(source_dim, target_dim)
+    if source_dim % 2 != 0:
+        raise ValueError("source_dim must be even for the balanced-sign witness")
+    if target_dim == source_dim:
+        raise ValueError("target_dim must exceed source_dim")
+
+    positive_entries = source_dim // 2
+    negative_entries = source_dim // 2
+    normalized_trace = (positive_entries - negative_entries) / float(source_dim)
+    defect_norm = 1.0 - normalized_trace * normalized_trace
+    return {
+        "witness": "A=diag(I_{n/2},-I_{n/2}), B=A",
+        "source_dim": source_dim,
+        "target_dim": target_dim,
+        "normalized_trace_A": _rounded(normalized_trace),
+        "source_product": "A^2=I_n",
+        "defect": "Phi(A^2)-Phi(A)^2=I_m-VV^*",
+        "operator_norm_defect": _rounded(defect_norm),
+        "unit_ball_witness": True,
+        "blocks_uniform_asymptotic_multiplicativity": defect_norm == 1.0,
     }
 
 
@@ -331,7 +367,10 @@ def embedding_candidate_table() -> tuple[dict[str, object], ...]:
             "status": "implemented_in_this_audit",
             "embedding_type": "unital completely positive trace-preserving map",
             "strength": "works for consecutive spherical cutoffs",
-            "weakness": "approximately multiplicative, not an exact inclusion",
+            "weakness": (
+                "selected low-rank witnesses have decreasing defects, but the "
+                "full unit-ball multiplicativity defect remains at least one"
+            ),
         },
         {
             "candidate": "spherical_harmonic_projection_refinement",
@@ -404,6 +443,14 @@ def approximate_static_patch_embedding_certificate(
         not record["exact_unital_star_inclusion_exists"]
         for record in records
     )
+    uniform_obstructions = tuple(
+        trace_filled_uniform_multiplicativity_obstruction_record(
+            record["source_dim"],
+            record["target_dim"],
+        )
+        for record in records
+        if record["source_dim"] % 2 == 0
+    )
     certified_claims = {
         "consecutive_full_matrix_star_inclusions_refuted": all(
             exact_star_inclusions_fail
@@ -416,6 +463,16 @@ def approximate_static_patch_embedding_certificate(
         ),
         "ucp_multiplicativity_errors_decrease": _strictly_decreases(
             multiplicativity_errors
+        ),
+        "selected_matrix_unit_errors_decrease": _strictly_decreases(
+            multiplicativity_errors
+        ),
+        "trace_filled_map_not_uniformly_asymptotically_multiplicative": (
+            len(uniform_obstructions) > 0
+            and all(
+                record["blocks_uniform_asymptotic_multiplicativity"]
+                for record in uniform_obstructions
+            )
         ),
         "declared_screen_shadows_preserved": all(
             record["approximate_embedding"]["screen_shadow"][
@@ -486,6 +543,8 @@ def approximate_static_patch_embedding_certificate(
         "embedding_candidate_table": embedding_candidate_table(),
         "consecutive_records": records,
         "multiplicativity_errors": multiplicativity_errors,
+        "multiplicativity_error_scope": "selected_matrix_unit_pair_only",
+        "uniform_multiplicativity_obstructions": uniform_obstructions,
         "physical_candidate_error_bounds": physical_candidate_error_bounds,
         "screen_shadow_error_bounds": screen_shadow_error_bounds,
         "certified_claims": certified_claims,
@@ -495,6 +554,9 @@ def approximate_static_patch_embedding_certificate(
             "harmonic mode refinements, heat-kernel coarse grainings, and a "
             "Berezin-Toeplitz-inspired smoothing surrogate preserve or converge "
             "on declared screen shadows while retaining operator-response "
-            "witnesses. None is claimed as the canonical static-patch map."
+            "witnesses. The decreasing multiplicativity values are selected-"
+            "witness statements, not uniform full-algebra bounds; the trace-"
+            "filled map has unit-ball defect one along infinitely many cutoffs. "
+            "None is claimed as the canonical static-patch map."
         ),
     }

@@ -1,0 +1,40 @@
+{
+  "authenticated_input": {
+    "inertia_upper_text_sha256": "89d2b82108713e807ede111370d1873062efa4531f267396747be98fa18ac5e3",
+    "input_sources_rehashed": true,
+    "interior_mass_lower_text_sha256": "43859628ba53d334c088b0a870e33a0d5fc5219a268e97db9ee596d65ed824ab",
+    "path": "experiments/skyrmion_au3b_sharp_global_exact_certificate.json",
+    "sha256": "bc6cf2ea21f44c122001fcc3f7fa6cffb9983d4ec4e35591323aa2d29b25c529"
+  },
+  "claim_boundary": "Necessary condition within the fixed-field, spherical radial-metric, leading collective-rotor model. It excludes shell energy and does not control the lapse, nonspherical stress, collective projection, higher-order rotation, or a rotating Einstein-Skyrme solution.",
+  "derivation": "q<=beta implies A>=(1-beta)N. For the certified field held fixed, c_M[A]>=(1-beta)c_M[N] and c_I[A]<=c_I[N]/(1-beta). The wall constraint therefore contains positive e^-2 rest and e^2 Cbar rotational terms. AM-GM eliminates e.",
+  "directed_decimal_compression": {
+    "bulk_inertia_upper": "24195493/500000",
+    "bulk_inertia_upper_float": 48.390986,
+    "denominator": "1000000",
+    "static_bulk_mass_lower": "4229227/125000",
+    "static_bulk_mass_lower_float": 33.833816
+  },
+  "goal": "Authenticated Spherical Collective Gravity-To-Risk Bound",
+  "result_type": "authenticated_spherical_collective_casimir_risk_bound",
+  "source_sha256": {
+    "experiments/skyrmion_rotational_backreaction_audit.py": "9455a97965c7a4acd685d6ecfa9ca6111621c52eb4f05a1eb071e2bb84a018ce",
+    "qgtoy/spherical_rotational_backreaction.py": "db924018e0fe99ac79eb517b0f3bc18d732da4acdaa9e682d5a5c82349f072cd"
+  },
+  "status": "complete_conditional_collective_backreaction_certificate",
+  "theorem_result": {
+    "bulk_inertia_upper": "24195493/500000",
+    "claim_boundary": "Necessary condition within the fixed-field, spherical radial-metric, leading collective-rotor model. It excludes shell energy and does not control the lapse, nonspherical stress, collective projection, higher-order rotation, or a rotating Einstein-Skyrme solution.",
+    "coupling_elimination": "rest contribution scales as e^-2 and collective rotational contribution as e^2 Cbar; AM-GM removes e",
+    "curvature_lambda": "1/400",
+    "global_orientation_risk_lower_bound_exact": "4229227/1114928351273816",
+    "global_orientation_risk_lower_bound_float": 3.79327245124592e-09,
+    "maximum_mean_casimir_exact": "69683019840000/4229227",
+    "maximum_mean_casimir_float": 16476538.109682929,
+    "metric_budget_beta": "1/2",
+    "result_type": "conditional_spherical_collective_gravity_casimir_bound",
+    "static_bulk_mass_lower": "4229227/125000",
+    "static_patch_radius_squared_over_newton": "1000000",
+    "wall_radius_x_w": "4"
+  }
+}
