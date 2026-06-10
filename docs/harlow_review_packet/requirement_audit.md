@@ -11,6 +11,11 @@ framing rule, claim boundary, and acceptance test is accounted for below.
 The unresolved scientific bridges are correctly presented as review questions
 or **[OPEN]** claims and therefore do not constitute packet defects.
 
+Post-audit packaging revision: **PASS**. The repository now opens with a
+Harlow-specific attachment quickstart, distinguishes the older static-patch
+expert bundle, and makes the executable branch optional rather than the main
+review artifact.
+
 ## A-G artifact audit
 
 | Requirement | Result | Exact evidence |
@@ -20,7 +25,7 @@ or **[OPEN]** claims and therefore do not constitute packet defects.
 | C. Exactly three review questions | **PASS** | Page 3 section `#review-questions` and `drafts/three_questions.md` contain three numbered questions and exactly three question marks. There is no fourth request hidden in the feedback-target box. |
 | D. Minimal technical appendix | **PASS** | Pages 4-8 cover the global risk bounds, conditional degradation law, orbital versus collective capacity, certified profile, conserved-source/master/Weyl architecture, present zero-exclusion loss, exact claim boundary, and reproducibility map. Implementation constants and artifact hashes are absent from page 1 and confined to this appendix. |
 | E. Primary-source literature matrix | **PASS** | `literature_matrix.md` compares 33 primary sources across all six required areas. `source_verification_log.md` records API, HTML, PDF, and author-source checks and distinguishes deep checks from abstract-only checks. All 33 unique arXiv links returned HTTP 200 during this audit. No priority conclusion is inferred from search absence. |
-| F. Outreach email | **PASS** | `drafts/outreach_email.md` is 170 words excluding heading/subject and 183 including the subject. It names the conceptual intersection, compresses the three purposes, says the appendix may be ignored, and explicitly asks for criticism and redirection rather than endorsement or a publication decision. |
+| F. Outreach email | **PASS** | `drafts/outreach_email.md` is 176 words excluding heading/subject and 189 including the subject. It names the conceptual intersection, compresses the three purposes, accurately describes the first three pages and optional appendix, offers the executable repository only if useful, and explicitly asks for criticism and redirection rather than endorsement or a publication decision. |
 | G. Compiled packet and editable sources | **PASS** | `finite_directional_observer_review_packet.pdf` has `%PDF-` signature, 317316 bytes, nine `/Type /Page` objects, 20 link annotations, and expected title metadata. Its order is note, diagram, questions, appendix, bibliography. Canonical editable source is `packet.html`, with `dependency_diagram.svg`, `bibliography.md`, and synchronized Markdown companions retained. |
 
 ## Required framing

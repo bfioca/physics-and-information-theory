@@ -10,6 +10,10 @@ subsystem in quantum-gravity observer rules.
   review packet.
 - `drafts/outreach_email.md` - the standalone email draft (under 200 words).
 
+Recommended sharing order: attach the compiled PDF and use the email draft.
+Do not lead with the raw branch URL; offer the executable repository and
+certificates only if they would help the review.
+
 ## Editable and audit sources
 
 - `packet.html` - canonical print source for the compiled packet.

@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-06-10T17:45:22.529Z",
+  "generated_at_utc": "2026-06-10T18:10:26.685Z",
   "packet_pages": 9,
   "conceptual_note_words": 714,
   "conceptual_note_equations": 3,
   "review_questions": 3,
-  "email_words_excluding_heading_and_subject": 170,
-  "email_words_including_subject": 183,
+  "email_words_excluding_heading_and_subject": 176,
+  "email_words_including_subject": 189,
   "internal_html_links": 7,
   "pdf_link_annotations": 20,
   "files": {
@@ -14,8 +14,8 @@
       "sha256": "273fa4048ad29381bb42b49195971f5d12976878fd02497e792e184ea5044d9c"
     },
     "README.md": {
-      "bytes": 2219,
-      "sha256": "cca04a0182d4457a0be7c60a21a9dab472044ffda63ecd6143014b85a151f5b9"
+      "bytes": 2418,
+      "sha256": "6ac4df894666271751b93775aedf147ea6b53eb6b970df96eab375bcd9e8e441"
     },
     "build_packet.sh": {
       "bytes": 1844,
@@ -46,8 +46,8 @@
       "sha256": "9f8d67b7937c7e9aa2acc27d82f72aa7fc4849d3d320f1ecbb5a67d0b46a689f"
     },
     "drafts/outreach_email.md": {
-      "bytes": 1289,
-      "sha256": "68e85ebe1c3459e4c58a227c4468026714c62d6ea7126f81c0e15d25cf75b108"
+      "bytes": 1348,
+      "sha256": "6364d0ad26ec7da314c3a2cda339eba3748a595ca1ce75a0c7607d8ce9dc89c4"
     },
     "claim_evidence_ledger.md": {
       "bytes": 29634,
@@ -66,8 +66,8 @@
       "sha256": "f343a13ef4f12d01ac61e268daa305a60bcab509c14776afff503f686a62480a"
     },
     "requirement_audit.md": {
-      "bytes": 13156,
-      "sha256": "c6b48ae158604ceb8fa2327da299d887b78a8b69984a96d5d97c8f4161f19ffa"
+      "bytes": 13481,
+      "sha256": "1e2649503a065535136e4a873084ea98c66b51a034c0af14f855ce9bae15c17b"
     },
     "finite_directional_observer_review_packet.pdf": {
       "bytes": 317316,

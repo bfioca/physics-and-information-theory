@@ -3,6 +3,21 @@
 Finite, executable diagnostics for observer algebras, reconstruction, and
 static-patch-inspired bridge channels.
 
+## For Professor Harlow Review
+
+The curated review artifact for the finite directional-record observer program
+is separate from the static-patch screen-shadow package documented below.
+
+Send these two files:
+
+- [`docs/harlow_review_packet/finite_directional_observer_review_packet.pdf`](docs/harlow_review_packet/finite_directional_observer_review_packet.pdf)
+  - the nine-page conceptual review packet;
+- [`docs/harlow_review_packet/drafts/outreach_email.md`](docs/harlow_review_packet/drafts/outreach_email.md)
+  - the short attachment-first email draft.
+
+Attach the PDF and use the email draft. Do not lead with the raw branch URL;
+offer the executable repository and certificates only if they would be useful.
+
 This repository is a research-code benchmark suite. It uses small exact models
 to test when screen-visible data, entropy shadows, min-cut shadows, or
 restricted transfer records are too coarse to determine an observer algebra or
@@ -216,7 +231,7 @@ v0.1-static-patch-diagnostics
 | [`paper/PUBLISHING_CHECKLIST.md`](paper/PUBLISHING_CHECKLIST.md) | Publishing checklist; only external-feedback follow-up remains open. |
 | [`docs/README.md`](docs/README.md) | Map of the broader research trail. |
 
-Expert feedback bundle:
+Static-patch observer-algebra expert feedback bundle:
 
 ```text
 paper/expert_cover_note.md

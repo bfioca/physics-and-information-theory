@@ -2,7 +2,7 @@
 
 **Subject:** A finite directional record as a concrete model of a gravitational observer
 
-Dear Dr. Harlow,
+Dear Professor Harlow,
 
 I am developing a theorem-first model of a finite observer register in a de
 Sitter static patch. The register stores a relational `SO(3)` orientation
@@ -17,10 +17,11 @@ useful relation to observer entropy, which gravitational invariant should constr
 such a register, and whether a one-action semiclassical model is informative
 without beginning from a closed-universe path integral.
 
-I have attached a one-page conceptual note, a dependency diagram, and three
-specific questions. A technical appendix records what is proved, conditional,
-and open; please feel entirely free to ignore it. I am seeking criticism and
-redirection, not endorsement, priority, or a publication decision.
+I've attached a short review packet whose first three pages are a conceptual
+note, dependency diagram, and three specific questions. The remaining pages
+are an optional technical appendix. The executable repository and certificates
+are available if useful. I am seeking criticism and redirection, not
+endorsement, priority, or a publication decision.
 
 Thank you for considering it.
 
