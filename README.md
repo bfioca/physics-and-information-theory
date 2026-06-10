@@ -29,6 +29,37 @@ Sitter.
 
 ## Active Research Goal
 
+The primary paper target is a class-uniform tradeoff for a finite localized
+rotational register in a de Sitter static patch. The intended theorem should
+connect relational orientation error, record lifetime, spatial and optical
+support, energy cost, and gravitational disturbance in one controlled model.
+The massive Skyrmion is a certified test realization, not the headline claim.
+
+| Track | Current role | Start here |
+| --- | --- | --- |
+| Universal observer theorem | Open headline: eliminate the resource, lifetime, localization, and gravity budgets into one inequality. | [`universal_static_patch_observer_tradeoff_plan.md`](docs/universal_static_patch_observer_tradeoff_plan.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
+| Operational reference bounds | Rigorous global-risk and named-matter capacity results; the common-action preparation/storage/readout channel remains open. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
+| Gravity and channel bridge | Fixed-background response and effective-channel components exist, but neither supplies the final observer-capacity bound. | [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md), [`static_patch_l2_weyl_reconstruction.md`](docs/static_patch_l2_weyl_reconstruction.md) |
+| Certified matter realization | The supported Skyrmion supplies controlled profile, spectral, and response subproblems without being identified with the observer theorem. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
+
+**Claim boundary.** Global orientation-risk bounds, a confined-orbital
+localization-energy bridge, and supported-profile subproblems are rigorous on
+their declared domains. The effective record channel and fixed-background
+gravitational response remain conditional. The `S_dir`-to-`S_Ob` dictionary,
+one-action physical channel, gravitational capacity invariant, Weyl
+zero-exclusion, and self-consistent gravity remain open.
+
+Use the [`research execution plan`](docs/research_execution_plan.md) for the
+current ordering, the
+[`claim dependency ledger`](docs/universal_observer_claim_dependency_ledger.md)
+for proof status, [`THEOREMS.md`](THEOREMS.md) for certificates, and the
+[`documentation map`](docs/README.md) for the complete file inventory. The
+fuzzy-screen/operator-algebra work remains a separate supporting track in the
+[`observer-algebra research program`](docs/paper_worthy_observer_algebra_research_program.md).
+
+<details>
+<summary>Detailed research trail and individual theorem notes</summary>
+
 The current assessment and execution order are tracked in
 [`docs/research_execution_plan.md`](docs/research_execution_plan.md). The
 primary paper target is the class-uniform localization-reference-coherence-
@@ -200,6 +231,8 @@ The finite-clock order-of-limits obstruction is documented in
 The state-derived many-body modular surrogate and its Type-`II_infinity`
 continuous core are documented in
 [`docs/modular_manybody_regulator.md`](docs/modular_manybody_regulator.md).
+
+</details>
 
 ## Current Packaged Result
 
