@@ -173,6 +173,14 @@ diamond-norm theorem. It is exactly the norm needed by the Choi recovery
 witness already derived in the overlapping-sector work package; the final
 decoder transfer still costs `d epsilon_infinity`.
 
+For one fixed finite compression, `u8a_finite_storage_channel.md` adds the
+missing uniform-map quantifiers in the regular Gaussian-bath framework,
+defines both channels from the common factorized pre-switch input, and converts
+(14) with the explicit bound `floor(D_in D_out/2) epsilon_infinity`. Applying
+that result to the named Bunch-Davies QFT is conditional on the open KMS
+GNS/Araki-Woods bridge. The conversion is separate from (14) and does not make
+the raw spectral estimate dimension free.
+
 The collective heat rate is
 
 ```text
@@ -249,7 +257,7 @@ PYTHONPATH=. python3 -m unittest tests.test_static_patch_worldtube_ule
 
 Primary references:
 
-- [Nathan and Rudner, Universal Lindblad equation, Appendix C](https://arxiv.org/abs/2004.01469)
+- [Nathan and Rudner, Universal Lindblad equation, Appendices A--C](https://doi.org/10.1103/PhysRevB.102.115109), with the [2021 erratum](https://doi.org/10.1103/PhysRevB.104.119901)
 - [Merkli, Dynamics of open quantum systems II](https://arxiv.org/abs/2105.00023)
 - [Perche and Zambianco, derivative-coupled detectors](https://arxiv.org/abs/2305.11949)
 - [Olafsson and Wolf, Paley--Wiener theorem for symmetric spaces](https://arxiv.org/abs/1101.4419)

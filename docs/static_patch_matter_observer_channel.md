@@ -37,9 +37,10 @@ two-sided bracket only after a common resource condition is verified.
 
 ## Spectral Witness
 
-The current finite-switch ULE theorem supplies an ancilla-stable state
-operator-norm residual `epsilon_infinity`, not a channel diamond distance. It is
-therefore transferred only through the fixed pulled-back Choi witness:
+The generic finite-switch ULE API supplies an ancilla-stable state
+operator-norm residual `epsilon_infinity`, not by itself a channel diamond
+distance. It is therefore transferred here only through the fixed pulled-back
+Choi witness:
 
 ```text
 e_witness >= max(0,1-1/d-eta_heat-d epsilon_infinity).
@@ -47,6 +48,21 @@ e_witness >= max(0,1-1/d-eta_heat-d epsilon_infinity).
 
 The factor `d` is the witness trace norm. Typed bound classes prevent callers
 from passing this residual into the diamond-transfer API.
+
+The separate `WT-R1/D1` analysis proves the stronger uniform-map premise for
+one fixed finite compression within the regular Gaussian-bath framework and
+defines both maps from the common factorized pre-switch input. It then proves
+
+```text
+(1/2)||Delta||_diamond
+ <=floor(D_in D_out/2) epsilon_infinity,
+```
+
+paying the full factor `50` for its ten-dimensional register. Applying this
+bound to the named Bunch-Davies QFT detector remains conditional on the open
+KMS GNS/Araki-Woods channel bridge. See `u8a_finite_storage_channel.md`. The
+regular-bath result does not retype arbitrary state-residual objects as diamond
+bounds.
 
 For a certified matter zero-mode lower bound, the collective proper-time rate
 used in the heat estimate is
@@ -57,11 +73,13 @@ gamma_lower=pi lambda^2 j(0)_lower/N^2.
 
 ## Claim Boundary
 
-The transfer algebra is complete. Applying it to the Skyrmion matter model
-still requires AU.1 profile closure, interval-certified global spectral
-moments, a derived switching/collective projection, and either a local
-physical-to-heat diamond estimate or a justified finite-dimensional norm
-upgrade.
+The transfer algebra is complete. The fixed rigid-detector analysis supplies
+one justified regular-bath finite-dimensional upgrade and a conditional named-
+QFT box, but not a microcausal local-matter U8a model. Applying the same route
+to the Skyrmion still
+requires the projective channel domain, interval-certified global spectral
+moments, a derived switching/collective projection, and a uniform-map theorem
+on that different compression.
 
 Run:
 

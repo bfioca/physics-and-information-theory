@@ -5,10 +5,14 @@ Two logically different perturbation results are kept separate here.
 * A normalized diamond-distance estimate from a physical channel to the
   collective ``SO(3)`` heat channel transfers both any-decoder lower bounds
   and explicit-decoder upper bounds.
-* The available ULE theorem controls an ancilla-stable state residual in
-  operator norm.  It transfers only through the fixed Choi fidelity witness,
-  with the explicit dimension cost already identified in the overlapping-
-  sector calculation.  It is not promoted to a diamond-distance estimate.
+* The generic ULE residual type controls one ancilla-stable state residual in
+  operator norm.  This module transfers that type only through the fixed Choi
+  fidelity witness.  The separate rigid-detector analysis proves a stronger
+  uniform-map premise for one fixed finite model in the regular Gaussian-bath
+  framework and pays the full operator-to-diamond dimension factor there.
+  Applying it to the named Bunch-Davies QFT remains conditional on a KMS GNS
+  bridge; arbitrary residuals are still not promoted here, and the result is
+  not a microcausal local-matter U8a construction.
 
 The distinction is encoded in separate immutable bound types so that the two
 proof routes cannot be silently interchanged by callers.
@@ -469,8 +473,9 @@ def static_patch_matter_observer_channel_certificate() -> dict[str, object]:
             "a derived switch and collective projection, and a local field-top model."
         ),
         "next_physics_gate": (
-            "derive a local matter-to-rotor channel estimate in normalized diamond "
-            "distance, or prove a finite-dimensional trace-norm upgrade of the "
-            "ULE residual"
+            "prove the KMS GNS/Araki-Woods channel bridge, then derive a "
+            "microcausal local-matter channel with its reopened multipole and "
+            "band ledger, or extend the regular-bath uniform-map lemma to "
+            "another explicitly declared channel class"
         ),
     }

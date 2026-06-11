@@ -54,9 +54,12 @@ HTML links, bibliography links, diagram statuses, PDF signature/page count,
 link annotations, title metadata, and source/output hashes.
 
 The packet deliberately does not claim a complete physical observer theorem.
-The bounded Paper R sprint ended in **INCONCLUSIVE STOP**: its corrected
-fixed-background response estimator is stably negative, but the rigorous full
-interval contains zero. Paper R is therefore retained as a viability memo, not
-promoted as a theorem or manuscript. The common-action record channel, the
-`S_dir`-to-`S_Ob` dictionary, and the gravitational quantity relevant to
-observer capacity remain open.
+The rigid-detector sprint proves a regular-Gaussian-bath finite-switch lemma and
+gives a conditional named-QFT degradation box. The KMS GNS/Araki-Woods channel
+bridge remains open, while unchanged promotion of the exact factorized density
+to microcausal local matter ends in **INCONCLUSIVE STOP**. The bounded Paper R
+sprint also ended in
+**INCONCLUSIVE STOP**: its corrected fixed-background response estimator is
+stably negative, but the rigorous full interval contains zero. The common-
+action local-matter record channel, the `S_dir`-to-`S_Ob` dictionary, and the
+gravitational quantity relevant to observer capacity remain open.

@@ -1,9 +1,13 @@
 # Harlow-Facing Paper Goal
 
-Status: G1/G2 audit-ready; G3-G6 remain open in the active Paper U program.
-The bounded Paper R route ended in **INCONCLUSIVE STOP**. The Harlow packet
-remains a GO for conceptual review; Paper A is the publishable fallback
-candidate.
+Status: G1/G2 audit-ready. G3 has a regular-bath finite-switch theorem and a
+conditional box for one spatially smeared rigid detector; its named KMS QFT
+channel bridge remains open, and unchanged promotion of its exact factorized
+density ends in **INCONCLUSIVE STOP** at the microcausal local-matter gate.
+Paper U U8a, same-action preparation/readout, and G4-G6 remain open. The bounded Paper R
+route also ended in **INCONCLUSIVE STOP**. The refreshed Harlow packet is a GO
+for conceptual review and records this narrower result explicitly. Paper A is
+the best-developed manuscript fallback, subject to novelty review.
 
 ## Working title
 
@@ -192,6 +196,27 @@ substituted for another. The binding ledger is
 Derive the preparation, storage, and readout channel from the declared local
 action and prove an explicit distance to the effective heat/measure-correct
 channel.
+
+The storage-only rigid-detector analysis now has a named conditional result.
+The regular-Gaussian-bath finite-switch theorem is proved. Conditional on a
+regulator-uniform KMS GNS/Araki-Woods bridge for the fixed `WT-R1/D1`
+spatially smeared action, its pre-switch-to-final reduced map is within
+normalized diamond distance `0.039` of the known free-plus-Lamb Casimir unitary
+and `SO(3)` heat channel on a positive-width nonzero-coupling box. The composed
+operational risk would then obey
+
+```text
+R_physical >= 0.5327532814987301 > 1/2.
+```
+
+Thus the box conditionally excludes high-fidelity retention; the QFT channel
+bridge and shorter exposures remain open. More importantly for Paper U,
+distinct components of the exact current factorization unconditionally have a nonzero
+commutator under disjoint spacelike smearings, so the density cannot be promoted
+unchanged to microcausal local matter. The proof is
+`docs/u8a_finite_storage_channel.md`. It grants token preparation and final
+readout as boundary operations and assumes the detector EFT persists through
+the finite protocol. It therefore does not pass U8a or G3 as a whole.
 
 Pass condition:
 

@@ -104,6 +104,9 @@ from .finite_time_rotation_diffusion import (
 from .static_patch_matter_observer_channel import (
     static_patch_matter_observer_channel_certificate,
 )
+from .u8a_finite_storage_channel import (
+    u8a_finite_storage_channel_certificate,
+)
 from .common_mode_locality_mismatch import (
     common_mode_locality_mismatch_certificate,
 )
@@ -1341,6 +1344,17 @@ def run_static_patch_matter_observer_channel(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             static_patch_matter_observer_channel_certificate(),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_u8a_finite_storage_channel(args: argparse.Namespace) -> None:
+    del args
+    print(
+        json.dumps(
+            u8a_finite_storage_channel_certificate(),
             indent=2,
             sort_keys=True,
         )
@@ -3476,6 +3490,15 @@ def build_parser() -> argparse.ArgumentParser:
     matter_observer_channel.set_defaults(
         func=run_static_patch_matter_observer_channel
     )
+
+    u8a_storage_channel = subparsers.add_parser(
+        "u8a-finite-storage-channel",
+        help=(
+            "audit the conditional fixed-register degradation box and "
+            "certify the factorized-current locality route stop"
+        ),
+    )
+    u8a_storage_channel.set_defaults(func=run_u8a_finite_storage_channel)
 
     common_mode_mismatch = subparsers.add_parser(
         "common-mode-locality-mismatch",

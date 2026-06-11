@@ -1,6 +1,7 @@
 # Harlow Review Packet: Claim-Evidence Ledger
 
-Status: external-claim audit after the bounded Paper R sprint, 2026-06-10
+Status: external-claim audit after the bounded U8a and Paper R sprints,
+2026-06-10
 
 This ledger governs the wording of the Harlow review packet. It separates
 established mathematics, conditional physical interpretation, and open
@@ -17,8 +18,9 @@ ingredients.
   evidence. The condition must appear with the claim.
 - **[OPEN]** means a required implication, theorem, or physical identification
   has not been established.
-- **INCONCLUSIVE STOP** is the predeclared research decision for the completed
-  Paper R sprint. It is not a fourth theorem status and not a physical no-go.
+- **INCONCLUSIVE STOP** is a bounded-route research decision, not a fourth
+  theorem status or a physical no-go. It applies separately to the rigid-
+  current local-matter promotion and the completed Paper R sprint.
 
 `S_dir`, effective record dimension, Casimir, QFI, thermodynamic entropy, and
 the observer entropy `S_Ob` remain distinct. Classical record stability is not
@@ -31,8 +33,8 @@ backreaction, and fixed-background response is not self-consistent gravity.
 | --- | --- | --- | --- |
 | E1 | **[PROVED]** | Every state and measurement in the declared Haar-prior relational `SO(3)` task obeys global, tail-robust resource lower bounds. | W3; `docs/global_so3_reference_risk.md`; focused tests. This is not an observer-entropy theorem. |
 | E2 | **[PROVED]** | Named localized matter classes convert rotational capacity into support and energy cost. | W3a and W3b; orbital and supported-collective documentation and tests. These are class-specific results. |
-| E3 | **[CONDITIONAL]** | A stipulated isotropic rotational heat channel gives an exact finite-time degradation law. | W3, W3a.1, W4, W6, and Y. The channel is not yet derived from the same local action as preparation and readout. |
-| E4 | **[OPEN]** | One norm-controlled microscopic interaction has not yet been shown to acquire, store, and expose the directional record while entering the same stress ledger. | Harlow-facing G3; Y2; `docs/static_patch_matter_observer_channel.md`. This is the primary conceptual bottleneck. |
+| E3 | **[CONDITIONAL]** | One ten-dimensional spatially smeared Bunch-Davies detector has a common-input finite-switch channel bound and finite degradation box if the QFT channel bridge holds. | AS proves the regular-Gaussian-bath lemma. AS2 pays factor `50`; conditionally, normalized diamond error is `<0.039` and U7 gives `R_physical>=0.532753...>1/2`. The KMS GNS/Araki-Woods propagator and regulator-uniform Gaussian identity remain open. |
+| E4 | **[OPEN]** | One norm-controlled local-matter interaction has not yet been shown to acquire, store, and expose the directional record while entering the same stress ledger. | Independently of E3's bridge, distinct components of the exact factorized rigid current have a nonzero commutator under disjoint spacelike smearings, so that density cannot be promoted unchanged. Different local completions reopen multipole and band errors. |
 | E5 | **[PROVED]** | Fixed pure de Sitter has exact static `ell=2` master-source, ideal-shell transmission, and exterior electric-Weyl reconstruction maps. | W3m, W3t, W3v, and W3x. Exact maps do not prove a nonzero completed source amplitude. |
 | E6 | **[CONDITIONAL]** | The completed corrected response estimator is stably negative: `[-0.003079554319910408,-0.002552931394151071]`. | Paper R decision artifact SHA256 `bcbb4a1af96b445b84464ddeda83cb6a568b0061bbc5146dd8fc11e72e124292`. The estimator is design evidence, not a continuum lower bound. |
 | E7 | **[PROVED]** | The completed response interval is `[-0.027341192151999246,0.021708706437937767]`; it contains zero and triggers **INCONCLUSIVE STOP**. | `experiments/paper_r_response_certificate.json`; `docs/paper_r_viability_decision.md`. All frozen origin, bulk, and wall proof terms are included. |
@@ -46,8 +48,8 @@ backreaction, and fixed-background response is not self-consistent gravity.
 | --- | --- | --- |
 | **[PROVED]** | `R_ref>=1/(16<J^2>+8)` and `R_ref>=c_SO3 exp(-2S_dir/3)` for the declared global relational task. | Do not call either result an absolute-frame, local-QFI, memory-size, or observer-entropy theorem. |
 | **[PROVED]** | Confined spinless orbital matter obeys `<L^2><=2Ma^2E_ex`; supported Skyrmion collective profiles obey the stated inertia and sector-floor bounds. | Keep the orbital and adiabatic collective domains explicit. |
-| **[CONDITIONAL]** | Isotropic heat diffusion gives the displayed finite-time record-risk inequality. | Call it an effective-channel implication, not a measured lifetime or action-derived channel. |
-| **[OPEN]** | Preparation, storage, readout, physical-to-effective channel error, support stress, and backreaction are not controlled by one action on one open parameter family. | This remains the main physical bridge for Paper U. |
+| **[CONDITIONAL]** | The declared Bunch-Davies rigid-detector EFT obeys the AS2 finite-switch channel and degradation bounds if the QFT channel bridge holds. | Keep the proved regular-bath lemma, open KMS GNS bridge, factorized extended-detector action, factor `50`, declared box, and absence of a hardware-lifetime theorem explicit. |
+| **[OPEN]** | Local-matter preparation, storage, readout, support stress, and backreaction are not controlled by one action on one open parameter family. | The rigid-current locality STOP is route-specific; this remains the main physical bridge for Paper U. |
 
 ## Fixed-background response decision
 
@@ -109,9 +111,11 @@ The hashes below were recomputed from the current worktree on 2026-06-10.
 
 ## Verification
 
-The decisive response result is replayed with:
+The decisive U8a and response results are replayed with:
 
 ```bash
+PYTHONPATH=. python -m pytest -q tests/test_u8a_finite_storage_channel.py
+PYTHONPATH=. python -m qgtoy u8a-finite-storage-channel
 PYTHONPATH=. python experiments/paper_r_response_certificate_audit.py
 PYTHONPATH=. python -m pytest -q \
   tests/test_paper_r_response_certificate.py \
@@ -138,11 +142,13 @@ node docs/harlow_review_packet/audit_packet.mjs
 The strongest accurate summary is:
 
 > **[PROVED]** The project has global operational `SO(3)` resource bounds,
-> named matter-capacity theorems, a validated fixed-background hard-wall
-> profile, exact fixed-de-Sitter response maps, and a completed bounded Paper R
-> viability certificate. **[CONDITIONAL]** Effective heat models and the
-> negative corrected response estimator support a plausible finite-record
-> construction. **[OPEN]** The common-action record channel, the
+> named matter-capacity theorems, a regular-Gaussian-bath finite-switch channel
+> lemma, a validated fixed-background hard-wall profile, exact fixed-de-Sitter
+> response maps, and a completed bounded Paper R viability certificate.
+> **[CONDITIONAL]** The named Bunch-Davies detector box, the Skyrmion
+> realization, and the negative corrected response
+> estimator remain design evidence. **[OPEN]** The common-action local-matter
+> record channel, the
 > `S_dir`-to-`S_Ob` dictionary, the gravitational capacity variable, nonzero
 > continuum Weyl response, self-consistent gravity, and a common parameter
 > window remain unresolved.

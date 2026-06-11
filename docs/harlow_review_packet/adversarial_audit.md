@@ -1,6 +1,6 @@
 # Adversarial Claim-Boundary Audit
 
-Status: PASS after the completed Paper R viability decision, 2026-06-10
+Status: PASS after the bounded U8a and Paper R decisions, 2026-06-10
 
 Scope: `packet.html`, `drafts/outreach_email.md`,
 `dependency_diagram.svg`, `claim_evidence_ledger.md`, and
@@ -19,7 +19,7 @@ the primary-source searches recorded in the literature verification log.
 | Fixed-background response versus self-consistent gravity | **PASS** | The conceptual note, appendix, diagram, and external-claim boundary repeatedly identify the response as fixed pure de Sitter. They explicitly exclude a rotating self-gravitating Einstein-Skyrme-de Sitter solution, completed Israel matching, and self-consistent geometry. |
 | Estimator evidence versus interval proof | **PASS** | The packet gives the negative corrected-estimator interval separately from the completed full response interval. The latter contains zero and is explicitly binding. The predeclared result is **INCONCLUSIVE STOP**, not an almost-theorem, cancellation result, or physical no-go. |
 | `B_W` witness versus observer-capacity bound | **PASS** | The packet says that only a future nonzero `B_W` theorem could witness fixed-background non-invisibility; the bounded route did not certify one. It denies that `B_W` is a capacity bound or a substitute for collapse, horizon/QES displacement, junction data, or self-consistent gravity. Review question 2 asks what should replace or refine it. |
-| Conditional effective channel versus common-action physical channel | **PASS** | The stipulated isotropic heat channel is labeled conditional. The local action, KMS-to-effective error, acquisition, storage, readout, stress ledger, and common parameter window are all labeled open. Neither de Sitter thermality nor a Markov approximation is treated as deriving the physical channel. |
+| Rigid-detector channel versus common-action local-matter channel | **PASS** | Appendix A proves the finite-switch lemma in the regular Gaussian-bath framework; its named Bunch-Davies detector box is conditional on the open KMS GNS/Araki-Woods channel bridge. It pays the full finite-dimensional channel-norm cost and includes free and Lamb-shift Casimir unitaries. Independently, distinct components of the exact factorized density have a nonzero commutator under disjoint spacelike smearings, blocking unchanged promotion to microcausal local matter. Different local completions, acquisition, readout, support stress, backreaction, and a same-action parameter window remain open. |
 | Novelty and priority | **PASS** | The packet says novelty, priority, venue fit, and publishability are not repository outputs; the bibliography states that no priority claim is made and the literature search is nonexhaustive. The matrix treats the proposed contribution as a question and explicitly forbids “first” language. |
 | Approval or endorsement request | **PASS** | The email asks for conceptual direction, criticism, and redirection. It explicitly says the request is not for endorsement, priority, or a publication decision. It does not ask Dr. Harlow to approve the work or certify publishability. |
 
@@ -38,6 +38,9 @@ the primary-source searches recorded in the literature verification log.
    object before Paper R resumes.
 5. Made the logical status of `B_W` explicit: only a future certified nonzero
    value would witness non-invisibility, while Paper U must not depend on it.
+6. Added the regular-bath finite-switch theorem, its conditional named-QFT
+   degradation box, the open GNS channel bridge, and the route-level locality
+   obstruction. Paper U U8a remains open.
 
 ## Remaining Risks
 
@@ -58,3 +61,8 @@ the primary-source searches recorded in the literature verification log.
 - A future nonzero `B_W` theorem would establish fixed-background
   non-invisibility only. It would not close the common-action channel,
   self-gravity, or observer-capacity questions.
+- The conditional detector box is easy to overread as an unconditional QFT or
+  local-matter result. Its KMS GNS channel bridge is open, and its exact
+  factorized density is nonmicrocausal when the shared finite-dimensional
+  charge is spread over a spatial support; the packet treats unchanged
+  promotion as a route stop, not a universal no-go for local observer models.

@@ -73,15 +73,19 @@ This is an exact finite-time degradation theorem for that channel. It is
 classical record stability expressed through an operational readout risk, not
 a statement about preservation of arbitrary quantum phase coherence.
 
-**[OPEN]** The heat channel in (A.2) has not been derived, with a useful
-finite-time norm error, from the same local interaction that prepares and
-reads the record. The repository contains a prescribed-switch universal
-Lindblad construction and profile-resolved bath inputs, but its
-ancilla-stable state operator-norm residual is not a physical channel diamond
-distance. No common-action protocol presently controls preparation, storage,
-readout, channel error, support stress, and backreaction on one nonempty open
-parameter set. This microscopic record channel is the principal conceptual
-gap.
+**[PROVED]** The regular-Gaussian-bath finite-switch theorem defines exact and
+comparison maps from the same pre-switch input and survives a finite inert
+ancilla. **[CONDITIONAL]** Given the open KMS GNS/Araki-Woods channel bridge,
+Research Result AS2 applies it to one ten-dimensional spatially smeared
+Bunch-Davies detector, pays the full operator-to-diamond factor `50`, and gives
+normalized diamond error below `0.039` on an open nonzero-coupling box. U7 then
+gives `R_physical>=0.532753...>1/2` on that box.
+
+**[OPEN]** This is not a local-matter closure. For the exact factorized density
+`ell_a(x)=h_A(x)J_a`, distinct components have a nonzero commutator under
+disjoint spacelike smearings. It cannot be promoted unchanged while retaining
+the zero-error ledger. Preparation, readout, support stress, and backreaction
+are also not derived by the same action. Paper U U8a therefore remains open.
 
 ## B. Capacity from localization and energy
 
@@ -294,13 +298,14 @@ hard-wall profile and its fixed-background centrifugal inverse exist; and a
 valid conserved quadrupolar source has exact master/transmission/Weyl maps.
 
 **[CONDITIONAL]** The defensible physical construction is narrower: a
-hard-supported Skyrmion is a plausible semiclassical realization, a stipulated
-heat channel gives an exact degradation law, and the signed fixed-background
-response estimator favors a nonzero exterior response. The completed rigorous
-interval does not certify that response.
+hard-supported Skyrmion is a plausible semiclassical realization, the regular-
+bath lemma supplies a conditional Bunch-Davies detector box but not a proved
+QFT channel or local matter, and the signed fixed-background estimator favors
+a nonzero exterior response. The completed rigorous interval does not certify
+that response.
 
-**[OPEN]** The project has not identified `S_dir` with `S_Ob`, derived a
-preparation-through-readout record channel from one action, proved a common
+**[OPEN]** The project has not identified `S_dir` with `S_Ob`, derived a local-
+matter preparation-through-readout record channel from one action, proved a common
 parameter window, certified `|B_W|>0`, established tensorial Israel
 matching, solved a rotating self-gravitating Einstein-Skyrme-de Sitter system,
 or shown that exterior Weyl response is the gravitational quantity that caps
@@ -321,7 +326,7 @@ be audited from:
 | --- | --- | --- |
 | **[PROVED]** | Global risk/asymmetry/Casimir bounds | `THEOREMS.md` W3; `docs/global_so3_reference_risk.md`; `tests/test_global_so3_reference_risk.py` |
 | **[PROVED]** | Confined orbital capacity | `THEOREMS.md` W3a; `docs/localized_orbital_reference.md`; `tests/test_localized_orbital_reference.py` |
-| **[CONDITIONAL]** | Heat-capacity composition | `THEOREMS.md` W3a.1; `experiments/universal_observer_tradeoff_certificate.json`, SHA256 `5c88eb4af23764204333b5e899083c87911066895d70fc132f263e180c175ad6` |
+| **[CONDITIONAL]** | Named-QFT rigid-detector finite-switch channel | `THEOREMS.md` AS/AS2; regular-bath lemma proved, KMS GNS bridge open; `docs/u8a_finite_storage_channel.md` |
 | **[PROVED]** | Supported collective sector floor | `THEOREMS.md` W3b; `docs/supported_skyrmion_collective_spectral_floor.md` |
 | **[PROVED]** | Validated hard-wall profile | `THEOREMS.md` AU.1; `experiments/skyrmion_newton_reduced_hessian_rounded_exact_certificate.json`, SHA256 `c4c95db47470392f0963266e37b491ae49a09381464f3da97c3f97bd14e74eff` |
 | **[PROVED]** | Fixed-background source/master/Weyl maps | `THEOREMS.md` W3t, W3v, W3x; artifacts listed under (D.1) |

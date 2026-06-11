@@ -472,6 +472,13 @@ def _fraction_lower_float(value: Fraction) -> float:
     return rendered
 
 
+def _exact_input_fraction(value: float | Fraction) -> Fraction:
+    """Preserve explicitly rational geometry while retaining float callers."""
+    if isinstance(value, Fraction):
+        return value
+    return Fraction.from_float(value)
+
+
 def _smooth_seed_tail_envelope_fractions(
     support_radius_ratio: Fraction,
 ) -> dict[str, Fraction]:
@@ -525,7 +532,7 @@ def _smooth_seed_tail_envelope_fractions(
 
 def smooth_seed_transform_tail_envelope(
     *,
-    support_radius_ratio: float = 0.2,
+    support_radius_ratio: float | Fraction = 0.2,
 ) -> dict[str, float]:
     """Return analytic ``p^-3`` envelopes for the exact seed transform.
 
@@ -542,18 +549,19 @@ def smooth_seed_transform_tail_envelope(
     bounds follow by maximizing ``t^-m exp(1-1/t)`` on ``0<t<=1``.
     """
     _validate_positive("support_radius_ratio", support_radius_ratio)
-    if support_radius_ratio < 0.1 or support_radius_ratio > 0.25:
+    ratio_fraction = _exact_input_fraction(support_radius_ratio)
+    if ratio_fraction < Fraction(1, 10) or ratio_fraction > Fraction(1, 4):
         raise ValueError(
             "analytic envelope requires 0.1 <= support_radius_ratio <= 0.25"
         )
-    ratio_fraction = Fraction.from_float(support_radius_ratio)
     exact = _smooth_seed_tail_envelope_fractions(ratio_fraction)
 
     def upper(name: str) -> float:
         return _fraction_upper_float(exact[name])
 
     return {
-        "support_radius_ratio": support_radius_ratio,
+        "support_radius_ratio": float(ratio_fraction),
+        "support_radius_ratio_exact": str(ratio_fraction),
         "seed_radius_ratio": upper("seed_radius_ratio"),
         "seed_normalization_lower_bound": _fraction_lower_float(
             exact["normalization_lower"]
@@ -575,8 +583,8 @@ def smooth_seed_transform_tail_envelope(
 
 def smooth_worldtube_analytic_sobolev_upper_bounds(
     *,
-    radius: float = 1.0,
-    support_radius: float = 0.2,
+    radius: float | Fraction = 1.0,
+    support_radius: float | Fraction = 0.2,
 ) -> dict[str, object]:
     """Return rigorous closed-form Sobolev upper bounds for the exact profile.
 
@@ -594,11 +602,11 @@ def smooth_worldtube_analytic_sobolev_upper_bounds(
     """
     _validate_positive("radius", radius)
     _validate_positive("support_radius", support_radius)
-    ratio = support_radius / radius
-    ratio_fraction = Fraction.from_float(ratio)
-    radius_fraction = Fraction.from_float(radius)
+    radius_fraction = _exact_input_fraction(radius)
+    support_radius_fraction = _exact_input_fraction(support_radius)
+    ratio_fraction = support_radius_fraction / radius_fraction
     tail = smooth_seed_transform_tail_envelope(
-        support_radius_ratio=ratio,
+        support_radius_ratio=ratio_fraction,
     )
     exact_tail = _smooth_seed_tail_envelope_fractions(ratio_fraction)
     seed_radius = ratio_fraction / 2
@@ -706,8 +714,10 @@ def smooth_worldtube_analytic_sobolev_upper_bounds(
     )
     return {
         "result_type": "closed_form_exact_profile_sobolev_upper_enclosure",
-        "radius": radius,
-        "support_radius": support_radius,
+        "radius": float(radius_fraction),
+        "radius_exact": str(radius_fraction),
+        "support_radius": float(support_radius_fraction),
+        "support_radius_exact": str(support_radius_fraction),
         "dimensionless_tail_split": split,
         "transform_tail_envelope": tail,
         "sqrt_spectrum_l2_upper_bound": _fraction_upper_float(norm_bounds[0]),

@@ -1,7 +1,11 @@
 # Finite Directional Records In A de Sitter Static Patch
 
 Status: claim-hygiene manuscript skeleton. Gates G1 and G2 are specified at an
-audit-ready level; the common-action record channel and gravitational capacity
+audit-ready level. A regular-bath finite-switch theorem is proved and a
+conditional detector box is certified, but the named KMS QFT channel bridge is
+open and the exact
+factorized density cannot itself serve as microcausal local matter. Paper U
+U8a, same-action preparation and readout, and the gravitational capacity
 variable remain open. This is an outline, not full manuscript prose.
 
 ## 1. Claim capsule
@@ -27,7 +31,8 @@ small global relational risk
 The proposed Paper U physics theorem would add a common local action that also
 controls record lifetime, optical and proper support, and one physically
 justified gauge-invariant gravitational budget. That final conjunction is not
-yet proved.
+yet proved. The new detector-EFT result is a reusable channel lemma plus a
+route-level locality stop, not a replacement for that conjunction.
 
 ## 2. Exact domain
 
@@ -238,11 +243,60 @@ They do not establish:
 
 ## 7. Remaining Paper U gates
 
-### U8. Common-action record channel - OPEN
+### U8a. Finite-switch storage channel - conditional box, route stopped
 
-Derive preparation, storage, and readout from one local action and prove a
-strategy- or diamond-norm error below the operational risk margin on a nonempty
-parameter box.
+For the fixed cutoff-one Peter-Weyl register, inert spin-one target, named
+smooth compact pseudoscalar optical prefilter, and explicit compact scalar
+switch, target a reduced map of the spatially smeared rigid-detector EFT and a
+comparison map from the same factorized pre-switch input:
+
+```text
+F_(B,T) = KMS-slice pre-switch-to-final channel,
+G_(B,T) = U_free(T) o U_LS(T) o H_s(T) o P_B.
+```
+
+Uniform ancilla-stable operator control and tracelessness give the correctly
+dimensioned conversion
+
+```text
+(1/2)||F_(B,T)-G_(B,T)||_diamond
+ <=floor(D_in D_out/2) epsilon_infinity.
+```
+
+Here `D_in=D_out=10`, so the factor is `50`, not `1`, `10`, or an unstated
+dimension-free constant. Switching and stationary ULE errors are explicit.
+Multipole and band errors vanish on the binding rigid-current/hard-compression
+model, and the known free and Lamb Casimir unitaries are included exactly.
+
+The conditional open box has nonzero coupling and finite burn-in and storage
+intervals, with total normalized diamond error strictly below `0.039`. Each
+protocol has finite duration `2R+B+T`; persistence of the detector EFT through
+that duration is assumed rather than derived. The box lies inside `0.7<s<1`,
+above the U7 failure threshold `s_fail=0.615655...`, and implies
+
+```text
+R_physical >= 0.5327532814987301 > 1/2.
+```
+
+Conditional on a regulator-uniform KMS GNS/Pauli-Fierz bridge, high-fidelity
+retention is excluded on the declared degradation box. That bridge and shorter
+exposures remain open. The times are of order `10^30 R`, so this is a formal
+parameter regime, not a practical detector window.
+
+The same exact factorization cannot be relabeled as local matter. For distinct
+components, disjoint equal-time smearings `f,g` inside the nonzero support obey
+`[ell_1(f),ell_2(g)]=i alpha_f alpha_g J_3!=0` on the `V_1` block. This ends
+unchanged promotion of the exact-factorized local-current route in
+**INCONCLUSIVE STOP** while leaving different local completions open. The binding proof
+and parameter ledger are in
+`docs/u8a_finite_storage_channel.md`.
+
+### U8b. Same-action acquisition and readout - OPEN
+
+Derive preparation of the directional token and a final relational instrument
+from the same action and controller ledger. The conditional detector analysis grants
+these as boundary operations and therefore does not close U8a, full U8, or a
+positive observer protocol.
 
 ### U9. Gravitational budget - OPEN
 
@@ -270,7 +324,8 @@ not a no-go; a positive construction requires an open parameter box.
    obstruction.
 6. **Counterexamples and escape routes.** State the forbidden converses and
    the model assumptions that close each loophole.
-7. **Finite-time channel.** State U7 and identify the exact common-action gap.
+7. **Finite-time channel.** State U7, the rigid-detector degradation theorem,
+   its local-current route stop, and the remaining U8a/U8b gaps.
 8. **Gravity interface.** Separate proved compactness proxies from the open
    choice of gravitational functional.
 9. **Combined theorem or obstruction.** Include only after U8-U10 close.
@@ -309,8 +364,9 @@ Consequences for this manuscript:
 
 ## 11. Submission gate
 
-The G1/G2 material is suitable for expert conceptual review now. It becomes a
-Paper U submission only if either:
+The G1/G2 material, rigid-detector channel lemma, and locality route stop are
+suitable for expert conceptual review now. They become a Paper U submission
+only if either:
 
 1. U8-U10 close for one declared common-action model on an open parameter box;
    or

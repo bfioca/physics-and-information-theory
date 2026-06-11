@@ -4731,8 +4731,10 @@ the ancilla-stable spectral-state theorem
 epsilon_infinity(t)<=2Gamma tau+2Gamma^2 tau t.          (AH.12)
 ```
 
-The imported modified-state and residual estimates are from
-[Nathan and Rudner, Appendix C](https://arxiv.org/abs/2004.01469).
+The imported modified-state and residual estimates are from Nathan and Rudner,
+[Phys. Rev. B 102, 115109 (2020)](https://doi.org/10.1103/PhysRevB.102.115109),
+Appendix C, with its
+[2021 erratum](https://doi.org/10.1103/PhysRevB.104.119901).
 
 At heat time `pi lambda^2j(0)t/N^2=(1/2)log d`, this is
 
@@ -5628,11 +5630,13 @@ Artifacts: `docs/validated_skyrmion_au3b.md`,
 `tests/test_validated_skyrmion_ule.py`, and
 `experiments/skyrmion_au3b_sharp_global_exact_certificate.json`.
 
-### Research Theorem AS: Finite Switch-On And Burn-In ULE Bound
+### Research Theorem AS: Finite Switch-On And Burn-In For Regular Gaussian Baths
 
-Let the interaction amplitude be `chi(t)` with `0<=chi<=1`, vanishing before
-`t_0` and equal to one from `t_s` through readout. Assume factorization of the
-whole system-memory state from the stationary Gaussian bath before switch-on.
+Work within the Nathan--Rudner regular Gaussian-bath framework, where the exact
+reduced equation, Gaussian expansion, and operator-norm estimates used below are
+defined. Let the interaction amplitude be `chi(t)` with `0<=chi<=1`, vanishing
+before `t_0` and equal to one from `t_s` through readout. Assume factorization
+of the whole system-memory state from the stationary bath before switch-on.
 Define
 
 ```text
@@ -5644,41 +5648,79 @@ Then `delta_chi(z)<=min(1,z/T_chi)`. A Lipschitz bound
 `||dot chi||_infinity<=L_chi` gives `T_chi>=1/L_chi`, and a linear ramp of
 duration `T_sw` has `T_chi=T_sw`.
 
-Nathan--Rudner's finite-initialization kernel estimate, combined with (AS.1),
-gives after plateau burn-in `B`
+Absorb the prescribed amplitude into the interaction-picture system operators,
+`X_alpha^chi(t)=chi(t)X_alpha(t)`. Since their norms remain at most one, the
+Nathan--Rudner Gaussian-bath Born, Markov, and exact speed estimates retain the
+same constants. On the plateau the exact reduced equation can be written
 
 ```text
-||D_chi(t_s+B+r)|| <= Gamma tau/(B+r+T_chi).          (AS.2)
+dot(rho)=[R+D_chi(t)]rho+xi,
+||xi||_infinity<=Gamma^2 tau,
+||dot(rho)||_infinity<=Gamma/2,                       (AS.2)
+D_chi(t)=-int_{-infinity}^{t_s} ds
+             [1-chi(s)]Delta(t,s),
+||Delta(t,s)||_(infinity->infinity)
+ <=4 gamma||J(t-s)||_1.                               (AS.3)
 ```
 
-Apply their Appendix-C modified-state construction after the plateau begins.
-The bound `0<=chi<=1` does not enlarge the exact speed estimate, and the
-finite-history term is additive. Explicitly, in
-`dot(rho')=dot(rho)+dot(M_t)rho+M_t dot(rho)`, the finite-history generator
-appears once in `dot(rho)`, while `M_t dot(rho)` is bounded wholesale by the
-unchanged switched-dynamics speed estimate. For the zero-Bohr unital ULE
-initialized at the actual state after burn-in,
+Thus no factorization is reimposed at the plateau. For
+`t=t_s+B+r`, the inequality
+`delta_chi(z)/(B+r+z)<=1/(B+r+T_chi)` and the exact moment relation
+`Gamma_0 tau_0<=Gamma tau` give
+
+```text
+||D_chi(t_s+B+r)||_(infinity->infinity)
+ <=Gamma tau/(B+r+T_chi).                             (AS.4)
+```
+
+For the stationary plateau dressing `M_t`, stationary Bloch-Redfield generator
+`R`, and ULE generator `L`, the Appendix-C kernel identities and norm integrals
+are
+
+```text
+dot(M_t)+R=L,
+||M_t(A)||_infinity<=Gamma tau||A||_infinity,
+||L(A)||_infinity<=(Gamma/2)||A||_infinity.           (AS.5)
+```
+
+Defining `rho'=(1+M_t)rho` and using (AS.2)-(AS.5) gives exactly
+
+```text
+dot(rho')=L rho'+eta,
+eta=D_chi rho+xi+M_t dot(rho)+L(rho-rho'),
+||eta(t_s+B+r)||_infinity
+ <=2Gamma^2 tau+Gamma tau/(B+r+T_chi).                (AS.6)
+```
+
+The finite-history generator occurs once explicitly; its product with `M_t` is
+already included in the bound on `M_t dot(rho)`. At both endpoints
+`||rho'-rho||_infinity<=Gamma tau`. The zero-Bohr ULE is unital and contracts
+the operator norm on Hermitian inputs, so Duhamel's formula yields
 
 ```text
 ||rho_exact(t_s+B+T)-E_T(rho_exact(t_s+B))||_infinity
  <=2 Gamma tau+2 Gamma^2 tau T
-   +Gamma tau log(1+T/(B+T_chi)).                     (AS.3)
+   +Gamma tau log(1+T/(B+T_chi)).                     (AS.7)
 ```
 
-The estimate remains valid after adjoining an arbitrary inert memory. If
+After adjoining an arbitrary inert memory, every system operator becomes
+`X_alpha tensor I`; all norms and bath constants above are unchanged. Hence
+(AS.7) is uniform over all system-memory density inputs factorized from the
+fixed bath before switch-on. It is derived from that common initial time even
+though the post-burn state is correlated with the bath. If
 
 ```text
-B+T_chi >= beta/Gamma,                               (AS.4)
+B+T_chi >= beta/Gamma,                               (AS.8)
 ```
 
 then
 
 ```text
 epsilon_infinity(T)
- <=2 Gamma tau+(2+1/beta)Gamma^2 tau T.              (AS.5)
+ <=2 Gamma tau+(2+1/beta)Gamma^2 tau T.              (AS.9)
 ```
 
-At collective heat time, (AS.5) replaces the coefficient `20736` by
+At collective heat time, (AS.9) replaces the coefficient `20736` by
 `20736[1+1/(2beta)]`. Hence the sufficient schedules
 `d^-7/2/sqrt(log d)` and `d^-4/sqrt(log d)` are unchanged. For `beta=10`, the
 asymptotic coupling cap is multiplied by `1/sqrt(1.05)=0.975900...`.
@@ -5700,11 +5742,14 @@ switch-off may make `chi` compactly supported in time without affecting
 pre-readout dynamics. A linear ramp is only Lipschitz and does not have this
 corollary by itself. The theorem applies on the stationary plateau; it does not
 compare ramp-time dynamics to a stationary semigroup. It is a direct adaptation
-of Nathan--Rudner Appendix A.6 and Appendix C, not a theorem quoted verbatim.
-It assumes a prescribed scalar amplitude switch, finite bath moments, a
-zero-mean Gaussian or quasifree bath, and zero-Bohr unital dynamics. It does not
-derive the switch from the worldtube action or cover non-Gaussian, nonzero-Bohr,
-stress, lifetime, or gravitational effects.
+of Nathan--Rudner Eq. (13), Appendices A.3--A.6, Appendix B Eq. (B2), and
+Appendix C.1--C.3, read with the 2021 erratum, not a theorem quoted verbatim.
+It assumes a prescribed scalar amplitude switch, finite bath moments, a regular
+zero-mean Gaussian reservoir, and zero-Bohr unital dynamics. It does not by
+itself construct an unbounded-field propagator in an algebraic KMS
+representation or justify regulator removal for a quasifree QFT bath. It also
+does not derive the switch from the worldtube action or cover non-Gaussian,
+nonzero-Bohr, stress, lifetime, or gravitational effects.
 
 Artifacts: `docs/static_patch_finite_switching_ule.md`,
 `qgtoy/static_patch_finite_switching_ule.py`, and
@@ -5714,6 +5759,158 @@ Representative command:
 
 ```bash
 PYTHONPATH=. python3 -m qgtoy static-patch-finite-switching-ule
+```
+
+### Research Result AS2: Conditional Rigid-Detector Box And Locality Stop
+
+Fix the cutoff-one Peter-Weyl register
+
+```text
+R_1=(V_0 tensor V_0*) direct_sum (V_1 tensor V_1*),
+dim R_1=10,                                               (AS2.1)
+```
+
+and an inert spin-one relational target. On optical `H^3_R`, let `h_A` be the
+named compact convolution-square prefilter with zero-channel spherical
+normalization and define
+
+```text
+Phi_a(h_A)=integral dmu_opt(y) h_A(y) P_a^b(y->0)B_b(y),
+H_int(tau)=lambda chi_(B,T)(tau)
+             sum_a J_left^a tensor Phi_a(h_A).           (AS2.2)
+```
+
+Here `chi_(B,T)(tau)=S(tau)S(B+T+2-tau)`, with
+`S(u)=q(u)/[q(u)+q(1-u)]`, `q(u)=0` for `u<=0`, and
+`q(u)=exp(-1/u)` otherwise. This is a smooth compact spatially smeared
+rigid-detector EFT. The shared noncommuting `J_left^a` is not claimed to arise
+from a microcausal local matter current.
+
+Indeed, try to reinterpret the factorized current as a local distribution
+`ell_a(x)=h_A(x)J_a^left`. Choose real smooth test functions `f,g` with disjoint
+equal-time spatial supports inside an open set where `h_A` is nonzero, and with
+`alpha_f=int f h_A dmu` and `alpha_g=int g h_A dmu` both nonzero. For distinct
+components `a=1,b=2`,
+
+```text
+[ell_1(f),ell_2(g)]
+ =i alpha_f alpha_g J_3^left !=0 on the V_1 block.      (AS2.3)
+```
+
+The test-function supports are spacelike separated, so (AS2.3) violates
+microcausality. Thus the exact factorized rigid-current density cannot simply
+be promoted to the local-matter class while retaining its exact-zero error
+ledger. This is a route obstruction, not a no-go for a different local
+completion with additional degrees of freedom.
+
+Equation (AS2.3) is an unconditional algebraic obstruction for the literal
+factorized density. The channel statements below are conditional. For the named
+Bunch-Davies bath one must construct the compactly switched propagator in the
+KMS GNS/Araki-Woods representation, establish regulator-uniform versions of the
+Gaussian-bath estimates in AS, prove convergence of the finite-register reduced
+maps, and pass the norm inequality to the limit. This QFT channel bridge is not
+proved here.
+
+Conditional on that bridge, define the reduced maps with the KMS-state slice.
+Let `P_B` be the pre-switch-to-post-burn channel, `F_(B,T)` the reduced channel
+from the same pre-switch input to the end of storage, and
+
+```text
+G_(B,T)=U_cov(T) o H_s(T) o P_B,
+U_cov=U_free o U_LS.                                    (AS2.4)
+```
+
+The known free and Lamb Casimir unitaries are both retained. The common input
+time is essential: no autonomous reduced channel on an arbitrary correlated
+post-burn state is inferred.
+
+If `V_g` is the register's left action and `W_g` rotates the bath, the radial
+profile, central parallel transport, and contracted vector coupling make the
+joint action invariant under `V_g tensor W_g`. The KMS bath state is
+`W_g`-invariant. Conjugating the switched joint propagator and applying the KMS
+slice therefore shows that `P_B` and `F_(B,T)` are `SO(3)`-covariant. The heat channel
+is isotropic and both known Casimir unitaries commute with `V_g`. Hence the
+post-burn encoded family remains a group orbit and `U_cov` leaves its optimal
+relational risk unchanged.
+
+Under the AS hypotheses, the uniform finite-switch estimate holds after
+adjoining an inert memory. For
+any Hermiticity-preserving trace-annihilating channel difference with input
+dimension `D_in`, output dimension `D_out`, and uniform stabilized operator
+residual `epsilon_infinity`, equality of the positive and negative spectral
+sums gives
+
+```text
+(1/2)||Delta||_diamond
+ <=floor(D_in D_out/2) epsilon_infinity.                (AS2.5)
+```
+
+For (AS2.1), the factor is `50`. With
+
+```text
+epsilon_infinity
+ <=2c Gbar Mbar+2c^2 Gbar^3 Mbar T
+   +c Gbar Mbar log[1+T/(B+T_chi)],
+c=144 lambda^2,                                         (AS2.6)
+Gbar=16863.898481372697,
+Mbar=76435.38103914078,                                 (AS2.7)
+```
+
+there is an explicit conditional open parameter box
+
+```text
+1.278e-14 < lambda < 1.460e-14,
+1.497e18 < B/R < 1.645e18,
+1.031e30 < T/R < 1.100e30,                              (AS2.8)
+```
+
+whose heat exposure lies strictly inside `0.7<s<1` and on which
+
+```text
+(1/2)||F_(B,T)-G_(B,T)||_diamond <0.039.               (AS2.9)
+```
+
+In every bridged realization, the action commutes with `C_left`, so `P_B`
+preserves the token's mean Casimir `9/5`. U7 and (AS2.8) then give the sufficient
+record-failure threshold
+
+```text
+s>s_fail=0.6156552580594193.                            (AS2.10)
+```
+
+The whole box lies above this threshold. Using the weaker declared exposure
+`s=0.7` and larger declared error `0.039`, an 80-digit decimal guard gives
+
+```text
+R_physical>=0.5327532814987301>1/2.                    (AS2.11)
+```
+
+The canonical token begins at exact risk `3/8`, so this is a conditional
+finite-time degradation certificate on the declared box. It becomes a statement
+about the named QFT detector only after the open channel bridge. It does not
+exclude shorter exposures or kill the detector model. The very large times in
+(AS2.8) make it a formal bound, not a practical detector construction.
+
+The zero multipole and band terms are exact only for the factorized rigid-
+detector action (AS2.2), and both known Casimir unitaries are included in
+(AS2.4). A microcausal local-current completion would reopen those terms.
+
+Status: **REGULAR-BATH CHANNEL BOX CONDITIONAL PASS; NAMED QFT CHANNEL BRIDGE
+OPEN; EXACT FACTORIZED-CURRENT ROUTE INCONCLUSIVE STOP.** Paper U U8a remains
+open. Token preparation and physical readout are U8b and remain open.
+Persistence of the detector EFT through the finite protocol is assumed rather
+than derived as a hardware-lifetime theorem. No gravitational functional,
+`S_Ob` comparison, Paper R input, or full U8 claim is used.
+
+Artifacts: `docs/u8a_finite_storage_channel.md`,
+`qgtoy/u8a_finite_storage_channel.py`, and
+`tests/test_u8a_finite_storage_channel.py`.
+
+Representative commands:
+
+```bash
+PYTHONPATH=. python3 -m qgtoy u8a-finite-storage-channel
+PYTHONPATH=. python3 -m pytest -q tests/test_u8a_finite_storage_channel.py
 ```
 
 ### Research Theorem AT: Off-Center Translation No-Go And Cross Spectrum

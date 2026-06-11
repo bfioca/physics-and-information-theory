@@ -91,6 +91,14 @@ check(/(?:does not (?:yet )?exclude zero|no rigorous.{0,120}interval.{0,120}excl
   "packet does not state that the completed response interval contains zero");
 check(/common-action.{0,120}(?:open|missing)/i.test(textOnly(html)),
   "packet does not identify the common-action channel as open");
+check(/factorized current.{0,180}nonzero commutator.{0,180}not local matter/i.test(textOnly(html)),
+  "packet does not state the rigid-detector locality boundary");
+check(/Paper U U8a.{0,80}(?:remains|is) open/i.test(textOnly(html)),
+  "packet does not state explicitly that Paper U U8a remains open");
+check(/(?:KMS GNS|GNS\/Araki.Woods|QFT GNS).{0,160}(?:open|not proved)/i.test(textOnly(html)),
+  "packet does not state that the named-QFT channel bridge is open");
+check(!/\[PROVED\]\s*(?:named-QFT|Bunch-Davies) rigid-detector finite-switch channel/i.test(textOnly(html)),
+  "packet incorrectly labels the named-QFT rigid-detector channel as proved");
 check(/fixed-background/i.test(html) && /not (?:a |the )?(?:observer-)?capacity bound/i.test(html),
   "packet does not distinguish the fixed-background witness from a capacity bound");
 check(/INCONCLUSIVE STOP/.test(textOnly(html)),

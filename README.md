@@ -8,7 +8,8 @@ static-patch-inspired bridge channels.
 The curated review artifact for the finite directional-record observer program
 is separate from the static-patch screen-shadow package documented below.
 
-Send these two files:
+The refreshed packet includes both the U8a detector-EFT/locality audit and the
+Paper R stop decision. Its sendable files are:
 
 - [`docs/harlow_review_packet/finite_directional_observer_review_packet.pdf`](docs/harlow_review_packet/finite_directional_observer_review_packet.pdf)
   - the nine-page conceptual review packet;
@@ -17,8 +18,9 @@ Send these two files:
 
 Attach the PDF and use the email draft. Do not lead with the raw branch URL;
 offer the executable repository and certificates only if they would be useful.
-The packet includes the completed Paper R **INCONCLUSIVE STOP** and does not
-present fixed-background Weyl response as an established theorem.
+The packet includes both route-level **INCONCLUSIVE STOP** results and does not
+present fixed-background Weyl response or the rigid-detector current as a
+completed Paper U theorem.
 
 This repository is a research-code benchmark suite. It uses small exact models
 to test when screen-visible data, entropy shadows, min-cut shadows, or
@@ -39,19 +41,21 @@ The massive Skyrmion is a certified test realization, not the headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
-| Universal observer theorem | G1/G2 now have an audit-ready model domain and resource dictionary; the common-action channel and gravity closure remain open. | [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`directional_record_resource_dictionary.md`](docs/directional_record_resource_dictionary.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
+| Universal observer theorem | G1/G2 are audit-ready. The regular-bath finite-switch lemma is proved and a correctly dimensioned conditional detector box is certified, but the named QFT channel bridge is open and unchanged promotion of the exact factorized density fails the microcausal locality gate. Paper U U8a, token preparation/readout, and gravity remain open. | [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`u8a_finite_storage_channel.md`](docs/u8a_finite_storage_channel.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md), [`observer_register_counterexample_checklist.md`](docs/observer_register_counterexample_checklist.md) |
-| Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**; effective-channel components remain conditional, and neither supplies the final observer-capacity bound. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
+| Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
 | Certified matter realization | The supported Skyrmion supplies controlled profile, spectral, and response subproblems without being identified with the observer theorem. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
 
 **Claim boundary.** The G1/G2 protocol domain, global orientation-risk bounds,
-a confined-orbital localization-energy bridge, supported-profile subproblems,
+a confined-orbital localization-energy bridge, the regular-bath finite-switch
+lemma, the rigid-current locality obstruction, supported-profile subproblems,
 and the completed Paper R viability decision are rigorous on their declared
-domains. The signed
+domains. The named QFT detector box is conditional. The signed
 response estimator is suggestive, but the full certified interval contains
-zero. The `S_dir`-to-`S_Ob` dictionary, one-action physical channel,
-gravitational capacity invariant, Weyl zero-exclusion, and self-consistent
-gravity remain open.
+zero. The KMS GNS/Pauli-Fierz channel bridge, same-action token preparation and
+readout, the `S_dir`-to-`S_Ob` dictionary, a gravitational capacity invariant,
+Weyl zero-exclusion, and self-consistent gravity remain open. Paper U U8a
+itself remains open.
 
 Use the [`research execution plan`](docs/research_execution_plan.md) for the
 current ordering, the
@@ -265,7 +269,7 @@ v0.1-static-patch-diagnostics
 | [`artifacts/static_patch_diagnostics/MANIFEST.md`](artifacts/static_patch_diagnostics/MANIFEST.md) | Frozen certificate artifacts for the packaged result. |
 | [`paper/expert_feedback_note.md`](paper/expert_feedback_note.md) | Two-page expert-facing note. |
 | [`paper/expert_cover_note.md`](paper/expert_cover_note.md) | Short cover note for expert feedback. |
-| [`paper/PUBLISHING_CHECKLIST.md`](paper/PUBLISHING_CHECKLIST.md) | Publishing checklist; only external-feedback follow-up remains open. |
+| [`paper/PUBLISHING_CHECKLIST.md`](paper/PUBLISHING_CHECKLIST.md) | Publishing checklist for the frozen `v0.1` finite benchmark; only its external-feedback follow-up remains open. |
 | [`docs/README.md`](docs/README.md) | Map of the broader research trail. |
 
 Static-patch observer-algebra expert feedback bundle:

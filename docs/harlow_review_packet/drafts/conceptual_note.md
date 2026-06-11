@@ -37,11 +37,10 @@ S_dir := D(rho_O || G_SO(3)[rho_O])
        = S(G_SO(3)[rho_O]) - S(rho_O).                              (2)
 ```
 
-Here `G_SO(3)` is rotational twirling. `S_dir` is relative entropy of
-rotational asymmetry. It is not identified with classical memory dimension,
-thermodynamic entropy, Hilbert-space dimension, Casimir, quantum Fisher
-information, or the observer entropy `S_Ob`. Whether comparison with `S_Ob`
-is meaningful is the first review question.
+Here `G_SO(3)` is rotational twirling. `S_dir` is rotational asymmetry, not
+classical memory, thermodynamic entropy, Hilbert-space dimension, Casimir,
+quantum Fisher information, or `S_Ob`. Their possible comparison is the first
+review question.
 
 Record lifetime is operational: after time `T`, a permitted relational
 readout must still attain the declared risk. This is classical-record
@@ -59,17 +58,19 @@ S_dir    <= F_capacity(energy, support, gravity; model data)
       => Phi(R_rel(T), T, support, gravity; model data) >= 0.        (3)
 ```
 
-Rigorous arrows exist on named domains. Global relational risk requires
-rotational resources; confined orbital matter converts them into support and
-excitation-energy cost; and a stipulated isotropic heat channel gives a
-conditional degradation law. These are global statements, not
-local-sensitivity proxies.
+On named domains, global relational risk requires rotational resources;
+confined orbital matter turns them into support and energy cost; and a regular-
+bath theorem controls finite-switch degradation. Its Bunch-Davies application
+needs an open QFT GNS bridge. These are global statements, not local-sensitivity
+proxies.
 
-The central open bridge is physical. One local action must derive acquisition,
-storage degradation, and readout; bound the microscopic KMS-to-effective
-channel error; and enter the same stress-energy ledger. The degradation
-theorem is conditional on that channel, so we do not yet claim a physical
-observer theorem.
+The QFT GNS bridge and common-action local-matter channel remain open. The
+detector calculation pays the channel-norm dimension cost but lacks a KMS
+GNS/Araki-Woods justification.
+Independently, its factorized current has a nonzero commutator for disjoint
+spacelike smearings, so it is not local matter. A different action must derive
+acquisition, storage degradation, readout, and stress together. We therefore
+do not claim a physical observer theorem.
 
 ## What gravity contributes, and what the sprint decided
 
@@ -93,8 +94,7 @@ survive rejection of this realization.
 
 ## Why request feedback now
 
-The STOP makes the fork explicit. We ask whether finite directional records
-are useful, how `S_dir` relates to `S_Ob`, what gravitational quantity
-constrains the register, and whether a one-action model helps without a
-closed-universe path integral. We seek redirection, not endorsement or a
-publication decision.
+The two STOPs expose the fork. We ask whether directional records are useful,
+whether `S_dir` can be compared with `S_Ob`, what gravitational quantity
+constrains the register, and whether a one-action model helps. We seek
+redirection, not endorsement or a publication decision.

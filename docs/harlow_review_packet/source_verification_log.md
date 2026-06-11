@@ -64,7 +64,7 @@ No secondary summary was treated as authoritative.
 | --- | --- | --- |
 | `1305.0256` | Fukuma, Sakatani, Sugishita; PRD DOI confirmed | Verified |
 | `1908.09929` | Akhtar, Choudhury, Chowdhury, Goswami, Panda, Swain; EPJC DOI confirmed | Verified |
-| `2004.01469` | Nathan, Rudner; PRB DOI confirmed | Verified |
+| `2004.01469` | Nathan, Rudner; PRB DOI and 2021 erratum DOI confirmed | Verified |
 | `2105.00023` | Merkli; Quantum DOI confirmed | Verified |
 | `2307.04800` | Alicki, Barenboim, Jenkins; PRD DOI confirmed | Verified |
 | `hep-th/0305147` | Kodama, Ishibashi; journal and DOI confirmed | Verified |

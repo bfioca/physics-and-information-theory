@@ -3,7 +3,7 @@
      width="8.5in" height="11in" viewBox="0 0 816 1056"
      role="img" aria-labelledby="title desc">
   <title id="title">Dependency map for a finite directional observer register</title>
-  <desc id="desc">A status-labeled dependency chain from relational alignment risk to a proposed observer tradeoff, with Paper A as realization support and the stopped Paper R sprint as a fixed-background response diagnostic.</desc>
+  <desc id="desc">A status-labeled dependency chain from relational alignment risk to a proposed observer tradeoff, with a regular-bath channel lemma, a conditional named-QFT detector box, a local-matter route stop, Paper A realization support, and the stopped Paper R response diagnostic.</desc>
 
   <defs>
     <style>
@@ -117,16 +117,16 @@
   <!-- Arrow 4 -->
   <path class="arrow open-line" d="M 273 600 L 273 638"/>
   <rect x="158" y="607" width="268" height="22" rx="11" fill="#fbfcfd" stroke="#ae3d4d" stroke-width="1"/>
-  <text class="status-dark" x="292" y="622" text-anchor="middle">[OPEN] common-action record channel</text>
+  <text class="status-dark" x="292" y="622" text-anchor="middle">[OPEN] common-action local-matter channel</text>
 
   <!-- Main node 5 -->
   <rect class="card" x="36" y="638" width="474" height="72" rx="9"/>
-  <rect class="conditional" x="36" y="638" width="6" height="72" rx="3"/>
+  <rect class="open" x="36" y="638" width="6" height="72" rx="3"/>
   <text class="node-title" x="54" y="664">Record lifetime and readout error</text>
-  <text class="node-body" x="54" y="687">Exact degradation and readout implications exist for stipulated effective</text>
-  <text class="node-body" x="54" y="701">channels; action-derived preparation, storage, and readout remain open.</text>
-  <rect class="conditional" x="382" y="651" width="112" height="22" rx="11"/>
-  <text class="status" x="438" y="666" text-anchor="middle">[CONDITIONAL]</text>
+  <text class="node-body" x="54" y="687">The named-QFT detector box is conditional; GNS bridge and local-matter</text>
+  <text class="node-body" x="54" y="701">acquisition/readout remain open; exact rigid-current promotion is stopped.</text>
+  <rect class="open" x="416" y="651" width="78" height="22" rx="11"/>
+  <text class="status" x="455" y="666" text-anchor="middle">[OPEN]</text>
 
   <!-- Arrow 5 -->
   <path class="arrow open-line" d="M 273 710 L 273 748"/>
@@ -213,6 +213,6 @@
 
   <rect class="open" x="426" y="974" width="62" height="18" rx="9"/>
   <text class="status" x="457" y="987" text-anchor="middle">[OPEN]</text>
-  <text class="side-title" x="498" y="987">Common-action channel</text>
-  <text class="side-body" x="426" y="1005">Preparation, storage, and readout are not yet derived together.</text>
+  <text class="side-title" x="498" y="987">Common-action local matter</text>
+  <text class="side-body" x="426" y="1005">Rigid-current promotion stops; other local actions remain open.</text>
 </svg>

@@ -310,7 +310,7 @@
         <h2>The record variable</h2>
         <p>For the covariant orientation ensemble, we begin with the relative entropy of rotational asymmetry:</p>
         <div class="equation">S_dir := D(rho_O || G_SO(3)[rho_O])<br>= S(G_SO(3)[rho_O]) - S(rho_O). <span style="float:right">(2)</span></div>
-        <p><code>S_dir</code> is relative entropy of rotational asymmetry. It is not identified with classical memory dimension, thermodynamic entropy, Hilbert-space dimension, Casimir, quantum Fisher information, or Harlow's <code>S_Ob</code>. Whether comparison with <code>S_Ob</code> is meaningful is review question 1.</p>
+        <p><code>S_dir</code> is rotational asymmetry, not classical memory, thermodynamic entropy, Hilbert-space dimension, Casimir, quantum Fisher information, or Harlow's <code>S_Ob</code>. Their possible comparison is review question 1.</p>
         <p>Lifetime is operational: after time <code>T</code>, a permitted relational readout must still attain the declared risk. This is classical-record stability, not generic phase coherence.</p>
       </div>
 
@@ -318,12 +318,12 @@
         <h2>The proposed theorem chain</h2>
         <p>Fix a class <code>C_dir</code> of localized register-target models, states, environments, actions, and preparation/storage/readout protocols. The intended theorem quantifies over this class:</p>
         <div class="equation">R_rel(T) &gt;= F_record(S_dir, degradation, channel error)<br>S_dir &lt;= F_capacity(energy, support, gravity; model data)<br>=&gt; Phi(R_rel(T), T, support, gravity; model data) &gt;= 0. <span style="float:right">(3)</span></div>
-        <p>Rigorous arrows exist on named domains: global risk requires rotational resources; confined orbital matter converts them into support and excitation-energy cost; a stipulated isotropic heat channel gives a conditional degradation law.</p>
+        <p>On named domains, global risk requires rotational resources; confined orbital matter turns them into support and energy cost; and a regular-bath theorem controls finite-switch degradation. Its Bunch-Davies application needs an open QFT GNS bridge.</p>
       </div>
 
       <div class="note-block">
         <h2>The primary bottleneck</h2>
-        <p>The common-action physical record channel is <strong>open</strong>. One local action must derive acquisition, storage degradation, and readout; bound the microscopic KMS-to-effective-channel error; and enter the same stress-energy ledger. Existing de Sitter master equations specify the needed approximation, not that it follows from thermality <a href="#ref10">[10]</a>.</p>
+        <p>The QFT GNS bridge and common-action local-matter channel remain <strong>open</strong>. The detector calculation pays the channel-norm dimension cost but lacks a KMS GNS/Araki-Woods justification. Independently, its factorized current has a nonzero commutator for disjoint spacelike smearings, so it is not local matter. A different action must derive acquisition, storage, readout, and stress together <a href="#ref10">[10]</a>.</p>
       </div>
 
       <div class="note-block">
@@ -334,7 +334,7 @@
 
       <div class="note-block">
         <h2>Why request feedback now</h2>
-        <p>The STOP makes the fork explicit. We ask whether finite directional records are useful, how <code>S_dir</code> relates to <code>S_Ob</code>, what gravitational quantity constrains the register, and whether a one-action model helps without a closed-universe path integral. We seek redirection, not endorsement or a publication decision.</p>
+        <p>The two STOPs expose the fork. We ask whether directional records are useful, whether <code>S_dir</code> can be compared with <code>S_Ob</code>, what gravitational quantity constrains the register, and whether a one-action model helps. We seek redirection, not endorsement or a publication decision.</p>
         <div class="boundary">Claim boundary: <code>S_dir != S_Ob</code>; record stability is not quantum coherence; measurement back-action is not gravitational backreaction; fixed-background response is not self-consistent gravity.</div>
       </div>
     </div>
@@ -379,7 +379,7 @@
     <p><span class="status proved">[PROVED]</span> Here <code>S_dir</code> is only relative entropy of rotational asymmetry. Equation (A.1) gives the necessary allocation <code>S_dir&gt;=(3/2)log(c_SO3/R_ref)</code> where positive. It does not establish accessible classical memory, sufficiency, or a relation to <code>S_Ob</code>.</p>
     <p><span class="status conditional">[CONDITIONAL]</span> If the reference alone undergoes stipulated isotropic rotational heat diffusion with exposure <code>Gamma(T)=integral_0^T gamma(t)dt</code>, the spin-1 score is attenuated exactly:</p>
     <div class="equation">R_ref(T) &gt;= (3/4)[1-exp(-2 Gamma)]<br>+ exp(-2 Gamma)/(16 &lt;J^2&gt;+8). <span style="float:right">(A.2)</span></div>
-    <p>This is a finite-time record-risk theorem for that effective channel, not preservation of arbitrary quantum coherence. <span class="status open">[OPEN]</span> No one-action protocol yet controls preparation, storage, readout, microscopic-to-effective channel error, support stress, and backreaction on one nonempty open parameter set.</p>
+    <p><span class="status proved">[PROVED]</span> The regular-Gaussian-bath finite-switch theorem defines common-input exact and comparison maps and survives a finite inert ancilla. <span class="status conditional">[CONDITIONAL]</span> Given the open KMS GNS/Araki-Woods channel bridge, AS2 applies it to one ten-dimensional Bunch-Davies detector, pays the full operator-to-diamond factor <code>50</code>, and gives normalized diamond error below <code>0.039</code> on an open nonzero-coupling box; U7 then gives <code>R_physical&gt;=0.532753...&gt;1/2</code>. <span class="status open">[OPEN]</span> Its exact factorized density fails microcausality under disjoint spacelike smearings and cannot be promoted unchanged to local matter; preparation, readout, stress, and backreaction are not controlled by the same action. Paper U U8a therefore remains open.</p>
     <div class="footer"><span>Technical appendix A</span><span>4 / 9</span></div>
   </section>
 
@@ -435,8 +435,8 @@
     <div class="running-head"><span>Technical appendix</span><span>Claim boundary and reproduction</span></div>
     <h2>F. External claim boundary</h2>
     <p><span class="status proved">[PROVED]</span> The defensible mathematical core is: global relational <code>SO(3)</code> risk requires asymmetry and rotational resources; named localized matter classes convert rotational capacity into energy/support cost; one hard-wall profile and its fixed-background centrifugal inverse exist; and a valid conserved quadrupolar source has exact master, transmission, and Weyl maps.</p>
-    <p><span class="status conditional">[CONDITIONAL]</span> The defensible physical construction is narrower: a hard-supported Skyrmion is a plausible semiclassical realization, a stipulated heat channel gives an exact degradation law, and the signed fixed-background estimator favors a nonzero exterior response. The completed rigorous interval does not certify that response.</p>
-    <p><span class="status open">[OPEN]</span> The project has not identified <code>S_dir</code> with <code>S_Ob</code>; derived acquisition-through-readout from one action; proved a common parameter window; certified <code>|B_W|&gt;0</code>; completed tensorial Israel matching; solved a rotating self-gravitating Einstein-Skyrme-de Sitter geometry; or shown that exterior Weyl response caps observer information. A closed-universe path integral is outside the present claims.</p>
+    <p><span class="status conditional">[CONDITIONAL]</span> The defensible physical construction is narrower: a hard-supported Skyrmion is a plausible semiclassical realization, the regular-bath lemma supplies a conditional Bunch-Davies detector box but not a proved QFT channel or local matter, and the signed fixed-background estimator favors a nonzero exterior response. The completed rigorous interval does not certify that response.</p>
+    <p><span class="status open">[OPEN]</span> The project has not identified <code>S_dir</code> with <code>S_Ob</code>; derived local-matter acquisition-through-readout from one action; proved a common parameter window; certified <code>|B_W|&gt;0</code>; completed tensorial Israel matching; solved a rotating self-gravitating Einstein-Skyrme-de Sitter geometry; or shown that exterior Weyl response caps observer information. A closed-universe path integral is outside the present claims.</p>
     <p><span class="status open">[OPEN]</span> Novelty, priority, venue fit, and publishability are not mathematical outputs of the repository. The separate literature matrix gives the primary-source comparison. Search absence is not used as proof of priority.</p>
 
     <h2>G. Reproducibility map</h2>
@@ -445,7 +445,7 @@
       <tbody>
         <tr><td>[PROVED]</td><td>Global risk/asymmetry/Casimir bounds</td><td><code>THEOREMS.md</code> W3; <code>docs/global_so3_reference_risk.md</code>; focused tests</td></tr>
         <tr><td>[PROVED]</td><td>Confined orbital capacity</td><td>W3a; <code>docs/localized_orbital_reference.md</code>; focused tests</td></tr>
-        <tr><td>[CONDITIONAL]</td><td>Heat-capacity composition</td><td>W3a.1; <code>experiments/universal_observer_tradeoff_certificate.json</code></td></tr>
+        <tr><td>[CONDITIONAL]</td><td>Named-QFT rigid-detector finite-switch channel</td><td>AS/AS2; regular-bath lemma proved, KMS GNS bridge open; factor 50 and strict error guard</td></tr>
         <tr><td>[PROVED]</td><td>Supported collective sector floor</td><td>W3b; <code>docs/supported_skyrmion_collective_spectral_floor.md</code></td></tr>
         <tr><td>[PROVED]</td><td>Validated hard-wall profile</td><td>AU.1; exact Newton certificate listed on page 5</td></tr>
         <tr><td>[PROVED]</td><td>Fixed-background source/master/Weyl maps</td><td>W3t, W3v, W3x; artifact hashes on page 6</td></tr>

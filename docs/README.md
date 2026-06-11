@@ -12,6 +12,8 @@ Active research program:
 - `directional_record_resource_dictionary.md`
 - `observer_register_counterexample_checklist.md`
 - `observer_register_goal_audit.md`
+- `u8a_finite_storage_channel.md`
+- `u8a_goal_audit.md`
 - `harlow_redirection_branches.md`
 - `universal_static_patch_observer_tradeoff_plan.md`
 - `conditional_universal_observer_tradeoff.md`
@@ -87,6 +89,8 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `directional_record_resource_dictionary.md` | Status-labeled G2 fork from Haar risk to readout information, joint asymmetry, declared classical records, and model-dependent representation/energy costs. |
 | `observer_register_counterexample_checklist.md` | Adversarial tests for high-spin mixtures, rare tails, bounded spectra, stabilizers, postselection, hidden memories, pre-correlations, and QFI/global-risk mismatches. |
 | `observer_register_goal_audit.md` | Requirement-by-requirement G1/G2 completion audit, focused test record, exact arrow disposition, and remaining assumptions. |
+| `u8a_finite_storage_channel.md` | Fixed cutoff-one register, regular-bath finite-switch theorem, dimension-50 conversion, conditional named-QFT degradation box, open GNS/Pauli-Fierz bridge, and microcausal route stop. |
+| `u8a_goal_audit.md` | Requirement audit recording the conditional detector box, the rigorous locality `INCONCLUSIVE STOP`, and the open QFT/U8a/U8b boundary. |
 | `harlow_redirection_branches.md` | Three bounded research pivots if the observer-entropy comparison, gravitational budget, or semiclassical register framing is rejected. |
 | `research_execution_plan.md` | Concise gate-based publication ladder, pass criteria, and pivot conditions for the active physics program. |
 | `paper_worthy_observer_algebra_research_program.md` | Active plan for replacing the finite benchmark with a physically derived, quantitative theorem program. |
@@ -118,6 +122,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `finite_size_static_patch_observer.md` | Marked spherical-top EFT, compactness-limited mean-Casimir, all-state append-and-twirl obstruction, and collar protocol threshold. |
 | `finite_time_rotation_diffusion.md` | Identity-starting collective SO(3) heat semigroup, diamond convergence to Haar twirling, finite-time recovery obstruction, and a conditional sufficient logarithmic protocol schedule. |
 | `static_patch_matter_observer_channel.md` | Norm-separated transfer from Haar/heat recovery bounds to a physical channel, plus the weaker fixed-witness transfer available from the finite-switch ULE residual. |
+| `u8a_finite_storage_channel.md` | Uniform regular-bath finite-switch map upgrade for a ten-dimensional Peter-Weyl rigid detector, the conditional `R>1/2` named-QFT box, and why its exact factorized current is not local matter. |
 | `common_mode_locality_mismatch.md` | Exact relational-coherence witness and finite-cell Duhamel bound testing whether a local noise kernel can approximate the required rank-one common mode. |
 | `static_patch_scalar_common_mode.md` | Exact Bunch-Davies scalar zero-frequency cross spectrum and the resulting optical/angular co-location obstruction for a local axial common-mode surrogate. |
 | `static_patch_radial_smearing.md` | Exact H3 spherical-function product theorem showing arbitrary nonnegative radial worldtube smearing cancels from the normalized scalar zero-mode correlation. |
