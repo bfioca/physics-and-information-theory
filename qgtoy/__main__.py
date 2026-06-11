@@ -107,6 +107,9 @@ from .static_patch_matter_observer_channel import (
 from .u8a_finite_storage_channel import (
     u8a_finite_storage_channel_certificate,
 )
+from .locality_reference_leakage import (
+    locality_reference_leakage_certificate,
+)
 from .common_mode_locality_mismatch import (
     common_mode_locality_mismatch_certificate,
 )
@@ -1355,6 +1358,17 @@ def run_u8a_finite_storage_channel(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             u8a_finite_storage_channel_certificate(),
+            indent=2,
+            sort_keys=True,
+        )
+    )
+
+
+def run_locality_reference_leakage(args: argparse.Namespace) -> None:
+    del args
+    print(
+        json.dumps(
+            locality_reference_leakage_certificate(),
             indent=2,
             sort_keys=True,
         )
@@ -3499,6 +3513,15 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     u8a_storage_channel.set_defaults(func=run_u8a_finite_storage_channel)
+
+    locality_leakage = subparsers.add_parser(
+        "locality-reference-leakage",
+        help=(
+            "audit the collective-mode compression inequality, its global "
+            "SO(3) risk corollary, and the disjoint-block ferromagnetic models"
+        ),
+    )
+    locality_leakage.set_defaults(func=run_locality_reference_leakage)
 
     common_mode_mismatch = subparsers.add_parser(
         "common-mode-locality-mismatch",

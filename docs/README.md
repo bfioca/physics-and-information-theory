@@ -91,6 +91,9 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `observer_register_goal_audit.md` | Requirement-by-requirement G1/G2 completion audit, focused test record, exact arrow disposition, and remaining assumptions. |
 | `u8a_finite_storage_channel.md` | Fixed cutoff-one register, regular-bath finite-switch theorem, dimension-50 conversion, conditional named-QFT degradation box, open GNS/Pauli-Fierz bridge, and microcausal route stop. |
 | `u8a_goal_audit.md` | Requirement audit recording the conditional detector box, the rigorous locality `INCONCLUSIVE STOP`, and the open QFT/U8a/U8b boundary. |
+| `locality_reference_leakage_theorem.md` | Exact and approximate compression bounds, the state-weighted spacelike-replication theorem, its global `SO(3)` risk corollary, and pairwise-sharp/three-cell constant-factor ferromagnetic models. |
+| `locality_reference_leakage_novelty_audit.md` | Primary-source audit killing novelty of the base compression identity and isolating the narrower state-weighted paper claim. |
+| `locality_reference_leakage_goal_audit.md` | Requirement-by-requirement prove-or-kill disposition, verified theorem boundary, test record, and remaining specialist priority gate. |
 | `harlow_redirection_branches.md` | Three bounded research pivots if the observer-entropy comparison, gravitational budget, or semiclassical register framing is rejected. |
 | `research_execution_plan.md` | Concise gate-based publication ladder, pass criteria, and pivot conditions for the active physics program. |
 | `paper_worthy_observer_algebra_research_program.md` | Active plan for replacing the finite benchmark with a physically derived, quantitative theorem program. |
