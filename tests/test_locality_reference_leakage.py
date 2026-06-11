@@ -2,12 +2,15 @@ import math
 
 import pytest
 
+from qgtoy.__main__ import build_parser
 from qgtoy.global_so3_reference_risk import (
     hard_cutoff_orientation_risk_lower_bound,
+    mean_casimir_orientation_risk_lower_bound,
 )
 from qgtoy.locality_reference_leakage import (
     collective_mode_leakage_from_casimir,
     compression_commutator_budget,
+    disjoint_block_ferromagnetic_code_record,
     locality_reference_leakage_certificate,
     minimum_integer_spin_from_risk,
     operational_collective_mode_leakage_bound,
@@ -15,60 +18,8 @@ from qgtoy.locality_reference_leakage import (
     pairwise_state_weighted_collective_mode_bound,
     required_mean_casimir_for_risk,
     self_adjoint_locality_reference_leakage_bound,
-    disjoint_block_ferromagnetic_code_record,
     three_cell_ferromagnetic_state_record,
 )
-
-
-def _matrix_product(left, right):
-    return tuple(
-        tuple(
-            sum(left[row][inner] * right[inner][column] for inner in range(3))
-            for column in range(3)
-        )
-        for row in range(3)
-    )
-
-
-def _matrix_difference(left, right):
-    return tuple(
-        tuple(left[row][column] - right[row][column] for column in range(3))
-        for row in range(3)
-    )
-
-
-def _matrix_sum(*matrices):
-    return tuple(
-        tuple(sum(matrix[row][column] for matrix in matrices) for column in range(3))
-        for row in range(3)
-    )
-
-
-def _matrix_scale(scale, matrix):
-    return tuple(
-        tuple(scale * matrix[row][column] for column in range(3))
-        for row in range(3)
-    )
-
-
-def _commutator(left, right):
-    return _matrix_difference(
-        _matrix_product(left, right),
-        _matrix_product(right, left),
-    )
-
-
-def _outer(vector):
-    return tuple(
-        tuple(vector[row] * vector[column] for column in range(3))
-        for row in range(3)
-    )
-
-
-def _assert_matrices_close(left, right, tolerance=1.0e-13):
-    for row in range(3):
-        for column in range(3):
-            assert abs(left[row][column] - right[row][column]) <= tolerance
 
 
 def _dense_product(left, right):
@@ -110,6 +61,23 @@ def _dense_scale(scale, matrix):
 
 def _dense_difference(left, right):
     return _dense_sum(left, _dense_scale(-1.0, right))
+
+
+def _dense_commutator(left, right):
+    return _dense_difference(
+        _dense_product(left, right),
+        _dense_product(right, left),
+    )
+
+
+def _dense_outer(vector):
+    return tuple(
+        tuple(
+            vector[row] * vector[column].conjugate()
+            for column in range(len(vector))
+        )
+        for row in range(len(vector))
+    )
 
 
 def _dense_identity(dimension):
@@ -189,8 +157,8 @@ def test_exact_compression_identity_for_commuting_ambient_observables():
         (0.0, 1.0, 0.0),
         (0.0, 0.0, 1.0),
     )
-    q = _outer(normal)
-    p = _matrix_difference(identity, q)
+    q = _dense_outer(normal)
+    p = _dense_difference(identity, q)
     a = (
         (1.0, 0.0, 0.0),
         (0.0, 0.0, 0.0),
@@ -201,30 +169,30 @@ def test_exact_compression_identity_for_commuting_ambient_observables():
         (0.0, 1.0, 0.0),
         (0.0, 0.0, -1.0),
     )
-    assert _commutator(a, b) == (
+    assert _dense_commutator(a, b) == (
         (0.0, 0.0, 0.0),
         (0.0, 0.0, 0.0),
         (0.0, 0.0, 0.0),
     )
 
-    pap = _matrix_product(_matrix_product(p, a), p)
-    pbp = _matrix_product(_matrix_product(p, b), p)
-    left = _commutator(pap, pbp)
-    right = _matrix_sum(
-        _matrix_product(_matrix_product(p, _commutator(a, b)), p),
-        _matrix_product(
-            _matrix_product(_matrix_product(_matrix_product(p, b), q), a),
+    pap = _dense_product(_dense_product(p, a), p)
+    pbp = _dense_product(_dense_product(p, b), p)
+    left = _dense_commutator(pap, pbp)
+    right = _dense_sum(
+        _dense_product(_dense_product(p, _dense_commutator(a, b)), p),
+        _dense_product(
+            _dense_product(_dense_product(_dense_product(p, b), q), a),
             p,
         ),
-        _matrix_scale(
+        _dense_scale(
             -1.0,
-            _matrix_product(
-                _matrix_product(_matrix_product(_matrix_product(p, a), q), b),
+            _dense_product(
+                _dense_product(_dense_product(_dense_product(p, a), q), b),
                 p,
             ),
         ),
     )
-    _assert_matrices_close(left, right)
+    _assert_dense_close(left, right, tolerance=1.0e-13)
     assert any(
         abs(left[row][column]) > 1.0e-6
         for row in range(3)
@@ -246,7 +214,17 @@ def test_directed_and_self_adjoint_bounds_have_explicit_constants():
     )
     assert directed["nonabelian_signal"] == 1.0
     assert directed["directed_leakage_budget"] == 2.0
-    assert directed["supplied_bounds_satisfy_theorem"] is True
+    assert directed["supplied_scalar_budget_is_consistent"] is True
+
+    tiny_violation = compression_commutator_budget(
+        generator_commutator_norm=1.0,
+        generator_norm_a=1.0,
+        generator_norm_b=1.0,
+        gain_a=1.0e-10,
+        gain_b=1.0e-10,
+    )
+    assert math.isclose(tiny_violation["nonabelian_signal"], 1.0e-20)
+    assert tiny_violation["supplied_scalar_budget_is_consistent"] is False
 
     approximate = self_adjoint_locality_reference_leakage_bound(
         maximum_spin=4.0,
@@ -266,7 +244,7 @@ def test_directed_and_self_adjoint_bounds_have_explicit_constants():
     assert approximate["positive_tradeoff"] is True
 
 
-def test_pairwise_state_weighted_bound_can_be_saturated_by_supplied_data():
+def test_pairwise_state_weighted_budget_reports_zero_slack():
     record = pairwise_state_weighted_collective_mode_bound(
         generator_second_moment=4.0,
         maximum_spin=2.0,
@@ -280,6 +258,18 @@ def test_pairwise_state_weighted_bound_can_be_saturated_by_supplied_data():
     assert record["target_commutator_rms"] == 2.0
     assert record["leakage_rms_budget"] == 2.0
     assert abs(record["inequality_slack"]) < 1.0e-15
+    assert record["parameter_status"] == "consistent"
+
+    without_spin_support = pairwise_state_weighted_collective_mode_bound(
+        generator_second_moment=0.0,
+        gain_a=1.0,
+        gain_b=1.0,
+        local_operator_norm_a=1.0,
+        local_operator_norm_b=1.0,
+        leakage_weight_a=0.0,
+        leakage_weight_b=0.0,
+    )
+    assert without_spin_support["parameter_status"] == "underdetermined"
 
 
 def test_three_cell_exact_and_robust_state_weighted_bounds():
@@ -288,9 +278,12 @@ def test_three_cell_exact_and_robust_state_weighted_bounds():
         response_gain=1.0,
         local_operator_norm=2.0,
     )
-    assert exact["exact_case_uses_direct_factor_four"] is True
+    assert exact["exact_bound_uses_direct_factor_four"] is True
     assert exact["minimum_total_off_code_weight"] == 0.375
-    assert exact["minimum_normalized_total_off_code_weight"] == 0.09375
+    assert exact[
+        "minimum_total_off_code_weight_over_local_norm_squared"
+    ] == 0.09375
+    assert exact["parameter_status"] == "underdetermined"
     assert math.isclose(
         exact["minimum_uniform_leakage_amplitude_from_consistency"],
         (6.0 / 12.0) ** 0.25,
@@ -305,8 +298,9 @@ def test_three_cell_exact_and_robust_state_weighted_bounds():
         compression_error=0.001,
         young_parameter=0.25,
     )
-    assert robust["exact_case_uses_direct_factor_four"] is False
+    assert robust["exact_bound_uses_direct_factor_four"] is False
     assert 0.0 < robust["minimum_total_off_code_weight"] < 0.375
+    assert robust["parameter_status"] == "consistent"
 
     certified_cap = collective_mode_leakage_from_casimir(
         mean_casimir=6.0,
@@ -316,7 +310,7 @@ def test_three_cell_exact_and_robust_state_weighted_bounds():
     )
     assert certified_cap["minimum_total_off_code_weight"] == 1.5
     assert certified_cap[
-        "certified_cap_is_consistent_with_required_weight"
+        "declared_cap_is_not_ruled_out_by_weight_bound"
     ] is True
 
     inconsistent_cap = collective_mode_leakage_from_casimir(
@@ -326,8 +320,9 @@ def test_three_cell_exact_and_robust_state_weighted_bounds():
         leakage_amplitude_cap=0.1,
     )
     assert inconsistent_cap[
-        "certified_cap_is_consistent_with_required_weight"
+        "declared_cap_is_not_ruled_out_by_weight_bound"
     ] is False
+    assert inconsistent_cap["parameter_status"] == "inconsistent"
 
 
 def test_global_risk_compositions_use_existing_w3_bounds():
@@ -364,7 +359,7 @@ def test_global_risk_compositions_use_existing_w3_bounds():
         ],
         expected,
     )
-    assert state_bound["declared_parameters_are_not_ruled_out"] is True
+    assert state_bound["parameter_status"] == "consistent"
 
     vacuous_calibration = operational_collective_mode_leakage_bound(
         risk_budget=0.01,
@@ -373,9 +368,77 @@ def test_global_risk_compositions_use_existing_w3_bounds():
         maximum_spin=15.0,
     )
     assert vacuous_calibration[
-        "calibration_allows_minimum_required_spin"
+        "calibration_can_support_minimum_required_spin"
     ] is False
-    assert vacuous_calibration["declared_parameters_are_not_ruled_out"] is False
+    assert vacuous_calibration["parameter_status"] == "inconsistent"
+
+
+def test_spin_requirements_are_correct_at_float_boundaries():
+    spin = 100
+    threshold = mean_casimir_orientation_risk_lower_bound(
+        float(spin * (spin + 1))
+    )
+    at_threshold = minimum_integer_spin_from_risk(threshold)
+    below_threshold = minimum_integer_spin_from_risk(
+        math.nextafter(threshold, 0.0)
+    )
+    assert at_threshold["casimir_integer_spin_requirement"] == spin
+    assert below_threshold["casimir_integer_spin_requirement"] == spin + 1
+
+
+def test_impossible_spin_and_casimir_inputs_are_reported():
+    pairwise = pairwise_state_weighted_collective_mode_bound(
+        generator_second_moment=5.0,
+        maximum_spin=2.0,
+        gain_a=1.0,
+        gain_b=1.0,
+        local_operator_norm_a=2.0,
+        local_operator_norm_b=2.0,
+        leakage_weight_a=1.0,
+        leakage_weight_b=1.0,
+    )
+    assert pairwise["declared_second_moment_fits_maximum_spin"] is False
+    assert pairwise["parameter_status"] == "inconsistent"
+
+    impossible_weights_and_norms = pairwise_state_weighted_collective_mode_bound(
+        generator_second_moment=0.0,
+        maximum_spin=2.0,
+        gain_a=1.0,
+        gain_b=1.0,
+        local_operator_norm_a=1.0,
+        local_operator_norm_b=1.0,
+        leakage_amplitude_cap_a=0.5,
+        leakage_amplitude_cap_b=0.5,
+        leakage_weight_a=0.3,
+        leakage_weight_b=0.3,
+    )
+    assert impossible_weights_and_norms[
+        "supplied_weights_fit_declared_caps"
+    ] is False
+    assert impossible_weights_and_norms[
+        "compressed_target_norms_are_feasible"
+    ] is False
+    assert impossible_weights_and_norms["parameter_status"] == "inconsistent"
+
+    collective = collective_mode_leakage_from_casimir(
+        mean_casimir=7.0,
+        response_gain=1.0,
+        local_operator_norm=2.0,
+        maximum_spin=2.0,
+    )
+    assert collective["declared_casimir_fits_maximum_spin"] is False
+    assert collective["parameter_status"] == "inconsistent"
+
+    impossible_compression = collective_mode_leakage_from_casimir(
+        mean_casimir=0.0,
+        response_gain=1.0,
+        local_operator_norm=1.0,
+        maximum_spin=2.0,
+    )
+    assert impossible_compression[
+        "declared_spin_fits_compression_norm"
+    ] is False
+    assert impossible_compression["parameter_status"] == "inconsistent"
 
 
 def test_disjoint_block_ferromagnetic_family_is_distributed_and_near_sharp():
@@ -383,6 +446,7 @@ def test_disjoint_block_ferromagnetic_family_is_distributed_and_near_sharp():
     assert two_sites["code_spin_exact"] == "1"
     assert two_sites["leakage_squared_exact"] == "1"
     assert two_sites["sharpness_ratio_exact"] == "2"
+    assert two_sites["block_supports_are_disjoint"] is True
     assert two_sites["microscopic_commutator_is_zero"] is True
 
     four_sites = disjoint_block_ferromagnetic_code_record(4)
@@ -610,6 +674,11 @@ def test_certificate_passes_with_explicit_claim_boundary():
     assert "no QFT" in certificate["claim_boundary"]
 
 
+def test_cli_parser_exposes_fixed_certificate_command():
+    args = build_parser().parse_args(["locality-reference-leakage"])
+    assert args.func.__name__ == "run_locality_reference_leakage"
+
+
 @pytest.mark.parametrize(
     "call",
     (
@@ -629,6 +698,22 @@ def test_certificate_passes_with_explicit_claim_boundary():
             response_gain=1.0,
             local_operator_norm=1.0,
             compression_error=0.1,
+        ),
+        lambda: collective_mode_leakage_from_casimir(
+            mean_casimir=1.0,
+            response_gain=1.0,
+            local_operator_norm=1.0,
+            young_parameter=-1.0,
+        ),
+        lambda: pairwise_state_weighted_collective_mode_bound(
+            generator_second_moment=1.0,
+            gain_a=1.0,
+            gain_b=1.0,
+            local_operator_norm_a=1.0,
+            local_operator_norm_b=1.0,
+            leakage_weight_a=1.0,
+            leakage_weight_b=1.0,
+            compression_error_a=0.1,
         ),
     ),
 )

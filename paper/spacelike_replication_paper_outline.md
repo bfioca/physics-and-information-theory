@@ -1,10 +1,11 @@
-# Leakage From Spacelike Replication Of Finite SO(3) Collective Modes
+# Paper Outline: Off-Code Leakage From Spacelike SO(3) Replication
 
-Status: conditional manuscript outline for a bounded mathematical-physics
-paper. The state-weighted theorem and robust extension are proved for bounded
-finite code compressions, and the distributed identities have finite-matrix
-checks. A specialist priority check remains an external submission gate. An
-unbounded/AQFT extension is optional future work, not a premise of this paper.
+Technical status: the bounded state-weighted theorem, robust extension, and
+finite-matrix model checks are complete.
+
+Publication status: conditional outline. The global risk lemma still needs to
+be integrated as an appendix, and specialist priority review remains open. An
+unbounded/AQFT extension is optional future work, not a premise.
 
 ## Candidate Abstract
 
@@ -13,10 +14,10 @@ system onto a rigid collective band. We show that microscopic
 locality constrains this truncation. If different spacelike cells reproduce
 different components of the same finite `SO(3)` collective generator, their
 logical noncommutativity must be mediated by excursions outside the collective
-band. For bounded cell observables `A_a`, code projector `P`, `Q=1-P`, and a
-certified off-band cap `Lambda=max_a||Q A_a P||`, we derive operator-norm and
-state-weighted inequalities with explicit errors. In the exact three-cell
-case,
+band. For bounded cell observables `A_a`, code projector `P`, `Q=1-P`, exact
+off-code amplitude `lambda_*=max_a||Q A_a P||`, and certified cap
+`Lambda>=lambda_*`, we derive operator-norm and state-weighted inequalities
+with explicit errors. In the exact three-cell case,
 
 ```text
 sum_a Tr[rho P A_a Q A_a P]
@@ -39,11 +40,11 @@ local non-Abelian currents, and it supplies neither dynamics nor a lifetime.
 `O -> A(O)` be a local net, let `O_1,O_2,O_3` be pairwise spacelike regions,
 and let `A_a in A(O_a)` be bounded self-adjoint observables. Let `P` be a
 finite-rank code projector carrying a nontrivial integer-spin representation
-of `SO(3)`, and put `Q=1-P`. Assume
+of `SO(3)`, put `Q=1-P`, and take `alpha in R`. Assume
 
 ```text
 P A_a P=alpha J_a,
-||Q A_a P||<=Lambda,        0<Lambda<=M,
+max_a ||Q A_a P||<=Lambda,  0<Lambda<=M,
 ||A_a||<=M.
 ```
 
@@ -57,7 +58,7 @@ sum_a Tr[rho P A_a(I-P)A_aP]
 
 The paper also states the pairwise approximate theorem and the uniform robust
 three-axis corollary with locality defect `delta`, compression error `epsilon`,
-maximum spin `J`, and Young parameter `t`.
+maximum spin `J_max`, and Young parameter `t`.
 
 **Corollary 2 (operational orientation risk).** For the full-frame Haar-prior
 chordal task and `0<r<1/8`, any state and measurement achieving `R_ref<=r`
@@ -69,9 +70,9 @@ sum_a Tr[rho P A_a(I-P)A_aP]
 ```
 
 **Proposition 3 (distributed realizations).** The symmetric ground band of an
-even-site ferromagnetic spin chain, probed by gain-normalized spin components on
-two disjoint macroscopic blocks, has exact collective compression and pairwise
-norm ratio
+even-site ferromagnetic spin chain, probed by gain-normalized spin components
+on two disjoint macroscopic blocks, has exact collective compression and
+pairwise norm ratio
 
 ```text
 2 lambda_X lambda_Y/||J_z||=N/(N-1).
@@ -81,6 +82,8 @@ A fixed-width buffer preserves asymptotic saturation. Three equal disjoint
 blocks reproduce `J_x,J_y,J_z`, have `sum_a p_a=N`, and approach an
 actual-to-Theorem-1 lower-bound ratio of eight. The latter establishes
 constant-factor scaling, not optimality of Theorem 1's factor four.
+The block diameters grow with `N`, so this is a disjoint-region model rather
+than a uniformly localized one.
 
 ## Section Plan
 
@@ -102,7 +105,7 @@ constant-factor scaling, not optimality of Theorem 1's factor four.
   model.
 - Incoming and outgoing leakage amplitudes.
 - Uniform compressed-action errors and locality defects.
-- Stability under arbitrary spectator ancillas.
+- Stability under finite-dimensional rotation-trivial spectators.
 
 ### 3. Compression Lemma And Optimal Constant
 
@@ -120,8 +123,8 @@ constant-factor scaling, not optimality of Theorem 1's factor four.
 - Sum the cyclic `SO(3)` brackets to obtain the direct factor-four theorem.
 - Prove the approximate `delta,epsilon,t` version.
 - Derive the cap consistency law `Lambda^4>=alpha^4 Tr(rho J^2)/12`.
-- Explain why state-weighted leakage is stronger than a worst-case norm alone
-  but is not yet a dynamical probability.
+- Explain how state-weighted leakage complements a worst-case norm bound and
+  why it is not yet a dynamical probability.
 
 ### 5. Global Orientation-Risk Corollary
 
@@ -180,22 +183,22 @@ constant-factor scaling, not optimality of Theorem 1's factor four.
 4. Claim comparison table: Toeplitz, Eastin-Knill, covariant QEC, and this
    theorem.
 
-## Submission Gate
+## Submission Gates
 
-The draft is a submission candidate only after:
+Completed internally:
 
-- an independent operator-algebra/QEC proof audit;
-- a specialist novelty review of the state-weighted theorem;
-- explicit finite-matrix verification of the ferromagnetic formulas;
-- a parameter-by-parameter comparison with approximate covariant-QEC and
-  local recovery bounds;
-- removal of all de Sitter, gravity, Skyrmion, and Paper U dependencies from
-  the title, abstract, and main theorem.
+- bounded-operator proof audit;
+- explicit finite-matrix verification of both ferromagnetic families;
+- removal of de Sitter, gravity, Skyrmion, and Paper U dependencies from the
+  title, abstract, and main theorem.
 
-The internal proof audit and finite-matrix gate are complete in the current
-research branch. Specialist novelty review is not complete and cannot be
-replaced by an arXiv search.
+Open before submission:
 
-If the specialist novelty review identifies (3.1) and its risk composition as
-a standard corollary, freeze this as a repository methods note and do not
-submit it as a new theorem paper.
+- integrate the complete global-risk proof as a manuscript appendix;
+- obtain specialist AQFT/QEC proof and priority review;
+- complete the source-level parameter comparison with approximate
+  covariant-QEC and local-recovery bounds.
+
+If specialist review identifies Theorem 1 and its risk composition as a
+standard corollary, freeze this as a repository methods note and do not submit
+it as a new theorem paper.

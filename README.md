@@ -31,34 +31,34 @@ The current public package is deliberately finite. It is not a continuum
 de Sitter theorem, not a dS/CFT construction, and not a proof of ER=EPR in de
 Sitter.
 
-## Active Research Goal
+## Research Tracks
 
-The primary paper target is a class-uniform tradeoff for a finite localized
-rotational register in a de Sitter static patch. The intended theorem should
-connect relational orientation error, record lifetime, spatial and optical
-support, energy cost, and gravitational disturbance in one controlled model.
-The massive Skyrmion is a certified test realization, not the headline claim.
+The current bounded paper candidate concerns off-code leakage when three
+spacelike cells reproduce different components of one finite `SO(3)`
+collective mode. The broader static-patch observer theorem remains the
+long-term program: it would also have to control lifetime, optical support,
+energy, and gravitational disturbance in one model. The Skyrmion remains a
+test realization, not the headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
+| Spacelike replication | Bounded three-cell theorem proved; specialist novelty review remains open. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_novelty_audit.md`](docs/spacelike_replication_novelty_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
 | Universal observer theorem | G1/G2 are audit-ready. The regular-bath finite-switch lemma is proved and a correctly dimensioned conditional detector box is certified, but the named QFT channel bridge is open and unchanged promotion of the exact factorized density fails the microcausal locality gate. Paper U U8a, token preparation/readout, and gravity remain open. | [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`u8a_finite_storage_channel.md`](docs/u8a_finite_storage_channel.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
-| Locality-reference-leakage theorem | The standard compression identity has been separated from a proved state-weighted theorem for spacelike replication of three `SO(3)` components and its global orientation-risk corollary. Disjoint-block ferromagnets make the pairwise norm constant sharp and realize the three-cell scaling within a factor tending to eight; paper-level novelty still requires specialist review. | [`locality_reference_leakage_theorem.md`](docs/locality_reference_leakage_theorem.md), [`locality_reference_leakage_novelty_audit.md`](docs/locality_reference_leakage_novelty_audit.md), [`locality_reference_leakage_outline.md`](paper/locality_reference_leakage_outline.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md), [`observer_register_counterexample_checklist.md`](docs/observer_register_counterexample_checklist.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
 | Certified matter realization | The supported Skyrmion supplies controlled profile, spectral, and response subproblems without being identified with the observer theorem. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
 
-**Claim boundary.** The G1/G2 protocol domain, global orientation-risk bounds,
-a confined-orbital localization-energy bridge, the regular-bath finite-switch
-lemma, the rigid-current locality obstruction, the bounded collective-mode
-leakage theorem, supported-profile subproblems, and the completed Paper R
-viability decision are rigorous on their declared domains. The claim that the
-state-weighted leakage theorem is publishably novel still awaits specialist
-review. The named QFT detector box is conditional. The signed
-response estimator is suggestive, but the full certified interval contains
-zero. The KMS GNS/Pauli-Fierz channel bridge, same-action token preparation and
-readout, the `S_dir`-to-`S_Ob` dictionary, a gravitational capacity invariant,
-Weyl zero-exclusion, and self-consistent gravity remain open. Paper U U8a
-itself remains open.
+**Status boundary**
+
+- **Proved on declared domains:** G1/G2, global orientation-risk bounds, the
+  bounded spacelike-replication theorem, the regular-bath finite-switch lemma,
+  the rigid-current locality obstruction, and supported-profile subproblems.
+- **Conditional:** the named QFT detector box; the signed response interval
+  still contains zero; publication priority for the new bounded theorem needs
+  specialist review.
+- **Open:** the KMS GNS/Pauli-Fierz bridge, same-action preparation/readout,
+  `S_dir` versus `S_Ob`, a gravitational capacity invariant, Weyl
+  zero-exclusion, self-consistent gravity, and Paper U U8a.
 
 Use the [`research execution plan`](docs/research_execution_plan.md) for the
 current ordering, the

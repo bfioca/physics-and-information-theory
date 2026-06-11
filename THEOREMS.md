@@ -6780,7 +6780,7 @@ Run the compact example script:
 PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
 ```
 
-### Research Theorem AV: Leakage From Spacelike Collective-Mode Replication
+### Research Theorem AV: Spacelike SO(3) Replication Leakage
 
 Let `P` be a finite-rank orthogonal projector, `Q=I-P`, and let the code
 `P H` carry an integer-spin `SO(3)` representation with generators `J_a` and
@@ -6798,8 +6798,9 @@ Thus, for self-adjoint `A,B`, locality defect
 ||[PAP,PBP]||<=delta+2 lambda_A lambda_B.              (AV.2)
 ```
 
-If `PAP` and `PBP` approximate `alpha J_a` and `beta J_b` with uniform
-operator errors `epsilon_A,epsilon_B`, then for distinct Cartesian components
+If `PAP` and `PBP` approximate `alpha J_a` and `beta J_b`, for real gains
+`alpha,beta`, with uniform operator errors `epsilon_A,epsilon_B`, then for
+distinct Cartesian components
 
 ```text
 |alpha beta| J
@@ -6809,18 +6810,18 @@ operator errors `epsilon_A,epsilon_B`, then for distinct Cartesian components
 ```
 
 The factor two is optimal. It is asymptotically saturated by disjoint
-normalized block-spin observables in the symmetric ground band of an even-site
-frustration-free ferromagnetic chain.
+gain-normalized block-spin observables in the symmetric ground band of an
+even-site frustration-free ferromagnetic chain.
 
-The paper candidate is the stronger state-weighted result. Let `O -> A(O)` be
-a local net, choose three pairwise spacelike regions `O_a`, and let
-`A_a in A(O_a)` be bounded self-adjoint observables. Equivalently, the
-algebraic theorem only requires three pairwise commuting bounded
-star-algebras. Assume
+The candidate paper result is the complementary state-weighted theorem. Let
+`O -> A(O)` be a local net, choose three pairwise spacelike regions `O_a`, and
+let `A_a in A(O_a)` be bounded self-adjoint observables. Equivalently, the
+algebraic theorem only requires three pairwise commuting bounded star-algebras.
+For real `alpha`, define `lambda_*=max_a ||Q A_a P||` and assume
 
 ```text
 P A_a P=alpha J_a,
-||Q A_a P||<=Lambda,           0<Lambda<=M,
+lambda_*<=Lambda,              0<Lambda<=M,
 ||A_a||<=M.                                            (AV.4)
 ```
 
@@ -6841,7 +6842,7 @@ Here `Lambda` must be an independently certified off-code amplitude cap; it
 is not a free parameter. Since `sum_a p_a<=3Lambda^2`, the same theorem gives
 
 ```text
-Lambda^4>=alpha^4 Tr(rho J^2)/12.                      (AV.6a)
+Lambda^4>=alpha^4 Tr(rho J^2)/12.                      (AV.7)
 ```
 
 If each microscopic commutator has code norm at most `delta` and every
@@ -6857,17 +6858,18 @@ Then every `t>0` gives the robust version
 ```text
 sum_a p_a(rho)
  >=[alpha^4 Tr(rho J^2)-3(1+1/t)d^2]_+
-   /[4(1+t)Lambda^2].                                  (AV.7)
+   /[4(1+t)Lambda^2].                                  (AV.8)
 ```
 
-Combining the exact theorem with W3,
-`R_ref>=1/[16 Tr(rho J^2)+8]`, proves the operational necessity
+Combining the exact theorem with Research Theorem W3,
+`R_ref>=1/[16 Tr(rho J^2)+8]`, proves, for `0<r<1/8`, the operational
+necessity
 
 ```text
 R_ref<=r
  => sum_a p_a(rho)
     >=alpha^4[r^(-1)-8]_+/(64Lambda^2),
-    Lambda^4>=alpha^4[r^(-1)-8]_+/192.                (AV.8)
+    Lambda^4>=alpha^4[r^(-1)-8]_+/192.                (AV.9)
 ```
 
 The robust operational form replaces the exact numerator by
@@ -6879,7 +6881,7 @@ N_r=[alpha^4[r^(-1)-8]_+/16-3(1+1/t)d^2]_+,
 and gives `sum_a p_a>=N_r/[4(1+t)Lambda^2]` and
 `Lambda^4>=N_r/[12(1+t)]`.
 
-Equations (AV.6)-(AV.8) concern replication of different components of one
+Equations (AV.6)-(AV.9) concern replication of different components of one
 rigid collective mode across distinct spacelike cells. They do not require
 different non-Abelian current components inside one region to commute and are
 not a no-go for local non-Abelian currents. The gain `alpha` and norm `M` must
@@ -6891,16 +6893,21 @@ The two-block disjoint ferromagnetic model makes the coefficient two in
 (AV.2) asymptotically optimal. A three-equal-block version has
 `sum_a p_a=N` and an actual-to-(AV.6) ratio tending to eight, so it realizes
 the main theorem's scaling within a constant factor; it does not prove the
-factor four optimal.
+factor four optimal. Block diameters grow with `N`, and the ferromagnetic
+parent is not uniformly gapped, so these are disjoint-region realizations, not
+uniformly localized apparatuses.
 
 The compression identity (AV.1) is standard Toeplitz/QEC machinery and is not
 claimed as novel. The candidate novelty is the state-weighted three-cell
 theorem, its full-frame risk composition, and the distributed realization;
-specialist priority review remains required.
+specialist priority review remains required. A standalone paper must also
+reproduce W3's global-risk proof or cite a published theorem with the identical
+task and constant.
 
-Artifacts: `docs/locality_reference_leakage_theorem.md`,
-`docs/locality_reference_leakage_novelty_audit.md`,
-`paper/locality_reference_leakage_outline.md`,
+Artifacts: `docs/spacelike_replication_leakage_theorem.md`,
+`docs/spacelike_replication_novelty_audit.md`,
+`docs/spacelike_replication_goal_audit.md`,
+`paper/spacelike_replication_paper_outline.md`,
 `qgtoy/locality_reference_leakage.py`, and
 `tests/test_locality_reference_leakage.py`.
 

@@ -78,6 +78,9 @@ from .interacting_kms_edge import interacting_kms_edge_certificate
 from .continuum_lift import continuum_lift_obstruction_certificate
 from .core_edge_obstruction import core_edge_obstruction_certificate
 from .local_bridge_screen import goal18_intrinsic_local_bridge_screen_dynamics_certificate
+from .locality_reference_leakage import (
+    locality_reference_leakage_certificate,
+)
 from .modular_kms_continuity import goal29_modular_kms_continuity_certificate
 from .modular_manybody_regulator import modular_manybody_regulator_certificate
 from .physical_static_patch_kernel import goal25_physical_static_patch_kernel_certificate
@@ -106,9 +109,6 @@ from .static_patch_matter_observer_channel import (
 )
 from .u8a_finite_storage_channel import (
     u8a_finite_storage_channel_certificate,
-)
-from .locality_reference_leakage import (
-    locality_reference_leakage_certificate,
 )
 from .common_mode_locality_mismatch import (
     common_mode_locality_mismatch_certificate,
@@ -3517,8 +3517,8 @@ def build_parser() -> argparse.ArgumentParser:
     locality_leakage = subparsers.add_parser(
         "locality-reference-leakage",
         help=(
-            "audit the collective-mode compression inequality, its global "
-            "SO(3) risk corollary, and the disjoint-block ferromagnetic models"
+            "emit the spacelike-replication leakage certificate and its "
+            "disjoint-block model checks"
         ),
     )
     locality_leakage.set_defaults(func=run_locality_reference_leakage)

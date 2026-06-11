@@ -6,49 +6,24 @@ artifacts.
 
 ## Start Here
 
-Active research program:
+### Current Bounded Paper Candidate
+
+- `spacelike_replication_leakage_theorem.md` - technical statement and proof;
+- `spacelike_replication_novelty_audit.md` - killed claims and priority gate;
+- `../paper/spacelike_replication_paper_outline.md` - conditional paper plan.
+
+### Long-Term Observer Program
 
 - `observer_register_model_class.md`
 - `directional_record_resource_dictionary.md`
 - `observer_register_counterexample_checklist.md`
-- `observer_register_goal_audit.md`
 - `u8a_finite_storage_channel.md`
-- `u8a_goal_audit.md`
-- `harlow_redirection_branches.md`
-- `universal_static_patch_observer_tradeoff_plan.md`
-- `conditional_universal_observer_tradeoff.md`
 - `universal_observer_claim_dependency_ledger.md`
-- `global_so3_reference_risk.md`
-- `localized_orbital_reference.md`
-- `supported_skyrmion_collective_spectral_floor.md`
-- `collective_band_feshbach_gate.md`
-- `skyrmion_radial_dynamical_gap.md`
-- `skyrmion_moving_wall_radial_gap.md`
-- `coupled_radial_wall_gap.md`
-- `localized_so3_observer_tradeoff.md`
-- `so3_measure_correct_recovery.md`
-- `skyrmion_orientation_coherence.md`
-- `validated_skyrmion_ule.md`
-- `validated_skyrmion_au3b.md`
-- `rotational_resource_substitution_no_go.md`
 - `research_execution_plan.md`
 - `paper_worthy_observer_algebra_research_program.md`
-- `observer_algebra_model_choice.md`
-- `current_claim_dependency_ledger.md`
 - `primary_source_novelty_matrix.md`
-- `physical_model_specification.md`
-- `noisy_observer_algebra_inference.md`
-- `canonical_berezin_refinement.md`
-- `relational_fuzzy_horizon_observer.md`
-- `edge_symmetry_robustness.md`
-- `core_stable_edge_obstruction.md`
-- `interacting_kms_edge_model.md`
-- `gravitational_reference_discriminator.md`
-- `charged_reference_recovery.md`
-- `finite_clock_crossed_product_gate.md`
-- `modular_manybody_regulator.md`
 
-Current packaged result:
+### Repository Baseline Package
 
 - `THEOREMS.md`
 - `paper/main.md`
@@ -60,20 +35,28 @@ Current packaged result:
 - `docs/static_patch_observer_algebra/audit_index.json`
 - `docs/static_patch_observer_algebra/journey_map.md`
 
-Active paper draft:
+### Paper Outlines And Drafts
 
-- `../paper/universal_observer_tradeoff_outline.md` (primary theorem target)
+- `../paper/spacelike_replication_paper_outline.md` (current bounded candidate)
+- `../paper/universal_observer_tradeoff_outline.md` (long-term theorem target)
 - `../paper/skyrmion_ule_outline.md` (realization/fallback)
 - `../paper/relational_observer_draft.md`
 
-Completed bounded side sprint:
+### Completed Side Sprint
 
 - `paper_r_viability_contract.md` (frozen model and decision rule)
 - `paper_r_viability_decision.md` (**INCONCLUSIVE STOP**)
 - `../paper/paper_r_manuscript_outline.md` (retained technical architecture,
   not promoted to a paper draft)
 
-One-line summary:
+**Current bounded result**
+
+```text
+replicating three noncommuting SO(3) components across commuting cells forces
+state-weighted off-code coupling at fixed response calibration.
+```
+
+**Long-term Paper U target**
 
 ```text
 a localized rotational reference in a static patch should obey a quantitative
@@ -91,9 +74,9 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `observer_register_goal_audit.md` | Requirement-by-requirement G1/G2 completion audit, focused test record, exact arrow disposition, and remaining assumptions. |
 | `u8a_finite_storage_channel.md` | Fixed cutoff-one register, regular-bath finite-switch theorem, dimension-50 conversion, conditional named-QFT degradation box, open GNS/Pauli-Fierz bridge, and microcausal route stop. |
 | `u8a_goal_audit.md` | Requirement audit recording the conditional detector box, the rigorous locality `INCONCLUSIVE STOP`, and the open QFT/U8a/U8b boundary. |
-| `locality_reference_leakage_theorem.md` | Exact and approximate compression bounds, the state-weighted spacelike-replication theorem, its global `SO(3)` risk corollary, and pairwise-sharp/three-cell constant-factor ferromagnetic models. |
-| `locality_reference_leakage_novelty_audit.md` | Primary-source audit killing novelty of the base compression identity and isolating the narrower state-weighted paper claim. |
-| `locality_reference_leakage_goal_audit.md` | Requirement-by-requirement prove-or-kill disposition, verified theorem boundary, test record, and remaining specialist priority gate. |
+| `spacelike_replication_leakage_theorem.md` | Exact and approximate compression bounds, the state-weighted spacelike-replication theorem, its global `SO(3)` risk corollary, and the disjoint-block ferromagnetic realizations. |
+| `spacelike_replication_novelty_audit.md` | Primary-source audit killing novelty of the base compression identity and isolating the narrower state-weighted paper candidate. |
+| `spacelike_replication_goal_audit.md` | Internal prove-or-kill completion record, focused verification, and remaining specialist priority gate. |
 | `harlow_redirection_branches.md` | Three bounded research pivots if the observer-entropy comparison, gravitational budget, or semiclassical register framing is rejected. |
 | `research_execution_plan.md` | Concise gate-based publication ladder, pass criteria, and pivot conditions for the active physics program. |
 | `paper_worthy_observer_algebra_research_program.md` | Active plan for replacing the finite benchmark with a physically derived, quantitative theorem program. |

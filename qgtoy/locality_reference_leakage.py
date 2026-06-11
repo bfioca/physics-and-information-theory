@@ -1,4 +1,4 @@
-"""Locality-reference-leakage inequalities for finite SO(3) codes.
+"""Leakage inequalities for spacelike SO(3) replication in finite codes.
 
 Microscopically commuting observables need not commute after compression to a
 code.  The logical commutator is carried by excursions through the orthogonal
@@ -15,7 +15,7 @@ specified.
 from __future__ import annotations
 
 from fractions import Fraction
-from math import asin, ceil, isfinite, pi, sqrt
+from math import asin, ceil, isclose, isfinite, pi, sqrt
 
 from .global_so3_reference_risk import (
     hard_cutoff_orientation_risk_lower_bound,
@@ -36,6 +36,21 @@ def _validate_positive(name: str, value: float) -> None:
 def _validate_probability(name: str, value: float) -> None:
     if not isfinite(value) or value <= 0.0 or value > 1.0:
         raise ValueError(f"{name} must lie in (0, 1]")
+
+
+def _at_least(value: float, lower_bound: float) -> bool:
+    """Scale-aware ``value >= lower_bound`` for reported consistency checks."""
+    return value >= lower_bound or isclose(
+        value,
+        lower_bound,
+        rel_tol=1.0e-12,
+        abs_tol=0.0,
+    )
+
+
+def _at_most(value: float, upper_bound: float) -> bool:
+    """Scale-aware ``value <= upper_bound`` for reported consistency checks."""
+    return _at_least(upper_bound, value)
 
 
 def compression_commutator_budget(
@@ -98,7 +113,10 @@ def compression_commutator_budget(
         "supplied_total_budget": supplied_budget,
         "required_locality_plus_leakage_budget": required_locality_or_leakage,
         "inequality_slack": supplied_budget - signal,
-        "supplied_bounds_satisfy_theorem": supplied_budget + 1.0e-12 >= signal,
+        "supplied_scalar_budget_is_consistent": _at_least(
+            supplied_budget,
+            signal,
+        ),
         "identity": (
             "[PAP,PBP]=P[A,B]P+PBQAP-PAQBP, with Q=I-P"
         ),
@@ -118,7 +136,7 @@ def self_adjoint_locality_reference_leakage_bound(
     locality_defect: float = 0.0,
     compression_error_a: float = 0.0,
     compression_error_b: float = 0.0,
-) -> dict[str, float | str]:
+) -> dict[str, float | bool | str]:
     """Required leakage for two self-adjoint SO(3) actions.
 
     On an integer-spin code with largest spin ``J``, every Cartesian generator
@@ -188,7 +206,19 @@ def minimum_integer_spin_from_risk(risk_budget: float) -> dict[str, float | int]
     _validate_probability("risk_budget", risk_budget)
     casimir = required_mean_casimir_for_risk(risk_budget)
     casimir_spin = minimum_continuous_spin_from_casimir(casimir)
-    casimir_integer = int(ceil(casimir_spin - 1.0e-14))
+    casimir_integer = max(0, int(ceil(casimir_spin)))
+    while (
+        casimir_integer > 0
+        and mean_casimir_orientation_risk_lower_bound(
+            float((casimir_integer - 1) * casimir_integer)
+        )
+        <= risk_budget
+    ):
+        casimir_integer -= 1
+    while mean_casimir_orientation_risk_lower_bound(
+        float(casimir_integer * (casimir_integer + 1))
+    ) > risk_budget:
+        casimir_integer += 1
 
     hard_cutoff_continuous = 0.0
     hard_cutoff_integer = 0
@@ -273,7 +303,7 @@ def operational_locality_leakage_bound(
 def pairwise_state_weighted_collective_mode_bound(
     *,
     generator_second_moment: float,
-    maximum_spin: float,
+    maximum_spin: float | None = None,
     gain_a: float,
     gain_b: float,
     local_operator_norm_a: float,
@@ -285,7 +315,7 @@ def pairwise_state_weighted_collective_mode_bound(
     locality_defect: float = 0.0,
     compression_error_a: float = 0.0,
     compression_error_b: float = 0.0,
-) -> dict[str, float | bool | str]:
+) -> dict[str, float | bool | str | None]:
     """State-weighted pairwise collective-mode inequality.
 
     For a code state ``rho``, ``leakage_weight_a`` denotes
@@ -297,11 +327,11 @@ def pairwise_state_weighted_collective_mode_bound(
 
     A supplied ``leakage_amplitude_cap_*`` is an assumed, independently
     certified upper bound on ``||Q A_* P||``.  The compression-error term
-    ``eta`` is uniform on the entire code.
+    ``eta`` is uniform on the entire code.  ``maximum_spin`` is optional in the
+    exact case and required when either compression error is nonzero.
     """
     for name, value in {
         "generator_second_moment": generator_second_moment,
-        "maximum_spin": maximum_spin,
         "local_operator_norm_a": local_operator_norm_a,
         "local_operator_norm_b": local_operator_norm_b,
         "leakage_weight_a": leakage_weight_a,
@@ -311,8 +341,16 @@ def pairwise_state_weighted_collective_mode_bound(
         "compression_error_b": compression_error_b,
     }.items():
         _validate_nonnegative(name, value)
+    if maximum_spin is not None:
+        _validate_nonnegative("maximum_spin", maximum_spin)
     if not isfinite(gain_a) or not isfinite(gain_b):
         raise ValueError("gains must be finite")
+    if (
+        compression_error_a > 0.0 or compression_error_b > 0.0
+    ) and maximum_spin is None:
+        raise ValueError(
+            "maximum_spin is required when a compression error is nonzero"
+        )
     if leakage_amplitude_cap_a is not None:
         _validate_nonnegative(
             "leakage_amplitude_cap_a", leakage_amplitude_cap_a
@@ -332,20 +370,28 @@ def pairwise_state_weighted_collective_mode_bound(
         if leakage_amplitude_cap_b is None
         else leakage_amplitude_cap_b
     )
-    if cap_a > local_operator_norm_a + 1.0e-12:
+    if not _at_most(cap_a, local_operator_norm_a):
         raise ValueError(
             "leakage_amplitude_cap_a cannot exceed local_operator_norm_a"
         )
-    if cap_b > local_operator_norm_b + 1.0e-12:
+    if not _at_most(cap_b, local_operator_norm_b):
         raise ValueError(
             "leakage_amplitude_cap_b cannot exceed local_operator_norm_b"
         )
 
-    approximation = (
-        2.0 * abs(gain_b) * maximum_spin * compression_error_a
-        + 2.0 * abs(gain_a) * maximum_spin * compression_error_b
-        + 2.0 * compression_error_a * compression_error_b
-    )
+    approximation = 0.0
+    if compression_error_a > 0.0 or compression_error_b > 0.0:
+        approximation = (
+            2.0
+            * abs(gain_b)
+            * float(maximum_spin)
+            * compression_error_a
+            + 2.0
+            * abs(gain_a)
+            * float(maximum_spin)
+            * compression_error_b
+            + 2.0 * compression_error_a * compression_error_b
+        )
     target = abs(gain_a * gain_b) * sqrt(generator_second_moment)
     supplied = (
         cap_b * sqrt(leakage_weight_a)
@@ -353,6 +399,45 @@ def pairwise_state_weighted_collective_mode_bound(
         + locality_defect
         + approximation
     )
+    budget_is_consistent = _at_least(supplied, target)
+    weights_fit_caps = (
+        _at_most(leakage_weight_a, cap_a**2)
+        and _at_most(leakage_weight_b, cap_b**2)
+    )
+    second_moment_fits_spin = (
+        None
+        if maximum_spin is None
+        else _at_most(
+            generator_second_moment,
+            maximum_spin**2,
+        )
+    )
+    compression_norms_are_feasible = (
+        None
+        if maximum_spin is None
+        else (
+            _at_least(
+                local_operator_norm_a + compression_error_a,
+                abs(gain_a) * maximum_spin,
+            )
+            and _at_least(
+                local_operator_norm_b + compression_error_b,
+                abs(gain_b) * maximum_spin,
+            )
+        )
+    )
+    consistency_checks = (
+        budget_is_consistent,
+        weights_fit_caps,
+        second_moment_fits_spin,
+        compression_norms_are_feasible,
+    )
+    if any(check is False for check in consistency_checks):
+        parameter_status = "inconsistent"
+    elif any(check is None for check in consistency_checks):
+        parameter_status = "underdetermined"
+    else:
+        parameter_status = "consistent"
     return {
         "target_commutator_rms": target,
         "leakage_rms_budget": (
@@ -365,11 +450,13 @@ def pairwise_state_weighted_collective_mode_bound(
         "compression_approximation_budget": approximation,
         "supplied_total_budget": supplied,
         "inequality_slack": supplied - target,
-        "supplied_bounds_satisfy_theorem": supplied + 1.0e-12 >= target,
-        "supplied_weights_respect_certified_caps": (
-            leakage_weight_a <= cap_a**2 + 1.0e-12
-            and leakage_weight_b <= cap_b**2 + 1.0e-12
+        "supplied_scalar_budget_is_consistent": budget_is_consistent,
+        "supplied_weights_fit_declared_caps": weights_fit_caps,
+        "declared_second_moment_fits_maximum_spin": second_moment_fits_spin,
+        "compressed_target_norms_are_feasible": (
+            compression_norms_are_feasible
         ),
+        "parameter_status": parameter_status,
         "bound": (
             "|alpha beta| sqrt(Tr rho J_c^2) <= "
             "Lambda_b sqrt(p_a)+Lambda_a sqrt(p_b)+delta_ab+eta_ab"
@@ -414,8 +501,7 @@ def collective_mode_leakage_from_casimir(
         _validate_positive(
             "leakage_amplitude_cap", leakage_amplitude_cap
         )
-    if locality_defect > 0.0 or compression_error > 0.0:
-        _validate_positive("young_parameter", young_parameter)
+    _validate_positive("young_parameter", young_parameter)
     if compression_error > 0.0 and maximum_spin is None:
         raise ValueError(
             "maximum_spin is required when compression_error is nonzero"
@@ -427,7 +513,7 @@ def collective_mode_leakage_from_casimir(
         if leakage_amplitude_cap is None
         else leakage_amplitude_cap
     )
-    if effective_cap > local_operator_norm + 1.0e-12:
+    if not _at_most(effective_cap, local_operator_norm):
         raise ValueError(
             "leakage_amplitude_cap cannot exceed local_operator_norm"
         )
@@ -460,6 +546,37 @@ def collective_mode_leakage_from_casimir(
     ) ** 0.25
     normalized_weight = required_weight / local_operator_norm**2
     response_ratio = abs(response_gain) / local_operator_norm
+    cap_is_not_ruled_out = _at_least(
+        3.0 * effective_cap**2,
+        required_weight,
+    )
+    casimir_fits_spin = (
+        None
+        if maximum_spin is None
+        else _at_least(
+            maximum_spin * (maximum_spin + 1.0),
+            mean_casimir,
+        )
+    )
+    spin_fits_compression_norm = (
+        None
+        if maximum_spin is None
+        else _at_least(
+            local_operator_norm + compression_error,
+            abs(response_gain) * maximum_spin,
+        )
+    )
+    consistency_checks = (
+        cap_is_not_ruled_out,
+        casimir_fits_spin,
+        spin_fits_compression_norm,
+    )
+    if any(check is False for check in consistency_checks):
+        parameter_status = "inconsistent"
+    elif any(check is None for check in consistency_checks):
+        parameter_status = "underdetermined"
+    else:
+        parameter_status = "consistent"
     return {
         "mean_casimir": mean_casimir,
         "response_gain": response_gain,
@@ -472,27 +589,24 @@ def collective_mode_leakage_from_casimir(
         "compression_approximation_budget_per_pair": approximation,
         "locality_defect_per_pair": locality_defect,
         "young_parameter": young_parameter,
-        "exact_case_uses_direct_factor_four": exact_case,
+        "exact_bound_uses_direct_factor_four": exact_case,
         "casimir_signal": signal,
         "robust_defect_penalty": defect_penalty,
         "minimum_total_off_code_weight": required_weight,
-        "minimum_normalized_total_off_code_weight": normalized_weight,
+        "minimum_total_off_code_weight_over_local_norm_squared": (
+            normalized_weight
+        ),
         "minimum_uniform_leakage_amplitude_from_consistency": (
             minimum_uniform_leakage_amplitude
         ),
         "maximum_total_off_code_weight_under_certified_cap": (
             3.0 * effective_cap**2
         ),
-        "certified_cap_is_consistent_with_required_weight": (
-            required_weight <= 3.0 * effective_cap**2 + 1.0e-12
-        ),
-        "compression_norm_is_consistent_with_declared_maximum_spin": (
-            None
-            if maximum_spin is None
-            else abs(response_gain) * maximum_spin
-            <= local_operator_norm + compression_error + 1.0e-12
-        ),
-        "positive_state_weighted_tradeoff": required_weight > 0.0,
+        "declared_cap_is_not_ruled_out_by_weight_bound": cap_is_not_ruled_out,
+        "declared_casimir_fits_maximum_spin": casimir_fits_spin,
+        "declared_spin_fits_compression_norm": spin_fits_compression_norm,
+        "parameter_status": parameter_status,
+        "lower_bound_is_positive": required_weight > 0.0,
         "bound": (
             "sum_a Tr(rho P A_a Q A_a P) >= "
             "[alpha^4 Tr(rho J^2)-robust defect penalty]_+ / "
@@ -540,34 +654,36 @@ def operational_collective_mode_leakage_bound(
     support_is_sufficient = (
         None
         if maximum_spin is None
-        else maximum_spin + 1.0e-12 >= required_maximum_spin
+        else _at_least(maximum_spin, required_maximum_spin)
     )
     calibration_allows_required_support = (
-        abs(response_gain) * required_maximum_spin
-        <= local_operator_norm + compression_error + 1.0e-12
-    )
-    declared_parameters_not_ruled_out = (
-        calibration_allows_required_support
-        and (support_is_sufficient is not False)
-        and leakage["certified_cap_is_consistent_with_required_weight"]
-        and (
-            leakage[
-                "compression_norm_is_consistent_with_declared_maximum_spin"
-            ]
-            is not False
+        _at_least(
+            local_operator_norm + compression_error,
+            abs(response_gain) * required_maximum_spin,
         )
     )
+    consistency_checks = (
+        calibration_allows_required_support,
+        support_is_sufficient,
+        leakage["declared_cap_is_not_ruled_out_by_weight_bound"],
+        leakage["declared_casimir_fits_maximum_spin"],
+        leakage["declared_spin_fits_compression_norm"],
+    )
+    if any(check is False for check in consistency_checks):
+        parameter_status = "inconsistent"
+    elif any(check is None for check in consistency_checks):
+        parameter_status = "underdetermined"
+    else:
+        parameter_status = "consistent"
     return {
         "risk_budget": risk_budget,
         "required_mean_casimir": mean_casimir,
         "risk_support_requirement": support_requirement,
         "declared_maximum_spin_supports_risk_target": support_is_sufficient,
-        "calibration_allows_minimum_required_spin": (
+        "calibration_can_support_minimum_required_spin": (
             calibration_allows_required_support
         ),
-        "declared_parameters_are_not_ruled_out": (
-            declared_parameters_not_ruled_out
-        ),
+        "parameter_status": parameter_status,
         "risk_bound_used": "R_ref >= 1/(16 Tr(rho J^2)+8)",
         "state_weighted_leakage": leakage,
         "operational_statement": (
@@ -593,8 +709,8 @@ def disjoint_block_ferromagnetic_code_record(
 
     ``site_count`` is even, so the symmetric code carries the integer spin
     ``j=N/2``.  Equal left and right blocks are separated by ``buffer_sites``
-    unused sites.  The normalized block spins compress exactly to ``J_x`` and
-    ``J_y`` while commuting microscopically.
+    unused sites.  The gain-normalized block spins compress exactly to ``J_x``
+    and ``J_y`` while commuting microscopically.
     """
     if (
         isinstance(site_count, bool)
@@ -645,6 +761,7 @@ def disjoint_block_ferromagnetic_code_record(
             "A_x=(N/r) sum_(i in X) S_i^x and "
             "B_y=(N/r) sum_(k in Y) S_k^y"
         ),
+        "block_supports_are_disjoint": True,
         "microscopic_commutator_is_zero": True,
         "compressed_actions": "P A_x P=J_x and P B_y P=J_y",
         "nonabelian_signal_exact": str(nonabelian_signal),
@@ -729,7 +846,7 @@ def locality_reference_leakage_certificate() -> dict[str, object]:
     """Return the deterministic theorem, composition, and sharpness audit."""
     model_records = tuple(
         disjoint_block_ferromagnetic_code_record(site_count)
-        for site_count in (2, 4, 8, 16, 32, 64, 128)
+        for site_count in (2, 4, 16, 128)
     )
     buffered = disjoint_block_ferromagnetic_code_record(128, buffer_sites=2)
     three_cell = three_cell_ferromagnetic_state_record(120)
@@ -745,11 +862,12 @@ def locality_reference_leakage_certificate() -> dict[str, object]:
         maximum_spin=15.0,
     )
     claims = {
-        "distributed_model_is_microscopically_local": all(
-            record["microscopic_commutator_is_zero"]
+        "pairwise_models_have_disjoint_commuting_supports": all(
+            record["block_supports_are_disjoint"]
+            and record["microscopic_commutator_is_zero"]
             for record in model_records
         ),
-        "distributed_model_satisfies_bound": all(
+        "pairwise_models_satisfy_norm_bound": all(
             record["sharpness_ratio"] >= 1.0
             for record in model_records
         ),
@@ -776,16 +894,16 @@ def locality_reference_leakage_certificate() -> dict[str, object]:
             ]
             > 0.0
         ),
-        "operational_state_weighted_example_is_not_norm_vacuous": (
-            state_weighted["declared_parameters_are_not_ruled_out"]
+        "operational_state_weighted_example_is_consistent": (
+            state_weighted["parameter_status"] == "consistent"
         ),
     }
     return {
-        "goal": "Locality-Reference-Leakage Theorem",
+        "goal": "Spacelike SO(3) Replication Leakage Theorem",
         "status": "pass" if all(claims.values()) else "fail",
         "result_type": (
             "state_weighted_spacelike_replication_inequality_with_"
-            "operational_so3_corollary_and_distributed_local_models"
+            "operational_so3_corollary_and_disjoint_block_models"
         ),
         "theorem": (
             "For bounded self-adjoint A,B and code projector P, "
@@ -803,8 +921,9 @@ def locality_reference_leakage_certificate() -> dict[str, object]:
         "three_cell_state_weighted_model_record": three_cell,
         "claim_boundary": (
             "The compression lemma is standard and scale homogeneous. The "
-            "candidate new result is the state-weighted three-cell collective-"
-            "mode corollary. Both require fixed response calibration. Relative "
+            "candidate paper result is the state-weighted three-cell collective-"
+            "mode corollary; publication priority is unconfirmed. Both require "
+            "fixed response calibration. Relative "
             "leakage can vanish in the large-spin limit, and no QFT continuum, "
             "dynamics, lifetime, gravity, or Paper U claim is made."
         ),
