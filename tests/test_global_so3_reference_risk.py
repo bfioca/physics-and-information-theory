@@ -1,6 +1,8 @@
 import math
 import unittest
 
+import numpy as np
+
 from qgtoy.global_so3_reference_risk import (
     SO3_ASYMMETRY_RISK_CONSTANT,
     asymmetry_orientation_risk_lower_bound,
@@ -29,6 +31,92 @@ from qgtoy.global_so3_reference_risk import (
     spin_gibbs_partition,
     tail_quantile_orientation_risk_lower_bound,
 )
+
+
+def _spin_one_clebsch_gordan(
+    input_spin: int,
+    magnetic_index: int,
+    spin_one_index: int,
+    output_spin: int,
+) -> float:
+    """Return a real ``<1,q; k,m | j,m+q>`` coefficient."""
+    k = input_spin
+    m = magnetic_index
+    q = spin_one_index
+    if output_spin == k + 1:
+        if q == 1:
+            square = (k + m + 1) * (k + m + 2) / (
+                2 * (k + 1) * (2 * k + 1)
+            )
+        elif q == 0:
+            square = (k - m + 1) * (k + m + 1) / (
+                (k + 1) * (2 * k + 1)
+            )
+        else:
+            square = (k - m + 1) * (k - m + 2) / (
+                2 * (k + 1) * (2 * k + 1)
+            )
+        return math.sqrt(square)
+    if output_spin == k:
+        if q == 1:
+            return -math.sqrt((k - m) * (k + m + 1) / (2 * k * (k + 1)))
+        if q == 0:
+            return m / math.sqrt(k * (k + 1))
+        return math.sqrt((k + m) * (k - m + 1) / (2 * k * (k + 1)))
+    if q == 1:
+        square = (k - m) * (k - m - 1) / (2 * k * (2 * k + 1))
+    elif q == 0:
+        square = (k - m) * (k + m) / (k * (2 * k + 1))
+    else:
+        square = (k + m) * (k + m - 1) / (2 * k * (2 * k + 1))
+    return (-1.0 if q == 0 else 1.0) * math.sqrt(square)
+
+
+def _spin_one_coupling_isometry(input_spin: int, output_spin: int):
+    input_dimension = 2 * input_spin + 1
+    output_dimension = 2 * output_spin + 1
+    coupling = np.zeros((3 * input_dimension, output_dimension))
+    for spin_one_offset, spin_one_index in enumerate((-1, 0, 1)):
+        for magnetic_offset, magnetic_index in enumerate(
+            range(-input_spin, input_spin + 1)
+        ):
+            output_index = magnetic_index + spin_one_index
+            if abs(output_index) <= output_spin:
+                coupling[
+                    spin_one_offset * input_dimension + magnetic_offset,
+                    output_index + output_spin,
+                ] = _spin_one_clebsch_gordan(
+                    input_spin,
+                    magnetic_index,
+                    spin_one_index,
+                    output_spin,
+                )
+    return coupling
+
+
+def _peter_weyl_character_block(input_spin: int, output_spin: int):
+    input_dimension = 2 * input_spin + 1
+    output_dimension = 2 * output_spin + 1
+    if output_spin not in range(abs(input_spin - 1), input_spin + 2):
+        return np.zeros((output_dimension**2, input_dimension**2))
+    coupling = _spin_one_coupling_isometry(input_spin, output_spin)
+    block = np.zeros((output_dimension**2, input_dimension**2))
+    normalization = math.sqrt(input_dimension / output_dimension)
+    for column_index in range(input_dimension):
+        for row_index in range(input_dimension):
+            matrix_unit = np.zeros((input_dimension, input_dimension))
+            matrix_unit[row_index, column_index] = 1.0
+            image = (
+                normalization
+                * coupling.T
+                @ np.kron(np.eye(3), matrix_unit)
+                @ coupling
+            )
+            block[:, row_index + input_dimension * column_index] = image.reshape(
+                -1,
+                order="F",
+            )
+    return block
 
 
 class GlobalSO3ReferenceRiskTest(unittest.TestCase):
@@ -92,8 +180,6 @@ class GlobalSO3ReferenceRiskTest(unittest.TestCase):
         )
 
     def test_fusion_matrix_and_sharp_cutoff_formula(self):
-        import numpy as np
-
         for cutoff in range(12):
             matrix = np.array(fusion_score_matrix(cutoff), dtype=float)
             numerical = float(np.linalg.eigvalsh(matrix)[-1])
@@ -110,8 +196,6 @@ class GlobalSO3ReferenceRiskTest(unittest.TestCase):
             )
 
     def test_projective_fusion_matrix_and_casimir_floor(self):
-        import numpy as np
-
         self.assertAlmostEqual(
             projective_mean_casimir_orientation_risk_lower_bound(0.75),
             1.0 / 12.0,
@@ -125,6 +209,68 @@ class GlobalSO3ReferenceRiskTest(unittest.TestCase):
                 projective_hard_cutoff_orientation_risk_lower_bound(cutoff),
                 places=12,
             )
+
+    def test_peter_weyl_character_blocks_are_hilbert_schmidt_contractions(self):
+        tolerance = 2.0e-12
+        self.assertEqual(np.count_nonzero(_peter_weyl_character_block(0, 0)), 0)
+
+        for input_spin in range(7):
+            input_dimension = 2 * input_spin + 1
+            for output_spin in range(abs(input_spin - 1), input_spin + 2):
+                output_dimension = 2 * output_spin + 1
+                coupling = _spin_one_coupling_isometry(input_spin, output_spin)
+                np.testing.assert_allclose(
+                    coupling.T @ coupling,
+                    np.eye(output_dimension),
+                    atol=tolerance,
+                )
+
+                projector = (coupling @ coupling.T).reshape(
+                    3,
+                    input_dimension,
+                    3,
+                    input_dimension,
+                )
+                partial_trace = sum(
+                    projector[index, :, index, :] for index in range(3)
+                )
+                np.testing.assert_allclose(
+                    partial_trace,
+                    (output_dimension / input_dimension) * np.eye(input_dimension),
+                    atol=tolerance,
+                )
+
+                block = _peter_weyl_character_block(input_spin, output_spin)
+                normalized_input_identity = np.eye(input_dimension).reshape(
+                    -1,
+                    order="F",
+                ) / math.sqrt(input_dimension)
+                normalized_output_identity = np.eye(output_dimension).reshape(
+                    -1,
+                    order="F",
+                ) / math.sqrt(output_dimension)
+                np.testing.assert_allclose(
+                    block @ normalized_input_identity,
+                    normalized_output_identity,
+                    atol=tolerance,
+                )
+
+                singular_values = np.linalg.svd(block, compute_uv=False)
+                self.assertLessEqual(float(singular_values[0]), 1.0 + tolerance)
+                self.assertAlmostEqual(float(singular_values[0]), 1.0, places=12)
+                np.testing.assert_allclose(
+                    block,
+                    _peter_weyl_character_block(output_spin, input_spin).T,
+                    atol=tolerance,
+                )
+
+        representative_block = _peter_weyl_character_block(2, 3)
+        amplified_block = np.kron(representative_block, np.eye(2))
+        self.assertAlmostEqual(
+            float(np.linalg.svd(amplified_block, compute_uv=False)[0]),
+            1.0,
+            places=12,
+        )
 
     def test_discrete_hardy_step(self):
         vectors = (

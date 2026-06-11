@@ -921,9 +921,10 @@ def locality_reference_leakage_certificate() -> dict[str, object]:
         "three_cell_state_weighted_model_record": three_cell,
         "claim_boundary": (
             "The compression lemma is standard and scale homogeneous. The "
-            "candidate paper result is the state-weighted three-cell collective-"
-            "mode corollary; publication priority is unconfirmed. Both require "
-            "fixed response calibration. Relative "
+            "state-weighted three-cell corollary is a specialization of "
+            "established CP-map and joint-measurement added-noise bounds, so "
+            "no standalone novelty is claimed. The result requires fixed "
+            "response calibration. Relative "
             "leakage can vanish in the large-spin limit, and no QFT continuum, "
             "dynamics, lifetime, gravity, or Paper U claim is made."
         ),

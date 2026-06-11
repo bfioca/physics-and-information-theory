@@ -33,16 +33,18 @@ Sitter.
 
 ## Research Tracks
 
-The current bounded paper candidate concerns off-code leakage when three
+The current bounded methods result concerns off-code leakage when three
 spacelike cells reproduce different components of one finite `SO(3)`
-collective mode. The broader static-patch observer theorem remains the
-long-term program: it would also have to control lifetime, optical support,
-energy, and gravitational disturbance in one model. The Skyrmion remains a
-test realization, not the headline claim.
+collective mode. Its standalone novelty claim is stopped: the inequality is a
+specialization of established UCP/joint-measurement added-noise bounds. The
+broader static-patch observer theorem remains the long-term program: it would
+also have to control lifetime, optical support, energy, and gravitational
+disturbance in one model. The Skyrmion remains a test realization, not the
+headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
-| Spacelike replication | Bounded three-cell theorem proved; specialist novelty review remains open. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_novelty_audit.md`](docs/spacelike_replication_novelty_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
+| Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
 | Universal observer theorem | G1/G2 are audit-ready. The regular-bath finite-switch lemma is proved and a correctly dimensioned conditional detector box is certified, but the named QFT channel bridge is open and unchanged promotion of the exact factorized density fails the microcausal locality gate. Paper U U8a, token preparation/readout, and gravity remain open. | [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`u8a_finite_storage_channel.md`](docs/u8a_finite_storage_channel.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md), [`observer_register_counterexample_checklist.md`](docs/observer_register_counterexample_checklist.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
@@ -54,11 +56,12 @@ test realization, not the headline claim.
   bounded spacelike-replication theorem, the regular-bath finite-switch lemma,
   the rigid-current locality obstruction, and supported-profile subproblems.
 - **Conditional:** the named QFT detector box; the signed response interval
-  still contains zero; publication priority for the new bounded theorem needs
-  specialist review.
+  still contains zero.
 - **Open:** the KMS GNS/Pauli-Fierz bridge, same-action preparation/readout,
   `S_dir` versus `S_Ob`, a gravitational capacity invariant, Weyl
   zero-exclusion, self-consistent gravity, and Paper U U8a.
+- **Stopped as standalone novelty:** the bounded spacelike-replication theorem
+  is an `SO(3)` specialization of established joint-measurement added noise.
 
 Use the [`research execution plan`](docs/research_execution_plan.md) for the
 current ordering, the

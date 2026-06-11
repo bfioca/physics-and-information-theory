@@ -1,20 +1,20 @@
-# Paper Outline: Off-Code Leakage From Spacelike SO(3) Replication
+# Frozen Outline: Off-Code Leakage From Spacelike SO(3) Replication
 
 Technical status: the bounded state-weighted theorem, robust extension, and
 finite-matrix model checks are complete.
 
-Publication status: conditional outline. The global risk lemma still needs to
-be integrated as an appendix, and specialist priority review remains open. An
-unbounded/AQFT extension is optional future work, not a premise.
+Publication status: **NOVELTY STOP.** Janssens' CP-map covariance
+Cauchy-Schwarz lemma implies the state-weighted pair inequality, and cyclic
+summation gives the proposed main theorem. This outline is retained as a
+methods-note record and must not be presented as a standalone paper plan.
 
-## Candidate Abstract
+## Methods-Note Abstract
 
-We consider a finite rotational reference modeled by projecting a distributed
-system onto a rigid collective band. We show that microscopic
-locality constrains this truncation. If different spacelike cells reproduce
-different components of the same finite `SO(3)` collective generator, their
-logical noncommutativity must be mediated by excursions outside the collective
-band. For bounded cell observables `A_a`, code projector `P`, `Q=1-P`, exact
+We study a finite code in which three mutually commuting bounded cell
+observables are required to compress to three noncommuting components of one
+rigid `SO(3)` collective mode. Their logical noncommutativity must then be
+mediated by excursions outside the collective band. For cell observables
+`A_a`, code projector `P`, `Q=1-P`, exact
 off-code amplitude `lambda_*=max_a||Q A_a P||`, and certified cap
 `Lambda>=lambda_*`, we derive operator-norm and state-weighted inequalities
 with explicit errors. In the exact three-cell case,
@@ -56,7 +56,13 @@ sum_a Tr[rho P A_a(I-P)A_aP]
  >=alpha^4 Tr(rho J^2)/(4M^2).
 ```
 
-The paper also states the pairwise approximate theorem and the uniform robust
+This is a fixed-calibration absolute bound. Since
+`||alpha J_a||<=||A_a||<=M`, a spin-`J` code has
+`g=|alpha|/M<=1/J`; relative leakage can therefore vanish as `J` grows. The
+theorem does not say that increasingly accurate references must decohere
+increasingly fast.
+
+The methods note also states the pairwise approximate theorem and the uniform robust
 three-axis corollary with locality defect `delta`, compression error `epsilon`,
 maximum spin `J_max`, and Young parameter `t`.
 
@@ -156,8 +162,8 @@ than a uniformly localized one.
 - Eastin-Knill and approximate covariant-code bounds.
 - Harlow-Ooguri splittability and code-preservation logic.
 - Quantum reference-frame accuracy/size inequalities.
-- State precisely what the present risk-conditioned cell-replication theorem
-  adds, if specialist review agrees.
+- State precisely how the cell-replication theorem specializes the established
+  UCP covariance/joint-measurement noise bound.
 
 ### 8. Physical Meaning And Escape Routes
 
@@ -183,7 +189,7 @@ than a uniformly localized one.
 4. Claim comparison table: Toeplitz, Eastin-Knill, covariant QEC, and this
    theorem.
 
-## Submission Gates
+## Final Disposition
 
 Completed internally:
 
@@ -192,13 +198,13 @@ Completed internally:
 - removal of de Sitter, gravity, Skyrmion, and Paper U dependencies from the
   title, abstract, and main theorem.
 
-Open before submission:
+The source-level priority gate failed. For `T(X)=W*XW`, the quantities
+`p_a(rho)` and `lambda_a^2` are the state-dependent and maximal added noise of
+the UCP compression. Janssens' Lemma 1 yields the pairwise state-weighted
+bound directly, and the `SO(3)` theorem is its cyclic sum. Freeze this as a
+repository methods note and do not submit it as a new theorem paper.
 
-- integrate the complete global-risk proof as a manuscript appendix;
-- obtain specialist AQFT/QEC proof and priority review;
-- complete the source-level parameter comparison with approximate
-  covariant-QEC and local-recovery bounds.
-
-If specialist review identifies Theorem 1 and its risk composition as a
-standard corollary, freeze this as a repository methods note and do not submit
-it as a new theorem paper.
+Any future paper must add a genuinely stronger result: non-pairwise
+multi-observable optimality, dynamics or recoverability, a physical
+localization/energy/backreaction bound, or an independently novel global
+orientation-risk theorem.

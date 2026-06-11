@@ -3,9 +3,10 @@
 Technical status: **proved for bounded commuting-cell observables**, with a
 microcausal corollary for bounded observables in a local net.
 
-Publication status: **conditional paper candidate.** The compression identity
-is standard; the state-weighted three-cell result still needs specialist
-source-level review. No unbounded-current extension is claimed.
+Publication status: **internal methods lemma; standalone novelty stopped.**
+Janssens' CP-map covariance Cauchy-Schwarz lemma implies the state-weighted
+pair bound directly, and cyclic summation gives the three-cell theorem. The
+exact reduction is recorded in `spacelike_replication_qec_reduction_audit.md`.
 
 ## 1. Domain And Quantifiers
 
@@ -158,6 +159,12 @@ Lambda^4>=alpha^4 Tr(rho J^2)/12.                      (3.7)
 Thus an inconsistent claimed cap is detected by the theorem itself. The
 factor four in (3.6) is the direct proof constant; no optimality claim is made
 for the three-cell state-weighted inequality.
+
+In UCP-map language, with `T(X)=W*XW`, the operators
+`W*A_a Q A_aW` are standard Schwarz-defect or added-noise operators.
+Janssens' CP covariance Cauchy-Schwarz lemma gives (3.4) pair by pair. The
+direct proof is retained because it makes the code and locality variables
+transparent, not because the inequality is claimed as new.
 
 ### Approximate Version
 
@@ -417,13 +424,17 @@ Also not claimed:
 - novelty of the compression identity or generic approximate Eastin-Knill
   machinery.
 
-Publication priority and neighboring covariant-QEC results are assessed
-separately in `docs/spacelike_replication_novelty_audit.md`.
+The priority stop and neighboring joint-measurement/QEC results are assessed
+in `docs/spacelike_replication_novelty_audit.md` and
+`docs/spacelike_replication_qec_reduction_audit.md`.
 
 ## 7. Reproduction
 
 ```bash
-PYTHONPATH=. python -m pytest -q tests/test_locality_reference_leakage.py tests/test_global_so3_reference_risk.py
+PYTHONPATH=. python -m pytest -q \
+  tests/test_locality_reference_leakage.py \
+  tests/test_global_so3_reference_risk.py \
+  tests/test_spacelike_replication_manuscript.py
 PYTHONPATH=. python -m qgtoy locality-reference-leakage
 ```
 
@@ -432,4 +443,9 @@ Artifacts:
 - `qgtoy/locality_reference_leakage.py`;
 - `tests/test_locality_reference_leakage.py`;
 - `docs/spacelike_replication_novelty_audit.md`;
-- `paper/spacelike_replication_paper_outline.md`.
+- `docs/spacelike_replication_qec_reduction_audit.md`;
+- `paper/spacelike_replication_paper_outline.md`;
+- `paper/spacelike_replication/main.tex`;
+- `paper/spacelike_replication/references.bib`;
+- `tests/test_global_so3_reference_risk.py`; and
+- `tests/test_spacelike_replication_manuscript.py`.

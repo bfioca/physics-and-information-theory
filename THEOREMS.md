@@ -6813,7 +6813,7 @@ The factor two is optimal. It is asymptotically saturated by disjoint
 gain-normalized block-spin observables in the symmetric ground band of an
 even-site frustration-free ferromagnetic chain.
 
-The candidate paper result is the complementary state-weighted theorem. Let
+The complementary state-weighted specialization is as follows. Let
 `O -> A(O)` be a local net, choose three pairwise spacelike regions `O_a`, and
 let `A_a in A(O_a)` be bounded self-adjoint observables. Equivalently, the
 algebraic theorem only requires three pairwise commuting bounded star-algebras.
@@ -6897,23 +6897,31 @@ factor four optimal. Block diameters grow with `N`, and the ferromagnetic
 parent is not uniformly gapped, so these are disjoint-region realizations, not
 uniformly localized apparatuses.
 
-The compression identity (AV.1) is standard Toeplitz/QEC machinery and is not
-claimed as novel. The candidate novelty is the state-weighted three-cell
-theorem, its full-frame risk composition, and the distributed realization;
-specialist priority review remains required. A standalone paper must also
-reproduce W3's global-risk proof or cite a published theorem with the identical
-task and constant.
+The compression identity (AV.1) is standard Toeplitz/QEC machinery. More
+decisively, Janssens' CP-map covariance Cauchy-Schwarz lemma gives the
+state-weighted pair inequality when `T(X)=W*XW`; cyclic summation gives
+(AV.6). The result is retained as a tested methods lemma, not claimed as a
+standalone paper contribution. The exact priority reduction is recorded in
+the audit below.
 
 Artifacts: `docs/spacelike_replication_leakage_theorem.md`,
 `docs/spacelike_replication_novelty_audit.md`,
+`docs/spacelike_replication_qec_reduction_audit.md`,
 `docs/spacelike_replication_goal_audit.md`,
 `paper/spacelike_replication_paper_outline.md`,
+`paper/spacelike_replication/main.tex`,
+`paper/spacelike_replication/references.bib`,
 `qgtoy/locality_reference_leakage.py`, and
-`tests/test_locality_reference_leakage.py`.
+`tests/test_locality_reference_leakage.py`,
+`tests/test_global_so3_reference_risk.py`, and
+`tests/test_spacelike_replication_manuscript.py`.
 
 Representative commands:
 
 ```bash
 PYTHONPATH=. python -m qgtoy locality-reference-leakage
-PYTHONPATH=. python -m pytest -q tests/test_locality_reference_leakage.py
+PYTHONPATH=. python -m pytest -q \
+  tests/test_locality_reference_leakage.py \
+  tests/test_global_so3_reference_risk.py \
+  tests/test_spacelike_replication_manuscript.py
 ```

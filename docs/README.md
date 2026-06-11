@@ -6,11 +6,14 @@ artifacts.
 
 ## Start Here
 
-### Current Bounded Paper Candidate
+### Bounded Methods Result
 
 - `spacelike_replication_leakage_theorem.md` - technical statement and proof;
-- `spacelike_replication_novelty_audit.md` - killed claims and priority gate;
-- `../paper/spacelike_replication_paper_outline.md` - conditional paper plan.
+- `spacelike_replication_qec_reduction_audit.md` - exact Janssens reduction and
+  standalone novelty stop;
+- `spacelike_replication_novelty_audit.md` - killed claims and retained value;
+- `spacelike_replication_manuscript_goal.md` - completed Track 2 kill record;
+- `../paper/spacelike_replication_paper_outline.md` - frozen methods-note plan.
 
 ### Long-Term Observer Program
 
@@ -37,7 +40,7 @@ artifacts.
 
 ### Paper Outlines And Drafts
 
-- `../paper/spacelike_replication_paper_outline.md` (current bounded candidate)
+- `../paper/spacelike_replication_paper_outline.md` (stopped bounded candidate)
 - `../paper/universal_observer_tradeoff_outline.md` (long-term theorem target)
 - `../paper/skyrmion_ule_outline.md` (realization/fallback)
 - `../paper/relational_observer_draft.md`
@@ -49,11 +52,12 @@ artifacts.
 - `../paper/paper_r_manuscript_outline.md` (retained technical architecture,
   not promoted to a paper draft)
 
-**Current bounded result**
+**Current bounded methods result**
 
 ```text
 replicating three noncommuting SO(3) components across commuting cells forces
-state-weighted off-code coupling at fixed response calibration.
+state-weighted off-code coupling at fixed response calibration; this is an
+explicit SO(3) application of established joint-measurement added noise.
 ```
 
 **Long-term Paper U target**
@@ -75,8 +79,11 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `u8a_finite_storage_channel.md` | Fixed cutoff-one register, regular-bath finite-switch theorem, dimension-50 conversion, conditional named-QFT degradation box, open GNS/Pauli-Fierz bridge, and microcausal route stop. |
 | `u8a_goal_audit.md` | Requirement audit recording the conditional detector box, the rigorous locality `INCONCLUSIVE STOP`, and the open QFT/U8a/U8b boundary. |
 | `spacelike_replication_leakage_theorem.md` | Exact and approximate compression bounds, the state-weighted spacelike-replication theorem, its global `SO(3)` risk corollary, and the disjoint-block ferromagnetic realizations. |
-| `spacelike_replication_novelty_audit.md` | Primary-source audit killing novelty of the base compression identity and isolating the narrower state-weighted paper candidate. |
-| `spacelike_replication_goal_audit.md` | Internal prove-or-kill completion record, focused verification, and remaining specialist priority gate. |
+| `spacelike_replication_novelty_audit.md` | Primary-source audit recording the joint-measurement prior art and standalone novelty stop. |
+| `spacelike_replication_qec_reduction_audit.md` | Exact UCP covariance-form reduction of the state-weighted theorem to Janssens' CP Cauchy-Schwarz lemma. |
+| `spacelike_replication_goal_audit.md` | Internal prove-or-kill completion record and final methods-note disposition. |
+| `spacelike_replication_manuscript_goal.md` | Track 2 prove-or-kill contract and completed novelty-stop outcome. |
+| `../paper/spacelike_replication/main.tex` | Frozen internal methods note with the prior-art reduction made explicit. |
 | `harlow_redirection_branches.md` | Three bounded research pivots if the observer-entropy comparison, gravitational budget, or semiclassical register framing is rejected. |
 | `research_execution_plan.md` | Concise gate-based publication ladder, pass criteria, and pivot conditions for the active physics program. |
 | `paper_worthy_observer_algebra_research_program.md` | Active plan for replacing the finite benchmark with a physically derived, quantitative theorem program. |

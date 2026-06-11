@@ -3,6 +3,22 @@
 This directory is the paper-shaped entrypoint. It is intentionally narrower
 than the full repository.
 
+## Stopped Bounded Candidate
+
+The Track 2 spacelike-replication work is isolated in
+`spacelike_replication/`. Its theorem is proved on a bounded finite-code
+domain, but the source-level reduction audit found that the main inequality is
+a direct consequence of Janssens' established UCP covariance Cauchy-Schwarz
+lemma. It is retained as an internal methods note, not a submission candidate.
+Start with:
+
+- `spacelike_replication/main.tex`
+- `spacelike_replication/README.md`
+- `spacelike_replication_paper_outline.md`
+
+The files below are the canonical sources for the earlier finite
+observer-algebra package, not for Track 2.
+
 Start with:
 
 - `main.md`

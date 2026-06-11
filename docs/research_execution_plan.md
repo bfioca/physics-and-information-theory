@@ -1,10 +1,13 @@
 # Research Execution Plan
 
-Status: active goal
+Status: long-term Paper U plan
 
-Branch: `codex/observer-algebra-research-program`
+Branch context: inherited from `codex/observer-algebra-research-program`.
+The bounded spacelike-replication manuscript audit on
+`codex/spacelike-replication-manuscript` ended in **NOVELTY STOP** after an
+exact reduction to established joint-measurement added noise.
 
-Last audited: 2026-06-09
+Last audited: 2026-06-11
 
 ## Verdict
 

@@ -69,6 +69,11 @@ The theorem is therefore independent of purity, multiplicity, and POVM
 design. It proves a necessary resource law; it does not claim that large
 Casimir is sufficient for good orientation.
 
+The Clebsch-Gordan block contraction and the complete weighted Hardy argument
+are expanded in `paper/spacelike_replication/main.tex`, Appendix B. The focused
+test suite now checks the full normalized Peter-Weyl blocks through spin six,
+including the dimension factor, adjoint relation, and multiplicity stability.
+
 For strict support `j<=J`, diagonalizing the finite fusion matrix gives the
 sharper result
 

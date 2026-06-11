@@ -671,6 +671,7 @@ def test_certificate_passes_with_explicit_claim_boundary():
     assert certificate["status"] == "pass"
     assert all(certificate["certified_claims"].values())
     assert "state-weighted" in certificate["claim_boundary"]
+    assert "no standalone novelty" in certificate["claim_boundary"]
     assert "no QFT" in certificate["claim_boundary"]
 
 
