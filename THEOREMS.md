@@ -1,8 +1,10 @@
 # Theorem and Claim Index
 
-This file is the reviewer-facing index for the packaged static-patch
-observer-algebra result. It separates exact finite claims, bounded certificate
-evidence, conditional operator-algebra assumptions, and continuum speculation.
+This file indexes the packaged static-patch observer-algebra benchmark. For the
+current bounded spacelike-replication methods note and Harlow-facing
+observer-register packet, start with the root [`README.md`](README.md). The
+entries below separate exact finite claims, bounded certificate evidence,
+conditional operator-algebra assumptions, and continuum speculation.
 
 ## Claim Boundary
 

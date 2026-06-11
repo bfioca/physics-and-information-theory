@@ -291,6 +291,8 @@ repository or goal history.
 
 ## Quick Reproduction
 
+### Static-Patch Benchmark
+
 No runtime dependencies are required beyond Python 3.11+.
 
 Run the compact static-patch package summary:
@@ -317,6 +319,25 @@ python3 -m json.tool artifacts/static_patch_diagnostics/environment.json
 
 For the full command list and expected output, see
 [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
+
+### Spacelike-Replication Methods Note
+
+The bounded methods note is not a submission candidate. To verify only its
+theorem, global-risk appendix, source closure, and claim boundary, install the
+repository's test dependencies and run:
+
+```bash
+PYTHONPATH=. python3 -m pytest -q \
+  tests/test_locality_reference_leakage.py \
+  tests/test_global_so3_reference_risk.py \
+  tests/test_spacelike_replication_manuscript.py
+PYTHONPATH=. python3 -m qgtoy locality-reference-leakage
+```
+
+This scoped command intentionally does not make unrelated research tracks a
+prerequisite for checking the retained methods lemma. The exact prior-art
+reduction and novelty stop are recorded in
+[`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md).
 
 ## What The Package Claims
 
