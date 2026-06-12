@@ -4,6 +4,7 @@ from qgtoy.__main__ import build_parser
 from qgtoy.static_patch_radial_smearing import (
     finite_switching_radial_correlation_record,
     hyperbolic_spherical_function,
+    radial_center_gradient_zero_frequency_record,
     radial_profile_zero_frequency_amplitude,
     radial_smeared_zero_frequency_record,
     static_patch_radial_smearing_certificate,
@@ -76,6 +77,32 @@ class StaticPatchRadialSmearingTest(unittest.TestCase):
             places=15,
         )
 
+    def test_radial_center_gradient_smearing_preserves_tensor_correlations(self):
+        narrow = radial_center_gradient_zero_frequency_record(
+            0.8,
+            first_shell_radii=(0.01,),
+            first_shell_weights=(1.0,),
+            second_shell_radii=(0.02,),
+            second_shell_weights=(1.0,),
+        )
+        broad = radial_center_gradient_zero_frequency_record(
+            0.8,
+            first_shell_radii=(0.1, 0.7, 2.0),
+            first_shell_weights=(1.0, 4.0, 2.0),
+            second_shell_radii=(0.3, 1.5, 4.0),
+            second_shell_weights=(3.0, 2.0, 1.0),
+        )
+        self.assertTrue(
+            narrow["radial_center_gradient_smearing_cancels_exactly"]
+        )
+        self.assertTrue(broad["radial_center_gradient_smearing_cancels_exactly"])
+        for component in ("longitudinal", "transverse"):
+            key = f"normalized_{component}_correlation"
+            point_key = f"point_gradient_{component}_correlation"
+            self.assertAlmostEqual(narrow[key], narrow[point_key], places=15)
+            self.assertAlmostEqual(broad[key], broad[point_key], places=15)
+            self.assertAlmostEqual(narrow[key], broad[key], places=15)
+
     def test_finite_switching_cannot_improve_zero_mode_correlation(self):
         record = finite_switching_radial_correlation_record(
             1.1,
@@ -108,6 +135,14 @@ class StaticPatchRadialSmearingTest(unittest.TestCase):
             radial_profile_zero_frequency_amplitude((), ())
         with self.assertRaises(ValueError):
             radial_profile_zero_frequency_amplitude((0.0,), (0.0,))
+        with self.assertRaises(ValueError):
+            radial_center_gradient_zero_frequency_record(
+                0.5,
+                first_shell_radii=(0.0,),
+                first_shell_weights=(-1.0,),
+                second_shell_radii=(0.0,),
+                second_shell_weights=(1.0,),
+            )
         with self.assertRaises(ValueError):
             radial_smeared_zero_frequency_record(
                 -1.0,

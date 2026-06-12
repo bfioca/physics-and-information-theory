@@ -18,10 +18,10 @@ small global orientation risk
 ```
 
 with optical support and coherence supplied by a declared local KMS coupling.
-The repository now closes the first arrow for Haar-prior chordal `SO(3)` risk:
-a spin-1 fusion/discrete-Hardy theorem gives
-`R_ref>=1/(16<J^2>+8)`, while a Holevo/Gibbs theorem gives a separate
-tail-robust mean-spin bound. A quadratic-form theorem closes the second arrow
+The first arrow for Haar-prior chordal `SO(3)` risk is established prior art:
+Hayashi gives the exact mean-Casimir optimum, while the repository implements
+the coarser elementary bound `R_ref>=1/(16<J^2>+8)` and a separate
+Holevo/Gibbs mean-spin bound. A quadratic-form theorem closes the second arrow
 for confined spinless nonrelativistic orbital matter:
 `<L^2><=2Ma^2E_ex`, with all-state risk and rare-tail corollaries. The supported
 Skyrme hedgehog densities now give a relativistic collective-family result,
@@ -59,6 +59,9 @@ Closest primary sources include:
   States](https://arxiv.org/abs/quant-ph/0106014), and Bartlett et al.,
   [Degradation of a Quantum Reference
   Frame](https://arxiv.org/abs/quant-ph/0602069);
+- Hayashi, [Fourier Analytic Approach to Quantum Estimation of Group
+  Action](https://arxiv.org/abs/1209.3463), which gives the exact `SO(3)`
+  Casimir-constrained Bayes optimum;
 - Dain, [Inequality Between Size and Angular Momentum for
   Bodies](https://arxiv.org/abs/1305.6645), and Khuri and Xie, [Inequalities
   Between Size, Mass, Angular Momentum, and Charge for Axisymmetric
@@ -108,11 +111,11 @@ specialist search checks non-arXiv and differently worded results. The live
 search supports relevance, not priority proof.
 
 The completed global-risk, confined-orbital, and supported-collective lemmas do
-not change that discipline. The spin-1
-fusion matrix is close to the standard covariant frame-alignment machinery of
-Bagan, Baig, and Munoz-Tapia, while their information route combines Holevo
-data processing with relative entropy of frameness and a Gibbs envelope. The
-candidate contribution is the explicit elimination with localized energy,
+not change that discipline. Hayashi's exact `SO(3)` energy-constrained
+optimization subsumes the spin-1 fusion frontier, including its projective
+sector and asymptotics. The repository's information route combines standard
+Holevo data processing with relative entropy of frameness and a Gibbs envelope.
+The candidate contribution is the explicit elimination with localized energy,
 optical support, and coherence, especially after one matter action supplies all
 inputs. The confined-orbital and Skyrme density inequalities are elementary at
 the quadratic-form level; their value here is closing precise
@@ -599,6 +602,17 @@ gives
 c_0(d_H/R)=(d_H/R)/sinh(d_H/R).
 ```
 
+This point-detector coefficient is direct prior art, not merely a nearby
+calculation. Hu and Yu,
+[arXiv:1310.7650](https://arxiv.org/abs/1310.7650), derive a cross/local
+spectrum ratio which becomes `sin(py)/[p sinh(y)]` under
+`y=2 asinh(z/kappa), p=kappa omega`; its zero-frequency limit is exactly the
+coefficient above. Palma, Suominen, and Ekert,
+[quant-ph/9702001](https://arxiv.org/abs/quant-ph/9702001), already identify the
+relative-noise factor `1-cos(k dot R)` and loss of the subdecoherent mode away
+from a perfectly common bath. The source-level disposition is recorded in
+`optical_common_mode_priority_audit.md`.
+
 Combining this exact coefficient with the common-mode witness forces
 `d_H/R=O(1/[Delta sqrt(d log d)])` under an `A/d` allocation along the
 sufficient logarithmic schedule. The spectral kernel and collective-dephasing
@@ -606,11 +620,12 @@ mechanism are standard. In particular, Akhtar et al.,
 [Open Quantum Entanglement: A study of two atomic system in static patch of de
 Sitter space](https://arxiv.org/abs/1908.09929), already derive scalar-Wightman
 GKSL coefficients for two atoms in the static patch. The program-specific
-candidate is only the quantitative collision with the finite-reference recovery
+retained contribution is only the quantitative collision with the finite-reference recovery
 budget, growing hard-sector dimension, and resulting near-horizon angular
-co-location law. Priority and paper-level novelty are not established until
-switching/smearing errors and the actual angular top coupling are controlled and
-this combined scaling is checked against the detector/QRF literature.
+co-location law. The present standalone-paper formulation is stopped. It may be
+reopened only after finite-time uniform control and the actual distributed
+angular coupling are supplied, followed by a priority audit of that completed
+conjunction.
 
 The finite-smearing extension uses the standard `H^3` spherical-function
 product formula. For arbitrary nonnegative radial optical profiles, the
@@ -631,11 +646,12 @@ tensor-valued Kossakowski matrices are also established. The exact
 `c_parallel,c_perp` formulas are therefore not claimed as new. The candidate
 paper contribution is narrower: use the worst polarization as covariance input
 to a finite-QRF recovery obstruction and derive a polarization-resolved near-
-horizon co-location law for a declared local coupling class. This remains
-conditional until a mechanical top action, physical conformal source, and
-smooth derivative smearing are supplied. The higher-spin extension is now
+horizon co-location law for a declared local coupling class. Smooth compact
+center-gradient smearing now preserves the zero-frequency normalized tensor,
+but the result remains conditional on a mechanical top action, physical
+conformal source, and finite-time control. The higher-spin extension is now
 complete inside the effective gradient GKSL model: the standard irreducible-tensor block
-decomposition yields an exact integer-spin survival formula and a controlled
+decomposition yields an exact integer- and half-integer-spin survival formula and a controlled
 Casimir-enhanced `d^-3/2/sqrt(log d)` co-location law. The representation theory
 is not new. The candidate contribution is its quantitative collision with the
 finite-QRF `A/d` budget. A local matter derivation and uniform Davies estimate
@@ -962,10 +978,21 @@ is not `H^2`. A direct audit of the Nathan--Rudner convolution now shows that
 the scalar proof also admits a real signed root `q=sqrt(j_0)H_Sky`, though not
 an arbitrary complex phase. This factor crosses the zeros smoothly and leaves
 the declared zero-Bohr generator unchanged. Stable finite-window Sobolev data
-support the repaired route. A boundary-aware exact-profile theorem proves
-global `H^2` membership and the sharp `p^-5` wall tail. AU.3a now joins exact
-rational finite-band upper sums to that tail and certifies conservative global
-Sobolev constants; sharp profile-resolving constants are still missing. An
+support the repaired route. In the broader ULE program, a boundary-aware
+exact-profile theorem proves global `H^2` membership and a sharp `p^-5` tail
+only after the separately declared response filter is applied. Paper A instead
+isolates the intrinsic unfiltered inertia transform and certifies its sharp
+nonzero `p^-3` wall tail. AU.3a joins exact rational finite-band upper sums to
+the filtered tail and certifies conservative global Sobolev constants; sharp
+profile-resolving constants are still missing. An
+endpoint-order universality paper is not claimed: general finite-Hankel
+endpoint expansions are established, including Wang
+[arXiv:1801.06950](https://arxiv.org/abs/1801.06950) and Okada-Yamane
+[arXiv:2401.03438](https://arxiv.org/abs/2401.03438), while rapid decay of
+smooth compact radial profiles is standard Paley-Wiener theory. The Paper A
+contribution is the authenticated coefficient and global derivative envelope
+for the exact nonlinear profile, not the general integration-by-parts
+mechanism; the filtered `p^-5` bound is not a Paper A headline. An
 exact rational interval
 foundation, a quintic regular-origin patch, an identified slope family, and a
 global Green-resolvent certificate are now implemented. The correlated

@@ -1,15 +1,38 @@
 # Higher-Spin Static-Patch Gradient Obstruction
 
+Publication status: exact effective-channel lemma retained for Paper U;
+standalone optical-paper formulation stopped pending a physical uniform
+finite-time channel lift and a distinct novelty claim.
+
 ## Result
 
 The polarization-resolved gradient channel admits an exact singlet witness for
-every integer spin `L`, not only spin one half. Let
+every positive integer or half-integer spin `L`. Let
 
 ```text
 delta_parallel=1-c_parallel,
 delta_perp=1-c_perp,
 Delta=delta_parallel+2 delta_perp,
 ```
+
+The exact optical-gradient formulas simplify to
+
+```text
+Delta(y)
+ =3 tanh(y/2)^2
+  +(3y/2)tanh(y/2)sech(y/2)^2.                         (1)
+```
+
+Using `z-z^3/3<=tanh(z)<=z` and
+`1-z^2<=sech(z)^2<=1` gives the explicit finite-distance bounds
+
+```text
+(3/2)y^2(1-y^2/4)<=Delta(y)<=(3/2)y^2,   0<=y<=1.     (2)
+```
+
+In particular, `Delta(y)>=(9/8)y^2` throughout the declared interval. This
+replaces an unquantified small-distance remainder when a finite channel bound
+is needed.
 
 and let `P_L` be the unique total-spin-zero state in `V_L tensor V_L`. The ideal
 collective generator fixes `P_L`. For the separated gradient generator,
@@ -67,7 +90,7 @@ Expanding at perfect common mode gives the exact finite-time first variation
 
 ```text
 1-p_L(s)
-=(4/3)L(L+1)s Delta + remainder.                       (1)
+=(4/3)L(L+1)s Delta + remainder.                       (3)
 ```
 
 This is not merely an initial-time derivative. The ideal semigroup is self-
@@ -83,7 +106,7 @@ The Hilbert-Schmidt superoperator estimate
 gives the uniform remainder bound
 
 ```text
-|remainder|<=32 s^2 L^4 Delta^2.                       (2)
+|remainder|<=32 s^2 L^4 Delta^2.                       (4)
 ```
 
 In particular, if
@@ -93,6 +116,13 @@ Delta<=(L+1)/(48 s L^3),
 ```
 
 then the exact mismatch is at least one half of the linear term.
+Combining this half-slope statement with (2) gives a finite-distance
+consequence: if `0<=y<=1`, the half-slope condition holds, and the channel
+mismatch is at most `eta`, then necessarily
+
+```text
+y<=sqrt[4 eta/(3L(L+1)s)].                             (5)
+```
 
 ## Growing-Sector Scaling
 
@@ -105,7 +135,7 @@ Delta=(3/2)y^2+O(y^4),    y=d_H/R.
 Equations (1)-(2) therefore give
 
 ```text
-1-p_L(s)=2L(L+1)s y^2+O(sL^2y^4+s^2L^4y^4).           (3)
+1-p_L(s)=2L(L+1)s y^2+O(sL^2y^4+s^2L^4y^4).           (6)
 ```
 
 Take the protected sector dimension itself to be `d=2L+1`, use the sufficient
@@ -114,25 +144,37 @@ co-location law is
 
 ```text
 y<=sqrt[A/(d L(L+1) log d)]
- =O[d^(-3/2)/sqrt(log d)].                             (4)
+ =O[d^(-3/2)/sqrt(log d)].                             (7)
 ```
 
-At the scaling (4), `sL^2Delta=O(1/d)`, so the explicit remainder is lower
-order. This is parametrically stronger than the fixed-spin witness
+At the scaling (7), `sL^2Delta=O(1/d)`, so the explicit remainder is lower
+order. The fully explicit but looser version of (5) is
+
+```text
+y<=sqrt[8A/(3dL(L+1)log d)]                            (8)
+```
+
+inside the declared finite-distance and half-slope windows. This is
+parametrically stronger than the fixed-spin witness
 `O[d^(-1/2)/sqrt(log d)]`.
 
 For equal-shell supports near the horizon, the earlier optical geometry turns
-(4) into the corresponding angular co-location bound after multiplication by
+(7) into the corresponding angular co-location bound after multiplication by
 `rho/R` at leading order.
 
 ## Scope
 
-This closes the growing integer-spin calculation inside the declared
-Markovian gradient GKSL model. It does not yet establish:
+This closes the arbitrary-spin calculation inside the declared Markovian
+gradient GKSL model. The reduced tensor-rank formula is independently checked
+against the full Liouvillian for spin one half and spin one, and the numerical
+diagonalizer now rejects positive generator eigenvalues beyond its declared
+roundoff tolerance. It does not yet establish:
 
 - a smooth local hard-target/finite-top matter action producing the coupling;
 - a Davies approximation uniform as `L` grows;
-- derivative-field smearing and renormalization uniform in `L`;
+- finite-time derivative-field smearing and renormalization uniform in `L`
+  (smooth compact center-gradient smearing now closes the zero-frequency
+  normalized-kernel step);
 - admissibility of the entangled singlet witness in a product-prepared
   reference protocol;
 - a joint localization, lifetime, support-stress, and gravitational

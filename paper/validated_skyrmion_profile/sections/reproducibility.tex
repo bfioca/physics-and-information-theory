@@ -1,0 +1,114 @@
+\section{Reproducibility and certificate provenance}
+\label{sec:reproducibility}
+
+The proof is split between human-checkable analytic reductions and a
+substantial exact-rational validation code base.  The checker implements
+rational interval arithmetic,
+rational Taylor or Lagrange enclosures for the required transcendental
+functions, interval automatic differentiation, fixed-grid outward rounding,
+and exact comparison of the radii-polynomial inequalities.  It does not call a
+floating transcendental library in a theorem comparison.
+
+The two primary archives are listed in \cref{tab:archives}.  The hashes are
+of the files as distributed with this manuscript's repository snapshot.
+
+\begin{table}[ht]
+  \centering
+  \small
+  \begin{tabular}{@{}p{0.31\linewidth}p{0.38\linewidth}p{0.22\linewidth}@{}}
+    \toprule
+    Result & Archive & SHA-256 prefix \\
+    \midrule
+    Profile and spectral endpoint data & combined AU.1/AU.2 certificate & \texttt{1d5fe53786cc} \\
+    Fixed-wall radial gap & radial-gap certificate & \texttt{46795f66ac62} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Primary exact-rational proof archives.  Full hashes are recorded in
+  the accompanying manifest and in the text below.}
+  \label{tab:archives}
+\end{table}
+
+The full digests are
+\begin{align*}
+ &\texttt{1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9},\\
+ &\texttt{46795f66ac628ed4c879a595bbd4d0ce8d0f909a299569d7a05fe04433011959}.
+\end{align*}
+The radial certificate additionally consumes the authenticated sharp-tube
+snapshot with digest
+\begin{center}
+\texttt{1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431}.
+\end{center}
+
+From the repository root, the focused validation path is
+\begin{verbatim}
+python -m pip install -e . 'pytest>=8,<10'
+PYTHONPATH=. python experiments/skyrmion_newton_linearization_audit.py \
+  --omega 3/4 --tube-radius 1/250 \
+  --tube-trigonometric-terms 12 \
+  --tube-rounding-denominator 1000000000000000000 \
+  --spectral-trigonometric-terms 24 \
+  --spectral-atanh-terms 80 --spectral-pi-terms 80 \
+  --origin-kernel-terms 20 \
+  --output /tmp/skyrmion_au2_replay_summary.json \
+  --exact-certificate-output /tmp/skyrmion_au2_replay.json
+python paper/validated_skyrmion_profile/audit_package.py \
+  --replay-au2 /tmp/skyrmion_au2_replay.json
+PYTHONPATH=. python experiments/skyrmion_au3b_sharp_snapshot_audit.py \
+  --canonical-au2 \
+    experiments/skyrmion_au2_global_tail_exact_certificate.json \
+  --output /tmp/skyrmion_sharp_snapshot_replay.json
+PYTHONPATH=. python experiments/skyrmion_full_radial_gap_audit.py \
+  --output /tmp/skyrmion_radial_gap_replay.json
+sha256sum \
+  /tmp/skyrmion_sharp_snapshot_replay.json \
+  /tmp/skyrmion_radial_gap_replay.json
+python -m pytest -q \
+  tests/test_validated_skyrmion_profile.py \
+  tests/test_validated_skyrmion_bvp.py \
+  tests/test_validated_skyrmion_spectral_derivatives.py \
+  tests/test_validated_skyrmion_spectral_ledger.py \
+  tests/test_static_patch_skyrmion_tail.py \
+  tests/test_skyrmion_radial_dynamical_gap.py \
+  tests/test_validated_skyrmion_radial_gap.py \
+  tests/test_validated_skyrmion_profile_manuscript.py
+\end{verbatim}
+The two hashes printed by \texttt{sha256sum} must be the sharp-snapshot and
+radial values displayed above.  The combined AU.1/AU.2 archive also records the
+literal command and a dependency ledger.  Its full-file hash is therefore
+environment-sensitive.  A byte-identical clean replay used the archived output
+paths, Python 3.12.13, NumPy 2.2.6, and no SciPy.
+
+Across supported environments, the audit removes only the top-level provenance
+fields \texttt{command} and \nolinkurl{dependency_versions}, then checks the
+canonical mathematical-payload digest
+\begin{center}
+\texttt{f1703ab8f2b3f908a1609d03349c60becdb287225374c91c136fb275053d0f85}.
+\end{center}
+All exact inputs, source hashes, parameters, and theorem outputs remain inside
+that comparison.
+The source, certificate archives, manifest, and manuscript are distributed at
+\begin{center}
+\url{https://github.com/bfioca/physics-and-information-theory}.
+\end{center}
+The release commit or archival DOI should be cited with any submitted version;
+the file-level hashes above identify the present referee snapshot independently
+of mutable branch names.
+The exact test filenames and a machine-readable manifest are checked as part
+of the release audit; no unrelated observer-algebra test is a premise of the
+paper.
+
+The union of Python files pinned by the two certificate ledgers and the sharp
+tube snapshot is 14,019 physical lines in this repository snapshot, spread
+across thirteen modules and audit drivers.  This count deliberately overstates the logical
+trusted kernel because it includes proposal generation and presentation code,
+but it makes the review surface visible rather than calling it ``small.''
+The certificate records a SHA-256 digest for every one of these files.  The
+candidate generators may suggest splines and meshes; acceptance depends on the
+exact interval validators recomputing joins, residuals, inverse defects, and
+closing inequalities.
+
+The archive format records both exact fractions and downward/upward decimal
+summaries.  Decimal values printed in the manuscript are presentation layers,
+not inputs to subsequent proof steps.  Every composed certificate checks the
+identity of its upstream archive before importing a wall slope, inertia,
+endpoint jet, or Newton radius.

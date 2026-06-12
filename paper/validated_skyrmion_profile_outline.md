@@ -1,6 +1,7 @@
-# Computer-Assisted Validation Of A Massive Hard-Wall Skyrmion Profile
+# Computer-Assisted Existence And Radial Stability Of A Dirichlet-Confined Massive Skyrmion
 
-Status: Paper A outline; theorem closed, novelty review and manuscript pending.
+Status: selected Paper A specialist-review draft. Mandatory proof,
+exact-replay, package-audit, and internal referee gates pass.
 
 ## Central Theorem
 
@@ -15,6 +16,13 @@ there exists a unique solution in the certified augmented Newton ball of radius
 strictly negative wall slope, and has finite positive dimensionless rotor
 inertia.
 
+The manuscript also includes two authenticated consequences of the same
+solution: a fixed-wall radial Friedrichs gap
+`omega_hat_rad>=1/5`, and the sharp nonzero oscillatory `p^-3` tail of a
+finite optical inertia-density transform. A qualitative analytic implicit-function
+argument gives a locally unique open branch in mass, curvature, and wall radius,
+but no explicit parameter-box width is yet certified.
+
 The conservative displayed certificate is
 
 ```text
@@ -27,19 +35,20 @@ F'(4)    in [-0.09465,-0.08746],
 I_rot    in [21.149,48.921].
 ```
 
-Exact archive:
-`experiments/skyrmion_newton_reduced_hessian_rounded_exact_certificate.json`,
+Canonical combined AU.1/AU.2 archive:
+`experiments/skyrmion_au2_global_tail_exact_certificate.json`,
 SHA-256
-`c4c95db47470392f0963266e37b491ae49a09381464f3da97c3f97bd14e74eff`.
+`1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9`.
 The companion audit summary is
 `experiments/skyrmion_newton_reduced_hessian_rounded_audit_result.json`.
 
 ## Claim Boundary
 
-The paper claims existence and local uniqueness for one prescribed
-fixed-de-Sitter hard-wall problem. It does not claim global uniqueness,
-dynamical stability, a self-gravitating Einstein-Skyrme solution, a physical
-membrane completion, or a de Sitter observer algebra.
+The paper claims a certified base solution and qualitative locally unique
+analytic branch for a prescribed fixed-background Dirichlet problem. It does
+not claim global uniqueness, full dynamical stability, a self-gravitating
+Einstein-Skyrme solution, a physical membrane completion, a bath factor, or a
+de Sitter observer algebra.
 
 ## Technical Contribution
 
@@ -59,23 +68,31 @@ membrane completion, or a de Sitter observer algebra.
 
 ## Proposed Structure
 
-1. Model, nondimensionalization, and hard-wall boundary data.
+1. Model, nondimensionalization, prior-art comparison, and imposed Dirichlet data.
 2. Regular origin family and parameter sensitivities.
 3. Rational approximate profile and nonlinear residual.
 4. Coercive Jacobi operator, Green parametrix, and augmented Schur complement.
 5. Reduced Hessian and Newton-Kantorovich closure.
 6. Monotonicity, wall slope, and rotor inertia.
 7. Reproducibility, exact artifacts, and independent rerun instructions.
-8. Comparison with numerical Skyrmion cavities and computer-assisted BVP work.
+8. Direct comparison with McLeod--Troy, Creek--Donninger--Schlag--Snelson,
+   Nguyen--Nguyen, and endpoint-asymptotic prior art.
 9. Limitations and the route to supported and self-gravitating models.
 
-## Submission Gates
+## Review Gate Disposition
+
+Gates 1--5 below are closed in the checked package.  Gate 6 is a desirable
+quantitative extension, not a blocker for external review of the present
+qualitative analytic branch.
 
 1. Independent rerun of the exact artifact from a clean environment.
-2. Specialist literature review for computer-assisted Skyrmion and soliton BVP
-   validation; absence from a broad search is not a priority argument.
+2. Explicitly distinguish the result from the prior rational
+   computer-assisted whole-space Skyrmion proof of Creek et al.
 3. A proof appendix that states the Banach spaces, augmented inverse, Green-row
    Neumann identity, and every fixed-grid rounding operation explicitly.
 4. Archive the generator inputs and a compact hash/provenance ledger for the
    rational spline and accepted certificate.
 5. External review of the local-uniqueness claim and boundary-model scope.
+6. Deferred enhancement: close a rational `(mu^2, lambda)` rectangle at fixed
+   wall radius.  The manuscript prominently states that the present analytic
+   branch has no certified numerical width.

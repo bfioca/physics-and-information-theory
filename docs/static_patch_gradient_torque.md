@@ -160,15 +160,19 @@ nabla_hat^dS Phi_dS
 
 Thus the simple homogeneous Hessian applies to an engineered conformally
 weighted bath operator. A paper-grade source must derive the needed weights
-from a local matter action. Point-gradient couplings are also more UV singular
-than scalar monopole couplings and require smooth smearing or renormalization.
+from a local matter action. The smooth center-gradient construction in
+`static_patch_radial_smearing.md` now replaces the point derivative by a compact
+field smearing while preserving both normalized zero-frequency tensor
+correlations. Finite-time gradient spectra and estimates uniform in the spin
+cutoff remain open.
 
 Not controlled here:
 
 - the distributed hard angular target and its factorization from the bath;
 - an orientation-dependent finite-top torque density;
 - nonzero-Bohr and finite-memory sectors;
-- extension of the exact witness beyond the spin-half sector;
+- the distributed-current realization of the exact higher-spin witness in
+  `static_patch_higher_spin_gradient.md`;
 - absolute diffusion rate, lifetime, holding stress, and backreaction.
 
 ## Novelty Boundary

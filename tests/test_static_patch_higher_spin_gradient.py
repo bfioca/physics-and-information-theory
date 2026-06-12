@@ -1,9 +1,13 @@
 import unittest
 from math import exp, log, sqrt
 
+import numpy as np
+
 from qgtoy.__main__ import build_parser
 from qgtoy.static_patch_higher_spin_gradient import (
     gradient_correlation_defect_sum,
+    gradient_correlation_defect_quadratic_bounds,
+    higher_spin_certified_local_distance_ceiling,
     higher_spin_dyson_remainder_bound,
     higher_spin_dyson_scale,
     higher_spin_exact_gradient_mismatch_lower_bound,
@@ -13,6 +17,75 @@ from qgtoy.static_patch_higher_spin_gradient import (
     higher_spin_singlet_mismatch_lower_bound,
     static_patch_higher_spin_gradient_certificate,
 )
+
+
+def _spin_matrices(spin):
+    dimension = round(2 * spin) + 1
+    magnetic_numbers = np.arange(dimension, dtype=float) - spin
+    raising = np.zeros((dimension, dimension), dtype=complex)
+    for index, magnetic_number in enumerate(magnetic_numbers[:-1]):
+        raising[index + 1, index] = sqrt(
+            spin * (spin + 1) - magnetic_number * (magnetic_number + 1)
+        )
+    lowering = raising.conj().T
+    return (
+        0.5 * (raising + lowering),
+        (raising - lowering) / (2.0j),
+        np.diag(magnetic_numbers),
+    )
+
+
+def _singlet_projector(spin):
+    dimension = round(2 * spin) + 1
+    magnetic_numbers = np.arange(dimension, dtype=float) - spin
+    singlet = np.zeros(dimension**2, dtype=complex)
+    for index, magnetic_number in enumerate(magnetic_numbers):
+        partner = round(-magnetic_number + spin)
+        phase = -1.0 if round(spin - magnetic_number) % 2 else 1.0
+        singlet[index * dimension + partner] = phase / sqrt(dimension)
+    return np.outer(singlet, singlet.conj())
+
+
+def _full_liouvillian_singlet_survival(
+    spin,
+    time,
+    longitudinal_correlation,
+    transverse_correlation,
+):
+    one_body = _spin_matrices(spin)
+    dimension = round(2 * spin) + 1
+    identity = np.eye(dimension)
+    system_dimension = dimension**2
+    super_identity = np.eye(system_dimension)
+    correlations = (
+        transverse_correlation,
+        transverse_correlation,
+        longitudinal_correlation,
+    )
+    generator = np.zeros((system_dimension**2, system_dimension**2), dtype=complex)
+    for matrix, correlation in zip(one_body, correlations):
+        left = np.kron(matrix, identity)
+        right = np.kron(identity, matrix)
+        left_commutator = np.kron(super_identity, left) - np.kron(
+            left.T,
+            super_identity,
+        )
+        right_commutator = np.kron(super_identity, right) - np.kron(
+            right.T,
+            super_identity,
+        )
+        generator -= (
+            left_commutator @ left_commutator
+            + right_commutator @ right_commutator
+            + 2.0 * correlation * left_commutator @ right_commutator
+        )
+    eigenvalues, eigenvectors = np.linalg.eigh(generator)
+    projector = _singlet_projector(spin)
+    vector = projector.reshape(-1, order="F")
+    evolved = eigenvectors @ (
+        np.exp(time * eigenvalues) * (eigenvectors.conj().T @ vector)
+    )
+    return float(np.vdot(vector, evolved).real)
 
 
 class StaticPatchHigherSpinGradientTest(unittest.TestCase):
@@ -58,6 +131,28 @@ class StaticPatchHigherSpinGradientTest(unittest.TestCase):
             places=5,
         )
 
+    def test_finite_distance_defect_bounds(self):
+        for distance in (0.0, 1.0e-6, 0.01, 0.1, 0.25, 0.5, 1.0):
+            lower, upper = gradient_correlation_defect_quadratic_bounds(distance)
+            exact = gradient_correlation_defect_sum(distance)
+            self.assertLessEqual(lower, exact + 2.0e-15)
+            self.assertLessEqual(exact, upper + 2.0e-15)
+
+    def test_certified_local_distance_ceiling(self):
+        spin = 4.5
+        time = 0.7
+        budget = 0.01
+        ceiling = higher_spin_certified_local_distance_ceiling(
+            spin,
+            time,
+            budget,
+        )
+        self.assertAlmostEqual(
+            ceiling**2,
+            4.0 * budget / (3.0 * spin * (spin + 1.0) * time),
+            places=15,
+        )
+
     def test_dyson_remainder_formula(self):
         spin = 3
         time = 0.2
@@ -76,7 +171,7 @@ class StaticPatchHigherSpinGradientTest(unittest.TestCase):
         self.assertAlmostEqual(remainder, 0.5 * scale**2)
 
     def test_exact_blocks_fix_perfect_common_mode(self):
-        for spin in (1, 2, 3):
+        for spin in (0.5, 1, 1.5, 2, 3):
             self.assertEqual(
                 higher_spin_singlet_survival_probability(
                     spin,
@@ -100,12 +195,12 @@ class StaticPatchHigherSpinGradientTest(unittest.TestCase):
 
     def test_exact_independent_bath_formula(self):
         time = 0.35
-        for spin in (1, 2, 3):
-            dimension = 2 * spin + 1
+        for spin in (0.5, 1, 1.5, 2, 3):
+            dimension = round(2 * spin) + 1
             expected = sum(
                 (2 * tensor_rank + 1)
                 * exp(-2.0 * tensor_rank * (tensor_rank + 1) * time)
-                for tensor_rank in range(2 * spin + 1)
+                for tensor_rank in range(round(2 * spin) + 1)
             ) / dimension**2
             actual = higher_spin_singlet_survival_probability(
                 spin,
@@ -118,7 +213,7 @@ class StaticPatchHigherSpinGradientTest(unittest.TestCase):
     def test_exact_small_distance_matches_casimir_slope(self):
         time = 0.2
         distance = 1.0e-4
-        for spin in (1, 2, 3):
+        for spin in (0.5, 1, 1.5, 2, 3):
             mismatch = higher_spin_exact_gradient_mismatch_lower_bound(
                 spin,
                 time,
@@ -130,6 +225,25 @@ class StaticPatchHigherSpinGradientTest(unittest.TestCase):
                 expected_coefficient,
                 places=4,
             )
+
+    def test_tensor_rank_formula_matches_full_liouvillian(self):
+        time = 0.31
+        longitudinal = 0.63
+        transverse = 0.41
+        for spin in (0.5, 1.0):
+            reduced = higher_spin_singlet_survival_probability(
+                spin,
+                time,
+                longitudinal_correlation=longitudinal,
+                transverse_correlation=transverse,
+            )
+            full = _full_liouvillian_singlet_survival(
+                spin,
+                time,
+                longitudinal,
+                transverse,
+            )
+            self.assertAlmostEqual(reduced, full, places=12)
 
     def test_half_slope_window(self):
         record = higher_spin_perturbative_record(
@@ -202,6 +316,15 @@ class StaticPatchHigherSpinGradientTest(unittest.TestCase):
                 1.0,
                 center_distance_over_radius=0.1,
             )
+        with self.assertRaises(ValueError):
+            higher_spin_singlet_survival_probability(
+                0.75,
+                1.0,
+                longitudinal_correlation=0.5,
+                transverse_correlation=0.5,
+            )
+        with self.assertRaises(ValueError):
+            gradient_correlation_defect_quadratic_bounds(1.01)
         with self.assertRaises(ValueError):
             static_patch_higher_spin_gradient_certificate(maximum_spin=8)
 

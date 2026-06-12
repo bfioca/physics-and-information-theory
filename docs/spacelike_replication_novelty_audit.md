@@ -135,5 +135,6 @@ The bounded result remains useful as:
 
 A future standalone paper must add a result not already supplied by the CP-map
 and joint-measurement framework: a genuinely multi-observable sharp inequality,
-a dynamical rate or lifetime, a physical localization/energy/backreaction
-bound on the noise, or a separately novel global `SO(3)` risk theorem.
+a dynamical rate or lifetime, or a physical localization/energy/backreaction
+bound on the noise. The proposed global `SO(3)` risk fallback is also stopped:
+Hayashi already gives the exact Haar mean-Casimir optimum.

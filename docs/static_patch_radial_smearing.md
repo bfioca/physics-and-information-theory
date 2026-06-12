@@ -1,7 +1,7 @@
 # Static-Patch Radial-Smearing Invariance
 
-Status: exact arbitrary-radius radial-smearing theorem and finite-switching
-correlation ceiling for Bunch-Davies scalar dephasing; nonradial top torque,
+Status: exact arbitrary-radius radial-smearing theorem, center-gradient
+extension, and finite-switching correlation ceiling; a distributed top current,
 dissipative sectors, Davies error, and backreaction remain open
 
 ## Result
@@ -77,6 +77,45 @@ class, finite optical width neither repairs nor worsens the center-separation
 common-mode deficit. The co-location theorem in
 `static_patch_scalar_common_mode.md` therefore applies without assuming an
 optically pointlike detector.
+
+## Smooth Center-Gradient Extension
+
+The same product formula removes the point-gradient UV qualification at zero
+frequency. Let `f` and `g` be smooth compact nonnegative radial optical
+profiles, neither identically zero, and define
+
+```text
+Phi_f(p)=integral f[d(p,x)/R] Phi(x) dvol_opt(x),
+B_a^f(p)=D_(p,a) Phi_f(p).                              (7a)
+```
+
+The derivative is with respect to the profile center. It may be passed under
+the integral, so `B_a^f` is a smooth compact signed field smearing rather than
+a point derivative. Equation (5), applied before differentiation, gives
+
+```text
+<Phi_f(p) Phi_g(q)>_(omega=0)
+ =A_f A_g phi_0[d(p,q)/R].                              (7b)
+```
+
+The positive radial amplitudes are independent of the centers. Taking one center
+derivative at each end therefore yields exactly `A_f A_g` times the point
+mixed-Hessian tensor. The two auto-covariances carry `A_f^2` and `A_g^2`, so
+normalization cancels both profiles and leaves
+
+```text
+c_parallel^fg(y)=c_parallel(y),
+c_perp^fg(y)=c_perp(y).                                 (7c)
+```
+
+Thus smooth compact nonnegative center-gradient smearing regulates the zero-mode bath
+operator without changing the longitudinal or transverse correlation laws in
+`static_patch_gradient_torque.md`. The center derivative makes the resulting
+field smearing signed; nonnegativity is required only of the underlying radial
+profile so that its amplitude has a fixed positive sign. This statement does
+not cover a sign-changing or zero-transform radial profile, an arbitrary
+smearing of the pointwise gradient, nonradial body multipoles, or a finite-time
+spectral average, where the profile transforms depend on frequency.
 
 ## Finite-Switching Ceiling
 
@@ -210,11 +249,14 @@ Established:
 4. persistence of the scalar center-separation obstruction at arbitrary radial
    optical width;
 5. the finite-switching correlation ceiling (9) and relative-noise floor (10)
-   for radial scalar pure-dephasing covariance.
+   for radial scalar pure-dephasing covariance;
+6. the zero-frequency center-gradient extension (7a)-(7c) for smooth compact
+   radial profiles.
 
 Not established:
 
-1. nonradial, signed, derivative, vector, or tensor coupling profiles;
+1. arbitrary nonradial or pointwise-gradient profile smearings (the smooth
+   center-gradient radial class (7a) is covered at zero frequency);
 2. a three-axis rotational torque on a finite spherical top;
 3. identification of the hard angular field target with a localized scalar
    charge density;

@@ -19,6 +19,19 @@ def _validate_positive_integer(name: str, value: int) -> None:
         raise ValueError(f"{name} must be a positive integer")
 
 
+def _twice_spin(name: str, value: int | float) -> int:
+    """Validate a positive integer or half-integer spin and return ``2L``."""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{name} must be a positive integer or half-integer")
+    numeric = float(value)
+    if not isfinite(numeric) or numeric <= 0.0:
+        raise ValueError(f"{name} must be a positive integer or half-integer")
+    twice = round(2.0 * numeric)
+    if abs(2.0 * numeric - twice) > 1.0e-12:
+        raise ValueError(f"{name} must be a positive integer or half-integer")
+    return twice
+
+
 def _validate_nonnegative(name: str, value: float) -> None:
     if not isfinite(value) or value < 0.0:
         raise ValueError(f"{name} must be finite and nonnegative")
@@ -39,14 +52,37 @@ def gradient_correlation_defect_sum(
     return (1.0 - longitudinal) + 2.0 * (1.0 - transverse)
 
 
+def gradient_correlation_defect_quadratic_bounds(
+    center_distance_over_radius: float,
+) -> tuple[float, float]:
+    """Bound the total gradient defect explicitly on ``0<=y<=1``.
+
+    With ``z=y/2``, the exact defect is
+
+    ``3 tanh(z)^2+3 z tanh(z) sech(z)^2``.
+
+    The inequalities ``z-z^3/3<=tanh(z)<=z`` and
+    ``1-z^2<=sech(z)^2<=1`` give the returned lower and upper bounds.
+    """
+    y = center_distance_over_radius
+    _validate_nonnegative("center_distance_over_radius", y)
+    if y > 1.0:
+        raise ValueError("quadratic defect bounds require distance at most one")
+    y_squared = y * y
+    return (
+        1.5 * y_squared * (1.0 - 0.25 * y_squared),
+        1.5 * y_squared,
+    )
+
+
 def higher_spin_singlet_linear_leakage(
-    spin: int,
+    spin: int | float,
     dimensionless_time: float,
     *,
     center_distance_over_radius: float,
 ) -> float:
     """Return the exact term linear in the common-mode covariance defect."""
-    _validate_positive_integer("spin", spin)
+    _twice_spin("spin", spin)
     _validate_nonnegative("dimensionless_time", dimensionless_time)
     defect_sum = gradient_correlation_defect_sum(center_distance_over_radius)
     return (
@@ -60,20 +96,20 @@ def higher_spin_singlet_linear_leakage(
 
 
 def higher_spin_dyson_scale(
-    spin: int,
+    spin: int | float,
     dimensionless_time: float,
     *,
     center_distance_over_radius: float,
 ) -> float:
     """Return the Hilbert-Schmidt perturbation scale ``s ||V|| <= x``."""
-    _validate_positive_integer("spin", spin)
+    _twice_spin("spin", spin)
     _validate_nonnegative("dimensionless_time", dimensionless_time)
     defect_sum = gradient_correlation_defect_sum(center_distance_over_radius)
     return 8.0 * spin**2 * defect_sum * dimensionless_time
 
 
 def higher_spin_dyson_remainder_bound(
-    spin: int,
+    spin: int | float,
     dimensionless_time: float,
     *,
     center_distance_over_radius: float,
@@ -156,13 +192,13 @@ def _symmetric_jacobi_eigendecomposition(
 
 
 def higher_spin_singlet_survival_probability(
-    spin: int,
+    spin: int | float,
     dimensionless_time: float,
     *,
     longitudinal_correlation: float,
     transverse_correlation: float,
 ) -> float:
-    """Return the exact integer-spin singlet survival via tensor-rank blocks.
+    """Return exact integer or half-integer singlet survival via rank blocks.
 
     On ``End(V_L) tensor End(V_L)``, the singlet projector decomposes into one
     scalar vector in each equal tensor-rank block ``ell tensor ell``.  Axial
@@ -172,7 +208,7 @@ def higher_spin_singlet_survival_probability(
     perturbative certificate below handles asymptotically large spins without
     diagonalizing these blocks.
     """
-    _validate_positive_integer("spin", spin)
+    twice_spin = _twice_spin("spin", spin)
     _validate_nonnegative("dimensionless_time", dimensionless_time)
     for name, value in (
         ("longitudinal_correlation", longitudinal_correlation),
@@ -184,9 +220,9 @@ def higher_spin_singlet_survival_probability(
         return 1.0
     if longitudinal_correlation == 1.0 and transverse_correlation == 1.0:
         return 1.0
-    dimension = 2 * spin + 1
+    dimension = twice_spin + 1
     survival = 0.0
-    for tensor_rank in range(2 * spin + 1):
+    for tensor_rank in range(twice_spin + 1):
         block_size = 2 * tensor_rank + 1
         block = [[0.0 for _ in range(block_size)] for _ in range(block_size)]
         magnetic_numbers = tuple(range(-tensor_rank, tensor_rank + 1))
@@ -214,8 +250,17 @@ def higher_spin_singlet_survival_probability(
                 * scalar_vector[basis_index]
                 for basis_index in range(block_size)
             )
+            eigenvalue_tolerance = 2.0e-12 * max(
+                1.0,
+                float(tensor_rank * (tensor_rank + 1)),
+            )
+            if eigenvalue > eigenvalue_tolerance:
+                raise RuntimeError(
+                    "tensor-rank generator has a positive eigenvalue"
+                )
+            checked_eigenvalue = 0.0 if eigenvalue > 0.0 else eigenvalue
             block_survival += overlap**2 * exp(
-                dimensionless_time * min(0.0, eigenvalue)
+                dimensionless_time * checked_eigenvalue
             )
         survival += block_size * block_survival / float(dimension**2)
     if survival < -1.0e-10 or survival > 1.0 + 1.0e-10:
@@ -224,12 +269,12 @@ def higher_spin_singlet_survival_probability(
 
 
 def higher_spin_exact_gradient_mismatch_lower_bound(
-    spin: int,
+    spin: int | float,
     dimensionless_time: float,
     *,
     center_distance_over_radius: float,
 ) -> float:
-    """Return the exact singlet-measurement channel witness for integer spin."""
+    """Return the exact singlet channel witness for integer or half-integer spin."""
     longitudinal, transverse = gradient_zero_frequency_correlations(
         center_distance_over_radius
     )
@@ -243,7 +288,7 @@ def higher_spin_exact_gradient_mismatch_lower_bound(
 
 
 def higher_spin_singlet_mismatch_lower_bound(
-    spin: int,
+    spin: int | float,
     dimensionless_time: float,
     *,
     center_distance_over_radius: float,
@@ -271,20 +316,46 @@ def higher_spin_singlet_mismatch_lower_bound(
     return max(0.0, linear - remainder)
 
 
+def higher_spin_certified_local_distance_ceiling(
+    spin: int | float,
+    dimensionless_time: float,
+    mismatch_budget: float,
+) -> float:
+    """Return a finite-``y`` ceiling inside the certified local window.
+
+    If ``0<=y<=1``, the Duhamel half-slope condition holds, and the channel
+    mismatch is at most ``mismatch_budget``, then
+
+    ``y^2 <= 4 mismatch_budget/[3 L(L+1) s]``.
+
+    The returned value is capped at one because the analytic defect lower
+    bound is asserted only on that interval.
+    """
+    _twice_spin("spin", spin)
+    _validate_positive("dimensionless_time", dimensionless_time)
+    _validate_nonnegative("mismatch_budget", mismatch_budget)
+    ceiling = sqrt(
+        4.0
+        * mismatch_budget
+        / (3.0 * spin * (spin + 1.0) * dimensionless_time)
+    )
+    return min(1.0, ceiling)
+
+
 def higher_spin_perturbative_record(
-    spin: int,
+    spin: int | float,
     *,
     center_distance_over_radius: float,
     mismatch_coefficient: float = 1.0,
 ) -> dict[str, object]:
     """Audit the rigorous and leading higher-spin co-location bounds."""
-    _validate_positive_integer("spin", spin)
+    twice_spin = _twice_spin("spin", spin)
     _validate_nonnegative(
         "center_distance_over_radius",
         center_distance_over_radius,
     )
     _validate_positive("mismatch_coefficient", mismatch_coefficient)
-    dimension = 2 * spin + 1
+    dimension = twice_spin + 1
     dimensionless_time = 0.5 * log(float(dimension))
     allocated_mismatch = mismatch_coefficient / float(dimension)
     defect_sum = gradient_correlation_defect_sum(center_distance_over_radius)
@@ -329,6 +400,11 @@ def higher_spin_perturbative_record(
             * log(float(dimension))
         )
     )
+    certified_local_distance = higher_spin_certified_local_distance_ceiling(
+        spin,
+        dimensionless_time,
+        allocated_mismatch,
+    )
     return {
         "spin_L": spin,
         "sector_dimension_d": dimension,
@@ -350,6 +426,9 @@ def higher_spin_perturbative_record(
             perturbative_defect_window
         ),
         "leading_small_y_maximum_distance_over_radius": leading_distance,
+        "finite_y_distance_ceiling_if_inside_half_slope_window": (
+            certified_local_distance
+        ),
         "leading_scaled_distance_y_d_to_3_over_2_sqrt_log_d": (
             leading_distance
             * dimension**1.5
@@ -427,7 +506,7 @@ def static_patch_higher_spin_gradient_certificate(
                 )
             ),
         }
-        for spin in (1, 2, 3, 4)
+        for spin in (0.5, 1, 1.5, 2, 3, 4)
     )
     perturbative_cross_checks = tuple(
         {
@@ -502,7 +581,7 @@ def static_patch_higher_spin_gradient_certificate(
             "limit, or include support stress and gravitational backreaction."
         ),
         "certified_claims": certified_claims,
-        "exact_integer_spin_block_records": exact_records,
+        "exact_spin_block_records": exact_records,
         "exact_vs_duhamel_cross_checks": perturbative_cross_checks,
         "records": records,
         "next_physics_gate": (

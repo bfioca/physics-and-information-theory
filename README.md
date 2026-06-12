@@ -3,7 +3,26 @@
 Finite, executable diagnostics for observer algebras, reconstruction, and
 static-patch-inspired bridge channels.
 
-## For Professor Harlow Review
+## Selected Paper A
+
+**Status: GO for colleague review and specialist submission preparation.**
+
+The strongest near-term paper in this repository is now the validated
+Dirichlet-confined massive Skyrmion result.  Its exact-rational proof package
+establishes local existence and uniqueness at the certified parameter point, a
+qualitative analytic parameter branch, strict monotonicity, a fixed-wall radial
+Friedrichs gap, and the intrinsic boundary-controlled `p^-3` inertia-transform
+tail.  It is a specialist mathematical-physics result, not a universal-observer
+theorem or a broad gravitational breakthrough.
+
+- [`paper/validated_skyrmion_profile/main.pdf`](paper/validated_skyrmion_profile/main.pdf)
+  - the review-ready manuscript;
+- [`paper/validated_skyrmion_profile/README.md`](paper/validated_skyrmion_profile/README.md)
+  - exact build, replay, and package-audit instructions;
+- [`docs/publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md)
+  - the novelty decisions, claim boundary, and referee disposition.
+
+## Separate Harlow Conceptual Packet
 
 The curated review artifact for the finite directional-record observer program
 is separate from the static-patch screen-shadow package documented below.
@@ -33,7 +52,12 @@ Sitter.
 
 ## Research Tracks
 
-The current bounded methods result concerns off-code leakage when three
+The selected near-term track is the specialist-review manuscript for a prescribed
+massive Dirichlet-confined Skyrmion profile, together with its authenticated
+radial gap and sharp boundary-controlled inertia-transform tail. Its mandatory
+proof, replay, package, and internal referee gates are closed; external human
+priority review and ordinary submission metadata remain. The
+current bounded methods result concerns off-code leakage when three
 spacelike cells reproduce different components of one finite `SO(3)`
 collective mode. Its standalone novelty claim is stopped: the inequality is a
 specialization of established UCP/joint-measurement added-noise bounds. The
@@ -44,9 +68,11 @@ headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
+| **Selected Paper A** | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
 | Universal observer theorem | G1/G2 are audit-ready. The regular-bath finite-switch lemma is proved and a correctly dimensioned conditional detector box is certified, but the named QFT channel bridge is open and unchanged promotion of the exact factorized density fails the microcausal locality gate. Paper U U8a, token preparation/readout, and gravity remain open. | [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`u8a_finite_storage_channel.md`](docs/u8a_finite_storage_channel.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
-| Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md), [`observer_register_counterexample_checklist.md`](docs/observer_register_counterexample_checklist.md) |
+| Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. The exact mean-Casimir risk frontier is Hayashi's established result, not a standalone novelty claim. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`global_so3_risk_priority_audit.md`](docs/global_so3_risk_priority_audit.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
+| Optical common mode | Exact finite-size and higher-spin effective-channel lemmas retained for Paper U; current standalone paper stopped by direct de Sitter-spectrum and DFS prior art. | [`optical_common_mode_priority_audit.md`](docs/optical_common_mode_priority_audit.md), [`static_patch_higher_spin_gradient.md`](docs/static_patch_higher_spin_gradient.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
 | Certified matter realization | The supported Skyrmion supplies controlled profile, spectral, and response subproblems without being identified with the observer theorem. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
 
@@ -60,11 +86,14 @@ headline claim.
 - **Open:** the KMS GNS/Pauli-Fierz bridge, same-action preparation/readout,
   `S_dir` versus `S_Ob`, a gravitational capacity invariant, Weyl
   zero-exclusion, self-consistent gravity, and Paper U U8a.
-- **Stopped as standalone novelty:** the bounded spacelike-replication theorem
-  is an `SO(3)` specialization of established joint-measurement added noise.
+- **Stopped as standalone novelty:** bounded spacelike replication, the exact
+  global mean-Casimir risk optimization, and the current optical common-mode
+  formulation. Their proved lemmas remain available to the larger program.
 
 Use the [`research execution plan`](docs/research_execution_plan.md) for the
 current ordering, the
+[`publishable-paper route decision`](docs/publishable_paper_route_decision.md)
+for the selected manuscript and stopped alternatives, the
 [`claim dependency ledger`](docs/universal_observer_claim_dependency_ledger.md)
 for proof status, [`THEOREMS.md`](THEOREMS.md) for certificates, and the
 [`documentation map`](docs/README.md) for the complete file inventory. The

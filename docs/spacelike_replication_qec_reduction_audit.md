@@ -196,8 +196,8 @@ joint-measurement theory, for example:
    recoverability statement;
 3. a physical bound relating `lambda_*` to localization, energy, optical
    support, or gravitational backreaction; or
-4. a standalone sharp global `SO(3)` Bayes-risk theorem, with the leakage
-   relation cited only as an application.
+4. a physical composition using the known optimal global `SO(3)` Bayes-risk
+   theorem of Hayashi, with the leakage relation cited only as a methods lemma.
 
 The current bounded result remains technically correct. What stops is the
 paper-level novelty claim, not the mathematics.

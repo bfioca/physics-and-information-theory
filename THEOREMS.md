@@ -1,10 +1,13 @@
 # Theorem and Claim Index
 
-This file indexes the packaged static-patch observer-algebra benchmark. For the
-current bounded spacelike-replication methods note and Harlow-facing
-observer-register packet, start with the root [`README.md`](README.md). The
-entries below separate exact finite claims, bounded certificate evidence,
-conditional operator-algebra assumptions, and continuum speculation.
+This file indexes the packaged static-patch observer-algebra benchmark and the
+long research theorem ledger. For the selected review-ready Paper A, start with
+the root [`README.md`](README.md) and
+[`paper/validated_skyrmion_profile/main.pdf`](paper/validated_skyrmion_profile/main.pdf).
+The bounded spacelike-replication methods note and Harlow-facing
+observer-register packet are separate artifacts. The entries below separate
+exact finite claims, bounded certificate evidence, conditional
+operator-algebra assumptions, and continuum speculation.
 
 ## Claim Boundary
 

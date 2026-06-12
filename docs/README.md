@@ -6,7 +6,19 @@ artifacts.
 
 ## Start Here
 
-### Bounded Methods Result
+### Selected Near-Term Paper
+
+- `publishable_paper_route_decision.md` - route-by-route GO/STOP decision and
+  Paper A review-gate disposition;
+- `../paper/validated_skyrmion_profile/main.pdf` - rebuilt Paper A
+  specialist-review draft;
+- `../paper/validated_skyrmion_profile/main.tex` - modular LaTeX source;
+- `../paper/validated_skyrmion_profile_outline.md` - central theorem and proof
+  structure;
+- `validated_skyrmion_interval_program.md` - exact Newton certificate;
+- `static_patch_skyrmion_tail.md` - authenticated sharp spectral consequence.
+
+### Retained Bounded Methods Result
 
 - `spacelike_replication_leakage_theorem.md` - technical statement and proof;
 - `spacelike_replication_qec_reduction_audit.md` - exact Janssens reduction and
@@ -72,6 +84,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 
 | Artifact | Purpose |
 | --- | --- |
+| `publishable_paper_route_decision.md` | Current route table, selected Paper A claim, submission gates, and explicit claim boundary. |
 | `observer_register_model_class.md` | Exact G1 quantifiers over systems, joint states, side information, controls, protocols, postselection, localization, errors, and gravitational-budget interfaces. |
 | `directional_record_resource_dictionary.md` | Status-labeled G2 fork from Haar risk to readout information, joint asymmetry, declared classical records, and model-dependent representation/energy costs. |
 | `observer_register_counterexample_checklist.md` | Adversarial tests for high-spin mixtures, rare tails, bounded spectra, stabilizers, postselection, hidden memories, pre-correlations, and QFI/global-risk mismatches. |
@@ -81,6 +94,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `spacelike_replication_leakage_theorem.md` | Exact and approximate compression bounds, the state-weighted spacelike-replication theorem, its global `SO(3)` risk corollary, and the disjoint-block ferromagnetic realizations. |
 | `spacelike_replication_novelty_audit.md` | Primary-source audit recording the joint-measurement prior art and standalone novelty stop. |
 | `spacelike_replication_qec_reduction_audit.md` | Exact UCP covariance-form reduction of the state-weighted theorem to Janssens' CP Cauchy-Schwarz lemma. |
+| `optical_common_mode_priority_audit.md` | Exact Hu-Yu kernel reduction, decoherence-free-subspace overlap, retained finite-size results, and standalone optical-paper stop. |
 | `spacelike_replication_goal_audit.md` | Internal prove-or-kill completion record and final methods-note disposition. |
 | `spacelike_replication_manuscript_goal.md` | Track 2 prove-or-kill contract and completed novelty-stop outcome. |
 | `../paper/spacelike_replication/main.tex` | Frozen internal methods note with the prior-art reduction made explicit. |
@@ -145,6 +159,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `conditional_universal_observer_tradeoff.md` | Exact class-uniform capacity/localization/heat-exposure composition and the proved confined-orbital compactness corollary. |
 | `universal_observer_claim_dependency_ledger.md` | Node-by-node proof ledger for the class-uniform observer tradeoff, including the decisive quantum `J^2` versus classical `J` gap. |
 | `global_so3_reference_risk.md` | All-state/all-POVM global `SO(3)` chordal-risk floor from relative entropy of asymmetry and mean spin, plus the compact spherical-top localization corollary. |
+| `global_so3_risk_priority_audit.md` | Exact reduction of the mean-Casimir and cutoff optimization to Hayashi's established `SO(3)` estimation theorem; standalone novelty stop. |
 | `orientation_stabilizer_risk.md` | Exact global chordal-risk floor from a reference-state stabilizer and the `R_ref>=1/2` audit of the explicit `Q=0` spin-2 state. |
 | `density_only_einstein_response_no_go.md` | Exact pure-gauge and conserved-stress counterexamples proving that a nonspherical Einstein response needs a gauge-invariant output and the full stress tensor. |
 | `static_patch_l2_response.md` | Exact fixed-de Sitter static `l=2` Zerilli resolvent, positive Green kernel, coercive response bound, and logarithmic near-horizon susceptibility. |

@@ -1,7 +1,8 @@
 # Global SO(3) Orientation Risk From Asymmetry And Mean Spin
 
-Status: analytic all-state/all-POVM theorem; spherical-top and confined-orbital
-capacity corollaries complete; relativistic matter/gravity extension remains open
+Status: analytic all-state/all-POVM methods theorem; standalone novelty stopped
+by Hayashi's exact mean-Casimir solution; physical matter/gravity composition
+remains open
 
 ## Operational Task
 
@@ -36,6 +37,20 @@ Every state and orientation measurement obeys the direct global bound
 ```text
 R_ref >= 1/(16 Cbar+8).                       (1)
 ```
+
+This is a coarse elementary corollary, not the optimal risk-resource frontier.
+Hayashi's exact solution of the same Haar `SO(3)` problem and Casimir constraint
+gives, in the present cost convention,
+
+```text
+R_opt(Cbar)=kappa_SO3(Cbar)/2
+            =9/(16Cbar)-81/(256Cbar^2)+o(Cbar^-2).
+```
+
+The exact source-level dictionary is recorded in
+`global_so3_risk_priority_audit.md`. Bound (1) remains useful when a simple
+closed form is preferable, but it must not be presented as a novel or sharp
+mean-Casimir law.
 
 For a uniform prior, covariantization preserves the character score
 `S=E[chi_1(g_hat^-1 g)]`. The covariant Naimark/imprimitivity dilation embeds
@@ -75,11 +90,15 @@ test suite now checks the full normalized Peter-Weyl blocks through spin six,
 including the dimension factor, adjoint relation, and multiplicity stability.
 
 For strict support `j<=J`, diagonalizing the finite fusion matrix gives the
-sharper result
+exact result
 
 ```text
 R_ref >= sin^2[pi/(2J+3)].                    (2)
 ```
+
+This cutoff optimum is also established prior art; Hayashi gives the same law
+and Bagan, Baig, and Munoz-Tapia obtain the equivalent character-matrix
+optimum.
 
 If the probability above `J` is `q_J`, gentle projection transfers (2) as
 
@@ -309,20 +328,22 @@ The theorem does not supply:
 - a stress-tensor derivation for the Skyrmion worldtube; or
 - the noncompact de Sitter boost sector.
 
-The novelty target is the eventual connection of (6) to the optical-locality
-and coherence lemmas under one matter action. Holevo information bounds,
-relative entropy of frameness, and finite-frame alignment are established
-ingredients; this document does not claim those ingredients individually.
-Specialist overlap review remains a submission gate.
+The novelty target is the eventual connection of the known estimation theory
+to optical locality, coherence, and backreaction under one matter action.
+Hayashi already solves the exact Haar `SO(3)` mean-Casimir optimization,
+including the projective sector and asymptotics. Holevo information bounds,
+relative entropy of frameness, and finite-frame alignment are likewise
+established ingredients; this document does not claim them individually.
 
-Closest primary sources are Bagan, Baig, and Munoz-Tapia,
+The decisive primary source is Hayashi,
+[*Fourier Analytic Approach to Quantum Estimation of Group
+Action*](https://arxiv.org/abs/1209.3463). Additional sources are Bagan, Baig,
+and Munoz-Tapia,
 [Aligning Reference Frames Using Quantum
 States](https://arxiv.org/abs/quant-ph/0106014), Gour, Marvian, and Spekkens,
 [Measuring the Quality of a Quantum Reference
 Frame](https://arxiv.org/abs/0901.0943), and Holevo's covariant estimation and
-semigroup framework. The spin-1 fusion matrix is structurally close to standard
-frame-alignment optimizations. Until a specialist overlap audit proves
-otherwise, equations (1)-(6) should be presented as enabling lemmas, not as the
+semigroup framework. Equations (1)-(6) are enabling methods results, not the
 paper's standalone novelty claim.
 
 ## Reproduction
@@ -335,5 +356,6 @@ Artifacts:
 
 - `qgtoy/global_so3_reference_risk.py`
 - `tests/test_global_so3_reference_risk.py`
+- `docs/global_so3_risk_priority_audit.md`
 - `docs/rotational_resource_substitution_no_go.md`
 - `docs/finite_size_static_patch_observer.md`

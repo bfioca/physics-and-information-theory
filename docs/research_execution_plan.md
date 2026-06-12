@@ -1,39 +1,50 @@
 # Research Execution Plan
 
-Status: long-term Paper U plan
+Status: Paper A specialist-review draft; long-term Paper U program
 
 Branch context: inherited from `codex/observer-algebra-research-program`.
 The bounded spacelike-replication manuscript audit on
 `codex/spacelike-replication-manuscript` ended in **NOVELTY STOP** after an
 exact reduction to established joint-measurement added noise.
+The proposed standalone global `SO(3)` risk fallback is also stopped: Hayashi
+already solves the exact Haar mean-Casimir optimization, including the
+projective sector and sharp asymptotics.
+The current optical common-mode formulation is likewise stopped as a
+standalone paper after exact overlap with the Hu-Yu de Sitter spectrum and
+standard decoherence-free-subspace physics. Boundary-regularity universality
+is retained as a consequence, not a headline, because general endpoint
+Fourier/Hankel asymptotics are established.
 
-Last audited: 2026-06-11
+Last audited: 2026-06-12
 
 ## Verdict
 
 This repository is a credible starting point for a paper-worthy mathematical-
 physics program. It is not yet evidence of a gravitational-physics breakthrough.
 The finite reference-frame, fuzzy-regulator, and local-QFT components are useful,
-but they currently live in different controlled models. The publishable task is
-to join the relevant pieces through one declared matter action and one certified
-error budget.
+but they currently live in different controlled models.
 
-The primary paper target is now a class-uniform localization-reference-
-coherence-backreaction inequality for finite rotational observers in a static patch. The
-certified massive Skyrmion is its rigorous realization and constant-producing
-example, not the headline theorem. A computer-assisted hard-wall profile paper
-remains a narrower standalone rung if the universal closure takes longer.
+The selected near-term paper is the computer-assisted Dirichlet-confined
+Skyrmion profile theorem, strengthened by an analytic local parameter branch,
+an authenticated radial Friedrichs gap, and a sharp intrinsic `p^-3` inertia-transform
+tail. Its mandatory proof, exact-replay, package-audit, and internal referee
+gates now pass after the reconstruction corrected the reference operator,
+removed stale standalone AU.1 provenance and the underdefined bath corollary,
+and made the closest prior art explicit. The class-uniform localization-reference-coherence-
+backreaction inequality remains the primary long-term physics target, with the
+Skyrmion as a realization rather than the universal headline.
 
-The current paper-level finish line is sharpened in
-`harlow_facing_paper_goal.md`: one relational directional record, one common
-state/protocol family, one action and approximation ledger, and a certified
-fixed-background gravitational footprint. This is narrower than an arbitrary-
-observer theorem and broader than the Skyrmion response calculation alone.
+The current paper-level finish line is the self-contained Paper A package in
+`paper/validated_skyrmion_profile/`: manuscript, exact proof archives, clean
+replay, package audit, and specialist referee pass.  The broader
+`harlow_facing_paper_goal.md` remains a long-term Paper U specification for one
+relational directional record, one common state/protocol family, one action
+and approximation ledger, and a certified gravitational footprint.
 
-Before attempting every completion gate, the next external-review milestone is
-`harlow_review_packet_codex_goal.md`. It produces a sendable conceptual packet
-whose purpose is to test the observer-register architecture and identify the
-wrong bridge while redirection is still inexpensive.
+The conceptual packet specified by `harlow_review_packet_codex_goal.md` is an
+already-prepared, separate request for feedback on the observer-register
+architecture.  It is neither the Paper A manuscript nor a gate for its
+specialist review.
 
 ## Central Question
 
@@ -56,14 +67,17 @@ hypotheses.
 The exact work packages and falsification gates are in
 `universal_static_patch_observer_tradeoff_plan.md`.
 
-### Paper A: Validated Profile
+### Paper A: Validated Profile (**selected manuscript**)
 
-Claim target: existence and local uniqueness in a certified Newton neighborhood
-for the prescribed hard-wall fixed-background Skyrmion profile, with strict
-monotonicity, negative wall slope, and finite positive rotor inertia.
+Claim target: certified base-point existence and local uniqueness for the
+prescribed Dirichlet fixed-background Skyrmion profile, a qualitative locally
+unique analytic branch in mass/curvature/wall radius, strict monotonicity,
+negative wall slope, finite positive rotor inertia, a radial Friedrichs gap,
+and an authenticated boundary-induced inertia-transform tail.
 
 Not claimed: global uniqueness, Einstein-Skyrme backreaction, or a new de Sitter
-observer algebra.
+observer algebra. The present branch theorem gives no explicit parameter-box
+width, and the optical transform is not promoted to a bath factor.
 
 ### Paper B: Certified Matter Realization
 
@@ -90,57 +104,23 @@ finite-reference obstruction transfers with a controlled correction.
 | Window | Open physical parameter set | Lifetime, localization, compactness, peak stress, junction residual, stability eigenvalue, and metric perturbation retain margins | Only isolated fine-tuned points exist, or no weak-backreaction branch exists |
 | Consequence | Prediction or no-go | Observable shift exceeds the complete certified uncertainty, or a live observer dictionary is excluded under explicit assumptions | Result reduces to an existing QRF/ULE theorem after substituting model constants |
 
-## Immediate Execution Order
+## Paper A Release Disposition
 
-1. Validate the step-converged global `(f,g)` branch and its completed
-   bulk/membrane stress, master response, and exterior Weyl reconstruction.
-   The global closed-form theorem now proves existence and uniqueness in the
-   fixed-background weak model with inverse norm at most `100`. The response
-   calculation now has generic-scalar bulk and center-regular affine kernels.
-   The moving-wall/contact kernel and its exact endpoint cancellation are now
-   complete. The positive-radius rational `C1` residual and energy-dual
-   integration theorem is also complete, as is the cancellation-safe regular-
-   origin residual and full-domain composition formula. Exact physical primal-
-   adjoint trial splines and matched regular-origin patches are now archived.
-   Compact-angle reduction and exact eightfold restriction improve the outer
-   primal residual-square bound from about `2.85e4` to `3.32`, but it remains
-   far too broad for zero exclusion. Authenticated origin profile jets now give
-   primal origin `L2^2<=2.134e-5`, and the primal wall mismatch is below
-   `0.001421`. Exact conormal continuity now removes every internal interface
-   distribution, and the interval adjoint wall load gives
-   `|eta_z,wall|<1/150`. A centered common-coordinate model now lowers the outer
-   primal residual square from `328.14` to `0.01003`, proving that dependency
-   wrapping dominated the old result. The next gate is preserving the remaining
-   Newton graph/slope correlations and tightening the now-certified direct
-   `V*` adjoint lift, whose partial norm is `0.7695` and is dominated by the
-   bulk value coefficient near `x=0.5`, followed by an independent
-   membrane second variation and the now-explicit Israel promotion sequence:
-   spherical Einstein-Skyrme/Kottler matching, six-amplitude displaced-shell
-   reconstruction, and one-action detector inputs. The conditional finite-time
-   heat/Jacobi/Gaussian detector composition is now exact. Separately audit
-   asymptotically free `Q=0` families and the first nonzero higher-order stress.
-2. Supply physical inputs to the proved collective-band Feshbach theorem.
-   Construct the quantum collective projector and prove its compression floor;
-   then add the anchor and nonspherical grand-spin Hessians, remove rotation
-   zero modes, and certify complement gaps and off-band couplings. The theorem
-   then transfers the linear floor and bounds projection error automatically.
-3. Use the completed fixed-wall and spherical moving-membrane radial theorems
-   as the first complement inputs. The exact Dirichlet-branch tangent
-   quantities can sharpen the conservative membrane floor, but the next
-   required stability work is the anchor and nonspherical channels.
-4. Refine the authenticated AU.3b tail and bare-product enclosures. The baseline
-   profile-resolved certificate is complete and shows that the conservative
-   joined tail, rather than the finite band, dominates all three Sobolev
-   bounds.
-5. Derive the supported worldtube current, bath state, and switching protocol
-   from one declared total model/action,
-   including the collective-band projection remainder.
-6. Prove a physical-channel diamond estimate and substitute the certified
-   Skyrmion quantities into the universal inequality.
-7. Search for a certified open parameter box; interpret an empty box as a no-go
-   only after separating physical obstruction from interval overestimation.
-8. Maintain the optical common-mode and boundary-regularity universality results
-   as ranked fallback papers, then obtain external specialist review.
+1. **Closed:** the raw-spline Jacobi norm, Friedrichs radial realization,
+   source-consistent combined archive, and removal of the bath corollary.
+2. **Closed:** clean exact replays of the combined AU.1/AU.2 certificate,
+   sharp-tube snapshot, and radial-gap certificate.
+3. **Closed:** rebuilt and visually inspected PDF, refreshed manifest, focused
+   proof tests, package tests, and mathematical/publication referee audits.
+4. **Deferred enhancement:** an explicit rational `(mu^2, lambda)` rectangle
+   at fixed wall radius. The qualitative analytic branch is valid without a
+   numerical width, and the manuscript says so explicitly.
+5. **Next:** obtain external human priority/correctness review and add ordinary
+   affiliation, contact, immutable-tag, or DOI metadata for submission.
+6. **Then:** resume Paper U. The optical route may be reactivated only after a
+   uniform six-channel KMS reduced-channel estimate; the boundary route
+   requires an action-derived topology-preserving crossover family rather than
+   another integration-by-parts theorem.
 
 ## Current Exact Status
 
@@ -169,13 +149,17 @@ finite-reference obstruction transfers with a controlled correction.
   The branch-coordinate `0.198` value remains an optional floating sharpening,
   not a premise of the positive theorem.
 - AU.1 nonlinear profile certificate: complete for the prescribed
-  `mu^2=1`, `lambda=1/400`, hard wall `x=4` problem. With `omega=3/4`,
+  `mu^2=1`, `lambda=1/400`, Dirichlet boundary `x=4` problem. With `omega=3/4`,
   `r=1/250`, 12-term rigorous trigonometric enclosures, and outward rounding to
   denominator `10^18`, the exact audit proves `Y<=0.002296`,
   `Z0<=0.000078`, `Z2<=78.733`, `p(r)<-0.00107`, and contraction
   `q(r)<0.31501`. The unique solution in the Newton ball is strictly decreasing,
   its wall slope lies inside `[-0.09465,-0.08746]`, and its dimensionless rotor
-  inertia lies inside `[21.149,48.921]`.
+  inertia lies inside `[21.149,48.921]`. Invertibility of the exact-solution
+  derivative gives a qualitative locally unique analytic branch in
+  `(mu^2,lambda,x_w)`; no explicit box width is yet certified. The canonical
+  AU.1 data are carried by the source-consistent combined AU.1/AU.2 archive,
+  not the historical standalone extraction.
 - AU.2 global derivative and continuum-tail certificate: complete. Exact
   positive-radius 43-cell sums plus the regular-origin Volterra-Lie interval-AD
   proof give

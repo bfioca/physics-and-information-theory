@@ -1,0 +1,363 @@
+\section{Certified radial and spectral consequences}
+\label{sec:consequences}
+
+Throughout this section, $F_\star:=F_*$ denotes the exact profile in the
+certified Newton neighborhood, not the rational center spline, and
+$I_{\rm rot}:=\mathcal I[F_*]$ is the dimensionless inertia defined in
+\cref{thm:main}.  The two consequences below import the same authenticated
+wall-slope and inertia enclosures,
+\begin{align}
+ F_\star'(4)&\in[-0.094644972770043,-0.087466485763471],\notag\\
+ I_{\rm rot}&\in[21.149277305080,48.920186135018].
+ \label{eq:consequence-profile-inputs}
+\end{align}
+They are therefore statements about the validated nonlinear solution.  The
+combined profile-and-tail archive has SHA-256 digest
+\begin{center}
+\small\nolinkurl{1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9}.
+\end{center}
+Decimal endpoints in this section are outward-rounded displays of rational
+intervals; the archived fractions, rather than these displays, are used in the
+proof comparisons.
+
+\subsection{Fixed-wall spherical radial gap}
+\label{sec:fixed-wall-gap}
+
+Let $\tau=e f_\pi t$.  Thus a mode with dimensionless frequency
+$\widehat\omega$ has Killing-time frequency
+$\omega_K=e f_\pi\widehat\omega$.  Set
+\begin{equation}
+ u(F,x)=x^2+8\sin^2F,
+ \qquad N(x)=1-\lambda x^2.
+\end{equation}
+Linearization of the spherically symmetric Skyrme action about $F_\star$ gives
+the generalized Sturm--Liouville problem
+\begin{equation}
+ \ell_\star\eta
+   =\widehat\omega^{2}\mathcal W_\star\eta,
+ \qquad
+ \ell_\star=-\frac{\dd}{\dd x}
+       \left(P_\star\frac{\dd}{\dd x}\right)+Q_\star,
+ \label{eq:radial-sturm-liouville}
+\end{equation}
+where
+\begin{equation}
+ P_\star=N u(F_\star,x),
+ \qquad
+ \mathcal W_\star=\frac{u(F_\star,x)}{N}.
+ \label{eq:radial-weights}
+\end{equation}
+Here $Q_\star$ is precisely the second-variation potential of the static
+functional used in the validated Jacobi problem.  To specify the singular
+endpoint, let
+\begin{equation}
+ \mathscr H=L^2\bigl((0,4),\mathcal W_\star(x)\dd x\bigr)
+\end{equation}
+and initially define
+\begin{equation}
+ \mathfrak q_\star[\eta]
+ =\int_0^4\left(P_\star|\eta'|^2+Q_\star|\eta|^2\right)\dd x
+ \label{eq:radial-quadratic-form}
+\end{equation}
+on $C_c^\infty(0,4)$.  Its closure is the fixed-wall Friedrichs form.  The
+associated self-adjoint operator in $\mathscr H$ is
+\begin{equation}
+ \mathcal A_\star=\mathcal W_\star^{-1}\ell_\star,
+ \qquad \mathcal A_\star\eta=\widehat\omega^2\eta.
+ \label{eq:radial-self-adjoint-operator}
+\end{equation}
+The regular-singular classification below shows that eigenmodes
+select the physical branch $\eta(x)=O(x)$ at the origin; the closure enforces
+the Dirichlet trace at $x=4$.
+
+\begin{proposition}[Authenticated fixed-wall radial stability]
+\label{prop:fixed-wall-gap}
+For $\mu^2=1$, $\lambda=1/400$, and $x_{\rm w}=4$, the exact profile satisfies
+\begin{equation}
+ \mathfrak q_\star[\eta]
+ \geq \norm{\eta}_{L^2(0,4)}^2
+ \label{eq:static-form-gap}
+\end{equation}
+on the closed Friedrichs form domain.  The operator $\mathcal A_\star$ has compact
+resolvent in $\mathscr H$, and its lowest dimensionless spherical profile
+frequency obeys
+\begin{equation}
+ \widehat\omega_{\rm rad}^2\geq\frac1{25},
+ \qquad
+ \widehat\omega_{\rm rad}\geq\frac15,
+ \qquad
+ \omega_{K}\geq\frac{e f_\pi}{5}.
+ \label{eq:fixed-wall-frequency-gap}
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Use the positive rational Barta witness
+\begin{equation}
+ v(x)=\frac{8}{(x-33/16)^2+4}.
+\end{equation}
+On $[1/16,4]$, adaptive interval evaluation through every exact-solution jet
+in the Newton tube gives
+\begin{equation}
+ \inf_{[1/16,4]}\frac{\ell_\star v}{v}
+ >1.0386099769.
+ \label{eq:positive-radius-barta}
+\end{equation}
+The origin cannot be obtained by simply extending those boxes through the
+regular singular point.  Instead, substituting
+$\pi-F_\star=xu(x^2)$ and using the exact profile equation removes all negative
+powers of $x$ and gives
+\begin{equation}
+ \inf_{[0,1/16]}\frac{\ell_\star v}{v}
+ >36.8298881657.
+ \label{eq:origin-barta}
+\end{equation}
+The ground-state transform with $v$ proves
+\cref{eq:static-form-gap} first on $C_c^\infty(0,4)$ and then, by closure, on
+the Friedrichs form domain.  The regular-origin expansion gives, with
+$a_0=1+8b^2$,
+\begin{equation}
+ P_\star=a_0x^2+O(x^4),\qquad
+ \mathcal W_\star=a_0x^2+O(x^4),\qquad
+ Q_\star=2a_0+O(x^2).
+ \label{eq:radial-origin-coefficients}
+\end{equation}
+Thus the indicial roots of the eigenvalue equation are $1$ and $-2$.
+The $x^{-2}$ branch is not in $\mathscr H$, so the origin is limit point and
+eigenmodes obey $\eta=O(x)$.  At $x=4$, where $P_\star>0$, the
+Friedrichs closure gives the Dirichlet trace.
+
+For completeness, the form embedding into $\mathscr H$ is compact.  On every
+$[\delta,4]$, the ground-state representation controls an $H^1$ norm and
+Rellich compactness applies.  Near the origin,
+$\mathcal W_\star(x)\leq Cx^2$ and
+\cref{eq:static-form-gap} give uniformly on form-bounded sets
+\begin{equation}
+ \int_0^\delta\mathcal W_\star|\eta|^2\dd x
+ \leq C\delta^2\mathfrak q_\star[\eta].
+\end{equation}
+The vanishing tail and the interior compactness prove compact resolvent.
+
+Finally, $N(4)=24/25$ and $0\leq\sin^2F_\star\leq1$, whence
+\begin{equation}
+ 0\leq\mathcal W_\star(x)
+ \leq\frac{x_{\rm w}^2+8}{N(x_{\rm w})}=25.
+\end{equation}
+The min--max principle for $\mathcal A_\star$, together with the generalized Rayleigh
+quotient, converts the unit static form gap into
+\cref{eq:fixed-wall-frequency-gap}.  The authenticated calculation used 109
+positive-radius leaves, with maximum binary refinement depth five.
+\end{proof}
+
+The exact radial-gap archive has SHA-256 digest
+\begin{center}
+\small\nolinkurl{46795f66ac628ed4c879a595bbd4d0ce8d0f909a299569d7a05fe04433011959}.
+\end{center}
+It verifies the identity of the upstream spectral/profile archive before
+reconstructing the exact-solution tube.  In particular, it authenticates the
+canonical spectral archive and sharp tube snapshot with respective digests
+\begin{center}
+\small
+\nolinkurl{1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9}\\
+\nolinkurl{1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431}.
+\end{center}
+
+\begin{remark}[Scope of the stability statement]
+Proposition~\ref{prop:fixed-wall-gap} concerns only the $l=0$ profile
+fluctuation with an ideal, nondynamical Dirichlet wall.  It is not a theorem
+about a moving membrane, nonspherical or grand-spin sectors, the rotational
+collective coordinate, a holding apparatus, or metric perturbations.  In
+particular, it is a radial spectral gap on the declared fixed-wall form domain,
+not full dynamical stability of a supported or self-gravitating Skyrmion.
+\end{remark}
+
+\subsection{Authenticated endpoint jets}
+\label{sec:endpoint-jets}
+
+Introduce the optical radius
+\begin{equation}
+ x(y)=\frac{\tanh y}{\sqrt\lambda},
+ \qquad
+ Y=\operatorname{arctanh}(\sqrt\lambda x_{\rm w}),
+ \qquad
+ N_{\rm w}=1-\lambda x_{\rm w}^2.
+ \label{eq:optical-coordinate}
+\end{equation}
+Write the dimensionless inertia as
+\begin{equation}
+ I_{\rm rot}=\int_0^4\rho_I(x)\dd x,
+ \qquad
+ \rho_I(x)=\frac{2\pi}{3}x^2\sin^2F_\star
+ \left[\frac1N+4(F_\star')^2
+       +\frac{4\sin^2F_\star}{Nx^2}\right].
+ \label{eq:inertia-density}
+\end{equation}
+Define the two optical weights
+\begin{align}
+ W(y)&=\frac{\rho_I(x(y))}{x(y)^2}\frac{\dd x}{\dd y}
+ \notag\\
+ &=\frac{2\pi\sin^2F_\star}{3\sqrt\lambda}
+ \left[1+4\lambda\cosh^2y\,F_{\star,y}^2
+       +4\lambda\coth^2y\,\sin^2F_\star\right],
+ \qquad A(y)=W(y)\coth y.
+ \label{eq:optical-weights}
+\end{align}
+
+At the regular origin,
+\begin{align}
+ F_\star(x)&=\pi-bx+cx^3+O(x^5),
+ \notag\\
+ c&=\frac{b\left[\mu^2-4\lambda+
+       (\frac43-24\lambda)b^2+\frac83b^4\right]}
+       {10(1+8b^2)},
+ \label{eq:origin-profile-jet}\\
+ W(y)&=w_0y^2+O(y^4),
+ &A(y)&=w_0y+O(y^3),
+ &w_0&=\frac{2\pi b^2(1+8b^2)}{3\lambda^{3/2}}.
+ \label{eq:origin-optical-jets}
+\end{align}
+At the wall, let $\sigma=\abs{F_\star'(x_{\rm w})}$ and
+$\delta=Y-y$.  Then
+\begin{align}
+ W(y)&=w_Y\delta^2+O(\delta^3),
+ &A(y)&=\coth(Y)w_Y\delta^2+O(\delta^3),
+ \label{eq:wall-optical-jets}\\
+ w_Y&=\frac{2\pi\sigma^2N_{\rm w}^2
+        (1+4N_{\rm w}\sigma^2)}{3\lambda^{3/2}},
+ &W''(Y)&=2w_Y>0.
+ \label{eq:wall-second-jet}
+\end{align}
+The strict inequality follows from the authenticated negative wall slope in
+\cref{eq:consequence-profile-inputs}.  Analytically, a nontrivial solution
+cannot have both $F_\star(x_{\rm w})=0$ and
+$F_\star'(x_{\rm w})=0$, since uniqueness for the regular wall initial-value
+problem would then give the vacuum solution.
+
+For the present parameters,
+\begin{equation}
+ Y=\operatorname{arctanh}(1/5)=0.202732554054\ldots,
+ \qquad N_{\rm w}=\frac{24}{25},
+\end{equation}
+and directed evaluation of the endpoint ledger gives
+\begin{align}
+ W''(Y)&\in[243.208686287,286.156494827],
+ \notag\\
+ A''(Y)&\in[1216.04343143,1430.78247414].
+ \label{eq:certified-endpoint-ledger}
+\end{align}
+In particular, the leading wall amplitude is bounded away from zero.
+
+\subsection{Boundary-controlled inertia-transform tail}
+\label{sec:form-factor-tail}
+
+In terms of \cref{eq:optical-weights}, define the finite optical transform of
+the inertia density
+\begin{equation}
+ \cN(p)
+ =\frac1p\int_0^Y A(y)\sin(py)\dd y
+  -\int_0^Y W(y)\cos(py)\dd y.
+ \label{eq:exact-inertia-transform}
+\end{equation}
+This is the profile-dependent numerator used in rotational matter-current
+form-factor constructions.  We leave it unfiltered so that the result below
+isolates exactly what follows from the certified inertia distribution.  This
+continuum expression, rather than a finite radial quadrature, is used at large
+frequency.
+
+The relation between endpoint order and the asymptotics of finite Fourier or
+Hankel transforms is standard; see, for example,
+\cite{wang2018,okadayamane2024}.  We make no priority claim for that general
+mechanism.  The result specific to this work is that the nonlinear profile
+certificate authenticates the quadratic wall zero, the nonzero coefficient in
+\cref{eq:certified-endpoint-ledger}, and the global consequence below.
+
+\begin{proposition}[Sharp authenticated inertia-transform tail]
+\label{prop:sharp-transform-tail}
+For the exact certified profile,
+\begin{align}
+ \cN(p)
+   &=W''(Y)\frac{\sin(pY)}{p^3}+o(p^{-3}),
+ \notag\\
+ \cN'(p)
+   &=Y W''(Y)\frac{\cos(pY)}{p^3}+o(p^{-3}),
+ \notag\\
+ \cN''(p)
+   &=-Y^2W''(Y)\frac{\sin(pY)}{p^3}+o(p^{-3}).
+ \label{eq:sharp-p-minus-three-tail}
+\end{align}
+Moreover, the certificate gives
+\begin{equation}
+ (n_0,n_1,n_2)=
+ (3.7575\!\times\!10^{10},
+  3.7830\!\times\!10^{10},
+  7.5660\!\times\!10^{10})
+ \label{eq:inertia-transform-tail-constants}
+\end{equation}
+such that
+\begin{equation}
+ \abs{\cN^{(k)}(p)}\leq n_kp^{-3},
+ \qquad p\geq1.
+ \label{eq:global-inertia-transform-tail-bound}
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+For $m=0,1,2$, set
+\begin{equation}
+ M_m^W=\norm{\partial_y^3(y^mW)}_{L^1(0,Y)},
+ \qquad
+ M_m^A=\norm{\partial_y^3(y^mA)}_{L^1(0,Y)}.
+ \label{eq:third-derivative-norms}
+\end{equation}
+The exact interval-AD certificate, with a separate regular-origin Volterra--Lie
+calculation, proves
+\begin{align}
+ (M_0^W,M_1^W,M_2^W)
+ &\leq(2.5776861727020434\!\times\!10^8,
+       6.94657005661323\!\times\!10^6,
+       2.98269008103853\!\times\!10^5),
+ \notag\\
+ (M_0^A,M_1^A,M_2^A)
+ &\leq(3.731716425863237\!\times\!10^{10},
+       5.056441300063133\!\times\!10^8,
+       1.391944736624204\!\times\!10^7).
+ \label{eq:certified-third-derivative-norms}
+\end{align}
+These conservative values are upper displays of exact rational bounds.
+
+Three integrations by parts are performed on the closed half interval
+$[0,Y]$.  The endpoint jets in
+\cref{eq:origin-optical-jets,eq:wall-optical-jets} cancel the lower-order
+boundary terms but retain the wall term proportional to $W''(Y)$.  This point
+is essential: the zero extension of $W$ has a jump in its second derivative at
+$Y$ and must not be treated as a global $W^{3,1}$ function.  The six norms in
+\cref{eq:certified-third-derivative-norms} bound the integral remainders and,
+after differentiating under the integral sign, give
+\cref{eq:global-inertia-transform-tail-bound}.  Keeping the wall terms and
+applying the Riemann--Lebesgue lemma to the remainders gives the three sharp
+expansions in \cref{eq:sharp-p-minus-three-tail}; derivatives retain the same
+power because they differentiate the endpoint phase $pY$.
+
+The same explicit bookkeeping gives the three outward-rounded constants in
+\cref{eq:inertia-transform-tail-constants}.  In the combined archive they are
+the upper endpoints of
+\texttt{numerator\_derivative\_coefficients}; no form-factor prefactor or
+frequency filter is applied to \(\cN\).
+\end{proof}
+
+The endpoint and six-norm certificate has SHA-256 digest
+\begin{center}
+\small\nolinkurl{1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9}.
+\end{center}
+It binds the wall slope, inertia, endpoint ledger, all six derivative norms,
+and the continuum tail envelope to one certificate identity.
+
+\begin{remark}[Scope of the spectral statement]
+The $p^{-3}$ coefficient is a property of this Dirichlet-confined inertia
+profile.  A generic finite-pinning profile with nonzero wall value loses the quadratic
+cancellation and can have a slower tail; no smooth-confinement universality
+theorem is asserted.  The transform \eqref{eq:exact-inertia-transform} is defined
+directly from the certified inertia density.  Identifying it with a detector
+bath factor would require a specified current, interaction, switching
+protocol, and open-system limit; none of those is asserted here.
+\end{remark}

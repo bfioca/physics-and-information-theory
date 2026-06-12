@@ -20,6 +20,7 @@ from __future__ import annotations
 from math import acosh, cosh, isfinite, sin, sinh, sqrt
 from typing import Sequence
 
+from .static_patch_gradient_torque import gradient_zero_frequency_correlations
 from .static_patch_scalar_common_mode import zero_frequency_scalar_correlation
 
 
@@ -164,6 +165,87 @@ def radial_smeared_zero_frequency_record(
         "proof_formula": (
             "B_12=A_f A_g phi_0(y), B_11=A_f^2, B_22=A_g^2, "
             "so B_12/sqrt(B_11 B_22)=phi_0(y)"
+        ),
+    }
+
+
+def radial_center_gradient_zero_frequency_record(
+    center_distance_over_radius: float,
+    *,
+    first_shell_radii: Sequence[float],
+    first_shell_weights: Sequence[float],
+    second_shell_radii: Sequence[float],
+    second_shell_weights: Sequence[float],
+) -> dict[str, object]:
+    """Return the zero-mode covariance of center-derived radial smearings.
+
+    If ``Phi_f(p)`` is a radial convolution of the field around ``p``, the
+    spherical product formula gives
+
+    ``Cov(Phi_f(p), Phi_g(q)) = A_f A_g phi_0(d(p,q)/R)``.
+
+    The amplitudes are center independent. Differentiating with respect to the
+    two centers therefore multiplies the point-gradient covariance tensor by
+    ``A_f A_g``. The same factors occur in the two auto-covariances and cancel
+    from each normalized polarization.
+
+    Smooth compact nonnegative profiles make the center derivatives smooth
+    compact signed field smearings.  Nonnegativity keeps both zero-mode
+    profile amplitudes positive, so their product cancels without a residual
+    sign after covariance normalization.  Shell mixtures are accepted here as
+    an exact algebraic audit of that cancellation, not as a UV regulator.
+    """
+    y = center_distance_over_radius
+    _validate_nonnegative("center_distance_over_radius", y)
+    first_radii, first_weights = _validated_radial_profile(
+        first_shell_radii,
+        first_shell_weights,
+    )
+    second_radii, second_weights = _validated_radial_profile(
+        second_shell_radii,
+        second_shell_weights,
+    )
+    first_amplitude = radial_profile_zero_frequency_amplitude(
+        first_radii,
+        first_weights,
+    )
+    second_amplitude = radial_profile_zero_frequency_amplitude(
+        second_radii,
+        second_weights,
+    )
+    longitudinal, transverse = gradient_zero_frequency_correlations(y)
+    first_auto_component = first_amplitude**2 / 3.0
+    second_auto_component = second_amplitude**2 / 3.0
+    cross_scale = first_amplitude * second_amplitude / 3.0
+    longitudinal_cross = cross_scale * longitudinal
+    transverse_cross = cross_scale * transverse
+    normalization = sqrt(first_auto_component * second_auto_component)
+    normalized_longitudinal = longitudinal_cross / normalization
+    normalized_transverse = transverse_cross / normalization
+    return {
+        "center_distance_over_radius_y": y,
+        "first_profile_shell_radii": first_radii,
+        "first_profile_shell_weights": first_weights,
+        "second_profile_shell_radii": second_radii,
+        "second_profile_shell_weights": second_weights,
+        "first_profile_spherical_amplitude": first_amplitude,
+        "second_profile_spherical_amplitude": second_amplitude,
+        "first_auto_covariance_per_polarization": first_auto_component,
+        "second_auto_covariance_per_polarization": second_auto_component,
+        "longitudinal_cross_covariance": longitudinal_cross,
+        "transverse_cross_covariance": transverse_cross,
+        "normalized_longitudinal_correlation": normalized_longitudinal,
+        "normalized_transverse_correlation": normalized_transverse,
+        "point_gradient_longitudinal_correlation": longitudinal,
+        "point_gradient_transverse_correlation": transverse,
+        "radial_center_gradient_smearing_cancels_exactly": (
+            abs(normalized_longitudinal - longitudinal) < 1.0e-14
+            and abs(normalized_transverse - transverse) < 1.0e-14
+        ),
+        "proof_formula": (
+            "K_fg(p,q)=A_f A_g phi_0(d(p,q)/R); center derivatives act "
+            "only on phi_0, while A_f and A_g cancel after auto-covariance "
+            "normalization"
         ),
     }
 
@@ -348,6 +430,17 @@ def static_patch_radial_smearing_certificate() -> dict[str, object]:
         for center in center_distances
         for first_profile, second_profile in zip(profiles, reversed(profiles))
     )
+    center_gradient_records = tuple(
+        radial_center_gradient_zero_frequency_record(
+            center,
+            first_shell_radii=first_profile[0],
+            first_shell_weights=first_profile[1],
+            second_shell_radii=second_profile[0],
+            second_shell_weights=second_profile[1],
+        )
+        for center in center_distances
+        for first_profile, second_profile in zip(profiles, reversed(profiles))
+    )
     switching_records = tuple(
         finite_switching_radial_correlation_record(
             center,
@@ -388,6 +481,10 @@ def static_patch_radial_smearing_certificate() -> dict[str, object]:
             < 1.0e-14
             for record in smearing_records
         ),
+        "center_gradient_smearing_preserves_both_tensor_correlations": all(
+            record["radial_center_gradient_smearing_cancels_exactly"]
+            for record in center_gradient_records
+        ),
         "finite_switching_correlation_cannot_exceed_zero_mode_value": all(
             record["absolute_correlation_respects_zero_mode_bound"]
             for record in switching_records
@@ -405,7 +502,10 @@ def static_patch_radial_smearing_certificate() -> dict[str, object]:
             "For arbitrary nonnegative radial optical profiles f and g, the "
             "zero-frequency Bunch-Davies coefficients obey B12=A_f A_g phi0(y), "
             "B11=A_f^2, and B22=A_g^2. Their normalized correlation is exactly "
-            "phi0(y)=y/sinh(y), independent of both profile radii and shapes."
+            "phi0(y)=y/sinh(y), independent of both profile radii and shapes. "
+            "For smooth compact profiles, differentiating the translated "
+            "convolutions with respect to their centers similarly preserves "
+            "both normalized point-gradient tensor correlations."
         ),
         "physical_consequence": (
             "Finite radial worldtube size cannot repair the fixed-center-separation "
@@ -413,21 +513,24 @@ def static_patch_radial_smearing_certificate() -> dict[str, object]:
             "nonnegative finite-switching spectral filter has normalized "
             "correlation no larger than the zero-mode value, so the co-location "
             "scaling survives without an optical-pointlike or infinite-time "
-            "assumption for the declared radial pure-dephasing class."
+            "assumption for the declared radial pure-dephasing class. Smooth "
+            "center-gradient smearing also supplies a UV-regular zero-mode "
+            "bath operator for the gradient model."
         ),
         "claim_boundary": (
             "profiles are nonnegative, stationary, and radial in the optical H3 "
             "measure; their conformal source weights must realize that coupling. "
             "The exact cancellation is zero-frequency; the finite-switching result "
             "is an upper bound for scalar pure-dephasing covariance. This is not a "
-            "three-axis top torque and does not control nonradial profiles, "
-            "dissipative jump sectors, the Davies approximation, stress-energy, or "
-            "backreaction."
+            "three-axis distributed top current and does not control nonradial "
+            "profiles, finite-time gradient spectral averages, dissipative jump "
+            "sectors, the Davies approximation, stress-energy, or backreaction."
         ),
         "certified_claims": certified_claims,
         "maximum_spherical_mean_quadrature_residual": maximum_mean_residual,
         "spherical_mean_records": mean_records,
         "smearing_records": smearing_records,
+        "center_gradient_smearing_records": center_gradient_records,
         "finite_switching_records": switching_records,
         "next_physics_gate": (
             "derive the actual spherical-top torque density and decompose its "

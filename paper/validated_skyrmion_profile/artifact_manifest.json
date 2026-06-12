@@ -1,0 +1,48 @@
+{
+  "artifact": "validated_skyrmion_profile_manuscript",
+  "status": "specialist_review_draft",
+  "build_date_utc": "2026-06-12",
+  "build_engine": "Tectonic 0.16.9",
+  "page_count": 21,
+  "layout_checks": {
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "visual_pages_inspected": [1, 6, 7, 17, 18, 19, 20, 21]
+  },
+  "files": {
+    "main.pdf": "34bfff624ace1f04e37df6b6a130671a6b6f02492e6d2cffbdfc295fb4fa5d9f",
+    "main.tex": "223bbf38de713f3622edcd38ea8c5f52b75161f78754223d6678a41bdd217049",
+    "references.bib": "7d6a28944c744388b867f3b19cf4eeaf466714b3fc5872a8a49429a6b85b6700",
+    "sections/consequences.tex": "99157ce7b8ea20169fa7e68ff78c2e09c4d620dca0a5ac53a09ce188176140cd",
+    "sections/discussion.tex": "0b21a88d656039a741e6b5ec2939e20a922d13d4bca0f36d9e0d1a9348d356c2",
+    "sections/introduction.tex": "102721c507e10c803877bda568e89af103e40cd258529dbd02bd588c82bb9221",
+    "sections/model_and_theorem.tex": "fc10de1d03b1c32979fe8aa7380310105ac9aea3441824b30b5e938338915446",
+    "sections/reproducibility.tex": "6a5dfb46d1813e7b88365098909ae740f3d36043732e9ff333e5626c582d86c3",
+    "sections/validated_proof.tex": "956ec4f48198eba3c8d28441223a44e3c74723b88cdaea6d7f507f3e4d532759",
+    "main.log": "9e45524281aaec34781866003ad7da823d31ab7617f2a2e31cc6ef5c57aeab2e",
+    "audit_package.py": "1c5cdfc127b5c174ab2fef1dd446c8e6027a74eff7699d7e2062969502b80ccb"
+  },
+  "proof_certificates": {
+    "experiments/skyrmion_au2_global_tail_exact_certificate.json": "1d5fe53786cc280006d7b1092d360556d4d8d8684e5ae3356ce8cd6d084e72a9",
+    "experiments/skyrmion_full_radial_gap_exact_certificate.json": "46795f66ac628ed4c879a595bbd4d0ce8d0f909a299569d7a05fe04433011959"
+  },
+  "proof_inputs": {
+    "experiments/skyrmion_au3b_sharp_tube_snapshot_exact.json": "1781a2ff357f3b165d23e290eb403552d77d099a72b9e90920735e6a80b30431"
+  },
+  "mathematical_payloads": {
+    "experiments/skyrmion_au2_global_tail_exact_certificate.json": {
+      "excluded_top_level_keys": ["command", "dependency_versions"],
+      "sha256": "f1703ab8f2b3f908a1609d03349c60becdb287225374c91c136fb275053d0f85"
+    }
+  },
+  "claim_checks": {
+    "au2_certificate": "experiments/skyrmion_au2_global_tail_exact_certificate.json",
+    "numerator_derivative_upper_bounds": [
+      "37575000000",
+      "37830000000",
+      "75660000000"
+    ]
+  }
+}

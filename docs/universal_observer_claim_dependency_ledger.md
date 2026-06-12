@@ -47,7 +47,7 @@ sets optical support   sets coherence time
 
 | Node | Required statement | Repository evidence | Missing implication | Kill or pivot test |
 | --- | --- | --- | --- | --- |
-| UO.1a | Globally valid covariant `SO(3)` risk lower bound from orbit distinguishability | Complete by two routes for Haar-prior chordal cost: `R_ref>=1/(16<J^2>+8)` from spin-1 fusion/Hardy, and `R_ref>=6/(e*pi^(5/3)) exp(-2A_SO3/3)` with an exact mean-spin Gibbs envelope | Compare this estimation task with the physical target recovery protocol | A protocol needs coherent recovery not implied by accurate estimation |
+| UO.1a | Globally valid covariant `SO(3)` risk lower bound from orbit distinguishability | Complete: Hayashi gives the exact Haar mean-Casimir frontier; the repository retains the elementary `R_ref>=1/(16<J^2>+8)` corollary and a separate `R_ref>=6/(e*pi^(5/3)) exp(-2A_SO3/3)` mean-spin/asymmetry route | Compare this estimation task with the physical target recovery protocol | A protocol needs coherent recovery not implied by accurate estimation |
 | UO.1b | Orientation risk implies the reference quality needed by the physical target protocol | Complete for the declared spin-1 estimate-and-correct protocol: `(8/9)R_ref<=epsilon_rec<=2sqrt(R_ref)` | Derive the POVM/correction from the local matter interaction; extend or separate arbitrary coherent decoders and higher-spin targets | Accurate estimation and coherent recovery remain inequivalent outside the declared family |
 | UO.2C | Size, energy, and weak gravity constrain rotational capacity | Exact spherical mass/lapse response, gravity-to-Casimir elimination, rotational source bounds, static conservation gate, fixed-profile rigid-source no-go, centrifugal two-channel Hessian/source/wall gate, exact coupled-origin analysis and physical origin tubes, exact local finite-energy trace, exact Liouville/Picone reduction and wall checker, matching authenticated inner/outer nonlinear-family `1/100` completed-potential certificates, the closed positive self-adjoint global Friedrichs operator with `||A^-1||<=100`, an exact nonzero weak matter response, generic-scalar affine bulk/origin/wall master kernels, exact positive-radius rational-trial residual/energy-dual integration, an exact cancellation-safe origin residual/full-domain composition theorem, exact conforming physical primal-adjoint trial archives with matched origin patches, authenticated origin profile jets and primal origin residual, a centered correlated outer primal enclosure improving the square bound by over `30000`, certified positive-radius weak adjoint bulk load, certified primal and loaded-adjoint wall mismatches, exact internal conormal cancellation, an exact finite-time heat/Jacobi/Gaussian detector transfer, and an exact Israel promotion gate proving the identical-background obstruction and naming all six nonspherical tensor conditions, plus floating same-action stress/master/transmission and exterior Weyl response | Preserve the remaining Newton graph/slope correlation, construct a direct `V*`/Riesz lift of the adjoint weak residual, and add its regular-origin load so the composed residual product can exclude zero; solve the spherical Einstein-Skyrme/Kottler background and the six-amplitude tensorial Israel reconstruction; derive detector rate/noise/backreaction from the common action; and control deformed-background response, higher-order rotation, and asymptotically free `Q=0` families | The observable response cancels, the Israel composition fails, or the isotropic branch fails beyond quadratic order |
 | UO.2Q | Matter/gravity constrain the global reference resource | Complete for confined orbital matter and the supported Skyrmion collective family; exact Feshbach transfer identifies the full-band inputs; authenticated fixed-wall `l=0` gap `omega_hat>=1/5`; authenticated spherical moving-membrane gap `omega_hat>=1/50` | Construct `P_j`, prove its compression floor, and certify anchor/nonspherical complement gaps and off-band couplings | The positive two-band completion is physical or the remaining transfer ratios approach one |
@@ -76,11 +76,13 @@ substituting a classical `|J|` bound into a quantum-reference accuracy law.
 The global operational part is closed without a QFI tail assumption:
 
 ```text
+R_ref >= kappa_SO3(C2_ref)/2,
 R_ref >= 1/(16 C2_ref+8),
 R_ref >= 6/(e*pi^(5/3)) exp[-2 B(K1_ref)/3],
 ```
 
-where `B` is the exact Gibbs entropy envelope with degeneracy `(2j+1)^2`.
+where the first line is Hayashi's known exact optimum and `B` is the Gibbs
+entropy envelope with degeneracy `(2j+1)^2`.
 Jensen also gives `K1_ref(K1_ref+1)<=<J^2>`. The confined-orbital theorem now
 supplies the missing second-moment bridge for a named local matter class:
 
