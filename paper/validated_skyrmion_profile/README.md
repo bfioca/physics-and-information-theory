@@ -8,6 +8,11 @@ the computer-assisted existence and local uniqueness theorem for one prescribed
 massive Dirichlet-confined fixed-de-Sitter Skyrmion profile, with authenticated
 radial and spectral consequences.
 
+For external review, start with `REFEREE_GUIDE.md`.  The immutable review
+snapshot is tagged `paper-a-review-v1`; `CITATION.cff` gives the paper-specific
+citation. Author affiliation and preferred contact metadata still require
+explicit author input before journal submission.
+
 Build from this directory with:
 
 ```bash

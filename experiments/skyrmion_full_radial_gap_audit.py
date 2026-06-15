@@ -47,6 +47,7 @@ def _source_hashes() -> dict[str, str]:
         ROOT / "experiments/skyrmion_full_radial_gap_audit.py",
         ROOT / "qgtoy/validated_skyrmion_radial_gap.py",
         ROOT / "qgtoy/validated_skyrmion_sharp_profile.py",
+        ROOT / "qgtoy/validated_rational_text.py",
         ROOT / "qgtoy/validated_interval.py",
         ROOT / "qgtoy/validated_skyrmion_bvp.py",
         ROOT / "qgtoy/validated_skyrmion_origin.py",

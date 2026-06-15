@@ -591,7 +591,7 @@ hedgehog fluctuations; unweighted Jacobi form coercivity; hard support with
 `omega_K=e f_pi omega_hat`.
 
 Evidence: authenticated exact certificate SHA256
-`46795f66ac628ed4c879a595bbd4d0ce8d0f909a299569d7a05fe04433011959`,
+`695310609d070f6dba2c678982ffc87472ed7c341813137fb90ad9dd9e1e6096`,
 with 109 positive-radius leaves and maximum refinement depth five. The origin
 and wall ground-state-transform boundary terms vanish on the declared form
 domain.

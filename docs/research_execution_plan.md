@@ -137,7 +137,7 @@ finite-reference obstruction transfers with a controlled correction.
   Authenticated adaptive Newton-tube replay and a cancellation-preserving
   origin audit prove `L_Jacobi>=1` on the physical `l=0` form domain. Since
   `W<=25`, `omega_hat_rad>=1/5`; certificate SHA256
-  `46795f66ac628ed4c879a595bbd4d0ce8d0f909a299569d7a05fe04433011959`.
+  `695310609d070f6dba2c678982ffc87472ed7c341813137fb90ad9dd9e1e6096`.
   The moving membrane is handled by the next item; anchor and nonspherical
   complement channels remain open.
 - Coupled spherical profile-membrane radial gap: complete. A second rational

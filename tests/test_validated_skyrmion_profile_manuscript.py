@@ -24,7 +24,7 @@ def test_checked_manuscript_package_passes_audit() -> None:
     assert completed.returncode == 0, completed.stdout + completed.stderr
     report = json.loads(completed.stdout)
     assert report["status"] == "pass"
-    assert report["checked_manuscript_files"] == 11
+    assert report["checked_manuscript_files"] == 13
     assert report["checked_proof_certificates"] == 2
     assert report["checked_proof_inputs"] == 1
     assert report["checked_claim_bounds"] == 3

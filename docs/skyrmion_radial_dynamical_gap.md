@@ -137,7 +137,7 @@ omega_K >= e f_pi/5.                                   (9)
 ```
 
 The exact certificate SHA256 is
-`46795f66ac628ed4c879a595bbd4d0ce8d0f909a299569d7a05fe04433011959`.
+`695310609d070f6dba2c678982ffc87472ed7c341813137fb90ad9dd9e1e6096`.
 
 ## Remaining Closure
 

@@ -2,7 +2,7 @@
 
 Status: **GO for colleague review and specialist submission preparation**
 
-Last audited: 2026-06-12
+Last audited: 2026-06-15
 
 ## Decision
 
@@ -40,8 +40,8 @@ theorem remains the higher-impact program, but it is not a submission theorem.
 
 Working title:
 
-> Computer-Assisted Existence and Radial Stability of a Dirichlet-Confined
-> Massive Skyrmion
+> Computer-Assisted Existence and Fixed-Wall Radial Stability of a
+> Dirichlet-Confined Massive Skyrmion
 
 Central theorem:
 
@@ -138,17 +138,18 @@ reactivation gate, not a premise of Paper A.
 
 ## Release Disposition
 
-The 21-page PDF, build log, manuscript sources, package checker, two proof
-certificates, and sharp-tube input are frozen by the checked manifest. The
-combined AU.1/AU.2 archive, sharp snapshot, and radial-gap certificate replay
-to their canonical hashes. The mathematical and publication referees report no
-remaining P1/P2 blocker.
+The 22-page PDF, build log, manuscript sources, referee guide, paper-specific
+citation metadata, package checker, two proof certificates, and sharp-tube
+input are frozen by the checked manifest and immutable review tag
+`paper-a-review-v1`. The combined AU.1/AU.2 archive, sharp snapshot, and
+radial-gap certificate replay to their canonical hashes. The mathematical and
+publication referees report no remaining P1/P2 blocker.
 
 The next scientific action is external human priority and correctness review.
 Before journal submission, add the author's preferred affiliation/contact
-metadata and archive the release under an immutable tag or DOI. The explicit
-parameter box remains a worthwhile follow-on theorem, not a hidden premise of
-the present paper.
+metadata and, if available, an archival DOI. The explicit parameter box
+remains a worthwhile follow-on theorem, not a hidden premise of the present
+paper.
 
 Supporting audits:
 

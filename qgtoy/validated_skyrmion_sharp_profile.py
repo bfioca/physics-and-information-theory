@@ -23,7 +23,7 @@ from .validated_interval import (
     pi_machin_interval,
     sin_center_lipschitz_interval,
 )
-from .validated_skyrmion_au3 import exact_fraction_from_text
+from .validated_rational_text import exact_fraction_from_text
 from .validated_skyrmion_bvp import (
     SkyrmionJetBox,
     SkyrmionPolynomialCell,

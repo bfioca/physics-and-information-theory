@@ -1068,14 +1068,14 @@ Requested font "[lmmono8-regular]:" at 8.0pt
  -> lmmono8-regular
 Requested font "[lmmono8-regular]:" at 6.1pt
  -> lmmono8-regular
- [19]) (sections/discussion [20]) (main.bbl
+ [19] [20]) (sections/discussion) (main.bbl
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
 (Font)              scaled to size 10.0pt on input line 6.
 Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;
 +tnum;+lnum;mapping=tex-text;" at 10.0pt
  -> TeXGyreTermesX-Italic.otf
-) [21] (main.aux)
+[21]) [22] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F3E61B1E887EA73428454A422E887DE4;3502.
  )
-Output written on main.xdv (21 pages, 518128 bytes).
+Output written on main.xdv (22 pages, 530016 bytes).

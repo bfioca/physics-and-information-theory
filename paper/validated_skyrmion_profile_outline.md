@@ -1,4 +1,4 @@
-# Computer-Assisted Existence And Radial Stability Of A Dirichlet-Confined Massive Skyrmion
+# Computer-Assisted Existence And Fixed-Wall Radial Stability Of A Dirichlet-Confined Massive Skyrmion
 
 Status: selected Paper A specialist-review draft. Mandatory proof,
 exact-replay, package-audit, and internal referee gates pass.

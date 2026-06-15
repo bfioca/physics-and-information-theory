@@ -1524,7 +1524,7 @@ Artifacts: `docs/skyrmion_radial_dynamical_gap.md`,
 `qgtoy/skyrmion_radial_dynamical_gap.py`,
 `qgtoy/validated_skyrmion_radial_gap.py`, and
 `experiments/skyrmion_full_radial_gap_exact_certificate.json` (SHA256
-`46795f66ac628ed4c879a595bbd4d0ce8d0f909a299569d7a05fe04433011959`).
+`695310609d070f6dba2c678982ffc87472ed7c341813137fb90ad9dd9e1e6096`).
 
 Representative command:
 
