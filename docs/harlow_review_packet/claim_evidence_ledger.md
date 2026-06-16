@@ -1,7 +1,7 @@
 # Harlow Review Packet: Claim-Evidence Ledger
 
 Status: external-claim audit after the bounded U8a and Paper R sprints,
-2026-06-10
+refreshed 2026-06-15
 
 This ledger governs the wording of the Harlow review packet. It separates
 established mathematics, conditional physical interpretation, and open
@@ -41,6 +41,7 @@ backreaction, and fixed-background response is not self-consistent gravity.
 | E8 | **[OPEN]** | No positive lower bound `|B_W|>=b_min>0` is proved. | A future attempt requires a materially different primal proof object. The STOP decision is not evidence that the response vanishes. |
 | E9 | **[PROVED]** | A computer-assisted theorem establishes one local, strictly decreasing hard-wall Skyrmion profile with negative wall slope and finite positive inertia at the declared fixed-background parameters. | AU.1 and exact profile artifact indexed below. This is not a rotating or self-gravitating solution. |
 | E10 | **[OPEN]** | `S_dir` has not been identified with `S_Ob`, and the one-action observer tradeoff has not been proved. | These are the first and third review questions, not packet conclusions. |
+| E11 | **[OPEN]** | No new relational theorem yet shows that information beyond a nondisturbingly readable classical sector, written to a blank record, forces disturbance of the complete `OD` source. | Generic channel information-disturbance, Koashi-Imoto, no-broadcasting, WAY, and resource-cost theorems are prior art and direct subsumption tests. |
 
 ## Observer-register claim boundary
 
@@ -49,6 +50,7 @@ backreaction, and fixed-background response is not self-consistent gravity.
 | **[PROVED]** | `R_ref>=1/(16<J^2>+8)` and `R_ref>=c_SO3 exp(-2S_dir/3)` for the declared global relational task. | Do not call either result an absolute-frame, local-QFI, memory-size, or observer-entropy theorem. |
 | **[PROVED]** | Confined spinless orbital matter obeys `<L^2><=2Ma^2E_ex`; supported Skyrmion collective profiles obey the stated inertia and sector-floor bounds. | Keep the orbital and adiabatic collective domains explicit. |
 | **[CONDITIONAL]** | The declared Bunch-Davies rigid-detector EFT obeys the AS2 finite-switch channel and degradation bounds if the QFT channel bridge holds. | Keep the proved regular-bath lemma, open KMS GNS bridge, factorized extended-detector action, factor `50`, declared box, and absence of a hardware-lifetime theorem explicit. |
+| **[OPEN]** | Costly net relational information may obey an acquisition-disturbance bound after the nondisturbingly readable classical sector is removed. | This is the active theorem target, not a packet result; the metric, source subclass, and non-subsumption proof remain to be supplied. |
 | **[OPEN]** | Local-matter preparation, storage, readout, support stress, and backreaction are not controlled by one action on one open parameter family. | The rigid-current locality STOP is route-specific; this remains the main physical bridge for Paper U. |
 
 ## Fixed-background response decision
@@ -86,11 +88,11 @@ direct certified Riesz solve, or a structural decomposition.
 
 ## Source-bound artifact index
 
-The hashes below were recomputed from the current worktree on 2026-06-10.
+The hashes below were recomputed from the current worktree on 2026-06-15.
 
 | Role | Artifact | SHA256 | Evidentiary use |
 | --- | --- | --- | --- |
-| Abstract observer composition | `experiments/universal_observer_tradeoff_certificate.json` | `5c88eb4af23764204333b5e899083c87911066895d70fc132f263e180c175ad6` | **[PROVED]** conditional implication |
+| Abstract observer composition | `experiments/universal_observer_tradeoff_certificate.json` | `2bd73ea29cc649ed8dbc99f266d0fafa07c6b294a7a3d4cb87d88cd791168487` | **[PROVED]** conditional implication |
 | AU.1 nonlinear profile | `experiments/skyrmion_newton_reduced_hessian_rounded_exact_certificate.json` | `c4c95db47470392f0963266e37b491ae49a09381464f3da97c3f97bd14e74eff` | **[PROVED]** hard-wall profile |
 | Fixed-de Sitter resolvent | `experiments/static_patch_l2_response_exact_certificate.json` | `45871bfe3e15a65b546eddd6391d42d0d8e6665ee981c9f24618409f52dcd051` | **[PROVED]** exact Green operator |
 | Centrifugal inverse | `experiments/centrifugal_skyrmion_friedrichs_form_certificate.json` | `4a4e3ecd48a205860de3aa045c94d2b825c0afce1c0f12f4b96254db355b85bb` | **[PROVED]** closed operator and inverse |

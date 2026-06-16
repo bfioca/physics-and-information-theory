@@ -304,8 +304,9 @@ Failure of one parameter point is not an asymptotic no-go.
 | `C_dir^op` | orbit (2.1), arbitrary normal joint state, arbitrary readout | risk-to-information, risk-to-asymmetry, and risk-to-Casimir arrows **PROVED** |
 | `C_dir^cl` | a finite discrete classical record is a Markov bottleneck before readout | classical entropy/alphabet lower bound **CONDITIONAL** on this declared bottleneck |
 | `C_dir^spec` | invariant `H_dir` on the complete `R_acc` representation has sector floors with finite rotational partition function | asymmetry-to-energy upper-capacity theorem **CONDITIONAL** on the spectral premise |
-| `C_dir^orb` | hard-confined spinless nonrelativistic orbital matter with `H_ex>=T` | `C2<=2Ma^2E_ex` and the resulting risk floor **PROVED** |
-| `C_dir^heat` | actual or norm-controlled isotropic rotational heat channel | finite-exposure risk interpolation **CONDITIONAL** on that channel |
+| `C_dir^orb` | hard-confined spinless nonrelativistic orbital matter with a fixed nonnegative energy convention `H_ex>=T`, or a proved form offset `H_gs+Delta>=T` | `C2<=2Ma^2E_ex`, with `Delta` included in `E_ex`, and the resulting risk floor **PROVED** |
+| `C_dir^heat` | covariant orbit `sigma_g=U(g)sigma U(g)^*` and actual or norm-controlled isotropic heat convolution through the same `U`, with no `G`-dependent unheated side system | finite-exposure risk interpolation **CONDITIONAL** on that channel |
+| `C_dir^IE` | relational source `OD`, initially symmetric independent record, net information gain after subtracting any nondisturbingly readable classical sector, readout factorization, and all target-frame/control/postselection resources priced | domain specified; an all-protocol acquisition-disturbance theorem is **OPEN** |
 | `C_dir^act` | nontrivial KMS environment and one local action deriving every allowed control and protocol stage | domain defined; a complete acquisition-through-readout member is **OPEN** |
 | `C_dir^grav` | one local action, common support and energy ledgers, and a named gauge-invariant `G_m` | domain defined; a relativistic common-action member closing all Paper U premises is **OPEN** |
 

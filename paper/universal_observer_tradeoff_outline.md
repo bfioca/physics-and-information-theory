@@ -1,4 +1,4 @@
-# Finite Directional Records In A de Sitter Static Patch
+# Prospective Paper U: Finite Directional Records In A Static Patch
 
 Status: claim-hygiene manuscript skeleton. Gates G1 and G2 are specified at an
 audit-ready level. A regular-bath finite-switch theorem is proved and a
@@ -7,6 +7,23 @@ open and the exact
 factorized density cannot itself serve as microcausal local matter. Paper U
 U8a, same-action preparation and readout, and the gravitational capacity
 variable remain open. This is an outline, not full manuscript prose.
+
+The static-patch title is prospective. The active theorem note remains a
+general symmetric acquisition-disturbance problem until the local KMS lift is
+proved.
+
+**Active route decision (2026-06-15).** Do not expand this skeleton into a
+submission draft merely by naming assumptions A1--A5 and eliminating their
+budgets. The repository already contains that conditional composition. The
+next paper-level gate is a new same-action information-exposure theorem:
+within one declared microcausal acquisition/storage/readout model, low
+directional readout risk from an initially symmetric independent record, after
+subtracting any nondisturbingly readable classical sector, must force
+disturbance of the complete relational source, with the target frame, controls,
+failed postselection branches, and every readout path priced. Only after that
+result is proved should a distinct static-patch channel lemma map the
+disturbance to KMS exposure, and only then should gravitational interfaces be
+promoted into the headline.
 
 ## 1. Claim capsule
 
@@ -33,6 +50,12 @@ controls record lifetime, optical and proper support, and one physically
 justified gauge-invariant gravitational budget. That final conjunction is not
 yet proved. The new detector-EFT result is a reusable channel lemma plus a
 route-level locality stop, not a replacement for that conjunction.
+
+There is not yet one proved function `F_record(S_dir,Gamma,eta)`. The
+risk-asymmetry and heat-exposure lower bounds are independent necessities and
+may currently be combined only by taking their maximum on a common state and
+channel domain. A stronger joint function requires a contraction,
+information-disturbance, or same-action acquisition theorem.
 
 ## 2. Exact domain
 
@@ -174,13 +197,19 @@ counterexample must be presented next to U5.
 
 ### Corollary U6. Confined orbital matter - PROVED on a named domain
 
-For hard-confined spinless nonrelativistic orbital matter with
+For hard-confined spinless nonrelativistic orbital matter with a fixed
+nonnegative energy convention
 `H_ex>=sum_i p_i^2/(2m_i)`, total rest mass `M`, and radius `a`,
 
 ```text
 C2<=2Ma^2E_ex,
 R_Haar>=1/(32Ma^2E_ex+8).                               (U6)
 ```
+
+If the model begins with a ground-subtracted `H_gs`, it must exhibit
+`Delta>=0` with `H_gs+Delta>=T` as quadratic forms; `E_ex` in U6 then means
+`E_gs+Delta`. A later gravitational ledger must count the physical energy and
+support costs consistently, without double-counting this offset.
 
 Under the separately declared proxy `2G(M+E_ex)/a<=chi<1`, this implies
 
@@ -194,13 +223,25 @@ admissibility, not a complete gravitational-backreaction theorem.
 ### Corollary U7. Effective heat exposure - CONDITIONAL
 
 If the actual reduced dynamics is an isotropic rotational heat channel, or is
-within operational distance `eta_op` of one, then
+within operational distance `eta_op` of one, every `G`-dependent,
+nontrivially transforming system available at readout must be included in the
+capacity. The exposure-input ensemble is the covariant orbit
+`sigma_g=U(g)sigma U(g)^*`, and the declared heat convolution acts through the
+same `U`; any unheated side system is `G`-independent and rotation-trivial. On
+this domain,
 
 ```text
 R_physical(T)
  >= 3/4[1-exp(-2Gamma)]
-    +exp(-2Gamma)/(16C_max+8)-eta_op.                   (U7)
+    +exp(-2Gamma) R_cap(C_hat)-eta_op,                  (U7)
+
+C_hat=sup_(0<=a<=A) C_max(a,beta)<infinity.
 ```
+
+Here `R_cap` is any proved nonincreasing initial-risk floor. Hayashi's known
+exact mean-Casimir optimum is preferred in paper-facing statements; the
+elementary executable choice is `R_cap(C)=1/(16C+8)`. The support envelope is
+required unless monotonicity of `C_max` has been proved.
 
 This is an exposure theorem, not a universal elapsed-time limit. Paper U still
 needs to derive `Gamma` and `eta_op` from the same acquisition/storage/readout

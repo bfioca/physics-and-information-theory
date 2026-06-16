@@ -9,10 +9,18 @@ route also ended in **INCONCLUSIVE STOP**. The refreshed Harlow packet is a GO
 for conceptual review and records this narrower result explicitly. Paper A is
 the best-developed manuscript fallback, subject to novelty review.
 
-## Working title
+## Prospective working title
 
-**Finite Directional Records in a de Sitter Static Patch: Information
-Capacity, Lifetime, and Gravitational Footprint of a Localized Observer**
+**Finite Directional Records in a Static Patch: An Operational Tradeoff for
+Localized Observer Registers**
+
+This title is licensed only after the same-action static-patch lift closes.
+The active theorem note is presently a general symmetric
+acquisition-disturbance problem, specified in
+`docs/paper_u_information_exposure_goal.md`. It concerns net blank-record
+information after subtracting any nondisturbingly readable classical source
+sector; a strict disturbance floor for arbitrary mixed ensembles is not
+assumed.
 
 ## Goal
 
@@ -46,10 +54,14 @@ Freeze the physical subclass `C_dir^PaperU subset C_dir^op` consisting of:
 
 - a localized directional register `O` with a unitary `SO(3)` action;
 - a localized target or detector `D` carrying physical orientation markers;
+- an initially symmetric, `G`-independent record memory `M`, with all
+  pre-existing information, correlations, and asymmetry otherwise charged;
 - a static-patch field environment `E` in a specified KMS state;
 - one local action for `O+D+E` and all declared support degrees of freedom;
 - one controlled family of initial states;
 - one preparation, storage, and relational readout protocol;
+- a final readout that factors through the declared retained record, with any
+  reread source or controller included and priced;
 - explicit proper-time and optical-support conventions; and
 - a declared gauge-invariant gravitational budget or disturbance criterion.
 
@@ -67,6 +79,14 @@ therefore
 
 Phi(R_rel(T), T, s_opt, rho_h, G_cap; theta) >= 0.
 ```
+
+This display is a target architecture, not a current joint theorem. The proved
+risk-asymmetry and heat-exposure bounds are separate and can presently be
+combined only by taking their maximum on a common domain. Proving a stronger
+`F_record(S_dir,Gamma,eta_channel)` requires a same-action contraction or
+information-disturbance lemma. Likewise, `G_cap` has no gravitational content
+until a named gauge-invariant functional is proved to constrain capacity or
+disturbance for the same state family.
 
 Here:
 

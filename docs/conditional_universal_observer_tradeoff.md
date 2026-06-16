@@ -5,10 +5,17 @@ premises must be proved for each declared observer class.
 
 ## Composition Theorem
 
-Consider an integer-spin rotational reference with arbitrary
-rotation-trivial multiplicities. Let `C2=<J^2>`, and let `R(T)` be the
-Haar-prior chordal full-frame Bayes risk after a protocol of proper duration
-`T`. Suppose a declared observer class proves
+Let the exposure-input ensemble be the covariant orbit
+`sigma_g=U(g)sigma U(g)^*` of the complete accessible encoded state, in an
+integer-spin rotational representation with arbitrary rotation-trivial
+multiplicities. Every `G`-dependent system that transforms nontrivially and can
+re-enter at readout is included in `U`; any unheated side system is
+`G`-independent and rotation-trivial. The isotropic heat channel is convolution
+by the same representation,
+`H_Gamma(rho)=integral dh k_Gamma(h)U(h)rho U(h)^*`. Let `C2=<J^2>` on
+`sigma`, and let `R(T)` be the Haar-prior chordal full-frame Bayes risk after
+this convolution and before an arbitrary final readout. Suppose a declared
+observer class proves
 
 ```text
 C2 <= C_max(a,beta),
@@ -16,13 +23,26 @@ a  <= A(s_opt,rho_h,beta),
 Gamma(T)=integral_0^T gamma(tau)d tau,
 ```
 
-where the last line is the exposure of an isotropic `SO(3)` heat channel. Then
-the all-state fusion theorem and exact spin-1 heat attenuation give
+where the last line is the exposure of an isotropic `SO(3)` heat channel.  No
+monotonicity of `C_max` is implicit.  Define the finite support envelope
+
+```text
+C_hat(A,beta)=sup_(0<=a<=A) C_max(a,beta)<infinity.      (0)
+```
+
+If `C_max` is proved nondecreasing in `a`, then
+`C_hat(A,beta)=C_max(A,beta)`.  In general the envelope in (0) is required.
+The all-state fusion theorem and exact spin-1 heat attenuation give
 
 ```text
 R(T) >= 3/4[1-exp(-2 Gamma)]
-        +exp(-2 Gamma)/[16 C_max(A,beta)+8].             (1)
+        +exp(-2 Gamma)/[16 C_hat(A,beta)+8].             (1)
 ```
+
+More generally, the elementary last term in (1) may be replaced by any proved
+nonincreasing initial-risk floor evaluated at `C_hat`, including Hayashi's
+known exact mean-Casimir optimum.  Equation (1) is retained as a transparent
+executable corollary, not as a claim of a new sharp estimation constant.
 
 For target `R(T)<=epsilon<3/4`, define
 
@@ -35,7 +55,7 @@ Necessary conditions are
 
 ```text
 delta_epsilon(Gamma)>0,
-C_max(A,beta)>=[delta_epsilon(Gamma)^-1-8]_+/16.         (3)
+C_hat(A,beta)>=[delta_epsilon(Gamma)^-1-8]_+/16.         (3)
 ```
 
 In particular,
@@ -51,16 +71,25 @@ isolated or decoupled reference can make elapsed time irrelevant.
 The composition is implemented in `qgtoy/universal_observer_tradeoff.py`.
 The source-hashed audit is
 `experiments/universal_observer_tradeoff_certificate.json`, SHA256
-`5c88eb4af23764204333b5e899083c87911066895d70fc132f263e180c175ad6`.
+`2bd73ea29cc649ed8dbc99f266d0fafa07c6b294a7a3d4cb87d88cd791168487`.
 
 ## Proved Orbital Corollary
 
-For confined spinless nonrelativistic orbital matter with `H_ex>=T`, proper
-support radius `a`, total rest mass `M`, and mean excitation energy `E_ex`,
+For confined spinless nonrelativistic orbital matter with a nonnegative energy
+budget `H_ex>=T`, proper support radius `a`, total rest mass `M`, and mean
+energy `E_ex`,
 
 ```text
 C2<=2 M a^2 E_ex.                                       (5)
 ```
+
+The energy zero is part of this premise.  `H_ex` is not an arbitrary
+ground-subtracted Dirichlet Hamiltonian.  If a model instead supplies `H_gs`,
+it must exhibit `Delta>=0` with `H_gs+Delta>=T` as quadratic forms, and replace
+`E_ex` by `E_gs+Delta`.  If `H_phys>=T` and
+`H_gs=H_phys-E_phys,0`, then `Delta=E_phys,0` suffices.  A gravitational budget
+must count the physical energy and support costs consistently, without
+double-counting the offset.
 
 Under the separately declared compactness admissibility condition
 
@@ -82,11 +111,11 @@ For `0<delta_epsilon<1/8`, a necessary size condition is
 chi a^2/G >= sqrt[(delta_epsilon^-1-8)/2].              (7)
 ```
 
-This is currently the cleanest fully proved
-localization-reference-coherence-compactness theorem. It covers arbitrary
-states, zero-mean states, rare high-spin tails, arbitrary particle number,
-and arbitrary rotation-trivial multiplicity. It does not cover intrinsic
-spin, relativistic fields, or negative interaction energy.
+This is an exact conditional composition and named orbital implication under
+the declared heat-channel and compactness premises. Within that domain it
+covers arbitrary states, zero-mean states, rare high-spin tails, arbitrary
+particle number, and arbitrary rotation-trivial multiplicity. It does not
+cover intrinsic spin, relativistic fields, or negative interaction energy.
 
 The compactness parameter `chi` is not yet a complete gravitational
 backreaction measure: it does not by itself control the lapse, local stress,

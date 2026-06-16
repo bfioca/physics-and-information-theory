@@ -1,6 +1,6 @@
 # Source Verification Log
 
-Audit date: 2026-06-10 UTC
+Audit date: 2026-06-15 UTC
 Purpose: establish a reproducible primary-source basis for the Harlow review
 packet, not prove publication priority.
 
@@ -17,10 +17,18 @@ packet, not prove publication priority.
 3. Inspected downloaded author TeX sources for:
    - Bartlett et al., arXiv:quant-ph/0602069v2; and
    - Garmier, Hausmann, and Castro-Ruiz, arXiv:2512.19343v1.
-4. For the remaining sources, used official arXiv metadata and author abstracts
+4. Inspected official arXiv abstract pages for Poulin and Yard
+   (`quant-ph/0612126`), Hayashi (`1209.3463`), Marvian and Spekkens
+   (`1812.08766` and `1212.3378`), Ahmadi, Jennings, and Rudolph
+   (`1209.0921`), Tajima et al. (`2507.23760`), Bousso
+   (`hep-th/0012052`), Dain (`1305.6645`), Kretschmann, Schlingemann, and
+   Werner (`quant-ph/0605009`), and Koashi and Imoto (`quant-ph/0101144`)
+   before adding them as direct estimation, acquisition, information-
+   disturbance, resource-cost, or gravity-capacity neighbors.
+5. For the remaining sources, used official arXiv metadata and author abstracts
    only. The literature matrix does not attribute theorem details beyond what
    those abstracts state.
-5. Ran targeted official-API searches for computer-assisted boundary-value
+6. Ran targeted official-API searches for computer-assisted boundary-value
    proofs and for `Skyrmion AND "computer-assisted"`. The latter returned zero
    arXiv records on 2026-06-10. This is recorded only as a search result, not as
    evidence of priority.
@@ -46,12 +54,22 @@ No secondary summary was treated as authoritative.
 | arXiv | API result | Deeper check | Status |
 | --- | --- | --- | --- |
 | `quant-ph/0106014` | Bagan, Baig, Muñoz-Tapia; PRL DOI confirmed | API abstract | Verified |
+| `1209.3463` | Hayashi; title and abstract confirmed | Official arXiv abstract checked for compact-group estimation and exact energy-constrained `SO(3)` scope | Verified |
 | `quant-ph/0602069` | Bartlett, Rudolph, Spekkens, Turner; NJP DOI confirmed | Author TeX checked for operational longevity, repeated-use disturbance, and quadratic scaling | Verified |
+| `quant-ph/0612126` | Poulin, Yard; title and abstract confirmed | Official arXiv abstract checked for generic reference-frame dynamics and linear-time thermalization in the declared model | Verified |
 | `0711.0043` | Gour, Spekkens; NJP DOI confirmed | API abstract | Verified |
 | `0901.0943` | Gour, Marvian, Spekkens; PRA DOI confirmed | API abstract checked for equality of relative entropy of frameness and `G`-asymmetry | Verified |
+| `1812.08766` | Marvian, Spekkens; PRL DOI confirmed | Official arXiv abstract checked for continuous-group asymmetry no-broadcasting and its approximate tradeoff | Verified |
+| `1212.3378` | Marvian, Spekkens; title and abstract confirmed | Official arXiv abstract checked for the information-theoretic WAY/no-programming formulation | Verified |
+| `1209.0921` | Ahmadi, Jennings, Rudolph; title and abstract confirmed | Official arXiv abstract checked for resource-theoretic WAY constraints and prior-information escape routes | Verified |
+| `2507.23760` | Tajima, Yamaguchi, Takagi, Kuramochi; title and abstract confirmed | Official arXiv abstract checked for universal channel resource-cost/irreversibility and generalized WAY scope | Verified |
+| `quant-ph/0605009` | Kretschmann, Schlingemann, Werner; title and abstract confirmed | Official arXiv abstract checked for dimension-independent Stinespring continuity, channel information-disturbance, and approximate no-broadcasting scope | Verified |
+| `quant-ph/0101144` | Koashi, Imoto; title and abstract confirmed | Official arXiv abstract checked for the classical/nonclassical/redundant ensemble decomposition and nondisturbing operations | Verified |
 | `0812.5040` | Bartlett, Rudolph, Spekkens, Turner; NJP DOI confirmed | API abstract | Verified; title correction noted below |
 | `2512.19343` | Garmier, Hausmann, Castro-Ruiz; title/authors confirmed | Author TeX checked for finite resources, superselection, and operational back-reaction | Verified |
 | `2603.23598` | de la Hamette; title/author confirmed | API abstract checked for effective-relational-dimension entropy bound | Verified metadata and stated abstract scope |
+| `hep-th/0012052` | Bousso; title and abstract confirmed | Official arXiv abstract checked for the de Sitter `D`-bound and Bekenstein-bound relation | Verified |
+| `1305.6645` | Dain; title and abstract confirmed | Official arXiv abstract checked for the proved axisymmetric constant-density size-angular-momentum case | Verified |
 | `1908.10165` | Castro-Ruiz, Giacomini, Belenchia, Brukner; Nature Communications DOI confirmed | API abstract | Verified |
 | `2406.02116` | Chen, Penington; title/authors confirmed | API abstract | Verified |
 | `2602.24177` | Costa, Sanchez Sanchez; title/authors confirmed | HTML introduction and conclusion checked for clock accuracy/running-time and two gravitational mass bounds | Verified |

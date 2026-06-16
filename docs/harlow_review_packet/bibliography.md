@@ -1,7 +1,7 @@
 # Verified Short Bibliography
 
-The compiled packet uses this compact subset of the full 33-source literature
-matrix. Each entry was checked against official arXiv metadata on 2026-06-10;
+The compiled packet uses this compact subset of the full 43-source literature
+matrix. Each entry was checked against official arXiv metadata through 2026-06-15;
 central claims were additionally checked in arXiv HTML or author TeX where
 available.
 
@@ -16,21 +16,21 @@ available.
 4. J. De Vuyst, S. Eccles, P. A. Hoehn, and J. Kirklin, "Gravitational entropy
    is observer-dependent," [arXiv:2405.00114](https://arxiv.org/abs/2405.00114)
    (2024).
-5. E. Bagan, M. Baig, and R. Munoz-Tapia, "Aligning Reference Frames Using
-   Quantum States," [arXiv:quant-ph/0106014](https://arxiv.org/abs/quant-ph/0106014)
-   (2001).
+5. M. Hayashi, "Fourier Analytic Approach to Quantum Estimation of Group
+   Action," [arXiv:1209.3463](https://arxiv.org/abs/1209.3463) (2012).
 6. S. D. Bartlett, T. Rudolph, R. W. Spekkens, and P. S. Turner, "Degradation
    of a quantum reference frame," [arXiv:quant-ph/0602069](https://arxiv.org/abs/quant-ph/0602069)
    (2006).
 7. G. Gour, I. Marvian, and R. W. Spekkens, "Measuring the quality of a
    quantum reference frame: the relative entropy of frameness,"
    [arXiv:0901.0943](https://arxiv.org/abs/0901.0943) (2009).
-8. B. A. Costa and Y. E. Sanchez Sanchez, "An Upper Bound for the Mass of
-   Microscopic Clocks," [arXiv:2602.24177](https://arxiv.org/abs/2602.24177)
-   (2026).
-9. L.-Q. Chen and F. Giacomini, "Quantum Reference Fields Transformations in
-   Linearized Quantum Gravity," [arXiv:2606.09344](https://arxiv.org/abs/2606.09344)
-   (2026).
+8. I. Marvian and R. W. Spekkens, "A no-broadcasting theorem for quantum
+   asymmetry and coherence and a trade-off relation for approximate
+   broadcasting," [arXiv:1812.08766](https://arxiv.org/abs/1812.08766)
+   (2019).
+9. H. Tajima, K. Yamaguchi, R. Takagi, and Y. Kuramochi, "Universal tradeoff
+   relations between resource cost and irreversibility of channels,"
+   [arXiv:2507.23760](https://arxiv.org/abs/2507.23760) (2025).
 10. M. Fukuma, Y. Sakatani, and S. Sugishita, "Master equation for the
     Unruh-DeWitt detector and the universal relaxation time in de Sitter
     space," [arXiv:1305.0256](https://arxiv.org/abs/1305.0256) (2014).

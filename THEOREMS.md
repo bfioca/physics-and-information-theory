@@ -1250,12 +1250,19 @@ PYTHONPATH=. python3 -m unittest tests.test_global_so3_reference_risk
 
 Let finitely many spinless nonrelativistic particles of positive total rest
 mass `M` be confined to a rotationally invariant configuration domain with
-`|x_i|<=a`. Suppose their nonnegative ground-subtracted excitation Hamiltonian
-obeys the quadratic-form inequality
+`|x_i|<=a`. Suppose their nonnegative orbital energy Hamiltonian, with its
+energy zero fixed as part of the premise, obeys the quadratic-form inequality
 
 ```text
 H_ex>=sum_i p_i^2/(2m_i).
 ```
+
+This is not an arbitrary ground subtraction. If a model starts from `H_gs`,
+it must exhibit `Delta>=0` with `H_gs+Delta>=T` as quadratic forms, and the
+bound uses `E_ex=E_gs+Delta`. If `H_phys>=T` and
+`H_gs=H_phys-E_phys,0`, then `Delta=E_phys,0` suffices. Any gravitational
+ledger must count the physical energy and support costs consistently, without
+double-counting this offset.
 
 For every state, including arbitrary rotation-trivial internal multiplicity,
 mass-weighted Cauchy-Schwarz gives
@@ -1323,20 +1330,35 @@ python -m pytest -q tests/test_localized_orbital_reference.py \
 
 ### Research Theorem W3a.1: Conditional Class-Uniform Heat-Capacity Bound
 
-Suppose a declared integer-spin observer class proves
+Suppose a declared integer-spin observer class has exposure-input ensemble
+`sigma_g=U(g)sigma U(g)^*` on one complete accessible representation. Every
+`G`-dependent, nontrivially transforming system that can re-enter at readout is
+included in `U`, and every unheated side system is `G`-independent and
+rotation-trivial. Let the isotropic heat channel be convolution by this same
+`U`. Suppose the class proves
 
 ```text
 C2<=C_max(a,beta),  a<=A(s_opt,rho,beta),
 Gamma(T)=integral_0^T gamma(tau)d tau
 ```
 
-for an isotropic `SO(3)` heat channel. Then every state and every orientation
-measurement obey
+for an isotropic `SO(3)` heat channel. Define the monotone support envelope
+
+```text
+C_hat(A,beta)=sup_(0<=a<=A) C_max(a,beta)<infinity.
+```
+
+Then every state and every orientation measurement obey
 
 ```text
 R(T)>=3/4[1-exp(-2Gamma)]
-      +exp(-2Gamma)/[16 C_max(A,beta)+8].
+      +exp(-2Gamma)/[16 C_hat(A,beta)+8].
 ```
+
+When `C_max` is proved nondecreasing in support, `C_hat(A,beta)` reduces to
+`C_max(A,beta)`. The displayed elementary risk floor can also be replaced by
+Hayashi's known exact mean-Casimir optimum; the coarse closed form is kept for
+the executable audit.
 
 For confined orbital matter under the declared compactness condition
 `2G(M+E_ex)/a<=chi<1`, this specializes to
@@ -1358,7 +1380,7 @@ Artifacts: `docs/conditional_universal_observer_tradeoff.md`,
 `qgtoy/universal_observer_tradeoff.py`,
 `qgtoy/localized_orbital_reference.py`,
 `experiments/universal_observer_tradeoff_certificate.json` (SHA256
-`5c88eb4af23764204333b5e899083c87911066895d70fc132f263e180c175ad6`),
+`2bd73ea29cc649ed8dbc99f266d0fafa07c6b294a7a3d4cb87d88cd791168487`),
 and their focused tests.
 
 Claim boundary: exact class-uniform composition and a proved confined-orbital

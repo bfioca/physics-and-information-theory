@@ -391,10 +391,14 @@ finite-reference obstruction transfers with a controlled correction.
 - Class-uniform observer composition: complete conditionally. Every declared
   capacity/localization model and isotropic heat exposure now enters the exact
   risk bound
-  `3/4(1-e^-2Gamma)+e^-2Gamma/(16C_max+8)`, with an exact confined-orbital
-  compactness corollary. Casimir remains an upper capacity budget, not a
-  sufficient quality measure. The one-action optical, exposure, recovery, and
-  relativistic metric/stress bridges remain incomplete.
+  `3/4(1-e^-2Gamma)+e^-2Gamma/(16C_hat+8)`, where
+  `C_hat=sup_(a<=A)C_max(a)<infinity`, with an exact confined-orbital
+  compactness corollary. The capacity and heat channel must refer to the same
+  complete accessible representation. Casimir remains an upper capacity
+  budget, not a sufficient quality measure. The active gate is now net
+  information beyond the nondisturbingly readable classical sector, written to
+  a blank record, versus complete-source disturbance; the local-action optical,
+  exposure, recovery, and relativistic metric/stress bridges remain incomplete.
 - Physical local-channel diamond estimate, open stress/backreaction window, and
   external novelty review: incomplete.
 

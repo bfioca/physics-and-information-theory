@@ -1,8 +1,42 @@
 # Primary-Source Novelty Matrix
 
-Status: active literature gate; observer-tradeoff hierarchy updated 2026-06-09
+Status: active literature gate; Paper U route corrected 2026-06-15
 
-Reviewed through: 2026-06-09
+Reviewed through: 2026-06-15
+
+## Binding 2026-06-15 Route Correction
+
+This section supersedes older candidate-novelty language below where the two
+conflict. An abstract conjunction of risk, capacity, heat exposure, support,
+and a named gravity budget is not counted as the missing paper result. The
+active target is described in `docs/paper_u_information_exposure_goal.md`:
+
+```text
+full-group relational information written to a blank record
+- nondisturbingly readable classical source information
+  => quantified disturbance of the complete OD source,
+```
+
+followed only then by a same-action local KMS and optional gravity lift.
+
+The closest direct subsumption and counterexample sources now include:
+
+- Kretschmann, Schlingemann, and Werner, [The Information-Disturbance Tradeoff
+  and the Continuity of Stinespring's
+  Representation](https://arxiv.org/abs/quant-ph/0605009);
+- Koashi and Imoto, [What Is Possible Without Disturbing Partially Known
+  Quantum States?](https://arxiv.org/abs/quant-ph/0101144);
+- Marvian and Spekkens, [A no-broadcasting theorem for quantum asymmetry and
+  coherence](https://arxiv.org/abs/1812.08766); and
+- Tajima et al., [Universal tradeoff relations between resource cost and
+  irreversibility of channels](https://arxiv.org/abs/2507.23760).
+
+Consequently, a strict disturbance floor is false for an arbitrary mixed
+ensemble with a `G`-dependent Koashi-Imoto classical sector. A theorem using
+channel recoverability may also be a direct corollary of known Stinespring
+continuity. Paper U passes novelty only if its relational Haar-risk,
+complete-source, localization, or local-action hypotheses yield a genuinely
+new bound after these reductions.
 
 ## Executive Decision
 

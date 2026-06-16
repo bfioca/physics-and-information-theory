@@ -152,8 +152,9 @@ therefore needs a spectral or higher-moment tail condition.
 ### UO.2 Localization-Energy Capacity
 
 For confined spinless nonrelativistic orbital matter, the first named-class
-version is now proved. If every particle lies inside proper radius `a` and the
-ground-subtracted Hamiltonian satisfies `H_ex>=sum_i p_i^2/(2m_i)`, then
+version is now proved. If every particle lies inside proper radius `a` and a
+nonnegative Hamiltonian with a fixed energy zero satisfies
+`H_ex>=sum_i p_i^2/(2m_i)`, then
 
 ```text
 <L^2><=2 M a^2 E_ex,
@@ -161,8 +162,10 @@ R_ref>=1/(32 M a^2 E_ex+8).
 ```
 
 The proof is all-state, controls rare high-spin tails, and is independent of
-particle number and arbitrary rotation-trivial internal multiplicity. Under
-the separately declared proxy `2G(M+E_ex)/a<=chi`, it gives
+particle number and arbitrary rotation-trivial internal multiplicity. For a
+ground-subtracted `H_gs`, one must prove a form offset
+`H_gs+Delta>=T` and use `E_ex=E_gs+Delta`. Under the separately declared proxy
+`2G(M+E_ex)/a<=chi`, the theorem gives
 `<L^2><=chi^2 a^4/(8G^2)` without a rigid-top inertia law.
 
 The class-uniform static-patch task is now to derive, from a named relativistic
@@ -332,12 +335,20 @@ protected references.
 The class-uniform composition is now exact once a declared observer class
 supplies a capacity `C2_ref<=C_max(a,beta)`, a localization map
 `a<=A(s_opt,rho,beta)`, and isotropic rotational heat exposure
-`Gamma(T)=integral_0^T gamma(tau)d tau`:
+`Gamma(T)=integral_0^T gamma(tau)d tau`. The capacity and heat channel refer to
+the same covariant orbit `sigma_g=U(g)sigma U(g)^*`, and the heat convolution
+uses the same `U` on the complete accessible representation. Unheated side
+systems must be `G`-independent and rotation-trivial:
 
 ```text
+C_hat(A,beta)=sup_(0<=a<=A) C_max(a,beta)<infinity,
 R_ref(T)>=3/4(1-exp(-2Gamma))
-          +exp(-2Gamma)/[16 C_max(A,beta)+8].
+          +exp(-2Gamma)/[16 C_hat(A,beta)+8].
 ```
+
+The envelope is mandatory unless `C_max` has separately been proved
+nondecreasing in `a`. Hayashi's exact mean-Casimir frontier may replace the
+coarse elementary risk term in paper-facing statements.
 
 For target risk `epsilon`, define
 
@@ -346,7 +357,7 @@ delta_epsilon(Gamma)=3/4-(3/4-epsilon)exp(2Gamma).
 ```
 
 Necessary conditions are `delta_epsilon>0` and
-`C_max(A,beta)>=[delta_epsilon^-1-8]_+/16`. In particular,
+`C_hat(A,beta)>=[delta_epsilon^-1-8]_+/16`. In particular,
 
 ```text
 Gamma < (1/2) log[(3/4)/(3/4-epsilon)].

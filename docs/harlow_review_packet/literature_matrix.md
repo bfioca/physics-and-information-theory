@@ -1,7 +1,7 @@
 # Primary-Source Literature Matrix
 
 Status: packet-ready literature audit
-Checked through: 2026-06-10
+Checked through: 2026-06-15
 Scope: nearest neighbors for the proposed finite directional-record program
 
 Date convention: journal publication year where available, otherwise initial
@@ -12,14 +12,18 @@ current-state comparison.
 
 The literature already contains finite observer rules, observer-dependent
 gravitational algebras and entropies, finite and degrading quantum reference
-frames, operational clock/backreaction inequalities, de Sitter detector master
-equations, gauge-invariant perturbation theory, curved and gravitating
-Skyrmions, and computer-assisted boundary-value proofs. The packet therefore
-makes no claim that any one of those ingredients is new.
+frames, asymmetry no-broadcasting and WAY constraints, general
+resource-cost/irreversibility and channel information-disturbance tradeoffs,
+mixed-ensemble nondisturbing decompositions, operational clock/backreaction
+inequalities, de Sitter detector master equations, gauge-invariant
+perturbation theory, curved and gravitating Skyrmions, and computer-assisted
+boundary-value proofs. The packet therefore makes no claim that any one of
+those ingredients is new.
 
-The narrower research opening is to ask whether one declared local model can
-put the following quantities on a common state family, protocol, parameter
-window, and error ledger:
+The narrower research opening is first to prove a relational full-group
+information-disturbance theorem that is not subsumed by those results, and
+then ask whether one declared local model can put the following quantities on
+a common state family, protocol, parameter window, and error ledger:
 
 ```text
 global-risk relational SO(3) alignment
@@ -50,10 +54,18 @@ and a fixed-background Weyl response is not self-consistent gravity.
 
 | Primary source | Verified contribution | Relevance and narrow distinction |
 | --- | --- | --- |
-| E. Bagan, M. Baig, and R. Muñoz-Tapia, [*Aligning Reference Frames Using Quantum States*](https://arxiv.org/abs/quant-ph/0106014) (2001) | Solves an optimal finite-spin encoding and measurement problem for transmitting an orthogonal trihedron, with asymptotic average-error scaling. | Global spatial-frame estimation with finite spin resources is prior art. The candidate contribution is not frame alignment itself, but its quantitative conjunction with local support, storage dynamics, and gravity. |
+| E. Bagan, M. Baig, and R. Muñoz-Tapia, [*Aligning Reference Frames Using Quantum States*](https://arxiv.org/abs/quant-ph/0106014) (2001) | Solves an optimal finite-spin encoding and measurement problem for transmitting an orthogonal trihedron, with asymptotic average-error scaling. | Global spatial-frame estimation with finite spin resources is prior art. The candidate contribution must instead couple relational full-group risk to a same-action physical cost. |
+| Masahito Hayashi, [*Fourier Analytic Approach to Quantum Estimation of Group Action*](https://arxiv.org/abs/1209.3463) (2012) | Solves compact-group estimation by Fourier methods and gives the exact `SO(3)` optimum under the relevant representation-energy constraint, including asymptotics and optimizers. | The exact mean-Casimir risk frontier is prior art and should be used rather than advertised. Novelty must enter through the operational acquisition, localization, dynamics, or gravity map. |
 | Stephen D. Bartlett, Terry Rudolph, Robert W. Spekkens, and Peter S. Turner, [*Degradation of a quantum reference frame*](https://arxiv.org/abs/quant-ph/0602069) (2006) | Treats reference frames as dynamical quantum systems; defines longevity operationally by the number of measurements before a chosen error threshold is crossed; obtains quadratic longevity scaling for directional and phase references. | Operational reference degradation and measurement-induced disturbance are already explicit. The packet's `T`-dependent classical-record stability must be distinguished from this repeated-use back-action and from gravitational backreaction. |
+| David Poulin and Jon Yard, [*Dynamics of a Quantum Reference Frame*](https://arxiv.org/abs/quant-ph/0612126) (2006) | Studies directional-reference dynamics under repeated probing and obtains a distinct generic linear-time thermalization behavior in its declared polarized-use model. | There is no interaction-independent universal lifetime law. Any Paper U duration statement must derive its exposure from the actual probe ensemble and action rather than importing one degradation scaling. |
 | Gilad Gour and Robert W. Spekkens, [*The resource theory of quantum reference frames: manipulations and monotones*](https://arxiv.org/abs/0711.0043) (2008) | Develops resource theories for missing phase, chirality, and spatial-orientation frames and proves transformation criteria and frameness monotones. | Supports the use of asymmetry as a directional resource. It does not identify relative entropy of asymmetry with thermodynamic or gravitational observer entropy. |
 | Gilad Gour, Iman Marvian, and Robert W. Spekkens, [*Measuring the quality of a quantum reference frame: the relative entropy of frameness*](https://arxiv.org/abs/0901.0943) (2009) | Defines relative entropy of frameness, proves that it equals `G`-asymmetry, and bounds the group-element information extractable from a token. | This is the direct prior source for using relative entropy of `SO(3)` asymmetry as `S_dir`. It makes `S_dir` an operational QRF resource; it does not make it `S_Ob` or a thermodynamic entropy. |
+| Iman Marvian and Robert W. Spekkens, [*A no-broadcasting theorem for quantum asymmetry and coherence and a trade-off relation for approximate broadcasting*](https://arxiv.org/abs/1812.08766) (2019) | Proves that symmetric dynamics cannot broadcast continuous-group asymmetry from a bounded reference without irreversibly degrading the source and supplies an approximate tradeoff. | This is the decisive nearest neighbor for a same-action acquisition-retention theorem. Paper U must add full-group Haar-risk, protocol, localization, or physical-action content rather than relabel this result. |
+| Iman Marvian and Robert W. Spekkens, [*An information-theoretic account of the Wigner-Araki-Yanase theorem*](https://arxiv.org/abs/1212.3378) (2012) | Recasts WAY as the impossibility of perfectly simulating an asymmetric measurement by symmetric processing without a perfectly asymmetric resource state. | A claim that readout needs a directional apparatus resource is prior art. Paper U must quantify net relational record information, complete-source disturbance, and the consumed target-frame resource. |
+| Mehdi Ahmadi, David Jennings, and Terry Rudolph, [*The WAY theorem and the quantum resource theory of asymmetry*](https://arxiv.org/abs/1209.0921) (2012) | Formulates WAY in resource-theoretic terms, relates it to state discrimination, and analyzes how prior information and apparatus asymmetry affect measurement. | Pre-existing information can evade a naive acquisition cost. The Paper U domain must begin with a blank independent record or explicitly subtract and price initial information and asymmetry. |
+| Hiroyasu Tajima, Koji Yamaguchi, Ryuji Takagi, and Yui Kuramochi, [*Universal tradeoff relations between resource cost and irreversibility of channels: General-resource Wigner-Araki-Yanase theorems and beyond*](https://arxiv.org/abs/2507.23760) (2025) | Proves broad resource-cost/irreversibility tradeoffs for arbitrary channels, including asymmetry and generalized WAY-type bounds. | This is the closest current subsumption threat to a generic information-exposure theorem. A publishable result must isolate new relational Haar-risk, locality, localization, or static-patch content not already covered by the universal channel theorem. |
+| Dennis Kretschmann, Dirk Schlingemann, and Reinhard F. Werner, [*The Information-Disturbance Tradeoff and the Continuity of Stinespring's Representation*](https://arxiv.org/abs/quant-ph/0605009) (2006) | Proves dimension-independent continuity of Stinespring dilations and derives a channel information-disturbance theorem and approximate no-broadcasting estimate. | If source disturbance is defined by channel recoverability, the proposed theorem may be a direct corollary. New content must come from the relational Haar task, localization, source structure, or physical-action restrictions. |
+| Masato Koashi and Nobuyuki Imoto, [*What Is Possible Without Disturbing Partially Known Quantum States?*](https://arxiv.org/abs/quant-ph/0101144) (2001) | Decomposes a mixed-state ensemble into classically readable, nonclassical, and redundant sectors and characterizes operations that preserve every state. | A `G`-dependent classical sufficient statistic can be copied without disturbance. Paper U must subtract this nondisturbingly readable information or prove that its named source subclass has none. |
 | Stephen D. Bartlett, Terry Rudolph, Robert W. Spekkens, and Peter S. Turner, [*Quantum communication using a bounded-size quantum reference frame*](https://arxiv.org/abs/0812.5040) (2009) | Characterizes effective noise and decoding with bounded phase, Cartesian, and directional tokens, including measure-and-reorient and relational-subsystem implementations. | Bounded reference tokens and their recovery channels are established. The proposed work must add a matter-derived Hamiltonian, local KMS channel, localization, and gravitational witness on the same model. |
 | Sébastien Christophe Garmier, Ladina Hausmann, and Esteban Castro-Ruiz, [*The Perspectives of Non-Ideal Quantum Reference Frames*](https://arxiv.org/abs/2512.19343) (2025) | Constructs perspectives for finite-resource non-ideal QRFs; finds representation-dependent superselection and use-induced operational back-action. | Finite QRF resources and QRF back-action are not new claims. The remaining distinction is a quantitative rotational risk-to-gravitational-disturbance chain; here "back-action" is operational, not automatically metric backreaction. |
 | Anne-Catherine de la Hamette, [*Observer-Dependent Entropy and Diagonal Rényi Invariants in Quantum Reference Frames*](https://arxiv.org/abs/2603.23598) (2026) | Bounds non-ideal-frame entropy differences using the representation-determined dimension of an effective relational Hilbert space. | This is a close neighbor to any proposed `effective record dimension -> observer-dependent entropy` statement. It does not supply Harlow's closed-universe `S_Ob` dictionary or a gravitational capacity bound. |
@@ -82,6 +94,8 @@ and a fixed-background Weyl response is not self-consistent gravity.
 
 | Primary source | Verified contribution | Relevance and narrow distinction |
 | --- | --- | --- |
+| Raphael Bousso, [*Bekenstein bounds in de Sitter and flat space*](https://arxiv.org/abs/hep-th/0012052) (2000) | Relates the de Sitter `D`-bound on matter entropy to the Bekenstein bound and the cosmological-horizon area deficit. | A de Sitter entropy/area budget is prior art, but it does not identify directional asymmetry with matter entropy or bound the rotational representation capacity of the declared register. |
+| Sergio Dain, [*Inequality between size and angular momentum for bodies*](https://arxiv.org/abs/1305.6645) (2013) | Gives a size-angular-momentum inequality and proves a version from Einstein's equations for rotating, axisymmetric, constant-density bodies. | This is a direct classical neighbor to any gravity-capacity map. Its hypotheses and classical charge do not supply an all-state quantum Casimir bound for a localized static-patch record. |
 | Hideo Kodama and Akihiro Ishibashi, [*A master equation for gravitational perturbations of maximally symmetric black holes in higher dimensions*](https://arxiv.org/abs/hep-th/0305147) (2003) | Reduces gravitational perturbations, including nonzero-cosmological-constant cases, to gauge-invariant master equations. | Gauge-invariant master variables on static maximally symmetric backgrounds are standard. A future source-specific certified nonzero response could be a narrow contribution, but the completed bounded sprint here did not exclude zero. |
 | Karl Martel and Eric Poisson, [*Gravitational perturbations of the Schwarzschild spacetime: A practical covariant and gauge-invariant formalism*](https://arxiv.org/abs/gr-qc/0502028) (2005) | Gives covariant gauge-invariant even/odd master functions with source terms derived from material stress energy. | Establishes the sourced master-equation pattern. It is Schwarzschild rather than the project's pure-de-Sitter supported source and contains no finite observer-resource theorem. |
 | Lam Hui, Austin Joyce, Riccardo Penco, Luca Santoni, and Adam R. Solomon, [*Static response and Love numbers of Schwarzschild black holes*](https://arxiv.org/abs/2010.00593) (2021) | Derives actions for physical perturbations on Schwarzschild-(A)dS and computes static response/Love numbers. | Static gravitational response on a prescribed background is established and publishable in its own right. The present signed material-source estimator is suggestive, but its rigorous interval contains zero; even a later zero-exclusion theorem would not be self-consistent Einstein-Skyrme gravity. |
@@ -108,7 +122,7 @@ and a fixed-background Weyl response is not self-consistent gravity.
 | Proposed packet claim | Closest checked sources | Defensible statement |
 | --- | --- | --- |
 | A directional register may concretize part of a finite gravitational observer. | Harlow-Usatyuk-Zhao; Harlow; CLPW; Chen-Xu | A research question, not an established dictionary. `S_dir -> S_Ob` remains **OPEN**. |
-| Small relational orientation risk requires finite directional information and that record degrades. | Bagan-Baig-Muñoz-Tapia; Bartlett et al.; Gour-Spekkens; Garmier et al. | Finite-resource orientation and degradation are prior art. The packet may report its proved risk bounds, but not claim the general idea. |
+| Small relational orientation risk requires finite directional information, while a named use or channel can degrade that record. | Bagan-Baig-Muñoz-Tapia; Hayashi; Bartlett et al.; Gour-Spekkens; Marvian-Spekkens; Tajima et al.; Kretschmann et al.; Koashi-Imoto | Finite-resource orientation and protocol-dependent information-disturbance are prior art. A classical ensemble sector may be readable for free, and there is no interaction-independent lifetime law; the packet may report its proved risk bounds, but not claim the general idea. |
 | Accuracy, duration, localization, and gravity may obey one physical tradeoff. | Costa-Sanchez; Espíndola-Ali; Chen-Giacomini | Such tradeoffs and admissibility criteria exist for clocks/reference fields. The narrower unproved target is one rotational static-patch model with a common protocol and error ledger. |
 | A supported directional register may have a nonzero gauge-invariant exterior footprint. | Kodama-Ishibashi; Martel-Poisson; Hui et al. | The formal response machinery is standard. The bounded Paper R sprint produced a negative estimator but a zero-containing full interval and therefore stopped inconclusively. A future zero-exclusion theorem requires a new proof object and remains **OPEN**. |
 | The hard-wall Skyrmion supplies a controlled realization. | Brihaye-Delsate; Hata-Kikuchi; Giacomini et al.; van den Berg et al.; Liu-Nakao-Oishi | Curved/cavity/spinning Skyrmions and validated BVP methods are established separately. Only the exact source-bound certificate may be stated as **PROVED**; priority and robustness under smoothing remain unverified. |
@@ -116,13 +130,14 @@ and a fixed-background Weyl response is not self-consistent gravity.
 ## Safe wording for the packet
 
 > Existing work treats finite observer entropy, observer-dependent gravitational
-> algebras, finite and degrading reference frames, physical clock limits, and
-> de Sitter open-system dynamics. We ask whether these ingredients can be made
-> quantitatively compatible in one deliberately narrow sector: a localized
-> relational directional record with a controlled gravitational budget. We do
-> not yet know whether its directional asymmetry is related to observer entropy
-> or which invariant should replace or refine the provisional fixed-background
-> Weyl witness.
+> algebras, finite and degrading reference frames, WAY, generic channel
+> information-disturbance, and general resource-cost limits. We first ask
+> whether net full-group relational information beyond the nondisturbingly
+> readable classical sector, written to a blank record, forces disturbance of
+> the complete source beyond those theorems, then whether a local static-patch
+> action realizes that implication.
+> We do not yet identify directional asymmetry with observer entropy or possess
+> a gravitational capacity invariant.
 
 ## Priority status
 
@@ -145,11 +160,11 @@ cover the conceptual chain with these twelve primary sources:
 2. Harlow, `2602.03835`.
 3. Chandrasekaran, Longo, Penington, and Witten, `2206.10780`.
 4. De Vuyst, Eccles, Hoehn, and Kirklin, `2405.00114`.
-5. Bagan, Baig, and Muñoz-Tapia, `quant-ph/0106014`.
+5. Hayashi, `1209.3463`.
 6. Bartlett, Rudolph, Spekkens, and Turner, `quant-ph/0602069`.
 7. Gour, Marvian, and Spekkens, `0901.0943`.
-8. Costa and Sanchez Sanchez, `2602.24177`.
-9. Chen and Giacomini, `2606.09344`.
+8. Marvian and Spekkens, `1812.08766`.
+9. Tajima, Yamaguchi, Takagi, and Kuramochi, `2507.23760`.
 10. Fukuma, Sakatani, and Sugishita, `1305.0256`.
 11. Kodama and Ishibashi, `hep-th/0305147`.
 12. Brihaye and Delsate, `hep-th/0512339`.

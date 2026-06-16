@@ -2,8 +2,8 @@
 
 The theorem implemented here is an analytic quadratic-form statement.  For
 spinless particles of total rest mass ``M`` confined to a ball of radius ``a``,
-with nonnegative excitation Hamiltonian ``H_ex >= T``, mass-weighted
-Cauchy-Schwarz gives
+with a nonnegative energy budget ``H_ex >= T`` whose zero is part of the
+premise, mass-weighted Cauchy-Schwarz gives
 
     <L^2> <= 2 M a^2 <T> <= 2 M a^2 <H_ex>.
 
@@ -50,7 +50,11 @@ def confined_orbital_casimir_capacity(
 
     Units use ``hbar=c=1``.  The analytic premise is a rotationally invariant
     configuration domain with every particle inside the radius-``a`` ball and
-    a quadratic-form Hamiltonian ``H_ex >= sum_i p_i^2/(2m_i)``.
+    a quadratic-form Hamiltonian ``H_ex >= sum_i p_i^2/(2m_i)``. The energy
+    zero is fixed by this premise. Callers starting from a ground-subtracted
+    Hamiltonian must exhibit an offset ``Delta`` for which
+    ``H_gs + Delta >= T`` and include that offset in
+    ``mean_excitation_energy``.
     """
     _validate_positive("total_rest_mass", total_rest_mass)
     _validate_positive("support_radius", support_radius)

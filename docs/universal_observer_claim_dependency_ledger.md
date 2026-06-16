@@ -1,6 +1,7 @@
 # Universal Observer Claim Dependency Ledger
 
-Status: active theorem-design ledger; no combined theorem claimed
+Status: active theorem-design ledger; exact conditional composition proved,
+physical common-action theorem open
 
 ## Candidate Statement
 
@@ -14,6 +15,12 @@ This is class-uniform, not universal over arbitrary hardware, interactions, or
 control. The primary operational variable is covariant orientation Bayes risk.
 Casimir, quantum Fisher information, relative entropy of asymmetry, and diamond
 recovery error enter only through explicit comparison lemmas.
+
+The active gate is narrower than this prospective statement: prove that a
+blank physical record can acquire useful relational information only by
+causing a quantified disturbance or resource expenditure in the complete
+`OD` source. A static-patch duration or gravity headline waits for a
+same-action lift of that result.
 
 ## Dependency Graph
 
@@ -56,7 +63,8 @@ sets optical support   sets coherence time
 | UO.3b | Optical support converts to proper enclosing support | Exact same-shell conversion | Extended-body lapse and geometry error bounds | Thin-body approximation fails near the horizon |
 | UO.4a | Preparation and readout require nonzero proper time | Finite switching and burn-in bounds for the current ULE model | Interaction-strength and control-cost lower bound | Arbitrarily strong external control is allowed without energetic accounting |
 | UO.4b | Reference quality remains below threshold for `tau_coh` | Exact heat-risk interpolation complete; the leading Skyrmion current and pseudoscalar KMS spectrum give `gamma_prop=g^2 N^-3 j_Sky(0)`; AU.3a certifies conservative global inputs and authenticated AU.3b diagnoses a tail-dominated sharpening gap | Sharpen the AU.3b tail/product bounds and bound the finite-coupling reduced-dynamics, switching, band-projection, and access errors from the same action | Approximation errors exceed the risk margin or an isolated protected reference lies outside the class |
-| UO.5 | Eliminate auxiliary budgets into a dimensionless inequality | Exact conditional class-uniform theorem `R(T)>=3/4(1-e^-2Gamma)+e^-2Gamma/(16C_max+8)`, exact capacity/noise inversion, proved confined-orbital compactness corollary, and the earlier spherical-top/hard-current specialization | Derive capacity, optical/proper localization, nonzero noise exposure, and approximation errors from one matter/KMS action | Inputs cannot be made compatible under one action even when the abstract window is open |
+| UO.4c | Useful acquisition beyond the nondisturbingly readable classical sector forces source disturbance or resource expenditure | Risk-to-information lower bound and generic/asymmetry information-disturbance literature are inputs; no relational `OD` theorem is yet proved | Compute or bound `I_nd`, price the target frame, initial memory, controls, failed postselection branches, and every readout path; prove costly net information gain versus complete-source disturbance | A classical sufficient statistic, catalytic target, or reversible transfer defeats the proposed lower bound |
+| UO.5 | Eliminate auxiliary budgets into a dimensionless inequality | Exact conditional class-uniform theorem `R(T)>=3/4(1-e^-2Gamma)+e^-2Gamma/(16C_hat+8)`, with `C_hat=sup_(a<=A)C_max(a)<infinity`, exact capacity/noise inversion, and a proved confined-orbital compactness corollary | Derive capacity, optical/proper localization, nonzero noise exposure, and approximation errors for the same complete accessible representation and matter/KMS action | Inputs cannot be made compatible under one action even when the abstract window is open |
 | SKY | One action realizes every premise | AU.1, AU.2, conservative AU.3a, and authenticated AU.3b are certified; directed mass/inertia give `J<=352`; spherical metric/lapse, leading rotational source, exact conservation gate, rigid-source obstruction, local centrifugal generator/wall law, authenticated global fixed-background Friedrichs inverse, exact nonzero weak matter response, same-action bulk-plus-shell conservation closure, exact master projection/transmission, a floating physically normalized amplitude, exterior electric-Weyl reconstruction, a Jacobi-limit mean gradiometer contrast, an exact finite-time heat/Jacobi/Gaussian detector transfer, and an exact tensorial Israel acceptance gate are controlled | Useful tail/product constants, isospin access, lifetime, band projection, interval exterior response, Einstein-Skyrme/Kottler background matching, six-amplitude tensorial Israel reconstruction, deformed-background response, common-action detector rate/noise/backreaction, and finite-coupling KMS dynamics | Constants come from incompatible effective models |
 
 ## Decisive Quantum Bridge

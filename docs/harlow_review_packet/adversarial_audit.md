@@ -1,6 +1,6 @@
 # Adversarial Claim-Boundary Audit
 
-Status: PASS after the bounded U8a and Paper R decisions, 2026-06-10
+Status: PASS after the bounded U8a and Paper R decisions, refreshed 2026-06-15
 
 Scope: `packet.html`, `drafts/outreach_email.md`,
 `dependency_diagram.svg`, `claim_evidence_ledger.md`, and
@@ -13,6 +13,7 @@ the primary-source searches recorded in the literature verification log.
 | Category | Result | Evidence and judgment |
 | --- | --- | --- |
 | Absolute versus relational orientation | **PASS** | The first page defines `g_rel=g_O^-1 g_D`, calls the loss a Haar-prior global alignment risk, and explicitly denies orientation relative to coordinates. Appendix A and the diagram repeat the same domain. No absolute-frame interpretation was found. |
+| Free classical information versus costly acquisition | **PASS** | The revised conceptual note makes the immediate target net information written to an initially blank independent record after subtracting any nondisturbingly readable classical source sector, with the complete `OD` source, target frame, controls, and every readout path priced. It does not infer a disturbance cost from pre-existing memory or a Koashi-Imoto read-only sector. |
 | Quantum coherence versus classical record stability | **PASS** | The first page defines lifetime by later relational readout risk and explicitly says this is not generic quantum phase coherence. Appendix A labels the heat law as a conditional effective-channel record-risk theorem, while the common acquisition-through-readout protocol remains open. |
 | `S_dir` versus `S_Ob`, effective dimension, Casimir, QFI, or thermodynamic entropy | **PASS** | `S_dir` is now consistently called an operational rotational-asymmetry resource. The first page explicitly declines identification with effective classical record dimension, thermodynamic entropy, Hilbert-space dimension, Casimir, QFI, or `S_Ob`; Appendix A also denies accessible-memory sufficiency or an `S_Ob` dictionary. Question 1 asks about a possible comparison rather than presupposing one. |
 | Measurement/use back-action versus gravitational backreaction | **PASS** | The page-one boundary explicitly separates the terms. The literature matrix classifies reference degradation and use-induced disturbance as operational back-action and warns that neither is metric backreaction. The packet does not use those QRF results as gravitational evidence. |
@@ -20,7 +21,7 @@ the primary-source searches recorded in the literature verification log.
 | Estimator evidence versus interval proof | **PASS** | The packet gives the negative corrected-estimator interval separately from the completed full response interval. The latter contains zero and is explicitly binding. The predeclared result is **INCONCLUSIVE STOP**, not an almost-theorem, cancellation result, or physical no-go. |
 | `B_W` witness versus observer-capacity bound | **PASS** | The packet says that only a future nonzero `B_W` theorem could witness fixed-background non-invisibility; the bounded route did not certify one. It denies that `B_W` is a capacity bound or a substitute for collapse, horizon/QES displacement, junction data, or self-consistent gravity. Review question 2 asks what should replace or refine it. |
 | Rigid-detector channel versus common-action local-matter channel | **PASS** | Appendix A proves the finite-switch lemma in the regular Gaussian-bath framework; its named Bunch-Davies detector box is conditional on the open KMS GNS/Araki-Woods channel bridge. It pays the full finite-dimensional channel-norm cost and includes free and Lamb-shift Casimir unitaries. Independently, distinct components of the exact factorized density have a nonzero commutator under disjoint spacelike smearings, blocking unchanged promotion to microcausal local matter. Different local completions, acquisition, readout, support stress, backreaction, and a same-action parameter window remain open. |
-| Novelty and priority | **PASS** | The packet says novelty, priority, venue fit, and publishability are not repository outputs; the bibliography states that no priority claim is made and the literature search is nonexhaustive. The matrix treats the proposed contribution as a question and explicitly forbids “first” language. |
+| Novelty and priority | **PASS** | The packet says novelty, priority, venue fit, and publishability are not repository outputs; the bibliography states that no priority claim is made and the literature search is nonexhaustive. The matrix treats exact group estimation, generic channel information-disturbance, Koashi-Imoto sectors, asymmetry no-broadcasting, WAY, and general resource-cost bounds as direct prior art. It identifies a relational full-group strengthening and local lift as a candidate question, not a result, and forbids “first” language. |
 | Approval or endorsement request | **PASS** | The email asks for conceptual direction, criticism, and redirection. It explicitly says the request is not for endorsement, priority, or a publication decision. It does not ask Dr. Harlow to approve the work or certify publishability. |
 
 ## Corrections Made
@@ -41,6 +42,11 @@ the primary-source searches recorded in the literature verification log.
 6. Added the regular-bath finite-switch theorem, its conditional named-QFT
    degradation box, the open GNS channel bridge, and the route-level locality
    obstruction. Paper U U8a remains open.
+7. Replaced the abstract-conjunction novelty framing with a staged gate: net
+   costly information into a blank record versus complete-source disturbance,
+   then a distinct local KMS and gravity lift. Added the closest generic
+   channel, nondisturbing-decomposition, no-broadcasting, WAY, and general
+   resource-cost sources.
 
 ## Remaining Risks
 
@@ -55,6 +61,11 @@ the primary-source searches recorded in the literature verification log.
 - The literature audit is targeted rather than exhaustive. Its negative search
   results cannot support priority, and specialist feedback is still required
   before introducing any novelty sentence.
+- The acquisition-disturbance theorem may still be subsumed by the existing
+  generic channel information-disturbance, Koashi-Imoto, asymmetry
+  no-broadcasting, WAY, or general channel resource-cost results. It becomes
+  paper-level only if the relational Haar-risk, complete-source, localization,
+  or local-action hypotheses produce a genuinely new bound.
 - The negative corrected estimator is easy to overread as the theorem result.
   The zero-containing full interval is the binding result, and Paper R is not a
   manuscript candidate in the current representation.

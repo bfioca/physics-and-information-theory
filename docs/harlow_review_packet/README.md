@@ -21,7 +21,7 @@ certificates only if they would help the review.
 - `bibliography.md` - verified short bibliography used by the packet.
 - `drafts/` - independently reviewable Markdown drafts of the conceptual
   note, three questions, technical appendix, and email.
-- `literature_matrix.md` - 33-source nearest-neighbor comparison.
+- `literature_matrix.md` - 43-source nearest-neighbor comparison.
 - `source_verification_log.md` - primary-source verification record and known
   literature limits.
 - `claim_evidence_ledger.md` - theorem/artifact/status map governing every

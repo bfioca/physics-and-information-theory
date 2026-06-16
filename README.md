@@ -41,6 +41,25 @@ The packet includes both route-level **INCONCLUSIVE STOP** results and does not
 present fixed-background Weyl response or the rigid-detector current as a
 completed Paper U theorem.
 
+## Active Paper U Research Goal
+
+Paper U is now the active ambitious research track, but its next deliverable
+is a theorem rather than more manuscript prose. The repository
+already has the conditional capacity/localization/heat composition proposed
+for an operational observer paper. The missing paper-level implication is a
+same-action information-exposure bound: after subtracting any
+nondisturbingly readable classical sector, net information written into an
+initially blank record must force a strictly positive, quantitatively
+controlled disturbance of the complete source once target frames, controls,
+memories, postselection, and every readout path are priced.
+
+The binding goal is
+[`docs/paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md).
+Gravity remains an explicit interface until a named gauge-invariant quantity
+is proved to constrain capacity or disturbance, and the Skyrmion remains
+optional realization support. A longer U draft without this new implication
+would reorganize existing results rather than advance the physics.
+
 This repository is a research-code benchmark suite. It uses small exact models
 to test when screen-visible data, entropy shadows, min-cut shadows, or
 restricted transfer records are too coarse to determine an observer algebra or
@@ -70,7 +89,7 @@ headline claim.
 | --- | --- | --- |
 | **Selected Paper A** | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
-| Universal observer theorem | G1/G2 are audit-ready. The regular-bath finite-switch lemma is proved and a correctly dimensioned conditional detector box is certified, but the named QFT channel bridge is open and unchanged promotion of the exact factorized density fails the microcausal locality gate. Paper U U8a, token preparation/readout, and gravity remain open. | [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`u8a_finite_storage_channel.md`](docs/u8a_finite_storage_channel.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
+| Universal observer theorem | Active information-exposure sprint: prove that net information beyond the nondisturbingly readable classical sector forces source disturbance under a priced symmetric acquisition. G1 specifies the domain; G2's operational arrows and the conditional composition are infrastructure. The local KMS lift, U8a, same-action preparation/readout, and gravity remain open. | [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md), [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. The exact mean-Casimir risk frontier is Hayashi's established result, not a standalone novelty claim. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`global_so3_risk_priority_audit.md`](docs/global_so3_risk_priority_audit.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
 | Optical common mode | Exact finite-size and higher-spin effective-channel lemmas retained for Paper U; current standalone paper stopped by direct de Sitter-spectrum and DFS prior art. | [`optical_common_mode_priority_audit.md`](docs/optical_common_mode_priority_audit.md), [`static_patch_higher_spin_gradient.md`](docs/static_patch_higher_spin_gradient.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
@@ -78,9 +97,10 @@ headline claim.
 
 **Status boundary**
 
-- **Proved on declared domains:** G1/G2, global orientation-risk bounds, the
-  bounded spacelike-replication theorem, the regular-bath finite-switch lemma,
-  the rigid-current locality obstruction, and supported-profile subproblems.
+- **Proved on declared domains:** G1 is specified; G2's global
+  orientation-risk arrows, the bounded spacelike-replication theorem, the
+  regular-bath finite-switch lemma, the rigid-current locality obstruction,
+  and supported-profile subproblems are proved on their stated subdomains.
 - **Conditional:** the named QFT detector box; the signed response interval
   still contains zero.
 - **Open:** the KMS GNS/Pauli-Fierz bridge, same-action preparation/readout,

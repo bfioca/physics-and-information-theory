@@ -49,8 +49,8 @@
   "result_type": "orientation_capacity_localization_heat_composition",
   "source_sha256": {
     "experiments/universal_observer_tradeoff_audit.py": "b92b485ca47e044da068efe656179370fee7586c8596cc2be60dcd38b1a3e357",
-    "qgtoy/global_so3_reference_risk.py": "f23741a136296b642685df44a5475619e1af76afb5a20c42525ddd08183766df",
-    "qgtoy/localized_orbital_reference.py": "666412d4dc15e6a8092f3535e32a0b983eda9b92d22d44e8b499e7eb69c2085e",
+    "qgtoy/global_so3_reference_risk.py": "008346676ce8a66fcbb82e87f68ecd7cc6c398c42de970ae8e1c3a1c36186c87",
+    "qgtoy/localized_orbital_reference.py": "6e8588bbcbf8ac8f8e31e7baa13ccb3367269151a40070d870d8f48fbb07aae5",
     "qgtoy/universal_observer_tradeoff.py": "906090d1c264675d5a146e5d7284a59667ee46beeb0c48a6cd9c3c1df4115199"
   },
   "status": "pass"

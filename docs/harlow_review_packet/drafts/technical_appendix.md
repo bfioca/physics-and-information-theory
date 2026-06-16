@@ -59,8 +59,10 @@ observer entropy `S_Ob`. Equation (A.1) supplies the necessary allocation
 `S_dir >= (3/2) log(c_SO3/R_ref)` when the logarithm is positive; it does not
 show that asymmetry is sufficient for a useful accessible record.
 
-**[CONDITIONAL]** If the reference alone undergoes stipulated isotropic
-rotational heat diffusion with integrated exposure
+**[CONDITIONAL]** If the complete accessible ensemble is the covariant orbit
+`sigma_g=U(g)sigma U(g)^*` and stipulated isotropic heat convolution acts
+through the same `U`, with no `G`-dependent unheated side system, then at
+integrated exposure
 `Gamma(T)=integral_0^T gamma(t)dt`, the spin-1 score is attenuated exactly by
 `exp(-2 Gamma)`. Hence
 
@@ -91,8 +93,8 @@ are also not derived by the same action. Paper U U8a therefore remains open.
 
 **[PROVED]** For finitely many spinless nonrelativistic particles with positive
 total mass `M`, hard support `|x_i|<=a` in a rotationally invariant
-configuration domain, and a nonnegative ground-subtracted excitation
-Hamiltonian satisfying the quadratic-form inequality
+configuration domain, and a nonnegative orbital Hamiltonian with fixed energy
+zero satisfying the quadratic-form inequality
 `H_ex>=sum_i p_i^2/(2m_i)`, every form-domain state obeys
 
 ```text
@@ -103,8 +105,10 @@ R_ref >= 1/(32 M a^2 E_ex+8).                           (B.1)
 The proof is a mass-weighted Cauchy-Schwarz inequality and applies to mixed,
 zero-mean, and rare-tail states with rotation-trivial internal labels. It does
 not cover intrinsic spin, relativistic or massless fields, soft localization,
-negative interaction energy, or nontrivially rotating light species. The
-separate substitution `2G(M+E_ex)/a<=chi<1` is explicitly a compactness proxy,
+negative interaction energy, or nontrivially rotating light species. A
+ground-subtracted `H_gs` requires a proved form offset `H_gs+Delta>=T`, with
+`Delta` included in `E_ex`. The separate substitution
+`2G(M+E_ex)/a<=chi<1` is explicitly a compactness proxy,
 not a theorem about general-relativistic bodies. The exact domain is Research
 Theorem W3a and `docs/localized_orbital_reference.md`.
 

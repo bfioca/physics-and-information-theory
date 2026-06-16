@@ -4,4 +4,4 @@
 
 2. Which gauge-invariant quantity should replace or refine the fixed-background Weyl witness as a capacity constraint in a de Sitter patch: collapse, horizon or quantum-extremal-surface displacement, or another invariant?
 
-3. Would a one-action semiclassical model deriving relational record formation, lifetime, localization, readout, and gravitational footprint clarify the observer rule, or is a closed-universe gravitational path integral essential from the outset?
+3. Would a relational acquisition-disturbance theorem for a blank directional record, followed by a one-action semiclassical lift, clarify the observer rule, or is a closed-universe gravitational path integral essential from the outset?

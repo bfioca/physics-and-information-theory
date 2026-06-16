@@ -215,6 +215,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `paper_r_viability_decision.md` | Source-bound final `INCONCLUSIVE STOP` decision, full response interval, bottleneck, and future improvement requirement. |
 | `colleague_research_status_brief.md` | Candid colleague-facing assessment of proved results, publication options, open claims, and decision gates. |
 | `harlow_facing_paper_goal.md` | Theorem-shaped completion goal for a relational directional record with derived lifetime, localization, capacity, and gravitational footprint. |
+| `paper_u_information_exposure_goal.md` | Active Paper U theorem goal: derive a same-action acquisition/readout exposure lower bound before expanding the conditional framework into a manuscript. |
 | `harlow_review_packet_codex_goal.md` | Copy-paste Codex objective for producing an audited, sendable Harlow critique packet without overclaiming paper completion. |
 | `localized_orbital_reference.md` | Quadratic-form localization-energy theorem, compactness and heat-exposure composition, spectral-capacity lemma, and bounded-spectrum necessity counterexample. |
 | `supported_skyrmion_collective_spectral_floor.md` | Exact inertia-mass-radius inequality and profile-relaxed linear sector floor for the hard-supported Skyrmion hedgehog collective family. |

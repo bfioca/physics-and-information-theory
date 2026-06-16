@@ -58,9 +58,13 @@ For isotropic rotational heat flow, the risk at proper time `T` satisfies
 
 ```text
 R_ref(T) >= 3/4 [1-exp(-2 Gamma)]
-             + exp(-2 Gamma)/(16 C_max+8),
+             + exp(-2 Gamma)/(16 C_bound+8),
 Gamma=integral_0^T gamma(tau) d tau.
 ```
+
+Here `C_bound` is a proved scalar capacity ceiling for the same complete
+accessible state evolved by the heat channel; it is not an unevaluated
+support-dependent function.
 
 A confined nonrelativistic orbital-matter class also has an all-state
 localization-energy capacity theorem,

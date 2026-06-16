@@ -4,17 +4,18 @@
 
 Dear Professor Harlow,
 
-I am developing a theorem-first model of a finite observer register in a de
-Sitter static patch. A localized system stores a relational `SO(3)` orientation;
-the aim is to control its information, lifetime, support, and gravitational
+I am studying a finite directional register in a de Sitter static patch,
+aiming to control its information, lifetime, support, and gravitational
 footprint in one regime.
 
-A finite-switch analysis proves a regular-bath channel lemma and conditionally
-controls one compactly smeared Bunch-Davies detector in normalized diamond norm.
-The missing QFT GNS bridge and the factorized current's locality obstruction
-mean it does not close the observer theorem. Separately, the rigorous
-fixed-background Weyl-response interval
-contains zero; that route is also stopped.
+The immediate target asks whether writing nonclassical relational information
+into a blank record must disturb the full source beyond existing channel,
+no-broadcasting, WAY, and resource-cost bounds.
+
+A finite-switch lemma and conditional Bunch-Davies detector bound do not close
+the observer theorem: the QFT GNS bridge is missing and the factorized current
+is nonlocal. The fixed-background Weyl-response interval also contains zero,
+so that route is stopped.
 
 I would value your view on whether directional records are a useful observer
 model, how they relate to observer entropy, which gravitational quantity should

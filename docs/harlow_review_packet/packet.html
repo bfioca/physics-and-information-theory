@@ -46,7 +46,7 @@
     }
     .sheet:last-of-type { page-break-after: auto; break-after: auto; }
     .conceptual-sheet { padding: 0.39in 0.5in 0.38in; }
-    .conceptual-sheet .running-head { margin-bottom: 10px; }
+    .conceptual-sheet .running-head { margin-bottom: 8px; }
     .conceptual-sheet h1 { font-size: 23.5pt; line-height: 1.02; }
     .conceptual-sheet .eyebrow { margin-bottom: 6px; }
     .conceptual-sheet .footer { left: 0.5in; right: 0.5in; }
@@ -103,7 +103,7 @@
     }
     .deck {
       max-width: 7.1in;
-      margin: 7px 0 8px;
+      margin: 5px 0 6px;
       color: #3f5264;
       font: 10.6pt/1.24 "DejaVu Serif", Georgia, serif;
     }
@@ -286,7 +286,7 @@
   <section class="sheet conceptual-sheet" id="conceptual-note" data-page="1">
     <div class="running-head">
       <span>Research review packet</span>
-      <span>Brian Fioca | 10 June 2026</span>
+      <span>Brian Fioca | 15 June 2026</span>
     </div>
     <div class="eyebrow">A concrete question about finite observers</div>
     <h1>Finite Directional Records as a Concrete Observer Model</h1>
@@ -309,26 +309,27 @@
       <div class="note-block">
         <h2>The record variable</h2>
         <p>For the covariant orientation ensemble, we begin with the relative entropy of rotational asymmetry:</p>
-        <div class="equation">S_dir := D(rho_O || G_SO(3)[rho_O])<br>= S(G_SO(3)[rho_O]) - S(rho_O). <span style="float:right">(2)</span></div>
-        <p><code>S_dir</code> is rotational asymmetry, not classical memory, thermodynamic entropy, Hilbert-space dimension, Casimir, quantum Fisher information, or Harlow's <code>S_Ob</code>. Their possible comparison is review question 1.</p>
+        <div class="equation">S_dir := D(rho_acc || G_SO(3)[rho_acc]). <span style="float:right">(2)</span></div>
+        <p><code>rho_acc</code> includes every memory or charged controller available again at readout; replacing it by <code>rho_O</code> is unjustified in general. <code>S_dir</code> measures rotational asymmetry, not memory, thermodynamic entropy, dimension, Casimir, quantum Fisher information, or Harlow's <code>S_Ob</code>. Their possible comparison is review question 1.</p>
         <p>Lifetime is operational: after time <code>T</code>, a permitted relational readout must still attain the declared risk. This is classical-record stability, not generic phase coherence.</p>
       </div>
 
       <div class="note-block">
         <h2>The proposed theorem chain</h2>
-        <p>Fix a class <code>C_dir</code> of localized register-target models, states, environments, actions, and preparation/storage/readout protocols. The intended theorem quantifies over this class:</p>
+        <p>Fix <code>C_dir</code> over localized models, states, environments, actions, and acquisition/storage/readout protocols:</p>
         <div class="equation">R_rel(T) &gt;= F_record(S_dir, degradation, channel error)<br>S_dir &lt;= F_capacity(energy, support, gravity; model data)<br>=&gt; Phi(R_rel(T), T, support, gravity; model data) &gt;= 0. <span style="float:right">(3)</span></div>
-        <p>On named domains, global risk requires rotational resources; confined orbital matter turns them into support and energy cost; and a regular-bath theorem controls finite-switch degradation. Its Bunch-Davies application needs an open QFT GNS bridge.</p>
+        <p>Equation (3) is only an architecture. The immediate gate compares costly blank-record information, after subtracting any nondisturbing classical sector, with complete-source disturbance. Generic channel, no-broadcasting, and WAY theorems are subsumption tests; heat and gravity are later lifts.</p>
+        <p>Existing results separately control global risk, confined orbital capacity, and regular-bath degradation; the Bunch-Davies channel still needs a QFT GNS bridge.</p>
       </div>
 
       <div class="note-block">
         <h2>The primary bottleneck</h2>
-        <p>The QFT GNS bridge and common-action local-matter channel remain <strong>open</strong>. The detector calculation pays the channel-norm dimension cost but lacks a KMS GNS/Araki-Woods justification. Independently, its factorized current has a nonzero commutator for disjoint spacelike smearings, so it is not local matter. A different action must derive acquisition, storage, readout, and stress together <a href="#ref10">[10]</a>.</p>
+        <p>The QFT GNS bridge and common-action local-matter channel remain <strong>open</strong>. The factorized current has a nonzero commutator for spacelike-separated smearings and is not local matter. A replacement must derive acquisition, storage, readout, and stress from one action <a href="#ref10">[10]</a>.</p>
       </div>
 
       <div class="note-block">
-        <h2>What gravity adds, and what the sprint decided</h2>
-        <p>Exact fixed-de Sitter maps define a Weyl witness <a href="#ref11">[11]</a>. Its estimator is negative, but the bounded sprint's full interval contains zero because the primal certificate is about an order of magnitude too broad. Paper R stops as a viability test: a proof limitation, not physical cancellation. The witness remains suggestive, not a theorem or capacity bound.</p>
+        <h2>Gravity and the stopped sprint</h2>
+        <p>The exact fixed-de Sitter Weyl estimator is negative, but its rigorous interval contains zero because the primal certificate is about ten times too broad <a href="#ref11">[11]</a>. Paper R therefore stops at viability: suggestive, neither a response theorem nor a capacity bound.</p>
         <p>A supported massive Skyrmion supplies one certified matter candidate <a href="#ref12">[12]</a>. It only makes the supported-profile subproblem nonempty; the architecture must survive rejection of this realization.</p>
       </div>
 
@@ -359,7 +360,7 @@
     <ol class="question-list">
       <li class="review-question">Is <code>S_dir</code>, used here as an operational <code>SO(3)</code>-asymmetry resource for a covariant alignment task, meaningfully comparable to the observer entropy <code>S_Ob</code> in the observer rule, or are these fundamentally different resources?</li>
       <li class="review-question">Which gauge-invariant quantity should replace or refine the fixed-background Weyl witness as a capacity constraint in a de Sitter patch: collapse, horizon or quantum-extremal-surface displacement, or another invariant?</li>
-      <li class="review-question">Would a one-action semiclassical model deriving relational record formation, lifetime, localization, readout, and gravitational footprint clarify the observer rule, or is a closed-universe gravitational path integral essential from the outset?</li>
+      <li class="review-question">Would a relational acquisition-disturbance theorem for a blank directional record, followed by a one-action semiclassical lift, clarify the observer rule, or is a closed-universe gravitational path integral essential from the outset?</li>
     </ol>
 
     <div class="feedback-target"><strong>Feedback target.</strong> We are not asking whether the present realization is complete. We are asking whether this is the right operational bridge to build, which quantity should replace the provisional gravitational witness if needed, and which observer-level identification should remain deliberately absent.</div>
@@ -377,7 +378,7 @@
     <p>The first bound follows from the spin-1 fusion matrix and a discrete Hardy inequality. The second follows from relative-entropy data processing for the covariant orbit ensemble and a global rate-distortion bound. Neither proof assumes a locally unbiased estimator, Cramer-Rao regime, purity, polarization, fixed irrep, or finite-dimensional multiplicity. This is Research Theorem W3 in <code>THEOREMS.md</code> and <code>docs/global_so3_reference_risk.md</code>.</p>
     <p><span class="status proved">[PROVED]</span> The datum is the alignment of two physical frames, never orientation relative to coordinates. The loss is global over the group, not a local-sensitivity proxy. For strict integer-spin support through <code>j=J</code>, <code>R_ref&gt;=sin^2[pi/(2J+3)]</code>. The fermionic Finkelstein-Rubinstein sector has its separately stated projective bound.</p>
     <p><span class="status proved">[PROVED]</span> Here <code>S_dir</code> is only relative entropy of rotational asymmetry. Equation (A.1) gives the necessary allocation <code>S_dir&gt;=(3/2)log(c_SO3/R_ref)</code> where positive. It does not establish accessible classical memory, sufficiency, or a relation to <code>S_Ob</code>.</p>
-    <p><span class="status conditional">[CONDITIONAL]</span> If the reference alone undergoes stipulated isotropic rotational heat diffusion with exposure <code>Gamma(T)=integral_0^T gamma(t)dt</code>, the spin-1 score is attenuated exactly:</p>
+    <p><span class="status conditional">[CONDITIONAL]</span> If the complete accessible ensemble is the covariant orbit <code>sigma_g=U(g)sigma U(g)^*</code> and stipulated isotropic heat convolution acts through the same <code>U</code>, with no <code>G</code>-dependent unheated side system, the spin-1 score is attenuated exactly at exposure <code>Gamma(T)=integral_0^T gamma(t)dt</code>:</p>
     <div class="equation">R_ref(T) &gt;= (3/4)[1-exp(-2 Gamma)]<br>+ exp(-2 Gamma)/(16 &lt;J^2&gt;+8). <span style="float:right">(A.2)</span></div>
     <p><span class="status proved">[PROVED]</span> The regular-Gaussian-bath finite-switch theorem defines common-input exact and comparison maps and survives a finite inert ancilla. <span class="status conditional">[CONDITIONAL]</span> Given the open KMS GNS/Araki-Woods channel bridge, AS2 applies it to one ten-dimensional Bunch-Davies detector, pays the full operator-to-diamond factor <code>50</code>, and gives normalized diamond error below <code>0.039</code> on an open nonzero-coupling box; U7 then gives <code>R_physical&gt;=0.532753...&gt;1/2</code>. <span class="status open">[OPEN]</span> Its exact factorized density fails microcausality under disjoint spacelike smearings and cannot be promoted unchanged to local matter; preparation, readout, stress, and backreaction are not controlled by the same action. Paper U U8a therefore remains open.</p>
     <div class="footer"><span>Technical appendix A</span><span>4 / 9</span></div>
@@ -386,9 +387,9 @@
   <section class="sheet appendix-sheet" id="technical-capacity-profile" data-page="5">
     <div class="running-head"><span>Technical appendix</span><span>Capacity and realization</span></div>
     <h2>B. Capacity from localization and energy</h2>
-    <p><span class="status proved">[PROVED]</span> For finitely many spinless nonrelativistic particles of total mass <code>M</code>, hard support <code>|x_i|&lt;=a</code>, and a ground-subtracted excitation Hamiltonian satisfying the quadratic-form inequality <code>H_ex&gt;=sum_i p_i^2/(2m_i)</code>, every form-domain state obeys</p>
+    <p><span class="status proved">[PROVED]</span> For finitely many spinless nonrelativistic particles of total mass <code>M</code>, hard support <code>|x_i|&lt;=a</code>, and a nonnegative orbital Hamiltonian with fixed energy zero satisfying <code>H_ex&gt;=sum_i p_i^2/(2m_i)</code>, every form-domain state obeys</p>
     <div class="equation">&lt;L^2&gt; &lt;= 2 M a^2 E_ex,<br>R_ref &gt;= 1/(32 M a^2 E_ex+8). <span style="float:right">(B.1)</span></div>
-    <p>The result includes mixed, zero-mean, and rare-tail states with rotation-trivial internal labels. It excludes intrinsic spin, relativistic or massless fields, soft localization, negative interaction energy, and nontrivially rotating light species. A separate compactness substitution is a declared proxy, not a general-relativistic body theorem. See W3a and <code>docs/localized_orbital_reference.md</code>.</p>
+    <p>The result includes mixed, zero-mean, and rare-tail states with rotation-trivial internal labels. A ground-subtracted <code>H_gs</code> requires a proved form offset <code>H_gs+Delta&gt;=T</code>, with <code>Delta</code> included in <code>E_ex</code>. The theorem excludes intrinsic spin, relativistic or massless fields, soft localization, negative interaction energy, and nontrivially rotating light species. A separate compactness substitution is a declared proxy, not a general-relativistic body theorem. See W3a and <code>docs/localized_orbital_reference.md</code>.</p>
     <p><span class="status proved">[PROVED]</span> More generally, sector floors <code>epsilon_j</code> yield <code>S_dir&lt;=beta E+log Z_H(beta)</code> only when <code>Z_H(beta)=sum_j(2j+1)^2 exp(-beta epsilon_j)</code> is finite. Covariance plus finite mean energy is insufficient; a bounded invariant counterexample permits increasingly accurate frame states at uniformly bounded energy. A physical theorem must derive growing sector floors from its matter model.</p>
     <p><span class="status proved">[PROVED]</span> In the hard-supported massive-Skyrme hedgehog collective family on fixed de Sitter, with support radius <code>a</code> and minimum support lapse <code>N_w&gt;0</code>, the static energy and collective inertia obey</p>
     <div class="equation">I[F] &lt;= 4 M[F] a^2/(3N_w),<br>E_j &gt;= sqrt[3N_w j(j+1)/2]/a. <span style="float:right">(B.2)</span></div>
@@ -460,25 +461,25 @@
   </section>
 
   <section class="sheet bibliography-sheet" id="short-bibliography" data-page="9">
-    <div class="running-head"><span>Selected primary sources</span><span>Verified 10 June 2026</span></div>
+    <div class="running-head"><span>Selected primary sources</span><span>Verified 15 June 2026</span></div>
     <div class="eyebrow">Short bibliography</div>
     <h1>Conceptual Neighbors</h1>
-    <p class="bibliography-intro">These twelve primary sources anchor the review question. The separate literature matrix audits 33 sources across observer rules, finite reference frames, clocks, de Sitter open systems, gauge-invariant response, Skyrmions, and rigorous numerics.</p>
+    <p class="bibliography-intro">These twelve primary sources anchor the review question. The separate literature matrix audits 43 sources across observer rules, finite reference frames, information-disturbance and resource-cost limits, clocks, de Sitter dynamics, gravity, Skyrmions, and rigorous numerics.</p>
     <ol class="references">
       <li id="ref1">D. Harlow, M. Usatyuk, and Y. Zhao, "Quantum mechanics and observers for gravity in a closed universe," <a href="https://arxiv.org/abs/2501.02359">arXiv:2501.02359</a> (2025).</li>
       <li id="ref2">D. Harlow, "Observers, alpha-parameters, and the Hartle-Hawking state," <a href="https://arxiv.org/abs/2602.03835">arXiv:2602.03835</a> (2026).</li>
       <li id="ref3">V. Chandrasekaran, R. Longo, G. Penington, and E. Witten, "An Algebra of Observables for de Sitter Space," <a href="https://arxiv.org/abs/2206.10780">arXiv:2206.10780</a> (2022).</li>
       <li id="ref4">J. De Vuyst, S. Eccles, P. A. Hoehn, and J. Kirklin, "Gravitational entropy is observer-dependent," <a href="https://arxiv.org/abs/2405.00114">arXiv:2405.00114</a> (2024).</li>
-      <li id="ref5">E. Bagan, M. Baig, and R. Munoz-Tapia, "Aligning Reference Frames Using Quantum States," <a href="https://arxiv.org/abs/quant-ph/0106014">arXiv:quant-ph/0106014</a> (2001).</li>
+      <li id="ref5">M. Hayashi, "Fourier Analytic Approach to Quantum Estimation of Group Action," <a href="https://arxiv.org/abs/1209.3463">arXiv:1209.3463</a> (2012).</li>
       <li id="ref6">S. D. Bartlett, T. Rudolph, R. W. Spekkens, and P. S. Turner, "Degradation of a quantum reference frame," <a href="https://arxiv.org/abs/quant-ph/0602069">arXiv:quant-ph/0602069</a> (2006).</li>
       <li id="ref7">G. Gour, I. Marvian, and R. W. Spekkens, "Measuring the quality of a quantum reference frame: the relative entropy of frameness," <a href="https://arxiv.org/abs/0901.0943">arXiv:0901.0943</a> (2009).</li>
-      <li id="ref8">B. A. Costa and Y. E. Sanchez Sanchez, "An Upper Bound for the Mass of Microscopic Clocks," <a href="https://arxiv.org/abs/2602.24177">arXiv:2602.24177</a> (2026).</li>
-      <li id="ref9">L.-Q. Chen and F. Giacomini, "Quantum Reference Fields Transformations in Linearized Quantum Gravity," <a href="https://arxiv.org/abs/2606.09344">arXiv:2606.09344</a> (2026).</li>
+      <li id="ref8">I. Marvian and R. W. Spekkens, "A no-broadcasting theorem for quantum asymmetry and coherence and a trade-off relation for approximate broadcasting," <a href="https://arxiv.org/abs/1812.08766">arXiv:1812.08766</a> (2019).</li>
+      <li id="ref9">H. Tajima, K. Yamaguchi, R. Takagi, and Y. Kuramochi, "Universal tradeoff relations between resource cost and irreversibility of channels," <a href="https://arxiv.org/abs/2507.23760">arXiv:2507.23760</a> (2025).</li>
       <li id="ref10">M. Fukuma, Y. Sakatani, and S. Sugishita, "Master equation for the Unruh-DeWitt detector and the universal relaxation time in de Sitter space," <a href="https://arxiv.org/abs/1305.0256">arXiv:1305.0256</a> (2014).</li>
       <li id="ref11">H. Kodama and A. Ishibashi, "A master equation for gravitational perturbations of maximally symmetric black holes in higher dimensions," <a href="https://arxiv.org/abs/hep-th/0305147">arXiv:hep-th/0305147</a> (2003).</li>
       <li id="ref12">Y. Brihaye and T. Delsate, "Skyrmion and Skyrme-Black holes in de Sitter spacetime," <a href="https://arxiv.org/abs/hep-th/0512339">arXiv:hep-th/0512339</a> (2006).</li>
     </ol>
-    <div class="literature-caveat"><strong>Literature boundary.</strong> Existing work already covers finite observer entropy, observer-dependent gravitational algebras, degrading quantum reference frames, physical clock limits, material reference fields, de Sitter open-system dynamics, gauge-invariant response, and curved/cavity Skyrmions. The proposed distinction is their quantitative conjunction in one narrow relational <code>SO(3)</code> record model. No priority claim is made. Journal databases and terminology outside the targeted search were not exhausted.</div>
+    <div class="literature-caveat"><strong>Literature boundary.</strong> Existing work already covers finite observer entropy, exact group estimation, degrading frames, mixed-ensemble nondisturbing sectors, generic and asymmetry information-disturbance, channel resource costs, de Sitter open systems, gauge-invariant response, and curved Skyrmions. The candidate novelty is a relational full-group strengthening plus a same-action local lift, not their abstract conjunction. No priority claim is made; specialist review is still required.</div>
     <div class="footer"><span>Short bibliography</span><span>9 / 9</span></div>
   </section>
 

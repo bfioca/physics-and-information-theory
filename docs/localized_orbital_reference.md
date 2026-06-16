@@ -8,12 +8,21 @@ a general-relativistic body theorem
 
 Consider finitely many spinless particles with masses `m_i>0`, total rest mass
 `M=sum_i m_i`, and a rotationally invariant configuration domain on which
-every `|x_i|<=a`. Work in units `hbar=c=1`. Let the ground-subtracted,
-rotation-invariant excitation Hamiltonian obey the quadratic-form inequality
+every `|x_i|<=a`. Work in units `hbar=c=1`. Let a nonnegative,
+rotation-invariant orbital energy Hamiltonian obey the quadratic-form inequality
 
 ```text
 H_ex >= T=sum_i p_i^2/(2m_i) >= 0.
 ```
+
+The choice of energy zero is part of the premise. `H_ex` is not an arbitrary
+ground-subtracted Dirichlet Hamiltonian. If the available Hamiltonian is
+`H_gs`, the theorem applies only after exhibiting `Delta>=0` such that
+`H_gs+Delta>=T` as quadratic forms; every occurrence of `E_ex` below then
+means `E_gs+Delta`. If `H_phys>=T` and
+`H_gs=H_phys-E_phys,0`, choosing `Delta=E_phys,0` suffices. A later
+gravitational ledger must use one consistent physical energy, including wall
+and support costs, without subtracting or restoring the same offset twice.
 
 The total orbital generator `L=sum_i x_i cross p_i` then satisfies, for every
 state in the form domain,

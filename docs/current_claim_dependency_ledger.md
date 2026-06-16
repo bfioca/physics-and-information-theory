@@ -457,7 +457,9 @@ Dependencies:
 
 - spinless nonrelativistic orbital generators;
 - hard support `|x_i|<=a` and a rotationally invariant form domain;
-- positive masses and a ground-subtracted Hamiltonian satisfying `H_ex>=T`;
+- positive masses and a nonnegative Hamiltonian, with its energy zero fixed,
+  satisfying `H_ex>=T` (or a proved form offset `H_gs+Delta>=T`, with `Delta`
+  included in the energy budget);
 - the global Haar-prior chordal orientation-risk theorem;
 - rotation-trivial, rather than nontrivially charged, internal multiplicity.
 

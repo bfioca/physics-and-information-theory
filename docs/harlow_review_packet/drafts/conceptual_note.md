@@ -33,11 +33,15 @@ For a covariant orientation ensemble, our starting information resource is
 the relative entropy of rotational asymmetry,
 
 ```text
-S_dir := D(rho_O || G_SO(3)[rho_O])
-       = S(G_SO(3)[rho_O]) - S(rho_O).                              (2)
+S_dir := D(rho_acc || G_SO(3)[rho_acc]).                            (2)
 ```
 
-Here `G_SO(3)` is rotational twirling. `S_dir` is rotational asymmetry, not
+Here `rho_acc` is the complete accessible encoded state, including every
+memory or charged controller that can re-enter at readout, and `G_SO(3)` is
+rotational twirling. When both von Neumann entropies are finite, this equals
+`S(G_SO(3)[rho_acc])-S(rho_acc)`; the relative-entropy definition remains
+valid when that difference is undefined. It is not generally valid to replace
+`rho_acc` by the reduced state `rho_O`. `S_dir` is rotational asymmetry, not
 classical memory, thermodynamic entropy, Hilbert-space dimension, Casimir,
 quantum Fisher information, or `S_Ob`. Their possible comparison is the first
 review question.
@@ -57,6 +61,15 @@ R_rel(T) >= F_record(S_dir, degradation, channel error),
 S_dir    <= F_capacity(energy, support, gravity; model data)
       => Phi(R_rel(T), T, support, gravity; model data) >= 0.        (3)
 ```
+
+Equation (3) is a target architecture, not one current theorem. The immediate
+gate is a relational theorem: net information written to an initially blank,
+independent record, after subtracting any nondisturbingly readable classical
+sector, must disturb the complete `OD` source, with the target frame, controls,
+and every readout path priced. This must add content beyond generic channel
+information-disturbance, asymmetry no-broadcasting, WAY, and general
+resource-cost theorems. The proved risk-asymmetry and heat-exposure bounds
+remain separate; heat and gravity require their own same-action lifts.
 
 On named domains, global relational risk requires rotational resources;
 confined orbital matter turns them into support and energy cost; and a regular-
