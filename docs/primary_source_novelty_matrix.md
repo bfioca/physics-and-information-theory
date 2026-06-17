@@ -1,9 +1,35 @@
 # Primary-Source Novelty Matrix
 
-Status: information-exposure literature gate complete; generic novelty route
-stopped 2026-06-17
+Status: information-exposure and finite-certification literature gates
+complete; both generic novelty routes stopped 2026-06-17
 
 Reviewed through: 2026-06-17
+
+## Binding 2026-06-17 Finite Type-Certification Stop
+
+The competing fallback has now been tested. Operational factor-type
+invisibility is false: von Luijk's operator-algebraic quantum-information
+program and the embezzlement results of van Luijk, Stottmeister, Werner, and
+Wilming give operational characterizations of type and identify
+Type-`III_1` factors as universal embezzlers. Their hyperfinite approximation
+results, and the finite-system theorem for critical fermions, already show
+that finite restrictions can form embezzling families.
+
+On the repository's alternating Gibbs ITPFI model, every protocol supported on
+a declared finite tensor cylinder has an exact Type-I surrogate preserving the
+restricted state, inclusions, and modular dynamics. The exact finite-prefix
+Schmidt-spectrum optimization and entropy-continuity dimension floor are
+useful controls, but do not isolate a new theorem class. Nuclear CP
+approximation and split inclusions also do not automatically provide the much
+stronger structure-preserving, energy-constrained comb theorem originally
+written as (FC.1).
+
+The binding decision is **CONTROL PASS / STOP** for the generic
+finite-certification headline. The surviving novelty lane is the explicitly
+open physical problem of determining admissible local embezzlement unitaries
+and bounding their energy, support, duration, complexity, or gravitational
+cost in one named model. See
+`docs/finite_type_certification_control_result.md`.
 
 ## Binding 2026-06-17 Information-Exposure Stop
 
@@ -87,18 +113,13 @@ If either contrast contains zero, the verdict is
 entanglement is not necessary. If the same-action dictionary is absent, the
 outputs are correlated diagnostics rather than ER=EPR.
 
-A second, explicitly competing route is a finite-certification no-go: determine
-whether every finite probe family, bounded observer protocol, and nonzero
-tolerance admits a type-I surrogate with indistinguishable output statistics
-despite different global algebraic connectivity. A theorem with explicit
-resource scaling could show that finite records certify only an operational
-connectivity surrogate. It is not yet a novelty claim; it must first be
-separated from standard hyperfinite approximation and finite-operator-system
-facts. The target class must carry explicit amenability/hyperfiniteness or
-split/nuclearity hypotheses, and the surrogate must preserve the declared local
-net, dynamics, covariance, resource ledger, and refinement maps. Reproducing a
-single induced finite-dimensional channel would be a tautological Stinespring
-realization, not a connectivity theorem.
+The second, explicitly competing finite-certification route has now completed
+its prove-or-kill audit. Exact finite-cylinder simulation and finite
+embezzlement mimics stop the generic headline. A future theorem must instead
+derive explicit physical resource scaling in a named local model; it cannot be
+obtained by reproducing a single induced finite-dimensional channel or by
+requiring the surrogate to preserve the inaccessible global invariant by
+definition.
 
 Matched stress is also a mandatory null test. At any order where the chosen
 semiclassical geometry depends only on a matched expectation value

@@ -79,10 +79,26 @@ submission candidate only after all of its theorem, dynamics, exposure,
 capacity, error, and novelty gates pass. ER=EPR enters a title or abstract only
 after a signed connected-geometry/topology or adopted algebraic
 quantum-wormhole criterion and a quantitative algebra/geometry dictionary also
-close. A finite-certification no-go asks
-whether bounded records can distinguish global algebraic connectivity from an
-admissible type-I surrogate; this is an open fallback theorem target, not a
-current result.
+close.
+
+## Finite Type-Certification Control Result
+
+The competing finite-certification sprint is also complete. A protocol
+supported on a fixed cylinder of the alternating Gibbs ITPFI model has an
+exact Type-I surrogate preserving its state, nested finite inclusions, and
+modular dynamics. More generally, replacing `n` adaptive channel calls within
+halved (energy-constrained) diamond distance `epsilon` changes the output by at
+most `min(1,n epsilon)`.
+
+This does not produce a new generic no-go theorem. Von Neumann type already
+has operational entanglement characterizations through embezzlement, while
+each fixed target and nonzero tolerance can be mimicked by a sufficiently
+large finite Type-I catalyst. The sprint therefore stops the generic headline
+and retains a narrower open problem: bound the support, energy, time,
+complexity, or backreaction required to implement the known type witnesses in
+one named local physical model. The result, exact finite-prefix frontier, and
+novelty audit are in
+[`docs/finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md).
 
 This repository is a research-code benchmark suite. It uses small exact models
 to test when screen-visible data, entropy shadows, min-cut shadows, or
@@ -112,7 +128,7 @@ remains candidate matter support, not a Paper U realization or headline claim.
 | --- | --- | --- |
 | **Selected Paper A** | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
-| Universal observer theorem | Generic information-exposure novelty route **STOPPED** after control derivation, counterexample audit, and small-spin optimization. The KSW/Koashi--Imoto controls and covariant frontier remain reusable. U8, a local static-patch lift, gravity, and ER=EPR literalization are not active consequences of this result. | [`information_exposure_control_result.md`](docs/information_exposure_control_result.md), [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md), [`observer_register_model_class.md`](docs/observer_register_model_class.md) |
+| Universal observer theorem | Both generic routes are **STOPPED**: information exposure reduces to known controls or capacity-dependent counterexamples, and one-shot finite type certification is either exactly Type-I simulable on a bounded cylinder or requires an asymptotic resource family. The viable residual is a named-model physical implementation-cost theorem. | [`information_exposure_control_result.md`](docs/information_exposure_control_result.md), [`finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md), [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. The exact mean-Casimir risk frontier is Hayashi's established result, not a standalone novelty claim. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`global_so3_risk_priority_audit.md`](docs/global_so3_risk_priority_audit.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
 | Optical common mode | Exact finite-size and higher-spin effective-channel lemmas retained for Paper U; current standalone paper stopped by direct de Sitter-spectrum and DFS prior art. | [`optical_common_mode_priority_audit.md`](docs/optical_common_mode_priority_audit.md), [`static_patch_higher_spin_gradient.md`](docs/static_patch_higher_spin_gradient.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
@@ -343,6 +359,8 @@ v0.1-static-patch-diagnostics
 
 | File | Purpose |
 | --- | --- |
+| [`docs/finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md) | Completed finite-certification controls, embezzlement frontier, primary-source audit, and binding generic stop decision. |
+| [`docs/finite_type_certification_goal.md`](docs/finite_type_certification_goal.md) | Archived two-paragraph prove-or-kill goal and retained physical-cost residual. |
 | [`docs/information_exposure_control_result.md`](docs/information_exposure_control_result.md) | Completed Paper U control theorem, counterexamples, small-spin frontier, prior-art comparison, and binding stop decision. |
 | [`docs/paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md) | Archived prove-or-kill contract and ER=EPR literalization boundary. |
 | [`docs/paper_worthy_observer_algebra_research_program.md`](docs/paper_worthy_observer_algebra_research_program.md) | Historical finite observer-algebra precursor and retained supporting results. |

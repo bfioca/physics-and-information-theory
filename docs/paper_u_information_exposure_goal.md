@@ -393,6 +393,11 @@ invalidate the declared causal model and would not identify a wormhole.
 
 ### Finite-certification fallback
 
+Outcome, 2026-06-17: this fallback has now been audited and stopped as a
+generic paper theorem. The exact bounded-cylinder control, embezzlement
+counterexample, and surviving physical implementation-cost question are in
+`docs/finite_type_certification_control_result.md`.
+
 Declare a restricted amenable or hyperfinite class `C_alg` with the required
 split/nuclearity hypotheses, a common finite interface and embedding, a finite
 probe system `P`, and protocols `Pi(n,E,T)` capped in calls, energy, duration,
@@ -563,8 +568,9 @@ theorem prices one operational resource a finite observer may need.
   separable class, a signed connectivity observable, and the quantitative
   same-action dictionary. These are not Paper U manuscript prerequisites.
 - **Finite certification:** audit (FC.1) against hyperfinite/type-I
-  approximation results. If a nontrivial theorem survives, give it a separate
-  title rather than counting it as (IE.2)--(IE.4).
+  approximation results. This audit is complete: the generic theorem stopped,
+  and only the named-model physical resource-cost residual survives. It is not
+  counted as (IE.2)--(IE.4).
 
 ## Kill And Pivot Rules
 

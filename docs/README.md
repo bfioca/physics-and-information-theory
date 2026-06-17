@@ -48,6 +48,22 @@ artifacts.
 - **Historical planning snapshots:** `research_execution_plan.md` and
   `paper_worthy_observer_algebra_research_program.md`
 
+### Completed Finite Type-Certification Sprint
+
+- Binding result and generic stop decision:
+  `finite_type_certification_control_result.md`
+- Archived two-paragraph prove-or-kill goal:
+  `finite_type_certification_goal.md`
+- Exact controls and finite-prefix optimizer:
+  `../qgtoy/finite_type_certification_control.py`,
+  `../experiments/finite_type_certification_control_audit.py`, and
+  `../experiments/finite_type_certification_control_certificate.json`
+
+The exact bounded-cylinder Type-I surrogate and finite embezzlement frontier
+are retained as controls. The viable research residual is a physical
+implementation-cost theorem in one named local model, not a generic statement
+that factor type is operationally invisible.
+
 ### Repository Baseline Package
 
 - `THEOREMS.md`
@@ -97,6 +113,8 @@ counterexamples and prior-art reduction. Stop this route; do not activate U8.
 | `publishable_paper_route_decision.md` | Current route table, selected Paper A claim, submission gates, and explicit claim boundary. |
 | `information_exposure_control_result.md` | Binding control theorem, exact connected-orbit Koashi--Imoto result, counterexamples, small-spin SDP, prior-art comparison, and Paper U stop decision. |
 | `paper_u_information_exposure_goal.md` | Archived Paper U prove-or-kill contract, ER=EPR literalization ladder, and claim-language gates. |
+| `finite_type_certification_control_result.md` | Binding exact cylinder control, embezzlement audit, finite-prefix frontier, and generic finite-certification stop. |
+| `finite_type_certification_goal.md` | Archived prove-or-kill contract and retained named-model physical-cost target. |
 | `observer_register_model_class.md` | Exact G1 quantifiers over systems, joint states, side information, controls, protocols, postselection, localization, errors, and gravitational-budget interfaces. |
 | `directional_record_resource_dictionary.md` | Status-labeled G2 fork from Haar risk to readout information, joint asymmetry, declared classical records, and model-dependent representation/energy costs. |
 | `observer_register_counterexample_checklist.md` | Adversarial tests for high-spin mixtures, rare tails, bounded spectra, stabilizers, postselection, hidden memories, pre-correlations, and QFI/global-risk mismatches. |

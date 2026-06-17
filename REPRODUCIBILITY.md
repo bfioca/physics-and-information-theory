@@ -80,6 +80,28 @@ The script should report `R_min` approximately `0.537943312211` and the verdict
 quadrature agreement, and solver residuals. It is not a rigorous interval
 certificate, a local-action theorem, or a Paper U novelty claim.
 
+## Finite Type-Certification Control Sprint
+
+Replay the exact cylinder control, entropy dimension floor, adaptive hybrid
+bound, and finite-prefix embezzlement optimization with:
+
+```bash
+PYTHONPATH=. python3 -m pytest -q \
+  tests/test_finite_type_certification_control.py
+PYTHONPATH=. python3 \
+  experiments/finite_type_certification_control_audit.py
+python3 -m json.tool \
+  experiments/finite_type_certification_control_certificate.json >/dev/null
+```
+
+Expected focused result: `21 passed`. The audit script reports both finite
+checks as `true` and the decision
+`STOP_GENERIC_FINITE_CERTIFICATION_THEOREM`. The Schmidt-spectrum optimization
+is exact at finite dimension up to ordinary floating-point evaluation, and is
+cross-checked against brute-force spectra through five sites. The apparent
+inverse-square-root support rate is a numerical diagnostic, not a proved
+asymptotic, energy, locality, gravity, or algebraic-connectivity theorem.
+
 ## Lead Certificate Commands
 
 Emit the five lead certificates:

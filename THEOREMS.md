@@ -7007,3 +7007,47 @@ PYTHONPATH=. python -m pytest -q tests/test_information_exposure_control.py
 python -m pip install -e '.[research-sdp]'
 PYTHONPATH=. python experiments/information_exposure_small_spin_sdp.py
 ```
+
+### Research Control AX: Finite Type Certification And Physical-Cost Residual
+
+For the alternating Gibbs ITPFI system, every protocol whose complete support
+lies in the first `m` tensor factors has an exact finite Type-I surrogate
+`M_(2^m)`. The restricted state, nested cylinder inclusions, products,
+adjoints, and modular dynamics agree exactly, so every adaptive transcript and
+final state agrees. If `n` calls are only approximately matched within halved
+energy-constrained diamond distance `epsilon`, the standard hybrid argument
+instead gives output distance at most `min(1,n epsilon)`.
+
+For a pure finite catalyst of local Schmidt dimension `D`, maximally entangled
+target rank `k`, and half trace error `t`, entropy continuity gives
+
+```text
+log k <= t log(D k-1)+h_2(t).
+```
+
+The exact finite-prefix optimum under arbitrary local unitaries is obtained by
+descending rearrangement of the initial padded Schmidt spectrum and the target
+spectrum. The compressed multiplicity-block calculation matches independent
+brute-force enumeration through five sites.
+
+These are controls, not a new generic factor-type theorem. Known embezzlement
+results already operationally characterize Type-`III_1` factors and show that
+hyperfinite finite restrictions form embezzling families. The generic route is
+therefore stopped. The retained open target is a named-model lower or upper
+bound on the support, energy, time, circuit complexity, or backreaction needed
+to implement the algebraic witness.
+
+Artifacts: `docs/finite_type_certification_control_result.md`,
+`docs/finite_type_certification_goal.md`,
+`qgtoy/finite_type_certification_control.py`,
+`experiments/finite_type_certification_control_audit.py`,
+`experiments/finite_type_certification_control_certificate.json`, and
+`tests/test_finite_type_certification_control.py`.
+
+Representative commands:
+
+```bash
+PYTHONPATH=. python -m pytest -q \
+  tests/test_finite_type_certification_control.py
+PYTHONPATH=. python experiments/finite_type_certification_control_audit.py
+```
