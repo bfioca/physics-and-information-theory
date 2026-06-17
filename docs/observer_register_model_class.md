@@ -309,13 +309,13 @@ Failure of one parameter point is not an asymptotic no-go.
 | `C_dir^orb` | hard-confined spinless nonrelativistic orbital matter with a fixed nonnegative energy convention `H_ex>=T`, or a proved form offset `H_gs+Delta>=T` | `C2<=2Ma^2E_ex`, with `Delta` included in `E_ex`, and the resulting risk floor **PROVED** |
 | `C_dir^cap` | the same complete representation obeys a derived capacity bound from energy and declared proper/optical support | populated by `C_dir^orb`; relativistic localized subclasses remain **OPEN** |
 | `C_dir^heat` | covariant orbit `sigma_g=U(g)sigma U(g)^*` and actual or norm-controlled isotropic heat convolution through the same `U`, with no `G`-dependent unheated side system | finite-exposure risk interpolation **CONDITIONAL** on that channel |
-| `C_dir^IE` | relational source `OD`, initially symmetric independent record, net information gain after subtracting any nondisturbingly readable classical sector, readout factorization, and all target-frame/control/postselection resources priced | domain specified; an all-protocol acquisition-disturbance theorem is **OPEN** |
-| `C_dir^(IE,alg)` | `C_dir^IE` plus delayed logical challenge/reference, code algebra, source/destination output split, and declared recovery norm | post-IE noncommutative algebra-transfer extension **OPEN** |
+| `C_dir^IE` | relational source `OD`, initially symmetric independent record, net information gain after subtracting any nondisturbingly readable classical sector, readout factorization, and all target-frame/control/postselection resources priced | KSW full-channel control and exact connected-orbit `I_nd=0` are **PROVED**; the proposed generic ensemble-specific novelty theorem is **STOPPED** |
+| `C_dir^(IE,alg)` | `C_dir^IE` plus delayed logical challenge/reference, code algebra, source/destination output split, and declared recovery norm | separately motivated noncommutative algebra-transfer extension **OPEN**, but not activated by the stopped IE route |
 | `C_dir^act` | nontrivial KMS environment and one local action deriving every allowed control and protocol stage | domain defined; a complete acquisition-through-readout member is **OPEN** |
 | `C_dir^grav` | one local action, common support and energy ledgers, and a named gauge-invariant `G_m` | domain defined; a relativistic member closing the gravity-bearing extension premises is **OPEN** |
 | `C_dir^ER` | subclass of `C_dir^(IE,alg) intersect C_dir^act intersect C_dir^grav` with two relationally anchored regions, accessible algebras/common center, matched entangled and separable families, signed connectivity witness, and quantitative same-action dictionary | ER=EPR literalization extension **OPEN** |
 
-The intended physical Paper U class is
+The proposed physical Paper U class was
 
 ```text
 C_dir^PaperU = C_dir^IE intersect C_dir^act
@@ -330,6 +330,10 @@ gravity-bearing extension is
 ```text
 C_dir^(PaperU,grav) = C_dir^PaperU intersect C_dir^grav.  (10.2)
 ```
+
+These definitions remain useful domain bookkeeping. They do not designate an
+active manuscript class after the information-exposure stop; see
+`docs/information_exposure_control_result.md`.
 
 Neither `C_dir^(IE,alg)` nor `C_dir^ER` is a prerequisite for the binding Paper
 U manuscript.

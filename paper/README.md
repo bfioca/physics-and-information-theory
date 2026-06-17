@@ -17,10 +17,11 @@ for colleague review and specialist submission preparation. Start with:
 - `validated_skyrmion_profile_outline.md`
 - `../docs/publishable_paper_route_decision.md`
 
-Paper U is the sole active research program, but it is not currently a
-submission theorem. Its binding target is
-`../docs/paper_u_information_exposure_goal.md`; the Skyrmion manuscript remains
-an independent review-ready artifact.
+The generic Paper U information-exposure sprint has completed with a novelty
+stop, not a submission theorem. Its controls and decision are recorded in
+`../docs/information_exposure_control_result.md`; the original contract remains
+in `../docs/paper_u_information_exposure_goal.md`. The Skyrmion manuscript is
+the independent review-ready artifact.
 
 ## Stopped Bounded Candidate
 

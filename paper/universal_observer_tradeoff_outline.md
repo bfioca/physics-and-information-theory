@@ -1,21 +1,18 @@
 # Prospective Paper U: Finite Directional Records In A Static Patch
 
-Status: claim-hygiene manuscript skeleton. Gates G1 and G2 are specified at an
-audit-ready level. A regular-bath finite-switch theorem is proved and a
-conditional detector box is certified, but the named KMS QFT channel bridge is
-open and the exact
-factorized density cannot itself serve as microcausal local matter. The local
-IE.4 lift, same-action preparation/readout, and every gravitational extension
-remain open. This is an outline, not full manuscript prose.
+Status: frozen prospective manuscript skeleton after the 2026-06-17
+information-exposure stop. Gates G1 and G2 are specified at an audit-ready
+level, but no new generic IE theorem survived the control, counterexample, SDP,
+and prior-art audit. The local IE.4 lift, same-action preparation/readout, and
+gravitational extensions are unactivated. This is not a submission draft.
 
-The static-patch title is prospective. The active theorem note remains a
-general symmetric acquisition-disturbance problem until the local KMS lift is
-proved.
+The static-patch title is prospective. The binding result is now
+`docs/information_exposure_control_result.md`, not the theorem program below.
 
-**Active route decision (2026-06-15).** Do not expand this skeleton into a
+**Superseded route decision (2026-06-15).** Do not expand this skeleton into a
 submission draft merely by naming assumptions A1--A5 and eliminating their
 budgets. The repository already contains that conditional composition. The
-next paper-level gate is a new same-acquisition-channel information-exposure
+tested paper-level gate was a new same-acquisition-channel information-exposure
 theorem: within one declared covariant acquisition/storage/readout model, low
 directional readout risk from an initially symmetric independent record, after
 subtracting any nondisturbingly readable classical sector, must force
@@ -23,6 +20,15 @@ disturbance of the complete relational source, with the target frame, controls,
 failed postselection branches, and every readout path priced. A distinct local
 static-patch theorem must then derive that channel and map the disturbance to
 KMS exposure. Gravity remains a later optional headline extension.
+
+**Binding stop decision (2026-06-17).** KSW supplies the full-channel control,
+the exact connected-orbit Koashi--Imoto sector is trivial, and the small-spin
+full-frame frontier is nontrivial. Nevertheless, redundant high-capacity source
+tokens defeat a capacity-independent ensemble floor, and the finite-dimensional
+optimization belongs to established covariant-instrument theory. The generic
+IE headline is stopped and U8 is not activated. The remainder of this file is
+retained as a record of what a separately motivated local-action theorem would
+have had to close.
 
 **ER=EPR literalization decision (2026-06-17).** ER=EPR may motivate the
 program, but the present cq record theorem is not an algebraic bridge. The
@@ -66,8 +72,9 @@ small global relational risk
                                                               CONDITIONAL
 ```
 
-The proposed Paper U theorem first adds a quantitative acquisition-disturbance
-and retention bound. A local static-patch lift must then derive acquisition and
+The proposed Paper U theorem would first have added a quantitative
+acquisition-disturbance and retention bound. A local static-patch lift would
+then have had to derive acquisition and
 readout from one microcausal action and control KMS exposure. Optical/proper
 support and a physically justified gauge-invariant gravitational quantity are
 later extensions, not premises of the base information-exposure theorem. The
@@ -83,8 +90,8 @@ information-disturbance, or same-acquisition-channel theorem.
 ## 2. Exact domain
 
 The proved U1--U7 inputs use named subclasses of `C_dir` from
-`docs/observer_register_model_class.md`. The new acquisition-disturbance
-theorem is stated on `C_dir^IE`; a physical local manuscript uses
+`docs/observer_register_model_class.md`. The proposed acquisition-disturbance
+theorem was stated on `C_dir^IE`; a physical local manuscript would use
 `C_dir^PaperU`. Their quantifiers range over:
 
 - a gauge-fixed relational `SO(3)` orbit of localized register `O` and target

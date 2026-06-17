@@ -1,15 +1,41 @@
 # Primary-Source Novelty Matrix
 
-Status: active literature gate; ER=EPR literalization route corrected 2026-06-17
+Status: information-exposure literature gate complete; generic novelty route
+stopped 2026-06-17
 
 Reviewed through: 2026-06-17
 
+## Binding 2026-06-17 Information-Exposure Stop
+
+The prove-or-kill sprint did not isolate a new generic theorem beyond known
+channel and covariant-estimation machinery. The retained full-channel control
+
+```text
+delta_ch >= [3/4-R_write]_+^2
+```
+
+is a direct KSW consequence. Exact connected-orbit Koashi--Imoto subtraction
+gives `I_nd=0`, but redundant full-frame source tokens defeat any
+capacity-independent ensemble-recovery floor. Sacchi's covariant-instrument
+framework already supplies the general seed optimization, and his
+[full-state direction tradeoff for antiparallel spin-coherent
+pairs](https://arxiv.org/abs/2606.18040) treats the directly adjacent
+`j=0 direct_sum j=1` carrier. See also the general
+[covariant information-disturbance
+framework](https://arxiv.org/abs/quant-ph/0702033).
+
+The ordered noncollinear full-frame SDP remains a useful specialization and
+benchmark, but it is not a new theorem class. The binding decision is
+**KNOWN-THEOREM SPECIALIZATION / STOP**. U8 and the ER=EPR literalization
+ladder are not activated by this route. Full derivations and counterexamples
+are in `docs/information_exposure_control_result.md`.
+
 ## Binding 2026-06-17 ER=EPR Literalization Correction
 
-This section supplements the June 15 information-exposure correction. ER=EPR
-is a research north star, not a present Paper U result. The active theorem still
-starts with the resource cost of writing relational directional information.
-The longer route has separately tested promotion gates:
+This historical section supplements the June 15 information-exposure
+correction. ER=EPR was a research north star, not a Paper U result. Before the
+information-exposure stop, the proposed longer route had these separate
+promotion gates:
 
 ```text
 Gate A: directional information-exposure theorem
@@ -49,7 +75,7 @@ binding: response on an incomplete probe algebra cannot determine the maximal
 recoverable algebra. Reusing those finite channels, Petz recovery, or a Schur
 kernel would not be a Paper U novelty result.
 
-The plausible new lane is narrower: combine a full-group relational
+The proposed new lane was narrower: combine a full-group relational
 information-exposure theorem with a localized resource cost for uniformly
 recovering a named nonabelian algebra. A later ER=EPR-facing result would also
 need structured-entangled and algebraically separable controls matched on local
@@ -87,12 +113,12 @@ physics theorem. Likewise, a cross-region communication channel is not implied
 by a nontraversable bridge: without priced activation or an ordinary causal
 path, no-signaling is a mandatory null control.
 
-## Binding 2026-06-15 Route Correction
+## Superseded 2026-06-15 Route Correction
 
-This section supersedes older candidate-novelty language below where the two
-conflict. An abstract conjunction of risk, capacity, heat exposure, support,
-and a named gravity budget is not counted as the missing paper result. The
-active target is described in `docs/paper_u_information_exposure_goal.md`:
+This section superseded older candidate-novelty language until the June 17
+stop above. An abstract conjunction of risk, capacity, heat exposure, support,
+and a named gravity budget was not counted as the missing paper result. The
+tested target was described in `docs/paper_u_information_exposure_goal.md`:
 
 ```text
 full-group relational information written to a blank record

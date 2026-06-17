@@ -1,9 +1,32 @@
 # Paper U Information-Exposure Goal
 
-Status: active theorem-first research goal. The existing conditional observer
-tradeoff is retained as infrastructure, not counted as the missing result.
+Status: completed prove-or-kill contract. The generic information-exposure
+novelty route stopped on 2026-06-17; U8 was not activated.
 
-## Decision
+## Binding Outcome
+
+The sprint completed its control derivation, counterexample audit, and
+small-spin covariant optimization. Its binding record is
+`docs/information_exposure_control_result.md`.
+
+- KSW gives the inherited full-channel bound
+  `delta_ch >= [3/4-R_write]_+^2`, with the correctly success-weighted
+  postselection variant.
+- The exactly nondisturbingly readable Koashi--Imoto information is zero for a
+  single finite-dimensional orbit of connected `SO(3)`.
+- Redundant full-frame source tokens rule out a capacity-independent positive
+  floor for ensemble-specific source recovery: record risk and recovery error
+  can vanish together along growing-capacity families.
+- The two-spin noncollinear frontier is a useful representation-dependent
+  calculation, but known covariant-instrument machinery, including Sacchi's
+  directly adjacent `j=0 direct_sum j=1` work, already supplies its theorem
+  class.
+
+The sprint therefore triggered its own kill rules. The controls are retained;
+the proposed generic theorem is not promoted to Paper U, and no local-action,
+static-patch, gravity, or ER=EPR claim follows from it.
+
+## Archived Sprint Decision
 
 Pursue Paper U, but do not begin by expanding the current outline into a
 15--25 page manuscript. The repository already contains:
@@ -517,7 +540,7 @@ The new theorem must be compared directly with:
 `S_dir` is not identified with `S_Ob`. The Harlow connection is that this
 theorem prices one operational resource a finite observer may need.
 
-## Binding Paper U Deliverables
+## Archived Paper U Deliverables
 
 1. A theorem note for (IE.6), including counterexamples and exact quantifiers.
 2. Executable finite-dimensional checks for every representation-theoretic
@@ -585,10 +608,11 @@ theorem prices one operational resource a finite observer may need.
   model depends only on those data, record the exact null response; do not add
   an entanglement interpretation by hand.
 
-## Paper Gate
+## Archived Paper Gate
 
-The ambitious Paper U path becomes a manuscript when all of the following are
-true:
+The sprint would have become a Paper U manuscript only if all of the following
+were true. The new-theorem and novelty gates did not pass, so this continuation
+is inactive:
 
 | Gate | Pass condition |
 | --- | --- |
@@ -603,6 +627,5 @@ true:
 | Algebraic wording | If claimed, one specified nonabelian algebra has uniform recovery with informationally complete probes and quantum-versus-classical channel controls |
 | ER=EPR wording | If claimed, the algebraic gap, entanglement-specific controls, signed connected-geometry/topology or adopted algebraic quantum-wormhole criterion, and same-action dictionary all pass |
 
-The finish line is not a longer outline. It is a theorem showing, in one
-auditable model class, that a finite localized observer cannot acquire and
-retain an arbitrarily accurate directional record for free.
+This table is retained as the historical acceptance rule, not as an active
+research goal.

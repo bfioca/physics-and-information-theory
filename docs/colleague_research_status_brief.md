@@ -4,8 +4,9 @@ Date: 2026-06-10
 
 Status: superseded historical snapshot. For current status, use
 `docs/publishable_paper_route_decision.md` and
-`docs/paper_u_information_exposure_goal.md`. Paper R has since ended in
-**INCONCLUSIVE STOP** and the current Paper U gate is information exposure.
+`docs/information_exposure_control_result.md`. Paper R ended in
+**INCONCLUSIVE STOP**, and the later generic Paper U information-exposure route
+ended in a novelty **STOP**.
 
 Historical branch: `codex/observer-algebra-research-program` (retired)
 

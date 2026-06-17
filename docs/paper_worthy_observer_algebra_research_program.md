@@ -7,8 +7,8 @@ branch retired during consolidation)
 
 Started: 2026-06-07
 
-Current execution authority is
-`docs/paper_u_information_exposure_goal.md`. This file preserves the earlier
+The later Paper U sprint is closed by
+`docs/information_exposure_control_result.md`. This file preserves the earlier
 finite-algebra program and its completed supporting results.
 
 ## Current Assessment

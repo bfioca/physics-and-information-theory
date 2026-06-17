@@ -1,29 +1,30 @@
 # Harlow-Facing Paper Goal
 
-Status: legacy Harlow-facing umbrella; not the active execution goal. The
-binding goal is `docs/paper_u_information_exposure_goal.md`.
+Status: legacy Harlow-facing umbrella; not an active execution goal. The later
+generic information-exposure sprint ended in the stop recorded by
+`docs/information_exposure_control_result.md`.
 
 G1/G2 are audit-ready. G3 has a regular-bath finite-switch theorem and a
 conditional box for one spatially smeared rigid detector; its named KMS QFT
 channel bridge remains open, and unchanged promotion of its exact factorized
 density ends in **INCONCLUSIVE STOP** at the microcausal local-matter gate.
-Paper U U8a, same-action preparation/readout, and G4-G6 remain open. The bounded
-Paper R route also ended in **INCONCLUSIVE STOP**. The existing Harlow packet is
-an archived pre-literalization snapshot and must be refreshed before sending.
-Paper A is the best-developed manuscript fallback, subject to novelty review.
+Paper U U8a, same-action preparation/readout, and G4-G6 remain open as
+interfaces but are not activated after the information-exposure stop. The
+bounded Paper R route also ended in **INCONCLUSIVE STOP**. The existing Harlow
+packet is an archived pre-literalization snapshot and must be refreshed before
+sending. Paper A is the best-developed manuscript fallback, subject to novelty
+review.
 
 ## Prospective working title
 
 **Finite Directional Records in a Static Patch: An Operational Tradeoff for
 Localized Observer Registers**
 
-This title is licensed only after the same-action static-patch lift closes.
-The active theorem note is presently a general symmetric
-acquisition-disturbance problem, specified in
-`docs/paper_u_information_exposure_goal.md`. It concerns net blank-record
-information after subtracting any nondisturbingly readable classical source
-sector; a strict disturbance floor for arbitrary mixed ensembles is not
-assumed.
+This title would be licensed only after a new same-action static-patch theorem
+closes. The tested general symmetric acquisition-disturbance route, specified
+in `docs/paper_u_information_exposure_goal.md`, did not survive as a new generic
+theorem. Its KSW/Koashi--Imoto controls remain useful, but no local lift was
+activated.
 
 ## Legacy Umbrella Goal
 

@@ -1,11 +1,11 @@
 # Universal Static-Patch Observer Tradeoff Research Plan
 
-Status: post-information-exposure extension architecture; not the binding goal
+Status: frozen extension architecture; not an active goal
 
-Superseded for current execution by
-`docs/paper_u_information_exposure_goal.md`. The localization, KMS, gravity,
-and Skyrmion material below is retained as optional lift infrastructure after
-the acquisition-disturbance theorem closes. The `Immediate Work` list is a
+The generic acquisition-disturbance route stopped after its prove-or-kill
+sprint; see `docs/information_exposure_control_result.md`. The localization,
+KMS, gravity, and Skyrmion material below is retained as optional infrastructure
+for any independently motivated future theorem. The `Immediate Work` list is a
 historical queue, not the current research order.
 
 ## Paper Thesis

@@ -27,15 +27,23 @@ artifacts.
 - `spacelike_replication_manuscript_goal.md` - completed Track 2 kill record;
 - `../paper/spacelike_replication_paper_outline.md` - frozen methods-note plan.
 
-### Active Paper U Program
+### Completed Paper U Control Sprint
 
-- **Binding goal:** `paper_u_information_exposure_goal.md`
+- **Binding result and stop decision:**
+  `information_exposure_control_result.md`
+- **Archived prove-or-kill contract:**
+  `paper_u_information_exposure_goal.md`
+- **Executable control and frontier:**
+  `../qgtoy/information_exposure_control.py`,
+  `../experiments/information_exposure_small_spin_sdp.py`, and
+  `../experiments/information_exposure_small_spin_sdp.json`
 - **Core domain and ledgers:** `observer_register_model_class.md`,
   `directional_record_resource_dictionary.md`,
   `observer_register_counterexample_checklist.md`,
   `universal_observer_claim_dependency_ledger.md`, and
   `primary_source_novelty_matrix.md`
-- **Post-IE local/static-patch support:** `u8a_finite_storage_channel.md` and
+- **Unactivated local/static-patch extensions:**
+  `u8a_finite_storage_channel.md` and
   `universal_static_patch_observer_tradeoff_plan.md`
 - **Historical planning snapshots:** `research_execution_plan.md` and
   `paper_worthy_observer_algebra_research_program.md`
@@ -55,7 +63,7 @@ artifacts.
 ### Paper Outlines And Drafts
 
 - `../paper/spacelike_replication_paper_outline.md` (stopped bounded candidate)
-- `../paper/universal_observer_tradeoff_outline.md` (active manuscript skeleton)
+- `../paper/universal_observer_tradeoff_outline.md` (frozen prospective skeleton)
 - `../paper/skyrmion_ule_outline.md` (realization/fallback)
 - `../paper/relational_observer_draft.md`
 
@@ -74,13 +82,12 @@ state-weighted off-code coupling at fixed response calibration; this is an
 explicit SO(3) application of established joint-measurement added noise.
 ```
 
-**Long-term Paper U target**
+**Paper U sprint verdict**
 
 ```text
-first prove that relational information written into a priced blank record
-forces complete-source disturbance; treat ER=EPR as a later literalization
-program requiring nonabelian algebra recovery, entanglement-specific controls,
-signed connectivity, and a same-action dictionary.
+full-channel recoverability obeys the inherited KSW control, but a new generic
+ensemble-specific information-exposure theorem does not survive the
+counterexamples and prior-art reduction. Stop this route; do not activate U8.
 ```
 
 ## Primary Audit Artifacts
@@ -88,7 +95,8 @@ signed connectivity, and a same-action dictionary.
 | Artifact | Purpose |
 | --- | --- |
 | `publishable_paper_route_decision.md` | Current route table, selected Paper A claim, submission gates, and explicit claim boundary. |
-| `paper_u_information_exposure_goal.md` | Binding Paper U theorem target, ER=EPR literalization ladder, finite-certification fallback, and claim-language gates. |
+| `information_exposure_control_result.md` | Binding control theorem, exact connected-orbit Koashi--Imoto result, counterexamples, small-spin SDP, prior-art comparison, and Paper U stop decision. |
+| `paper_u_information_exposure_goal.md` | Archived Paper U prove-or-kill contract, ER=EPR literalization ladder, and claim-language gates. |
 | `observer_register_model_class.md` | Exact G1 quantifiers over systems, joint states, side information, controls, protocols, postselection, localization, errors, and gravitational-budget interfaces. |
 | `directional_record_resource_dictionary.md` | Status-labeled G2 fork from Haar risk to readout information, joint asymmetry, declared classical records, and model-dependent representation/energy costs. |
 | `observer_register_counterexample_checklist.md` | Adversarial tests for high-spin mixtures, rare tails, bounded spectra, stabilizers, postselection, hidden memories, pre-correlations, and QFI/global-risk mismatches. |
@@ -103,7 +111,7 @@ signed connectivity, and a same-action dictionary.
 | `spacelike_replication_manuscript_goal.md` | Track 2 prove-or-kill contract and completed novelty-stop outcome. |
 | `../paper/spacelike_replication/main.tex` | Frozen internal methods note with the prior-art reduction made explicit. |
 | `harlow_redirection_branches.md` | Three bounded research pivots if the observer-entropy comparison, gravitational budget, or semiclassical register framing is rejected. |
-| `research_execution_plan.md` | Historical June 12 execution snapshot; superseded for current ordering by the binding Paper U goal. |
+| `research_execution_plan.md` | Historical June 12 execution snapshot, superseded by the completed Paper U control sprint and stop decision. |
 | `paper_worthy_observer_algebra_research_program.md` | Historical finite observer-algebra precursor; retained for supporting results, not as an active goal. |
 | `observer_algebra_model_choice.md` | Phase 0 decision between the genuine fuzzy-sphere algebra and the truncated one-particle control. |
 | `current_claim_dependency_ledger.md` | Assumption and replacement-evidence audit for every packaged claim. |
@@ -218,8 +226,9 @@ signed connectivity, and a same-action dictionary.
 | `paper_r_viability_contract.md` | Frozen leading-response model, Weyl observable, theorem targets, and predeclared GO/REASSESS/STOP/PIVOT thresholds. |
 | `paper_r_viability_decision.md` | Source-bound final `INCONCLUSIVE STOP` decision, full response interval, bottleneck, and future improvement requirement. |
 | `colleague_research_status_brief.md` | Candid colleague-facing assessment of proved results, publication options, open claims, and decision gates. |
-| `harlow_facing_paper_goal.md` | Legacy Harlow-facing umbrella specification; execution authority is superseded by the binding Paper U goal. |
-| `paper_u_information_exposure_goal.md` | Active Paper U theorem goal: derive a same-acquisition-channel information-disturbance bound, then attempt the local-action exposure lift. |
+| `harlow_facing_paper_goal.md` | Legacy Harlow-facing umbrella specification; no longer an execution authority after the Paper U stop. |
+| `information_exposure_control_result.md` | Completed same-acquisition-channel control sprint and binding generic-novelty stop. |
+| `paper_u_information_exposure_goal.md` | Archived sprint specification; its U8 continuation was not activated. |
 | `harlow_review_packet_codex_goal.md` | Completed packet-build instructions; the resulting packet is an archived pre-literalization snapshot, not the current overview. |
 | `localized_orbital_reference.md` | Quadratic-form localization-energy theorem, compactness and heat-exposure composition, spectral-capacity lemma, and bounded-spectrum necessity counterexample. |
 | `supported_skyrmion_collective_spectral_floor.md` | Exact inertia-mass-radius inequality and profile-relaxed linear sector floor for the hard-supported Skyrmion hedgehog collective family. |
@@ -237,7 +246,7 @@ signed connectivity, and a same-action dictionary.
 | `validated_skyrmion_ule.md` | Exact normalized centered prescribed-switch ULE residual and upper caps from the authenticated AU.3b baseline, with its zero coupling lower bound and all physical gates explicit. |
 | `validated_skyrmion_au3b.md` | Completed authenticated profile-resolved baseline, directed mass/inertia constants, tail-dominance diagnosis, and the boundary between a computational certificate and a physical observer window. |
 | `rotational_resource_substitution_no_go.md` | Exact zero-mean spin-cat and maximally mixed counterexamples showing that neither mean angular momentum nor Casimir alone is the required operational reference resource. |
-| `../paper/universal_observer_tradeoff_outline.md` | Active manuscript skeleton placing information exposure first and static-patch/gravity work in later extension layers. |
+| `../paper/universal_observer_tradeoff_outline.md` | Frozen prospective skeleton; no current submission theorem after the information-exposure stop. |
 | `../paper/validated_skyrmion_profile_outline.md` | Focused Paper A outline for the validated fixed-background hard-wall profile theorem. |
 | `finite_clock_crossed_product_gate.md` | Exact obstruction showing why finite inner clock actions do not derive a Type-II observer factor. |
 | `modular_manybody_regulator.md` | Exact finite modular covariance plus a theorem-backed Type-III ITPFI limit and Type-II continuous-core mechanism. |

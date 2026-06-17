@@ -7,7 +7,9 @@ that estimate to the named Bunch-Davies quasifree field still requires a
 regulator-uniform KMS GNS/Pauli-Fierz channel bridge. Independently, the exact
 factorized rigid-current density fails microcausality under disjoint spacelike
 smearings. That rigorous locality obstruction stops this exact route; it is not
-a no-go for different local completions. Paper U U8a and U8b remain open.
+a no-go for different local completions. Paper U U8a and U8b remain open as
+mathematical interfaces, but the later information-exposure stop did not
+activate them as a research continuation.
 
 ## 1. Fixed register, target, and action
 
@@ -328,8 +330,8 @@ The terminal research disposition is therefore:
 finite-switch regular-bath channel box: CONDITIONAL PASS,
 named Bunch-Davies QFT channel bridge: OPEN,
 unchanged promotion of the exact factorized density: INCONCLUSIVE STOP,
-Paper U U8a: OPEN,
-U8b and full U8: OPEN.
+Paper U U8a: OPEN BUT NOT ACTIVATED,
+U8b and full U8: OPEN BUT NOT ACTIVATED.
 ```
 
 Reproduce with:

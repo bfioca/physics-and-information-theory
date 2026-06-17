@@ -2,7 +2,8 @@
 
 Status: archived pre-literalization review snapshot. Do not send it as the
 current Paper U overview without refreshing the HTML, diagram, drafts, PDF, and
-manifest around `docs/paper_u_information_exposure_goal.md`.
+manifest around `docs/information_exposure_control_result.md` and its generic
+Paper U stop decision.
 
 This directory contains the prior packet asking whether a finite,
 localized directional record is a useful concrete model for the observer
@@ -15,8 +16,8 @@ subsystem in quantum-gravity observer rules.
 - `drafts/outreach_email.md` - the standalone email draft (under 200 words).
 
 Historical sharing order was to attach the PDF and use the email draft. Do not
-follow that instruction until the packet is refreshed and rebuilt against the
-current binding goal.
+follow that instruction unless the packet is deliberately reframed around the
+completed control result and stopped route.
 
 ## Editable and audit sources
 

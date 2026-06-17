@@ -22,10 +22,11 @@ finite screen-visible shadows can be incomplete; operator-algebraic response
 can be necessary to identify the observer algebra or bridge channel.
 ```
 
-## Active Research Theorem Stack
+## Research Theorem And Audit Stack
 
-The following results live on the active research branch and are not part of
-the frozen `v0.1-static-patch-diagnostics` package.
+The following results and stopped-route audits live beyond the frozen
+`v0.1-static-patch-diagnostics` package. Inclusion here records technical
+status; it does not make every entry an active paper claim.
 
 ### Research Theorem A: Canonical Low-Mode Berezin Refinement
 
@@ -6951,4 +6952,58 @@ PYTHONPATH=. python -m pytest -q \
   tests/test_locality_reference_leakage.py \
   tests/test_global_so3_reference_risk.py \
   tests/test_spacelike_replication_manuscript.py
+```
+
+### Research Control AW: Information Exposure And Generic-Novelty Stop
+
+Let `N:S->B` be the source-remnant channel of one unconditional acquisition,
+and let the declared directional record be a post-processing of a complement
+of `N`. With the unhalved diamond norm,
+
+```text
+delta_ch=inf_R ||R o N-id_S||_diamond,
+```
+
+Kretschmann--Schlingemann--Werner continuity and the Haar-random `SO(3)` risk
+`3/4` imply
+
+```text
+delta_ch >= [3/4-R_write]_+^2.
+```
+
+For a flagged covariant branch with success probability `p_s`, assigning the
+failure branch Haar-random risk gives
+
+```text
+delta_ch >= p_s^2[3/4-R_success]_+^2.
+```
+
+For a single exact finite-dimensional unitary orbit of connected `SO(3)`, the
+Koashi--Imoto minimal central projections cannot be nontrivially permuted by
+the connected group. Their probabilities are constant on the orbit, so the
+exactly nondisturbingly readable information is `I_nd=0`.
+
+These are controls, not a new generic Paper U theorem. A source containing
+`n+k` identical full-frame tokens can transfer `k` to the record and retain
+`n`; universal `n->n+k` cloning recovers the complete source with global
+fidelity `d[n]/d[n+k]`. Taking `n=J^2` and `k=J` makes both record risk and
+recovery error vanish, defeating any capacity-independent ensemble floor.
+The noncollinear two-spin covariant SDP is reproducible numerical evidence,
+not an interval-certified optimum, and lies in known covariant-instrument
+theory. The generic information-exposure route is therefore stopped and U8 is
+not activated.
+
+Artifacts: `docs/information_exposure_control_result.md`,
+`docs/paper_u_information_exposure_goal.md`,
+`qgtoy/information_exposure_control.py`,
+`experiments/information_exposure_small_spin_sdp.py`,
+`experiments/information_exposure_small_spin_sdp.json`, and
+`tests/test_information_exposure_control.py`.
+
+Representative commands:
+
+```bash
+PYTHONPATH=. python -m pytest -q tests/test_information_exposure_control.py
+python -m pip install -e '.[research-sdp]'
+PYTHONPATH=. python experiments/information_exposure_small_spin_sdp.py
 ```

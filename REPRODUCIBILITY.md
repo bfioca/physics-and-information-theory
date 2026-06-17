@@ -58,6 +58,28 @@ Ran 34 tests
 OK
 ```
 
+## Information-Exposure Control Sprint
+
+The completed Paper U prove-or-kill sprint is separate from the frozen package.
+Replay its analytic control and JSON-record checks with:
+
+```bash
+PYTHONPATH=. python3 -m pytest -q tests/test_information_exposure_control.py
+```
+
+Expected result: `18 passed`. To recompute the optional floating-point
+covariant SDP record, install its isolated extra and run:
+
+```bash
+python3 -m pip install -e '.[research-sdp]'
+PYTHONPATH=. python3 experiments/information_exposure_small_spin_sdp.py
+```
+
+The script should report `R_min` approximately `0.537943312211` and the verdict
+`KNOWN-FRAMEWORK SPECIALIZATION`. This replay checks a finite SDP formulation,
+quadrature agreement, and solver residuals. It is not a rigorous interval
+certificate, a local-action theorem, or a Paper U novelty claim.
+
 ## Lead Certificate Commands
 
 Emit the five lead certificates:

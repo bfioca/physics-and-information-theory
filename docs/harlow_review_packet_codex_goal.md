@@ -3,7 +3,8 @@
 Status: completed packet-build goal; archived as execution instructions.
 
 This was the review milestone after the internal Harlow-facing goal. The
-current research authority is `docs/paper_u_information_exposure_goal.md`.
+later information-exposure sprint is closed by
+`docs/information_exposure_control_result.md`.
 
 ## Copy-paste goal
 
@@ -190,6 +191,7 @@ verify the literature independently, and expose the physical channel as the
 main conceptual uncertainty.
 
 Historically, the later completion target was
-`harlow_facing_paper_goal.md`. Current execution is governed by
-`paper_u_information_exposure_goal.md`; this packet goal no longer selects the
-research direction.
+`harlow_facing_paper_goal.md`; the still later
+`paper_u_information_exposure_goal.md` sprint ended in the generic novelty stop
+recorded by `information_exposure_control_result.md`. This packet goal no
+longer selects the research direction.

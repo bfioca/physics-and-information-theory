@@ -41,7 +41,7 @@ backreaction, and fixed-background response is not self-consistent gravity.
 | E8 | **[OPEN]** | No positive lower bound `|B_W|>=b_min>0` is proved. | A future attempt requires a materially different primal proof object. The STOP decision is not evidence that the response vanishes. |
 | E9 | **[PROVED]** | A computer-assisted theorem establishes one local, strictly decreasing hard-wall Skyrmion profile with negative wall slope and finite positive inertia at the declared fixed-background parameters. | AU.1 and exact profile artifact indexed below. This is not a rotating or self-gravitating solution. |
 | E10 | **[OPEN]** | `S_dir` has not been identified with `S_Ob`, and the one-action observer tradeoff has not been proved. | These are the first and third review questions, not packet conclusions. |
-| E11 | **[OPEN]** | No new relational theorem yet shows that information beyond a nondisturbingly readable classical sector, written to a blank record, forces disturbance of the complete `OD` source. | Generic channel information-disturbance, Koashi-Imoto, no-broadcasting, WAY, and resource-cost theorems are prior art and direct subsumption tests. |
+| E11 | **[STOP]** | The generic information-exposure sprint recovered KSW full-channel control and exact connected-orbit `I_nd=0`, but did not isolate a new ensemble-specific theorem. | Redundant source tokens defeat a capacity-independent floor, and the finite-dimensional frontier is a known covariant-instrument specialization. |
 
 ## Observer-register claim boundary
 
@@ -50,7 +50,7 @@ backreaction, and fixed-background response is not self-consistent gravity.
 | **[PROVED]** | `R_ref>=1/(16<J^2>+8)` and `R_ref>=c_SO3 exp(-2S_dir/3)` for the declared global relational task. | Do not call either result an absolute-frame, local-QFI, memory-size, or observer-entropy theorem. |
 | **[PROVED]** | Confined spinless orbital matter obeys `<L^2><=2Ma^2E_ex`; supported Skyrmion collective profiles obey the stated inertia and sector-floor bounds. | Keep the orbital and adiabatic collective domains explicit. |
 | **[CONDITIONAL]** | The declared Bunch-Davies rigid-detector EFT obeys the AS2 finite-switch channel and degradation bounds if the QFT channel bridge holds. | Keep the proved regular-bath lemma, open KMS GNS bridge, factorized extended-detector action, factor `50`, declared box, and absence of a hardware-lifetime theorem explicit. |
-| **[OPEN]** | Costly net relational information may obey an acquisition-disturbance bound after the nondisturbingly readable classical sector is removed. | This is the active theorem target, not a packet result; the metric, source subclass, and non-subsumption proof remain to be supplied. |
+| **[STOP]** | Full-channel recoverability obeys the inherited KSW control, but the tested generic ensemble-specific acquisition-disturbance claim is not a Paper U novelty result. | See `../information_exposure_control_result.md`; do not present the stopped claim as an open packet target. |
 | **[OPEN]** | Local-matter preparation, storage, readout, support stress, and backreaction are not controlled by one action on one open parameter family. | The rigid-current locality STOP is route-specific; this remains the main physical bridge for Paper U. |
 
 ## Fixed-background response decision

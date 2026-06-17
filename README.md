@@ -42,24 +42,33 @@ useful history because it records both route-level **INCONCLUSIVE STOP** results
 and does not present fixed-background Weyl response or the rigid-detector
 current as a completed Paper U theorem.
 
-## Active Paper U Research Goal
+## Paper U Information-Exposure Control Result
 
-Paper U is now the active ambitious research track, but its next deliverable
-is a theorem rather than more manuscript prose. The repository
-already has the conditional capacity/localization/heat composition proposed
-for an operational observer paper. The missing paper-level implication is a
-same-acquisition-channel information-exposure bound: after subtracting any
-nondisturbingly readable classical sector, net information written into an
-initially blank record must force a strictly positive, quantitatively
-controlled disturbance of the complete source once target frames, controls,
-memories, postselection, and every readout path are priced.
+The information-exposure prove-or-kill sprint is complete. For an
+unconditional acquisition channel whose declared record is a post-processing
+of the source-remnant complement, KSW gives the full-channel control
 
-The binding goal is
-[`docs/paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md).
-Gravity remains an explicit interface until a named gauge-invariant quantity
-is proved to constrain capacity or disturbance, and the Skyrmion remains
-optional matter support. A longer U draft without this new implication
-would reorganize existing results rather than advance the physics.
+```text
+delta_ch >= [3/4-R_write]_+^2.
+```
+
+The sprint also proves that the exactly nondisturbingly readable
+Koashi--Imoto information vanishes for a single finite-dimensional orbit of a
+connected group, records the correctly success-weighted postselection bound,
+and computes an unrestricted covariant small-spin frontier for a noncollinear
+two-marker `SO(3)` token.
+
+These are useful controls, but they do not supply a new generic Paper U
+theorem. KSW already controls full-channel recoverability, known covariant
+instrument methods cover the finite-dimensional frontier, and redundant
+high-capacity source tokens allow both record risk and source-only orbit
+recovery error to vanish. The generic information-exposure route is therefore
+**STOPPED**, and the U8 local/static-patch lift is not activated by it. The
+binding result is
+[`docs/information_exposure_control_result.md`](docs/information_exposure_control_result.md);
+the original
+[`sprint goal`](docs/paper_u_information_exposure_goal.md) is retained as its
+prove-or-kill contract.
 
 ER=EPR is retained as a north star, not a present claim. The explicit ladder is
 directional cq record, uniform recovery of a specified noncommutative algebra,
@@ -103,7 +112,7 @@ remains candidate matter support, not a Paper U realization or headline claim.
 | --- | --- | --- |
 | **Selected Paper A** | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
-| Universal observer theorem | Active information-exposure sprint: prove that net information beyond the nondisturbingly readable classical sector forces source disturbance under a priced symmetric acquisition. The ER=EPR north star adds later, noninterchangeable gates for nonabelian algebra recovery, matched entanglement-specific controls, gauge-invariant geometry, and a same-action dictionary. The local KMS lift, U8a, same-action preparation/readout, and gravity remain open. | [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md), [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
+| Universal observer theorem | Generic information-exposure novelty route **STOPPED** after control derivation, counterexample audit, and small-spin optimization. The KSW/Koashi--Imoto controls and covariant frontier remain reusable. U8, a local static-patch lift, gravity, and ER=EPR literalization are not active consequences of this result. | [`information_exposure_control_result.md`](docs/information_exposure_control_result.md), [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md), [`observer_register_model_class.md`](docs/observer_register_model_class.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. The exact mean-Casimir risk frontier is Hayashi's established result, not a standalone novelty claim. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`global_so3_risk_priority_audit.md`](docs/global_so3_risk_priority_audit.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
 | Optical common mode | Exact finite-size and higher-spin effective-channel lemmas retained for Paper U; current standalone paper stopped by direct de Sitter-spectrum and DFS prior art. | [`optical_common_mode_priority_audit.md`](docs/optical_common_mode_priority_audit.md), [`static_patch_higher_spin_gradient.md`](docs/static_patch_higher_spin_gradient.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
@@ -117,15 +126,17 @@ remains candidate matter support, not a Paper U realization or headline claim.
   and supported-profile subproblems are proved on their stated subdomains.
 - **Conditional:** the named QFT detector box; the signed response interval
   still contains zero.
-- **Open:** the KMS GNS/Pauli-Fierz bridge, same-action preparation/readout,
+- **Open, but not selected as the next research route:** the KMS
+  GNS/Pauli-Fierz bridge, same-action preparation/readout,
   `S_dir` versus `S_Ob`, a gravitational capacity invariant, Weyl
   zero-exclusion, self-consistent gravity, and Paper U U8a.
 - **Stopped as standalone novelty:** bounded spacelike replication, the exact
-  global mean-Casimir risk optimization, and the current optical common-mode
-  formulation. Their proved lemmas remain available to the larger program.
+  global mean-Casimir risk optimization, the current optical common-mode
+  formulation, and the generic information-exposure theorem. Their proved
+  lemmas and controls remain available.
 
-Use the [`binding Paper U goal`](docs/paper_u_information_exposure_goal.md) for
-the current ordering, the
+Use the [`information-exposure control result`](docs/information_exposure_control_result.md)
+for the completed sprint and stop decision, the
 [`publishable-paper route decision`](docs/publishable_paper_route_decision.md)
 for the selected manuscript and stopped alternatives, the
 [`claim dependency ledger`](docs/universal_observer_claim_dependency_ledger.md)
@@ -137,8 +148,9 @@ historical [`observer-algebra research program`](docs/paper_worthy_observer_alge
 <details>
 <summary>Detailed research trail and individual theorem notes</summary>
 
-The current assessment and execution order are tracked in the
-[`Paper U information-exposure goal`](docs/paper_u_information_exposure_goal.md).
+The completed Paper U sprint and its original decision rule are recorded in the
+[`information-exposure control result`](docs/information_exposure_control_result.md)
+and [`information-exposure goal`](docs/paper_u_information_exposure_goal.md).
 The older
 [`universal observer tradeoff plan`](docs/universal_static_patch_observer_tradeoff_plan.md)
 is retained as post-information-exposure static-patch architecture, while
@@ -331,7 +343,8 @@ v0.1-static-patch-diagnostics
 
 | File | Purpose |
 | --- | --- |
-| [`docs/paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md) | Sole active research goal, Paper U gates, and ER=EPR literalization boundary. |
+| [`docs/information_exposure_control_result.md`](docs/information_exposure_control_result.md) | Completed Paper U control theorem, counterexamples, small-spin frontier, prior-art comparison, and binding stop decision. |
+| [`docs/paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md) | Archived prove-or-kill contract and ER=EPR literalization boundary. |
 | [`docs/paper_worthy_observer_algebra_research_program.md`](docs/paper_worthy_observer_algebra_research_program.md) | Historical finite observer-algebra precursor and retained supporting results. |
 | [`paper/main.md`](paper/main.md) | Canonical paper-style draft. |
 | [`paper/main.tex`](paper/main.tex) | Attachment-ready TeX version of the focused note. |

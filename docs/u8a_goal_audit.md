@@ -8,7 +8,8 @@ the named Bunch-Davies field still needs a regulator-uniform KMS GNS/Pauli-
 Fierz channel bridge. Independently, the exact factorized density cannot be
 promoted unchanged to a microcausal local-matter current while retaining the
 zero-error ledger. That rigorous locality obstruction stops this route. Paper
-U U8a, preparation, and readout remain open.
+U U8a, preparation, and readout remain open as interfaces but are not activated
+after the later information-exposure stop.
 
 ## Requirement audit
 
@@ -67,10 +68,10 @@ to local matter. The correct disposition is therefore:
 regular-bath finite-switch box: CONDITIONAL PASS.
 named Bunch-Davies QFT channel bridge: OPEN.
 exact-factorized local-matter promotion: INCONCLUSIVE STOP.
-Paper U U8a: OPEN.
-U8b: OPEN.
-Full U8: OPEN.
-Paper U: NOT YET A SUBMISSION THEOREM.
+Paper U U8a: OPEN BUT NOT ACTIVATED.
+U8b: OPEN BUT NOT ACTIVATED.
+Full U8: OPEN BUT NOT ACTIVATED.
+Paper U: GENERIC INFORMATION-EXPOSURE ROUTE LATER STOPPED.
 ```
 
 ## Claim hygiene
@@ -117,7 +118,8 @@ Closure record on 10 June 2026:
 
 - focused U8a/channel/spectral regressions: `100 passed in 12.65s`;
 - CLI: `conditional_pass`, all conditional-box checks true, all three named-QFT
-  bridge checks false, Paper U U8a `OPEN`, locality route `INCONCLUSIVE STOP`;
+  bridge checks false, Paper U U8a then `OPEN`, locality route
+  `INCONCLUSIVE STOP`; the later IE stop did not activate it;
 - Harlow packet: audit passed with 9 pages, 573 opening words, and 178 outreach-
   email words; visual page-one check found no clipping or readability defect;
 - full repository run: `117 passed`, then stopped at the pre-existing

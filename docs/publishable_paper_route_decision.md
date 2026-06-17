@@ -1,7 +1,7 @@
 # Publishable Paper Route Decision
 
-Status: Paper A remains **GO for colleague review**; Paper U is the sole active
-research program
+Status: Paper A remains **GO for colleague review**; the generic Paper U
+information-exposure route is **STOPPED**
 
 Last audited: 2026-06-17
 
@@ -22,8 +22,9 @@ already gave a rational computer-assisted existence and linear-stability proof
 for the flat, massless whole-space Skyrmion. The revised paper distinguishes
 its massive, curved, finite-boundary problem, uses the source-consistent
 certificate, states the certified Newton norm exactly, and does not present the
-imposed boundary or an underived bath model as physics. The universal observer
-theorem remains the higher-impact program, but it is not a submission theorem.
+  imposed boundary or an underived bath model as physics. The universal-observer
+program remains a higher-impact motivation, but the tested generic
+information-exposure route did not produce a new submission theorem.
 
 ## Route Table
 
@@ -35,7 +36,7 @@ theorem remains the higher-impact program, but it is not a submission theorem.
 | Optical common mode | **Current standalone STOP; conditional reopen** | Hu-Yu contains the same de Sitter cross spectrum and the relative-noise mechanism is standard DFS physics. Reopen only after a parity-consistent distributed interaction and a uniform finite-time KMS channel lift are proved. |
 | Boundary-regularity universality | **Standalone STOP** | Endpoint-order Fourier/Hankel asymptotics and rapid decay of smooth compact profiles are established. Retain the certified intrinsic `p^-3` inertia-transform theorem as a consequence of the validated profile; the separately filtered `p^-5` bound is not a Paper A headline. |
 | Paper A: validated profile | **GO for colleague review** | The base-point certificate, qualitative analytic branch, radial form gap, and sharp inertia-transform tail are closed. All three proof artifacts replay to their canonical hashes, the package audit passes, and independent internal proof/publication reviews report no P1/P2 blocker. An explicit rational parameter box remains an optional strengthening. |
-| Paper U: information exposure | **Active GO, not submission-ready** | First prove that useful relational information written into a priced blank record forces complete-source disturbance under one acquisition channel. The local static-patch lift is later; ER=EPR remains a gated extension requiring nonabelian recovery, entanglement-specific signed connectivity, and a quantitative same-action dictionary. See `paper_u_information_exposure_goal.md`. |
+| Paper U: information exposure | **Generic novelty STOP; controls retained** | KSW supplies the strongest clean full-channel recovery control; exact connected-orbit Koashi--Imoto subtraction removes the classical-sector loophole, but redundant source tokens defeat a capacity-independent ensemble floor and the finite-dimensional frontier lies in known covariant-instrument machinery. U8 was not activated. See `information_exposure_control_result.md`. |
 
 ## Selected Paper
 

@@ -5,5 +5,8 @@ description = "Exact small stabilizer-state and stabilizer-code verifiers for en
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+research-sdp = ["cvxpy>=1.9,<2"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]

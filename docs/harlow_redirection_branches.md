@@ -1,8 +1,8 @@
 # Harlow Redirection Branches
 
 Status: historical conceptual-pivot map, not a set of active Git branches. The
-selected current path is the information-exposure theorem with ER=EPR retained
-as a gated literalization north star.
+generic information-exposure route subsequently ended in a novelty stop; see
+`docs/information_exposure_control_result.md`.
 
 These three pivots are
 mutually distinguishable; none treats a critical response as a request to
