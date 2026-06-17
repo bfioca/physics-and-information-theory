@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-06-16T00:13:43.320Z",
+  "generated_at_utc": "2026-06-17T17:05:01.221Z",
   "packet_pages": 9,
   "conceptual_note_words": 565,
   "conceptual_note_equations": 3,
@@ -14,8 +14,8 @@
       "sha256": "b779dab68a17edab53aa3557c374f56be817c5dda2ab562262a1290396e61360"
     },
     "README.md": {
-      "bytes": 2882,
-      "sha256": "3e1474f13ce7466a93ec3621f9b953607867547db1ded1825bf19c239a063742"
+      "bytes": 3073,
+      "sha256": "694cf237fbd44c87b959de95a13ea1e2eda7c0374224deefccf35f8abbd7bdd5"
     },
     "build_packet.sh": {
       "bytes": 1844,

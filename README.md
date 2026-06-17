@@ -22,24 +22,25 @@ theorem or a broad gravitational breakthrough.
 - [`docs/publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md)
   - the novelty decisions, claim boundary, and referee disposition.
 
-## Separate Harlow Conceptual Packet
+## Archived Harlow Conceptual Packet
 
-The curated review artifact for the finite directional-record observer program
-is separate from the static-patch screen-shadow package documented below.
+The prior review artifact for the finite directional-record observer program is
+retained as a pre-literalization snapshot. It predates the current
+information-exposure-first hierarchy and should not be sent as the current
+research overview without a deliberate refresh.
 
-The refreshed packet includes both the U8a detector-EFT/locality audit and the
-Paper R stop decision. Its sendable files are:
+The packet includes both the U8a detector-EFT/locality audit and the Paper R
+stop decision. Its frozen files are:
 
 - [`docs/harlow_review_packet/finite_directional_observer_review_packet.pdf`](docs/harlow_review_packet/finite_directional_observer_review_packet.pdf)
   - the nine-page conceptual review packet;
 - [`docs/harlow_review_packet/drafts/outreach_email.md`](docs/harlow_review_packet/drafts/outreach_email.md)
   - the short attachment-first email draft.
 
-Attach the PDF and use the email draft. Do not lead with the raw branch URL;
-offer the executable repository and certificates only if they would be useful.
-The packet includes both route-level **INCONCLUSIVE STOP** results and does not
-present fixed-background Weyl response or the rigid-detector current as a
-completed Paper U theorem.
+Do not use the archived outreach draft as the current email. The packet remains
+useful history because it records both route-level **INCONCLUSIVE STOP** results
+and does not present fixed-background Weyl response or the rigid-detector
+current as a completed Paper U theorem.
 
 ## Active Paper U Research Goal
 
@@ -47,7 +48,7 @@ Paper U is now the active ambitious research track, but its next deliverable
 is a theorem rather than more manuscript prose. The repository
 already has the conditional capacity/localization/heat composition proposed
 for an operational observer paper. The missing paper-level implication is a
-same-action information-exposure bound: after subtracting any
+same-acquisition-channel information-exposure bound: after subtracting any
 nondisturbingly readable classical sector, net information written into an
 initially blank record must force a strictly positive, quantitatively
 controlled disturbance of the complete source once target frames, controls,
@@ -57,8 +58,22 @@ The binding goal is
 [`docs/paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md).
 Gravity remains an explicit interface until a named gauge-invariant quantity
 is proved to constrain capacity or disturbance, and the Skyrmion remains
-optional realization support. A longer U draft without this new implication
+optional matter support. A longer U draft without this new implication
 would reorganize existing results rather than advance the physics.
+
+ER=EPR is retained as a north star, not a present claim. The explicit ladder is
+directional cq record, uniform recovery of a specified noncommutative algebra,
+an entanglement-specific gauge-invariant geometric contrast under matched
+separable controls, an optional pairing-resolved scrambled diagnostic, and
+finally a same-action dictionary between the two. Paper U could become a
+submission candidate only after all of its theorem, dynamics, exposure,
+capacity, error, and novelty gates pass. ER=EPR enters a title or abstract only
+after a signed connected-geometry/topology or adopted algebraic
+quantum-wormhole criterion and a quantitative algebra/geometry dictionary also
+close. A finite-certification no-go asks
+whether bounded records can distinguish global algebraic connectivity from an
+admissible type-I surrogate; this is an open fallback theorem target, not a
+current result.
 
 This repository is a research-code benchmark suite. It uses small exact models
 to test when screen-visible data, entropy shadows, min-cut shadows, or
@@ -67,7 +82,7 @@ bridge channel.
 
 The current public package is deliberately finite. It is not a continuum
 de Sitter theorem, not a dS/CFT construction, and not a proof of ER=EPR in de
-Sitter.
+Sitter. Its present ER=EPR status is motivation plus falsifiable gate design.
 
 ## Research Tracks
 
@@ -80,20 +95,19 @@ current bounded methods result concerns off-code leakage when three
 spacelike cells reproduce different components of one finite `SO(3)`
 collective mode. Its standalone novelty claim is stopped: the inequality is a
 specialization of established UCP/joint-measurement added-noise bounds. The
-broader static-patch observer theorem remains the long-term program: it would
-also have to control lifetime, optical support, energy, and gravitational
-disturbance in one model. The Skyrmion remains a test realization, not the
-headline claim.
+later static-patch lift would also have to control lifetime, optical support,
+energy, and any claimed gravitational disturbance in one model. The Skyrmion
+remains candidate matter support, not a Paper U realization or headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
 | **Selected Paper A** | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
-| Universal observer theorem | Active information-exposure sprint: prove that net information beyond the nondisturbingly readable classical sector forces source disturbance under a priced symmetric acquisition. G1 specifies the domain; G2's operational arrows and the conditional composition are infrastructure. The local KMS lift, U8a, same-action preparation/readout, and gravity remain open. | [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md), [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
+| Universal observer theorem | Active information-exposure sprint: prove that net information beyond the nondisturbingly readable classical sector forces source disturbance under a priced symmetric acquisition. The ER=EPR north star adds later, noninterchangeable gates for nonabelian algebra recovery, matched entanglement-specific controls, gauge-invariant geometry, and a same-action dictionary. The local KMS lift, U8a, same-action preparation/readout, and gravity remain open. | [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md), [`observer_register_model_class.md`](docs/observer_register_model_class.md), [`universal_observer_tradeoff_outline.md`](paper/universal_observer_tradeoff_outline.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. The exact mean-Casimir risk frontier is Hayashi's established result, not a standalone novelty claim. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`global_so3_risk_priority_audit.md`](docs/global_so3_risk_priority_audit.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
 | Optical common mode | Exact finite-size and higher-spin effective-channel lemmas retained for Paper U; current standalone paper stopped by direct de Sitter-spectrum and DFS prior art. | [`optical_common_mode_priority_audit.md`](docs/optical_common_mode_priority_audit.md), [`static_patch_higher_spin_gradient.md`](docs/static_patch_higher_spin_gradient.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
-| Certified matter realization | The supported Skyrmion supplies controlled profile, spectral, and response subproblems without being identified with the observer theorem. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
+| Certified matter subproblems | The supported Skyrmion supplies controlled profile, spectral, and response inputs without being identified with the observer theorem or its realization. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
 
 **Status boundary**
 
@@ -110,26 +124,27 @@ headline claim.
   global mean-Casimir risk optimization, and the current optical common-mode
   formulation. Their proved lemmas remain available to the larger program.
 
-Use the [`research execution plan`](docs/research_execution_plan.md) for the
-current ordering, the
+Use the [`binding Paper U goal`](docs/paper_u_information_exposure_goal.md) for
+the current ordering, the
 [`publishable-paper route decision`](docs/publishable_paper_route_decision.md)
 for the selected manuscript and stopped alternatives, the
 [`claim dependency ledger`](docs/universal_observer_claim_dependency_ledger.md)
 for proof status, [`THEOREMS.md`](THEOREMS.md) for certificates, and the
 [`documentation map`](docs/README.md) for the complete file inventory. The
 fuzzy-screen/operator-algebra work remains a separate supporting track in the
-[`observer-algebra research program`](docs/paper_worthy_observer_algebra_research_program.md).
+historical [`observer-algebra research program`](docs/paper_worthy_observer_algebra_research_program.md).
 
 <details>
 <summary>Detailed research trail and individual theorem notes</summary>
 
-The current assessment and execution order are tracked in
-[`docs/research_execution_plan.md`](docs/research_execution_plan.md). The
-primary paper target is the class-uniform localization-reference-coherence-
-backreaction program in
-[`docs/universal_static_patch_observer_tradeoff_plan.md`](docs/universal_static_patch_observer_tradeoff_plan.md),
-with the massive Skyrmion as an authenticated realization layer rather than the
-headline theorem. The repository is a credible starting point for that program;
+The current assessment and execution order are tracked in the
+[`Paper U information-exposure goal`](docs/paper_u_information_exposure_goal.md).
+The older
+[`universal observer tradeoff plan`](docs/universal_static_patch_observer_tradeoff_plan.md)
+is retained as post-information-exposure static-patch architecture, while
+[`docs/research_execution_plan.md`](docs/research_execution_plan.md) is a dated
+historical snapshot. The repository is a credible starting point for the
+current program;
 it now proves the localization-energy/reference bridge for a named confined
 spinless nonrelativistic orbital-matter class, documented in
 [`docs/localized_orbital_reference.md`](docs/localized_orbital_reference.md).
@@ -139,9 +154,9 @@ sector floor in
 It does not yet prove the full static-patch tradeoff or a gravitational
 breakthrough.
 
-The broader observer-algebra program is tracked in
+The historical observer-algebra precursor is tracked in
 [`docs/paper_worthy_observer_algebra_research_program.md`](docs/paper_worthy_observer_algebra_research_program.md).
-It replaces incremental certificate expansion with explicit gates for a
+It replaced incremental certificate expansion with explicit gates for a
 physically derived regulator, canonical cutoff maps, a quantitative observer-
 algebra theorem, controlled convergence, and a novel prediction or no-go.
 The implemented Phase 1 base model is specified in
@@ -316,7 +331,8 @@ v0.1-static-patch-diagnostics
 
 | File | Purpose |
 | --- | --- |
-| [`docs/paper_worthy_observer_algebra_research_program.md`](docs/paper_worthy_observer_algebra_research_program.md) | Active research goal and completion gates. |
+| [`docs/paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md) | Sole active research goal, Paper U gates, and ER=EPR literalization boundary. |
+| [`docs/paper_worthy_observer_algebra_research_program.md`](docs/paper_worthy_observer_algebra_research_program.md) | Historical finite observer-algebra precursor and retained supporting results. |
 | [`paper/main.md`](paper/main.md) | Canonical paper-style draft. |
 | [`paper/main.tex`](paper/main.tex) | Attachment-ready TeX version of the focused note. |
 | [`THEOREMS.md`](THEOREMS.md) | Theorem and claim index with certificate commands. |

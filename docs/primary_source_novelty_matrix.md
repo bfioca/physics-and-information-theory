@@ -1,8 +1,91 @@
 # Primary-Source Novelty Matrix
 
-Status: active literature gate; Paper U route corrected 2026-06-15
+Status: active literature gate; ER=EPR literalization route corrected 2026-06-17
 
-Reviewed through: 2026-06-15
+Reviewed through: 2026-06-17
+
+## Binding 2026-06-17 ER=EPR Literalization Correction
+
+This section supplements the June 15 information-exposure correction. ER=EPR
+is a research north star, not a present Paper U result. The active theorem still
+starts with the resource cost of writing relational directional information.
+The longer route has separately tested promotion gates:
+
+```text
+Gate A: directional information-exposure theorem
+Gate B: uniform recovery of a specified nonabelian algebra
+Gate C: entanglement-specific signed connectivity or adopted quantum-wormhole test
+Gate D: quantitative same-action algebra/geometry dictionary
+```
+
+No gate implies the next one automatically. In particular, a classical
+orientation measurement can produce an accurate cq record without transferring
+a noncommutative algebra.
+
+The binding primary-source boundaries are:
+
+- Maldacena and Susskind, [Cool horizons for entangled black
+  holes](https://arxiv.org/abs/1306.0533), motivate Einstein--Rosen bridges for
+  entangled black holes and suggest broader extensions; they do not supply the
+  finite observer-register dictionary used here.
+- Engelhardt and Liu, [Algebraic ER=EPR and Complexity
+  Transfer](https://arxiv.org/abs/2311.04281), already propose an algebraic
+  definition relating operator-algebra structure to bulk connectivity in the
+  `G_N -> 0` limit. Finite OA-QEC recovery is therefore an analogue or tool,
+  not a new definition of ER=EPR.
+- Javed and Wilson-Ewing, [Testing ER=EPR with
+  Hydrogen](https://arxiv.org/abs/2512.02156), derive precision constraints
+  only after the explicit model assumption that electric flux leaks into the
+  putative wormhole. Their result is the methodological trigger for a
+  literalization ledger; it does not rule out ER=EPR in general.
+- Jusufi, Lobo, and Singleton, [Testing the ER=EPR conjecture with entangled
+  photons](https://arxiv.org/abs/2606.02943), is a June 2026 preprint based on a
+  regularized shock-wave and zero-throat interpretation. It is a live
+  comparison target, not evidence that the required exact same-action
+  channel/geometry dictionary has been established for Paper U.
+
+The repository's Goals 19, 20, and 24 remain diagnostics. Goal 20 is especially
+binding: response on an incomplete probe algebra cannot determine the maximal
+recoverable algebra. Reusing those finite channels, Petz recovery, or a Schur
+kernel would not be a Paper U novelty result.
+
+The plausible new lane is narrower: combine a full-group relational
+information-exposure theorem with a localized resource cost for uniformly
+recovering a named nonabelian algebra. A later ER=EPR-facing result would also
+need structured-entangled and algebraically separable controls matched on local
+and gravitational data, with a wrong-structure entangled state used only for a
+fixed-decoder or port-resolved test; a signed connectivity criterion; and a
+dictionary deriving the operational and geometric contrasts from one action.
+If either contrast contains zero, the verdict is
+**INCONCLUSIVE**. If a matched separable control reproduces the effect,
+entanglement is not necessary. If the same-action dictionary is absent, the
+outputs are correlated diagnostics rather than ER=EPR.
+
+A second, explicitly competing route is a finite-certification no-go: determine
+whether every finite probe family, bounded observer protocol, and nonzero
+tolerance admits a type-I surrogate with indistinguishable output statistics
+despite different global algebraic connectivity. A theorem with explicit
+resource scaling could show that finite records certify only an operational
+connectivity surrogate. It is not yet a novelty claim; it must first be
+separated from standard hyperfinite approximation and finite-operator-system
+facts. The target class must carry explicit amenability/hyperfiniteness or
+split/nuclearity hypotheses, and the surrogate must preserve the declared local
+net, dynamics, covariance, resource ledger, and refinement maps. Reproducing a
+single induced finite-dimensional channel would be a tautological Stinespring
+realization, not a connectivity theorem.
+
+Matched stress is also a mandatory null test. At any order where the chosen
+semiclassical geometry depends only on a matched expectation value
+`<T_mu_nu>`, entangled and separable controls have the same response. A
+nonzero distinction then requires a derived additional dependence and a proved
+separation from the full matched separable family. Higher correlators and
+generalized-entropy/QES terms are not intrinsically entanglement witnesses.
+Ordinary linear gravity with a new interpretation does not qualify.
+
+An abstract gravity budget can organize hypotheses, but it is not the missing
+physics theorem. Likewise, a cross-region communication channel is not implied
+by a nontraversable bridge: without priced activation or an ordinary causal
+path, no-signaling is a mandatory null control.
 
 ## Binding 2026-06-15 Route Correction
 
@@ -38,11 +121,15 @@ continuity. Paper U passes novelty only if its relational Haar-risk,
 complete-source, localization, or local-action hypotheses yield a genuinely
 new bound after these reductions.
 
-## Executive Decision
+## Historical Executive Decision
 
-The primary novelty target is now a class-uniform static-patch observer
-tradeoff. The audited literature contains its ingredients separately, but no
-theorem was found that proves the chain
+The section below records the earlier gravity-conjunction framing. Where it
+conflicts with the June 15 and June 17 binding corrections above, those newer
+sections control.
+
+The primary novelty target at that stage was a class-uniform static-patch
+observer tradeoff. The audited literature contained its ingredients separately,
+but no theorem was found that proved the chain
 
 ```text
 small global orientation risk

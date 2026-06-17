@@ -1,10 +1,15 @@
 # Paper-Worthy Observer-Algebra Research Program
 
-Status: active research goal
+Status: historical finite observer-algebra precursor; not an active goal
 
-Branch: `codex/observer-algebra-research-program`
+Historical branch: `codex/observer-algebra-research-program` (content merged;
+branch retired during consolidation)
 
 Started: 2026-06-07
+
+Current execution authority is
+`docs/paper_u_information_exposure_goal.md`. This file preserves the earlier
+finite-algebra program and its completed supporting results.
 
 ## Current Assessment
 

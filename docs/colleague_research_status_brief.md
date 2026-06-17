@@ -2,7 +2,12 @@
 
 Date: 2026-06-10
 
-Branch: `codex/observer-algebra-research-program`
+Status: superseded historical snapshot. For current status, use
+`docs/publishable_paper_route_decision.md` and
+`docs/paper_u_information_exposure_goal.md`. Paper R has since ended in
+**INCONCLUSIVE STOP** and the current Paper U gate is information exposure.
+
+Historical branch: `codex/observer-algebra-research-program` (retired)
 
 ## Executive assessment
 

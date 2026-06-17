@@ -27,16 +27,18 @@ artifacts.
 - `spacelike_replication_manuscript_goal.md` - completed Track 2 kill record;
 - `../paper/spacelike_replication_paper_outline.md` - frozen methods-note plan.
 
-### Long-Term Observer Program
+### Active Paper U Program
 
-- `observer_register_model_class.md`
-- `directional_record_resource_dictionary.md`
-- `observer_register_counterexample_checklist.md`
-- `u8a_finite_storage_channel.md`
-- `universal_observer_claim_dependency_ledger.md`
-- `research_execution_plan.md`
-- `paper_worthy_observer_algebra_research_program.md`
-- `primary_source_novelty_matrix.md`
+- **Binding goal:** `paper_u_information_exposure_goal.md`
+- **Core domain and ledgers:** `observer_register_model_class.md`,
+  `directional_record_resource_dictionary.md`,
+  `observer_register_counterexample_checklist.md`,
+  `universal_observer_claim_dependency_ledger.md`, and
+  `primary_source_novelty_matrix.md`
+- **Post-IE local/static-patch support:** `u8a_finite_storage_channel.md` and
+  `universal_static_patch_observer_tradeoff_plan.md`
+- **Historical planning snapshots:** `research_execution_plan.md` and
+  `paper_worthy_observer_algebra_research_program.md`
 
 ### Repository Baseline Package
 
@@ -53,7 +55,7 @@ artifacts.
 ### Paper Outlines And Drafts
 
 - `../paper/spacelike_replication_paper_outline.md` (stopped bounded candidate)
-- `../paper/universal_observer_tradeoff_outline.md` (long-term theorem target)
+- `../paper/universal_observer_tradeoff_outline.md` (active manuscript skeleton)
 - `../paper/skyrmion_ule_outline.md` (realization/fallback)
 - `../paper/relational_observer_draft.md`
 
@@ -75,9 +77,10 @@ explicit SO(3) application of established joint-measurement added noise.
 **Long-term Paper U target**
 
 ```text
-a localized rotational reference in a static patch should obey a quantitative
-tradeoff between orientation risk, coherence, optical support, and gravitational
-disturbance; the certified Skyrmion is the proposed realization, not the claim.
+first prove that relational information written into a priced blank record
+forces complete-source disturbance; treat ER=EPR as a later literalization
+program requiring nonabelian algebra recovery, entanglement-specific controls,
+signed connectivity, and a same-action dictionary.
 ```
 
 ## Primary Audit Artifacts
@@ -85,6 +88,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | Artifact | Purpose |
 | --- | --- |
 | `publishable_paper_route_decision.md` | Current route table, selected Paper A claim, submission gates, and explicit claim boundary. |
+| `paper_u_information_exposure_goal.md` | Binding Paper U theorem target, ER=EPR literalization ladder, finite-certification fallback, and claim-language gates. |
 | `observer_register_model_class.md` | Exact G1 quantifiers over systems, joint states, side information, controls, protocols, postselection, localization, errors, and gravitational-budget interfaces. |
 | `directional_record_resource_dictionary.md` | Status-labeled G2 fork from Haar risk to readout information, joint asymmetry, declared classical records, and model-dependent representation/energy costs. |
 | `observer_register_counterexample_checklist.md` | Adversarial tests for high-spin mixtures, rare tails, bounded spectra, stabilizers, postselection, hidden memories, pre-correlations, and QFI/global-risk mismatches. |
@@ -99,8 +103,8 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `spacelike_replication_manuscript_goal.md` | Track 2 prove-or-kill contract and completed novelty-stop outcome. |
 | `../paper/spacelike_replication/main.tex` | Frozen internal methods note with the prior-art reduction made explicit. |
 | `harlow_redirection_branches.md` | Three bounded research pivots if the observer-entropy comparison, gravitational budget, or semiclassical register framing is rejected. |
-| `research_execution_plan.md` | Concise gate-based publication ladder, pass criteria, and pivot conditions for the active physics program. |
-| `paper_worthy_observer_algebra_research_program.md` | Active plan for replacing the finite benchmark with a physically derived, quantitative theorem program. |
+| `research_execution_plan.md` | Historical June 12 execution snapshot; superseded for current ordering by the binding Paper U goal. |
+| `paper_worthy_observer_algebra_research_program.md` | Historical finite observer-algebra precursor; retained for supporting results, not as an active goal. |
 | `observer_algebra_model_choice.md` | Phase 0 decision between the genuine fuzzy-sphere algebra and the truncated one-particle control. |
 | `current_claim_dependency_ledger.md` | Assumption and replacement-evidence audit for every packaged claim. |
 | `primary_source_novelty_matrix.md` | Primary-source overlap audit and the selected Phase 1 novelty target. |
@@ -155,7 +159,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `static_patch_finite_switching_ule.md` | Finite amplitude-ramp and burn-in theorem, logarithmic missing-history error, compact time-window corollary, and unchanged large-spin ULE schedules. |
 | `static_patch_skyrmion_offcenter.md` | Optical-translation auto-isotropy no-go, first-order `l=0+2` mixing, arbitrary-frequency two-center correlations, and the genuine held-off-center deformation gate. |
 | `validated_skyrmion_interval_program.md` | Exact rational intervals, a uniform origin-family contraction, Green/Schur bounds, and the closed local existence/uniqueness certificate for the prescribed hard-wall profile. |
-| `universal_static_patch_observer_tradeoff_plan.md` | Primary theorem plan for a localization-reference-coherence-backreaction inequality, with the certified Skyrmion as realization and ranked fallback theorems. |
+| `universal_static_patch_observer_tradeoff_plan.md` | Post-IE static-patch/localization/gravity extension architecture; not the binding Paper U theorem target. |
 | `conditional_universal_observer_tradeoff.md` | Exact class-uniform capacity/localization/heat-exposure composition and the proved confined-orbital compactness corollary. |
 | `universal_observer_claim_dependency_ledger.md` | Node-by-node proof ledger for the class-uniform observer tradeoff, including the decisive quantum `J^2` versus classical `J` gap. |
 | `global_so3_reference_risk.md` | All-state/all-POVM global `SO(3)` chordal-risk floor from relative entropy of asymmetry and mean spin, plus the compact spherical-top localization corollary. |
@@ -214,9 +218,9 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `paper_r_viability_contract.md` | Frozen leading-response model, Weyl observable, theorem targets, and predeclared GO/REASSESS/STOP/PIVOT thresholds. |
 | `paper_r_viability_decision.md` | Source-bound final `INCONCLUSIVE STOP` decision, full response interval, bottleneck, and future improvement requirement. |
 | `colleague_research_status_brief.md` | Candid colleague-facing assessment of proved results, publication options, open claims, and decision gates. |
-| `harlow_facing_paper_goal.md` | Theorem-shaped completion goal for a relational directional record with derived lifetime, localization, capacity, and gravitational footprint. |
-| `paper_u_information_exposure_goal.md` | Active Paper U theorem goal: derive a same-action acquisition/readout exposure lower bound before expanding the conditional framework into a manuscript. |
-| `harlow_review_packet_codex_goal.md` | Copy-paste Codex objective for producing an audited, sendable Harlow critique packet without overclaiming paper completion. |
+| `harlow_facing_paper_goal.md` | Legacy Harlow-facing umbrella specification; execution authority is superseded by the binding Paper U goal. |
+| `paper_u_information_exposure_goal.md` | Active Paper U theorem goal: derive a same-acquisition-channel information-disturbance bound, then attempt the local-action exposure lift. |
+| `harlow_review_packet_codex_goal.md` | Completed packet-build instructions; the resulting packet is an archived pre-literalization snapshot, not the current overview. |
 | `localized_orbital_reference.md` | Quadratic-form localization-energy theorem, compactness and heat-exposure composition, spectral-capacity lemma, and bounded-spectrum necessity counterexample. |
 | `supported_skyrmion_collective_spectral_floor.md` | Exact inertia-mass-radius inequality and profile-relaxed linear sector floor for the hard-supported Skyrmion hedgehog collective family. |
 | `collective_band_feshbach_gate.md` | Exact collective-to-full sector-floor and leakage transfer theorem, plus a positive completion proving that collective data alone are insufficient. |
@@ -233,7 +237,7 @@ disturbance; the certified Skyrmion is the proposed realization, not the claim.
 | `validated_skyrmion_ule.md` | Exact normalized centered prescribed-switch ULE residual and upper caps from the authenticated AU.3b baseline, with its zero coupling lower bound and all physical gates explicit. |
 | `validated_skyrmion_au3b.md` | Completed authenticated profile-resolved baseline, directed mass/inertia constants, tail-dominance diagnosis, and the boundary between a computational certificate and a physical observer window. |
 | `rotational_resource_substitution_no_go.md` | Exact zero-mean spin-cat and maximally mixed counterexamples showing that neither mean angular momentum nor Casimir alone is the required operational reference resource. |
-| `../paper/universal_observer_tradeoff_outline.md` | Primary manuscript outline placing the observer tradeoff first and the Skyrmion certificate in the realization layer. |
+| `../paper/universal_observer_tradeoff_outline.md` | Active manuscript skeleton placing information exposure first and static-patch/gravity work in later extension layers. |
 | `../paper/validated_skyrmion_profile_outline.md` | Focused Paper A outline for the validated fixed-background hard-wall profile theorem. |
 | `finite_clock_crossed_product_gate.md` | Exact obstruction showing why finite inner clock actions do not derive a Type-II observer factor. |
 | `modular_manybody_regulator.md` | Exact finite modular covariance plus a theorem-backed Type-III ITPFI limit and Type-II continuous-core mechanism. |

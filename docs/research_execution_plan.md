@@ -1,6 +1,11 @@
 # Research Execution Plan
 
-Status: Paper A specialist-review draft; long-term Paper U program
+Status: historical June 12 execution snapshot; not the current ordering
+
+Current ordering: `docs/paper_u_information_exposure_goal.md`. Paper U now
+starts with a same-acquisition-channel information-disturbance theorem. The
+local static-patch, gravity, Skyrmion, and ER=EPR programs are later extension
+layers. Any conflicting priority or "next task" below is superseded.
 
 Branch context: inherited from `codex/observer-algebra-research-program`.
 The bounded spacelike-replication manuscript audit on
@@ -15,7 +20,7 @@ standard decoherence-free-subspace physics. Boundary-regularity universality
 is retained as a consequence, not a headline, because general endpoint
 Fourier/Hankel asymptotics are established.
 
-Last audited: 2026-06-12
+Last audited as a historical snapshot: 2026-06-12
 
 ## Verdict
 

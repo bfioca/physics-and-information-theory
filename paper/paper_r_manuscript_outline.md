@@ -70,8 +70,9 @@ reference frames.
    observer program: can one certify the sign of its leading exterior tidal
    coefficient and exhibit state sensitivity?
 
-This module may cite the broader target in
-[`harlow_facing_paper_goal.md`](../docs/harlow_facing_paper_goal.md), but it
+This module may cite the current broader target in
+[`paper_u_information_exposure_goal.md`](../docs/paper_u_information_exposure_goal.md)
+and the legacy Harlow umbrella only as historical context, but it
 must state that no observer-entropy, record-capacity, or universal tradeoff
 theorem is proved here.
 

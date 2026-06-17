@@ -5,7 +5,7 @@ than the full repository.
 
 ## Selected Manuscript
 
-The active near-term track is `validated_skyrmion_profile/`: a
+The retained specialist manuscript is `validated_skyrmion_profile/`: a
 computer-assisted existence and local-uniqueness theorem for one prescribed
 massive Dirichlet-confined fixed-background Skyrmion profile, with an analytic
 local parameter branch and authenticated radial and spectral consequences. Its
@@ -17,8 +17,10 @@ for colleague review and specialist submission preparation. Start with:
 - `validated_skyrmion_profile_outline.md`
 - `../docs/publishable_paper_route_decision.md`
 
-Paper U remains the higher-impact long-term program, but it is not currently a
-submission theorem.
+Paper U is the sole active research program, but it is not currently a
+submission theorem. Its binding target is
+`../docs/paper_u_information_exposure_goal.md`; the Skyrmion manuscript remains
+an independent review-ready artifact.
 
 ## Stopped Bounded Candidate
 

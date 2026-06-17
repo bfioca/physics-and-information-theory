@@ -1,13 +1,16 @@
 # Harlow-Facing Paper Goal
 
-Status: G1/G2 audit-ready. G3 has a regular-bath finite-switch theorem and a
+Status: legacy Harlow-facing umbrella; not the active execution goal. The
+binding goal is `docs/paper_u_information_exposure_goal.md`.
+
+G1/G2 are audit-ready. G3 has a regular-bath finite-switch theorem and a
 conditional box for one spatially smeared rigid detector; its named KMS QFT
 channel bridge remains open, and unchanged promotion of its exact factorized
 density ends in **INCONCLUSIVE STOP** at the microcausal local-matter gate.
-Paper U U8a, same-action preparation/readout, and G4-G6 remain open. The bounded Paper R
-route also ended in **INCONCLUSIVE STOP**. The refreshed Harlow packet is a GO
-for conceptual review and records this narrower result explicitly. Paper A is
-the best-developed manuscript fallback, subject to novelty review.
+Paper U U8a, same-action preparation/readout, and G4-G6 remain open. The bounded
+Paper R route also ended in **INCONCLUSIVE STOP**. The existing Harlow packet is
+an archived pre-literalization snapshot and must be refreshed before sending.
+Paper A is the best-developed manuscript fallback, subject to novelty review.
 
 ## Prospective working title
 
@@ -22,9 +25,10 @@ information after subtracting any nondisturbingly readable classical source
 sector; a strict disturbance floor for arbitrary mixed ensembles is not
 assumed.
 
-## Goal
+## Legacy Umbrella Goal
 
-Produce a theorem-first manuscript showing that, for one declared localized
+This retained specification describes a possible later static-patch extension
+showing that, for one declared localized
 observer model on fixed de Sitter, a relational `SO(3)` directional record has
 a jointly controlled information capacity, operational lifetime, optical and
 proper support, and gauge-invariant gravitational footprint, all evaluated on

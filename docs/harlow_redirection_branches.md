@@ -1,6 +1,10 @@
 # Harlow Redirection Branches
 
-Status: three bounded pivots for conceptual feedback. These branches are
+Status: historical conceptual-pivot map, not a set of active Git branches. The
+selected current path is the information-exposure theorem with ER=EPR retained
+as a gated literalization north star.
+
+These three pivots are
 mutually distinguishable; none treats a critical response as a request to
 rename the same claim.
 

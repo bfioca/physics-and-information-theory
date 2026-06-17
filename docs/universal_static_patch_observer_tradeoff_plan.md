@@ -1,6 +1,12 @@
 # Universal Static-Patch Observer Tradeoff Research Plan
 
-Status: primary theorem target; constituent model theorems partly complete
+Status: post-information-exposure extension architecture; not the binding goal
+
+Superseded for current execution by
+`docs/paper_u_information_exposure_goal.md`. The localization, KMS, gravity,
+and Skyrmion material below is retained as optional lift infrastructure after
+the acquisition-disturbance theorem closes. The `Immediate Work` list is a
+historical queue, not the current research order.
 
 ## Paper Thesis
 
@@ -393,9 +399,10 @@ gamma T<=tau_max(epsilon,C_max(a_max)).
 
 A closed interval is a rigorous no-go for that declared design. An open
 interval is necessary-only because the inputs are not yet derived from one
-matter/KMS action. The Skyrmion realization layer must replace that caveat.
+matter/KMS action. A candidate Skyrmion matter-support program would have to
+replace that caveat.
 
-## Skyrmion Realization Layer
+## Candidate Skyrmion Matter-Support Layer
 
 The massive supported Skyrmion is intended to supply a one-total-model test of
 the abstract budgets. The target must declare the matter, membrane, bath state,

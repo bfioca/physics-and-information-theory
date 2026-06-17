@@ -2,7 +2,7 @@
 
 Status: **complete -- NOVELTY STOP**
 
-Branch: `codex/spacelike-replication-manuscript`
+Historical branch: `codex/spacelike-replication-manuscript` (merged and retired)
 
 ## Final Outcome
 

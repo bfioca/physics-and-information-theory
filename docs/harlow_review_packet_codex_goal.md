@@ -1,8 +1,9 @@
 # Codex Goal: Harlow Review Packet
 
-This is the next execution goal to set after the internal Harlow-facing paper
-goal. It is deliberately a review milestone, not the full paper-completion
-goal.
+Status: completed packet-build goal; archived as execution instructions.
+
+This was the review milestone after the internal Harlow-facing goal. The
+current research authority is `docs/paper_u_information_exposure_goal.md`.
 
 ## Copy-paste goal
 
@@ -188,8 +189,7 @@ cheap. It also forces the repository to produce a clean external narrative,
 verify the literature independently, and expose the physical channel as the
 main conceptual uncertainty.
 
-The later paper-completion goal remains
-`harlow_facing_paper_goal.md`. A positive response to this packet determines
-whether that larger goal should keep `S_dir`, replace the gravitational
-bottleneck, simplify the microscopic channel requirement, or move toward a
-closed-universe formulation.
+Historically, the later completion target was
+`harlow_facing_paper_goal.md`. Current execution is governed by
+`paper_u_information_exposure_goal.md`; this packet goal no longer selects the
+research direction.

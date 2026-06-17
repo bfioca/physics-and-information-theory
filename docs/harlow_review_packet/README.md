@@ -1,18 +1,22 @@
 # Harlow Review Packet
 
-This directory contains a review-ready packet asking whether a finite,
+Status: archived pre-literalization review snapshot. Do not send it as the
+current Paper U overview without refreshing the HTML, diagram, drafts, PDF, and
+manifest around `docs/paper_u_information_exposure_goal.md`.
+
+This directory contains the prior packet asking whether a finite,
 localized directional record is a useful concrete model for the observer
 subsystem in quantum-gravity observer rules.
 
-## Sendable files
+## Frozen files
 
 - `finite_directional_observer_review_packet.pdf` - the compiled nine-page
   review packet.
 - `drafts/outreach_email.md` - the standalone email draft (under 200 words).
 
-Recommended sharing order: attach the compiled PDF and use the email draft.
-Do not lead with the raw branch URL; offer the executable repository and
-certificates only if they would help the review.
+Historical sharing order was to attach the PDF and use the email draft. Do not
+follow that instruction until the packet is refreshed and rebuilt against the
+current binding goal.
 
 ## Editable and audit sources
 

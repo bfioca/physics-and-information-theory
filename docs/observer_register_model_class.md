@@ -17,8 +17,9 @@ Here `B` is the background, `X` the system list, `V` the relative rotation
 representation, `S` the admissible state family, `I` the microscopic action or
 the explicit operational placeholder `None`, `U` the allowed controls,
 `omega_E` the environment state, `P` the protocol family, `Loc` the proper and
-optical localization conventions, `Grav` the gravitational functional and
-budget, and `Err` the approximation ledger. The basic theorem
+optical localization conventions, `Grav` a gravitational functional and budget
+or the placeholder `None`, and `Err` the approximation ledger. Gravity is not a
+premise of the base operational class. The basic theorem
 quantifies as follows:
 
 > For every `m in C_dir`, every admissible prepared state `rho in S_m`, every
@@ -60,8 +61,8 @@ ones and supplies a diffeomorphism-invariant budget.
 | `O` | localized directional register | always included in support, energy, and action ledgers |
 | `D` | localized target or detector carrying physical markers | included in the physical ledgers; used as the gauge anchor for relative orientation |
 | `E` | field environment | initialized in the declared KMS state and inaccessible after tracing unless explicitly promoted to an accessible memory |
-| `A` | rotation-invariant ancillas, classical randomness, and invariant memories | arbitrary dimension and arbitrary correlation with `O` are allowed; the full state is used below, and every physical memory enters the action, support, energy, and gravity ledgers |
-| `C_ch` | charged controllers, directional ancillas, or external frames | never free; included in the directional, support, energy, and gravitational ledgers |
+| `A` | rotation-invariant ancillas, classical randomness, and invariant memories | arbitrary dimension and arbitrary correlation with `O` are allowed; the full state is used below, and every physical memory enters the action, support, and energy ledgers, plus the gravity ledger when `Grav` is declared |
+| `C_ch` | charged controllers, directional ancillas, or external frames | never free; included in the directional, support, and energy ledgers, plus the gravity ledger when `Grav` is declared |
 
 Write `R_acc=O tensor D tensor A tensor C_ch` for every system available to the
 protocol after encoding; `E` is excluded unless it is explicitly promoted to
@@ -218,12 +219,13 @@ No two rows in this table are identified by notation.
 | proper support `a` | supremum in time of the smallest `h`-geodesic ball about the declared center containing the hard support of excess stress and all protocol couplings |
 | optical support `s_opt` | the analogous radius in `h_opt=N^-2 h` |
 | horizon distance `rho_h` | proper distance from the center worldline to the static-patch horizon on the selected slice |
-| gravitational budget | a named functional `G_m` of the gauge-equivalence class of the state, stress, boundary, and metric history, with threshold `G_m<=g_*` |
+| gravitational budget | optional in the base class; a gravitational subclass supplies a named functional `G_m` of the gauge-equivalence class of the state, stress, boundary, and metric history, with threshold `G_m<=g_*` |
 
 `E_dir` and total Killing energy are not automatically equal. A realization
 must prove the comparison it uses. Hard support is the current theorem domain.
 A soft-tail extension must name a leakage functional and show how its error
-enters both the operational and gravitational ledgers.
+enters the operational ledger and, when `Grav` is declared, the gravitational
+ledger.
 
 There is no universal `G_cap` in G1/G2. A gravitational subclass must supply a
 functional and justify its relevance. Examples may include a spherical
@@ -305,21 +307,32 @@ Failure of one parameter point is not an asymptotic no-go.
 | `C_dir^cl` | a finite discrete classical record is a Markov bottleneck before readout | classical entropy/alphabet lower bound **CONDITIONAL** on this declared bottleneck |
 | `C_dir^spec` | invariant `H_dir` on the complete `R_acc` representation has sector floors with finite rotational partition function | asymmetry-to-energy upper-capacity theorem **CONDITIONAL** on the spectral premise |
 | `C_dir^orb` | hard-confined spinless nonrelativistic orbital matter with a fixed nonnegative energy convention `H_ex>=T`, or a proved form offset `H_gs+Delta>=T` | `C2<=2Ma^2E_ex`, with `Delta` included in `E_ex`, and the resulting risk floor **PROVED** |
+| `C_dir^cap` | the same complete representation obeys a derived capacity bound from energy and declared proper/optical support | populated by `C_dir^orb`; relativistic localized subclasses remain **OPEN** |
 | `C_dir^heat` | covariant orbit `sigma_g=U(g)sigma U(g)^*` and actual or norm-controlled isotropic heat convolution through the same `U`, with no `G`-dependent unheated side system | finite-exposure risk interpolation **CONDITIONAL** on that channel |
 | `C_dir^IE` | relational source `OD`, initially symmetric independent record, net information gain after subtracting any nondisturbingly readable classical sector, readout factorization, and all target-frame/control/postselection resources priced | domain specified; an all-protocol acquisition-disturbance theorem is **OPEN** |
+| `C_dir^(IE,alg)` | `C_dir^IE` plus delayed logical challenge/reference, code algebra, source/destination output split, and declared recovery norm | post-IE noncommutative algebra-transfer extension **OPEN** |
 | `C_dir^act` | nontrivial KMS environment and one local action deriving every allowed control and protocol stage | domain defined; a complete acquisition-through-readout member is **OPEN** |
-| `C_dir^grav` | one local action, common support and energy ledgers, and a named gauge-invariant `G_m` | domain defined; a relativistic common-action member closing all Paper U premises is **OPEN** |
+| `C_dir^grav` | one local action, common support and energy ledgers, and a named gauge-invariant `G_m` | domain defined; a relativistic member closing the gravity-bearing extension premises is **OPEN** |
+| `C_dir^ER` | subclass of `C_dir^(IE,alg) intersect C_dir^act intersect C_dir^grav` with two relationally anchored regions, accessible algebras/common center, matched entangled and separable families, signed connectivity witness, and quantitative same-action dictionary | ER=EPR literalization extension **OPEN** |
 
-The intended physical paper class is
+The intended physical Paper U class is
 
 ```text
-C_dir^PaperU = C_dir^act intersect C_dir^grav
-               intersect (C_dir^spec union C_dir^orb),   (10.1)
+C_dir^PaperU = C_dir^IE intersect C_dir^act
+               intersect C_dir^cap,                      (10.1)
 ```
 
 with every premise evaluated on the same state family, action, support, and
 error ledger. Add `C_dir^cl` only when the paper makes a finite classical-record
-claim, and add `C_dir^heat` only when it uses the heat-channel corollary.
+claim, and add `C_dir^heat` only when it uses the heat-channel corollary. The
+gravity-bearing extension is
+
+```text
+C_dir^(PaperU,grav) = C_dir^PaperU intersect C_dir^grav.  (10.2)
+```
+
+Neither `C_dir^(IE,alg)` nor `C_dir^ER` is a prerequisite for the binding Paper
+U manuscript.
 
 The class nesting makes the claim boundary explicit. G1/G2 do not establish a
 physical lifetime, a common-action KMS channel, a preferred gravitational

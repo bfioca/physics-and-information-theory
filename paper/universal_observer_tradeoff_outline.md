@@ -4,9 +4,9 @@ Status: claim-hygiene manuscript skeleton. Gates G1 and G2 are specified at an
 audit-ready level. A regular-bath finite-switch theorem is proved and a
 conditional detector box is certified, but the named KMS QFT channel bridge is
 open and the exact
-factorized density cannot itself serve as microcausal local matter. Paper U
-U8a, same-action preparation and readout, and the gravitational capacity
-variable remain open. This is an outline, not full manuscript prose.
+factorized density cannot itself serve as microcausal local matter. The local
+IE.4 lift, same-action preparation/readout, and every gravitational extension
+remain open. This is an outline, not full manuscript prose.
 
 The static-patch title is prospective. The active theorem note remains a
 general symmetric acquisition-disturbance problem until the local KMS lift is
@@ -15,15 +15,36 @@ proved.
 **Active route decision (2026-06-15).** Do not expand this skeleton into a
 submission draft merely by naming assumptions A1--A5 and eliminating their
 budgets. The repository already contains that conditional composition. The
-next paper-level gate is a new same-action information-exposure theorem:
-within one declared microcausal acquisition/storage/readout model, low
+next paper-level gate is a new same-acquisition-channel information-exposure
+theorem: within one declared covariant acquisition/storage/readout model, low
 directional readout risk from an initially symmetric independent record, after
 subtracting any nondisturbingly readable classical sector, must force
 disturbance of the complete relational source, with the target frame, controls,
-failed postselection branches, and every readout path priced. Only after that
-result is proved should a distinct static-patch channel lemma map the
-disturbance to KMS exposure, and only then should gravitational interfaces be
-promoted into the headline.
+failed postselection branches, and every readout path priced. A distinct local
+static-patch theorem must then derive that channel and map the disturbance to
+KMS exposure. Gravity remains a later optional headline extension.
+
+**ER=EPR literalization decision (2026-06-17).** ER=EPR may motivate the
+program, but the present cq record theorem is not an algebraic bridge. The
+manuscript must keep the following arrows separate:
+
+```text
+directional record -/-> recoverable noncommutative algebra
+recoverable algebra -/-> connected geometry
+entanglement -/-> a wormhole.
+```
+
+An algebraic extension must uniformly recover a specified nonabelian observer
+algebra with informationally complete probes and quantum-versus-classical
+channel controls. An entanglement-conditioned geometric extension additionally
+needs structured-entangled and algebraically separable matched controls; a
+scrambled state tests structure only through a fixed decoder or port-resolved
+witness. An ER=EPR claim further requires a signed connected-geometry/topology
+criterion or a precisely adopted algebraic quantum-wormhole definition from the
+same action and state family, plus a quantitative state-uniform
+algebra/geometry dictionary. A nonzero Weyl response alone is not connectivity,
+and a connected or recoverable algebra does not imply traversability. Until
+those gates close, the allowed description is **ER=EPR-motivated**.
 
 ## 1. Claim capsule
 
@@ -45,22 +66,26 @@ small global relational risk
                                                               CONDITIONAL
 ```
 
-The proposed Paper U physics theorem would add a common local action that also
-controls record lifetime, optical and proper support, and one physically
-justified gauge-invariant gravitational budget. That final conjunction is not
-yet proved. The new detector-EFT result is a reusable channel lemma plus a
-route-level locality stop, not a replacement for that conjunction.
+The proposed Paper U theorem first adds a quantitative acquisition-disturbance
+and retention bound. A local static-patch lift must then derive acquisition and
+readout from one microcausal action and control KMS exposure. Optical/proper
+support and a physically justified gauge-invariant gravitational quantity are
+later extensions, not premises of the base information-exposure theorem. The
+detector-EFT result is a reusable channel lemma plus a route-level locality
+stop, not a completed lift.
 
 There is not yet one proved function `F_record(S_dir,Gamma,eta)`. The
 risk-asymmetry and heat-exposure lower bounds are independent necessities and
 may currently be combined only by taking their maximum on a common state and
 channel domain. A stronger joint function requires a contraction,
-information-disturbance, or same-action acquisition theorem.
+information-disturbance, or same-acquisition-channel theorem.
 
 ## 2. Exact domain
 
-The theorem domain is `C_dir` from
-`docs/observer_register_model_class.md`. Its headline quantifiers range over:
+The proved U1--U7 inputs use named subclasses of `C_dir` from
+`docs/observer_register_model_class.md`. The new acquisition-disturbance
+theorem is stated on `C_dir^IE`; a physical local manuscript uses
+`C_dir^PaperU`. Their quantifiers range over:
 
 - a gauge-fixed relational `SO(3)` orbit of localized register `O` and target
   `D`;
@@ -282,9 +307,26 @@ They do not establish:
 - self-consistent static-patch gravity; or
 - a certified nonzero exterior Weyl response.
 
-## 7. Remaining Paper U gates
+## 7. Remaining Paper U And Extension Gates
 
-### U8a. Finite-switch storage channel - conditional box, route stopped
+### IE. Acquisition-disturbance and retention - ACTIVE
+
+On `C_dir^IE`, prove that net information written into the initially blank
+record beyond the nondisturbingly readable classical sector forces quantified
+disturbance of the complete `OD` source. Then connect acquisition to retained
+quality as in (IE.4). This is the binding theorem gate. U8 is the required
+local-action lift for the physical class `C_dir^PaperU`; U9--U10 are optional
+gravity-bearing extensions.
+
+### U8. Required local-action static-patch lift - OPEN
+
+To promote the abstract information-exposure theorem to physical Paper U,
+derive acquisition, storage, and readout from one rotation-invariant,
+microcausal action and map the acquisition disturbance to retained quality or
+KMS exposure. U7 and the detector-EFT analysis supply conditional ingredients,
+not this complete lift.
+
+#### U8a. Finite-switch storage channel - conditional box, route stopped
 
 For the fixed cutoff-one Peter-Weyl register, inert spin-one target, named
 smooth compact pseudoscalar optical prefilter, and explicit compact scalar
@@ -332,25 +374,26 @@ unchanged promotion of the exact-factorized local-current route in
 and parameter ledger are in
 `docs/u8a_finite_storage_channel.md`.
 
-### U8b. Same-action acquisition and readout - OPEN
+#### U8b. Same-action acquisition and readout - OPEN
 
 Derive preparation of the directional token and a final relational instrument
 from the same action and controller ledger. The conditional detector analysis grants
 these as boundary operations and therefore does not close U8a, full U8, or a
 positive observer protocol.
 
-### U9. Gravitational budget - OPEN
+### U9. Optional gravitational extension - OPEN
 
 Select a gauge-invariant functional relevant to finite observer capacity and
 derive it from the same state, stress, boundary, and approximation order. Do
 not substitute compactness, exterior curvature, horizon displacement, and
 generalized entropy for one another.
 
-### U10. Common parameter elimination - OPEN
+### U10. Optional common-parameter elimination - OPEN
 
-Evaluate U1-U9 on one state family and eliminate internal budgets into a
-dimensionless compatibility or obstruction inequality. A one-point failure is
-not a no-go; a positive construction requires an open parameter box.
+Only for a gravity-bearing extension, evaluate U1-U9 on one state family and
+eliminate internal budgets into a dimensionless compatibility or obstruction
+inequality. A one-point failure is not a no-go; a positive construction
+requires an open parameter box.
 
 ## 8. Manuscript section order
 
@@ -365,11 +408,14 @@ not a no-go; a positive construction requires an open parameter box.
    obstruction.
 6. **Counterexamples and escape routes.** State the forbidden converses and
    the model assumptions that close each loophole.
-7. **Finite-time channel.** State U7, the rigid-detector degradation theorem,
-   its local-current route stop, and the remaining U8a/U8b gaps.
-8. **Gravity interface.** Separate proved compactness proxies from the open
-   choice of gravitational functional.
-9. **Combined theorem or obstruction.** Include only after U8-U10 close.
+7. **Binding information-exposure theorem.** State the result once the
+   acquisition, retention, and novelty gates close.
+8. **Required local-action static-patch lift.** State U7, the rigid-detector
+   degradation theorem, its local-current route stop, and the remaining
+   U8a/U8b gaps needed for `C_dir^PaperU`.
+9. **Optional algebraic, gravity, and ER=EPR extensions.** Separate algebra
+   recovery, proved compactness proxies, the open gravitational functional,
+   and every additional connectivity or dictionary premise.
 10. **Discussion for observer frameworks.** Ask whether any comparison to
    `S_Ob` is meaningful; do not assume one.
 
@@ -377,11 +423,13 @@ Appendices contain the rate-distortion proof, fusion/Hardy proof, Gibbs
 inversion, postselection lemma, error-composition proof, and machine-readable
 certificates.
 
-## 9. Removable realization support
+## 9. Removable Candidate Matter Support
 
-The supported massive Skyrmion may appear in a realization appendix only if it
-helps populate a premise of U5, U7, U8, or U9. Deleting that appendix must leave
-U1-U7 and the paper's logical statement intact. The Skyrmion is not part of the
+The supported massive Skyrmion may appear in a candidate matter-support
+appendix only as a realization or source of explicit constants for U5, U7, U8,
+or U9. No binding information-exposure or required U8 premise may rely on it
+exclusively. Deleting that appendix must leave U1--U7, the binding IE theorem,
+and an independent U8 realization intact. The Skyrmion is not part of the
 title, abstract claim, or definition of `C_dir`.
 
 The current validated profile and collective calculations are evidence that a
@@ -406,13 +454,16 @@ Consequences for this manuscript:
 ## 11. Submission gate
 
 The G1/G2 material, rigid-detector channel lemma, and locality route stop are
-suitable for expert conceptual review now. They become a Paper U submission
-only if either:
+suitable for expert conceptual review now. They become a base Paper U
+submission only if either:
 
-1. U8-U10 close for one declared common-action model on an open parameter box;
-   or
+1. the binding information-exposure theorem and required U8 local-action lift
+   close for one declared model on an open parameter box; or
 2. a controlled family is excluded by a dimensionless theorem whose physical
    premises are jointly realized.
+
+U9--U10 and the algebraic/ER=EPR gates are required only for a headline that
+claims the corresponding gravity or connectivity result.
 
 Until then, the correct artifact is a theorem specification and research
 manuscript skeleton, not a claimed universal observer-gravity result.
