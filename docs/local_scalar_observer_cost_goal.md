@@ -1,7 +1,7 @@
 # Paper-Or-No-Go Goal: Gravitational Cost of a Local Observer Channel
 
-Status: active; sharp optimization theorem and revised manuscript pass their
-internal checks, external specialist novelty review remains the binding gate
+Status: superseded by `local_scalar_observer_strengthening_goal.md`; retained
+as the original gravitational paper-or-no-go contract
 
 Freeze one continuum model: a degenerate pointer qubit coupled by a smooth,
 compact spacetime source to the full conformally coupled massless scalar in one

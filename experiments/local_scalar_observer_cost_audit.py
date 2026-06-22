@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replay the local scalar observer-cost theorem candidate."""
+"""Replay the final-support thermal dephasing theorem candidate."""
 
 from __future__ import annotations
 
@@ -63,7 +63,7 @@ def main() -> None:
         "maximum_constraint_ratio": args.maximum_constraint_ratio,
     }
     if _source_hashes() != starting_hashes:
-        raise ValueError("hashed observer-cost source changed during replay")
+        raise ValueError("hashed thermal-dephasing source changed during replay")
 
     rendered = json.dumps(record, indent=2, sort_keys=True) + "\n"
     output = args.output.resolve()
@@ -74,7 +74,12 @@ def main() -> None:
                 "output": str(output),
                 "sha256": hashlib.sha256(rendered.encode("ascii")).hexdigest(),
                 "status": record["status"],
-                "exact_cost_formula": record["optimality_bracket"][
+                "general_cost_formula": record["optimality_bracket"][
+                    "sharp_characterization"
+                ]["general_thermal_half_line_specialization"][
+                    "exact_optimal_coefficient_formula"
+                ],
+                "de_sitter_cost_formula": record["optimality_bracket"][
                     "sharp_characterization"
                 ]["exact_optimal_coefficient_formula"],
                 "explicit_C_upper": record["optimality_bracket"][

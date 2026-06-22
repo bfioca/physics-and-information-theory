@@ -1,40 +1,50 @@
 {
-  "artifact": "local_scalar_observer_cost_manuscript",
-  "status": "specialist_review_candidate_novelty_open",
+  "artifact": "final_support_thermal_dephasing_manuscript",
+  "status": "strengthened_specialist_review_external_gates_open",
   "build_date_utc": "2026-06-22",
   "build_engine": "Tectonic 0.16.9",
-  "page_count": 16,
+  "page_count": 17,
   "layout_checks": {
     "overfull_boxes": 0,
     "underfull_boxes": 0,
     "undefined_references": 0,
     "undefined_citations": 0,
-    "visual_pages_inspected": [],
+    "visual_pages_inspected": [
+      1,
+      6,
+      8,
+      9,
+      13,
+      15,
+      17
+    ],
     "visual_artifacts_inspected": [
       "Figure 1 standalone SVG preview at 1440x660"
     ],
-    "visual_inspection_status": "Figure 1 inspected after SVG rendering; full manuscript pages not rasterized"
+    "visual_inspection_status": "Title, theorem, figure, discussion, appendix, and reference pages inspected after 1.8x rasterization"
   },
   "files": {
-    "README.md": "d7314fc357e30022f7133f1ba9468366eb7ba08b46a56f6f3eecf18f99306302",
-    "main.pdf": "dae87917adc6a2adda018eda0f8b7ae2890625897e683b1e1ae0c12b599059ca",
-    "main.log": "5e2964779012a1b3d5c7f0b11eed9ac175b1a4472704824947f8d38361dbda72",
-    "main.tex": "971c43af49dacb829f01a400146e7dd64c9a3805ed3e80e2ef7bab05748e0366",
+    "README.md": "2d22f161d6e5b26f9fb3721511c5d7aec8ce50284a47cdcceaad899506da03af",
+    "main.pdf": "dbc2f793857a855f056a4538a8002ae878da1ebe80dd72354abc9965f8af731b",
+    "main.log": "c2981e4669a89c47e1352841883a47c32bd34db96d008b075d218de3c17ad9ef",
+    "main.tex": "d25dc712a34a3143d6139ec59bc81c51d7e4c465cc22b6de19c54df2672c7428",
     "references.bib": "9a35c6542372f60f9fb4eec3143145c060128bcdb2dfa8635b0bdcb83f78ab96",
-    "sections/achievability.tex": "1f33a9cbb4a92dbb5296979886f70a962089b9f4eb62bec10c4e7b34a4074cfe",
-    "sections/comparison.tex": "c5fc200e451e5f0e2b516ff53a8f1590b779de210a2370f6d76476bafee521c7",
-    "sections/discussion.tex": "559489fb3a14a611191e06d1a0fb2aeb27ecf9d5c5b2a9a2f3a741d434e26a0c",
-    "sections/gravity.tex": "428f944c52ffe5e338b2c0e387ede70c88385cec6ba9935bd89006e6e8020bfe",
-    "sections/introduction.tex": "d5b663ff68deb234c401835715d2aba09c6e7c82d2c0e8e9b12d4c3f13a3850c",
-    "sections/localization_theorem.tex": "d354f86ee2aa4ce7d063218114e46a9d794d60435ecce086c94094789defbc97",
-    "sections/model_and_channel.tex": "5f5728e7d7cb13571cca7e84e13e8ed154f3987193dab6f794324d57af2094cc",
-    "audit_package.py": "7042808da8164deb46994a91d9220263093e167b379e449b3ccf8cc7db178fc7",
-    "REFEREE_GUIDE.md": "887548f56f0aac58a4db2d396f3ae14ac708badbfb6e28ad3464e00ea2a3dc5d",
-    "CITATION.cff": "2115e925e87c657391a66937dd1bd6203b860e7c9f6591303bf0ff4e619363dc",
-    "data/observer_cost_spectrum.json": "3a05d4b6c3856099c6e1a7b590d99ae8c748b6545d49e581967826f47ca5d786",
+    "sections/achievability.tex": "3154ecd86f8a546f0755f4af557fee7652bf0fb0bffbe34a43c2508cdc096e71",
+    "sections/comparison.tex": "e849441048ac2ff88a360fb50299280c2c747cf3a503e28fa22a503fbeeaa118",
+    "sections/discussion.tex": "9065a1b5c788c6d0c9cffe3fb7dbfbe29fc17ae096d7ae159ed79724f13fd993",
+    "sections/gravity.tex": "34480915156c9d0fe7aedea4a411a5edc39a90de836ab9a864f24cba0b3d0ac8",
+    "sections/introduction.tex": "ecda4a2b7dcc58ed7431660c353c73e6819527dabe137c4fd031bb14b3cff986",
+    "sections/localization_theorem.tex": "6e7ec00cf794097fea641758ab24ee4be299a2bf00a407aabd7500895c91d49f",
+    "sections/model_and_channel.tex": "d6d228a37575ba8c27d547d8834a704af893790afb65c6e0ca538b0a94760fc1",
+    "audit_package.py": "9dd50077059c421e159c9744e8b33862ffca66b38984ec1b2952b7830be4b4e0",
+    "REFEREE_GUIDE.md": "81db671fbe34dc926bf542195018c80408566d2fdfd126e5d311640eb780a196",
+    "QFT_NOVELTY_REVIEW.md": "77b358e2167bf7f2e3a9f5e6cba16cc1bf073a2aef55d093a56cd803f6b80488",
+    "OPERATOR_NOVELTY_REVIEW.md": "6c86944a94a512f59dc15377ba99b335ba5807a10f730d4db94e6c21a24b4fbe",
+    "CITATION.cff": "974bab7c380bd74c29d31362a04018f77c6a48e5eb302a3871f3afb67ad029bd",
+    "data/observer_cost_spectrum.json": "858da941e3e1c1759718da5ea58e785778bf460f47c8863e58717928cf3b79ab",
     "figures/observer_cost_spectrum.pdf": "5d2c07af67050c48a9535ed0e20fdaa3498438c183044b07629ae15bd3998409",
     "figures/observer_cost_spectrum.svg": "6b41a9ce2cbf6f05914a842a0758c5bc5b146c26e049b73bd0f2fb66e46c6c8d"
   },
   "certificate": "experiments/local_scalar_observer_cost_certificate.json",
-  "certificate_sha256": "b06be2a789b675e2cc2575e38a6960fcf62e66045a3b10f0520f5c6043bb8547"
+  "certificate_sha256": "3ac53fc12b9b2d5b08a40a733d1625894e86c6dd0c1f444f9ac1f7a6ceb916fe"
 }

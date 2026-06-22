@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite the manuscript below when using this review package."
-title: "Local scalar observer-cost review package"
+title: "Final-support thermal dephasing review package"
 type: software
-version: "internal-review-v1"
+version: "strengthened-review-v2"
 date-released: 2026-06-22
 authors:
   - family-names: "Fioca"
@@ -11,7 +11,7 @@ repository-code: "https://github.com/bfioca/physics-and-information-theory"
 license: "MIT"
 preferred-citation:
   type: article
-  title: "Local Dephasing in a de Sitter Static Patch: Sharp Localization-Energy Cost of a Compact Pointer Channel"
+  title: "Sharp Final-Support Field-Energy Bounds for an Exact Thermal Dephasing Channel"
   authors:
     - family-names: "Fioca"
       given-names: "Brian"

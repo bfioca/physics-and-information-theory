@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Numerically realize the exact compact KMS observer-cost kernel.
+"""Numerically realize the exact compact final-support KMS kernel.
 
 The zero-temperature logarithmic kernel is integrated exactly against a
 piecewise-constant Galerkin basis. Only the smooth finite-temperature

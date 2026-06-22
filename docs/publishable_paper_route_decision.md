@@ -1,8 +1,8 @@
 # Publishable Paper Route Decision
 
-Status: Paper A remains **GO for colleague review**; the local scalar
-observer-cost route is the sole active **PAPER-OR-NO-GO** sprint; generic Paper
-U remains **STOPPED**
+Status: Paper A remains **GO for colleague review**; the final-support thermal
+dephasing route is in **STRENGTHEN** pending two-domain novelty and independent
+proof review; generic Paper U remains **STOPPED**
 
 Last audited: 2026-06-22
 
@@ -12,8 +12,8 @@ The earlier selected manuscript is the computer-assisted validation of the
 prescribed massive Dirichlet-confined Skyrmion profile. It includes the
 authenticated sharp spectral-tail theorem and radial stability result as
 physical consequences of the same certified solution. It will not be framed as
-a universal observer theorem, a gravitational breakthrough, or a new general theorem about Fourier
-endpoint asymptotics.
+a universal observer theorem, a gravitational breakthrough, or a new general
+theorem about Fourier endpoint asymptotics.
 
 This is the shortest route to a defensible specialist paper. The first draft
 did not meet a publication bar, but the reconstructed package now closes its
@@ -27,19 +27,20 @@ certificate, states the certified Newton norm exactly, and does not present the
 program remains a higher-impact motivation, but the tested generic
 information-exposure route did not produce a new submission theorem.
 
-The only active new-paper sprint now tests a different, named continuum claim:
-a compactly supported scalar pointer interaction has an exact
-dephasing-versus-Killing-energy optimum given by one positive compact de Sitter
-KMS kernel. Its fixed-background theorem certificate passes, but standalone
-novelty and an autonomous gravitational realization remain open. This does not
-demote or delay Paper A; it is the next research route, governed by
-`local_scalar_observer_cost_goal.md`.
+The only active new-paper sprint now tests a different continuum claim: final
+support selects an exact reflected thermal covariance operator with coefficient
+`C_beta(L)=2 L Lambda(pi L/beta)`. In the conformal de Sitter specialization,
+that half-line momentum profile is the unique full angular and canonical
+optimizer. Internal checks pass; independent proof review and specialist
+novelty review in both detector/QFT and operator theory remain open. This does
+not demote or delay Paper A. The active contract is
+`local_scalar_observer_strengthening_goal.md`.
 
 ## Route Table
 
 | Route | Decision | Reason |
 | --- | --- | --- |
-| Local scalar observer cost | **Active PAPER-OR-NO-GO** | Exact channel and same-source field energy are known setup. The candidate contribution is `C_opt(y)=2y Lambda(y/2)`: an exact full-sector compact-support optimization by an explicit KMS kernel, with unique s-wave momentum optimizer and sharp support asymptotics, plus exact flux-free final-slice Einstein-scalar data. Specialist novelty review, actuator cost, and a channel controlled on perturbed geometry determine full GO, narrow GO, or STOP. |
+| Final-support thermal dephasing | **STRENGTHEN** | Exact channel and same-source field energy are known setup. The candidate contribution is the exact general-`beta` reflected KMS coefficient, its unique full-sector conformal de Sitter specialization, and sharp support asymptotics. Submit only after independent proof review and novelty review in detector/QFT and operator theory; gravity and actuator cost are not narrow-paper gates. |
 | Harlow review packet | **ARCHIVED; refresh before sending** | The existing packet honestly records both route-level stops but predates the information-exposure-first and ER=EPR literalization hierarchy. |
 | Spacelike replication | **Standalone STOP** | Exact reduction to Janssens' established CP-map covariance/noise inequality. Retain as an `SO(3)` methods lemma. |
 | Global `SO(3)` risk | **Standalone STOP** | Hayashi already gives the exact Haar mean-Casimir optimum, projective sector, finite cutoff law, and sharp asymptotics. Retain the elementary bound and use the exact frontier as known input. |

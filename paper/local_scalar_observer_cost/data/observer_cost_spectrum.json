@@ -1022,8 +1022,8 @@
     }
   ],
   "source_sha256": {
-    "experiments/local_scalar_observer_spectrum.py": "927d3abf0f23ee1fed01aafa07387515842aa038fbe6671c442b926016311d54",
-    "qgtoy/local_scalar_observer_cost.py": "d0cea02174ab6a757e2b9d1871e6ceb7342f0ba7267f5e3b6ad55909e091932c"
+    "experiments/local_scalar_observer_spectrum.py": "ba993f5aeccf45b280fb834bb0ea577a952b59cad454759e523c813100e1d5d1",
+    "qgtoy/local_scalar_observer_cost.py": "443db8cc673b105d31bcfd5fdb20fa99a1e088eea2c3604def4688c891d5cdb8"
   },
   "status": "numerical_convergence_pass_nonrigorous"
 }

@@ -21,6 +21,7 @@
     "finite_support_and_duration_enter_coefficient": true,
     "flux_free_constraint_mass_equals_scalar_killing_energy": true,
     "full_phase_space_optimum_is_swave_momentum": true,
+    "general_beta_half_line_momentum_theorem": true,
     "harlow_pointer_target_identified_without_entropy_dictionary": true,
     "linear_support_scaling_has_two_sided_constants": true,
     "necessary_flux_free_einstein_scalar_constraint_bound": true,
@@ -51,7 +52,7 @@
     "normal_derivative_per_radial_momentum": 1.9413070026233328,
     "static_factor_N": 0.9784187331652344
   },
-  "goal": "Gravitational cost of a local scalar observer channel",
+  "goal": "Sharp final-support field-energy bound for thermal dephasing",
   "model": "finite pointer qubit, full conformally coupled massless scalar, Bunch-Davies beta=2*pi*R KMS state, smooth compact source in a centered static-patch ball",
   "observer_cost_bound": {
     "backreaction_statement": "If the source is engineered to finish with q=0 field data, its radial momentum density vanishes and K_ij=0 is constraint-compatible. The exact conformal map gives 4*pi*r^2*rho*dr=p(x)^2*dx/2, so the scalar constraint mass at the wall equals its fixed-background Killing energy. Hence sup_[0<r<=b] q(r)>=q(b), making the displayed value a necessary exact final-slice local radial-constraint cost on this flux-free subclass.",
@@ -76,6 +77,27 @@
         "exact_optimal_coefficient_formula": "C_opt(y)=2*y*Lambda(y/2)",
         "exact_row_schur_upper_coefficient": 0.3407665703742031,
         "full_phase_space_domination": "The q-sector obeys C_q<=2*y/pi+2*y^2/pi^3. The s-wave momentum sector obeys C_p>=max(3*y/pi,8*y^2/pi^3), which dominates that q bound for every y>0. Resolvent monotonicity under A_l>=A_0 makes l=0 the worst momentum sector.",
+        "general_thermal_half_line_specialization": {
+          "closed_form_upper_coefficient": 0.3633724335809033,
+          "dimensionless_kernel": "k_tau(u,v)=pi^-1 log[sinh(tau*(u+v))/sinh(tau*abs(u-v))]",
+          "exact_optimal_coefficient_formula": "C_beta(L)=2*L*Lambda(pi*L/beta)",
+          "exact_row_schur_upper_coefficient": 0.3407665703742031,
+          "inverse_temperature_beta": 6.283185307179586,
+          "large_support_statement": "0<=C_beta(L)-16*L^2/(beta*pi^2)<=beta/2.",
+          "large_support_upper_coefficient": 3.1652387044146795,
+          "maximum_row_position_ratio": 0.7084514661231704,
+          "optimizer": "The normalized optimizer is unique up to sign and is the strictly positive top eigenfunction of K_tau.",
+          "rigorous_explicit_upper_coefficient": 0.3407665703742031,
+          "rigorous_lower_coefficient": 0.2890882944752495,
+          "scope": "This is the general-temperature half-line momentum theorem. Dominance over field-coordinate and higher-angular sectors is proved separately for the conformal de Sitter specialization.",
+          "small_support_statement": "0<=C_beta(L)-2*L*Lambda(0)<=2*pi*L^3/(3*beta^2).",
+          "small_support_upper_coefficient": 0.34119827579583994,
+          "support_length_L": 0.30273255405408217,
+          "thermal_green_lower_coefficient": 0.023646050824886494,
+          "thermal_support_ratio_tau": 0.15136627702704109,
+          "vacuum_profile_lower_coefficient": 0.2890882944752495,
+          "variational_statement": "For half-line Dirichlet momentum data supported in [0,L], Gamma<=E*C_beta(L), with equality in the finite-energy closure."
+        },
         "large_support_statement": "0<=C_opt(y)-8*y^2/pi^3<=pi; the thermal Green operator fixes the sharp leading large-support coefficient.",
         "large_support_upper_coefficient": 3.1652387044146795,
         "legacy_F_upper_coefficient": 0.3633724335809033,
@@ -113,6 +135,27 @@
       "exact_optimal_coefficient_formula": "C_opt(y)=2*y*Lambda(y/2)",
       "exact_row_schur_upper_coefficient": 0.3407665703742031,
       "full_phase_space_domination": "The q-sector obeys C_q<=2*y/pi+2*y^2/pi^3. The s-wave momentum sector obeys C_p>=max(3*y/pi,8*y^2/pi^3), which dominates that q bound for every y>0. Resolvent monotonicity under A_l>=A_0 makes l=0 the worst momentum sector.",
+      "general_thermal_half_line_specialization": {
+        "closed_form_upper_coefficient": 0.3633724335809033,
+        "dimensionless_kernel": "k_tau(u,v)=pi^-1 log[sinh(tau*(u+v))/sinh(tau*abs(u-v))]",
+        "exact_optimal_coefficient_formula": "C_beta(L)=2*L*Lambda(pi*L/beta)",
+        "exact_row_schur_upper_coefficient": 0.3407665703742031,
+        "inverse_temperature_beta": 6.283185307179586,
+        "large_support_statement": "0<=C_beta(L)-16*L^2/(beta*pi^2)<=beta/2.",
+        "large_support_upper_coefficient": 3.1652387044146795,
+        "maximum_row_position_ratio": 0.7084514661231704,
+        "optimizer": "The normalized optimizer is unique up to sign and is the strictly positive top eigenfunction of K_tau.",
+        "rigorous_explicit_upper_coefficient": 0.3407665703742031,
+        "rigorous_lower_coefficient": 0.2890882944752495,
+        "scope": "This is the general-temperature half-line momentum theorem. Dominance over field-coordinate and higher-angular sectors is proved separately for the conformal de Sitter specialization.",
+        "small_support_statement": "0<=C_beta(L)-2*L*Lambda(0)<=2*pi*L^3/(3*beta^2).",
+        "small_support_upper_coefficient": 0.34119827579583994,
+        "support_length_L": 0.30273255405408217,
+        "thermal_green_lower_coefficient": 0.023646050824886494,
+        "thermal_support_ratio_tau": 0.15136627702704109,
+        "vacuum_profile_lower_coefficient": 0.2890882944752495,
+        "variational_statement": "For half-line Dirichlet momentum data supported in [0,L], Gamma<=E*C_beta(L), with equality in the finite-energy closure."
+      },
       "large_support_statement": "0<=C_opt(y)-8*y^2/pi^3<=pi; the thermal Green operator fixes the sharp leading large-support coefficient.",
       "large_support_upper_coefficient": 3.1652387044146795,
       "legacy_F_upper_coefficient": 0.3633724335809033,
@@ -132,7 +175,7 @@
     "uniform_upper_coefficient": 0.3407665703742031,
     "upper_to_lower_ratio": 1.1787629485059559
   },
-  "paper_gate": "The continuum channel, exact KMS kernel optimization, sharp support asymptotics, and declared final-slice Einstein-scalar constraint composition pass. A smooth compact construction preserves the explicit local window. Standalone novelty and the stress/energy cost of an autonomous switching actuator remain open and must not be inferred from this certificate.",
+  "paper_gate": "The general-beta half-line momentum theorem, conformal de Sitter all-sector specialization, sharp final-support asymptotics, and smooth compact realization pass. Standalone novelty remains an external specialist-review gate. The final-slice gravity application and prescribed actuator are not headline claims.",
   "replay": {
     "maximum_constraint_ratio": 0.25,
     "newton_constant": 1e-06,
@@ -164,10 +207,10 @@
     "source_realization": "For each p_n, choose a time cutoff shorter than the remaining optical support margin and set J_n=P(eta_n*phi_free,n). Then J_n is smooth, compact, worldtube-supported, and has exact final data q=0,p=p_n."
   },
   "source_sha256": {
-    "experiments/local_scalar_observer_cost_audit.py": "ab74611ad492be573ae411e43b85470f8b59081810551a3870ecb79c8c5f768b",
-    "qgtoy/local_scalar_observer_cost.py": "d0cea02174ab6a757e2b9d1871e6ceb7342f0ba7267f5e3b6ad55909e091932c"
+    "experiments/local_scalar_observer_cost_audit.py": "9b6bb625e1bd962f2b9ff02b6c20fae503071474dfa76dd523fcdc6fab28885f",
+    "qgtoy/local_scalar_observer_cost.py": "443db8cc673b105d31bcfd5fdb20fa99a1e088eea2c3604def4688c891d5cdb8"
   },
-  "status": "sharp_theorem_pass_paper_novelty_open",
+  "status": "strengthened_final_support_theorem_pass_external_review_open",
   "weak_gravity_error_floor": {
     "cost": {
       "causal_support": {
@@ -190,6 +233,27 @@
         "exact_optimal_coefficient_formula": "C_opt(y)=2*y*Lambda(y/2)",
         "exact_row_schur_upper_coefficient": 0.3407665703742031,
         "full_phase_space_domination": "The q-sector obeys C_q<=2*y/pi+2*y^2/pi^3. The s-wave momentum sector obeys C_p>=max(3*y/pi,8*y^2/pi^3), which dominates that q bound for every y>0. Resolvent monotonicity under A_l>=A_0 makes l=0 the worst momentum sector.",
+        "general_thermal_half_line_specialization": {
+          "closed_form_upper_coefficient": 0.3633724335809033,
+          "dimensionless_kernel": "k_tau(u,v)=pi^-1 log[sinh(tau*(u+v))/sinh(tau*abs(u-v))]",
+          "exact_optimal_coefficient_formula": "C_beta(L)=2*L*Lambda(pi*L/beta)",
+          "exact_row_schur_upper_coefficient": 0.3407665703742031,
+          "inverse_temperature_beta": 6.283185307179586,
+          "large_support_statement": "0<=C_beta(L)-16*L^2/(beta*pi^2)<=beta/2.",
+          "large_support_upper_coefficient": 3.1652387044146795,
+          "maximum_row_position_ratio": 0.7084514661231704,
+          "optimizer": "The normalized optimizer is unique up to sign and is the strictly positive top eigenfunction of K_tau.",
+          "rigorous_explicit_upper_coefficient": 0.3407665703742031,
+          "rigorous_lower_coefficient": 0.2890882944752495,
+          "scope": "This is the general-temperature half-line momentum theorem. Dominance over field-coordinate and higher-angular sectors is proved separately for the conformal de Sitter specialization.",
+          "small_support_statement": "0<=C_beta(L)-2*L*Lambda(0)<=2*pi*L^3/(3*beta^2).",
+          "small_support_upper_coefficient": 0.34119827579583994,
+          "support_length_L": 0.30273255405408217,
+          "thermal_green_lower_coefficient": 0.023646050824886494,
+          "thermal_support_ratio_tau": 0.15136627702704109,
+          "vacuum_profile_lower_coefficient": 0.2890882944752495,
+          "variational_statement": "For half-line Dirichlet momentum data supported in [0,L], Gamma<=E*C_beta(L), with equality in the finite-energy closure."
+        },
         "large_support_statement": "0<=C_opt(y)-8*y^2/pi^3<=pi; the thermal Green operator fixes the sharp leading large-support coefficient.",
         "large_support_upper_coefficient": 3.1652387044146795,
         "legacy_F_upper_coefficient": 0.3633724335809033,

@@ -24,6 +24,7 @@ from qgtoy.local_scalar_observer_cost import (
     scalar_pointer_action_record,
     second_inverse_norm_constant,
     sharp_observer_cost_characterization,
+    sharp_thermal_half_line_momentum_cost,
     smooth_source_density_record,
     spherical_wall_constraint_ratio,
     thermal_momentum_kernel_value,
@@ -133,6 +134,54 @@ def test_exact_kms_row_maximizer_satisfies_the_stationarity_identity() -> None:
     assert row["maximizing_position_ratio_u"] == pytest.approx(u_star)
 
 
+@pytest.mark.parametrize(
+    ("support_length", "inverse_temperature"),
+    ((0.1, 0.7), (1.0, 2.0 * pi), (7.0, 0.4), (30.0, 100.0)),
+)
+def test_general_thermal_half_line_cost_has_rigorous_global_brackets(
+    support_length: float,
+    inverse_temperature: float,
+) -> None:
+    record = sharp_thermal_half_line_momentum_cost(
+        support_length,
+        inverse_temperature=inverse_temperature,
+    )
+    assert record["rigorous_lower_coefficient"] <= record[
+        "rigorous_explicit_upper_coefficient"
+    ]
+    assert record["rigorous_explicit_upper_coefficient"] <= record[
+        "closed_form_upper_coefficient"
+    ]
+    assert record["exact_optimal_coefficient_formula"] == (
+        "C_beta(L)=2*L*Lambda(pi*L/beta)"
+    )
+
+
+def test_general_thermal_half_line_cost_has_the_correct_scaling() -> None:
+    base = sharp_thermal_half_line_momentum_cost(
+        0.8,
+        inverse_temperature=3.0,
+    )
+    scale = 7.5
+    scaled = sharp_thermal_half_line_momentum_cost(
+        scale * 0.8,
+        inverse_temperature=scale * 3.0,
+    )
+    assert scaled["thermal_support_ratio_tau"] == pytest.approx(
+        base["thermal_support_ratio_tau"]
+    )
+    for key in (
+        "vacuum_profile_lower_coefficient",
+        "thermal_green_lower_coefficient",
+        "closed_form_upper_coefficient",
+        "exact_row_schur_upper_coefficient",
+        "small_support_upper_coefficient",
+        "large_support_upper_coefficient",
+        "rigorous_explicit_upper_coefficient",
+    ):
+        assert scaled[key] == pytest.approx(scale * base[key])
+
+
 @pytest.mark.parametrize("support_ratio", (1.0e-6, 0.3, 1.0, 10.0, 100.0))
 def test_sharp_cost_characterization_has_rigorous_global_brackets(
     support_ratio: float,
@@ -147,6 +196,13 @@ def test_sharp_cost_characterization_has_rigorous_global_brackets(
     assert upper <= record["legacy_F_upper_coefficient"]
     assert record["exact_optimal_coefficient_formula"] == (
         "C_opt(y)=2*y*Lambda(y/2)"
+    )
+    half_line = record["general_thermal_half_line_specialization"]
+    assert half_line["thermal_support_ratio_tau"] == pytest.approx(
+        record["thermal_support_ratio_tau"]
+    )
+    assert half_line["rigorous_lower_coefficient"] == pytest.approx(
+        record["rigorous_lower_coefficient"]
     )
 
 
@@ -316,7 +372,9 @@ def test_linear_profile_constraint_ratio_is_monotone() -> None:
 
 def test_default_certificate_passes_the_theorem_but_keeps_paper_gate_open() -> None:
     certificate = local_scalar_observer_cost_certificate()
-    assert certificate["status"] == "sharp_theorem_pass_paper_novelty_open"
+    assert certificate["status"] == (
+        "strengthened_final_support_theorem_pass_external_review_open"
+    )
     assert all(certificate["certified_claims"].values())
     assert "actuator" in certificate["paper_gate"]
     assert "not modeled" in certificate["claim_boundary"]
@@ -333,7 +391,9 @@ def test_default_certificate_passes_the_theorem_but_keeps_paper_gate_open() -> N
 
 def test_frozen_certificate_is_source_bound() -> None:
     record = json.loads(CERTIFICATE.read_text(encoding="ascii"))
-    assert record["status"] == "sharp_theorem_pass_paper_novelty_open"
+    assert record["status"] == (
+        "strengthened_final_support_theorem_pass_external_review_open"
+    )
     for relative, expected in record["source_sha256"].items():
         actual = hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
         assert actual == expected

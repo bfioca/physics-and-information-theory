@@ -5,8 +5,8 @@ static-patch-inspired bridge channels.
 
 ## Reviewer Entry Point
 
-This branch is organized around one active candidate paper: the local scalar
-observer-cost result. External reviewers should begin with the dedicated
+This branch is organized around one active candidate paper: the final-support
+thermal dephasing result. External reviewers should begin with the dedicated
 [`REVIEWER_README.md`](REVIEWER_README.md), which gives the five-minute reading
 route, exact claim boundary, requested paper-or-no-go disposition, and replay
 commands. The rest of this README preserves the broader repository history and
@@ -14,30 +14,28 @@ is not part of that review packet unless explicitly linked there.
 
 ## Current Branch Result
 
-**Status: sharp-theorem manuscript assembled; standalone novelty remains open.**
+**Status: STRENGTHEN; internal theorem pass, two-domain novelty review open.**
 
-The sole active research route is now a local continuum scalar model. A
-degenerate pointer qubit couples through one smooth compact source to the full
-conformally coupled massless field in a de Sitter static patch. The s-wave
-constants control every angular sector. For a source of
-areal radius `a` and static-time duration `T`, the current theorem candidate is
+The paper first solves an arbitrary-temperature half-line problem. For final
+momentum data supported in `[0,L]`,
 
 ```text
-log(1/(2 epsilon_obs)) <= E_K R C_opt(y) <= E_K R F(y),
-y=atanh(a/R)+T/R,
-C_opt(y)=2y Lambda(y/2),
-F(y)=4 asinh(1)y/pi+8y^2/pi^3.
+Gamma <= E C_beta(L),
+C_beta(L)=2 L Lambda(pi L/beta).
 ```
 
-The exact detector channel is prior art. The possible contribution is the
-exact compact-support optimization: `Lambda` is the simple top eigenvalue of
-an explicit positive KMS kernel, and the full optimizer is an s-wave momentum
-profile. Temperature enters at cubic order for small support, while the sharp
-large-support coefficient is `8/pi^3`. The result is followed by exact
-flux-free Einstein-scalar constraint data on the final slice. The source
-history and pointer channel are not yet derived on the perturbed geometry. See
-the
-[`paper-or-no-go contract`](docs/local_scalar_observer_cost_goal.md), the
+For the conformal massless scalar in de Sitter, `beta=2 pi R`, and the same
+s-wave momentum profile is the unique optimizer over every angular and
+canonical sector. Sharpness is for final Cauchy support. Source radius and
+duration give a causal envelope, not a fixed-cylinder controllability theorem.
+`E_K` is post-switch scalar-field energy, not total apparatus cost. Gravity is
+an appendix application to final-slice constraint data.
+
+The exact detector channel and positive-kernel variational principle are prior
+art. The publication gate is whether the reflected KMS operator, full-sector
+reduction, and support asymptotics form a new and substantial conjunction. See
+the [`strengthening goal`](docs/local_scalar_observer_strengthening_goal.md),
+the [`proof audit`](docs/local_scalar_observer_proof_audit.md), the
 [`candidate theorem and novelty audit`](docs/local_scalar_observer_cost.md),
 the [`manuscript PDF`](paper/local_scalar_observer_cost/main.pdf), the
 [`referee guide`](paper/local_scalar_observer_cost/REFEREE_GUIDE.md), and the
@@ -194,7 +192,7 @@ remains candidate matter support, not a Paper U realization or headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
-| **Active local scalar paper-or-no-go** | A self-contained manuscript now solves the all-angular finite-support dephasing-energy optimization by one exact compact KMS kernel, proves sharp support asymptotics and smooth-source closure, adds a converged numerical cost/profile realization, and derives exact final-slice constraints plus Bekenstein-form separation. The binding gate is independent specialist novelty review; actuator stress and dynamical gravity remain explicit extensions rather than narrow-paper requirements. | [`main.pdf`](paper/local_scalar_observer_cost/main.pdf), [`local_scalar_observer_cost_goal.md`](docs/local_scalar_observer_cost_goal.md), [`local_scalar_observer_cost.md`](docs/local_scalar_observer_cost.md) |
+| **Active final-support thermal paper** | A self-contained manuscript proves the exact arbitrary-temperature half-line coefficient, specializes it to the unique full-sector conformal de Sitter optimizer, and proves sharp support asymptotics plus smooth-source closure. The binding gate is independent proof review and novelty review in both detector/QFT and operator theory. | [`main.pdf`](paper/local_scalar_observer_cost/main.pdf), [`local_scalar_observer_strengthening_goal.md`](docs/local_scalar_observer_strengthening_goal.md), [`local_scalar_observer_proof_audit.md`](docs/local_scalar_observer_proof_audit.md) |
 | Earlier Paper A | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
 | Physical observer channel | Exact finite same-action realization of binary relational acquisition and Harlow pointer dephasing, with full declared resource ledger. Retained as infrastructure; ER=EPR stopped because no connectivity observable is derived. | [`physical_observer_channel_result.md`](docs/physical_observer_channel_result.md), [`physical_observer_channel.py`](qgtoy/physical_observer_channel.py), [`physical_observer_channel_certificate.json`](experiments/physical_observer_channel_certificate.json) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
@@ -436,7 +434,9 @@ v0.1-static-patch-diagnostics
 
 | File | Purpose |
 | --- | --- |
-| [`docs/local_scalar_observer_cost_goal.md`](docs/local_scalar_observer_cost_goal.md) | Active standalone-paper-or-no-go contract and frozen decision rule. |
+| [`docs/local_scalar_observer_strengthening_goal.md`](docs/local_scalar_observer_strengthening_goal.md) | Active submission, strengthen, or no-go contract. |
+| [`docs/local_scalar_observer_proof_audit.md`](docs/local_scalar_observer_proof_audit.md) | Five-step internal proof audit and independent-review checklist. |
+| [`docs/local_scalar_observer_cost_goal.md`](docs/local_scalar_observer_cost_goal.md) | Superseded original gravitational paper-or-no-go contract. |
 | [`docs/local_scalar_observer_cost.md`](docs/local_scalar_observer_cost.md) | Candidate compact-support energy theorem, proof, gravity boundary, explicit window, and primary-source comparison. |
 | [`paper/local_scalar_observer_cost/main.pdf`](paper/local_scalar_observer_cost/main.pdf) | Self-contained narrow-paper draft for specialist novelty and proof review. |
 | [`docs/finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md) | Completed finite-certification controls, embezzlement frontier, primary-source audit, and binding generic stop decision. |

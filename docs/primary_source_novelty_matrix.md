@@ -1,31 +1,30 @@
 # Primary-Source Novelty Matrix
 
-Status: sharp local scalar compact-support theorem under paper-or-no-go audit;
-generic information-exposure and ER=EPR promotion routes remain stopped
+Status: strengthened final-support thermal theorem under two-domain novelty
+review; generic information-exposure and ER=EPR promotion routes remain stopped
 
 Reviewed through: 2026-06-22
 
-## Active 2026-06-22 Local Scalar Observer-Cost Audit
+## Active 2026-06-22 Final-Support Thermal Audit
 
 The new candidate is not the exact gapless-detector channel. That construction
-is established. The candidate is the exact support-constrained optimization
+is established. The candidate begins with the arbitrary-temperature
+support-constrained optimization
 
 ```text
-Gamma <= E_K R C_opt(y),
-C_opt(y)=2y Lambda(y/2),
+Gamma <= E C_beta(L),
+C_beta(L)=2 L Lambda(pi L/beta),
 k_tau(u,v)=pi^-1 log[sinh(tau(u+v))/sinh(tau|u-v|)],
-y=atanh(a/R)+T/R,
-epsilon_obs=(1/2)exp(-Gamma),
 ```
 
-for every smooth compact source in a centered ball of the full conformal
-massless de Sitter static-patch model. The exact optimizer is the simple top
-eigenfunction of the positive compact kernel in the s-wave momentum sector;
-temperature first changes the small-support cost at cubic order and fixes the
-large-support coefficient `8/pi^3`. This is followed by exact flux-free
-spherical Einstein-scalar constraint data on the final slice. Sharpness refers
-to fixed final Cauchy support; a smaller fixed source cylinder supplies the
-same causal upper envelope but has a separate reachability question.
+for half-line momentum data with final support `[0,L]`. The exact optimizer is
+the simple positive top eigenfunction of the compact kernel, with global
+bounds and uniform support remainders. At the conformal de Sitter temperature
+`beta=2 pi R`, angular resolvent order and coordinate-sector domination make
+the same s-wave momentum profile the unique full-phase-space optimizer.
+Sharpness refers to fixed final Cauchy support; a source radius and duration
+supply only a causal envelope unless a separate controllability theorem is
+proved. Gravity is an appendix application, not part of the novelty claim.
 
 | Primary source | Established overlap | Boundary for this project |
 | --- | --- | --- |
@@ -43,14 +42,14 @@ same causal upper envelope but has a separate reachability question.
 | Ruzhansky and Suragan, [On first and second eigenvalues of Riesz transforms in spherical and hyperbolic geometries](https://arxiv.org/abs/1603.07781) | Largest-eigenvalue variational and isoperimetric results for positive Riesz-potential operators on spherical and hyperbolic domains | Do not claim novelty for compactness, positivity, Perron top eigenfunctions, or Riesz-potential spectral optimization in general; isolate the reflected thermal kernel and detector-sector reduction |
 
 No equation-level match for the exact reflected hyperbolic-sine kernel,
-full-sector reduction, or stated support asymptotics was found in this audit,
-including targeted searches for localized negative-Sobolev and KMS covariance
-operators. General Riesz-potential eigenvalue theory is close prior art and is
-now cited explicitly. The remaining search result is evidence for continuing,
-not proof of novelty. The paper
-gate remains open until a specialist checks whether the result is a known
-localization/Sobolev corollary and whether its detector application is
-substantial enough for a standalone paper.
+general-temperature coefficient, full de Sitter sector reduction, or stated
+support asymptotics was found in this audit, including targeted searches for
+localized negative-Sobolev and KMS covariance operators. General
+Riesz-potential eigenvalue theory is close prior art and is now cited
+explicitly. Search absence is evidence for continuing, not proof of novelty.
+The gate remains open until both a detector/QFT specialist and an
+integral-operator or fractional-Sobolev specialist return written
+dispositions.
 
 The gravity claim is deliberately narrower than a dynamical observer theorem.
 For flux-free spherical final data, the conformal stress has
@@ -60,8 +59,8 @@ Einstein-scalar Hamiltonian and momentum constraint data. It does not include
 the actuator stress, rederive the channel on the perturbed geometry, or solve
 the coupled evolution. Because the exterior mass shifts the cosmological
 horizon, metric smallness is asserted only on the declared interior comparison
-ball. The current decision is **SHARP THEOREM PASS /
-PAPER NOVELTY OPEN**, not a gravitational-breakthrough GO.
+ball. The current decision is **STRENGTHEN / INTERNAL THEOREM PASS / EXTERNAL
+REVIEW OPEN**, not a gravitational-breakthrough GO.
 The shared finite-dimensional pointer operator across a smooth spatial
 smearing is also treated as a prescribed detector idealization, not as an
 autonomous relativistic probe field.

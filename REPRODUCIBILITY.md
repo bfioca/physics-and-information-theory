@@ -123,11 +123,10 @@ decision `STOP_NO_DERIVED_CONNECTIVITY_CONTRAST`. The backreaction entry is an
 exact Hamiltonian-constraint calculation for a declared spherical mass
 profile, not a same-action stress-tensor or Einstein-matter solution.
 
-## Local Scalar Observer-Cost Paper-Or-No-Go
+## Final-Support Thermal Dephasing Paper
 
-Replay the compact-support dephasing-energy theorem, final-slice spherical
-Einstein-scalar constraint construction, explicit weak-constraint window, and
-source hashes with:
+Replay the arbitrary-temperature half-line theorem, conformal de Sitter
+all-sector specialization, numerical illustration, and source hashes with:
 
 ```bash
 PYTHONPATH=. python3 \
@@ -143,8 +142,9 @@ python3 -m json.tool \
 python3 paper/local_scalar_observer_cost/audit_package.py
 ```
 
-Expected focused result: `40 passed`. The theorem audit reports status
-`sharp_theorem_pass_paper_novelty_open`, minimum `E_K R` approximately
+Expected focused result: `45 passed`. The theorem audit reports status
+`strengthened_final_support_theorem_pass_external_review_open`, minimum
+`E_K R` approximately
 `38.5083647231`, necessary wall constraint ratio approximately
 `0.000286896268303`, and an explicit weak-constraint window. The JSON artifact
 is bound to the audit and theorem source hashes. The spectrum replay reports

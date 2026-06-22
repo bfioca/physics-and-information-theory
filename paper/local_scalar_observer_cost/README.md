@@ -1,48 +1,35 @@
-# Local Scalar Observer-Cost Review Package
+# Final-Support Thermal Dephasing Review Package
 
-**Status:** specialist-review candidate. The analytic theorem, manuscript
-build, numerical illustration, and reproducibility checks pass. Standalone
-novelty remains an external-review question.
+**Status:** strengthened short-paper candidate. Analytic, build, numerical,
+and reproducibility checks are internal gates. Independent proof review and
+two-domain novelty review remain required before submission.
 
 ## Start Here
 
-1. Read `main.pdf`, especially Theorem 3.3, Figure 1, and Corollary 3.4.
-2. Use `REFEREE_GUIDE.md` for the exact claim, five decisive questions, and the
-   requested `NARROW PAPER GO`, `STRENGTHEN`, or `NO-GO` disposition.
-3. Run `audit_package.py` for a quick integrity check.
+1. Read `main.pdf`, beginning with the general thermal half-line theorem and
+   its conformal de Sitter specialization.
+2. Use `REFEREE_GUIDE.md` for the common claim boundary.
+3. Use `QFT_NOVELTY_REVIEW.md` or `OPERATOR_NOVELTY_REVIEW.md` for the
+   appropriate specialist questions.
+4. Run `audit_package.py` for a quick integrity check.
 
 The exact gapless-detector channel is prior art. The candidate contribution is
-the sharp elimination of the compact source in favor of post-switch field
-energy and causal support: an exact all-angular KMS-kernel optimization, a
-unique s-wave momentum extremizer, sharp support asymptotics, and smooth-source
-closure. Figure 1 is a reproducible numerical illustration, not a certified
-spectral bound. The Einstein-scalar material is a final-slice constraint
-corollary, not a dynamical-gravity channel theorem.
+the exact reflected KMS operator selected by final support, its
+general-temperature coefficient, the full de Sitter sector reduction, and its
+sharp support asymptotics.
 
 ## Package Map
 
 | File | Role |
 | --- | --- |
-| `main.pdf` | Primary 16-page review manuscript |
+| `main.pdf` | Primary review manuscript |
 | `main.tex`, `sections/`, `references.bib` | LaTeX source and bibliography |
-| `REFEREE_GUIDE.md` | Review questions and requested disposition |
-| `data/observer_cost_spectrum.json` | Reproducible Figure 1 data |
-| `figures/observer_cost_spectrum.pdf` | Figure used by the manuscript |
+| `REFEREE_GUIDE.md` | Shared claim and disposition guide |
+| `QFT_NOVELTY_REVIEW.md` | Detector/QFT specialist questions |
+| `OPERATOR_NOVELTY_REVIEW.md` | Operator-theory specialist questions |
+| `data/observer_cost_spectrum.json` | Reproducible numerical illustration |
 | `artifact_manifest.json` | Frozen hashes and build metadata |
 | `audit_package.py` | Package-integrity audit |
-
-## Fast Integrity Check
-
-From the repository root:
-
-```bash
-python paper/local_scalar_observer_cost/audit_package.py
-```
-
-Expected result: `status: pass`, `page_count: 16`, and no errors. This checks
-the PDF and log, manuscript hashes and structure, frozen theorem certificate,
-and certificate source ledger. It does not establish novelty or replace review
-of the analytic proof.
 
 ## Full Replay
 
@@ -55,10 +42,11 @@ PYTHONPATH=. python -m pytest -q \
   tests/test_local_scalar_observer_cost.py \
   tests/test_local_scalar_observer_manuscript.py \
   tests/test_local_scalar_observer_spectrum.py
+python paper/local_scalar_observer_cost/audit_package.py
 ```
 
-The spectrum replay requires NumPy; install the `research-numerics` optional
-dependency when it is not already available.
+The spectrum replay requires NumPy through the optional `research-numerics`
+dependency.
 
 ## Rebuild the PDF
 
@@ -68,19 +56,19 @@ From this directory:
 latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-or, when available:
+or:
 
 ```bash
 tectonic -X compile main.tex --keep-logs
 ```
 
-The build should have no undefined references or citations and no overfull
-or underfull boxes. The checked `main.log` is retained so the review artifact
-records that result. The TeX layout, reference, citation, and page-count checks
-are also enforced by the package audit.
+The checked log must contain no undefined references or citations and no
+overfull or underfull boxes.
 
 ## Claim Boundary
 
-The manuscript does not claim an autonomous detector apparatus, a channel
-derived on the perturbed geometry, a coupled Einstein-matter evolution, a
-universal measurement-energy theorem, observer complementarity, or ER=EPR.
+Sharpness concerns final Cauchy support, not every fixed smaller source
+cylinder. The energy is post-switch scalar-field energy, not total apparatus
+cost. The manuscript does not claim an autonomous detector, a perturbed-
+geometry channel, coupled gravitational evolution, or a universal
+measurement-energy theorem.

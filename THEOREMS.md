@@ -7132,9 +7132,48 @@ PYTHONPATH=. python -m pytest -q tests/test_physical_observer_channel.py
 PYTHONPATH=. python experiments/physical_observer_channel_audit.py
 ```
 
-### Research Theorem AZ: Compact Local Scalar Observer Cost
+### Research Theorem AZ: Final-Support Thermal Dephasing
 
-Consider the full conformally coupled massless scalar in a four-dimensional de
+Let `h_0=sqrt(-d^2/dx^2)` on the Dirichlet half-line. For momentum data `p`
+supported in `[0,L]`, inverse temperature `beta`,
+
+```text
+Gamma_beta[p]=<p,h_0^-1 coth(beta h_0/2)p>,
+E[p]=||p||^2/2.
+```
+
+With `tau=pi L/beta` and
+
+```text
+k_tau(u,v)=pi^-1 log{
+ sinh[tau(u+v)]/sinh[tau|u-v|]},
+Lambda(tau)=||K_tau||,
+```
+
+the sharp arbitrary-temperature theorem is
+
+```text
+C_beta(L):=sup_p Gamma_beta[p]/E[p]
+          =2 L Lambda(pi L/beta).                (AZ.0)
+```
+
+The top eigenvalue is simple and its normalized optimizer is positive and
+unique up to sign. Globally,
+
+```text
+max{3L/pi,16L^2/(beta pi^2)}
+ <= C_beta(L)
+ <= 4 asinh(1)L/pi+16L^2/(beta pi^2),
+
+0<=C_beta(L)-2L Lambda(0)<=2 pi L^3/(3 beta^2),
+0<=C_beta(L)-16L^2/(beta pi^2)<=beta/2.          (AZ.0a)
+```
+
+This theorem concerns final Cauchy support and does not use a de Sitter
+temperature-curvature relation.
+
+For the physical specialization, consider the full conformally coupled
+massless scalar in a four-dimensional de
 Sitter static patch of radius `R`, in the Bunch-Davies KMS state at
 `beta=2 pi R`. A degenerate pointer qubit couples through
 
@@ -7163,12 +7202,12 @@ Its interaction densities commute at spacelike separation because `Z_P` is
 fixed and the scalar is microcausal; generic extended detector models do not
 inherit that statement automatically.
 
-The exact channel formula is prior art. The new theorem begins with
-the support restriction. If the source has areal radius `a<R`, acts for
-static-time duration `T`, and
+The exact channel formula is prior art. At `beta=2 pi R`, angular resolvent
+order and a separate coordinate-sector estimate show that (AZ.0) is also the
+full canonical and angular optimum. If final Cauchy data are supported in
+`[0,L]`, set
 
 ```text
-L=R atanh(a/R)+T,
 y=L/R,
 ```
 
@@ -7180,7 +7219,10 @@ Gamma <= E_K R C_opt(y) <= E_K R F(y),
 F(y)=4 asinh(1)y/pi+8y^2/pi^3.                    (AZ.1)
 ```
 
-The first coefficient is exact. With `tau=y/2`, define on `L2(0,1)`
+The first coefficient is exact. A source with areal radius `a<R` and duration
+`T` supplies `L=R atanh(a/R)+T` as a causal envelope; sharp
+near-controllability from every smaller fixed source cylinder is not claimed.
+With `tau=y/2`, define on `L2(0,1)`
 
 ```text
 k_tau(u,v)=pi^-1 log{
@@ -7336,7 +7378,7 @@ Einstein-matter evolution. The exact detector channel, KMS damping factor, and
 switching-energy framework are established prior art; standalone novelty is
 claimed only as an open gate for the exact optimization (AZ.1a), its support
 asymptotics, and its application. Current decision:
-**SHARP THEOREM PASS / PAPER NOVELTY OPEN**.
+**STRENGTHEN / INTERNAL THEOREM PASS / EXTERNAL REVIEW OPEN**.
 
 The theorem is adjacent to, but not implied by, the localized Klein-Gordon
 Bekenstein bound. For normalized radial `q=0` data in a Minkowski ball,
@@ -7352,7 +7394,8 @@ central layer has `S_B->pi a/2` and `Gamma_0=O(delta)`. Thus neither form
 uniformly bounds the other at fixed radius. This prevents a direct
 identification of the candidate theorem with the known local-entropy bound.
 
-Artifacts: `docs/local_scalar_observer_cost_goal.md`,
+Artifacts: `docs/local_scalar_observer_strengthening_goal.md`,
+`docs/local_scalar_observer_proof_audit.md`,
 `docs/local_scalar_observer_cost.md`,
 `qgtoy/local_scalar_observer_cost.py`,
 `experiments/local_scalar_observer_cost_audit.py`,

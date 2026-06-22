@@ -11,6 +11,10 @@ REVIEW_DOCUMENTS = (
     ROOT / "REVIEWER_README.md",
     PAPER / "README.md",
     PAPER / "REFEREE_GUIDE.md",
+    PAPER / "QFT_NOVELTY_REVIEW.md",
+    PAPER / "OPERATOR_NOVELTY_REVIEW.md",
+    ROOT / "docs" / "local_scalar_observer_proof_audit.md",
+    ROOT / "docs" / "local_scalar_observer_strengthening_goal.md",
 )
 ALLOWED_CONTROL_BYTES = {9, 10, 13}
 
@@ -57,9 +61,16 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
         _assert_plain_ascii(source)
 
     assert "TODO" not in text
-    assert "ER=EPR" in text
-    assert "not include the material" in text
+    assert "ER=EPR" not in text
+    assert "does not include the stress" in text
     assert "F(y)" in text
+    assert "Sharp Final-Support Field--Energy Bounds" in text
+    assert "\\mathcal C_\\beta(L)=2L\\Lambda(\\pi L/\\beta)" in text
+    assert "Sharpness refers to the optimization over final Cauchy data" in text
+    assert "Causal source-cylinder envelope" in text
+    assert text.index("\\appendix") < text.index(
+        "\\section{Final-slice Einstein--scalar application}"
+    )
     assert "HarlowUsatyukZhao2025" in citation_keys
     assert "not their closed-universe encoding error" in text
     assert "strictly positive quadratic form" in text
@@ -97,7 +108,8 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
             assert resolved.exists(), f"broken link in {document}: {target}"
 
     reviewer_text = REVIEW_DOCUMENTS[0].read_text(encoding="ascii")
-    assert "NARROW PAPER GO" in reviewer_text
+    assert "C_beta(L)=2 L Lambda(pi L/beta)" in reviewer_text
+    assert "SUBMIT" in reviewer_text
     assert "STRENGTHEN" in reviewer_text
     assert "NO-GO" in reviewer_text
     assert "not endorsement or approval" in reviewer_text

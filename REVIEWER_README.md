@@ -1,70 +1,81 @@
-# Reviewer Entry Point: Local Scalar Observer Cost
+# Reviewer Entry Point: Final-Support Thermal Dephasing
 
-**Status:** narrow-paper candidate for specialist novelty review. The analytic
-theorem, manuscript build, numerical illustration, and reproducibility checks
-pass. Whether the result merits a standalone paper remains deliberately open.
+**Status:** strengthened short-paper candidate. The internal theorem and
+reproducibility gates pass; independent proof review and two-domain novelty
+review remain open. No submission decision has been issued.
 
 This branch contains a larger research archive, but the requested review is
-about one candidate paper only: a sharp localization-energy optimization for a
-prescribed gapless qubit coupled to a conformally coupled massless scalar field
-in a four-dimensional de Sitter static patch.
+about one paper only. The paper solves a sharp thermal covariance optimization
+for fixed final Cauchy support and then proves that its half-line momentum
+optimizer is the full angular and canonical optimum for a conformal scalar in
+a de Sitter static patch.
 
-## Five-Minute Review Route
+## Five-Minute Route
 
-1. Read the [16-page manuscript](paper/local_scalar_observer_cost/main.pdf),
-   especially Theorem 3.3, Figure 1, and Corollary 3.4.
-2. Use the [referee guide](paper/local_scalar_observer_cost/REFEREE_GUIDE.md)
-   for the exact paper-or-no-go questions and requested disposition.
-3. Consult the
-   [primary-source novelty matrix](docs/primary_source_novelty_matrix.md) only
-   if the relation to known detector, localization, and entropy results needs
-   checking.
-4. Run the package audit below if artifact integrity matters for the review.
+1. Read the [manuscript](paper/local_scalar_observer_cost/main.pdf), especially
+   the general thermal theorem, the de Sitter specialization, and the causal
+   source-cylinder corollary.
+2. Use the [shared referee guide](paper/local_scalar_observer_cost/REFEREE_GUIDE.md)
+   for the exact claim boundary and requested disposition.
+3. Choose the domain-specific brief:
+   [detector/QFT](paper/local_scalar_observer_cost/QFT_NOVELTY_REVIEW.md) or
+   [operator theory](paper/local_scalar_observer_cost/OPERATOR_NOVELTY_REVIEW.md).
+4. Consult the [internal proof audit](docs/local_scalar_observer_proof_audit.md)
+   for the five vulnerable proof steps.
 
-The older papers, stopped programs, and planning notes elsewhere in the
-repository are not part of this review packet.
+Older papers, stopped programs, and planning notes elsewhere in the repository
+are not part of this review packet.
 
 ## Candidate Contribution
 
-The exact Weyl displacement channel for a prescribed gapless detector is known
-and is not claimed as new. The candidate contribution begins after that step.
-For fixed causal support and post-switch Killing energy, the paper eliminates
-the compact source and proves an exact all-angular optimization governed by the
-top eigenvalue of an explicit positive KMS kernel. It identifies the unique
-extremizing sector as s-wave momentum, proves the small- and large-support
-asymptotics, and gives smooth compact-source approximants. The numerical curve
-in Figure 1 illustrates the exact kernel but is not used as a rigorous bound.
+For Dirichlet half-line momentum data supported in `[0,L]`, inverse temperature
+`beta`, dephasing exponent `Gamma`, and field energy `E=||p||^2/2`, the paper
+proves
 
-An exact flux-free Einstein-scalar final-slice construction is included only as
-a gravity corollary. The source history and pointer channel are not derived on
-the perturbed geometry. Thus the manuscript does not claim a coupled
-Einstein-matter evolution, an autonomous detector, a universal measurement
-cost, observer complementarity, or ER=EPR.
+```text
+Gamma <= E C_beta(L),
+C_beta(L)=2 L Lambda(pi L/beta),
+```
+
+where `Lambda(tau)` is the simple top eigenvalue of the positive reflected KMS
+kernel
+
+```text
+k_tau(u,v)=pi^-1 log{
+  sinh[tau(u+v)]/sinh[tau|u-v|]}.
+```
+
+The paper gives global two-sided bounds and uniform small- and large-support
+remainders. At the de Sitter temperature `beta=2 pi R`, it proves that this
+s-wave momentum profile is the unique optimizer over every angular and
+canonical sector.
+
+The exact detector channel is prior art. Positive-kernel variational
+principles are prior art. The candidate novelty is the reflected thermal
+operator selected by final support, its exact general-temperature coefficient,
+the full de Sitter sector reduction, and the sharp support asymptotics.
+
+## Claim Boundary
+
+Sharpness is for final Cauchy support. A fixed source radius and duration give
+a causal envelope for that support; near-controllability from every smaller
+fixed source cylinder is not claimed. The energy is post-switch scalar-field
+energy only. It excludes actuator work, clock or battery energy, and probe
+stress. The gravity appendix contains final-slice constraint data, not a
+channel on perturbed geometry or a coupled evolution.
 
 ## Requested Decision
 
-Please return one of three dispositions:
+- **SUBMIT:** the central conjunction is not subsumed by known work and the
+  proof survives independent review.
+- **STRENGTHEN:** identify one concrete minimum theorem or correction required
+  before submission.
+- **NO-GO:** provide the theorem, reference, or argument that makes the result
+  known, immediate, or insufficient for a standalone paper.
 
-- **NARROW PAPER GO:** the compact-support optimization is not subsumed by
-  known work and is independently useful in its present scope.
-- **STRENGTHEN:** the result becomes viable after a specific minimum addition;
-  please identify that addition.
-- **NO-GO:** the result is already known, immediate from a standard theorem, or
-  too limited for a standalone paper; a source or concise argument would be
-  especially useful.
+## Reproduce the Packet
 
-The main issue is novelty and significance, not whether the computational
-artifact runs. The detailed five-question checklist is in the referee guide.
-
-## Verify the Packet
-
-From the repository root, the fast integrity check is:
-
-```bash
-python paper/local_scalar_observer_cost/audit_package.py
-```
-
-For a source-to-artifact replay and the focused test suite:
+From the repository root:
 
 ```bash
 PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
@@ -73,21 +84,11 @@ PYTHONPATH=. python -m pytest -q \
   tests/test_local_scalar_observer_cost.py \
   tests/test_local_scalar_observer_manuscript.py \
   tests/test_local_scalar_observer_spectrum.py
+python paper/local_scalar_observer_cost/audit_package.py
 ```
 
-The numerical replay requires NumPy, available through the optional
-`research-numerics` dependency. Exact build and package details are in the
-[paper README](paper/local_scalar_observer_cost/README.md).
+The numerical replay requires NumPy through the optional `research-numerics`
+dependency. These checks establish internal closure and provenance, not
+literature novelty.
 
-## Packet Contents
-
-| Item | Purpose |
-| --- | --- |
-| [Manuscript PDF](paper/local_scalar_observer_cost/main.pdf) | Primary review object |
-| [Referee guide](paper/local_scalar_observer_cost/REFEREE_GUIDE.md) | Claim, questions, and dispositions |
-| [Paper README](paper/local_scalar_observer_cost/README.md) | Build and reproduction instructions |
-| [Analytic audit](docs/local_scalar_observer_cost.md) | Derivation, assumptions, and claim boundary |
-| [Frozen goal](docs/local_scalar_observer_cost_goal.md) | Original paper-or-no-go contract |
-| [Artifact manifest](paper/local_scalar_observer_cost/artifact_manifest.json) | Frozen hashes and build metadata |
-
-This is a request for critical feedback, not endorsement or approval.
+This is a request for critical review, not endorsement or approval.

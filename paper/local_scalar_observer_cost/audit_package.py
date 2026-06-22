@@ -122,7 +122,9 @@ def _certificate_audit(manifest: dict[str, object]) -> list[str]:
         record = json.loads(path.read_text(encoding="ascii"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
         return [f"invalid theorem certificate: {exc}"]
-    if record.get("status") != "sharp_theorem_pass_paper_novelty_open":
+    if record.get("status") != (
+        "strengthened_final_support_theorem_pass_external_review_open"
+    ):
         errors.append("theorem certificate does not have the expected status")
     if not all(record.get("certified_claims", {}).values()):
         errors.append("one or more theorem certificate claims failed")

@@ -1,4 +1,4 @@
-"""Local scalar observer-channel cost in a de Sitter static patch.
+"""Final-support thermal dephasing bounds and their de Sitter specialization.
 
 The model is the conformally coupled massless field in four-dimensional de
 Sitter, decomposed into free canonical partial waves on the optical half-line.
@@ -6,13 +6,12 @@ A pointer qubit couples through its ``Z`` observable to a smooth compact
 spacetime source. Conditional field evolution is an exact Weyl displacement
 of the Bunch-Davies KMS state.
 
-The central theorem relates the exact pointer-dephasing exponent to the
-post-switch scalar Killing energy and solves the finite-support optimization.
-The complete KMS covariance sums to an explicit positive compact kernel; its
-simple top eigenvalue is the full all-angular phase-space optimum. Explicit
-Schur, Green-kernel, and Poincare estimates give sharp support asymptotics. The
-source actuator is prescribed rather than dynamical, so its own switching cost
-is outside the theorem.
+The central theorem first solves the arbitrary-temperature half-line momentum
+optimization. In the conformal de Sitter specialization, the simple top
+eigenvalue is also the full all-angular phase-space optimum. Explicit Schur,
+Green-kernel, and Poincare estimates give sharp support asymptotics. The source
+actuator is prescribed rather than dynamical, so its switching cost is outside
+the theorem.
 """
 
 from __future__ import annotations
@@ -406,12 +405,98 @@ def thermal_momentum_maximum_row_integral(
     }
 
 
+def sharp_thermal_half_line_momentum_cost(
+    support_length: float,
+    *,
+    inverse_temperature: float,
+) -> dict[str, float | str]:
+    """Return the sharp thermal momentum cost on a half-line interval.
+
+    For ``h=sqrt(-d^2/dx^2)`` with the Dirichlet condition at the half-line
+    origin, momentum data ``p`` supported in ``[0,L]`` have
+    ``Gamma=<p,h^-1*coth(beta*h/2)p>`` and ``E=||p||^2/2``. Their exact
+    optimal ratio is ``C_beta(L)=sup Gamma/E``.
+
+    This result is independent of the de Sitter temperature-curvature
+    relation. Dominance over the other canonical and angular sectors is a
+    separate statement in the conformal de Sitter specialization.
+    """
+    _validate_positive("support_length", support_length)
+    _validate_positive("inverse_temperature", inverse_temperature)
+    length = support_length
+    beta = inverse_temperature
+    tau = pi * length / beta
+    row = thermal_momentum_maximum_row_integral(
+        length,
+        inverse_temperature=beta,
+    )
+    row_upper = 2.0 * length * float(
+        row["dimensionless_maximum_row_integral_M"]
+    )
+    vacuum_lower = 3.0 * length / pi
+    thermal_lower = 16.0 * length**2 / (beta * pi**2)
+    closed_form_upper = (
+        4.0 * asinh(1.0) * length / pi + thermal_lower
+    )
+    small_support_upper = (
+        4.0 * asinh(1.0) * length / pi
+        + 2.0 * pi * length**3 / (3.0 * beta**2)
+    )
+    large_support_upper = thermal_lower + beta / 2.0
+    explicit_upper = min(
+        closed_form_upper,
+        row_upper,
+        small_support_upper,
+        large_support_upper,
+    )
+    return {
+        "support_length_L": length,
+        "inverse_temperature_beta": beta,
+        "thermal_support_ratio_tau": tau,
+        "exact_optimal_coefficient_formula": (
+            "C_beta(L)=2*L*Lambda(pi*L/beta)"
+        ),
+        "variational_statement": (
+            "For half-line Dirichlet momentum data supported in [0,L], "
+            "Gamma<=E*C_beta(L), with equality in the finite-energy closure."
+        ),
+        "dimensionless_kernel": (
+            "k_tau(u,v)=pi^-1 log[sinh(tau*(u+v))/"
+            "sinh(tau*abs(u-v))]"
+        ),
+        "optimizer": (
+            "The normalized optimizer is unique up to sign and is the "
+            "strictly positive top eigenfunction of K_tau."
+        ),
+        "vacuum_profile_lower_coefficient": vacuum_lower,
+        "thermal_green_lower_coefficient": thermal_lower,
+        "rigorous_lower_coefficient": max(vacuum_lower, thermal_lower),
+        "closed_form_upper_coefficient": closed_form_upper,
+        "exact_row_schur_upper_coefficient": row_upper,
+        "small_support_upper_coefficient": small_support_upper,
+        "large_support_upper_coefficient": large_support_upper,
+        "rigorous_explicit_upper_coefficient": explicit_upper,
+        "maximum_row_position_ratio": row["maximizing_position_ratio_u"],
+        "small_support_statement": (
+            "0<=C_beta(L)-2*L*Lambda(0)<=2*pi*L^3/(3*beta^2)."
+        ),
+        "large_support_statement": (
+            "0<=C_beta(L)-16*L^2/(beta*pi^2)<=beta/2."
+        ),
+        "scope": (
+            "This is the general-temperature half-line momentum theorem. "
+            "Dominance over field-coordinate and higher-angular sectors is "
+            "proved separately for the conformal de Sitter specialization."
+        ),
+    }
+
+
 def sharp_observer_cost_characterization(
     output_optical_radius: float,
     *,
     static_patch_radius: float,
 ) -> dict[str, float | str]:
-    """Sharp all-data observer cost and rigorous explicit brackets.
+    """Sharp de Sitter final-support coefficient and explicit brackets.
 
     If ``Lambda(tau)`` is the top eigenvalue of the dimensionless exact KMS
     kernel on ``(0,1)``, then the optimal full phase-space coefficient is
@@ -423,24 +508,24 @@ def sharp_observer_cost_characterization(
     radius = static_patch_radius
     y = length / radius
     tau = 0.5 * y
-    row = thermal_momentum_maximum_row_integral(
+    half_line = sharp_thermal_half_line_momentum_cost(
         length,
         inverse_temperature=2.0 * pi * radius,
     )
-    row_upper = 2.0 * y * float(
-        row["dimensionless_maximum_row_integral_M"]
-    )
+    row_upper = float(half_line["exact_row_schur_upper_coefficient"]) / radius
     legacy = observer_cost_coefficient_from_optical_support(
         length,
         static_patch_radius=radius,
     )
     legacy_upper = float(legacy["dimensionless_cost_coefficient_F"])
-    vacuum_lower = 3.0 * y / pi
-    thermal_lower = 8.0 * y**2 / pi**3
+    vacuum_lower = float(half_line["vacuum_profile_lower_coefficient"]) / radius
+    thermal_lower = float(half_line["thermal_green_lower_coefficient"]) / radius
     small_support_upper = (
-        4.0 * asinh(1.0) * y / pi + y**3 / (6.0 * pi)
+        float(half_line["small_support_upper_coefficient"]) / radius
     )
-    large_support_upper = thermal_lower + pi
+    large_support_upper = (
+        float(half_line["large_support_upper_coefficient"]) / radius
+    )
     explicit_upper = min(
         legacy_upper,
         row_upper,
@@ -451,6 +536,7 @@ def sharp_observer_cost_characterization(
         "output_optical_radius_over_R_y": y,
         "thermal_support_ratio_tau": tau,
         "exact_optimal_coefficient_formula": "C_opt(y)=2*y*Lambda(y/2)",
+        "general_thermal_half_line_specialization": half_line,
         "dimensionless_kernel": (
             "k_tau(u,v)=pi^-1 log[sinh(tau*(u+v))/"
             "sinh(tau*abs(u-v))]"
@@ -468,7 +554,9 @@ def sharp_observer_cost_characterization(
         "small_support_upper_coefficient": small_support_upper,
         "large_support_upper_coefficient": large_support_upper,
         "rigorous_explicit_upper_coefficient": explicit_upper,
-        "maximum_row_position_ratio": row["maximizing_position_ratio_u"],
+        "maximum_row_position_ratio": half_line[
+            "maximum_row_position_ratio"
+        ],
         "small_support_statement": (
             "0<=C_opt(y)-2*y*Lambda(0)<=y^3/(6*pi); the finite-temperature "
             "correction is cubic, not quadratic, at small support."
@@ -905,6 +993,7 @@ def local_scalar_observer_cost_certificate(
         static_patch_radius=static_patch_radius,
     )
     claims = {
+        "general_beta_half_line_momentum_theorem": True,
         "exact_quasifree_pointer_channel": True,
         "harlow_pointer_target_identified_without_entropy_dictionary": True,
         "same_source_scalar_energy_and_stress": True,
@@ -939,8 +1028,12 @@ def local_scalar_observer_cost_certificate(
     }
     passed = all(bool(value) for value in claims.values())
     return {
-        "goal": "Gravitational cost of a local scalar observer channel",
-        "status": "sharp_theorem_pass_paper_novelty_open" if passed else "fail",
+        "goal": "Sharp final-support field-energy bound for thermal dephasing",
+        "status": (
+            "strengthened_final_support_theorem_pass_external_review_open"
+            if passed
+            else "fail"
+        ),
         "model": (
             "finite pointer qubit, full conformally coupled massless scalar, "
             "Bunch-Davies beta=2*pi*R KMS state, smooth compact source in a "
@@ -957,12 +1050,11 @@ def local_scalar_observer_cost_certificate(
         "explicit_window": construction,
         "certified_claims": claims,
         "paper_gate": (
-            "The continuum channel, exact KMS kernel optimization, sharp "
-            "support asymptotics, and declared final-slice Einstein-scalar "
-            "constraint composition pass. A smooth compact construction "
-            "preserves the explicit local window. Standalone novelty and the "
-            "stress/energy cost of an autonomous switching actuator remain "
-            "open and must not be inferred from this certificate."
+            "The general-beta half-line momentum theorem, conformal de Sitter "
+            "all-sector specialization, sharp final-support asymptotics, and "
+            "smooth compact realization pass. Standalone novelty remains an "
+            "external specialist-review gate. The final-slice gravity "
+            "application and prescribed actuator are not headline claims."
         ),
         "claim_boundary": (
             "The renormalized post-switch field stress is the coherent "

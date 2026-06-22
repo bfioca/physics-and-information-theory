@@ -1,35 +1,37 @@
-# Local Scalar Observer-Channel Cost
+# Final-Support Thermal Dephasing Bound
 
-Status: sharp theorem pass; standalone-paper novelty and autonomous-gravity
-gates open
+Status: strengthened internal theorem pass; independent proof and two-domain
+novelty reviews open
 
 ## Executive Decision
 
-The fixed-background mathematical result is now an exact optimization theorem,
-not only a one-sided estimate. It is not yet a paper GO. The exact gapless-
-detector channel, its Weyl displacement, and its KMS decoherence factor are
-established prior art. The candidate new result is the sharp elimination of
-the source strength under finite causal support:
+The mathematical result is an exact final-support optimization theorem, not
+only a one-sided estimate. It is not yet a submission decision. The exact
+gapless-detector channel, its Weyl displacement, and its KMS decoherence factor
+are established prior art. The strengthened theorem begins at arbitrary
+inverse temperature:
 
 ```text
-log(1/(2 epsilon_obs))
- <= E_K R C_opt(y),
-C_opt(y)=2y Lambda(y/2)
- <= 4 asinh(1)y/pi+8y^2/pi^3,
-y=atanh(a/R)+T/R.                                  (1)
+Gamma <= E C_beta(L),
+C_beta(L)=2 L Lambda(pi L/beta).                  (1)
 ```
 
 Here `Lambda(tau)` is the simple top eigenvalue of an explicit positive compact
-KMS kernel. The full phase-space optimizer is an s-wave momentum profile;
-higher angular sectors and field-coordinate data cannot do better. Equation
-(1) says that a compact local interaction cannot approach complete pointer
-dephasing at fixed support and finite post-switch scalar Killing energy. The
-coefficient is sharp for fixed final Cauchy support. For a source cylinder of
-smaller spatial radius and fixed duration it is a valid causal envelope, not
-an exact controllability claim. The
-spherical result below constructs exact Einstein-scalar constraint data on the
-final slice. It does not rederive the pointer channel on the perturbed geometry
-or supply a self-gravitating source history.
+KMS kernel. For the conformal scalar in de Sitter, `beta=2 pi R`; angular
+resolvent order and a separate coordinate-sector estimate make the same s-wave
+momentum profile the unique full-phase-space optimizer. In that specialization,
+
+```text
+log(1/(2 epsilon_obs)) <= E_K R C_opt(y),
+C_opt(y)=2y Lambda(y/2),
+y=L/R.                                             (1a)
+```
+
+Both coefficients are sharp for fixed final Cauchy support. A source radius
+and duration give `L=R atanh(a/R)+T` only as a causal envelope, not an exact
+fixed-cylinder controllability claim. `E_K` is the post-switch scalar-field
+Killing energy, not total apparatus cost. The Einstein-scalar result is an
+appendix application to final-slice data, not a paper gate.
 
 ## Frozen Model
 
@@ -148,7 +150,7 @@ ell=R atanh(a/R),
 L=ell+T.                                          (9)
 ```
 
-## Sharp Localization-Energy Theorem
+## General Thermal Theorem and de Sitter Specialization
 
 Let `P_L` be multiplication by the interval `[0,L]`. The two compressed
 inverse kernels needed below are
@@ -186,19 +188,41 @@ The logarithmic singularity is square integrable, so `K_tau` is compact. Its
 kernel is positivity improving; hence `Lambda(tau)` is simple and has a unique
 strictly positive normalized eigenfunction up to sign.
 
+For half-line momentum data with `E=||p||^2/2`, the exact arbitrary-temperature
+coefficient is
+
+```text
+C_beta(L)=sup_p Gamma_beta[p]/E[p]
+         =2 L Lambda(pi L/beta).                 (11c)
+```
+
+It obeys
+
+```text
+max{3L/pi,16L^2/(beta pi^2)}
+ <= C_beta(L)
+ <= 4 asinh(1)L/pi+16L^2/(beta pi^2),            (11d)
+
+0<=C_beta(L)-2L Lambda(0)<=2 pi L^3/(3 beta^2),
+0<=C_beta(L)-16L^2/(beta pi^2)<=beta/2.           (11e)
+```
+
+This is the general thermal half-line theorem. The next step is specific to
+the conformal de Sitter geometry.
+
 The angular potential is nonnegative, so `A_l>=A_0`. More strongly, the
 Mittag-Leffler expansion gives
 
 ```text
 h_l^-1 coth(beta h_l/2)
  =(2/beta)A_l^-1
-  +(4/beta)sum_[n>=1](A_l+(2 pi n/beta)^2)^-1.   (11c)
+  +(4/beta)sum_[n>=1](A_l+(2 pi n/beta)^2)^-1.   (11f)
 ```
 
 Every resolvent is order decreasing. Thus the exact `l=0` thermal momentum
 kernel dominates all higher angular sectors.
 
-Using `coth u<=1+1/u`, equations (7)-(11c), and summing the positive
+Using `coth u<=1+1/u`, equations (7)-(11f), and summing the positive
 partial-wave estimates gives the convenient fully elementary upper bound
 
 ```text
@@ -254,7 +278,7 @@ to the unit interval gives
 sup_p Gamma_p/(E_p R)=2y Lambda(y/2).             (12c)
 ```
 
-Equation (11c) excludes a larger higher-angular value. The coordinate bound
+Equation (11f) excludes a larger higher-angular value. The coordinate bound
 from (12b) is
 
 ```text
@@ -529,17 +553,20 @@ The following claims are not new:
 The candidate new claim is narrower:
 
 ```text
-compact final support in a centered ball
- + exact KMS pointer channel
- + exact post-switch scalar energy
- -> an exact all-angular optimization by one positive compact KMS kernel,
-    with a unique s-wave momentum optimizer and sharp support asymptotics,
+arbitrary beta + fixed final half-line support
+ -> C_beta(L)=2 L Lambda(pi L/beta),
+    with a unique positive optimizer and uniform support asymptotics;
+
+conformal de Sitter beta=2 pi R
+ -> the same profile is the unique full angular/canonical optimizer,
 ```
 
-followed by the flux-free Einstein-scalar constraint construction. The current
-search found no equation-level prior result for the reflected thermal kernel,
-full canonical/angular reduction, and support asymptotics together, but search
-absence is not a novelty proof. A specialist review remains mandatory.
+with the flux-free Einstein-scalar constraint construction retained only as an
+appendix application. The current search found no equation-level prior result
+for the reflected thermal kernel, general-temperature coefficient, full
+canonical/angular reduction, and support asymptotics together, but search
+absence is not a novelty proof. Independent reviews in detector/QFT and
+operator theory remain mandatory.
 
 ### Relation To Bekenstein-Type Bounds
 
@@ -604,24 +631,26 @@ so `S_B/Gamma_0->infinity`. Neither quadratic form uniformly bounds the other
 at fixed radius. This separation is why the Bekenstein theorem neither proves
 nor is strengthened by (1).
 
-## Paper-Or-No-Go Gates
+## Submission Gates
 
 | Gate | Current status | Required closure |
 | --- | --- | --- |
 | Exact local channel | Pass, prior art | Present as setup, not novelty |
 | Same-source field stress and energy | Pass after switch-off | Keep actuator exclusion explicit |
-| Exact all-angular finite-support optimization | Internal pass | Independent proof and significance audit |
+| General-`beta` half-line momentum theorem | Internal pass | Independent proof audit |
+| Conformal de Sitter all-sector reduction | Internal pass | Independent angular and coordinate-sector audit |
 | Small- and large-support scaling | Sharp leading terms pass | Closed form for finite-support eigenvalue is optional |
 | Numerical realization | Converged Galerkin curve and positive profiles pass | Keep separate from the rigorous analytic bracket |
 | Smooth compact realization | Analytic density pass | Include the bounded-form and uniform-mass proof |
-| Final-slice gravity and local weak-constraint window | Exact constraint-data pass | Keep as a bounded-ball corollary or upgrade the channel to controlled gravity |
-| Autonomous actuator | Open | Model it or explicitly remove it from the headline |
+| Final-slice gravity and local weak-constraint window | Exact appendix application | Keep secondary; not a submission gate |
+| Autonomous actuator | Outside narrow scope | Keep excluded from the field-energy claim |
 | Bekenstein comparison | Analytic separation pass | Frame `Gamma` as a distinct dephasing functional |
-| Literature novelty | Open | Equation-level specialist review |
-| Standalone manuscript | Internal narrow draft passes | Send for specialist proof and novelty review |
+| Detector/QFT novelty | Open | Written specialist disposition |
+| Operator-theory novelty | Open | Written specialist disposition |
+| Standalone manuscript | Strengthened internal draft | Integrate both reviews and freeze tagged release |
 
-The current verdict is **THEOREM PASS / PAPER NOVELTY OPEN**. A paper GO is not
-issued by the executable certificate.
+The current verdict is **STRENGTHEN / INTERNAL THEOREM PASS / EXTERNAL REVIEW
+OPEN**. A **SUBMIT** decision is not issued by the executable certificate.
 
 ## Reproduction
 

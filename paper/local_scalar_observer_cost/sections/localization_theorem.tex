@@ -1,8 +1,10 @@
-\section{The sharp localization--energy theorem}
+\section{Sharp final-support thermal bounds}
 \label{sec:bound}
 
-Let $P_L$ be multiplication by $(0,L)$ on $L^2(\R_+)$.  We first record the
-zero-temperature inverse kernels and then sum the complete KMS kernel.
+Let $P_L$ be multiplication by $(0,L)$ on $L^2(\R_+)$.  We first solve the
+momentum problem at arbitrary inverse temperature $\beta$.  We then impose the
+de Sitter relation $\beta=2\pi R$ and prove that the same momentum sector is
+the optimum over every angular and canonical sector.
 
 \begin{lemma}[Compressed half-line inverses]
 \label{lem:compressed-inverses}
@@ -98,6 +100,87 @@ operator therefore has a simple positive top eigenfunction by the
 Perron--Frobenius--Jentzsch theorem.
 \end{proof}
 
+\begin{theorem}[Sharp thermal half-line momentum bound]
+\label{thm:thermal-half-line}
+Let $\beta,L>0$, let $h_0=\sqrt{-\partial_x^2}$ on the Dirichlet half-line,
+and define
+\begin{equation}
+ \mathcal C_\beta(L)
+ :=\sup_{\substack{p\neq0\\\supp p\subset[0,L]}}
+ \frac{\ip p{h_0^{-1}\coth(\beta h_0/2)p}}{\norm p^2/2}.
+ \label{eq:general-cost-definition}
+\end{equation}
+With $\tau=\pi L/\beta$,
+\begin{equation}
+ \boxed{\mathcal C_\beta(L)=2L\Lambda(\tau)}.
+ \label{eq:general-sharp-cost}
+\end{equation}
+The normalized optimizer in the finite-energy closure is unique up to sign
+and is the positive top eigenfunction of $\mathcal K_\tau$.  The global bounds
+\begin{equation}
+ \max\left\{\frac{3L}{\pi},\frac{16L^2}{\beta\pi^2}\right\}
+ \leq\mathcal C_\beta(L)
+ \leq\frac{4\operatorname{arsinh}(1)}\pi L
+      +\frac{16L^2}{\beta\pi^2}
+ \label{eq:general-explicit-bracket}
+\end{equation}
+hold for every $\beta,L>0$.  If
+\begin{equation}
+ M(\tau):=\max_{0<u<1}\int_0^1 k_\tau(u,v)\dd v,
+\end{equation}
+then $\mathcal C_\beta(L)\leq2LM(\tau)$, and the maximizing row is at
+\begin{equation}
+ u_\tau=\frac1\tau\operatorname{arsinh}
+ \left(\frac{\sinh\tau}{\sqrt2}\right).
+ \label{eq:thermal-row-maximizer}
+\end{equation}
+Finally,
+\begin{align}
+ 0&\leq\mathcal C_\beta(L)-2L\Lambda(0)
+ \leq\frac{2\pi L^3}{3\beta^2},
+ \label{eq:general-small-support}\\
+ 0&\leq\mathcal C_\beta(L)-\frac{16L^2}{\beta\pi^2}
+ \leq\frac\beta2.
+ \label{eq:general-large-support}
+\end{align}
+Thus the exact answer depends on temperature and support only through
+$\tau=\pi L/\beta$, apart from its overall length scale.
+\end{theorem}
+
+\begin{proof}
+By \cref{lem:exact-kms-kernel}, the quotient in
+\cref{eq:general-cost-definition} has supremum
+$2\norm{B_{\beta,L}}=2L\Lambda(\tau)$, with the stated unique optimizer.
+The profile $p(x)=\sqrt{3/L^3}\,x$ gives the vacuum lower bound $3L/\pi$,
+while the first eigenfunction of the Dirichlet--Neumann Green operator and
+$\coth z\geq z^{-1}$ give $16L^2/(\beta\pi^2)$.  Conversely,
+$\coth z\leq1+z^{-1}$ and \cref{lem:compressed-inverses} give the upper bound
+in \cref{eq:general-explicit-bracket}.  Positivity and Schur's test give the
+$M(\tau)$ bound.  Differentiating the row integral and using
+\begin{equation}
+ \sinh[\tau(1+u)]\sinh[\tau(1-u)]
+ =\sinh^2\tau-\sinh^2(\tau u)
+\end{equation}
+gives its unique stationary point \cref{eq:thermal-row-maximizer}.
+
+For small $\tau$, write $k_\tau=k_0+d_\tau$.  Euler's product implies, for
+$A\geq B\geq0$,
+\begin{equation}
+ 0\leq\log\frac{\sinh A/A}{\sinh B/B}
+ \leq\frac{A^2-B^2}{6}.
+\end{equation}
+Taking $A=\tau(u+v)$ and $B=\tau\abs{u-v}$ and applying Schur's test gives
+$0\leq\Lambda(\tau)-\Lambda(0)\leq\tau^2/(3\pi)$, which proves
+\cref{eq:general-small-support}.  For large $\tau$,
+\begin{equation}
+ k_\tau(u,v)=\frac{2\tau}{\pi}\min(u,v)+r_\tau(u,v).
+\end{equation}
+The resolvent expansion makes $r_\tau$ nonnegative in operator order, and its
+explicit row integral gives $\norm{r_\tau}\leq\pi/(4\tau)$.  Since the norm
+of the $\min(u,v)$ operator is $4/\pi^2$, multiplication by $2L$ proves
+\cref{eq:general-large-support}.
+\end{proof}
+
 The angular potential improves the complete thermal momentum form, not only
 the two estimates in \cref{lem:compressed-inverses}.
 
@@ -144,11 +227,12 @@ Divide by $E_{q,\ell m}=\norm{h_\ell q}^2/2$ and set $\beta=2\pi R$.
 No locality of the nonlocal vector $h_\ell q$ is assumed.
 \end{proof}
 
-We can now state the sharp cost, rather than only an upper bound.  The
-supremum below is unchanged if smooth compact data are replaced by their
-finite-energy closure.
+We can now specialize the half-line theorem to the static patch and prove that
+no angular or field-coordinate sector gives a larger quotient.  The supremum
+below is unchanged if smooth compact data are replaced by their finite-energy
+closure.
 
-\begin{theorem}[Sharp compact-support dephasing cost]
+\begin{theorem}[Conformal de Sitter all-sector optimum]
 \label{thm:main}
 Let
 \begin{equation}
@@ -163,9 +247,14 @@ including arbitrary angular data,
  \boxed{C_{\rm opt}(y)=2y\Lambda(y/2)}.
  \label{eq:sharp-cost}
 \end{equation}
+Equivalently,
+\begin{equation}
+ R C_{\rm opt}(L/R)=\mathcal C_{2\pi R}(L).
+ \label{eq:de-sitter-specialization}
+\end{equation}
 The supremum lies in the s-wave momentum sector.  Its normalized optimizer is
 the unique positive top eigenfunction of \cref{eq:dimensionless-kernel}, up to
-an overall sign.  The following fully explicit bounds hold:
+an overall sign.  Specializing \cref{eq:general-explicit-bracket} gives
 \begin{align}
  \max\left\{\frac{3y}{\pi},\frac{8y^2}{\pi^3}\right\}
  &\leq C_{\rm opt}(y)
@@ -175,18 +264,8 @@ an overall sign.  The following fully explicit bounds hold:
  +\frac8{\pi^3}y^2.
  \label{eq:de-sitter-bound}
 \end{align}
-If
-\begin{equation}
- M(\tau):=\max_{0<u<1}\int_0^1 k_\tau(u,v)\dd v,
-\end{equation}
-then the sharper Schur bound $C_{\rm opt}(y)\leq2yM(y/2)$ holds.  The maximum
-is attained at
-\begin{equation}
- u_\tau=\frac1\tau\operatorname{arsinh}
- \left(\frac{\sinh\tau}{\sqrt2}\right).
- \label{eq:thermal-row-maximizer}
-\end{equation}
-Finally, the exact support asymptotics obey the global remainder bounds
+The sharper bound $C_{\rm opt}(y)\leq2yM(y/2)$ also follows from
+\cref{thm:thermal-half-line}.  Its global remainders become
 \begin{align}
  0&\leq C_{\rm opt}(y)-2y\Lambda(0)
  \leq\frac{y^3}{6\pi},
@@ -200,10 +279,10 @@ while $8y^2/\pi^3$ is the sharp leading large-support coefficient.
 \end{theorem}
 
 \begin{proof}
-For momentum data in the s-wave, \cref{lem:exact-kms-kernel} gives
+For momentum data in the s-wave, \cref{thm:thermal-half-line} gives
 \begin{equation}
  \sup_{p\neq0}\frac{\Gamma_p}{E_pR}
- =\frac{2}{R}\norm{B_{\beta,L}}
+ =\frac{\mathcal C_{2\pi R}(L)}R
  =2y\Lambda(y/2).
  \label{eq:momentum-optimum}
 \end{equation}
@@ -233,43 +312,9 @@ $V_\ell=\ell(\ell+1)/[R^2\sinh^2(x/R)]>0$ almost everywhere, and hence
 $p=0$.  The $n=1$ term of \cref{eq:thermal-resolvent-order} therefore excludes
 a higher-angular-momentum tie.  Together with the simple top eigenvalue of
 $\mathcal K_{y/2}$, this proves the asserted uniqueness as well as
-\cref{eq:sharp-cost} and its lower bounds.
-
-For the first explicit upper bound, use $\coth z\leq1+z^{-1}$,
-\cref{lem:compressed-inverses,lem:angular-domination}, and the factor $1/2$ in
-the energy to obtain
-\begin{equation}
- \Gamma\leq\EK R F(y).
- \label{eq:legacy-explicit-bound}
-\end{equation}
-Positivity of $k_\tau$ and Schur's test give the $M(\tau)$ bound.  If
-$f(s)=\log\sinh(\tau s)$, differentiation of the row integral gives
-$[f(1+u)+f(1-u)-2f(u)]/\pi$.  The identity
-\begin{equation}
- \sinh[\tau(1+u)]\sinh[\tau(1-u)]
- =\sinh^2\tau-\sinh^2(\tau u)
-\end{equation}
-then gives the unique stationary point \cref{eq:thermal-row-maximizer}.
-
-For small support, write $k_\tau=k_0+d_\tau$.  Euler's product implies, for
-$A\geq B\geq0$,
-\begin{equation}
- 0\leq\log\frac{\sinh A/A}{\sinh B/B}
- \leq\frac{A^2-B^2}{6}.
-\end{equation}
-Here $A=\tau(u+v)$ and $B=\tau\abs{u-v}$, so Schur's test gives
-$0\leq\Lambda(\tau)-\Lambda(0)\leq\tau^2/(3\pi)$.  With $\tau=y/2$ this is
-\cref{eq:small-support-exact}.
-
-For large support, write
-\begin{equation}
- k_\tau(u,v)=\frac{2\tau}{\pi}\min(u,v)+r_\tau(u,v).
-\end{equation}
-The remainder is nonnegative in operator order by the resolvent expansion.
-Using $\int_0^\infty-\log(1-e^{-s})\dd s=\pi^2/6$ in its explicit row
-integral gives $\norm{r_\tau}\leq\pi/(4\tau)$.  Since the norm of the
-$\min(u,v)$ operator is $4/\pi^2$, multiplication by $2y=4\tau$ proves
-\cref{eq:large-support-exact}.
+\cref{eq:sharp-cost}.  The explicit bracket and both remainder bounds are
+\cref{eq:general-explicit-bracket,eq:general-small-support} and
+\cref{eq:general-large-support} with $\beta=2\pi R$ and $L=yR$.
 \end{proof}
 
 \subsection{Numerical realization of the sharp coefficient}
@@ -311,7 +356,7 @@ none of the theorem statements depends on it.
 Combining \cref{eq:diamond-error,eq:causal-support,eq:sharp-cost} gives the
 operational form.
 
-\begin{corollary}[Source-radius and duration bound]
+\begin{corollary}[Causal source-cylinder envelope]
 \label{cor:source-bound}
 If the source in \cref{eq:interaction} is supported in $r\leq a<R$ for a
 static-time interval of length $T$, set

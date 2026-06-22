@@ -8,10 +8,13 @@ remaining sections here index the wider research archive.
 
 ## Start Here
 
-### Active Local Scalar Paper-Or-No-Go
+### Active Final-Support Thermal Paper
 
-- `local_scalar_observer_cost_goal.md` - frozen full/narrow/no-go decision
-  contract;
+- `local_scalar_observer_strengthening_goal.md` - active submission,
+  strengthen, or no-go contract;
+- `local_scalar_observer_proof_audit.md` - five-step internal analytic audit;
+- `local_scalar_observer_cost_goal.md` - superseded original gravitational
+  paper-or-no-go contract;
 - `local_scalar_observer_cost.md` - sharp compact-kernel theorem, proof,
   gravity boundary, explicit weak-constraint window, and novelty audit;
 - `../qgtoy/local_scalar_observer_cost.py` - deterministic theorem and window
@@ -23,14 +26,16 @@ remaining sections here index the wider research archive.
 - `../paper/local_scalar_observer_cost/main.pdf` and `main.tex` - checked
   narrow-paper draft and source;
 - `../paper/local_scalar_observer_cost/REFEREE_GUIDE.md` - decisive external
-  paper-or-no-go questions and requested dispositions;
+  proof and novelty questions;
+- `../paper/local_scalar_observer_cost/QFT_NOVELTY_REVIEW.md` and
+  `OPERATOR_NOVELTY_REVIEW.md` - domain-specific external review briefs;
 - `../tests/test_local_scalar_observer_manuscript.py` - manuscript structure,
   citation, and source-hygiene checks.
 
-This is the sole active new-paper route. Its fixed-background sharp
-localization-energy optimization and manuscript pass their internal checks.
-A standalone-paper GO still requires specialist novelty review. Dynamical
-gravity is an optional stronger-paper route, not part of the narrow headline.
+This is the sole active new-paper route. Its general thermal half-line theorem
+and conformal de Sitter specialization pass internal checks. A submission
+decision still requires independent proof review and two-domain specialist
+novelty review. Dynamical gravity is not part of the narrow headline.
 
 ### Earlier Separate Manuscript
 
@@ -158,7 +163,9 @@ counterexamples and prior-art reduction. Stop this route; do not activate U8.
 | Artifact | Purpose |
 | --- | --- |
 | `local_scalar_observer_cost.md` | Candidate finite-support dephasing-energy theorem, exact final-slice Einstein-scalar constraint data, explicit window, and paper gate. |
-| `local_scalar_observer_cost_goal.md` | Active full-paper, narrow-paper, or no-go contract. |
+| `local_scalar_observer_strengthening_goal.md` | Active submission, strengthen, or no-go contract. |
+| `local_scalar_observer_proof_audit.md` | Five-step internal analytic audit and independent-review checklist. |
+| `local_scalar_observer_cost_goal.md` | Superseded original gravitational paper-or-no-go contract. |
 | `publishable_paper_route_decision.md` | Current route table, selected Paper A claim, submission gates, and explicit claim boundary. |
 | `physical_observer_channel_result.md` | Exact finite pointer-worldtube theorem, resource and spherical-envelope ledgers, matched controls, and binding ER=EPR stop. |
 | `physical_observer_channel_goal.md` | Frozen same-action implementation goal and conditional ER=EPR promotion rule. |
