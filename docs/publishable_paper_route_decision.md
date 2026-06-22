@@ -1,17 +1,18 @@
 # Publishable Paper Route Decision
 
-Status: Paper A remains **GO for colleague review**; the generic Paper U
-information-exposure route is **STOPPED**
+Status: Paper A remains **GO for colleague review**; the local scalar
+observer-cost route is the sole active **PAPER-OR-NO-GO** sprint; generic Paper
+U remains **STOPPED**
 
-Last audited: 2026-06-17
+Last audited: 2026-06-22
 
 ## Decision
 
-The selected manuscript is the computer-assisted validation of the prescribed
-massive Dirichlet-confined Skyrmion profile. It includes the authenticated sharp
-spectral-tail theorem and radial stability result as physical consequences of
-the same certified solution. It will not be framed as a universal observer
-theorem, a gravitational breakthrough, or a new general theorem about Fourier
+The earlier selected manuscript is the computer-assisted validation of the
+prescribed massive Dirichlet-confined Skyrmion profile. It includes the
+authenticated sharp spectral-tail theorem and radial stability result as
+physical consequences of the same certified solution. It will not be framed as
+a universal observer theorem, a gravitational breakthrough, or a new general theorem about Fourier
 endpoint asymptotics.
 
 This is the shortest route to a defensible specialist paper. The first draft
@@ -26,10 +27,19 @@ certificate, states the certified Newton norm exactly, and does not present the
 program remains a higher-impact motivation, but the tested generic
 information-exposure route did not produce a new submission theorem.
 
+The only active new-paper sprint now tests a different, named continuum claim:
+a compactly supported scalar pointer interaction has an exact
+dephasing-versus-Killing-energy optimum given by one positive compact de Sitter
+KMS kernel. Its fixed-background theorem certificate passes, but standalone
+novelty and an autonomous gravitational realization remain open. This does not
+demote or delay Paper A; it is the next research route, governed by
+`local_scalar_observer_cost_goal.md`.
+
 ## Route Table
 
 | Route | Decision | Reason |
 | --- | --- | --- |
+| Local scalar observer cost | **Active PAPER-OR-NO-GO** | Exact channel and same-source field energy are known setup. The candidate contribution is `C_opt(y)=2y Lambda(y/2)`: an exact full-sector compact-support optimization by an explicit KMS kernel, with unique s-wave momentum optimizer and sharp support asymptotics, plus exact flux-free final-slice Einstein-scalar data. Specialist novelty review, actuator cost, and a channel controlled on perturbed geometry determine full GO, narrow GO, or STOP. |
 | Harlow review packet | **ARCHIVED; refresh before sending** | The existing packet honestly records both route-level stops but predates the information-exposure-first and ER=EPR literalization hierarchy. |
 | Spacelike replication | **Standalone STOP** | Exact reduction to Janssens' established CP-map covariance/noise inequality. Retain as an `SO(3)` methods lemma. |
 | Global `SO(3)` risk | **Standalone STOP** | Hayashi already gives the exact Haar mean-Casimir optimum, projective sector, finite cutoff law, and sharp asymptotics. Retain the elementary bound and use the exact frontier as known input. |

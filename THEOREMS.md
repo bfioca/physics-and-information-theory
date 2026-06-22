@@ -7131,3 +7131,245 @@ Representative commands:
 PYTHONPATH=. python -m pytest -q tests/test_physical_observer_channel.py
 PYTHONPATH=. python experiments/physical_observer_channel_audit.py
 ```
+
+### Research Theorem AZ: Compact Local Scalar Observer Cost
+
+Consider the full conformally coupled massless scalar in a four-dimensional de
+Sitter static patch of radius `R`, in the Bunch-Davies KMS state at
+`beta=2 pi R`. A degenerate pointer qubit couples through
+
+```text
+S_int=-int sqrt(-g) J(X) phi(X) Z_P d^4X,
+```
+
+with real `J` smooth and compactly supported in a centered worldtube. The
+Magnus expansion terminates and gives an exact Weyl displacement. After the
+field is traced out, the pointer channel has
+
+```text
+epsilon_obs=(1/2)||D_kappa-D_0||_diamond
+           =(1/2)exp(-Gamma),
+Gamma=2<K E J,coth(beta h/2) K E J>,
+E_K=<K E J,h K E J>.
+```
+
+Here `D_0` is the binary quantum-to-classical pointer channel used in the
+Harlow--Usatyuk--Zhao observer rule. `epsilon_obs` is only the channel distance
+to that target; it is not their gravitational encoding error and is not
+identified with `exp(-S_Ob)`. The same finite-dimensional `Z_P` appears across
+the spatial smearing, so the action is a compactly supported field-local
+detector idealization rather than an autonomous relativistic pointer field.
+Its interaction densities commute at spacelike separation because `Z_P` is
+fixed and the scalar is microcausal; generic extended detector models do not
+inherit that statement automatically.
+
+The exact channel formula is prior art. The new theorem begins with
+the support restriction. If the source has areal radius `a<R`, acts for
+static-time duration `T`, and
+
+```text
+L=R atanh(a/R)+T,
+y=L/R,
+```
+
+then finite propagation supports every final partial-wave Cauchy datum in
+`[0,L]` and
+
+```text
+Gamma <= E_K R C_opt(y) <= E_K R F(y),
+F(y)=4 asinh(1)y/pi+8y^2/pi^3.                    (AZ.1)
+```
+
+The first coefficient is exact. With `tau=y/2`, define on `L2(0,1)`
+
+```text
+k_tau(u,v)=pi^-1 log{
+ sinh[tau(u+v)]/sinh[tau|u-v|]},
+Lambda(tau)=||K_tau||.
+```
+
+Then
+
+```text
+C_opt(y)=2y Lambda(y/2).                          (AZ.1a)
+```
+
+The kernel is the exact sine-transform kernel of
+`h_0^-1 coth(beta h_0/2)`. It is positive Hilbert-Schmidt and positivity
+improving, so its top eigenvalue is simple with a strictly positive
+eigenfunction.
+
+For the s-wave, the proof uses
+
+```text
+P_L h^-1 P_L(x,y)=(1/pi)log[(x+y)/|x-y|],
+||P_L h^-1 P_L||<=2L asinh(1)/pi,
+
+P_L h^-2 P_L(x,y)=min(x,y),
+||P_L h^-2 P_L||=4L^2/pi^2,
+```
+
+together with `coth u<=1+1/u`.
+
+The higher partial waves have
+`A_l=A_0+l(l+1)/[R^2 sinh^2(x/R)]>=A_0` and `h_l=sqrt(A_l)`. Thus their inverse
+and inverse-square constants are no larger than the s-wave constants. More
+strongly,
+
+```text
+h_l^-1 coth(beta h_l/2)
+ =(2/beta)A_l^-1
+  +(4/beta)sum_[n>=1](A_l+(2 pi n/beta)^2)^-1,
+```
+
+so resolvent order makes the exact s-wave thermal momentum kernel dominant.
+Each field datum is instead controlled by `||q_lm||<=(L/pi)||h_l q_lm||` and
+`<q_lm,h_l q_lm><=(L/pi)||h_l q_lm||^2`; no locality of the nonlocal `h_l` is
+assumed. Its cost is at most `2y/pi+2y^2/pi^3`. The s-wave momentum sector is
+at least `max(3y/pi,8y^2/pi^3)`, which dominates that coordinate bound for all
+`y`. Thus (AZ.1a) is the full phase-space optimum for arbitrary angular source
+data, not merely a flux-free subproblem. Strict thermal enhancement excludes a
+coordinate-sector tie, and strict resolvent order for `l>0` excludes an angular
+tie; the simple kernel eigenvalue therefore gives the unique global optimizer.
+Thus
+
+```text
+E_K R >= log(1/(2 epsilon_obs))/C_opt(y).          (AZ.2)
+```
+
+Exact complete pointer dephasing at finite causal support requires infinite
+post-switch scalar Killing energy in this model.
+
+The exact coefficient has the explicit global bounds
+
+```text
+max(3y/pi,8y^2/pi^3)<=C_opt(y)<=F(y),              (AZ.2a)
+0<=C_opt(y)-2y Lambda(0)<=y^3/(6pi),
+0<=C_opt(y)-8y^2/pi^3<=pi.                        (AZ.2b)
+```
+
+Thus temperature first corrects the localized vacuum cost at cubic order, and
+`8/pi^3` is the sharp leading large-support coefficient. The ratio of the
+closed-form vacuum upper coefficient to the constructive lower coefficient is
+at most `4 asinh(1)/3`, approximately `1.17516`; this is a bracket on an
+exactly characterized eigenvalue, not a claim that the cost itself is
+nonsharp.
+
+An optional `128`-cell piecewise-constant Rayleigh--Ritz realization evaluates
+the vacuum logarithmic cell integrals exactly and applies quadrature only to
+the smooth thermal correction. It gives
+
+```text
+C_Gal(0.1)=0.0997264358,
+C_Gal(1)=1.0295979905,
+C_Gal(10)=27.7170365461.
+```
+
+The largest `64 -> 128` relative change at those points is below `5.0e-5`, and
+all nineteen plotted estimates lie inside the analytic bracket. These are
+converged numerical estimates, not interval-certified replacements for
+(AZ.2a). The replay and Figure 1 are generated by
+`experiments/local_scalar_observer_spectrum.py`.
+
+For flux-free final data with field coordinate zero and nonzero radial
+momentum, the matter momentum density vanishes. On a spherical slice with
+`K_ij=0`, using the fixed-background scalar energy as the mass source gives the
+wall constraint ratio
+
+```text
+Q_grav(b)=2G E_K/[b(1-b^2/R^2)],
+b=R tanh(L/R).                                    (AZ.3)
+```
+
+For spherical `q=0` data, the conformal stress obeys
+`rho=n(phi)^2/2`, `j_i=0`, and
+`4 pi r^2 rho dr=p(x)^2 dx/2`. Therefore (AZ.3) is the exact mass of
+vanishing-extrinsic-curvature Einstein-scalar Hamiltonian and momentum
+constraint data, and
+(AZ.2)-(AZ.3) give the sharp necessary final-slice radial-constraint cost on
+the local comparison ball `0<r<=b`, where
+`Q_b=sup_[0<r<=b] Q_grav(r)>=Q_grav(b)`.
+They do not derive the pointer channel on the perturbed geometry or solve the
+source history and subsequent evolution. The exterior mass shifts the
+cosmological horizon, so no global smallness relative to the unperturbed lapse
+is claimed. Since the scalar normal momentum is nonzero, the full initial data
+are not time-reflection symmetric despite `K_ij=0`.
+
+Writing `ell=R atanh(a/R)` for the source optical radius, the ideal normalized
+momentum profile
+
+```text
+p(x)=sqrt(3/ell^3)x,  0<x<ell,
+```
+
+has exact vacuum covariance
+
+```text
+<p,h^-1p>=3ell/(2 pi),
+```
+
+positive cumulative mass `m(x)=E_K(x/ell)^3`, and increasing `Q_grav`. It gives
+
+```text
+E_K<=pi Gamma/(3ell),                             (AZ.4)
+```
+
+and a nonempty local weak-constraint window at the frozen illustrative point.
+Smooth compact profiles and sources approximate both this construction and
+the top eigenfunction while preserving every strict margin. Smooth normalized
+profiles supported strictly inside `ell` are dense in `L2(0,ell)`. The
+compressed thermal covariance is bounded by the sum of the
+compressed `h^-1` and `(2/beta)h^-2` forms, while cumulative masses converge
+uniformly by Cauchy-Schwarz. The cutoff construction
+`J_n=P(eta_n phi_free,n)` then gives an exact smooth worldtube-supported source
+for each final datum.
+
+The post-switch coherent-state stress identity
+
+```text
+Delta<T_ab^ren>=T_ab[phi_J]
+```
+
+is exact. The prescribed source's material actuator, clock, and work storage
+are not modeled. The gravity composition does not solve the lapse or coupled
+Einstein-matter evolution. The exact detector channel, KMS damping factor, and
+switching-energy framework are established prior art; standalone novelty is
+claimed only as an open gate for the exact optimization (AZ.1a), its support
+asymptotics, and its application. Current decision:
+**SHARP THEOREM PASS / PAPER NOVELTY OPEN**.
+
+The theorem is adjacent to, but not implied by, the localized Klein-Gordon
+Bekenstein bound. For normalized radial `q=0` data in a Minkowski ball,
+
+```text
+S_B=pi/(2a) int_0^a(a^2-x^2)p(x)^2 dx,
+Gamma_0=<p,h^-1p>.
+```
+
+A smooth packet in a boundary layer of width `delta` has
+`S_B=O(delta)` and `Gamma_0=Theta(delta log(1/delta))`; a smooth packet in a
+central layer has `S_B->pi a/2` and `Gamma_0=O(delta)`. Thus neither form
+uniformly bounds the other at fixed radius. This prevents a direct
+identification of the candidate theorem with the known local-entropy bound.
+
+Artifacts: `docs/local_scalar_observer_cost_goal.md`,
+`docs/local_scalar_observer_cost.md`,
+`qgtoy/local_scalar_observer_cost.py`,
+`experiments/local_scalar_observer_cost_audit.py`,
+`experiments/local_scalar_observer_cost_certificate.json`, and
+`tests/test_local_scalar_observer_cost.py`. The self-contained narrow draft is
+`paper/local_scalar_observer_cost/main.pdf`, with structural checks in
+`tests/test_local_scalar_observer_manuscript.py`; its numerical illustration is
+replayed by `experiments/local_scalar_observer_spectrum.py` and checked by
+`tests/test_local_scalar_observer_spectrum.py`.
+
+Representative commands:
+
+```bash
+PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
+PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
+PYTHONPATH=. python -m pytest -q \
+  tests/test_local_scalar_observer_cost.py \
+  tests/test_local_scalar_observer_manuscript.py \
+  tests/test_local_scalar_observer_spectrum.py
+```

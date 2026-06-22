@@ -7,6 +7,7 @@ dependencies = []
 
 [project.optional-dependencies]
 research-sdp = ["cvxpy>=1.9,<2"]
+research-numerics = ["numpy>=2,<3"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

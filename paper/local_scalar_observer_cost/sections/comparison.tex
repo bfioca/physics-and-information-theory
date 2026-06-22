@@ -1,0 +1,121 @@
+\section{Comparison with local entropy and horizon decoherence}
+\label{sec:comparison}
+
+\subsection{Bekenstein entropy is a different quadratic form}
+
+For a Klein--Gordon wave packet localized in a spatial region of half-width
+$a$, Hollands, Longo, and Morsella prove the Bekenstein-type inequality
+\begin{equation}
+ S(\Phi\mid B)\leq2\pi a E,
+ \label{eq:bekenstein-bound}
+\end{equation}
+where $S(\Phi\mid B)$ is the entropy quadratic form of the local standard
+subspace~\cite{HollandsLongoMorsella2026}.  At second quantization this is the
+relative entropy of the corresponding coherent excitation.  This powerful
+result is directly adjacent to \cref{thm:main}, but it controls a different
+functional.
+
+We make the distinction explicit in the simplest common setting.  Consider
+the massless conformal vacuum in four-dimensional Minkowski space, restrict to
+radial $q=0$ data in a ball of radius $a$, and normalize $\norm{p}_2=1$.  The
+conformal-ball modular Hamiltonian and the half-line dephasing kernel give
+\begin{align}
+ S_B[p]
+ &=\frac{\pi}{2a}\int_0^a(a^2-x^2)p(x)^2\dd x,
+ \label{eq:SB-form}\\
+ \Gamma_0[p]
+ &=\ip p{h_0^{-1}p}
+ =\frac1\pi\int_0^a\!\int_0^a p(x)p(y)
+ \log\frac{x+y}{\abs{x-y}}\dd x\dd y.
+ \label{eq:Gamma0-form}
+\end{align}
+
+\begin{proposition}[Quadratic-form separation]
+\label{prop:bekenstein-separation}
+At fixed $a$, there is no finite constant $c$ such that
+$\Gamma_0[p]\leq cS_B[p]$ for all smooth normalized radial momenta, and no
+finite constant $c'$ such that $S_B[p]\leq c'\Gamma_0[p]$ for all such data.
+\end{proposition}
+
+\begin{proof}
+Let $f\in C_c^\infty(0,1)$ be positive and normalized in $L^2(0,1)$.  For a
+packet in a boundary layer, set
+\begin{equation}
+ p_\delta^{\rm wall}(x)
+ =\delta^{-1/2}f\!\left(\frac{a-x}{\delta}\right).
+\end{equation}
+Substitution in \cref{eq:SB-form} gives
+\begin{equation}
+ S_B[p_\delta^{\rm wall}]
+ =\pi\delta\int_0^1u f(u)^2\dd u+O(\delta^2).
+ \label{eq:SB-wall}
+\end{equation}
+For the logarithmic kernel, scaling both variables gives
+\begin{equation}
+ \Gamma_0[p_\delta^{\rm wall}]
+ =\frac{\delta}{\pi}\left(\int_0^1f(u)\dd u\right)^2
+ \log\frac1\delta+O(\delta).
+ \label{eq:Gamma-wall}
+\end{equation}
+Thus $\Gamma_0/S_B\to\infty$.
+
+For a packet near the center, set
+\begin{equation}
+ p_\delta^{\rm ctr}(x)=\delta^{-1/2}f(x/\delta).
+\end{equation}
+Then
+\begin{equation}
+ S_B[p_\delta^{\rm ctr}]=\frac{\pi a}{2}+O(\delta^2),
+ \qquad
+ \Gamma_0[p_\delta^{\rm ctr}]=O(\delta),
+ \label{eq:center-asymptotics}
+\end{equation}
+because the logarithmic kernel becomes scale invariant after
+$x=\delta u$, $y=\delta v$, while the two integration measures leave one
+factor of $\delta$.  Hence $S_B/\Gamma_0\to\infty$.
+\end{proof}
+
+The separation has a simple physical meaning.  The Bekenstein entropy is a
+local modular-information functional whose conformal weight vanishes at the
+ball boundary.  The zero-temperature dephasing exponent is a global
+one-particle norm, equivalently an entangling-particle count for the exact
+detector model.  At finite temperature, the factor $\coth(\beta h/2)$ enhances
+infrared fluctuations further.  Thermal dephasing can increase even while the
+distinguishability of two displaced thermal states decreases.  The two notions
+of information should not be identified.
+
+\subsection{Relation to DSW and exact detector work}
+
+DSW decoherence describes the loss of coherence of superposed charges or
+masses near Killing horizons through soft field modes
+\cite{DSW2023,DSW2025}.  Gralla and Wei gave a general horizon formulation and
+precise rates in electromagnetic and Klein--Gordon analogues
+\cite{GrallaWei2024}; Li evaluated the local scalar, electromagnetic, and
+gravitational cases in de Sitter~\cite{Li2025}.  These works establish the
+physical importance of the low-frequency KMS sector that appears in
+\cref{eq:gamma-sector}.
+
+Our setup differs in its question.  We do not derive a new horizon decoherence
+rate.  We start from the exact pointer channel and maximize its dephasing
+functional subject to finite final support and post-switch field energy.  The
+result is consequently a constraint on a local implementation, not a claim
+that horizon modes require a large Killing energy.  Indeed, sufficiently soft
+horizon radiation can carry negligible Killing energy when its support and
+duration are allowed to grow.  In \cref{eq:source-bound}, that escape route is
+visible in the growth of $C_{\rm opt}$ with $L=\ell+T$.
+
+Barcellos and Landulfo already separate field background energy, individual
+switching work, and communication work for the exact gapless-detector channel
+\cite{BarcellosLandulfo2021}.  We use their same exact channel class.  The new
+step is to eliminate the source amplitude, identify the exact compact KMS
+kernel, and solve the full final-support optimization.  We therefore make no
+novelty claim for Magnus termination, the KMS characteristic function, the
+coherent stress identity, or switching-energy accounting.
+
+Likewise, spectral extremization of Riesz-potential operators is not new
+\cite{RuzhanskySuragan2016}.  In the zero-temperature limit our reflected
+logarithmic kernel belongs to that broad potential-theoretic family.  The
+claim here is not a first eigenvalue theorem for a positive compact kernel; it
+is the identification of the exact thermal operator governing this local
+pointer channel, proof that it controls the complete canonical and angular
+phase space, and extraction of the sharp physical support laws.

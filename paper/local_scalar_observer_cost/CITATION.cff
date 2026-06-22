@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript below when using this review package."
+title: "Local scalar observer-cost review package"
+type: software
+version: "internal-review-v1"
+date-released: 2026-06-22
+authors:
+  - family-names: "Fioca"
+    given-names: "Brian"
+repository-code: "https://github.com/bfioca/physics-and-information-theory"
+license: "MIT"
+preferred-citation:
+  type: article
+  title: "Local Dephasing in a de Sitter Static Patch: Sharp Localization-Energy Cost of a Compact Pointer Channel"
+  authors:
+    - family-names: "Fioca"
+      given-names: "Brian"
+  year: 2026

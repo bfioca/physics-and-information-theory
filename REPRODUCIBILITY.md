@@ -123,6 +123,41 @@ decision `STOP_NO_DERIVED_CONNECTIVITY_CONTRAST`. The backreaction entry is an
 exact Hamiltonian-constraint calculation for a declared spherical mass
 profile, not a same-action stress-tensor or Einstein-matter solution.
 
+## Local Scalar Observer-Cost Paper-Or-No-Go
+
+Replay the compact-support dephasing-energy theorem, final-slice spherical
+Einstein-scalar constraint construction, explicit weak-constraint window, and
+source hashes with:
+
+```bash
+PYTHONPATH=. python3 \
+  experiments/local_scalar_observer_cost_audit.py
+PYTHONPATH=. python3 \
+  experiments/local_scalar_observer_spectrum.py
+PYTHONPATH=. python3 -m pytest -q \
+  tests/test_local_scalar_observer_cost.py \
+  tests/test_local_scalar_observer_manuscript.py \
+  tests/test_local_scalar_observer_spectrum.py
+python3 -m json.tool \
+  experiments/local_scalar_observer_cost_certificate.json >/dev/null
+python3 paper/local_scalar_observer_cost/audit_package.py
+```
+
+Expected focused result: `40 passed`. The theorem audit reports status
+`sharp_theorem_pass_paper_novelty_open`, minimum `E_K R` approximately
+`38.5083647231`, necessary wall constraint ratio approximately
+`0.000286896268303`, and an explicit weak-constraint window. The JSON artifact
+is bound to the audit and theorem source hashes. The spectrum replay reports
+`numerical_convergence_pass_nonrigorous`, regenerates Figure 1, and records
+resolution and quadrature comparisons. It requires the `research-numerics`
+optional dependency.
+
+This replay verifies the formulas, final constraint data, frozen example,
+manuscript structure, checked PDF, and artifact hashes. It does not certify
+standalone novelty, include the stress or work of an
+autonomous source actuator, rederive the channel on the perturbed geometry, or
+solve the coupled evolution. The paper decision remains open by construction.
+
 ## Lead Certificate Commands
 
 Emit the five lead certificates:

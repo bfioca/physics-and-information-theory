@@ -1,0 +1,40 @@
+{
+  "artifact": "local_scalar_observer_cost_manuscript",
+  "status": "specialist_review_candidate_novelty_open",
+  "build_date_utc": "2026-06-22",
+  "build_engine": "Tectonic 0.16.9",
+  "page_count": 16,
+  "layout_checks": {
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "visual_pages_inspected": [],
+    "visual_artifacts_inspected": [
+      "Figure 1 standalone SVG preview at 1440x660"
+    ],
+    "visual_inspection_status": "Figure 1 inspected after SVG rendering; full manuscript pages not rasterized"
+  },
+  "files": {
+    "README.md": "d7314fc357e30022f7133f1ba9468366eb7ba08b46a56f6f3eecf18f99306302",
+    "main.pdf": "dae87917adc6a2adda018eda0f8b7ae2890625897e683b1e1ae0c12b599059ca",
+    "main.log": "5e2964779012a1b3d5c7f0b11eed9ac175b1a4472704824947f8d38361dbda72",
+    "main.tex": "971c43af49dacb829f01a400146e7dd64c9a3805ed3e80e2ef7bab05748e0366",
+    "references.bib": "9a35c6542372f60f9fb4eec3143145c060128bcdb2dfa8635b0bdcb83f78ab96",
+    "sections/achievability.tex": "1f33a9cbb4a92dbb5296979886f70a962089b9f4eb62bec10c4e7b34a4074cfe",
+    "sections/comparison.tex": "c5fc200e451e5f0e2b516ff53a8f1590b779de210a2370f6d76476bafee521c7",
+    "sections/discussion.tex": "559489fb3a14a611191e06d1a0fb2aeb27ecf9d5c5b2a9a2f3a741d434e26a0c",
+    "sections/gravity.tex": "428f944c52ffe5e338b2c0e387ede70c88385cec6ba9935bd89006e6e8020bfe",
+    "sections/introduction.tex": "d5b663ff68deb234c401835715d2aba09c6e7c82d2c0e8e9b12d4c3f13a3850c",
+    "sections/localization_theorem.tex": "d354f86ee2aa4ce7d063218114e46a9d794d60435ecce086c94094789defbc97",
+    "sections/model_and_channel.tex": "5f5728e7d7cb13571cca7e84e13e8ed154f3987193dab6f794324d57af2094cc",
+    "audit_package.py": "7042808da8164deb46994a91d9220263093e167b379e449b3ccf8cc7db178fc7",
+    "REFEREE_GUIDE.md": "887548f56f0aac58a4db2d396f3ae14ac708badbfb6e28ad3464e00ea2a3dc5d",
+    "CITATION.cff": "2115e925e87c657391a66937dd1bd6203b860e7c9f6591303bf0ff4e619363dc",
+    "data/observer_cost_spectrum.json": "3a05d4b6c3856099c6e1a7b590d99ae8c748b6545d49e581967826f47ca5d786",
+    "figures/observer_cost_spectrum.pdf": "5d2c07af67050c48a9535ed0e20fdaa3498438c183044b07629ae15bd3998409",
+    "figures/observer_cost_spectrum.svg": "6b41a9ce2cbf6f05914a842a0758c5bc5b146c26e049b73bd0f2fb66e46c6c8d"
+  },
+  "certificate": "experiments/local_scalar_observer_cost_certificate.json",
+  "certificate_sha256": "b06be2a789b675e2cc2575e38a6960fcf62e66045a3b10f0520f5c6043bb8547"
+}

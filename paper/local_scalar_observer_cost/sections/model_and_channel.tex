@@ -1,0 +1,157 @@
+\section{Static-patch model and exact pointer channel}
+\label{sec:model}
+
+\subsection{Optical partial waves}
+
+In static coordinates, four-dimensional de Sitter space has
+\begin{equation}
+ \dd s^2=-N(r)\dd t^2+\frac{\dd r^2}{N(r)}+r^2\dd\Omega_2^2,
+ \qquad N(r)=1-\frac{r^2}{R^2},
+ \qquad 0\leq r<R .
+ \label{eq:static-metric}
+\end{equation}
+Introduce the optical radius
+\begin{equation}
+ x=R\operatorname{arctanh}(r/R),
+ \qquad r=R\tanh(x/R),
+ \qquad \Omega(x)=\sech(x/R).
+ \label{eq:optical-radius}
+\end{equation}
+Then $g_{\rm dS}=\Omega^2g_{\rm opt}$, where
+\begin{equation}
+ g_{\rm opt}=-\dd t^2+\dd x^2+R^2\sinh^2(x/R)\dd\Omega_2^2 .
+\end{equation}
+For the conformally coupled massless scalar, spherical-harmonic decomposition
+and the standard radial rescaling give the positive operators
+\begin{equation}
+ A_\ell=-\frac{\dd^2}{\dd x^2}
+ +\frac{\ell(\ell+1)}{R^2\sinh^2(x/R)},
+ \qquad h_\ell=A_\ell^{1/2}
+ \label{eq:partial-wave-hamiltonian}
+\end{equation}
+on $L^2(\R_+)$, with the regular Dirichlet condition at $x=0$.
+The Bunch--Davies state restricted to the static patch is KMS at
+\begin{equation}
+ \beta=2\pi R
+ \label{eq:beta}
+\end{equation}
+for the static Killing flow.  We use this standard identification throughout.
+
+Let $(q_{\ell m},p_{\ell m})$ denote real final Cauchy data for the rescaled
+partial waves.  For smooth compact data, the thermal quadratic form and the
+Killing energy are
+\begin{align}
+ \Gamma_{\ell m}
+ &=\ip{q_{\ell m}}{h_\ell\coth(\beta h_\ell/2)q_{\ell m}}
+   +\ip{p_{\ell m}}{h_\ell^{-1}\coth(\beta h_\ell/2)p_{\ell m}},
+ \label{eq:gamma-sector}\\
+ E_{\ell m}
+ &=\frac12\left(\norm{h_\ell q_{\ell m}}^2
+                    +\norm{p_{\ell m}}^2\right).
+ \label{eq:energy-sector}
+\end{align}
+We write $\Gamma=\sum_{\ell m}\Gamma_{\ell m}$ and
+$\EK=\sum_{\ell m}E_{\ell m}$.  Smooth angular data make these sums finite in
+the needed form domains.
+
+For $\ell=0$, the unitary sine transform diagonalizes $h_0$.  With hats
+denoting that transform,
+\begin{align}
+ \Gamma_{00}
+ &=\int_0^\infty\coth(\beta k/2)
+ \left(k\abs{\widehat q(k)}^2+\frac{\abs{\widehat p(k)}^2}{k}\right)\dd k,
+ \label{eq:gamma-sine}\\
+ E_{00}
+ &=\frac12\int_0^\infty
+ \left(k^2\abs{\widehat q(k)}^2+\abs{\widehat p(k)}^2\right)\dd k.
+ \label{eq:energy-sine}
+\end{align}
+
+\subsection{Local interaction and exact channel}
+
+Let $P$ be a degenerate pointer qubit with pointer observable $Z_P$.  We
+couple it to the physical scalar by
+\begin{equation}
+ S_{\rm int}=-\int_{\mathcal M}\sqrt{-g}\,J(X)\phi(X)Z_P\dd^4X,
+ \qquad J\in C_c^\infty(\mathcal M;\R).
+ \label{eq:interaction}
+\end{equation}
+The switching function and spatial smearing are both included in $J$.  Since
+the commutator of two smeared free fields is a c-number, every Magnus term
+beyond second order vanishes.  Up to a source-dependent scalar phase,
+\begin{equation}
+ U_J=e^{i\Xi[J]}e^{-i\phi(J)Z_P}.
+ \label{eq:exact-unitary}
+\end{equation}
+This standard exact evolution is reviewed in
+\cite{Landulfo2016,BarcellosLandulfo2021,BatistaEtAl2026}.
+The interaction is compactly supported, and its densities commute at
+spacelike separation because $Z_P$ is fixed and the scalar field is
+microcausal.  Nevertheless, the same finite-dimensional operator $Z_P$
+appears across the smearing.  Generic spatially extended nonrelativistic
+detectors can violate causal factorization~\cite{deRamonEtAl2021}; fully
+relativistic localized probe fields provide a systematic replacement
+framework~\cite{PercheEtAl2024}.  We therefore treat
+\cref{eq:interaction} as the standard prescribed gapless-detector
+idealization, not as an autonomous pointer field or material actuator.
+
+Let $E$ denote the causal propagator and $K$ the positive-frequency map for the
+static one-particle structure.  Tracing the Bunch--Davies field state gives a
+pointer dephasing channel
+\begin{equation}
+ \cD_\kappa
+ \begin{pmatrix}a&b\\c&d\end{pmatrix}
+ =\begin{pmatrix}a&\kappa b\\\overline\kappa c&d\end{pmatrix},
+ \qquad
+ \abs\kappa=e^{-\Gamma},
+ \qquad
+ \Gamma=2\ip{KEJ}{\coth(\beta h/2)KEJ}.
+ \label{eq:dephasing-channel}
+\end{equation}
+The phase of $\kappa$ is a pointer rotation and is irrelevant to the distance
+from complete dephasing.  If $\cD_0$ denotes complete dephasing, then
+\begin{equation}
+ \eobs:=\frac12\norm{\cD_\kappa-\cD_0}_\diamond
+ =\frac12\abs\kappa=\frac12e^{-\Gamma}.
+ \label{eq:diamond-error}
+\end{equation}
+The equality follows from
+$\cD_\kappa-\cD_0=(\kappa/2)(\mathrm{id}-\operatorname{Ad}_{Z_P})$ after the
+correctable phase is removed, and it is saturated by a pointer superposition.
+The target $\cD_0$ is the binary instance of the quantum-to-classical pointer
+channel used in the observer rule of Harlow, Usatyuk, and
+Zhao~\cite{HarlowUsatyukZhao2025}.  The error $\eobs$ measures this channel
+approximation only; it is not their closed-universe encoding error and is not
+identified with $e^{-S_{\rm Ob}}$.
+
+After the source switches off, the two conditional field states are opposite
+coherent displacements.  Their common excess Killing energy and excess
+renormalized stress are
+\begin{equation}
+ \EK=\ip{KEJ}{hKEJ},
+ \qquad
+ \Delta\langle T_{ab}^{\rm ren}\rangle=T_{ab}[\phi_J].
+ \label{eq:energy-stress}
+\end{equation}
+The state-independent Hadamard subtraction cancels in the difference, and the
+background one-point function vanishes.  Equation~\eqref{eq:energy-stress}
+prices the post-switch scalar field generated by \emph{the same} $J$ as the
+channel.  It does not include the stress of a clock, trap, or material device
+that realizes the prescribed coupling.
+
+\subsection{Causal support}
+
+Suppose $J$ is supported inside the centered areal ball $r\leq a<R$ during a
+static-time interval of length $T$.  Its optical radius is
+\begin{equation}
+ \ell=R\operatorname{arctanh}(a/R).
+ \label{eq:source-optical-radius}
+\end{equation}
+Finite propagation in the optical metric implies that the final Cauchy data of
+every partial wave are supported in
+\begin{equation}
+ 0\leq x\leq L,
+ \qquad L=\ell+T.
+ \label{eq:causal-support}
+\end{equation}
+No spectral cutoff or hard spatial wall is introduced.

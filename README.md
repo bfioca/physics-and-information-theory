@@ -3,7 +3,55 @@
 Finite, executable diagnostics for observer algebras, reconstruction, and
 static-patch-inspired bridge channels.
 
-## Selected Paper A
+## Reviewer Entry Point
+
+This branch is organized around one active candidate paper: the local scalar
+observer-cost result. External reviewers should begin with the dedicated
+[`REVIEWER_README.md`](REVIEWER_README.md), which gives the five-minute reading
+route, exact claim boundary, requested paper-or-no-go disposition, and replay
+commands. The rest of this README preserves the broader repository history and
+is not part of that review packet unless explicitly linked there.
+
+## Current Branch Result
+
+**Status: sharp-theorem manuscript assembled; standalone novelty remains open.**
+
+The sole active research route is now a local continuum scalar model. A
+degenerate pointer qubit couples through one smooth compact source to the full
+conformally coupled massless field in a de Sitter static patch. The s-wave
+constants control every angular sector. For a source of
+areal radius `a` and static-time duration `T`, the current theorem candidate is
+
+```text
+log(1/(2 epsilon_obs)) <= E_K R C_opt(y) <= E_K R F(y),
+y=atanh(a/R)+T/R,
+C_opt(y)=2y Lambda(y/2),
+F(y)=4 asinh(1)y/pi+8y^2/pi^3.
+```
+
+The exact detector channel is prior art. The possible contribution is the
+exact compact-support optimization: `Lambda` is the simple top eigenvalue of
+an explicit positive KMS kernel, and the full optimizer is an s-wave momentum
+profile. Temperature enters at cubic order for small support, while the sharp
+large-support coefficient is `8/pi^3`. The result is followed by exact
+flux-free Einstein-scalar constraint data on the final slice. The source
+history and pointer channel are not yet derived on the perturbed geometry. See
+the
+[`paper-or-no-go contract`](docs/local_scalar_observer_cost_goal.md), the
+[`candidate theorem and novelty audit`](docs/local_scalar_observer_cost.md),
+the [`manuscript PDF`](paper/local_scalar_observer_cost/main.pdf), the
+[`referee guide`](paper/local_scalar_observer_cost/REFEREE_GUIDE.md), and the
+[`frozen replay`](experiments/local_scalar_observer_cost_certificate.json).
+
+---
+
+## Historical Repository Context
+
+The material below records earlier papers, completed controls, stopped routes,
+and research infrastructure. It is retained for traceability, not presented as
+a competing current manuscript.
+
+### Earlier Paper A
 
 **Status: GO for colleague review and specialist submission preparation.**
 
@@ -22,7 +70,7 @@ theorem or a broad gravitational breakthrough.
 - [`docs/publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md)
   - the novelty decisions, claim boundary, and referee disposition.
 
-## Archived Harlow Conceptual Packet
+### Archived Harlow Conceptual Packet
 
 The prior review artifact for the finite directional-record observer program is
 retained as a pre-literalization snapshot. It predates the current
@@ -146,13 +194,14 @@ remains candidate matter support, not a Paper U realization or headline claim.
 
 | Track | Current role | Start here |
 | --- | --- | --- |
-| **Selected Paper A** | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
+| **Active local scalar paper-or-no-go** | A self-contained manuscript now solves the all-angular finite-support dephasing-energy optimization by one exact compact KMS kernel, proves sharp support asymptotics and smooth-source closure, adds a converged numerical cost/profile realization, and derives exact final-slice constraints plus Bekenstein-form separation. The binding gate is independent specialist novelty review; actuator stress and dynamical gravity remain explicit extensions rather than narrow-paper requirements. | [`main.pdf`](paper/local_scalar_observer_cost/main.pdf), [`local_scalar_observer_cost_goal.md`](docs/local_scalar_observer_cost_goal.md), [`local_scalar_observer_cost.md`](docs/local_scalar_observer_cost.md) |
+| Earlier Paper A | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
 | Physical observer channel | Exact finite same-action realization of binary relational acquisition and Harlow pointer dephasing, with full declared resource ledger. Retained as infrastructure; ER=EPR stopped because no connectivity observable is derived. | [`physical_observer_channel_result.md`](docs/physical_observer_channel_result.md), [`physical_observer_channel.py`](qgtoy/physical_observer_channel.py), [`physical_observer_channel_certificate.json`](experiments/physical_observer_channel_certificate.json) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
 | Universal observer theorem | Both generic routes are **STOPPED**. The named finite implementation residual is now solved as an exact pointer-worldtube channel, but is standard at the dilation level and does not create a generic observer theorem. | [`physical_observer_channel_result.md`](docs/physical_observer_channel_result.md), [`information_exposure_control_result.md`](docs/information_exposure_control_result.md), [`finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. The exact mean-Casimir risk frontier is Hayashi's established result, not a standalone novelty claim. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`global_so3_risk_priority_audit.md`](docs/global_so3_risk_priority_audit.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
 | Optical common mode | Exact finite-size and higher-spin effective-channel lemmas retained for Paper U; current standalone paper stopped by direct de Sitter-spectrum and DFS prior art. | [`optical_common_mode_priority_audit.md`](docs/optical_common_mode_priority_audit.md), [`static_patch_higher_spin_gradient.md`](docs/static_patch_higher_spin_gradient.md) |
-| Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
+| Gravity and channel bridge | The older bounded-response sprint remains **INCONCLUSIVE STOP**. A new named scalar KMS pointer channel and compact-support energy theorem pass at fixed background, and its flux-free final datum gives exact spherical Einstein-scalar constraints. The channel on the perturbed geometry and source history remain open. | [`local_scalar_observer_cost.md`](docs/local_scalar_observer_cost.md), [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
 | Certified matter subproblems | The supported Skyrmion supplies controlled profile, spectral, and response inputs without being identified with the observer theorem or its realization. | [`massive_skyrmion_observer_program.md`](docs/massive_skyrmion_observer_program.md), [`validated_skyrmion_interval_program.md`](docs/validated_skyrmion_interval_program.md) |
 
 **Status boundary**
@@ -160,14 +209,17 @@ remains candidate matter support, not a Paper U realization or headline claim.
 - **Proved on declared domains:** G1 is specified; G2's global
   orientation-risk arrows, the bounded spacelike-replication theorem, the
   regular-bath finite-switch lemma, the rigid-current locality obstruction,
-  the finite pointer-worldtube observer channel, and supported-profile
-  subproblems are proved on their stated subdomains.
-- **Conditional:** the named QFT detector box; the signed response interval
-  still contains zero.
+  the finite pointer-worldtube observer channel, the local scalar
+  compact-support energy inequality, and supported-profile subproblems are
+  proved on their stated subdomains.
+- **Conditional:** the local scalar gravity result is exact final-slice
+  constraint data, but the channel on that perturbed geometry is open; the
+  older signed response interval still contains zero.
 - **Open, but not selected as the next research route:** the KMS
   GNS/Pauli-Fierz bridge, same-action preparation/readout,
   `S_dir` versus `S_Ob`, a gravitational capacity invariant, Weyl
-  zero-exclusion, self-consistent gravity, and Paper U U8a.
+  zero-exclusion, and Paper U U8a. Self-consistent gravity and autonomous
+  actuator stress are active gates only for the local scalar sprint.
 - **Stopped as standalone novelty:** bounded spacelike replication, the exact
   global mean-Casimir risk optimization, the current optical common-mode
   formulation, the generic information-exposure theorem, and the finite
@@ -384,6 +436,9 @@ v0.1-static-patch-diagnostics
 
 | File | Purpose |
 | --- | --- |
+| [`docs/local_scalar_observer_cost_goal.md`](docs/local_scalar_observer_cost_goal.md) | Active standalone-paper-or-no-go contract and frozen decision rule. |
+| [`docs/local_scalar_observer_cost.md`](docs/local_scalar_observer_cost.md) | Candidate compact-support energy theorem, proof, gravity boundary, explicit window, and primary-source comparison. |
+| [`paper/local_scalar_observer_cost/main.pdf`](paper/local_scalar_observer_cost/main.pdf) | Self-contained narrow-paper draft for specialist novelty and proof review. |
 | [`docs/finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md) | Completed finite-certification controls, embezzlement frontier, primary-source audit, and binding generic stop decision. |
 | [`docs/finite_type_certification_goal.md`](docs/finite_type_certification_goal.md) | Archived two-paragraph prove-or-kill goal and retained physical-cost residual. |
 | [`docs/information_exposure_control_result.md`](docs/information_exposure_control_result.md) | Completed Paper U control theorem, counterexamples, small-spin frontier, prior-art comparison, and binding stop decision. |

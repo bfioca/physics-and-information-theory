@@ -1,0 +1,127 @@
+\section{Optimal profiles and smooth source realization}
+\label{sec:construction}
+
+\subsection{Explicit trial profiles}
+
+The exact optimizer in \cref{thm:main} is the top eigenfunction of
+$\mathcal K_{y/2}$.  Two elementary profiles give the explicit lower bounds in
+\cref{eq:global-explicit-bracket} and make both asymptotic regimes concrete.
+For the vacuum-controlled regime, set $L=yR$, choose $q=0$, and use
+\begin{equation}
+ p_L(x)=\sqrt{\frac{3}{L^3}}\,x\,\mathbf1_{(0,L)}(x).
+ \label{eq:linear-profile}
+\end{equation}
+The vacuum part of the thermal form is
+\begin{align}
+ \ip{p_L}{h_0^{-1}p_L}
+ &=\frac{3}{\pi L^3}
+ \int_0^L\!\int_0^L xy
+ \log\frac{x+y}{\abs{x-y}}\dd x\dd y \notag\\
+ &=\frac{3L}{2\pi}.
+ \label{eq:linear-profile-covariance}
+\end{align}
+For the second equality, scale $x=Lu$, $y=Lv$, split the unit square across
+the diagonal, and use
+\begin{equation}
+ \int_0^1 t\log\frac{1+t}{1-t}\dd t=1.
+\end{equation}
+Since $\coth(\beta h_0/2)\geq1$, the full thermal dephasing exponent is at
+least the value in \cref{eq:linear-profile-covariance}.  On the other hand,
+$\EK=1/2$ for the normalized datum.  Thus
+$\Gamma/(\EK R)\geq3L/(\pi R)=3y/\pi$.
+
+For the thermal regime, use instead the normalized first eigenfunction of the
+Dirichlet--Neumann Green operator,
+\begin{equation}
+ p_L^{\rm th}(x)=\sqrt{\frac2L}\sin\frac{\pi x}{2L}
+ \mathbf1_{(0,L)}(x).
+ \label{eq:thermal-profile}
+\end{equation}
+Since $\coth z\geq z^{-1}$ and
+$\ip{p_L^{\rm th}}{h_0^{-2}p_L^{\rm th}}=4L^2/\pi^2$, this datum gives
+\begin{equation}
+ \frac{\Gamma}{\EK R}\geq\frac{8y^2}{\pi^3}.
+\end{equation}
+The first profile and the vacuum Schur bound also show
+\begin{equation}
+ \frac{3}{\pi}
+ \leq\liminf_{y\downarrow0}\frac{C_{\rm opt}(y)}y
+ \leq\limsup_{y\downarrow0}\frac{C_{\rm opt}(y)}y
+ \leq\frac{4\operatorname{arsinh}(1)}\pi.
+ \label{eq:small-support-gap}
+\end{equation}
+The ratio of the analytic upper and lower linear coefficients is
+$4\operatorname{arsinh}(1)/3\simeq1.17516$.
+
+For a target exponent $\Gamma_\star$, scaling
+\cref{eq:linear-profile} by an amplitude $A$ yields the sufficient energy
+bound
+\begin{equation}
+ \EK\leq\frac{\pi\Gamma_\star}{3L}.
+ \label{eq:constructive-energy}
+\end{equation}
+This is an upper bound on the energy needed by this simple family.  The sharp
+infimum over all supported data is instead
+$\Gamma_\star/[R C_{\rm opt}(L/R)]
+=\Gamma_\star/[2L\Lambda(L/2R)]$.
+
+\subsection{Smooth compact sources}
+
+The hard endpoint in \cref{eq:linear-profile} is useful for exact constants
+but is not a smooth source.  We now show that it is a legitimate limiting
+profile and that every strict window persists.
+
+\begin{lemma}[Smooth density closure]
+\label{lem:smooth-density}
+Fix an optical source radius $\ell>0$ and a normalized
+$p\in L^2(0,\ell)$.  There are normalized
+$p_n\in C_c^\infty([0,\ell))$, regular at the origin, such that
+\begin{equation}
+ p_n\longrightarrow p
+ \quad\hbox{in }L^2(\R_+).
+ \label{eq:smooth-convergence}
+\end{equation}
+Their thermal dephasing forms converge, and their cumulative energy measures
+converge uniformly.
+\end{lemma}
+
+\begin{proof}
+Density of smooth functions supported strictly inside $(0,\ell)$ gives
+\cref{eq:smooth-convergence}; such functions are automatically regular radial
+data at the origin.  On data supported in $[0,\ell]$,
+\begin{equation}
+ P_\ell h_0^{-1}\coth(\beta h_0/2)P_\ell
+ \leq P_\ell h_0^{-1}P_\ell
+ +\frac2\beta P_\ell h_0^{-2}P_\ell
+ \label{eq:thermal-compressed-bound}
+\end{equation}
+as quadratic forms.  The right side is bounded by
+\cref{lem:compressed-inverses}; hence the covariance is continuous under
+$L^2$ convergence.  Finally,
+\begin{equation}
+ \sup_{0\leq x\leq\ell}
+ \left|\int_0^x(p_n^2-p^2)\dd s\right|
+ \leq\norm{p_n-p}_2(\norm{p_n}_2+\norm p_2),
+ \label{eq:mass-uniform-convergence}
+\end{equation}
+which proves uniform convergence of cumulative energy.
+\end{proof}
+
+It remains to produce a supported final datum by a smooth spacetime source.
+This also proves sharpness over sources when the source ball approaches the
+declared final-support ball; it does not prove exact controllability from a
+strictly smaller cylinder of optical radius $L-T$.  Let
+$\phi_{\rm free,n}$ be the homogeneous solution with final data
+$(q,p)=(0,p_n)$.  Choose a smooth time cutoff $\eta_n$ that vanishes before
+the protocol, equals one near the final slice, and changes over a time shorter
+than the optical gap between $\supp p_n$ and $\ell$.  If $\mathcal P$ is the
+conformal wave operator, set
+\begin{equation}
+ J_n=\mathcal P(\eta_n\phi_{\rm free,n}).
+ \label{eq:smooth-source}
+\end{equation}
+The retarded solution sourced by $J_n$ is
+$\eta_n\phi_{\rm free,n}$.  It therefore has exactly the desired final data.
+Finite propagation keeps $J_n$ inside the declared optical worldtube.  This
+construction proves smooth source existence, but it does not bound the stress
+of an autonomous mechanism that generates the prescribed $J_n$.

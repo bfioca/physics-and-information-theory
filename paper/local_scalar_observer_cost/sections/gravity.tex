@@ -1,0 +1,176 @@
+\section{Flux-free Einstein--scalar constraint data}
+\label{sec:gravity}
+
+The all-angular theorem does not require spherical symmetry.  We now restrict
+to the s-wave and to a final slice on which the radial field coordinate
+vanishes.  This subclass is useful because its momentum density vanishes and
+its energy measure has a direct constraint interpretation.
+
+Let $u(t,x)$ be the normalized rescaled s-wave.  The physical conformal scalar
+is
+\begin{equation}
+ \phi(t,r)=\frac{u(t,x(r))}{\sqrt{4\pi}\,r}.
+ \label{eq:physical-radial-field}
+\end{equation}
+On a final slice with $u=0$ and $p=\partial_tu$, the physical normal derivative
+in the de Sitter geometry is
+\begin{equation}
+ v(r):=n^a\nabla_a\phi
+ =\frac{p(x(r))}{\sqrt{4\pi}\,r\sqrt{N(r)}}.
+ \label{eq:normal-derivative}
+\end{equation}
+For the conformally coupled stress tensor, every improvement term containing
+$\phi$ or a spatial derivative of $\phi$ vanishes on this slice.  Directly,
+\begin{equation}
+ \rho=T_{ab}n^an^b=\frac12v^2,
+ \qquad
+ j_i=-T_{ab}n^ah^b{}_i=0.
+ \label{eq:flux-free-stress}
+\end{equation}
+Since $\dd r=N\dd x$, \cref{eq:normal-derivative,eq:flux-free-stress} imply
+the exact measure identity
+\begin{equation}
+ 4\pi r^2\rho(r)\dd r=\frac12p(x)^2\dd x.
+ \label{eq:mass-energy-measure}
+\end{equation}
+
+Use the same numerical function $v$ as the scalar normal-momentum datum on a
+new spherical initial slice, and consider gravitational data with vanishing
+extrinsic curvature,
+\begin{equation}
+ \dd l^2=\frac{\dd r^2}{f(r)}+r^2\dd\Omega_2^2,
+ \qquad K_{ij}=0,
+ \qquad
+ f(r)=N(r)-\frac{2Gm(r)}{r}.
+ \label{eq:constraint-metric}
+\end{equation}
+The momentum constraint is satisfied by \cref{eq:flux-free-stress}.  The
+Hamiltonian constraint with cosmological radius $R$ is solved by
+\begin{equation}
+ m'(r)=4\pi r^2\rho(r),
+ \qquad m(0)=0.
+ \label{eq:mass-constraint}
+\end{equation}
+Absorbing the Bunch--Davies vacuum expectation into the background
+cosmological constant, the coherent excess stress in
+\cref{eq:energy-stress} supplies precisely the classical source above.
+Although $K_{ij}=0$, the nonzero scalar normal momentum means that the full
+Einstein--scalar data are not invariant under time reflection.
+Equation~\eqref{eq:mass-energy-measure} then gives
+\begin{equation}
+ m(b)=\EK
+ \label{eq:mass-equals-energy}
+\end{equation}
+for any areal radius $b$ outside the field support.
+
+Define the dimensionless radial constraint ratio
+\begin{equation}
+ Q(r)=\frac{2Gm(r)}{rN(r)}.
+ \label{eq:constraint-ratio}
+\end{equation}
+For a comparison ball $0<r\leq b<R$, set
+\begin{equation}
+ Q_b:=\sup_{0<r\leq b}Q(r).
+\end{equation}
+If $Q_b\leq\delta<1$, then throughout that ball
+\begin{equation}
+ f(r)\geq N(r)(1-\delta)>0,
+ \qquad
+ 0\leq\frac{g_{rr}}{g_{rr}^{\rm dS}}-1
+ \leq\frac{\delta}{1-\delta}.
+ \label{eq:metric-control}
+\end{equation}
+
+\begin{corollary}[Necessary final-slice constraint cost]
+\label{cor:gravity-cost}
+Let the hypotheses of \cref{cor:source-bound} hold and suppose the source is
+engineered to finish with spherical $q=0$ data.  Set
+\begin{equation}
+ b=R\tanh(L/R),
+ \qquad L=R\operatorname{arctanh}(a/R)+T.
+\end{equation}
+Then
+\begin{equation}
+ Q_b\geq Q(b)
+ \geq
+ \frac{2G}{bN(b)R C_{\rm opt}(L/R)}
+ \log\frac{1}{2\eobs}.
+ \label{eq:gravity-lower-bound}
+\end{equation}
+Equivalently, a local budget $Q_b\leq\delta<1$ implies
+\begin{equation}
+ \eobs\geq\frac12\exp\left[
+ -\frac{\delta\,bN(b)R}{2G}C_{\rm opt}(L/R)
+ \right].
+ \label{eq:gravity-error-floor}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Outside the support, \cref{eq:mass-equals-energy} gives
+$Q(b)=2G\EK/[bN(b)]$.  Apply the sharp energy lower bound in
+\cref{cor:source-bound}; solving the same inequality in the other direction
+gives \cref{eq:gravity-error-floor}.
+\end{proof}
+
+The compact mass shifts the cosmological horizon relative to the pure de
+Sitter value $R$.  Accordingly, $Q_b$ is a local comparison norm on the ball
+containing the final datum; no global smallness claim relative to the
+unperturbed lapse is intended.
+
+\subsection{An explicit local weak-constraint window}
+
+For the source optical radius
+$\ell=R\operatorname{arctanh}(a/R)$, take the ideal profile
+\begin{equation}
+ q=0,
+ \qquad
+ p(x)=A\sqrt{\frac{3}{\ell^3}}x\mathbf1_{(0,\ell)}(x).
+ \label{eq:gravity-profile}
+\end{equation}
+Its cumulative mass is
+\begin{equation}
+ m(x)=\EK\left(\frac{x}{\ell}\right)^3.
+ \label{eq:cumulative-mass}
+\end{equation}
+Inside the support, the function
+\begin{equation}
+ \frac{\operatorname{arctanh}(r/R)^3}{r[1-r^2/R^2]}
+ \label{eq:q-monotone-function}
+\end{equation}
+is strictly increasing on $(0,a]$.  One way to see this is to factor it as
+$(x/r)(x^2/N)$; both factors increase with $r$.  Hence the wall value controls
+the complete profile.  Combining \cref{eq:constructive-energy} with the wall
+constraint gives the sufficient estimate
+\begin{equation}
+ Q_a
+ \leq\frac{2\pi G\Gamma_\star}
+ {3\ell\,a[1-a^2/R^2]}.
+ \label{eq:constructive-gravity}
+\end{equation}
+
+For illustration, set
+\begin{equation}
+ \eobs=10^{-6},\quad
+ a/R=0.2,\quad T/R=0.1,\quad
+ G/R^2=10^{-6},\quad \delta=0.25.
+\end{equation}
+The universal theorem requires
+\begin{equation}
+ C_{\rm opt}(L/R)\leq0.340766570374,
+ \qquad \EK R\geq38.5083647231,
+ \qquad Q(b)\geq2.86896268303\times10^{-4},
+\end{equation}
+whereas the constructive family has
+\begin{equation}
+ \EK R\leq67.7824380936,
+ \qquad Q_a\leq7.06067063475\times10^{-4}.
+\end{equation}
+Thus the fixed numerical point has a nonempty local weak-constraint window.  By
+\cref{lem:smooth-density}, smooth compact profiles preserve this strict
+margin.
+
+The construction closes only the final Hamiltonian and momentum constraints.
+It does not specify the lapse, evolve the Einstein--scalar system, include the
+source actuator during switching, or recompute the quantum channel in the
+perturbed geometry.

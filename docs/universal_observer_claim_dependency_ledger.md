@@ -3,7 +3,9 @@
 Status: supporting dependency ledger. The exact conditional composition is
 proved, the physical common-action theorem is open, and the generic
 information-exposure route is stopped by
-`docs/information_exposure_control_result.md`.
+`docs/information_exposure_control_result.md`. This is not the active execution
+plan; the sole active paper-or-no-go route is the separate scalar pointer
+theorem in `docs/local_scalar_observer_cost_goal.md`.
 
 ## Candidate Statement
 

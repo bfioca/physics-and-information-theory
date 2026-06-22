@@ -1,9 +1,70 @@
 # Primary-Source Novelty Matrix
 
-Status: information-exposure, finite-certification, and finite physical-channel
-gates complete; generic novelty and ER=EPR promotion routes stopped
+Status: sharp local scalar compact-support theorem under paper-or-no-go audit;
+generic information-exposure and ER=EPR promotion routes remain stopped
 
 Reviewed through: 2026-06-22
+
+## Active 2026-06-22 Local Scalar Observer-Cost Audit
+
+The new candidate is not the exact gapless-detector channel. That construction
+is established. The candidate is the exact support-constrained optimization
+
+```text
+Gamma <= E_K R C_opt(y),
+C_opt(y)=2y Lambda(y/2),
+k_tau(u,v)=pi^-1 log[sinh(tau(u+v))/sinh(tau|u-v|)],
+y=atanh(a/R)+T/R,
+epsilon_obs=(1/2)exp(-Gamma),
+```
+
+for every smooth compact source in a centered ball of the full conformal
+massless de Sitter static-patch model. The exact optimizer is the simple top
+eigenfunction of the positive compact kernel in the s-wave momentum sector;
+temperature first changes the small-support cost at cubic order and fixes the
+large-support coefficient `8/pi^3`. This is followed by exact flux-free
+spherical Einstein-scalar constraint data on the final slice. Sharpness refers
+to fixed final Cauchy support; a smaller fixed source cylinder supplies the
+same causal upper envelope but has a separate reachability question.
+
+| Primary source | Established overlap | Boundary for this project |
+| --- | --- | --- |
+| Harlow, Usatyuk, and Zhao, [Quantum mechanics and observers for gravity in a closed universe](https://arxiv.org/abs/2501.02359) | Stable pointer states and an ideal quantum-to-classical observer channel obtained by suppressing off-diagonal pointer blocks | Identify `D_0` as the target, but do not identify this model's channel distance with their gravitational encoding error or `exp(-S_Ob)` |
+| de Ramon, Papageorgiou, and Martin-Martinez, [Relativistic causality in particle detector models](https://arxiv.org/abs/2102.03408) | Generic spatially extended nonrelativistic detector models can violate causal factorization | Record that the frozen single-`Z_P` density is spacelike commuting, but do not promote it to an autonomous relativistic apparatus |
+| Perche et al., [Particle Detectors from Localized Quantum Field Theories](https://arxiv.org/abs/2308.11698) | A fully relativistic localized probe field reduces to detector modes at leading perturbative order | Treat a probe-field replacement, including its extra modes and stress, as the clean physical strengthening route |
+| Landulfo, [Nonperturbative approach to relativistic quantum communication](https://arxiv.org/abs/1603.06641) | Exact localized gapless-detector/Weyl communication channel in QFT | Do not claim novelty for Magnus termination or the exact detector channel |
+| Barcellos and Landulfo, [Relativistic Quantum Communication: Energy cost and channel capacities](https://arxiv.org/abs/2109.13896) | Smooth compact source, exact KMS damping `exp[-2<KEf,coth(beta h/2)KEf>]`, field-energy and switching-work accounting | Do not claim the first same-source channel/energy calculation; compare the exact support-constrained spectrum directly |
+| Danielson, Satishchandran, and Wald, [Killing Horizons Decohere Quantum Superpositions](https://arxiv.org/abs/2301.00026) | Killing-horizon decoherence from soft modes, including de Sitter | Do not equate nonzero decoherence with a new observer theorem |
+| Danielson, Satishchandran, and Wald, [Local Description of Decoherence](https://arxiv.org/abs/2407.02567) | Local two-point-function description of horizon decoherence | The local KMS covariance itself is not new |
+| Gralla and Wei, [Decoherence from Horizons](https://arxiv.org/abs/2311.11461) | General horizon decoherence rates and horizon universality | Avoid a first-horizon-decoherence claim |
+| Li, [Local calculation of decoherence in de Sitter](https://arxiv.org/abs/2501.00213) | Local scalar, electromagnetic, and gravitational de Sitter decoherence with corrected prefactors | The de Sitter setting and scalar factor are not independently novel |
+| Batista et al., [Nonperturbative DSW Decoherence with Unruh-DeWitt detectors](https://arxiv.org/abs/2605.00956) | Exact finite-time gapless detector, smooth switching, and nonperturbative DSW comparison | The candidate must add the sharp finite-support optimization, not another exact example |
+| Hollands, Longo, and Morsella, [Bekenstein's bound for wave packets](https://arxiv.org/abs/2602.03606) | For localized Klein-Gordon wave packets, bounds local standard-subspace entropy by `2 pi R E`; for coherent excitations this is a relative-entropy statement | Do not claim the first localization-information-energy inequality. Distinguish their modular/local entropy from the KMS pointer characteristic-function exponent and seek a comparison theorem |
+| Ruzhansky and Suragan, [On first and second eigenvalues of Riesz transforms in spherical and hyperbolic geometries](https://arxiv.org/abs/1603.07781) | Largest-eigenvalue variational and isoperimetric results for positive Riesz-potential operators on spherical and hyperbolic domains | Do not claim novelty for compactness, positivity, Perron top eigenfunctions, or Riesz-potential spectral optimization in general; isolate the reflected thermal kernel and detector-sector reduction |
+
+No equation-level match for the exact reflected hyperbolic-sine kernel,
+full-sector reduction, or stated support asymptotics was found in this audit,
+including targeted searches for localized negative-Sobolev and KMS covariance
+operators. General Riesz-potential eigenvalue theory is close prior art and is
+now cited explicitly. The remaining search result is evidence for continuing,
+not proof of novelty. The paper
+gate remains open until a specialist checks whether the result is a known
+localization/Sobolev corollary and whether its detector application is
+substantial enough for a standalone paper.
+
+The gravity claim is deliberately narrower than a dynamical observer theorem.
+For flux-free spherical final data, the conformal stress has
+`rho=n(phi)^2/2`, zero momentum density, and mass measure equal to the optical
+Killing-energy measure. The certificate therefore constructs exact
+Einstein-scalar Hamiltonian and momentum constraint data. It does not include
+the actuator stress, rederive the channel on the perturbed geometry, or solve
+the coupled evolution. Because the exterior mass shifts the cosmological
+horizon, metric smallness is asserted only on the declared interior comparison
+ball. The current decision is **SHARP THEOREM PASS /
+PAPER NOVELTY OPEN**, not a gravitational-breakthrough GO.
+The shared finite-dimensional pointer operator across a smooth spatial
+smearing is also treated as a prescribed detector idealization, not as an
+autonomous relativistic probe field.
 
 ## Binding 2026-06-22 Physical Observer-Channel Result
 
