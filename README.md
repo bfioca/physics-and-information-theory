@@ -38,7 +38,10 @@ the [`strengthening goal`](docs/local_scalar_observer_strengthening_goal.md),
 the [`proof audit`](docs/local_scalar_observer_proof_audit.md), the
 [`candidate theorem and novelty audit`](docs/local_scalar_observer_cost.md),
 the [`manuscript PDF`](paper/local_scalar_observer_cost/main.pdf), the
-[`referee guide`](paper/local_scalar_observer_cost/REFEREE_GUIDE.md), and the
+[`referee guide`](paper/local_scalar_observer_cost/REFEREE_GUIDE.md), the
+[`external review launch kit`](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md),
+the [`specialist response form`](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md),
+and the
 [`frozen replay`](experiments/local_scalar_observer_cost_certificate.json).
 
 ---
@@ -439,6 +442,8 @@ v0.1-static-patch-diagnostics
 | [`docs/local_scalar_observer_cost_goal.md`](docs/local_scalar_observer_cost_goal.md) | Superseded original gravitational paper-or-no-go contract. |
 | [`docs/local_scalar_observer_cost.md`](docs/local_scalar_observer_cost.md) | Candidate compact-support energy theorem, proof, gravity boundary, explicit window, and primary-source comparison. |
 | [`paper/local_scalar_observer_cost/main.pdf`](paper/local_scalar_observer_cost/main.pdf) | Self-contained narrow-paper draft for specialist novelty and proof review. |
+| [`paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md`](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md) | Minimal attachment sets plus detector/QFT, operator-theory, and Harlow framing outreach drafts. |
+| [`paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md`](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md) | Structured record for the two binding external novelty dispositions. |
 | [`docs/finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md) | Completed finite-certification controls, embezzlement frontier, primary-source audit, and binding generic stop decision. |
 | [`docs/finite_type_certification_goal.md`](docs/finite_type_certification_goal.md) | Archived two-paragraph prove-or-kill goal and retained physical-cost residual. |
 | [`docs/information_exposure_control_result.md`](docs/information_exposure_control_result.md) | Completed Paper U control theorem, counterexamples, small-spin frontier, prior-art comparison, and binding stop decision. |

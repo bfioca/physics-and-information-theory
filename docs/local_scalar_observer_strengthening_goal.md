@@ -1,7 +1,7 @@
 # Strengthening Goal: Final-Support Thermal Dephasing Paper
 
-Status: active; internal theorem strengthening in progress, external novelty
-and independent proof review remain binding publication gates
+Status: active; internal theorem strengthening and proof audit complete,
+external novelty and independent proof review remain binding publication gates
 
 Turn the local scalar manuscript into a submission-ready short paper centered
 on a sharp final-Cauchy-support thermal dephasing theorem. Prove and lead with

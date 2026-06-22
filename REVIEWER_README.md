@@ -22,6 +22,7 @@ a de Sitter static patch.
    [operator theory](paper/local_scalar_observer_cost/OPERATOR_NOVELTY_REVIEW.md).
 4. Consult the [internal proof audit](docs/local_scalar_observer_proof_audit.md)
    for the five vulnerable proof steps.
+5. Record the result in the [specialist response form](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md).
 
 Older papers, stopped programs, and planning notes elsewhere in the repository
 are not part of this review packet.
@@ -92,3 +93,7 @@ dependency. These checks establish internal closure and provenance, not
 literature novelty.
 
 This is a request for critical review, not endorsement or approval.
+
+The author-facing [external review launch kit](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md)
+contains minimal attachment sets and separate detector/QFT, operator-theory,
+and Harlow framing drafts.

@@ -11,7 +11,9 @@ two-domain novelty review remain required before submission.
 2. Use `REFEREE_GUIDE.md` for the common claim boundary.
 3. Use `QFT_NOVELTY_REVIEW.md` or `OPERATOR_NOVELTY_REVIEW.md` for the
    appropriate specialist questions.
-4. Run `audit_package.py` for a quick integrity check.
+4. Send the matching minimal packet from `EXTERNAL_REVIEW_LAUNCH.md` and ask
+   for a written disposition in `REVIEW_RESPONSE_FORM.md`.
+5. Run `audit_package.py` for a quick integrity check.
 
 The exact gapless-detector channel is prior art. The candidate contribution is
 the exact reflected KMS operator selected by final support, its
@@ -27,6 +29,8 @@ sharp support asymptotics.
 | `REFEREE_GUIDE.md` | Shared claim and disposition guide |
 | `QFT_NOVELTY_REVIEW.md` | Detector/QFT specialist questions |
 | `OPERATOR_NOVELTY_REVIEW.md` | Operator-theory specialist questions |
+| `EXTERNAL_REVIEW_LAUNCH.md` | Send-ready attachment sets and outreach drafts |
+| `REVIEW_RESPONSE_FORM.md` | Structured, auditable specialist disposition |
 | `data/observer_cost_spectrum.json` | Reproducible numerical illustration |
 | `artifact_manifest.json` | Frozen hashes and build metadata |
 | `audit_package.py` | Package-integrity audit |

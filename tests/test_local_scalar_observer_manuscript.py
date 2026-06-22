@@ -13,6 +13,8 @@ REVIEW_DOCUMENTS = (
     PAPER / "REFEREE_GUIDE.md",
     PAPER / "QFT_NOVELTY_REVIEW.md",
     PAPER / "OPERATOR_NOVELTY_REVIEW.md",
+    PAPER / "EXTERNAL_REVIEW_LAUNCH.md",
+    PAPER / "REVIEW_RESPONSE_FORM.md",
     ROOT / "docs" / "local_scalar_observer_proof_audit.md",
     ROOT / "docs" / "local_scalar_observer_strengthening_goal.md",
 )
@@ -72,6 +74,12 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
         "\\section{Final-slice Einstein--scalar application}"
     )
     assert "HarlowUsatyukZhao2025" in citation_keys
+    assert {
+        "JohnsonVerma2026",
+        "Kozlowski2008",
+        "Widom2006",
+    } <= citation_keys
+    assert "Wiener--Hopf term minus" in text
     assert "not their closed-universe encoding error" in text
     assert "strictly positive quadratic form" in text
     assert "observer_cost_spectrum.pdf" in text
@@ -114,3 +122,17 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     assert "NO-GO" in reviewer_text
     assert "not endorsement or approval" in reviewer_text
     assert "not part of this review packet" in reviewer_text
+
+    launch_text = (PAPER / "EXTERNAL_REVIEW_LAUNCH.md").read_text(
+        encoding="ascii"
+    )
+    assert "does not substitute" in launch_text
+    assert "Harlow Framing Email Draft" in launch_text
+    assert "Silence or a polite general reaction does not close a gate" in launch_text
+
+    response_text = (PAPER / "REVIEW_RESPONSE_FORM.md").read_text(
+        encoding="ascii"
+    )
+    assert "KNOWN COROLLARY" in response_text
+    assert "TECHNICALLY NEW BUT INSUFFICIENT" in response_text
+    assert "Neither answer grants permission to imply endorsement" in response_text

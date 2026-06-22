@@ -30,6 +30,7 @@ principle are not claimed as new.
 3. `sections/achievability.tex`: smooth final-data and source closure.
 4. `../../docs/local_scalar_observer_proof_audit.md`: five-step internal audit.
 5. The domain-specific novelty brief matching your expertise.
+6. `REVIEW_RESPONSE_FORM.md` for the requested written disposition.
 
 ## Decisive Questions
 
