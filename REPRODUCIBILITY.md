@@ -102,6 +102,27 @@ cross-checked against brute-force spectra through five sites. The apparent
 inverse-square-root support rate is a numerical diagnostic, not a proved
 asymptotic, energy, locality, gravity, or algebraic-connectivity theorem.
 
+## Physical Observer-Channel Sprint
+
+Replay the exact finite pointer channel, relational acquisition, resource
+ledger, spherical mass-envelope bound, and matched two-region controls with:
+
+```bash
+PYTHONPATH=. python3 -m pytest -q \
+  tests/test_physical_observer_channel.py
+PYTHONPATH=. python3 \
+  experiments/physical_observer_channel_audit.py
+python3 -m json.tool \
+  experiments/physical_observer_channel_certificate.json >/dev/null
+```
+
+Expected focused result: `13 passed`. The audit reports normalized diamond
+distance approximately `0.03125`, maximum spherical constraint ratio
+approximately `0.0729167`, observer-channel decision `RETAIN`, and ER=EPR
+decision `STOP_NO_DERIVED_CONNECTIVITY_CONTRAST`. The backreaction entry is an
+exact Hamiltonian-constraint calculation for a declared spherical mass
+profile, not a same-action stress-tensor or Einstein-matter solution.
+
 ## Lead Certificate Commands
 
 Emit the five lead certificates:

@@ -7051,3 +7051,83 @@ PYTHONPATH=. python -m pytest -q \
   tests/test_finite_type_certification_control.py
 PYTHONPATH=. python experiments/finite_type_certification_control_audit.py
 ```
+
+### Research Theorem AY: Finite Physical Observer Channel And ER=EPR Gate
+
+Let `Q_rel` be a binary projector on the direct sum of two classical observer
+location sectors,
+
+```text
+Q_rel=|A><A| tensor Q_A tensor I_B
+     +|B><B| tensor I_A tensor Q_B,
+```
+
+with `Q_A` and `Q_B` supported in their respective worldtubes. Couple it to a
+pointer qubit `P` and `m` environment qubits initially in `|+>^m` through the
+piecewise action
+
+```text
+H(t)=chi_acq(t) g Q_rel tensor X_P
+    +chi_dec(t) lambda Pi_1^P tensor sum_j Z_Ej,
+g tau=pi/2,                   lambda T=theta.
+```
+
+The acquisition is exact and the simultaneous `A<->B` swap fixes the action.
+After the environment is discarded, the reduced pointer channel is
+
+```text
+D_kappa([[a,b],[c,d]])=[[a,kappa b],[kappa c,d]],
+kappa=cos(theta)^m.
+```
+
+For Harlow's ideal complete pointer dephasing `D_0`, the exact halved diamond
+distance is
+
+```text
+(1/2)||D_kappa-D_0||_diamond=|kappa|/2.
+```
+
+The same equality holds for the coherent premeasurement instruments. It
+follows from `D_kappa-D_0=(kappa/2)(id-Ad_Z)` and is saturated by a
+superposition of the two projector sectors. At fixed `0<theta<pi/2`, target
+error `epsilon` requires
+
+```text
+m>=ceiling[log(2 epsilon)/log(cos theta)].
+```
+
+The entropy, parallel/serial duration, peak interaction norm, integrated
+action, circuit count, areal/proper/optical support, and redshift are explicit.
+For the declared spherical mass profile `m(r)=E_env(r/a)^3`, the exact
+time-symmetric constraint supremum is
+
+```text
+q_max=2G E_env/[a(1-a^2/R^2)].
+```
+
+Thus `q_max<=beta<1` controls the radial metric by the existing spherical
+constraint theorem. This is a declared source envelope, not a derivation of
+the channel stress tensor or a full Einstein-matter solution.
+
+Matched controls `|Phi+><Phi+|` and
+`(|00><00|+|11><11|)/2` have identical local marginals and identical `ZZ`
+transcripts. The two-setting witness
+`W=(<XX>+<ZZ>)/2` has values `1` and `1/2`, respectively, while every separable
+state obeys `W<=1/2`. This is an ordinary entanglement witness. The action
+defines no area, QES, topology, bridge algebra, reconstruction region, or
+other connectivity observable. The binding decision is therefore **RETAIN**
+for the finite observer-channel theorem and
+**STOP_NO_DERIVED_CONNECTIVITY_CONTRAST** for ER=EPR.
+
+Artifacts: `docs/physical_observer_channel_result.md`,
+`qgtoy/physical_observer_channel.py`,
+`experiments/physical_observer_channel_audit.py`,
+`experiments/physical_observer_channel_certificate.json`, and
+`tests/test_physical_observer_channel.py`.
+
+Representative commands:
+
+```bash
+PYTHONPATH=. python -m pytest -q tests/test_physical_observer_channel.py
+PYTHONPATH=. python experiments/physical_observer_channel_audit.py
+```

@@ -42,6 +42,26 @@ useful history because it records both route-level **INCONCLUSIVE STOP** results
 and does not present fixed-background Weyl response or the rigid-detector
 current as a completed Paper U theorem.
 
+## Physical Observer-Channel Result
+
+The named-model implementation-cost sprint is complete. A binary relational
+patch projector, finite pointer, and finite environment are coupled by one
+piecewise sector-local action. The reduced pointer channel has coherence
+`kappa=cos(theta)^m`, and its halved diamond distance from Harlow's complete
+pointer dephasing channel is exactly `|kappa|/2`. The result includes explicit
+entropy, localization, duration, peak-energy, integrated-action, circuit, and
+declared spherical backreaction ledgers.
+
+The observer-channel theorem is **RETAINED**. The ER=EPR extension is
+**STOPPED on this action**: matched Bell and separable controls yield a standard
+two-setting entanglement-witness gap, but the action defines no geometric or
+algebraic connectivity observable. This is an exact finite infrastructure
+result, not yet a standalone quantum-gravity paper. The binding theorem,
+claim boundary, and next publication upgrade are in
+[`docs/physical_observer_channel_result.md`](docs/physical_observer_channel_result.md),
+with the frozen replay at
+[`experiments/physical_observer_channel_certificate.json`](experiments/physical_observer_channel_certificate.json).
+
 ## Paper U Information-Exposure Control Result
 
 The information-exposure prove-or-kill sprint is complete. For an
@@ -127,8 +147,9 @@ remains candidate matter support, not a Paper U realization or headline claim.
 | Track | Current role | Start here |
 | --- | --- | --- |
 | **Selected Paper A** | Review-ready specialist draft: certified base-point existence and local uniqueness for a massive Dirichlet-confined fixed-background profile, plus a qualitative open analytic parameter branch, radial Friedrichs gap, and sharp intrinsic `p^-3` inertia-transform tail. Exact replays, package audit, and adversarial proof/publication review pass. | [`main.pdf`](paper/validated_skyrmion_profile/main.pdf), [`main.tex`](paper/validated_skyrmion_profile/main.tex), [`publishable_paper_route_decision.md`](docs/publishable_paper_route_decision.md) |
+| Physical observer channel | Exact finite same-action realization of binary relational acquisition and Harlow pointer dephasing, with full declared resource ledger. Retained as infrastructure; ER=EPR stopped because no connectivity observable is derived. | [`physical_observer_channel_result.md`](docs/physical_observer_channel_result.md), [`physical_observer_channel.py`](qgtoy/physical_observer_channel.py), [`physical_observer_channel_certificate.json`](experiments/physical_observer_channel_certificate.json) |
 | Spacelike replication | Bounded three-cell theorem proved; standalone paper stopped by exact reduction to Janssens' CP-map noise inequality. | [`spacelike_replication_leakage_theorem.md`](docs/spacelike_replication_leakage_theorem.md), [`spacelike_replication_qec_reduction_audit.md`](docs/spacelike_replication_qec_reduction_audit.md), [`spacelike_replication_paper_outline.md`](paper/spacelike_replication_paper_outline.md) |
-| Universal observer theorem | Both generic routes are **STOPPED**: information exposure reduces to known controls or capacity-dependent counterexamples, and one-shot finite type certification is either exactly Type-I simulable on a bounded cylinder or requires an asymptotic resource family. The viable residual is a named-model physical implementation-cost theorem. | [`information_exposure_control_result.md`](docs/information_exposure_control_result.md), [`finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md), [`paper_u_information_exposure_goal.md`](docs/paper_u_information_exposure_goal.md) |
+| Universal observer theorem | Both generic routes are **STOPPED**. The named finite implementation residual is now solved as an exact pointer-worldtube channel, but is standard at the dilation level and does not create a generic observer theorem. | [`physical_observer_channel_result.md`](docs/physical_observer_channel_result.md), [`information_exposure_control_result.md`](docs/information_exposure_control_result.md), [`finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md) |
 | Operational reference bounds | Rigorous global-risk and named-matter capacity results, with explicit counterexamples to invalid converses. The exact mean-Casimir risk frontier is Hayashi's established result, not a standalone novelty claim. | [`global_so3_reference_risk.md`](docs/global_so3_reference_risk.md), [`global_so3_risk_priority_audit.md`](docs/global_so3_risk_priority_audit.md), [`localized_orbital_reference.md`](docs/localized_orbital_reference.md) |
 | Optical common mode | Exact finite-size and higher-spin effective-channel lemmas retained for Paper U; current standalone paper stopped by direct de Sitter-spectrum and DFS prior art. | [`optical_common_mode_priority_audit.md`](docs/optical_common_mode_priority_audit.md), [`static_patch_higher_spin_gradient.md`](docs/static_patch_higher_spin_gradient.md) |
 | Gravity and channel bridge | The bounded response sprint ended in **INCONCLUSIVE STOP**. The finite-switch lemma is proved only in the regular Gaussian-bath framework; the named KMS QFT channel, local-matter channel, and gravitational capacity bound remain open. | [`paper_r_viability_decision.md`](docs/paper_r_viability_decision.md), [`static_patch_matter_observer_channel.md`](docs/static_patch_matter_observer_channel.md) |
@@ -139,7 +160,8 @@ remains candidate matter support, not a Paper U realization or headline claim.
 - **Proved on declared domains:** G1 is specified; G2's global
   orientation-risk arrows, the bounded spacelike-replication theorem, the
   regular-bath finite-switch lemma, the rigid-current locality obstruction,
-  and supported-profile subproblems are proved on their stated subdomains.
+  the finite pointer-worldtube observer channel, and supported-profile
+  subproblems are proved on their stated subdomains.
 - **Conditional:** the named QFT detector box; the signed response interval
   still contains zero.
 - **Open, but not selected as the next research route:** the KMS
@@ -148,11 +170,14 @@ remains candidate matter support, not a Paper U realization or headline claim.
   zero-exclusion, self-consistent gravity, and Paper U U8a.
 - **Stopped as standalone novelty:** bounded spacelike replication, the exact
   global mean-Casimir risk optimization, the current optical common-mode
-  formulation, and the generic information-exposure theorem. Their proved
-  lemmas and controls remain available.
+  formulation, the generic information-exposure theorem, and the finite
+  observer dilation as a quantum-gravity headline. Their proved lemmas and
+  controls remain available.
 
 Use the [`information-exposure control result`](docs/information_exposure_control_result.md)
 for the completed sprint and stop decision, the
+[`physical observer-channel result`](docs/physical_observer_channel_result.md)
+for the named-model implementation and ER=EPR gate, the
 [`publishable-paper route decision`](docs/publishable_paper_route_decision.md)
 for the selected manuscript and stopped alternatives, the
 [`claim dependency ledger`](docs/universal_observer_claim_dependency_ledger.md)

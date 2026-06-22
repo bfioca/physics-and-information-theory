@@ -1,9 +1,36 @@
 # Primary-Source Novelty Matrix
 
-Status: information-exposure and finite-certification literature gates
-complete; both generic novelty routes stopped 2026-06-17
+Status: information-exposure, finite-certification, and finite physical-channel
+gates complete; generic novelty and ER=EPR promotion routes stopped
 
-Reviewed through: 2026-06-17
+Reviewed through: 2026-06-22
+
+## Binding 2026-06-22 Physical Observer-Channel Result
+
+The named-model residual from the two generic stops has now been literalized.
+A binary relational projector, pointer qubit, and finite environment are
+coupled by one piecewise sector-local action. The reduced channel has exact
+coherence `cos(theta)^m` and exact halved diamond distance
+`|cos(theta)|^m/2` from complete pointer dephasing. Entropy, duration, peak
+interaction norm, integrated action, gate count, support, redshift, and a
+declared spherical Hamiltonian-constraint envelope are explicit.
+
+This is a useful implementation theorem but not a new generic observer-rule
+theorem. Controlled-unitary finite dilations of dephasing are standard. Harlow,
+Usatyuk, and Zhao's [closed-universe observer
+framework](https://arxiv.org/abs/2501.02359), Engelhardt, Gesteau, and Harlow's
+[*Observer complementarity for black holes and
+holography*](https://arxiv.org/abs/2507.06046), and Harlow's
+[*Observers, alpha-parameters, and the Hartle-Hawking
+state*](https://arxiv.org/abs/2602.03835) supply the gravitational observer
+target; the finite construction does not derive their path-integral rule,
+`S_Ob`, or closed-universe interpretation.
+
+Matched Bell and separable controls produce a standard two-setting
+entanglement-witness gap, but the action derives no area, QES, topology,
+bridge algebra, or reconstruction variable. The binding decision is **EXACT
+FINITE MODEL PASS / NOT STANDALONE NOVELTY / ER=EPR STOP**. See
+`docs/physical_observer_channel_result.md`.
 
 ## Binding 2026-06-17 Finite Type-Certification Stop
 

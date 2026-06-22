@@ -48,6 +48,26 @@ artifacts.
 - **Historical planning snapshots:** `research_execution_plan.md` and
   `paper_worthy_observer_algebra_research_program.md`
 
+### Completed Physical Observer-Channel Sprint
+
+- Frozen prove-or-kill contract:
+  `physical_observer_channel_goal.md`
+- Binding finite theorem and ER=EPR stop:
+  `physical_observer_channel_result.md`
+- Exact channel and resource ledger:
+  `../qgtoy/physical_observer_channel.py`
+- Deterministic replay and frozen certificate:
+  `../experiments/physical_observer_channel_audit.py` and
+  `../experiments/physical_observer_channel_certificate.json`
+- Focused regression suite:
+  `../tests/test_physical_observer_channel.py`
+
+The sprint retains an exact same-action realization of binary relational
+acquisition and Harlow pointer dephasing. It stops the ER=EPR promotion because
+the matched controls expose only an ordinary entanglement witness and the
+action derives no connectivity variable. The finite controlled-unitary
+dilation is infrastructure, not a standalone quantum-gravity novelty claim.
+
 ### Completed Finite Type-Certification Sprint
 
 - Binding result and generic stop decision:
@@ -60,9 +80,10 @@ artifacts.
   `../experiments/finite_type_certification_control_certificate.json`
 
 The exact bounded-cylinder Type-I surrogate and finite embezzlement frontier
-are retained as controls. The viable research residual is a physical
-implementation-cost theorem in one named local model, not a generic statement
-that factor type is operationally invisible.
+are retained as controls. The physical-cost residual now has a first exact
+finite pointer-worldtube realization in `physical_observer_channel_result.md`;
+the stronger open target is a same-action local-QFT and stress-tensor theorem,
+not a generic statement that factor type is operationally invisible.
 
 ### Repository Baseline Package
 
@@ -111,6 +132,8 @@ counterexamples and prior-art reduction. Stop this route; do not activate U8.
 | Artifact | Purpose |
 | --- | --- |
 | `publishable_paper_route_decision.md` | Current route table, selected Paper A claim, submission gates, and explicit claim boundary. |
+| `physical_observer_channel_result.md` | Exact finite pointer-worldtube theorem, resource and spherical-envelope ledgers, matched controls, and binding ER=EPR stop. |
+| `physical_observer_channel_goal.md` | Frozen same-action implementation goal and conditional ER=EPR promotion rule. |
 | `information_exposure_control_result.md` | Binding control theorem, exact connected-orbit Koashi--Imoto result, counterexamples, small-spin SDP, prior-art comparison, and Paper U stop decision. |
 | `paper_u_information_exposure_goal.md` | Archived Paper U prove-or-kill contract, ER=EPR literalization ladder, and claim-language gates. |
 | `finite_type_certification_control_result.md` | Binding exact cylinder control, embezzlement audit, finite-prefix frontier, and generic finite-certification stop. |
