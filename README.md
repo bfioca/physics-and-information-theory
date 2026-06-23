@@ -57,6 +57,25 @@ At the de Sitter temperature `beta=2 pi R`, the same s-wave momentum profile
 is the unique optimizer over all angular and canonical sectors of the
 conformally coupled massless scalar.
 
+## Observer-Rule Connection
+
+The target is the binary instance of the quantum-to-classical pointer channel
+used in the observer rule of
+[Harlow, Usatyuk, and Zhao](https://arxiv.org/abs/2501.02359) and its
+[Hartle--Hawking extension](https://arxiv.org/abs/2602.03835). At fixed
+`y=L/R`, the theorem gives
+
+```text
+E_K R >= log[1/(2 epsilon_obs)] / C_opt(y).
+```
+
+Thus this localized fixed-background realization cannot approach complete
+pointer dephasing with bounded post-switch field energy. This is a
+field-sector analogue of a finite-observer-resource obstruction, not a
+derivation of the gravitational observer rule: the paper does not identify
+`epsilon_obs` with a gravitational encoding error or `exp(-S_Ob)`, price the
+observer's total mass or entropy, or include gravitational response.
+
 ## Claim Boundary
 
 - Sharpness is for **final Cauchy support**. Source radius and duration provide
@@ -102,13 +121,6 @@ replay commands.
 the [response form](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md)
 to receive at least one external `PASS` or `CORRECT`. A row marked
 `NOT REVIEWED` by every reviewer remains open.
-
-## Repository History
-
-This repository previously hosted several observer-algebra, Skyrmion, and
-ER=EPR-motivated research programs. They were valuable prove-or-kill work, but
-they are not part of the present paper and no longer live in the current tree.
-Their commits, tags, and artifacts remain available through Git history.
 
 The code is released under the [MIT License](LICENSE). Citation metadata are
 in [CITATION.cff](CITATION.cff).

@@ -151,6 +151,11 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     assert "Earlier Paper A" not in root_readme
     assert "Current Branch Result" not in root_readme
     assert "Historical Repository Context" not in root_readme
+    assert "Observer-Rule Connection" in root_readme
+    assert "field-sector analogue" in root_readme
+    assert "2501.02359" in root_readme
+    assert "2602.03835" in root_readme
+    assert "ER=EPR-motivated" not in root_readme
 
     launch_text = (PAPER / "EXTERNAL_REVIEW_LAUNCH.md").read_text(
         encoding="ascii"
