@@ -135,6 +135,8 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     )
     assert "does not substitute" in launch_text
     assert "Harlow Framing Email Draft" in launch_text
+    assert "build_review_packets.py" in launch_text
+    assert "byte-for-byte deterministic" in launch_text
     assert "Silence or a polite general reaction does not close a gate" in launch_text
 
     response_text = (PAPER / "REVIEW_RESPONSE_FORM.md").read_text(

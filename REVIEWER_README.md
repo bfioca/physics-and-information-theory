@@ -87,6 +87,7 @@ PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
 PYTHONPATH=. python -m pytest -q \
   tests/test_local_scalar_observer_cost.py \
   tests/test_local_scalar_observer_manuscript.py \
+  tests/test_local_scalar_observer_review_packets.py \
   tests/test_local_scalar_observer_spectrum.py
 python paper/local_scalar_observer_cost/audit_package.py
 ```
@@ -99,5 +100,6 @@ This is a request for critical review, not endorsement or approval.
 
 The author-facing [external review launch kit](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md)
 contains minimal attachment sets and separate detector/QFT, operator-theory,
-and Harlow framing drafts. The [reviewer shortlist](paper/local_scalar_observer_cost/REVIEWER_SHORTLIST.md)
+and Harlow framing drafts. Its deterministic packet builder freezes the exact
+reviewed commit and attachment hashes. The [reviewer shortlist](paper/local_scalar_observer_cost/REVIEWER_SHORTLIST.md)
 records ranked public contact routes.

@@ -20,6 +20,25 @@ Use `REVIEWER_SHORTLIST.md` for the ranked contact routes. The exact
 operator reductions and internal comparator outcomes are recorded in
 `PRIORITY_AUDIT.md`.
 
+## Build Frozen Review Bundles
+
+After committing the exact manuscript to be reviewed, run from the repository
+root:
+
+```bash
+python paper/local_scalar_observer_cost/build_review_packets.py
+```
+
+The builder requires a clean tracked worktree and writes two ignored archives
+under `dist/local_scalar_observer_review/`. Each archive contains only the
+manuscript, the matching specialist brief, the response form, a short reviewer
+README, and a machine-readable manifest. The manifest pins the full commit,
+commit time, source URL, and SHA-256 digest of every attachment. Rebuilding at
+the same commit is byte-for-byte deterministic.
+
+Send the matching archive or its listed contents. Do not rename the archive in
+a way that removes the short revision identifier.
+
 ## Minimal Attachment Sets
 
 **Detector/QFT reviewer**

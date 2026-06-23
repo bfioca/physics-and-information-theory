@@ -11,8 +11,9 @@ two-domain novelty review remain required before submission.
 2. Use `REFEREE_GUIDE.md` for the common claim boundary.
 3. Use `QFT_NOVELTY_REVIEW.md` or `OPERATOR_NOVELTY_REVIEW.md` for the
    appropriate specialist questions.
-4. Send the matching minimal packet from `EXTERNAL_REVIEW_LAUNCH.md` and ask
-   for a written disposition in `REVIEW_RESPONSE_FORM.md`.
+4. Build the revision-pinned minimal packets with `build_review_packets.py`,
+   then use `EXTERNAL_REVIEW_LAUNCH.md` to request a written disposition in
+   `REVIEW_RESPONSE_FORM.md`.
 5. Use `REVIEWER_SHORTLIST.md` for ranked contact routes and
    `PRIORITY_AUDIT.md` for the equation-level literature boundary.
 6. Run `audit_package.py` for a quick integrity check.
@@ -35,6 +36,7 @@ sharp support asymptotics.
 | `REVIEW_RESPONSE_FORM.md` | Structured, auditable specialist disposition |
 | `REVIEWER_SHORTLIST.md` | Ranked public contact routes for both domains |
 | `PRIORITY_AUDIT.md` | Exact reductions and internal comparator outcomes |
+| `build_review_packets.py` | Deterministic, commit-pinned specialist ZIP builder |
 | `data/observer_cost_spectrum.json` | Reproducible numerical illustration |
 | `artifact_manifest.json` | Frozen hashes and build metadata |
 | `audit_package.py` | Package-integrity audit |
@@ -49,6 +51,7 @@ PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
 PYTHONPATH=. python -m pytest -q \
   tests/test_local_scalar_observer_cost.py \
   tests/test_local_scalar_observer_manuscript.py \
+  tests/test_local_scalar_observer_review_packets.py \
   tests/test_local_scalar_observer_spectrum.py
 python paper/local_scalar_observer_cost/audit_package.py
 ```

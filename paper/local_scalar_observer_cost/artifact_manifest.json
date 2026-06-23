@@ -1,6 +1,6 @@
 {
   "artifact": "final_support_thermal_dephasing_manuscript",
-  "status": "external_specialist_review_launch_ready_priority_audited",
+  "status": "external_specialist_review_bundles_ready_priority_audited",
   "build_date_utc": "2026-06-22",
   "build_engine": "Tectonic 0.16.9",
   "page_count": 18,
@@ -29,7 +29,7 @@
     "visual_inspection_status": "Title, introduction, theorem, figure, priority comparison, discussion, appendix, and both reference pages inspected at 1.8x rasterization; affected pages rechecked after the exact odd-sector and hyperbolic-kernel literature update"
   },
   "files": {
-    "README.md": "241aebaa6cd92e347a5173c82bd31fb532167ad58c9ce3949350602198804f44",
+    "README.md": "cdbcef818d15ae74f68f0537c4c9f50e4df74aa22b5fb7342d26c488c967305a",
     "main.pdf": "4fd01d462b49720e89f0ff2d44ccd918d82779f323ccb818f7cf808f116f77b7",
     "main.log": "0bd88290438bcc6726a525403eb20e2979e303aeb07b0734c28fb1f58df5bce8",
     "main.tex": "d25dc712a34a3143d6139ec59bc81c51d7e4c465cc22b6de19c54df2672c7428",
@@ -45,7 +45,8 @@
     "REFEREE_GUIDE.md": "202df62d8ccf75a16699e18151771401328c96447c1bbd0a44a9129682f3dbcc",
     "QFT_NOVELTY_REVIEW.md": "e91d93ca01e81fe808218c8c360199a72576892a418e0ea1abc9d00b0b47d2e3",
     "OPERATOR_NOVELTY_REVIEW.md": "0dce0ff53be7acf994cf5bf77144b4ab44fada91948fd2cc3065d011bff75827",
-    "EXTERNAL_REVIEW_LAUNCH.md": "7c7c7f3dba9551d1356c5e85210d7863e85c383ad1c5b91ce84c177509da4eaa",
+    "EXTERNAL_REVIEW_LAUNCH.md": "a3fc9cda315eae041fc18e0667d4fe9482e7f585188add1eee91cca092547695",
+    "build_review_packets.py": "3376972b970c75fe469e062f7160496efb583b84eca8c6b930afba103d005d7c",
     "PRIORITY_AUDIT.md": "2d28375e538a85efc5df74aa06e8b1b8672ffae0b85232965aaf65b14d331bc7",
     "REVIEWER_SHORTLIST.md": "c7cb63c5fbadc71bd2ed24a14eac25080c75ccd0322e09b1d2a256e964743746",
     "REVIEW_RESPONSE_FORM.md": "eaaa5c27d297814922c4d5693573f9e53f6f8ec5677e04a1fe226a58cce25e7f",
