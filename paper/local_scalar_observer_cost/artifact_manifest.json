@@ -12,6 +12,7 @@
     "visual_pages_inspected": [
       1,
       2,
+      4,
       5,
       6,
       7,
@@ -28,26 +29,26 @@
     "visual_artifacts_inspected": [
       "Figure 1 standalone SVG preview at 1440x660"
     ],
-    "visual_inspection_status": "Title, introduction, theorem, strengthened positive-resolvent remainder proof, figure, priority comparison, discussion, appendix, and both reference pages inspected at 1.8x rasterization; affected theorem pages rechecked after the beta/3 remainder update"
+    "visual_inspection_status": "Title, introduction, channel comparison, theorem, strengthened positive-resolvent remainder proof, figure, priority comparison, discussion, appendix, and both reference pages inspected; pages 4, 14, 15, and 18 rechecked at 2x rasterization after adding the Harlow 2026 comparison"
   },
   "files": {
     "README.md": "8ac067f9a7708792921495f3ebb229fc4ad52d548b21fdaaa12e33a53f5a3384",
-    "main.pdf": "252e637f1c6fea25289c425555a555e22b7d587604dc9f92031aa86aef724662",
-    "main.log": "08c284b7f32d97dfd71f7dfdc6718f6aebbd2416714ed7eaf356e13b517b0533",
+    "main.pdf": "8db8044361d4fa8c423d92dd43c636876f73384c01ee03ef4e6144114806449a",
+    "main.log": "6e5f14f3a0d000e9c53b64c54e1198eea314e68c7569eb142f9f5cbbf2d81900",
     "main.tex": "d25dc712a34a3143d6139ec59bc81c51d7e4c465cc22b6de19c54df2672c7428",
-    "references.bib": "6fa15996fa5b8263a332a7bcb4e3d99901d9e4697b6c1ea6d064a39f0b2ad65f",
+    "references.bib": "296d733b5dfc55ae6f6bfe9e1a8eadaa25953fe53942c7bfe281e57b6edbccd9",
     "sections/achievability.tex": "3154ecd86f8a546f0755f4af557fee7652bf0fb0bffbe34a43c2508cdc096e71",
     "sections/comparison.tex": "70028ec48b70b1e1d4347df0910c73795e3464cc6d592bbc042fcc44b11ed59f",
-    "sections/discussion.tex": "9065a1b5c788c6d0c9cffe3fb7dbfbe29fc17ae096d7ae159ed79724f13fd993",
+    "sections/discussion.tex": "0de0bc20be493cff525613303a9fb79043172e3c93b297b02df705e608967543",
     "sections/gravity.tex": "34480915156c9d0fe7aedea4a411a5edc39a90de836ab9a864f24cba0b3d0ac8",
     "sections/introduction.tex": "d2a76b6ce4d86255c93beb652259332df7a423ed31fb60e78918effdccf56606",
     "sections/localization_theorem.tex": "c1a957540178f44b0571472445ed963384f524bec3e6734a88c00f2b49d0ee86",
-    "sections/model_and_channel.tex": "d6d228a37575ba8c27d547d8834a704af893790afb65c6e0ca538b0a94760fc1",
+    "sections/model_and_channel.tex": "99ca1a17b54f94a2763e6e08db94ba11edece596a704574b3679b453441ef47f",
     "audit_package.py": "515f885ad590dbb1db97396d19ad3aa8b9f723c44e494b05ee93eafbf605b29e",
     "REFEREE_GUIDE.md": "a10aadbc364a90834d65aafababdd1d24384f3f9b3d95235b1cd68cc3fe73997",
     "QFT_NOVELTY_REVIEW.md": "95f2863ec914c352a1219b4862f8b36bd2f6e2127312299d5789f51e97c5a181",
     "OPERATOR_NOVELTY_REVIEW.md": "33b098fa3d20ab66df95cbe5007a4e571048990273ccf3ca4090455925a95ddd",
-    "EXTERNAL_REVIEW_LAUNCH.md": "b37bca772af0dbc1750c0ab6f2b51077bce3483f1250a8798d9cf61d4692ab74",
+    "EXTERNAL_REVIEW_LAUNCH.md": "04fc57d70ddcdc20ad5f44aad59cc641d802c1c211f3b35bb0f29e40674a2ab1",
     "build_review_packets.py": "8b8c826ab5b0ab44f60c6bd8b0e1bca9962d37cd4ae957e8740f7027b8e3ba41",
     "PRIORITY_AUDIT.md": "c9ffe0f392b4113470fc666c750ac825dc7d1953db2abb791ac1964fc04d50af",
     "REVIEWER_SHORTLIST.md": "c7cb63c5fbadc71bd2ed24a14eac25080c75ccd0322e09b1d2a256e964743746",

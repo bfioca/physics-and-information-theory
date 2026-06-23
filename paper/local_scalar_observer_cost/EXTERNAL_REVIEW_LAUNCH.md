@@ -114,22 +114,33 @@ Best,
 
 ## Harlow Framing Email Draft
 
-**Subject:** Request for candid feedback on a narrow de Sitter detector bound
+**Subject:** A localized binary model of the observer decoherence channel
 
 Dear Dr. Harlow,
 
-I am developing a short paper about a constrained observer-resource question
-in a de Sitter static patch. The rigorous result is narrow: for an established
-exact thermal dephasing channel, it finds the sharp dephasing attainable at
-fixed post-switch field energy and fixed final Cauchy support, including the
-unique optimizer across all angular and canonical sectors. It does not claim a
-universal observer theorem, total measurement cost, or an ER=EPR result.
+Your observer framework uses a quantum-to-classical channel in the observer's
+pointer basis, with accuracy controlled by observer entropy. In your recent
+Hartle--Hawking paper, you note that the formal infinite-entropy limit likely
+requires an infinitely heavy observer. I have derived a much narrower
+fixed-background result that may bear on the physical-resource side of that
+observation.
 
-I would value your candid view on whether this is a useful building block for
-gravitational observer questions and whether the framing isolates the right
-physics. I am separately seeking detector/QFT and operator-theory priority
-reviews, so this request is for significance and direction rather than
-endorsement.
+For a binary pointer coupled to a conformal scalar in a four-dimensional de
+Sitter static patch, the paper finds the exact maximum dephasing at fixed
+post-switch scalar-field energy and fixed final Cauchy support, including the
+unique optimizer across all angular and canonical sectors. At fixed support
+relative to the de Sitter radius, the field energy must grow as
+`log(1/channel error)` as the binary channel approaches complete dephasing.
+
+This is not a derivation of your observer rule: the pointer and source are
+prescribed, the resource is field energy only, and observer entropy and
+gravitational backreaction are not included. Would you regard it as a useful
+microphysical building block for the observer program? If so, which missing
+step seems most important: a multi-level entropy scaling, an autonomous probe,
+or coupled gravitational backreaction?
+
+I am separately seeking detector/QFT and operator-theory priority reviews, so
+this request is for significance and direction rather than endorsement.
 
 I have attached the 18-page manuscript and a one-page referee guide.
 

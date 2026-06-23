@@ -87,7 +87,7 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
     assert text.index("\\appendix") < text.index(
         "\\section{Final-slice Einstein--scalar application}"
     )
-    assert "HarlowUsatyukZhao2025" in citation_keys
+    assert {"HarlowUsatyukZhao2025", "Harlow2026Observers"} <= citation_keys
     assert {
         "AnoopJohnson2025",
         "AsplingLawler2023",
@@ -102,7 +102,8 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
     assert "\\norm{r_\\tau}\\leq(\\pi\\tau)^{-1}" in text
     assert "\\leq\\frac\\beta3" in text
     assert "\\leq\\frac{2\\pi}{3}" in text
-    assert "not their closed-universe encoding error" in text
+    assert re.search(r"not their\s+closed-universe\s+encoding error", text)
+    assert "field-sector analogue, not a derivation" in text
     assert "strictly positive quadratic form" in text
     assert "observer_cost_spectrum.pdf" in text
     assert "numerical evidence rather than an additional rigorous lower bound" in text

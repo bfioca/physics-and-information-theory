@@ -1024,7 +1024,7 @@ num;+lnum;mapping=tex-text;" at 12.0pt
  -> TeXGyreTermesX-Bold.otf
  [3]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 140.
+(Font)              scaled to size 10.95pt on input line 143.
 Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;
 +tnum;+lnum;mapping=tex-text;" at 10.95pt
  -> TeXGyreTermesX-Italic.otf
@@ -1060,8 +1060,15 @@ LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/it' will be
 Requested font "[TeXGyreTermesX-Italic.otf]/OT:script=latn;language=dflt;-ss05;
 +tnum;+lnum;mapping=tex-text;" at 10.0pt
  -> TeXGyreTermesX-Italic.otf
- [17]) [18] (main.aux)
+ [17]
+Requested font "ntx-Bold-tlf-ot1" at 10.0pt
+ -> ntx-Bold-tlf-ot1
+Requested font "ntx-Bold-tlf-ot1" at 7.3pt
+ -> ntx-Bold-tlf-ot1
+Requested font "ntx-Bold-tlf-ot1" at 5.5pt
+ -> ntx-Bold-tlf-ot1
+) [18] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 238AAC4099F42047D6E361C0CD7BB734;4175.
  )
-Output written on main.xdv (18 pages, 427720 bytes).
+Output written on main.xdv (18 pages, 437728 bytes).
