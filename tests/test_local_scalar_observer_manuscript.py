@@ -15,6 +15,8 @@ REVIEW_DOCUMENTS = (
     PAPER / "OPERATOR_NOVELTY_REVIEW.md",
     PAPER / "EXTERNAL_REVIEW_LAUNCH.md",
     PAPER / "REVIEW_RESPONSE_FORM.md",
+    PAPER / "PRIORITY_AUDIT.md",
+    PAPER / "REVIEWER_SHORTLIST.md",
     ROOT / "docs" / "local_scalar_observer_proof_audit.md",
     ROOT / "docs" / "local_scalar_observer_strengthening_goal.md",
 )
@@ -75,11 +77,16 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
     )
     assert "HarlowUsatyukZhao2025" in citation_keys
     assert {
+        "AnoopJohnson2025",
+        "AsplingLawler2023",
         "JohnsonVerma2026",
         "Kozlowski2008",
+        "Polosin2022",
         "Widom2006",
     } <= citation_keys
     assert "Wiener--Hopf term minus" in text
+    assert "finite-interval logarithmic convolution" in text
+    assert "geodesic compression of the hyperbolic logarithmic Green" in text
     assert "not their closed-universe encoding error" in text
     assert "strictly positive quadratic form" in text
     assert "observer_cost_spectrum.pdf" in text
@@ -136,3 +143,15 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     assert "KNOWN COROLLARY" in response_text
     assert "TECHNICALLY NEW BUT INSUFFICIENT" in response_text
     assert "Neither answer grants permission to imply endorsement" in response_text
+
+    priority_text = (PAPER / "PRIORITY_AUDIT.md").read_text(encoding="ascii")
+    assert "The vacuum parent problem is established prior art" in priority_text
+    assert "Finite temperature: odd log-sinh convolution sector" in priority_text
+    assert "STRENGTHEN, external gate open" in priority_text
+
+    shortlist_text = (PAPER / "REVIEWER_SHORTLIST.md").read_text(
+        encoding="ascii"
+    )
+    assert "First route: Andre G. S. Landulfo" in shortlist_text
+    assert "First route: A. A. Polosin" in shortlist_text
+    assert "does not replace either domain review" in shortlist_text

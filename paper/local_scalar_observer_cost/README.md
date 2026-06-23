@@ -13,7 +13,9 @@ two-domain novelty review remain required before submission.
    appropriate specialist questions.
 4. Send the matching minimal packet from `EXTERNAL_REVIEW_LAUNCH.md` and ask
    for a written disposition in `REVIEW_RESPONSE_FORM.md`.
-5. Run `audit_package.py` for a quick integrity check.
+5. Use `REVIEWER_SHORTLIST.md` for ranked contact routes and
+   `PRIORITY_AUDIT.md` for the equation-level literature boundary.
+6. Run `audit_package.py` for a quick integrity check.
 
 The exact gapless-detector channel is prior art. The candidate contribution is
 the exact reflected KMS operator selected by final support, its
@@ -31,6 +33,8 @@ sharp support asymptotics.
 | `OPERATOR_NOVELTY_REVIEW.md` | Operator-theory specialist questions |
 | `EXTERNAL_REVIEW_LAUNCH.md` | Send-ready attachment sets and outreach drafts |
 | `REVIEW_RESPONSE_FORM.md` | Structured, auditable specialist disposition |
+| `REVIEWER_SHORTLIST.md` | Ranked public contact routes for both domains |
+| `PRIORITY_AUDIT.md` | Exact reductions and internal comparator outcomes |
 | `data/observer_cost_spectrum.json` | Reproducible numerical illustration |
 | `artifact_manifest.json` | Frozen hashes and build metadata |
 | `audit_package.py` | Package-integrity audit |

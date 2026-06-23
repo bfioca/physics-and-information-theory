@@ -34,7 +34,7 @@ formula for the upper bound, and the uniform remainders
 0 <= C_beta(L)-16L^2/(beta pi^2) <= beta/2.
 ```
 
-## Three Equivalent Representations To Test
+## Equivalent Representations To Test
 
 1. **Compressed half-line multiplier.** `K_beta,L` is the compression of the
    Dirichlet half-line spectral multiplier
@@ -48,6 +48,21 @@ formula for the upper bound, and the uniform remainders
    Dirichlet image difference of the thermal-cylinder logarithmic kernel. The
    zero-temperature limit is
    `pi^-1 log((u+v)/|u-v|)`.
+4. **Odd finite-interval convolution sector.** If `p_tilde` is the odd
+   extension of `p` to `(-1,1)`, then `K_tau p` is the positive-half
+   restriction of convolution by
+   `-pi^-1 log sinh(tau |u-v|)` against `p_tilde`. At `tau=0`, constants drop
+   out of the odd sector and this becomes convolution by
+   `pi^-1 log(1/|u-v|)`.
+5. **Weighted hyperbolic geodesic kernel.** With
+   `r=exp(-2 tau u)` and `s=exp(-2 tau v)`,
+
+   ```text
+   k_tau(u,v)=pi^-1 log((1-rs)/|r-s|).
+   ```
+
+   This is the inverse pseudo-hyperbolic-distance kernel on a disk diameter,
+   acting with measure `dr/(2 tau r)` on `(exp(-2 tau),1)`.
 
 Please test all three descriptions. A negative keyword search in only one
 operator vocabulary is not a decisive novelty assessment.
@@ -58,10 +73,17 @@ These are comparators, not an exhaustive priority claim.
 
 | Comparator | What appears close | Decisive reduction question |
 | --- | --- | --- |
+| [Polosin, logarithmic convolution on a finite interval (2022)](https://doi.org/10.1134/S0012266122090099) ([open Russian text](https://sciencejournals.ru/view-article/?a=DeqRus_2209009Polosin&j=deqrus&n=9&v=58&y=2022)) | Exact zero-temperature parent operator; its odd sector is `k_0` | Polosin proves high-index even/odd spectral asymptotics. Does the same finite-interval convolution theory already yield the thermal principal eigenvalue or either uniform support remainder? |
+| [Anoop and Johnson, largest logarithmic-potential eigenvalues (2025)](https://arxiv.org/abs/2501.13569) | Principal eigenvalues of Euclidean logarithmic potentials | Can their domain and measure be reduced to this odd one-dimensional weighted problem? |
+| [Johnson and Verma, hyperbolic logarithmic-potential eigenvalues (2026)](https://arxiv.org/abs/2601.20431) | The same pseudo-hyperbolic-distance kernel on two-dimensional domains | Does their hyperbolic-area theory extend immediately to the weighted geodesic measure `dr/(2 tau r)` and its varying interval? |
 | [Widom, truncated Wiener-Hopf inverses and determinants (2006)](https://arxiv.org/abs/math/0605076) | Finite-interval Wiener-Hopf analysis | Does its framework determine this singular reflected operator's exact top norm or either uniform remainder? |
 | [Kozlowski, Fisher-Hartwig truncated Wiener-Hopf determinants (2008)](https://arxiv.org/abs/0805.3902) | Singular symbols and interval truncation | Can its determinant asymptotics be converted directly into the claimed top-eigenvalue theorem at all `L/beta`? |
 | [Ruzhansky and Suragan, first and second Riesz eigenvalues (2016)](https://arxiv.org/abs/1603.07781) | Positive potential operators and principal eigenvalues | Is the reflected half-line logarithmic kernel a covered geometry or an immediate limiting case? |
-| [Johnson and Verma, hyperbolic logarithmic-potential eigenvalues (2026)](https://arxiv.org/abs/2601.20431) | Largest eigenvalues of a logarithmic potential in hyperbolic space | Is there an explicit unitary or conformal reduction to their operator, including the thermal parameter and interval support? |
+
+The internal audit therefore does **not** claim that the vacuum logarithmic
+operator is new. The unresolved priority question is whether the thermal
+principal-eigenvalue/support theorem and its physical all-sector use are a
+routine extension of this established finite-interval spectral theory.
 
 ## Decisive Questions
 

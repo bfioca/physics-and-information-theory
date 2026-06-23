@@ -41,6 +41,7 @@ the [`manuscript PDF`](paper/local_scalar_observer_cost/main.pdf), the
 [`referee guide`](paper/local_scalar_observer_cost/REFEREE_GUIDE.md), the
 [`external review launch kit`](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md),
 the [`specialist response form`](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md),
+the [`equation-level priority audit`](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md),
 and the
 [`frozen replay`](experiments/local_scalar_observer_cost_certificate.json).
 
@@ -444,6 +445,8 @@ v0.1-static-patch-diagnostics
 | [`paper/local_scalar_observer_cost/main.pdf`](paper/local_scalar_observer_cost/main.pdf) | Self-contained narrow-paper draft for specialist novelty and proof review. |
 | [`paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md`](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md) | Minimal attachment sets plus detector/QFT, operator-theory, and Harlow framing outreach drafts. |
 | [`paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md`](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md) | Structured record for the two binding external novelty dispositions. |
+| [`paper/local_scalar_observer_cost/PRIORITY_AUDIT.md`](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md) | Exact vacuum, thermal-convolution, and hyperbolic-kernel reductions with comparator outcomes. |
+| [`paper/local_scalar_observer_cost/REVIEWER_SHORTLIST.md`](paper/local_scalar_observer_cost/REVIEWER_SHORTLIST.md) | Ranked public contact routes for the two technical reviews. |
 | [`docs/finite_type_certification_control_result.md`](docs/finite_type_certification_control_result.md) | Completed finite-certification controls, embezzlement frontier, primary-source audit, and binding generic stop decision. |
 | [`docs/finite_type_certification_goal.md`](docs/finite_type_certification_goal.md) | Archived two-paragraph prove-or-kill goal and retained physical-cost residual. |
 | [`docs/information_exposure_control_result.md`](docs/information_exposure_control_result.md) | Completed Paper U control theorem, counterexamples, small-spin frontier, prior-art comparison, and binding stop decision. |

@@ -1,9 +1,9 @@
 {
   "artifact": "final_support_thermal_dephasing_manuscript",
-  "status": "external_specialist_review_launch_ready",
+  "status": "external_specialist_review_launch_ready_priority_audited",
   "build_date_utc": "2026-06-22",
   "build_engine": "Tectonic 0.16.9",
-  "page_count": 17,
+  "page_count": 18,
   "layout_checks": {
     "overfull_boxes": 0,
     "underfull_boxes": 0,
@@ -20,31 +20,34 @@
       14,
       15,
       16,
-      17
+      17,
+      18
     ],
     "visual_artifacts_inspected": [
       "Figure 1 standalone SVG preview at 1440x660"
     ],
-    "visual_inspection_status": "Title, introduction, theorem, figure, comparison, discussion, appendix, and reference pages inspected at 1.8x rasterization; affected pages rechecked after the literature update"
+    "visual_inspection_status": "Title, introduction, theorem, figure, priority comparison, discussion, appendix, and both reference pages inspected at 1.8x rasterization; affected pages rechecked after the exact odd-sector and hyperbolic-kernel literature update"
   },
   "files": {
-    "README.md": "f8eac6488055b6a5ba9d8c556d9bc0d865d6a450d7404beae49be58af62ca429",
-    "main.pdf": "5b0bfc8ed092db2f00f0ad21ea76783fbc7853c3852c8e8005c0c85016025d57",
-    "main.log": "66840ce12c436ddae53c0694b0ba49094e2b4186a5bfc6d30c1bf4d0c9822cc1",
+    "README.md": "241aebaa6cd92e347a5173c82bd31fb532167ad58c9ce3949350602198804f44",
+    "main.pdf": "4fd01d462b49720e89f0ff2d44ccd918d82779f323ccb818f7cf808f116f77b7",
+    "main.log": "0bd88290438bcc6726a525403eb20e2979e303aeb07b0734c28fb1f58df5bce8",
     "main.tex": "d25dc712a34a3143d6139ec59bc81c51d7e4c465cc22b6de19c54df2672c7428",
-    "references.bib": "1c2eb3567822b5b2d85a55c7e99ef2e334dc51d53b511000b12254b3797ea97c",
+    "references.bib": "6fa15996fa5b8263a332a7bcb4e3d99901d9e4697b6c1ea6d064a39f0b2ad65f",
     "sections/achievability.tex": "3154ecd86f8a546f0755f4af557fee7652bf0fb0bffbe34a43c2508cdc096e71",
-    "sections/comparison.tex": "549aba1e92c360b263e05e3195f77d6660f1789d8761c4657c4ff0a9cd029d22",
+    "sections/comparison.tex": "70028ec48b70b1e1d4347df0910c73795e3464cc6d592bbc042fcc44b11ed59f",
     "sections/discussion.tex": "9065a1b5c788c6d0c9cffe3fb7dbfbe29fc17ae096d7ae159ed79724f13fd993",
     "sections/gravity.tex": "34480915156c9d0fe7aedea4a411a5edc39a90de836ab9a864f24cba0b3d0ac8",
-    "sections/introduction.tex": "17354d1a9e09f573acf82f97c6cd3c053c75a0f357b1b85b11870e5f7584b0dd",
+    "sections/introduction.tex": "d2a76b6ce4d86255c93beb652259332df7a423ed31fb60e78918effdccf56606",
     "sections/localization_theorem.tex": "6e7ec00cf794097fea641758ab24ee4be299a2bf00a407aabd7500895c91d49f",
     "sections/model_and_channel.tex": "d6d228a37575ba8c27d547d8834a704af893790afb65c6e0ca538b0a94760fc1",
     "audit_package.py": "9dd50077059c421e159c9744e8b33862ffca66b38984ec1b2952b7830be4b4e0",
     "REFEREE_GUIDE.md": "202df62d8ccf75a16699e18151771401328c96447c1bbd0a44a9129682f3dbcc",
-    "QFT_NOVELTY_REVIEW.md": "112d6a41a82fcda7bab08b0f3ad6e14658d83b2b7ddd84a902955b2cdcc6d83d",
-    "OPERATOR_NOVELTY_REVIEW.md": "fa72bf8676e8251aea124a29196f9701d6a68648a52e7cfb697a1f86a13f6a1c",
-    "EXTERNAL_REVIEW_LAUNCH.md": "247249e6ae02e9edc1feea986c9498b479c2f300d1b0fa61219b3d12cea83fba",
+    "QFT_NOVELTY_REVIEW.md": "e91d93ca01e81fe808218c8c360199a72576892a418e0ea1abc9d00b0b47d2e3",
+    "OPERATOR_NOVELTY_REVIEW.md": "0dce0ff53be7acf994cf5bf77144b4ab44fada91948fd2cc3065d011bff75827",
+    "EXTERNAL_REVIEW_LAUNCH.md": "7c7c7f3dba9551d1356c5e85210d7863e85c383ad1c5b91ce84c177509da4eaa",
+    "PRIORITY_AUDIT.md": "2d28375e538a85efc5df74aa06e8b1b8672ffae0b85232965aaf65b14d331bc7",
+    "REVIEWER_SHORTLIST.md": "c7cb63c5fbadc71bd2ed24a14eac25080c75ccd0322e09b1d2a256e964743746",
     "REVIEW_RESPONSE_FORM.md": "eaaa5c27d297814922c4d5693573f9e53f6f8ec5677e04a1fe226a58cce25e7f",
     "CITATION.cff": "974bab7c380bd74c29d31362a04018f77c6a48e5eb302a3871f3afb67ad029bd",
     "data/observer_cost_spectrum.json": "858da941e3e1c1759718da5ea58e785778bf460f47c8863e58717928cf3b79ab",

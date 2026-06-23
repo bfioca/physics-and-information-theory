@@ -16,6 +16,9 @@ technical novelty assessment unless it explicitly covers that domain.
 Use the public [review branch](https://github.com/bfioca/physics-and-information-theory/tree/codex/paper-u-information-exposure)
 or attach the files listed below. Record each response in
 `REVIEW_RESPONSE_FORM.md` and preserve the manuscript commit reviewed.
+Use `REVIEWER_SHORTLIST.md` for the ranked contact routes. The exact
+operator reductions and internal comparator outcomes are recorded in
+`PRIORITY_AUDIT.md`.
 
 ## Minimal Attachment Sets
 
@@ -36,7 +39,8 @@ REVIEW_RESPONSE_FORM.md
 ```
 
 Offer `REFEREE_GUIDE.md`, the LaTeX source, and the internal proof audit for a
-deeper pass. Do not lead with the full repository history.
+deeper pass. Offer `PRIORITY_AUDIT.md` when the reviewer wants the complete
+comparison trail. Do not lead with the full repository history.
 
 ## Detector/QFT Email Draft
 
@@ -59,7 +63,7 @@ horizon-decoherence comparisons and asks for an equation-level reduction if
 the result is known. The model expressly excludes total apparatus cost and
 coupled gravitational dynamics.
 
-The manuscript is 17 pages. Even a concise written disposition using the
+The manuscript is 18 pages. Even a concise written disposition using the
 response form would be extremely helpful.
 
 Best,
@@ -107,7 +111,7 @@ physics. I am separately seeking detector/QFT and operator-theory priority
 reviews, so this request is for significance and direction rather than
 endorsement.
 
-I have attached the 17-page manuscript and a one-page referee guide.
+I have attached the 18-page manuscript and a one-page referee guide.
 
 Best,
 [Name]

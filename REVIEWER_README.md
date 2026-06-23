@@ -23,6 +23,9 @@ a de Sitter static patch.
 4. Consult the [internal proof audit](docs/local_scalar_observer_proof_audit.md)
    for the five vulnerable proof steps.
 5. Record the result in the [specialist response form](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md).
+6. If needed, inspect the [equation-level priority audit](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md),
+   which records the exact vacuum odd-convolution and thermal hyperbolic-kernel
+   reductions found before outreach.
 
 Older papers, stopped programs, and planning notes elsewhere in the repository
 are not part of this review packet.
@@ -96,4 +99,5 @@ This is a request for critical review, not endorsement or approval.
 
 The author-facing [external review launch kit](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md)
 contains minimal attachment sets and separate detector/QFT, operator-theory,
-and Harlow framing drafts.
+and Harlow framing drafts. The [reviewer shortlist](paper/local_scalar_observer_cost/REVIEWER_SHORTLIST.md)
+records ranked public contact routes.
