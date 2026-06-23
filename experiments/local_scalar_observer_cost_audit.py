@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replay the final-support thermal dephasing theorem candidate."""
+"""Replay the localization theorem underlying the observer-entropy paper."""
 
 from __future__ import annotations
 

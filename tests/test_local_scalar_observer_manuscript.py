@@ -19,11 +19,13 @@ REVIEW_DOCUMENTS = (
     PAPER / "REFEREE_GUIDE.md",
     PAPER / "QFT_NOVELTY_REVIEW.md",
     PAPER / "OPERATOR_NOVELTY_REVIEW.md",
+    PAPER / "OBSERVER_CODE_REVIEW.md",
     PAPER / "EXTERNAL_REVIEW_LAUNCH.md",
     PAPER / "REVIEW_RESPONSE_FORM.md",
     PAPER / "PRIORITY_AUDIT.md",
     PAPER / "REVIEWER_SHORTLIST.md",
     ROOT / "docs" / "local_scalar_observer_cost.md",
+    ROOT / "docs" / "finite_pointer_observer_entropy.md",
     ROOT / "docs" / "local_scalar_observer_proof_audit.md",
 )
 ALLOWED_CONTROL_BYTES = {9, 10, 13}
@@ -78,11 +80,16 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
 
     assert "TODO" not in text
     assert "ER=EPR" not in text
-    assert "does not include the stress" in text
+    assert "not include the stress of a clock" in text
     assert "F(y)" in text
-    assert "Sharp Final-Support Field--Energy Bounds" in text
+    assert "Energy and Backreaction Bounds" in text
+    assert "Finite-Pointer Observer Entropy" in text
     assert "\\mathcal C_\\beta(L)=2L\\Lambda(\\pi L/\\beta)" in text
-    assert "Sharpness refers to the optimization over final Cauchy data" in text
+    assert "\\Tr\\rho_P^2\\geq\\Pcl+(1-\\Pcl)" in text
+    assert "Global sharpness for arbitrary pointer dimension" in text
+    assert "Physical floor in the simple observer code" in text
+    assert "\\frac{D}{D+2}\\Tr\\rho_P^2" in text
+    assert "Branchwise constraint bound on pointer entropy" in text
     assert "Causal source-cylinder envelope" in text
     assert text.index("\\appendix") < text.index(
         "\\section{Final-slice Einstein--scalar application}"
@@ -102,8 +109,8 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
     assert "\\norm{r_\\tau}\\leq(\\pi\\tau)^{-1}" in text
     assert "\\leq\\frac\\beta3" in text
     assert "\\leq\\frac{2\\pi}{3}" in text
-    assert re.search(r"not their\s+closed-universe\s+encoding error", text)
-    assert "field-sector analogue, not a derivation" in text
+    assert "not a deterministic lower bound for every fixed" in text
+    assert "derivation of that broader claim" in text
     assert "strictly positive quadratic form" in text
     assert "observer_cost_spectrum.pdf" in text
     assert "numerical evidence rather than an additional rigorous lower bound" in text
@@ -151,16 +158,15 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     assert "Earlier Paper A" not in root_readme
     assert "Current Branch Result" not in root_readme
     assert "Historical Repository Context" not in root_readme
-    assert "Observer-Rule Connection" in root_readme
-    assert "field-sector analogue" in root_readme
+    assert "Observer-Code Consequence" in root_readme
+    assert "Haar-averaged squared code fluctuation" in root_readme
     assert "2501.02359" in root_readme
-    assert "2602.03835" in root_readme
     assert "ER=EPR-motivated" not in root_readme
 
     launch_text = (PAPER / "EXTERNAL_REVIEW_LAUNCH.md").read_text(
         encoding="ascii"
     )
-    assert "does not substitute" in launch_text
+    assert "substitutes for another" in launch_text
     assert "Harlow Framing Email Draft" in launch_text
     assert "build_review_packets.py" in launch_text
     assert "byte-for-byte deterministic" in launch_text
@@ -175,6 +181,7 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     assert "every central claim" in response_text
     assert "marked `NOT REVIEWED` by every" in response_text
     assert "Neither answer grants permission to imply endorsement" in response_text
+    assert "Observer code/gravity" in response_text
 
     priority_text = (PAPER / "PRIORITY_AUDIT.md").read_text(encoding="ascii")
     assert "The vacuum parent problem is established prior art" in priority_text
@@ -201,7 +208,14 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     )
     assert "First route: Andre G. S. Landulfo" in shortlist_text
     assert "First route: A. A. Polosin" in shortlist_text
-    assert "does not replace either domain review" in shortlist_text
+    assert "does not replace the detector/QFT or operator-theory" in shortlist_text
+
+    observer_audit = (PAPER / "OBSERVER_CODE_REVIEW.md").read_text(
+        encoding="ascii"
+    )
+    assert "Observer-Code and Gravity Review" in observer_audit
+    assert "Harlow-Usatyuk-Zhao Eq. (4.2)" in observer_audit
+    assert "CORRECT AND USEFUL" in observer_audit
 
     proof_audit = (ROOT / "docs" / "local_scalar_observer_proof_audit.md").read_text(
         encoding="ascii"

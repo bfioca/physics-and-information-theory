@@ -1,13 +1,13 @@
 # Reproducibility
 
-This document reproduces the final-support thermal dephasing manuscript and its
-review package from a clean checkout.
+This document reproduces the finite-pointer observer-entropy manuscript and
+its review package from a clean checkout.
 
 ## Environment
 
 - Python 3.11 or newer
 - NumPy 2.x for the numerical spectrum
-- Tectonic 0.16.9 or a compatible LaTeX toolchain to rebuild the PDF
+- Tectonic 0.16.9 or a compatible LaTeX toolchain
 
 Install the package and numerical extra:
 
@@ -15,40 +15,63 @@ Install the package and numerical extra:
 python -m pip install -e '.[research-numerics]'
 ```
 
-## Focused Test Suite
-
-Run all retained tests:
+## Complete Test Suite
 
 ```bash
 PYTHONPATH=. python -m pytest -q
 ```
 
-Expected result:
+The suite covers channel normalization, the finite-pointer Jensen theorem,
+the Harlow-code insertion, branchwise gravity, the localization certificate,
+manuscript structure, two independent numerical implementations, review
+links, artifact provenance, and deterministic specialist packets.
 
-```text
-50 passed
+## Four-Gate Finite-Pointer Replay
+
+```bash
+PYTHONPATH=. python experiments/finite_pointer_observer_audit.py
 ```
 
-The suite covers the analytic certificate, theorem normalization and scaling,
-manuscript structure, source-bound frozen records, two independent numerical
-implementations, review-document links, and deterministic external-review
-packets.
+This regenerates
+`experiments/finite_pointer_observer_certificate.json`. Its status must be
 
-## Analytic Replay
+```text
+pass_four_gate_algebra
+```
+
+and all certified claims must pass. The four gates are:
+
+1. exact finite-pointer Schur channel and binary normalization;
+2. exact purity and Renyi bound from pairwise localization;
+3. insertion into the Harlow-Usatyuk-Zhao orthogonal-pair second moment; and
+4. composition with a branchwise final-slice gravity budget.
+
+## Independent Finite-Pointer Replay
+
+```bash
+PYTHONPATH=. python experiments/finite_pointer_observer_clean_room_check.py
+```
+
+The script imports neither `qgtoy.finite_pointer_observer` nor the production
+four-gate audit. It checks 64 deterministic finite-dimensional cases,
+including the pairwise variance identity, purity bound, code factor, gravity
+coefficient, and binary saturation. Its status must be
+
+```text
+pass_independent_computation_nonrigorous
+```
+
+This verifies algebra and implementation independence; it is not a continuum
+proof or a novelty review.
+
+## Localization Theorem Replay
 
 ```bash
 PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
 ```
 
-The command regenerates
-`experiments/local_scalar_observer_cost_certificate.json`. Its status must be
-
-```text
-strengthened_final_support_theorem_pass_external_review_open
-```
-
-and its source hashes must match the audit script and
-`qgtoy/local_scalar_observer_cost.py`.
+This regenerates the source-bound analytic certificate for the exact
+localized thermal coefficient and de Sitter all-sector reduction.
 
 ## Numerical Spectrum
 
@@ -56,62 +79,21 @@ and its source hashes must match the audit script and
 PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
 ```
 
-This regenerates the numerical data and both Figure 1 formats under
-`paper/local_scalar_observer_cost/`. The computation uses exact cell integrals
-for the vacuum logarithmic kernel and Gauss-Legendre quadrature only for the
-smooth thermal correction. It is a convergence-checked illustration, not an
-interval proof.
+The command regenerates the numerical data and Figure 1 under
+`paper/local_scalar_observer_cost/`. It uses exact cell integrals for the
+vacuum logarithmic kernel and quadrature for the smooth thermal correction.
+The result is convergence-checked numerical evidence, not an interval proof.
 
-## Clean-Room Numerical Replay
+## Independent Localization Replay
 
 ```bash
 PYTHONPATH=. python experiments/local_scalar_observer_clean_room_check.py
 ```
 
-This regenerates
-`experiments/local_scalar_observer_clean_room_check.json`. The checker imports
-neither `qgtoy` nor the production Galerkin implementation. It uses midpoint
-sampling and separate product integration across each logarithmic diagonal
-cell, then tests the analytic brackets and both uniform remainders on a broad
-support grid. Its required status is
-
-```text
-pass_independent_computation_nonrigorous
-```
-
-This is a deliberately different numerical path, not an analytic proof or an
-external audit.
-
-## Package Audit
-
-```bash
-python paper/local_scalar_observer_cost/audit_package.py
-```
-
-Expected summary:
-
-```text
-"status": "pass"
-"page_count": 18
-"checked_files": 25
-```
-
-The audit verifies artifact hashes, TeX labels and citations, PDF and build-log
-closure, the theorem certificate, both numerical records, and figure
-provenance.
-
-## External-Review Bundles
-
-From a clean committed checkout, run:
-
-```bash
-python paper/local_scalar_observer_cost/build_review_packets.py
-```
-
-The builder writes ignored ZIP archives under
-`dist/local_scalar_observer_review/`. Each bundle pins the full Git revision,
-commit time, source URL, and attachment hashes. Repeated builds at one commit
-must be byte-for-byte identical. The builder refuses a dirty tracked worktree.
+This checker uses a different discretization and imports neither `qgtoy` nor
+the production Galerkin implementation. It tests the rigorous brackets,
+asymptotic remainders, eigenvector positivity, and coordinate-sector
+domination.
 
 ## Rebuild the Manuscript
 
@@ -121,18 +103,37 @@ From `paper/local_scalar_observer_cost/`:
 tectonic -X compile main.tex --keep-logs
 ```
 
-or:
+The expected artifact is a 23-page `main.pdf`. The retained `main.log`
+must have no undefined references or citations and no overfull or underfull
+boxes.
+
+## Package Audit
 
 ```bash
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+python paper/local_scalar_observer_cost/audit_package.py
 ```
 
-The checked build has 18 pages and no undefined references or citations,
-overfull boxes, or underfull boxes.
+The result must report `"status": "pass"`. The audit verifies frozen hashes,
+TeX closure, PDF page count, build log, both analytic certificates, the
+production spectrum, and both independent replay records. It does not certify
+the physics interpretation or literature novelty.
 
-## What This Establishes
+## Review Packet Build
 
-The replay establishes internal consistency, deterministic provenance, and
-the stated finite calculations. It does not establish standalone novelty,
-model an autonomous source actuator, rederive the channel on perturbed
-geometry, or replace independent proof review.
+After committing the exact revision:
+
+```bash
+python paper/local_scalar_observer_cost/build_review_packets.py
+```
+
+The builder refuses a dirty tracked checkout and creates deterministic,
+revision-pinned detector/QFT, operator-theory, and observer-code archives under
+`dist/local_scalar_observer_review/`. Packet hashes must be recorded with
+any external response.
+
+## Interpretation
+
+Passing every command establishes internal reproducibility and provenance. It
+does not establish arbitrary-dimension sharpness, a deterministic code error
+floor, an autonomous observer, coupled gravitational dynamics, or standalone
+novelty.

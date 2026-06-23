@@ -1,12 +1,18 @@
-# Final-Support Thermal Dephasing Bound
+# Localization Engine for Finite-Pointer Observer Entropy
 
-Status: strengthened internal theorem pass; independent proof and two-domain
-novelty reviews open
+Status: exact localization theorem passes internally; external proof and
+novelty review remain open
+
+This note records the binary channel and operator theorem that supply the
+sharp pairwise coefficient for the active finite-pointer paper. For the
+finite-pointer purity theorem, Harlow-code insertion, and branchwise gravity
+composition, read
+[`finite_pointer_observer_entropy.md`](finite_pointer_observer_entropy.md).
 
 ## Executive Decision
 
-The mathematical result is an exact final-support optimization theorem, not
-only a one-sided estimate. It is not yet a submission decision. The exact
+The mathematical engine is an exact final-support optimization theorem, not
+only a one-sided estimate. It is not by itself a submission decision. The exact
 gapless-detector channel, its Weyl displacement, and its KMS decoherence factor
 are established prior art. The strengthened theorem begins at arbitrary
 inverse temperature:

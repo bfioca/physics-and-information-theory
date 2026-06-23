@@ -71,47 +71,73 @@ denoting that transform,
 
 \subsection{Local interaction and exact channel}
 
-Let $P$ be a degenerate pointer qubit with pointer observable $Z_P$.  We
-couple it to the physical scalar by
+Let $P$ be a finite pointer with orthonormal basis
+$\{\ket{i}\}_{i=1}^d$.  Assign a real compact source $J_i$ to each pointer
+state and couple it to the physical scalar by
 \begin{equation}
- S_{\rm int}=-\int_{\mathcal M}\sqrt{-g}\,J(X)\phi(X)Z_P\dd^4X,
- \qquad J\in C_c^\infty(\mathcal M;\R).
+ S_{\rm int}=-\int_{\mathcal M}\sqrt{-g}\,\phi(X)
+ \sum_{i=1}^dJ_i(X)\ket{i}\!\bra{i}\,\dd^4X,
+ \qquad J_i\in C_c^\infty(\mathcal M;\R).
  \label{eq:interaction}
 \end{equation}
-The switching function and spatial smearing are both included in $J$.  Since
-the commutator of two smeared free fields is a c-number, every Magnus term
-beyond second order vanishes.  Up to a source-dependent scalar phase,
+The switching functions and spatial smearings are included in the $J_i$.
+The pointer projectors commute, and free-field commutators are c-numbers, so
+the Magnus series terminates in every controlled sector.  Up to
+source-dependent phases,
 \begin{equation}
- U_J=e^{i\Xi[J]}e^{-i\phi(J)Z_P}.
+ U=\sum_{i=1}^d e^{i\Xi[J_i]}\ket{i}\!\bra{i}
+ \otimes e^{-i\phi(J_i)}.
  \label{eq:exact-unitary}
 \end{equation}
 This standard exact evolution is reviewed in
 \cite{Landulfo2016,BarcellosLandulfo2021,BatistaEtAl2026}.
 The interaction is compactly supported, and its densities commute at
-spacelike separation because $Z_P$ is fixed and the scalar field is
-microcausal.  Nevertheless, the same finite-dimensional operator $Z_P$
-appears across the smearing.  Generic spatially extended nonrelativistic
+spacelike separation because the diagonal pointer operators commute and the
+scalar field is microcausal.  Nevertheless, the same finite pointer appears
+across each spatial smearing.  Generic spatially extended nonrelativistic
 detectors can violate causal factorization~\cite{deRamonEtAl2021}; fully
 relativistic localized probe fields provide a systematic replacement
-framework~\cite{PercheEtAl2024}.  We therefore treat
-\cref{eq:interaction} as the standard prescribed gapless-detector
-idealization, not as an autonomous pointer field or material actuator.
+framework~\cite{PercheEtAl2024}.  We treat \cref{eq:interaction} as a
+prescribed gapless-detector idealization, not as an autonomous pointer field
+or material actuator.
 
 Let $E$ denote the causal propagator and $K$ the positive-frequency map for the
-static one-particle structure.  Tracing the Bunch--Davies field state gives a
-pointer dephasing channel
+static one-particle structure.  Purify the Bunch--Davies KMS state and let
+$\ket{e_i}$ be the conditional purified field state.  Their Gram matrix
+$G_{ij}=\ip{e_j}{e_i}$ is positive semidefinite with unit diagonal.  Tracing
+the field gives the exact Schur dephasing channel
 \begin{equation}
- \cD_\kappa
- \begin{pmatrix}a&b\\c&d\end{pmatrix}
- =\begin{pmatrix}a&\kappa b\\\overline\kappa c&d\end{pmatrix},
+ \cD_G(\ket{i}\!\bra{j})=G_{ij}\ket{i}\!\bra{j},
  \qquad
- \abs\kappa=e^{-\Gamma},
- \qquad
- \Gamma=2\ip{KEJ}{\coth(\beta h/2)KEJ}.
+ \abs{G_{ij}}=e^{-\Gamma_{ij}}.
  \label{eq:dephasing-channel}
 \end{equation}
-The phase of $\kappa$ is a pointer rotation and is irrelevant to the distance
-from complete dephasing.  If $\cD_0$ denotes complete dephasing, then
+Let $(q_i,p_i)$ be the complete conditional final data, and write
+$q_{ij}=q_i-q_j$, $p_{ij}=p_i-p_j$.  Gaussianity gives
+\begin{equation}
+ \Gamma_{ij}=\frac14\sum_{\ell m}\left[
+ \ip{q_{ij,\ell m}}{h_\ell\coth(\beta h_\ell/2)q_{ij,\ell m}}
+ +\ip{p_{ij,\ell m}}{h_\ell^{-1}\coth(\beta h_\ell/2)p_{ij,\ell m}}
+ \right].
+ \label{eq:pairwise-dephasing}
+\end{equation}
+For an initial pointer state
+$\ket\psi=\sum_i\sqrt{w_i}\ket i$, the reduced pointer state is
+\begin{equation}
+ \rho_{P,ij}=\sqrt{w_iw_j}\,G_{ij},
+ \qquad
+ \Tr\rho_P^2=\sum_{i,j}w_iw_j e^{-2\Gamma_{ij}}.
+ \label{eq:finite-pointer-purity}
+\end{equation}
+
+The binary model is recovered by $d=2$, $J_\pm=\pm J$.  Its conditional data
+are opposite, so \cref{eq:pairwise-dephasing} gives
+$\Gamma_{+-}=\Gamma$ with
+\begin{equation}
+ \Gamma=2\ip{KEJ}{\coth(\beta h/2)KEJ}.
+\end{equation}
+The phase of $G_{+-}=\kappa$ is a correctable pointer rotation.  If $\cD_0$
+denotes complete binary dephasing, then
 \begin{equation}
  \eobs:=\frac12\norm{\cD_\kappa-\cD_0}_\diamond
  =\frac12\abs\kappa=\frac12e^{-\Gamma}.
@@ -120,34 +146,41 @@ from complete dephasing.  If $\cD_0$ denotes complete dephasing, then
 The equality follows from
 $\cD_\kappa-\cD_0=(\kappa/2)(\mathrm{id}-\operatorname{Ad}_{Z_P})$ after the
 correctable phase is removed, and it is saturated by a pointer superposition.
-The target $\cD_0$ is the binary instance of the quantum-to-classical pointer
-channel used in the observer rule of Harlow, Usatyuk, and
-Zhao~\cite{HarlowUsatyukZhao2025} and its Hartle--Hawking
-extension~\cite{Harlow2026Observers}.  Those works use the channel inside a
-gravitational rule whose accuracy is controlled by observer entropy.  Here the
-same binary channel target is realized by a prescribed scalar coupling.  The
-error $\eobs$ measures this channel approximation only; it is not their closed-universe
-encoding error and is not identified with $e^{-S_{\rm Ob}}$.
+The exact quantum-to-classical channel used in the observer rule of Harlow,
+Usatyuk, and Zhao~\cite{HarlowUsatyukZhao2025} is the limit in which all
+off-diagonal $G_{ij}$ vanish.  Rather than identify the binary $\eobs$ with a
+gravitational encoding error, \cref{sec:finite-pointer} below uses the
+physical purity in \cref{eq:finite-pointer-purity}, which is the quantity that
+enters their second-R\'enyi code calculation.
 
-After the source switches off, the two conditional field states are opposite
-coherent displacements.  Their common excess Killing energy and excess
-renormalized stress are
+After switching, branch $i$ has excess scalar Killing energy $E_i$ and
+renormalized-stress excess
 \begin{equation}
- \EK=\ip{KEJ}{hKEJ},
+ E_i=\frac12\sum_{\ell m}
+ \left(\norm{h_\ell q_{i,\ell m}}^2+\norm{p_{i,\ell m}}^2\right),
  \qquad
- \Delta\langle T_{ab}^{\rm ren}\rangle=T_{ab}[\phi_J].
+ \Delta\langle T_{ab}^{\rm ren}\rangle_i=T_{ab}[\phi_{J_i}].
  \label{eq:energy-stress}
 \end{equation}
+Let $\bar q=\sum_iw_iq_i$, $\bar p=\sum_iw_ip_i$.  The energy that controls
+pairwise separation is
+\begin{equation}
+ \Ebar:=\sum_iw_i E[q_i-\bar q,p_i-\bar p]
+ =\sum_iw_iE_i-E[\bar q,\bar p].
+ \label{eq:centered-field-energy}
+\end{equation}
+For the symmetric binary model, $\bar q=\bar p=0$ and
+$E_+=E_-=\Ebar=\EK$.
 The state-independent Hadamard subtraction cancels in the difference, and the
-background one-point function vanishes.  Equation~\eqref{eq:energy-stress}
-prices the post-switch scalar field generated by \emph{the same} $J$ as the
-channel.  It does not include the stress of a clock, trap, or material device
-that realizes the prescribed coupling.
+background one-point function vanishes.  These quantities price the
+post-switch scalar fields generated by the same $J_i$ as the channel.  They do
+not include the stress of a clock, trap, or material device that realizes the
+prescribed coupling.
 
 \subsection{Causal support}
 
-Suppose $J$ is supported inside the centered areal ball $r\leq a<R$ during a
-static-time interval of length $T$.  Its optical radius is
+Suppose every $J_i$ is supported inside the centered areal ball $r\leq a<R$
+during a common static-time interval of length $T$.  Its optical radius is
 \begin{equation}
  \ell=R\operatorname{arctanh}(a/R).
  \label{eq:source-optical-radius}

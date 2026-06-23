@@ -2,24 +2,33 @@
 
 ## Review Assignment
 
-Determine whether the fixed-final-support energy optimization below is already
-known in relativistic detector theory, quantum communication, or horizon
-decoherence, and whether its narrow physical interpretation is sound. The
-exact prescribed detector channel is prior art and is not under review as a
-new result.
+Determine whether the finite-pointer energy-support-purity theorem below is
+already known in relativistic detector theory, quantum communication, or
+horizon decoherence, and whether its prescribed-source interpretation is
+sound. The exact controlled Weyl channel is prior art and is not under review
+as a new result.
 
 ## Result Under Review
 
-For half-line momentum data with final support `[0,L]`, inverse temperature
-`beta`, exact dephasing exponent `Gamma`, and post-switch field energy `E`, the
-paper proves
+For finite pointer weights `w_i` and conditional half-line momenta `p_i`
+with common final support `[0,L]`, the paper proves
 
 ```text
-Gamma <= E C_beta(L),
+Tr(rho_P^2)
+ >= P_cl+(1-P_cl)exp[-C_beta(L)E_bar/(1-P_cl)],
+
+S_2(rho_P)<=min{H_2(w),C_beta(L)E_bar},
+```
+
+where the pairwise thermal coefficient obeys
+
+```text
 C_beta(L)=2 L Lambda(pi L/beta).
 ```
 
-For a conformal massless scalar in a four-dimensional de Sitter static patch,
+The symmetric binary top-mode record saturates the entropy bound; global
+sharpness for arbitrary pointer dimension is not claimed. For a conformal
+massless scalar in a four-dimensional de Sitter static patch,
 the Bunch-Davies relation `beta=2 pi R` makes the same s-wave momentum profile
 the unique optimum over every angular and canonical sector. Sharpness concerns
 final Cauchy support. A source radius and switching duration enter only through
@@ -80,13 +89,29 @@ gapless smeared detector, not an autonomous relativistic probe field.
    order. That result does not supply the exact Weyl channel or the sharp
    compact-support quotient, but it identifies a concrete future refinement.
 
+### Finite-pointer composition
+
+For diagonal sources `J_i`, the conditional purified field states form a
+Gram matrix and give the exact Schur channel
+
+```text
+|i><j| -> G_ij |i><j|,
+Gamma_ij=<p_i-p_j,B_beta,L(p_i-p_j)>/4.
+```
+
+The binary convention is recovered by `p_+=p` and `p_-=-p`. The
+finite-pointer result then uses only the weighted variance identity and
+Jensen's inequality. No inspected detector source supplies this exact
+energy-support-purity composition or a general-d sharpness theorem.
+
 ## Internal Finding
 
 **DISTINCT CONJUNCTION, EXTERNALLY PENDING.** The channel, KMS covariance,
 normalization, and source-energy accounting are established prior art. No
-inspected primary source supplies their conjunction with a fixed-final-
-support field-energy optimum, the explicit thermal kernel remainders, and the
-strict conformal-de-Sitter all-sector reduction.
+inspected primary source supplies their conjunction with a finite-pointer
+purity theorem, a fixed-final-support field-energy optimum, the explicit
+thermal kernel remainders, and the strict conformal-de-Sitter all-sector
+reduction.
 
 This finding narrows rather than proves novelty. A detector/QFT specialist
 must still decide whether the conjunction is physically useful and whether
@@ -94,19 +119,22 @@ the prescribed smeared-pointer boundary is acceptable for a short paper.
 
 ## Decisive Questions
 
-1. Is that constrained optimization already solved? If yes, give the source
+1. Is the finite-pointer purity theorem already standard for controlled
+   Gaussian displacements? If yes, give the source and match its normalization
+   and centered energy to the equations here.
+2. Is the constrained pairwise optimization already solved? If yes, give the source
    and map its dephasing functional, energy, support notion, and temperature to
    `Gamma`, `E`, `L`, and `beta` here.
-2. Is the separation between the arbitrary-`beta` half-line theorem and the
+3. Is the separation between the arbitrary-`beta` half-line theorem and the
    de Sitter all-sector corollary physically clear and useful?
-3. Is a prescribed smeared gapless qubit acceptable for this narrow theorem
+4. Is a prescribed smeared finite pointer acceptable for this narrow theorem
    when actuator work, probe stress, and autonomous switching are expressly
    excluded?
-4. Is the source-radius and duration statement correctly limited to a causal
+5. Is the source-radius and duration statement correctly limited to a causal
    envelope, rather than sharp fixed-cylinder controllability?
-5. Are the normalization, KMS covariance, canonical energy, and strict
+6. Are the normalization, KMS covariance, canonical energy, and strict
    all-sector comparison correct?
-6. Without the gravity appendix, is the central conjunction substantial
+7. Without the gravity appendix, is the central conjunction substantial
    enough for a short relativistic quantum-information or mathematical-
    physics paper? If not, identify the minimum bounded addition.
 
@@ -123,6 +151,6 @@ Return one of the following in `REVIEW_RESPONSE_FORM.md`:
 Please flag any normalization, causality, energy-accounting, or physical-
 framing error separately from the novelty disposition.
 
-The paper does not claim a new detector channel, total measurement cost,
-autonomous apparatus, perturbed-geometry channel, or coupled gravitational
-evolution.
+The paper does not claim a new detector channel, general-d saturation, total
+measurement cost, autonomous apparatus, perturbed-geometry channel, or coupled
+gravitational evolution.

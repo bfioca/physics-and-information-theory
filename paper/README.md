@@ -2,7 +2,7 @@
 
 This directory contains one active manuscript:
 
-## Final-Support Thermal Dephasing
+## Energy and Backreaction Bounds for Finite-Pointer Observer Entropy
 
 - [Manuscript PDF](local_scalar_observer_cost/main.pdf)
 - [Package guide](local_scalar_observer_cost/README.md)
@@ -13,7 +13,8 @@ This directory contains one active manuscript:
 
 The status is **GO to external review; HOLD submission**. Internal theorem,
 build, numerical, and reproducibility gates pass. Detector/QFT novelty,
-operator-theory novelty, and independent proof coverage remain open.
+operator-theory novelty, observer-code significance, and independent proof
+coverage remain open.
 
-Earlier draft papers and stopped candidates are preserved in Git history, not
+Earlier drafts and stopped research tracks are preserved in Git history, not
 in the current tree. They are not part of this review package.

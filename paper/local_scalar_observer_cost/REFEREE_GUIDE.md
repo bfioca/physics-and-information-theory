@@ -1,58 +1,81 @@
 # Referee Guide
 
-Status: strengthened specialist-review candidate; submission remains
-conditional on proof and novelty review
+Status: external-review candidate; submission remains conditional on proof and
+novelty review
 
 ## Exact Candidate Claim
 
-For Dirichlet half-line momentum data supported in `[0,L]`,
+For finite pointer weights `w_i` and conditional half-line momentum records
+`p_i` supported in `[0,L]`, define
 
 ```text
-C_beta(L)=sup Gamma/E=2 L Lambda(pi L/beta),
-k_tau(u,v)=pi^-1 log{
-  sinh[tau(u+v)]/sinh[tau|u-v|]}.
+P_cl=sum_i w_i^2,
+E_bar=sum_i w_i ||p_i-p_bar||^2/2.
 ```
 
-The top eigenvalue is simple, its optimizer is positive, and the paper proves
-global bounds and uniform small- and large-support remainders. For the
-conformal massless scalar in de Sitter, `beta=2 pi R`; angular resolvent order
-and a coordinate-sector estimate make this same s-wave momentum profile the
-unique full-phase-space optimizer.
+The exact Schur channel and localized thermal operator imply
 
-The exact detector channel and the general positive-kernel variational
-principle are not claimed as new.
+```text
+Tr(rho_P^2)
+ >= P_cl+(1-P_cl)exp[-C_beta(L)E_bar/(1-P_cl)],
+
+S_2(rho_P)<=min{H_2(w),C_beta(L)E_bar},
+
+C_beta(L)=2 L Lambda(pi L/beta).
+```
+
+The symmetric binary top-mode record saturates the entropy bound; no
+general-d sharpness claim is made. For a conformal scalar in de Sitter,
+`beta=2 pi R`, and the same coefficient is the unique optimum over all
+angular and canonical sectors.
+
+Purifying the physical record and inserting it into the simple random code of
+Harlow, Usatyuk, and Zhao gives, for an orthogonal CRT-real matter pair,
+
+```text
+E_O |<phi|Vhat^dagger Vhat|psi>|^2
+ = D/(D+2) Tr(rho_P^2).
+```
+
+If every conditional spherical branch satisfies a local final-slice
+constraint budget, the paper also derives an area-scaling upper bound on the
+same record entropy.
+
+The exact detector channel, general positive-kernel principle, and Harlow
+second-moment formula are not claimed as new.
 
 ## Read First
 
-1. `main.pdf`: the general thermal theorem, de Sitter all-sector theorem, and
-   causal source-cylinder corollary.
-2. `sections/localization_theorem.tex`: complete analytic proof.
-3. `sections/achievability.tex`: smooth final-data and source closure.
-4. `../../docs/local_scalar_observer_proof_audit.md`: clean-room claim table,
-   derivation ledger, and independent numerical replay.
-5. The domain-specific novelty brief matching your expertise; each now
-   records completed internal reductions and the first obstruction.
+1. `main.pdf`: finite-pointer theorem, observer-code proposition, and
+   discussion boundary.
+2. `sections/finite_pointer_entropy.tex`: complete finite-pointer proof.
+3. `sections/localization_theorem.tex`: exact coefficient and de Sitter
+   all-sector proof.
+4. `../../docs/finite_pointer_observer_entropy.md`: four-gate derivation and
+   explicit normalization audit.
+5. The specialist brief matching your expertise.
 6. `REVIEW_RESPONSE_FORM.md` for the requested written disposition.
 
 ## Decisive Questions
 
-1. Is the reflected KMS-kernel optimization a named theorem or immediate
-   corollary in detector theory, localized negative-Sobolev estimates,
-   Riesz-potential theory, or related concentration problems?
-2. Are the arbitrary-temperature coefficient, de Sitter full-sector
-   reduction, and support asymptotics enough for a standalone short paper?
-3. Is every use of "sharp" correctly restricted to final Cauchy support?
-4. Are the angular ordering, coordinate domination, strict uniqueness,
-   remainder bounds, and smooth-source closure correct?
-5. Does the gravity appendix distract from the theorem, or is its present
-   explicitly secondary placement acceptable?
+1. Is the finite-pointer purity theorem a known consequence of Gaussian
+   dephasing or quantum reference-frame resource bounds?
+2. Is the reflected KMS-kernel optimization or either uniform remainder a
+   named theorem or immediate operator-theory corollary?
+3. Is the Harlow-Usatyuk-Zhao Eq. (4.2) specialization correct, and is an
+   ensemble mean-square floor for one orthogonal pair physically useful?
+4. Are all uses of sharpness restricted to the binary entropy case or the
+   underlying final-support coefficient?
+5. Does the branchwise final-slice gravity corollary have the correct
+   hypotheses and interpretation?
+6. Is the combined result substantial enough for a standalone short paper?
 
 ## Requested Disposition
 
 - **SUBMIT:** novel enough in this scope and analytically sound.
 - **STRENGTHEN:** viable after one identified minimum addition or correction.
-- **NO-GO:** known, immediate, or too routine; please give the closest source
-  or concise argument.
+- **NO-GO:** known, immediate, incorrect, or too routine; please provide the
+  closest source or concise argument.
 
 ## Verification
 
@@ -60,11 +83,7 @@ From the repository root:
 
 ```bash
 python paper/local_scalar_observer_cost/audit_package.py
-PYTHONPATH=. python -m pytest -q \
-  tests/test_local_scalar_observer_clean_room_check.py \
-  tests/test_local_scalar_observer_cost.py \
-  tests/test_local_scalar_observer_manuscript.py \
-  tests/test_local_scalar_observer_spectrum.py
+PYTHONPATH=. python -m pytest -q
 ```
 
 The audit verifies the checked artifact and its provenance. It does not
@@ -72,6 +91,7 @@ certify the proof or novelty.
 
 ## Not Claimed
 
-The paper does not claim a new exact detector channel, fixed-cylinder
-controllability, total measurement cost, an autonomous switching device, a
-channel on perturbed geometry, or coupled gravitational evolution.
+The paper does not claim general-d saturation, a deterministic error floor for
+every code, fixed-cylinder controllability, total measurement cost, an
+autonomous observer, a channel on perturbed geometry, or coupled
+gravitational evolution.

@@ -4,9 +4,9 @@
 
 **Audit date:** 2026-06-23
 
-This record distinguishes an actual operator reduction from a merely similar
-title or keyword. It is an internal literature audit, not a substitute for the
-two independent written assessments required by the research goal.
+This record distinguishes an actual reduction from a merely similar title or
+keyword. It is an internal literature audit, not a substitute for the three
+written specialist assessments required by the research goal.
 
 Detailed results are split by reviewer domain:
 
@@ -14,21 +14,25 @@ Detailed results are split by reviewer domain:
   attempted theorem-class reductions and the first failed hypothesis or
   conclusion in each;
 - [`QFT_NOVELTY_REVIEW.md`](QFT_NOVELTY_REVIEW.md) gives an equation-level
-  channel, support, energy, and achievability matrix; and
+  channel, support, energy, and achievability matrix;
+- [`OBSERVER_CODE_REVIEW.md`](OBSERVER_CODE_REVIEW.md) isolates the
+  Harlow-code and branchwise-gravity claims; and
 - [`../../docs/local_scalar_observer_proof_audit.md`](../../docs/local_scalar_observer_proof_audit.md)
   is the clean-room correctness audit and independent numerical replay.
 
 ## Claim Being Tested
 
-The candidate contribution is not the exact gapless-detector channel and not
-the existence of a positive compact logarithmic operator. It is the
-conjunction of:
+The candidate contribution is not the exact gapless-detector channel, the
+existence of a positive compact logarithmic operator, or the Harlow random-code
+second moment. It is the conjunction of:
 
-1. the thermal fixed-final-support coefficient and optimizer;
-2. global bounds and uniform small- and large-support remainders;
-3. the strict reduction of every angular and canonical de Sitter sector to
-   the same s-wave momentum optimizer; and
-4. the interpretation as exact dephasing per post-switch scalar-field energy.
+1. the finite-pointer purity and Renyi bound in terms of centered field energy;
+2. the thermal fixed-final-support coefficient and optimizer;
+3. global bounds and uniform small- and large-support remainders;
+4. the strict reduction of every angular and canonical de Sitter sector to
+   the same s-wave momentum optimizer;
+5. the physical-purity insertion into the observer-code second moment; and
+6. the branchwise final-slice backreaction corollary.
 
 ## Exact Operator Reductions
 

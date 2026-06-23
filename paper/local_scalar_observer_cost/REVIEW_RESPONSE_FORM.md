@@ -6,7 +6,7 @@ This form records a technical assessment, not endorsement or approval.
 
 ```text
 Reviewer:
-Domain: detector/QFT | operator theory | proof | framing
+Domain: detector/QFT | operator theory | observer code/gravity | proof
 Date:
 Manuscript commit or version:
 Material inspected:
@@ -14,49 +14,61 @@ Material inspected:
 
 ## Domain Disposition
 
-Choose one domain-specific novelty disposition and explain it.
+Choose the applicable domain-specific disposition and explain it.
 
 ```text
-Detector/QFT: NOVEL | KNOWN | TECHNICALLY NEW BUT INSUFFICIENT
-Operator theory: NOVEL | KNOWN COROLLARY | NEW BUT ROUTINE
+Detector/QFT:
+  NOVEL | KNOWN | TECHNICALLY NEW BUT INSUFFICIENT
+
+Operator theory:
+  NOVEL | KNOWN COROLLARY | NEW BUT ROUTINE
+
+Observer code/gravity:
+  CORRECT AND USEFUL | CORRECT BUT INSUFFICIENT |
+  INCORRECT OR MISFRAMED
 ```
 
 **Reason:**
 
-If the result is known, provide the closest source, theorem or equation, and
-the explicit identification of domain, boundary condition, normalization,
-temperature, energy, and support. If it is insufficient, identify the minimum
-bounded addition that would change the assessment.
+If a result is known, provide the closest source, theorem or equation, and the
+explicit identification of normalization, state, energy, support, and
+ensemble. If it is insufficient, identify the smallest bounded addition that
+would change the assessment.
 
 ## Claim-Level Findings
 
-Mark each item `PASS`, `CORRECT`, `ERROR`, `KNOWN`, `UNCLEAR`, or `NOT REVIEWED`
-as appropriate.
+Mark each item `PASS`, `CORRECT`, `ERROR`, `KNOWN`, `UNCLEAR`, or
+`NOT REVIEWED`.
 
 | Claim | Finding | Explanation or source |
 | --- | --- | --- |
+| Exact finite-pointer Schur channel and pairwise normalization |  |  |
+| Centered-energy identity and finite-pointer purity bound |  |  |
+| Binary saturation and absence of general-d sharpness claim |  |  |
 | General arbitrary-temperature coefficient |  |  |
 | Principal-eigenvalue simplicity and positivity |  |  |
 | Small-support uniform remainder |  |  |
 | Large-support uniform remainder |  |  |
 | de Sitter angular resolvent ordering |  |  |
-| Coordinate-sector domination |  |  |
-| Unique full-phase-space optimizer |  |  |
-| Smooth final-data/source closure |  |  |
+| Coordinate-sector domination and unique full optimizer |  |  |
+| Smooth finite-pointer source closure |  |  |
+| Harlow Eq. (4.2) orthogonal CRT-real specialization |  |  |
+| Ensemble mean-square interpretation and stated limits |  |  |
+| Branchwise final-slice gravity inequality |  |  |
 | Final-support versus source-cylinder language |  |  |
 | Post-switch field-energy interpretation |  |  |
 
 ## Submission Acceptance Rule
 
-`SUBMIT` requires both domain novelty gates to pass and every central claim in
-the table above to receive at least one external `PASS` or `CORRECT` finding
-across the preserved review records. A claim marked `NOT REVIEWED` by every
-reviewer remains open. `UNCLEAR`, a blank row, silence, or a general positive
-reaction does not count as proof coverage.
+`SUBMIT` requires all three domain novelty/significance gates to pass and
+every central claim in the table above to receive at least one external
+`PASS` or `CORRECT` finding across the preserved review records. A claim
+marked `NOT REVIEWED` by every reviewer remains open. `UNCLEAR`, a blank
+row, silence, or a general positive reaction does not count as proof coverage.
 
-The two domain reviewers may divide the claim-level checks according to their
-expertise. If neither reviewer covers an item, obtain a targeted external
-proof check for that item before changing the package status to `SUBMIT`.
+The specialists may divide claim-level checks according to expertise. If none
+covers an item, obtain a targeted external proof check before changing the
+package status to `SUBMIT`.
 
 ## Corrections and Missing Comparisons
 
@@ -69,8 +81,6 @@ Optional strengthening:
 ```
 
 ## Publication Recommendation
-
-Choose one and give the decisive reason.
 
 ```text
 SUBMIT       Central result survives this review in its stated scope.

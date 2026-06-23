@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the checked local scalar manuscript and theorem certificate."""
+"""Verify the finite-pointer observer manuscript and theorem certificates."""
 
 from __future__ import annotations
 
@@ -136,6 +136,27 @@ def _certificate_audit(manifest: dict[str, object]) -> list[str]:
     return errors
 
 
+def _finite_pointer_certificate_audit(
+    manifest: dict[str, object],
+) -> list[str]:
+    errors: list[str] = []
+    path = ROOT / str(manifest["finite_pointer_certificate"])
+    try:
+        record = json.loads(path.read_text(encoding="ascii"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [f"invalid finite-pointer certificate: {exc}"]
+    if record.get("status") != "pass_four_gate_algebra":
+        errors.append("finite-pointer certificate does not have pass status")
+    if not all(record.get("certified_claims", {}).values()):
+        errors.append("one or more finite-pointer certificate claims failed")
+    source_hashes = record.get("source_sha256")
+    if not isinstance(source_hashes, dict):
+        errors.append("finite-pointer certificate has no source_sha256 ledger")
+    else:
+        errors.extend(_check_hashes(source_hashes, base=ROOT))
+    return errors
+
+
 def _numerical_audit() -> list[str]:
     errors: list[str] = []
     path = PACKAGE / "data/observer_cost_spectrum.json"
@@ -227,6 +248,45 @@ def _clean_room_numerical_audit() -> list[str]:
     return errors
 
 
+def _finite_pointer_clean_room_audit() -> list[str]:
+    errors: list[str] = []
+    path = ROOT / "experiments/finite_pointer_observer_clean_room_check.json"
+    try:
+        record = json.loads(path.read_text(encoding="ascii"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [f"invalid finite-pointer clean-room record: {exc}"]
+    if record.get("status") != "pass_independent_computation_nonrigorous":
+        errors.append("finite-pointer clean-room record does not have pass status")
+    if int(record.get("case_count", 0)) != 64:
+        errors.append("finite-pointer clean-room record has wrong case count")
+    checks = record.get("checks")
+    if not isinstance(checks, dict):
+        errors.append("finite-pointer clean-room record has no checks")
+    else:
+        boolean_checks = (
+            "all_entropy_bounds_hold",
+            "all_pairwise_cost_bounds_hold",
+            "all_purity_bounds_hold",
+            "binary_bound_saturates",
+            "branchwise_budget_controls_weighted_energy",
+            "harlow_floor_below_exact_fluctuation",
+            "rigorous_area_coefficient_dominates_numerical",
+        )
+        errors.extend(
+            f"finite-pointer clean-room check failed: {key}"
+            for key in boolean_checks
+            if checks.get(key) is not True
+        )
+        if float(checks.get("maximum_pairwise_identity_error", 1.0)) > 1.0e-12:
+            errors.append("finite-pointer pairwise identity error is too large")
+    source_hashes = record.get("source_sha256")
+    if not isinstance(source_hashes, dict):
+        errors.append("finite-pointer clean-room record has no source ledger")
+    else:
+        errors.extend(_check_hashes(source_hashes, base=ROOT))
+    return errors
+
+
 def main() -> int:
     manifest = json.loads(MANIFEST.read_text(encoding="ascii"))
     errors = _check_hashes(manifest["files"], base=PACKAGE)
@@ -236,11 +296,23 @@ def main() -> int:
             base=ROOT,
         )
     )
+    errors.extend(
+        _check_hashes(
+            {
+                str(manifest["finite_pointer_certificate"]): str(
+                    manifest["finite_pointer_certificate_sha256"]
+                )
+            },
+            base=ROOT,
+        )
+    )
     errors.extend(_source_audit())
     errors.extend(_build_audit(manifest))
     errors.extend(_certificate_audit(manifest))
+    errors.extend(_finite_pointer_certificate_audit(manifest))
     errors.extend(_numerical_audit())
     errors.extend(_clean_room_numerical_audit())
+    errors.extend(_finite_pointer_clean_room_audit())
     result = {
         "artifact": manifest["artifact"],
         "status": "pass" if not errors else "fail",

@@ -207,8 +207,8 @@
     "source_realization": "For each p_n, choose a time cutoff shorter than the remaining optical support margin and set J_n=P(eta_n*phi_free,n). Then J_n is smooth, compact, worldtube-supported, and has exact final data q=0,p=p_n."
   },
   "source_sha256": {
-    "experiments/local_scalar_observer_cost_audit.py": "9b6bb625e1bd962f2b9ff02b6c20fae503071474dfa76dd523fcdc6fab28885f",
-    "qgtoy/local_scalar_observer_cost.py": "0449c1a85d58d23aa3df24b6e6923c301e41b169ec964f03c8958307071f1eca"
+    "experiments/local_scalar_observer_cost_audit.py": "909a01a63ccb0064bd78094beb44afb271d655c91f8b8fe80e3082e6a0b1813e",
+    "qgtoy/local_scalar_observer_cost.py": "0fe854a7d8ec591b08c638feecb888094ebd5fefcf927e5c851bfb26b6e64f58"
   },
   "status": "strengthened_final_support_theorem_pass_external_review_open",
   "weak_gravity_error_floor": {

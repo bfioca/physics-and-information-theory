@@ -1,1 +1,1 @@
-"""Computational support for the final-support thermal dephasing paper."""
+"""Computational support for the finite-pointer observer-entropy paper."""

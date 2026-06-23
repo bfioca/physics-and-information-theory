@@ -1,11 +1,12 @@
 \section{Final-slice Einstein--scalar application}
 \label{sec:gravity}
 
-This appendix is not part of the paper's headline theorem.  The all-angular
-de Sitter result does not require spherical symmetry.  We now restrict
-to the s-wave and to a final slice on which the radial field coordinate
-vanishes.  This subclass is useful because its momentum density vanishes and
-its energy measure has a direct constraint interpretation.
+This appendix supplies the backreaction corollary advertised in the title; it
+is not a coupled-gravity extension of the channel theorem.  The all-angular de
+Sitter result does not require spherical symmetry.  We now restrict to the
+s-wave and to a final slice on which the radial field coordinate vanishes.
+This subclass is useful because its momentum density vanishes and its energy
+measure has a direct constraint interpretation.
 
 Let $u(t,x)$ be the normalized rescaled s-wave.  The physical conformal scalar
 is
@@ -113,6 +114,69 @@ $Q(b)=2G\EK/[bN(b)]$.  Apply the sharp energy lower bound in
 \cref{cor:source-bound}; solving the same inequality in the other direction
 gives \cref{eq:gravity-error-floor}.
 \end{proof}
+
+The binary statement has a finite-pointer counterpart only when the
+constraint budget holds on every conditional branch.  A bound on the weighted
+mean field is insufficient because different branches may carry large and
+opposite masses while their mean vanishes.
+
+\begin{corollary}[Branchwise constraint bound on pointer entropy]
+\label{cor:branchwise-gravity-renyi}
+Let the hypotheses of \cref{cor:de-sitter-finite-pointer} hold with spherical
+conditional data $q_i=0$ supported in $[0,L]$.  Set
+\begin{equation}
+ y=L/R,
+ \qquad b=R\tanh y,
+ \qquad N(b)=\sech^2y.
+\end{equation}
+For each branch, let $Q_{b,i}$ be the local constraint ratio defined by
+\cref{eq:constraint-ratio} for that branch.  If
+$Q_{b,i}\leq\delta<1$ for every $i$, then
+\begin{equation}
+ \boxed{
+ S_2(\rho_P)\leq
+ \delta\frac{R^2}{G}\,
+ \frac{C_{\rm opt}(y)\tanh y\,\sech^2y}{2}.}
+ \label{eq:branchwise-gravity-renyi}
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+For branch $i$, the exact mass--energy identity gives
+$E_i=m_i(b)$ outside the support.  Since
+$Q_i(b)\leq Q_{b,i}\leq\delta$,
+\begin{equation}
+ E_i\leq\frac{\delta bN(b)}{2G}.
+\end{equation}
+The centered energy obeys
+\begin{equation}
+ \Ebar=\sum_iw_iE_i-E[\bar q,\bar p]
+ \leq\sum_iw_iE_i\leq\max_iE_i.
+\end{equation}
+Combining this inequality with \cref{eq:de-sitter-pointer-entropy} and using
+$b=R\tanh y$ proves \cref{eq:branchwise-gravity-renyi}.
+\end{proof}
+
+At $y=1$, the converged Galerkin estimate
+$C_{\rm opt}(1)=1.0295979905445$ gives the illustrative coefficient
+\begin{equation}
+ S_2(\rho_P)\lesssim
+ 0.1646584608127\,\delta\frac{R^2}{G}.
+ \label{eq:gravity-illustrative-coefficient}
+\end{equation}
+This decimal is not a certified value of the continuum eigenvalue.  Using the
+rigorous row-Schur estimate
+\begin{equation}
+ C_{\rm opt}(1)\leq1.1594713304692
+\end{equation}
+instead gives
+\begin{equation}
+ S_2(\rho_P)\leq
+ 0.1854284549745\,\delta\frac{R^2}{G}.
+ \label{eq:gravity-rigorous-coefficient}
+\end{equation}
+The exact analytic statement is \cref{eq:branchwise-gravity-renyi}; the
+numbers only illustrate its scale.
 
 The compact mass shifts the cosmological horizon relative to the pure de
 Sitter value $R$.  Accordingly, $Q_b$ is a local comparison norm on the ball

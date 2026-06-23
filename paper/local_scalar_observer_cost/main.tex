@@ -13,11 +13,11 @@
 \usepackage[nameinlink,noabbrev]{cleveref}
 
 \hypersetup{
-  pdftitle={Sharp Final-Support Field-Energy Bounds for an Exact Thermal
-  Dephasing Channel},
+  pdftitle={Energy and Backreaction Bounds for Finite-Pointer Observer
+  Entropy},
   pdfauthor={Brian Fioca},
-  pdfsubject={A sharp thermal covariance optimization with a conformal de
-  Sitter specialization}
+  pdfsubject={Localized thermal dephasing, finite-pointer Renyi entropy, and
+  observer-code accuracy in a de Sitter static patch}
 }
 
 \newtheorem{theorem}{Theorem}[section]
@@ -36,15 +36,19 @@
 \newcommand{\dd}{\,\mathrm d}
 \newcommand{\eobs}{\epsilon_{\mathrm{obs}}}
 \newcommand{\EK}{E_{K}}
+\newcommand{\Ebar}{\overline E_{K}}
+\newcommand{\Pcl}{P_{\rm cl}}
 \newcommand{\Tr}{\operatorname{Tr}}
 \newcommand{\supp}{\operatorname{supp}}
 \newcommand{\sech}{\operatorname{sech}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 \newcommand{\ip}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\ket}[1]{\left\lvert#1\right\rangle}
+\newcommand{\bra}[1]{\left\langle#1\right\rvert}
 
-\title{Sharp Final-Support Field--Energy Bounds\\
-for an Exact Thermal Dephasing Channel}
+\title{Energy and Backreaction Bounds\\
+for Finite-Pointer Observer Entropy}
 \author{Brian Fioca}
 \date{Draft of June 2026}
 
@@ -52,38 +56,52 @@ for an Exact Thermal Dephasing Channel}
 \maketitle
 
 \begin{abstract}
-The exact Weyl-displacement channel of a prescribed gapless detector is known.
-We solve a finite-support optimization left open after that channel is fixed.
-For Dirichlet half-line momentum data supported in $[0,L]$, with thermal
-inverse temperature $\beta$, dephasing exponent $\Gamma$, and field energy
-$E=\norm{p}^2/2$, we prove
+The observer rule of Harlow, Usatyuk, and Zhao is controlled by a second
+R\'enyi entropy, but does not derive the field resources needed to produce its
+pointer-basis record.  We give such a bound in an exactly solvable local
+field model.  A finite pointer controls compact sources for a free scalar,
+producing a Schur dephasing channel with conditional final data $p_i$.  If
+$w_i$ are the pointer weights,
+$\Pcl=\sum_iw_i^2$, and
+$\Ebar=\sum_iw_i\norm{p_i-\bar p}^2/2$, then final support in $[0,L]$ implies
 \[
- \Gamma\leq E\mathcal C_\beta(L),
+ \Tr\rho_P^2\geq\Pcl+(1-\Pcl)
+ \exp\!\left[-\frac{\mathcal C_\beta(L)\Ebar}{1-\Pcl}\right],
  \qquad
- \mathcal C_\beta(L)=2L\Lambda(\pi L/\beta).
+ S_2(\rho_P)\leq\min\{H_2(w),\mathcal C_\beta(L)\Ebar\}.
 \]
-Here $\Lambda(\tau)$ is the simple top eigenvalue of the positive compact
+The coefficient is exact:
+$\mathcal C_\beta(L)=2L\Lambda(\pi L/\beta)$, where $\Lambda(\tau)$ is the
+simple top eigenvalue of the positive compact
 kernel
-$\pi^{-1}\log[\sinh(\tau(u+v))/\sinh(\tau|u-v|)]$ on $(0,1)$.  We give
-global two-sided bounds and uniform small- and large-support remainders.  For
+$\pi^{-1}\log[\sinh(\tau(u+v))/\sinh(\tau|u-v|)]$ on $(0,1)$.
+The entropy bound is saturated in the symmetric binary top-mode sector; no
+general-$d$ sharpness is claimed.  For
 the conformally coupled massless scalar in a four-dimensional de Sitter static
-patch, $\beta=2\pi R$, and the same s-wave momentum profile is the unique
-optimizer over all angular and canonical sectors.  Thus final Cauchy support
-$L=yR$ implies
+patch, $\beta=2\pi R$, the same coefficient controls all angular and canonical
+sectors, with $\mathcal C_{2\pi R}(L)=RC_{\rm opt}(L/R)$.
+
+Using a purified field record as the nonideal observer record in the simple
+Harlow--Usatyuk--Zhao random code, the Haar-averaged squared inner-product
+fluctuation for an orthogonal CRT-real matter pair is therefore bounded below
+by the displayed physical purity, up to the exact finite-code factor
+$D/(D+2)$.  Finally, if every conditional spherical $q_i=0$ branch obeys a
+local final-slice constraint budget $Q_{b,i}\leq\delta$, then
 \[
- \log\frac1{2\eobs}\leq\EK R C_{\rm opt}(y),
- \qquad C_{\rm opt}(y)=2y\Lambda(y/2),
+ S_2(\rho_P)\leq
+ \delta\frac{R^2}{G}\,
+ \frac{C_{\rm opt}(y)\tanh y\,\sech^2y}{2}.
 \]
-where $\EK$ is only the post-switch scalar Killing energy.  A source radius
-and duration provide a causal upper envelope for $L$; sharp controllability
-from every smaller fixed source cylinder is not claimed.  Smooth compact
-sources approach the final-support optimum.  We do not include the work or
-stress of an autonomous actuator or claim a total measurement-energy cost.
+This is a fixed-background channel plus a branchwise final-slice constraint
+corollary, not a coupled gravity theorem.  The prescribed pointer and source
+exclude actuator work, autonomous-observer stress, and a deterministic error
+floor for every fixed code.
 \end{abstract}
 
 \input{sections/introduction}
 \input{sections/model_and_channel}
 \input{sections/localization_theorem}
+\input{sections/finite_pointer_entropy}
 \input{sections/achievability}
 \input{sections/comparison}
 \input{sections/discussion}

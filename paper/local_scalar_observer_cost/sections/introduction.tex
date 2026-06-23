@@ -1,122 +1,158 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Gapless two-level detectors linearly coupled to free fields provide an exact,
-nonperturbative dephasing model.  Their time-ordered evolution is a Weyl
-displacement because free-field commutators are c-numbers.  Landulfo used this
-structure for relativistic communication channels~\cite{Landulfo2016};
-Barcellos and Landulfo derived the associated field-energy and switching-work
-accounting~\cite{BarcellosLandulfo2021}.  The same solvable detector now appears
-in nonperturbative treatments of Danielson--Satishchandran--Wald (DSW)
-decoherence~\cite{BatistaEtAl2026}.  Killing-horizon decoherence, its local
-two-point-function description, and its de Sitter specialization are also well
-developed~\cite{DSW2023,GrallaWei2024,DSW2025,Li2025}.
+The observer rule of Harlow, Usatyuk, and Zhao replaces the inner product of
+closed-universe states by a quantum-to-classical channel carried by an
+observer record~\cite{HarlowUsatyukZhao2025}.  In their simple random-code
+model, departures from an ideal inner product are controlled by the purity
+$e^{-S_2(\omega_{\rm Ob'})}$ of that record.  This makes the second R\'enyi
+entropy operational, but leaves a complementary physical question: how much
+localized field energy is required to produce a record with a specified
+purity?
 
-Those results determine the dephasing functional for a chosen source.  We ask
-a different variational question: after the interaction has ended, how large
-can the exact thermal dephasing exponent be at fixed field energy and fixed
-final Cauchy support?  Compact support is essential because the thermal state
-has arbitrarily soft modes.  Localization replaces the missing spectral gap
-by a compact compression of the thermal inverse Hamiltonian.
-
-We first solve this problem without imposing a relation between temperature
-and geometry.  Let $h_0=\sqrt{-\partial_x^2}$ on the Dirichlet half-line, let
-momentum data $p$ be supported in $[0,L]$, and set
+We answer that question in an exactly solvable model.  A finite pointer
+controls compact classical sources for a free scalar field in a thermal
+static patch.  The exact time-ordered evolution is a controlled Weyl
+displacement, so tracing the field gives a Schur dephasing channel.  If
+$w_i$ is the initial pointer distribution and $p_i$ are its conditional
+post-switch momentum data, define
 \begin{equation}
- \Gamma_{\beta,p}=\ip{p}{h_0^{-1}\coth(\beta h_0/2)p},
- \qquad E_p=\frac12\norm{p}^2.
-\end{equation}
-Our first result is the exact optimum
-\begin{equation}
- \Gamma_{\beta,p}\leq E_p\mathcal C_\beta(L),
+ \Pcl=\sum_iw_i^2,
  \qquad
- \mathcal C_\beta(L)=2L\Lambda(\pi L/\beta),
- \label{eq:general-intro}
+ \bar p=\sum_iw_ip_i,
+ \qquad
+ \Ebar=\frac12\sum_iw_i\norm{p_i-\bar p}^2.
+ \label{eq:intro-centered-data}
 \end{equation}
-where $\Lambda(\tau)$ is the top eigenvalue of the explicit positive compact
-kernel
+Here $\Pcl$ is the purity of the ideal classical distribution and $\Ebar$ is
+the field energy that distinguishes the conditional records; a common
+displacement costs energy but carries no pointer information.
+
+Suppose every conditional datum is supported in the half-line interval
+$[0,L]$.  Our central finite-pointer result is
+\begin{align}
+ \Tr\rho_P^2
+ &\geq \Pcl+(1-\Pcl)
+ \exp\!\left[-\frac{\mathcal C_\beta(L)\Ebar}{1-\Pcl}\right],
+ \label{eq:intro-purity-bound}\\
+ S_2(\rho_P)
+ &\leq\min\{H_2(w),\mathcal C_\beta(L)\Ebar\}.
+ \label{eq:intro-renyi-bound}
+\end{align}
+The continuous value is understood when $\Pcl=1$.  The coefficient is the
+exact localized norm of the thermal inverse Hamiltonian,
 \begin{equation}
+ \mathcal C_\beta(L)=2L\Lambda(\pi L/\beta),
+ \qquad
  k_\tau(u,v)=\frac1\pi
- \log\frac{\sinh[\tau(u+v)]}{\sinh[\tau\abs{u-v}]}
- \quad\hbox{on }L^2(0,1).
- \label{eq:kernel-intro}
+ \log\frac{\sinh[\tau(u+v)]}{\sinh[\tau\abs{u-v}]},
+ \label{eq:intro-kernel}
 \end{equation}
-The top eigenvalue is simple and its eigenfunction is strictly positive.  The
-answer has the global bracket
+where $\Lambda(\tau)$ is the simple top eigenvalue of the positive compact
+operator with kernel $k_\tau$ on $L^2(0,1)$.  The purity bound follows by
+combining the sharp pairwise form estimate with a weighted variance identity
+and Jensen's inequality.  Equal binary weights and opposite top-eigenfunction
+profiles saturate it.  We do not claim global sharpness for arbitrary pointer
+dimension.
+
+The operator theorem underlying \cref{eq:intro-kernel} is independent of de
+Sitter geometry.  For Dirichlet half-line momentum data,
+\begin{equation}
+ \ip{p}{h_0^{-1}\coth(\beta h_0/2)p}
+ \leq \frac12\mathcal C_\beta(L)\norm p^2,
+ \label{eq:intro-half-line-bound}
+\end{equation}
+and the exact coefficient obeys the global bracket
 \begin{equation}
  \max\left\{\frac{3L}{\pi},\frac{16L^2}{\beta\pi^2}\right\}
  \leq\mathcal C_\beta(L)
  \leq\frac{4\operatorname{arsinh}(1)}\pi L
-      +\frac{16L^2}{\beta\pi^2},
- \label{eq:general-bracket-intro}
+      +\frac{16L^2}{\beta\pi^2}.
+ \label{eq:intro-general-bracket}
 \end{equation}
-with uniform remainders that identify the vacuum-controlled small-support law
-and the thermal large-support law.
+Uniform remainders identify the vacuum-controlled small-support law and the
+thermal large-support law.
 
 We then specialize to the conformally coupled massless scalar in a
-four-dimensional de Sitter static patch.  The Bunch--Davies inverse temperature
-is $\beta=2\pi R$.  Optical partial waves have
+four-dimensional de Sitter static patch.  The Bunch--Davies temperature has
+$\beta=2\pi R$, and the optical partial-wave operators are
 \begin{equation}
  A_\ell=-\partial_x^2+\frac{\ell(\ell+1)}
  {R^2\sinh^2(x/R)}.
 \end{equation}
 Resolvent order shows that no higher angular momentum has a larger thermal
 momentum form.  A separate localized estimate controls the field-coordinate
-sector, and the two lower bounds in \cref{eq:general-bracket-intro} dominate
-that estimate for every $L/R>0$.  Consequently the half-line momentum
-optimizer is the unique optimum over the full angular and canonical phase
-space.  For $y=L/R$,
+sector.  Consequently, the half-line momentum optimizer is the unique
+optimum over the full angular and canonical phase space, with
 \begin{equation}
- C_{\rm opt}(y)=2y\Lambda(y/2),
- \qquad
- \log\frac1{2\eobs}\leq\EK R C_{\rm opt}(y),
- \label{eq:main-intro}
+ \mathcal C_{2\pi R}(L)=R C_{\rm opt}(y),
+ \qquad C_{\rm opt}(y)=2y\Lambda(y/2),
+ \qquad y=L/R.
+ \label{eq:intro-de-sitter-cost}
 \end{equation}
-where $\eobs$ is the halved diamond distance from complete pointer dephasing
-and $\EK$ is the post-switch scalar Killing energy generated by the prescribed
-source.  Temperature first changes the dimensionless small-support cost at
-cubic order, and $8y^2/\pi^3$ is the sharp leading large-support coefficient.
 
-Sharpness in \cref{eq:main-intro} is a statement about final Cauchy data
-supported in $[0,L]$.  If a source is confined to areal radius $a<R$ for a
-static-time interval of length $T$, finite propagation gives only
+The physical record also fits directly into the simple observer code.
+Purifying the conditional field states gives
 \begin{equation}
- L=R\operatorname{arctanh}(a/R)+T
- \label{eq:source-envelope-intro}
+ \ket\omega=\sum_i\sqrt{w_i}\ket i_{\rm Ob}\ket{e_i}_{\rm Ob'},
+ \qquad e^{-S_2(\omega_{\rm Ob'})}=\Tr\rho_P^2.
+ \label{eq:intro-record-state}
 \end{equation}
-as a causal envelope.  The resulting source-radius and duration inequality is
-valid, but we do not claim that every fixed smaller source cylinder approaches
-the top eigenfunction.  Smooth compact sources do approach the optimum when
-their worldtube approaches the final-support ball.
+For an orthogonal CRT-real matter pair, the exact second-moment formula of
+Harlow, Usatyuk, and Zhao therefore yields
+\begin{equation}
+ \mathbb E_O
+ \abs{\bra\phi\widehat V^\dagger\widehat V\ket\psi}^2
+ =\frac{D}{D+2}\Tr\rho_P^2,
+ \label{eq:intro-harlow-insertion}
+\end{equation}
+so \cref{eq:intro-purity-bound} becomes a field-energy lower floor on this
+Haar-averaged code fluctuation.  This is an ensemble mean-square statement
+for the specified pair, not a deterministic bound for every fixed code.
 
-We do not claim a new detector channel or a new positive-kernel variational
-principle.  The candidate contribution is the exact finite-support thermal
-covariance operator, its reduction from the full de Sitter angular and
-canonical phase space, and its sharp support asymptotics.  Related literatures
-include extremal eigenvalues of Riesz and logarithmic potentials and singular
-truncated Wiener--Hopf operators
-\cite{RuzhanskySuragan2016,AnoopJohnson2025,JohnsonVerma2026,
-Polosin2022,Widom2006,Kozlowski2008}.
-Whether the particular conjunction above is already implicit in those
-literatures is the decisive novelty question.
+Finally, we give a limited gravitational application.  If every conditional
+spherical $q_i=0$ branch obeys the final-slice local constraint budget
+$Q_{b,i}\leq\delta$, then
+\begin{equation}
+ S_2(\rho_P)\leq
+ \delta\frac{R^2}{G}\,
+ \frac{C_{\rm opt}(y)\tanh y\,\sech^2y}{2}.
+ \label{eq:intro-gravity-bound}
+\end{equation}
+The budget must hold branchwise: controlling only an averaged or centered
+source does not control the conditional geometries.  This result composes a
+fixed-background channel calculation with exact Einstein--scalar
+final-slice constraints.  It neither recomputes the channel on the
+branch-dependent geometries nor solves a coupled evolution.
 
-The term field-energy requirement is literal.  The quantity $\EK$ does not
-include the work, clock, trap, battery, or material stress needed to implement
-the prescribed source.  The shared smeared qubit is an idealized detector, not
-an autonomous relativistic probe field.  Complete pointer dephasing is also
-only an operational channel target; the error in \cref{eq:main-intro} is not a
-gravitational encoding error and is not identified with observer entropy.
+Compact final support is essential throughout.  Without it, arbitrarily soft
+thermal modes prevent the energy norm from controlling the dephasing form.
+If a source is confined to areal radius $a<R$ for a static-time interval of
+length $T$, finite propagation supplies the causal envelope
+\begin{equation}
+ L=R\operatorname{arctanh}(a/R)+T.
+ \label{eq:intro-source-envelope}
+\end{equation}
+Smooth compact sources approach the final-support optimum when their
+worldtube approaches the final-support ball.  We do not claim that every
+fixed smaller source cylinder can approach the top mode.
 
-Two comparisons are kept secondary.  First, the dephasing form is
-incomparable with the local coherent-state entropy entering recent
-Klein--Gordon Bekenstein bounds~\cite{HollandsLongoMorsella2026}.  Second, an
-appendix records exact flux-free Einstein--scalar final-slice constraint data
-for the same spherical scalar datum.  That appendix does not derive the
-channel on a perturbed geometry or solve a coupled evolution.
+The field resource in this paper is equally specific.  It is the
+post-switch scalar Killing energy of the prescribed conditional sources.  It
+does not include a clock, trap, battery, actuator, or autonomous observer
+stress.  Exact gapless-detector channels and their energy accounting are
+prior art~\cite{Landulfo2016,BarcellosLandulfo2021,BatistaEtAl2026}; positive
+compact kernels and logarithmic-potential variational principles also have a
+substantial literature.  The candidate contribution is the finite-pointer
+purity theorem with the exact localized thermal coefficient, its all-sector
+de Sitter reduction, and the explicit insertion of that physical purity into
+the observer-code second moment.  External detector/QFT, operator-theory,
+and quantum-gravity review remain publication gates.
 
-\Cref{sec:model} fixes the de Sitter model and recalls the exact channel.
-\Cref{sec:bound} proves the general thermal theorem and the de Sitter all-sector
-specialization.  \Cref{sec:construction} proves smooth-source closure.
-\Cref{sec:comparison} states the prior-art and local-entropy boundary, and
-\cref{sec:discussion} summarizes the claim.  \Cref{sec:gravity} contains the
-optional final-slice gravity application.
+\Cref{sec:model} defines the controlled-source model and exact Schur channel.
+\Cref{sec:bound} proves the localized thermal operator theorem and the full
+de Sitter reduction.  \Cref{sec:finite-pointer} derives the R\'enyi bound and
+observer-code insertion.  \Cref{sec:construction} treats smooth source
+realization, \cref{sec:comparison} separates the result from adjacent entropy
+and detector bounds, and \cref{sec:discussion} states the claim boundary.
+\Cref{sec:gravity} contains the branchwise final-slice application.

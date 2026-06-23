@@ -1,7 +1,7 @@
 [project]
 name = "qgtoy"
 version = "0.1.0"
-description = "Research code and certificates for final-support thermal dephasing bounds."
+description = "Research code and certificates for finite-pointer observer entropy bounds."
 requires-python = ">=3.11"
 dependencies = []
 

@@ -76,12 +76,33 @@ Ask specifically: is the thermal support theorem a routine positive-kernel
 application once the odd-convolution and hyperbolic representations are
 known, and are the explicit uniform remainders substantial?
 
-## Separate Framing Review
+## Observer-Code and Gravity Review
 
-Dr. Daniel Harlow remains the intended significance and direction reviewer.
-That pass should occur after, or together with a clear summary of, the two
-technical dispositions. It does not replace either domain review unless it
-explicitly addresses the corresponding novelty literature.
+### First route: Daniel Harlow
+
+Why: the manuscript now makes an explicit, equation-level insertion into the
+simple observer code of Harlow, Usatyuk, and Zhao rather than only drawing a
+binary-channel analogy. Harlow is best placed to judge both the Eq. (4.2)
+specialization and whether an energy-support floor on its ensemble second
+moment is useful to the observer program.
+
+Ask specifically: is the purified field record a legitimate realization of
+the nonideal observer record in the simple code, is the orthogonal CRT-real
+specialization correct, and does the branchwise backreaction corollary
+materially strengthen the paper?
+
+### Second route: Mykhaylo Usatyuk or Ying Zhao
+
+Why: both are coauthors of the observer-code calculation used in the central
+new proposition and can check its exact finite-`D`, transpose, and
+ensemble-average conventions.
+
+Ask specifically: does the manuscript preserve every hypothesis of the simple
+random-code second moment, and would a concentration or uniform-over-states
+upgrade be required for the stated physical framing?
+
+This review does not replace the detector/QFT or operator-theory novelty
+checks unless it explicitly covers those literatures.
 
 ## Contact Sequence
 

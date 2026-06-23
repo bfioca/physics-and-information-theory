@@ -1,4 +1,4 @@
-name: final-support-paper
+name: finite-pointer-observer-paper
 
 on:
   push:
@@ -27,6 +27,10 @@ jobs:
         run: >-
           PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
           --output /tmp/local_scalar_observer_cost_certificate.json
+      - name: Replay finite-pointer certificate outside the checkout
+        run: >-
+          PYTHONPATH=. python experiments/finite_pointer_observer_audit.py
+          --output /tmp/finite_pointer_observer_certificate.json
       - name: Replay numerical spectrum outside the checkout
         run: |
           PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py \

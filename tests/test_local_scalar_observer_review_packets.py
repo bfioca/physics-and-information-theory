@@ -56,6 +56,7 @@ def test_review_packets_are_minimal_pinned_and_reproducible(tmp_path: Path) -> N
     expected_briefs = {
         "detector-qft": "QFT_NOVELTY_REVIEW.md",
         "operator-theory": "OPERATOR_NOVELTY_REVIEW.md",
+        "observer-code": "OBSERVER_CODE_REVIEW.md",
     }
     for archive_path in first:
         domain = next(
@@ -82,6 +83,9 @@ def test_review_packets_are_minimal_pinned_and_reproducible(tmp_path: Path) -> N
             assert "REVIEWER_SHORTLIST.md" not in archive.namelist()
             manifest = json.loads(archive.read("REVIEW_PACKET_MANIFEST.json"))
             assert manifest["domain"] == domain
+            assert manifest["artifact"] == (
+                "finite_pointer_observer_entropy_review_packet"
+            )
             assert manifest["manuscript_revision"] == revision
             assert manifest["endorsement_requested"] is False
             for name, expected_hash in manifest["files_sha256"].items():

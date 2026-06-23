@@ -1,0 +1,281 @@
+{
+  "artifact": "finite_pointer_observer_entropy_upgrade",
+  "binary_saturation_check": {
+    "channel": {
+      "channel": "|i><j| -> G_ij |i><j|",
+      "gram_magnitude_formula": "|G_ij|=exp(-Gamma_ij)",
+      "gram_magnitudes": [
+        [
+          1.0,
+          0.36787944117144233
+        ],
+        [
+          0.36787944117144233,
+          1.0
+        ]
+      ],
+      "ideal_classical_pointer_purity": 0.5,
+      "pairwise_dephasing_exponents": [
+        [
+          0.0,
+          1.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "pairwise_exponent_formula": "Gamma_ij=<p_i-p_j,B(p_i-p_j)>/4",
+      "phase_scope": "Weyl and source phases are omitted because Tr(rho^2) depends only on |G_ij|.",
+      "physical_pointer_purity": 0.5676676416183064,
+      "physical_pointer_renyi_two": 0.5662191695169727,
+      "reduced_pointer_density_magnitudes": [
+        [
+          0.5,
+          0.18393972058572117
+        ],
+        [
+          0.18393972058572117,
+          0.5
+        ]
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "energy": {
+      "branch_energies": [
+        0.5,
+        0.5
+      ],
+      "centered_branch_energies": [
+        0.5,
+        0.5
+      ],
+      "centered_energy_Ebar": 0.5,
+      "centering_identity_rhs": 0.5,
+      "conditional_profiles": [
+        [
+          -1.0
+        ],
+        [
+          1.0
+        ]
+      ],
+      "mean_branch_energy": 0.5,
+      "mean_profile_energy": 0.0,
+      "pairwise_squared_distance_average": 2.0,
+      "pairwise_variance_identity_rhs": 2.0,
+      "weighted_mean_profile": [
+        0.0
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "pairwise_cost_bound_holds": true,
+    "purity_bound_holds": true,
+    "renyi_bound": {
+      "centered_field_energy_Ebar": 0.5,
+      "classical_pointer_purity_Pcl": 0.5,
+      "classical_pointer_renyi_H2": 0.6931471805599453,
+      "cost_coefficient_C": 2.0,
+      "entropy_formula": "S2(rho)<=min{H2(w),C*Ebar}",
+      "jensen_exponent": 2.0,
+      "off_diagonal_weight": 0.5,
+      "physical_purity_lower_bound": 0.5676676416183064,
+      "physical_renyi_upper_bound": 0.5662191695169727,
+      "purity_formula": "Tr(rho^2)>=Pcl+(1-Pcl)*exp[-C*Ebar/(1-Pcl)]",
+      "simplified_renyi_upper_bound": 0.6931471805599453
+    },
+    "renyi_bound_holds": true
+  },
+  "branchwise_gravity_example": {
+    "branchwise_hypothesis": "Every conditional spherical q=0 datum obeys Q_b,i<=delta; then Ebar<=sum_i w_i E_i<=max_i E_i.",
+    "centered_energy_upper_bound": 39981.25052807653,
+    "coefficient_status": "nonrigorous Galerkin illustration of the exact C_opt(1) formula",
+    "de_sitter_N_at_b": 0.4199743416140261,
+    "dimensionless_area_coefficient": 0.1646584608126553,
+    "exact_form": "S2<=delta*(R^2/G)*C_opt(y)*tanh(y)*sech(y)^2/2",
+    "maximum_constraint_ratio_delta": 0.25,
+    "maximum_energy_of_every_branch": 39981.25052807653,
+    "observer_renyi_upper_bound": 41164.61520316383,
+    "output_areal_radius_b": 0.7615941559557649,
+    "scope": "Final-slice constraint corollary only; the channel is not rederived on the branch-dependent geometries.",
+    "support_ratio_y": 1.0
+  },
+  "branchwise_gravity_rigorous_bound": {
+    "branchwise_hypothesis": "Every conditional spherical q=0 datum obeys Q_b,i<=delta; then Ebar<=sum_i w_i E_i<=max_i E_i.",
+    "centered_energy_upper_bound": 39981.25052807653,
+    "coefficient_status": "rigorous explicit upper bound on C_opt(1)",
+    "de_sitter_N_at_b": 0.4199743416140261,
+    "dimensionless_area_coefficient": 0.18542845497444227,
+    "exact_form": "S2<=delta*(R^2/G)*C_opt(y)*tanh(y)*sech(y)^2/2",
+    "maximum_constraint_ratio_delta": 0.25,
+    "maximum_energy_of_every_branch": 39981.25052807653,
+    "observer_renyi_upper_bound": 46357.11374361057,
+    "output_areal_radius_b": 0.7615941559557649,
+    "scope": "Final-slice constraint corollary only; the channel is not rederived on the branch-dependent geometries.",
+    "support_ratio_y": 1.0
+  },
+  "certified_claims": {
+    "binary_bound_is_saturated": true,
+    "branchwise_gravity_composition": true,
+    "centered_energy_identity": true,
+    "finite_pointer_exact_schur_channel": true,
+    "harlow_orthogonal_code_insertion": true,
+    "pairwise_variance_identity": true,
+    "renyi_jensen_bound": true,
+    "rigorous_gravity_coefficient_dominates_numerical_illustration": true
+  },
+  "claim_boundary": "The finite-pointer channel and Renyi inequality are exact. The Harlow insertion is an ensemble-averaged orthogonal-state code fluctuation statement. The gravity result assumes a local constraint budget on every conditional spherical q=0 branch and does not constitute coupled Einstein-matter evolution. General-d global sharpness and standalone literature novelty are not certified.",
+  "finite_pointer_example": {
+    "channel": {
+      "channel": "|i><j| -> G_ij |i><j|",
+      "gram_magnitude_formula": "|G_ij|=exp(-Gamma_ij)",
+      "gram_magnitudes": [
+        [
+          1.0,
+          0.569782824730923,
+          0.10539922456186433
+        ],
+        [
+          0.569782824730923,
+          1.0,
+          0.569782824730923
+        ],
+        [
+          0.10539922456186433,
+          0.569782824730923,
+          1.0
+        ]
+      ],
+      "ideal_classical_pointer_purity": 0.38,
+      "pairwise_dephasing_exponents": [
+        [
+          0.0,
+          0.5625,
+          2.25
+        ],
+        [
+          0.5625,
+          0.0,
+          0.5625
+        ],
+        [
+          2.25,
+          0.5625,
+          0.0
+        ]
+      ],
+      "pairwise_exponent_formula": "Gamma_ij=<p_i-p_j,B(p_i-p_j)>/4",
+      "phase_scope": "Weyl and source phases are omitted because Tr(rho^2) depends only on |G_ij|.",
+      "physical_pointer_purity": 0.5185758355981553,
+      "physical_pointer_renyi_two": 0.6566690024160184,
+      "reduced_pointer_density_magnitudes": [
+        [
+          0.5,
+          0.22067593911378844,
+          0.033330161323105394
+        ],
+        [
+          0.22067593911378844,
+          0.3,
+          0.13956771847924213
+        ],
+        [
+          0.033330161323105394,
+          0.13956771847924213,
+          0.2
+        ]
+      ],
+      "weights": [
+        0.5,
+        0.3,
+        0.2
+      ]
+    },
+    "energy": {
+      "branch_energies": [
+        0.5,
+        0.125,
+        2.0
+      ],
+      "centered_branch_energies": [
+        0.55125,
+        0.10124999999999998,
+        1.9012499999999999
+      ],
+      "centered_energy_Ebar": 0.68625,
+      "centering_identity_rhs": 0.68625,
+      "conditional_profiles": [
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          0.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0
+        ]
+      ],
+      "mean_branch_energy": 0.6875,
+      "mean_profile_energy": 0.001250000000000001,
+      "pairwise_squared_distance_average": 2.745,
+      "pairwise_variance_identity_rhs": 2.745,
+      "weighted_mean_profile": [
+        0.05000000000000002,
+        0.0
+      ],
+      "weights": [
+        0.5,
+        0.3,
+        0.2
+      ]
+    },
+    "pairwise_cost_bound_holds": true,
+    "purity_bound_holds": true,
+    "renyi_bound": {
+      "centered_field_energy_Ebar": 0.68625,
+      "classical_pointer_purity_Pcl": 0.38,
+      "classical_pointer_renyi_H2": 0.9675840262617056,
+      "cost_coefficient_C": 2.0,
+      "entropy_formula": "S2(rho)<=min{H2(w),C*Ebar}",
+      "jensen_exponent": 2.213709677419355,
+      "off_diagonal_weight": 0.62,
+      "physical_purity_lower_bound": 0.44776255800698306,
+      "physical_renyi_upper_bound": 0.8034921915178549,
+      "purity_formula": "Tr(rho^2)>=Pcl+(1-Pcl)*exp[-C*Ebar/(1-Pcl)]",
+      "simplified_renyi_upper_bound": 0.9675840262617056
+    },
+    "renyi_bound_holds": true
+  },
+  "harlow_code_insertion": {
+    "certified_mean_square_fluctuation_floor": 0.44686882036625053,
+    "encoding_dimension_D": 1000,
+    "exact_orthogonal_state_mean_square_fluctuation": 0.5175407540899754,
+    "finite_D_factor": 0.998003992015968,
+    "gate_three_closed": true,
+    "harlow_equation": "For <phi|psi>=<phi*|psi>=0, HUZ Eq. (4.2) gives E_O |<phi|Vhat^dagger Vhat|psi>|^2=D*Tr(rho_Ob'^2)/(D+2).",
+    "physical_observer_purity": 0.5185758355981553,
+    "physical_observer_renyi_two": 0.6566690024160184,
+    "scope": "This is a Haar-ensemble mean-square floor for an orthogonal matter pair, not a deterministic lower bound for every fixed code.",
+    "state_identification": "A purified controlled-displacement record state has equal nonzero reduced spectra on the pointer and record systems, so Tr(rho_Ob'^2)=Tr(rho_pointer^2)."
+  },
+  "replay": {
+    "unit_support_cost_source": "paper/local_scalar_observer_cost/data/observer_cost_spectrum.json",
+    "unit_support_cost_status": "nonrigorous_numerical_illustration"
+  },
+  "source_sha256": {
+    "experiments/finite_pointer_observer_audit.py": "5eaab9a48d003214521d701757ba3a16881baeec4cb78ee7e97d37b01594bc59",
+    "paper/local_scalar_observer_cost/data/observer_cost_spectrum.json": "963a656d3759200649ce8c5d75c80c8c21c742fd04b433ab4a535baaa0bba18e",
+    "qgtoy/finite_pointer_observer.py": "2e964daf00d5431991f971d91322d9a2baef715a25e9d7b2b58e9548eb5c2158",
+    "qgtoy/local_scalar_observer_cost.py": "0fe854a7d8ec591b08c638feecb888094ebd5fefcf927e5c851bfb26b6e64f58"
+  },
+  "status": "pass_four_gate_algebra"
+}

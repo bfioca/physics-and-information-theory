@@ -1,81 +1,88 @@
-# Reviewer Entry Point: Final-Support Thermal Dephasing
+# Reviewer Entry Point: Finite-Pointer Observer Entropy
 
-**Status:** strengthened short-paper candidate. Internal theorem,
-reproducibility, two-method numerical, clean-room proof, and package gates
-pass. External proof coverage and two-domain novelty dispositions remain open.
-No submission decision has been issued.
+**Status:** internally closed paper candidate; external proof and novelty review
+remain open. No submission decision has been issued.
 
-This repository is organized around one manuscript. The paper solves a sharp
-thermal covariance optimization for fixed final Cauchy support and then proves
-that its half-line momentum optimizer is the full angular and canonical
-optimum for a conformal scalar in a de Sitter static patch.
+This repository is organized around one manuscript. The paper derives a
+finite-pointer purity bound from a sharp localized thermal covariance theorem,
+inserts that physical purity into the Harlow-Usatyuk-Zhao simple random code,
+and gives a branchwise final-slice gravity corollary.
 
 ## Five-Minute Route
 
 1. Read the [manuscript](paper/local_scalar_observer_cost/main.pdf), especially
-   the general thermal theorem, the de Sitter specialization, and the causal
-   source-cylinder corollary.
+   the finite-pointer theorem, observer-code proposition, and claim boundary.
 2. Use the [shared referee guide](paper/local_scalar_observer_cost/REFEREE_GUIDE.md)
-   for the exact claim boundary and requested disposition.
-3. Choose the domain brief:
-   [detector/QFT](paper/local_scalar_observer_cost/QFT_NOVELTY_REVIEW.md) or
-   [operator theory](paper/local_scalar_observer_cost/OPERATOR_NOVELTY_REVIEW.md).
-4. Consult the [clean-room proof audit](docs/local_scalar_observer_proof_audit.md)
-   for claim-level derivations and the
-   [priority audit](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md) for
-   exact prior-art reductions and their first failed hypotheses.
+   for the theorem hierarchy and requested disposition.
+3. Choose a specialist brief:
+   [detector/QFT](paper/local_scalar_observer_cost/QFT_NOVELTY_REVIEW.md),
+   [operator theory](paper/local_scalar_observer_cost/OPERATOR_NOVELTY_REVIEW.md),
+   or [observer code and gravity](paper/local_scalar_observer_cost/OBSERVER_CODE_REVIEW.md).
+4. Consult the [finite-pointer proof note](docs/finite_pointer_observer_entropy.md)
+   and [clean-room localization audit](docs/local_scalar_observer_proof_audit.md).
 5. Record findings in the [response form](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md).
 
 ## Candidate Contribution
 
-For Dirichlet half-line momentum data supported in `[0,L]`, inverse temperature
-`beta`, dephasing exponent `Gamma`, and field energy `E=||p||^2/2`, the paper
-proves
+For finite pointer weights `w_i` and conditional scalar momentum data
+`p_i` supported in `[0,L]`, define
 
 ```text
-Gamma <= E C_beta(L),
-C_beta(L)=2 L Lambda(pi L/beta),
+P_cl=sum_i w_i^2,
+E_bar=sum_i w_i ||p_i-p_bar||^2/2.
 ```
 
-where `Lambda(tau)` is the simple top eigenvalue of
+The paper proves
 
 ```text
-k_tau(u,v)=pi^-1 log{
-  sinh[tau(u+v)]/sinh[tau|u-v|]}.
+Tr(rho_P^2)
+ >= P_cl+(1-P_cl)exp[-C_beta(L)E_bar/(1-P_cl)],
+
+S_2(rho_P) <= min{H_2(w),C_beta(L)E_bar},
+
+C_beta(L)=2 L Lambda(pi L/beta).
 ```
 
-The paper gives global bounds and uniform small- and large-support remainders.
-At `beta=2 pi R`, it proves that the s-wave momentum profile is the unique
-optimizer over every angular and canonical sector.
+The coefficient is the exact norm of a reflected thermal logarithmic kernel.
+At `beta=2 pi R`, it controls every angular and canonical sector of a
+conformal scalar in de Sitter. The entropy inequality is saturated in the
+symmetric binary top-mode sector; arbitrary-dimension sharpness is not
+claimed.
 
-The exact detector channel and positive-kernel variational principles are
-prior art. The candidate novelty is the reflected thermal operator selected by
-final support, its explicit uniform remainders, and its full de Sitter sector
-reduction.
+For an orthogonal CRT-real matter pair in the Harlow-Usatyuk-Zhao simple
+random code, the physical record gives
+
+```text
+E_O |<phi|Vhat^dagger Vhat|psi>|^2
+ = D/(D+2) Tr(rho_P^2).
+```
+
+This converts the field theorem into an ensemble-averaged code-fluctuation
+floor. A separate branchwise constraint argument bounds the same record
+entropy by a local final-slice backreaction budget.
 
 ## Claim Boundary
 
-Sharpness is for final Cauchy support. A fixed source radius and duration give
-a causal envelope; near-controllability from every smaller source cylinder is
-not claimed. The energy is post-switch scalar-field energy only. It excludes
-actuator work, clock or battery energy, and probe stress. The gravity appendix
-contains final-slice constraint data, not a channel on perturbed geometry or a
-coupled evolution.
+The energy is post-switch scalar-field energy only. The pointer and sources
+are prescribed, not autonomous. The code result is a Haar mean-square
+statement for a specified pair, not a deterministic theorem for every code.
+The gravity result is branchwise final-slice constraint data, not a channel on
+perturbed geometry or a coupled evolution. Final-support sharpness does not
+imply controllability from every smaller fixed source cylinder.
 
 ## Requested Decision
 
-- **SUBMIT:** both novelty gates pass, the proof survives external review, and
-  every central claim has at least one external `PASS` or `CORRECT` finding.
+- **SUBMIT:** the three novelty gates pass and the central proofs survive
+  external review.
 - **STRENGTHEN:** identify one concrete minimum theorem or correction required
   before submission.
 - **NO-GO:** provide the theorem, reference, or argument that makes the result
   known, immediate, incorrect, or insufficient for a standalone paper.
 
-A blank row or `NOT REVIEWED` is not a proof pass. Reviewers may divide the
-claim-level checks according to expertise; uncovered claims require a targeted
-external proof check.
+A blank row or `NOT REVIEWED` is not a proof pass. This is a request for
+critical review, not endorsement or approval.
 
-## Reproduce the Packet
+## Reproduce the Package
 
 ```bash
 python -m pip install -e '.[research-numerics]'
@@ -83,9 +90,5 @@ PYTHONPATH=. python -m pytest -q
 python paper/local_scalar_observer_cost/audit_package.py
 ```
 
-Expected result: `50 passed` and a passing 25-file package audit. These checks
-establish internal closure and provenance, not literature novelty.
-
-This is a request for critical review, not endorsement or approval. The
-[external review launch kit](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md)
-contains deterministic attachment bundles and concise outreach drafts.
+These checks establish internal closure and provenance, not literature
+novelty.

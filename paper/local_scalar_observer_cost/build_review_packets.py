@@ -39,6 +39,11 @@ PACKETS = (
         "Integral-operator/fractional-Sobolev",
         "OPERATOR_NOVELTY_REVIEW.md",
     ),
+    Packet(
+        "observer-code",
+        "Observer code and branchwise gravity",
+        "OBSERVER_CODE_REVIEW.md",
+    ),
 )
 
 
@@ -146,7 +151,7 @@ def build_packet(
     )
     manifest = {
         "schema_version": 1,
-        "artifact": "final_support_thermal_dephasing_review_packet",
+        "artifact": "finite_pointer_observer_entropy_review_packet",
         "domain": packet.slug,
         "manuscript_revision": revision,
         "commit_time_utc": commit_time,

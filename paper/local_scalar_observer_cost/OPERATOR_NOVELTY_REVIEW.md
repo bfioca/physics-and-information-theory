@@ -4,8 +4,10 @@
 
 Determine whether the finite-interval reflected thermal operator below, its
 top eigenvalue, and the stated uniform support asymptotics are already standard
-or immediate consequences of known operator theory. This is an equation-level
-reduction audit, not a request to judge the numerical plot.
+or immediate consequences of known operator theory. This operator supplies
+the sharp pairwise coefficient in the finite-pointer entropy theorem. This is
+an equation-level reduction audit, not a request to judge the numerical plot
+or observer-code interpretation.
 
 ## Result Under Review
 

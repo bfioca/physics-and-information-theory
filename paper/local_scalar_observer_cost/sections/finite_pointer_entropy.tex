@@ -1,0 +1,159 @@
+\section{Finite-pointer entropy and observer-code accuracy}
+\label{sec:finite-pointer}
+
+We now compose the sharp binary covariance theorem with the exact
+finite-pointer channel.  The composition uses no new spectral estimate.  Its
+input is the pairwise form bound; its additional ingredients are the weighted
+variance identity and convexity.
+
+Define the ideal classical pointer purity and its second R\'enyi entropy by
+\begin{equation}
+ \Pcl:=\sum_iw_i^2,
+ \qquad H_2(w):=-\log\Pcl.
+ \label{eq:classical-pointer-purity}
+\end{equation}
+
+\begin{theorem}[Finite-pointer energy--support--entropy bound]
+\label{thm:finite-pointer-renyi}
+Let $p_i$ be Dirichlet half-line momentum data supported in $[0,L]$, with
+$w_i\geq0$ and $\sum_iw_i=1$.  Set
+\begin{equation}
+ \bar p=\sum_iw_ip_i,
+ \qquad
+ \Ebar=\frac12\sum_iw_i\norm{p_i-\bar p}^2.
+ \label{eq:half-line-centered-energy}
+\end{equation}
+For the exact thermal channel in \cref{eq:dephasing-channel},
+\begin{equation}
+ \boxed{
+ \Tr\rho_P^2\geq\Pcl+(1-\Pcl)
+ \exp\!\left[-\frac{\mathcal C_\beta(L)\Ebar}{1-\Pcl}\right]}
+ \label{eq:finite-pointer-purity-bound}
+\end{equation}
+when $\Pcl<1$, with the continuous value one when $\Pcl=1$.  Consequently,
+\begin{align}
+ S_2(\rho_P)
+ &\leq-\log\left\{\Pcl+(1-\Pcl)
+ \exp\!\left[-\frac{\mathcal C_\beta(L)\Ebar}{1-\Pcl}\right]\right\}
+ \label{eq:finite-pointer-entropy-bound}\\
+ &\leq\min\{H_2(w),\mathcal C_\beta(L)\Ebar\}.
+ \label{eq:simple-entropy-bound}
+\end{align}
+The first inequality is saturated for equal binary weights and opposite
+top-eigenfunction profiles.  Global sharpness for arbitrary pointer dimension
+is not asserted.
+\end{theorem}
+
+\begin{proof}
+Write $d_{ij}=p_i-p_j$ and $x_{ij}=2\Gamma_{ij}$.  By
+\cref{eq:pairwise-dephasing,eq:general-cost-definition},
+\begin{equation}
+ x_{ij}=\frac12\ip{d_{ij}}{B_{\beta,L}d_{ij}}
+ \leq\frac{\mathcal C_\beta(L)}4\norm{d_{ij}}^2.
+ \label{eq:pairwise-exponent-bound}
+\end{equation}
+The weighted variance identity gives
+\begin{equation}
+ \sum_{i,j}w_iw_j\norm{p_i-p_j}^2=4\Ebar,
+ \label{eq:pairwise-variance-identity}
+\end{equation}
+and hence
+\begin{equation}
+ \sum_{i,j}w_iw_jx_{ij}\leq\mathcal C_\beta(L)\Ebar.
+ \label{eq:average-exponent-bound}
+\end{equation}
+The terms $i=j$ have $x_{ii}=0$ and total weight $\Pcl$.  Normalize the
+remaining weights by $1-\Pcl$ and apply Jensen's inequality to $e^{-x}$ in
+\cref{eq:finite-pointer-purity}; this proves
+\cref{eq:finite-pointer-purity-bound}.  The first simple bound follows because
+the right side is at least $\Pcl$.  For $z\geq0$, convexity also gives
+\begin{equation}
+ \Pcl+(1-\Pcl)e^{-z/(1-\Pcl)}\geq e^{-z}.
+\end{equation}
+Taking $z=\mathcal C_\beta(L)\Ebar$ proves the second bound in
+\cref{eq:simple-entropy-bound}.
+
+For two equal weights and $p_\pm=\pm p$, the off-diagonal exponents coincide.
+If $p$ is the top eigenfunction of $B_{\beta,L}$, both the form bound and
+Jensen's inequality are equalities.  For more pointer states, equality would
+require all nonzero differences to lie in the simple top eigenspace and to
+have equal exponent.  We do not claim that those conditions can be met.
+\end{proof}
+
+The same argument works in the full static-patch phase space because the
+energy is a Hilbert norm and \cref{thm:main} bounds the thermal form of every
+difference datum.
+
+\begin{corollary}[Conformal de Sitter finite-pointer bound]
+\label{cor:de-sitter-finite-pointer}
+Let every conditional angular and canonical datum be supported in $[0,yR]$,
+and define $\Ebar$ by centering in the full energy norm as in
+\cref{eq:centered-field-energy}.  Then
+\begin{align}
+ \Tr\rho_P^2
+ &\geq\Pcl+(1-\Pcl)
+ \exp\!\left[-\frac{R C_{\rm opt}(y)\Ebar}{1-\Pcl}\right],
+ \label{eq:de-sitter-pointer-purity}\\
+ S_2(\rho_P)&\leq\min\{H_2(w),R C_{\rm opt}(y)\Ebar\}.
+ \label{eq:de-sitter-pointer-entropy}
+\end{align}
+The coefficient $C_{\rm opt}(y)=2y\Lambda(y/2)$ is exact.  Binary saturation
+uses the unique s-wave momentum optimizer of \cref{thm:main}.
+\end{corollary}
+
+\subsection{Insertion into the observer code}
+
+The field record provides a purification of the physical pointer state:
+\begin{equation}
+ \ket\omega=\sum_i\sqrt{w_i}\ket{i}_{\rm Ob}\ket{e_i}_{\rm Ob'},
+ \qquad \ip{e_j}{e_i}=G_{ij}.
+ \label{eq:physical-record-state}
+\end{equation}
+The two reductions of this pure state have identical nonzero spectra, so
+\begin{equation}
+ e^{-S_2(\omega_{\rm Ob'})}
+ =\Tr\omega_{\rm Ob'}^2
+ =\Tr\rho_P^2.
+ \label{eq:physical-purity-identification}
+\end{equation}
+This is the entropy parameter appearing in the simple random-code calculation
+of Harlow, Usatyuk, and Zhao~\cite{HarlowUsatyukZhao2025}.
+
+\begin{proposition}[Physical floor in the simple observer code]
+\label{prop:harlow-floor}
+Let $D$ be the dimension of their Haar-random orthogonal encoding matrix, and
+let $\ket\phi$, $\ket\psi$ be orthogonal CRT-real matter states.  Replacing
+the ideal record by \cref{eq:physical-record-state}, their exact second-moment
+formula gives
+\begin{equation}
+ \mathbb E_O\abs{\bra\phi\widehat V^\dagger\widehat V\ket\psi}^2
+ =\frac{D}{D+2}\Tr\rho_P^2.
+ \label{eq:harlow-exact-purity}
+\end{equation}
+Consequently, for the de Sitter model,
+\begin{equation}
+ \mathbb E_O\abs{\bra\phi\widehat V^\dagger\widehat V\ket\psi}^2
+ \geq\frac{D}{D+2}\left\{\Pcl+(1-\Pcl)
+ e^{-R C_{\rm opt}(y)\Ebar/(1-\Pcl)}\right\}.
+ \label{eq:harlow-physical-floor}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Equation~(4.2) of \cite{HarlowUsatyukZhao2025} contains the observer terms
+$e^{-S_2(\omega_{\rm Ob'})}$ and
+$\Tr(\omega_{\rm Ob}\omega_{\rm Ob}^{T})$ together with two matter overlaps.
+For the stated orthogonal CRT-real pair, both overlaps vanish, leaving
+\cref{eq:harlow-exact-purity}.  Apply
+\cref{eq:physical-purity-identification,eq:de-sitter-pointer-purity}.
+\end{proof}
+
+The proposition closes a specific gap: the entropy suppressing the simple
+code fluctuation is now generated by a localized field record with an exact
+energy--support bound.  Its scope is narrower than a gravitational observer
+theorem.  The system called ${\rm Ob'}$ in
+\cref{eq:physical-record-state} is the purified nonideal record, and
+\cref{eq:harlow-physical-floor} is a Haar-ensemble mean-square statement for
+one orthogonal pair.  It is not a deterministic lower bound for every fixed
+encoding map.  Nor does it include an autonomous observer, actuator work, or
+gravitational evolution.

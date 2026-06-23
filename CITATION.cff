@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
-title: "Final-Support Thermal Dephasing Research Code and Review Package"
+title: "Finite-Pointer Observer Entropy Research Code and Review Package"
 authors:
   - family-names: "Fioca"
     given-names: "Brian"
 year: 2026
 repository-code: "https://github.com/bfioca/physics-and-information-theory"
 license: "MIT"
-abstract: "Research code, analytic certificates, numerical checks, and external-review materials for sharp final-support field-energy bounds in an exact thermal dephasing channel."
+abstract: "Research code, analytic certificates, numerical checks, and external-review materials for energy, support, observer-code, and backreaction bounds on finite-pointer record entropy."

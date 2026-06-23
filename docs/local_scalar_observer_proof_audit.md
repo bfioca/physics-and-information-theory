@@ -1,4 +1,4 @@
-# Clean-Room Proof Audit: Final-Support Thermal Dephasing
+# Clean-Room Proof Audit: Localization and Finite-Pointer Composition
 
 **Status:** all central claims passed an author-side clean-room derivation;
 independent human proof review remains open
@@ -40,6 +40,10 @@ The allowed dispositions in this record are exactly:
 | Uniform large-support `beta/3` remainder | `PASS, independent derivation` | The remainder is a positive sum of Dirichlet half-line resolvents with norm at most `pi/(6tau)`. |
 | Smooth compact source density | `PASS, independent derivation` | Interior `C_c^infinity` momenta are dense in `L2`; the compressed covariance is bounded and the cutoff homogeneous solution realizes each approximant. |
 | Final support versus fixed source cylinder | `PASS, independent derivation` | The construction proves sharpness for final data and for source worldtubes approaching that ball; it does not prove near-controllability from every smaller fixed cylinder. |
+| Finite-pointer Schur normalization | `PASS, independent derivation` | Conditional Weyl states form a Gram matrix and `Gamma_ij=<p_i-p_j,B(p_i-p_j)>/4`, which reduces exactly to the binary convention for opposite profiles. |
+| Finite-pointer purity and Renyi bound | `PASS, independent derivation` | The pairwise variance identity gives `sum_ij w_i w_j ||p_i-p_j||^2=4E_bar`; Jensen on normalized off-diagonal weights gives the stated purity floor. |
+| Harlow-code insertion | `PASS, independent derivation` | The two reductions of the purified record have equal purity; for an orthogonal CRT-real matter pair, both matter overlaps in Harlow-Usatyuk-Zhao Eq. (4.2) vanish and leave `D Tr(rho^2)/(D+2)`. |
+| Branchwise gravity composition | `PASS, independent derivation` | Applying the final-slice mass bound to every conditional branch gives `E_bar<=sum_i w_i E_i<=max_i E_i`; a centered or average geometry alone would not suffice. |
 | Independent leading-eigenvalue reconstruction | `PASS, independent computation` | A midpoint/product-integration matrix passes analytic brackets and coarse/fine convergence on `0.005<=y<=100`. |
 | Independent asymptotic stress tests | `PASS, independent computation` | The frozen checker verifies the small- and large-support remainder inequalities on dedicated grids. |
 
@@ -207,9 +211,27 @@ singular diagonal, and a de Sitter support grid from `y=0.005` through
 These are `PASS, independent computation` results. They do not turn the
 analytic inequalities into computer-assisted proofs.
 
+## Independent Finite-Pointer Record
+
+Run:
+
+```bash
+python experiments/finite_pointer_observer_clean_room_check.py
+```
+
+The frozen output is
+[`experiments/finite_pointer_observer_clean_room_check.json`](../experiments/finite_pointer_observer_clean_room_check.json).
+It does not import the production finite-pointer module. Across 64
+deterministic cases it independently checks the pairwise variance identity,
+Jensen purity floor, binary saturation, Harlow finite-`D` factor, and both
+the illustrative and rigorous gravity coefficients. This is implementation
+independence for the finite-dimensional composition, not an independent
+literature or continuum-operator proof.
+
 ## External Gate
 
 The clean-room audit reduces the proof-review workload but does not authorize
 submission. External readers must still check the normalization, strict
 resolvent comparison, uniform remainder argument, and cutoff-source support
-construction. Both domain novelty reviews also remain open.
+construction, Harlow-code specialization, and branchwise gravity
+interpretation. All three domain novelty reviews also remain open.

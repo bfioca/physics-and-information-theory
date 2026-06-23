@@ -1,4 +1,4 @@
-"""Final-support thermal dephasing bounds and their de Sitter specialization.
+"""Localized thermal dephasing bounds and their de Sitter specialization.
 
 The model is the conformally coupled massless field in four-dimensional de
 Sitter, decomposed into free canonical partial waves on the optical half-line.
