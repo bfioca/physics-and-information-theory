@@ -1,75 +1,19 @@
-# Paper Package
+# Paper
 
-This directory is the paper-shaped entrypoint. It is intentionally narrower
-than the full repository.
+This directory contains one active manuscript:
 
-## Selected Manuscript
+## Final-Support Thermal Dephasing
 
-The retained specialist manuscript is `validated_skyrmion_profile/`: a
-computer-assisted existence and local-uniqueness theorem for one prescribed
-massive Dirichlet-confined fixed-background Skyrmion profile, with an analytic
-local parameter branch and authenticated radial and spectral consequences. Its
-proof, exact-replay, package-audit, and internal referee gates pass; it is ready
-for colleague review and specialist submission preparation. Start with:
+- [Manuscript PDF](local_scalar_observer_cost/main.pdf)
+- [Package guide](local_scalar_observer_cost/README.md)
+- [LaTeX source](local_scalar_observer_cost/main.tex)
+- [Referee guide](local_scalar_observer_cost/REFEREE_GUIDE.md)
+- [External review launch kit](local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md)
+- [Artifact manifest](local_scalar_observer_cost/artifact_manifest.json)
 
-- `validated_skyrmion_profile/main.tex`
-- `validated_skyrmion_profile/README.md`
-- `validated_skyrmion_profile_outline.md`
-- `../docs/publishable_paper_route_decision.md`
+The status is **GO to external review; HOLD submission**. Internal theorem,
+build, numerical, and reproducibility gates pass. Detector/QFT novelty,
+operator-theory novelty, and independent proof coverage remain open.
 
-The generic Paper U information-exposure sprint has completed with a novelty
-stop, not a submission theorem. Its controls and decision are recorded in
-`../docs/information_exposure_control_result.md`; the original contract remains
-in `../docs/paper_u_information_exposure_goal.md`. The Skyrmion manuscript is
-the independent review-ready artifact.
-
-## Stopped Bounded Candidate
-
-The Track 2 spacelike-replication work is isolated in
-`spacelike_replication/`. Its theorem is proved on a bounded finite-code
-domain, but the source-level reduction audit found that the main inequality is
-a direct consequence of Janssens' established UCP covariance Cauchy-Schwarz
-lemma. It is retained as an internal methods note, not a submission candidate.
-Start with:
-
-- `spacelike_replication/main.tex`
-- `spacelike_replication/README.md`
-- `spacelike_replication_paper_outline.md`
-
-The files below are the canonical sources for the earlier finite
-observer-algebra package, not for Track 2.
-
-Start with:
-
-- `main.md`
-- `main.tex`
-- `expert_feedback_note.md`
-- `expert_cover_note.md`
-- `PUBLISHING_CHECKLIST.md`
-
-Use `PUBLISHING_CHECKLIST.md` as the live tracker for turning the current note
-into a publishable draft and release package.
-
-`main.md` is the canonical editable paper draft. `main.tex` is the
-attachment-ready technical-note version for wider expert sharing. The
-finite-observer note is retained as the earlier extraction artifact.
-
-## Expert Send Bundle
-
-Send only:
-
-- `expert_cover_note.md`
-- `expert_feedback_note.md`
-
-Do not lead with the full repository or goal history. In the cover note, say
-that `main.tex`, `main.md`, and the executable certificate repository are
-available as supporting material.
-
-Supporting repo entrypoints:
-
-- `THEOREMS.md`
-- `docs/static_patch_observer_algebra/README.md`
-- `docs/static_patch_observer_algebra/audit_index.json`
-
-The target framing is an arXiv-style technical note with reproducible code
-appendix, not a claim of a new continuum quantum-gravity theorem.
+Earlier draft papers and stopped candidates are preserved in Git history, not
+in the current tree. They are not part of this review package.

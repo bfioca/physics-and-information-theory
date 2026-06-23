@@ -64,6 +64,14 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _manifest_path(path: Path) -> str:
+    """Use repository-relative paths when possible and absolute paths otherwise."""
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def _second_log_primitive(values: np.ndarray) -> np.ndarray:
     """Return F with F''(z)=log|z| and continuous value F(0)=0."""
     result = np.zeros_like(values, dtype=float)
@@ -692,9 +700,9 @@ def main() -> None:
     preview = args.output_preview.resolve()
     _write_svg_preview(preview, commands)
     record["figure"] = {
-        "path": str(figure.relative_to(ROOT)),
+        "path": _manifest_path(figure),
         "sha256": _sha256(figure),
-        "preview_path": str(preview.relative_to(ROOT)),
+        "preview_path": _manifest_path(preview),
         "preview_sha256": _sha256(preview),
     }
     data = args.output_data.resolve()

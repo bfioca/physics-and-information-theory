@@ -1,14 +1,14 @@
 # Reviewer Entry Point: Final-Support Thermal Dephasing
 
-**Status:** strengthened short-paper candidate. The internal theorem and
-reproducibility gates pass; independent proof review and two-domain novelty
-review remain open. No submission decision has been issued.
+**Status:** strengthened short-paper candidate. Internal theorem,
+reproducibility, numerical, and package gates pass. Independent proof coverage
+and two-domain novelty review remain open. No submission decision has been
+issued.
 
-This branch contains a larger research archive, but the requested review is
-about one paper only. The paper solves a sharp thermal covariance optimization
-for fixed final Cauchy support and then proves that its half-line momentum
-optimizer is the full angular and canonical optimum for a conformal scalar in
-a de Sitter static patch.
+This repository is organized around one manuscript. The paper solves a sharp
+thermal covariance optimization for fixed final Cauchy support and then proves
+that its half-line momentum optimizer is the full angular and canonical
+optimum for a conformal scalar in a de Sitter static patch.
 
 ## Five-Minute Route
 
@@ -17,18 +17,13 @@ a de Sitter static patch.
    source-cylinder corollary.
 2. Use the [shared referee guide](paper/local_scalar_observer_cost/REFEREE_GUIDE.md)
    for the exact claim boundary and requested disposition.
-3. Choose the domain-specific brief:
+3. Choose the domain brief:
    [detector/QFT](paper/local_scalar_observer_cost/QFT_NOVELTY_REVIEW.md) or
    [operator theory](paper/local_scalar_observer_cost/OPERATOR_NOVELTY_REVIEW.md).
-4. Consult the [internal proof audit](docs/local_scalar_observer_proof_audit.md)
-   for the five vulnerable proof steps.
-5. Record the result in the [specialist response form](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md).
-6. If needed, inspect the [equation-level priority audit](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md),
-   which records the exact vacuum odd-convolution and thermal hyperbolic-kernel
-   reductions found before outreach.
-
-Older papers, stopped programs, and planning notes elsewhere in the repository
-are not part of this review packet.
+4. Consult the [proof audit](docs/local_scalar_observer_proof_audit.md) for the
+   vulnerable derivations and the [priority audit](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md)
+   for exact prior-art reductions.
+5. Record findings in the [response form](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md).
 
 ## Candidate Contribution
 
@@ -41,65 +36,55 @@ Gamma <= E C_beta(L),
 C_beta(L)=2 L Lambda(pi L/beta),
 ```
 
-where `Lambda(tau)` is the simple top eigenvalue of the positive reflected KMS
-kernel
+where `Lambda(tau)` is the simple top eigenvalue of
 
 ```text
 k_tau(u,v)=pi^-1 log{
   sinh[tau(u+v)]/sinh[tau|u-v|]}.
 ```
 
-The paper gives global two-sided bounds and uniform small- and large-support
-remainders. At the de Sitter temperature `beta=2 pi R`, it proves that this
-s-wave momentum profile is the unique optimizer over every angular and
-canonical sector.
+The paper gives global bounds and uniform small- and large-support remainders.
+At `beta=2 pi R`, it proves that the s-wave momentum profile is the unique
+optimizer over every angular and canonical sector.
 
-The exact detector channel is prior art. Positive-kernel variational
-principles are prior art. The candidate novelty is the reflected thermal
-operator selected by final support, its exact general-temperature coefficient,
-the full de Sitter sector reduction, and the sharp support asymptotics.
+The exact detector channel and positive-kernel variational principles are
+prior art. The candidate novelty is the reflected thermal operator selected by
+final support, its explicit uniform remainders, and its full de Sitter sector
+reduction.
 
 ## Claim Boundary
 
 Sharpness is for final Cauchy support. A fixed source radius and duration give
-a causal envelope for that support; near-controllability from every smaller
-fixed source cylinder is not claimed. The energy is post-switch scalar-field
-energy only. It excludes actuator work, clock or battery energy, and probe
-stress. The gravity appendix contains final-slice constraint data, not a
-channel on perturbed geometry or a coupled evolution.
+a causal envelope; near-controllability from every smaller source cylinder is
+not claimed. The energy is post-switch scalar-field energy only. It excludes
+actuator work, clock or battery energy, and probe stress. The gravity appendix
+contains final-slice constraint data, not a channel on perturbed geometry or a
+coupled evolution.
 
 ## Requested Decision
 
-- **SUBMIT:** the central conjunction is not subsumed by known work and the
-  proof survives independent review.
+- **SUBMIT:** both novelty gates pass, the proof survives external review, and
+  every central claim has at least one external `PASS` or `CORRECT` finding.
 - **STRENGTHEN:** identify one concrete minimum theorem or correction required
   before submission.
 - **NO-GO:** provide the theorem, reference, or argument that makes the result
-  known, immediate, or insufficient for a standalone paper.
+  known, immediate, incorrect, or insufficient for a standalone paper.
+
+A blank row or `NOT REVIEWED` is not a proof pass. Reviewers may divide the
+claim-level checks according to expertise; uncovered claims require a targeted
+external proof check.
 
 ## Reproduce the Packet
 
-From the repository root:
-
 ```bash
-PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
-PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
-PYTHONPATH=. python -m pytest -q \
-  tests/test_local_scalar_observer_cost.py \
-  tests/test_local_scalar_observer_manuscript.py \
-  tests/test_local_scalar_observer_review_packets.py \
-  tests/test_local_scalar_observer_spectrum.py
+python -m pip install -e '.[research-numerics]'
+PYTHONPATH=. python -m pytest -q
 python paper/local_scalar_observer_cost/audit_package.py
 ```
 
-The numerical replay requires NumPy through the optional `research-numerics`
-dependency. These checks establish internal closure and provenance, not
-literature novelty.
+Expected result: `47 passed` and a passing 25-file package audit. These checks
+establish internal closure and provenance, not literature novelty.
 
-This is a request for critical review, not endorsement or approval.
-
-The author-facing [external review launch kit](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md)
-contains minimal attachment sets and separate detector/QFT, operator-theory,
-and Harlow framing drafts. Its deterministic packet builder freezes the exact
-reviewed commit and attachment hashes. The [reviewer shortlist](paper/local_scalar_observer_cost/REVIEWER_SHORTLIST.md)
-records ranked public contact routes.
+This is a request for critical review, not endorsement or approval. The
+[external review launch kit](paper/local_scalar_observer_cost/EXTERNAL_REVIEW_LAUNCH.md)
+contains deterministic attachment bundles and concise outreach drafts.

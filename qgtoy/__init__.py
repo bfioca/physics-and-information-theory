@@ -1,5 +1,1 @@
-"""Exact stabilizer-state and stabilizer-code toy verifier."""
-
-from .stabilizer import StabilizerCode, StabilizerState
-
-__all__ = ["StabilizerCode", "StabilizerState"]
+"""Computational support for the final-support thermal dephasing paper."""

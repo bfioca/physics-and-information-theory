@@ -1,7 +1,7 @@
 [project]
 name = "qgtoy"
 version = "0.1.0"
-description = "Exact small stabilizer-state and stabilizer-code verifiers for entanglement/QEC toy-universe searches."
+description = "Research code and certificates for final-support thermal dephasing bounds."
 requires-python = ">=3.11"
 dependencies = []
 

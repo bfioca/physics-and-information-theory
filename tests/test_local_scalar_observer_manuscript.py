@@ -9,6 +9,12 @@ BIBLIOGRAPHY = PAPER / "references.bib"
 SECTIONS = tuple(sorted((PAPER / "sections").glob("*.tex")))
 REVIEW_DOCUMENTS = (
     ROOT / "REVIEWER_README.md",
+    ROOT / "README.md",
+    ROOT / "REPRODUCIBILITY.md",
+    ROOT / "CONTRIBUTING.md",
+    ROOT / "THEOREMS.md",
+    ROOT / "paper" / "README.md",
+    ROOT / "docs" / "README.md",
     PAPER / "README.md",
     PAPER / "REFEREE_GUIDE.md",
     PAPER / "QFT_NOVELTY_REVIEW.md",
@@ -17,8 +23,8 @@ REVIEW_DOCUMENTS = (
     PAPER / "REVIEW_RESPONSE_FORM.md",
     PAPER / "PRIORITY_AUDIT.md",
     PAPER / "REVIEWER_SHORTLIST.md",
+    ROOT / "docs" / "local_scalar_observer_cost.md",
     ROOT / "docs" / "local_scalar_observer_proof_audit.md",
-    ROOT / "docs" / "local_scalar_observer_strengthening_goal.md",
 )
 ALLOWED_CONTROL_BYTES = {9, 10, 13}
 
@@ -38,6 +44,12 @@ def _comma_separated_keys(matches):
         for key in match.split(",")
         if key.strip()
     }
+
+
+def _markdown_link_targets(text: str) -> list[str]:
+    prose = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+    prose = re.sub(r"`[^`\n]*`", "", prose)
+    return re.findall(r"\[[^]]+\]\(([^)]+)\)", prose)
 
 
 def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
@@ -119,7 +131,7 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     for document in REVIEW_DOCUMENTS:
         text = document.read_text(encoding="ascii")
         _assert_plain_ascii(document)
-        for target in re.findall(r"\[[^]]+\]\(([^)]+)\)", text):
+        for target in _markdown_link_targets(text):
             if "://" in target or target.startswith("#"):
                 continue
             resolved = (document.parent / target.split("#", 1)[0]).resolve()
@@ -131,7 +143,13 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     assert "STRENGTHEN" in reviewer_text
     assert "NO-GO" in reviewer_text
     assert "not endorsement or approval" in reviewer_text
-    assert "not part of this review packet" in reviewer_text
+    assert "one manuscript" in reviewer_text
+
+    root_readme = (ROOT / "README.md").read_text(encoding="ascii")
+    assert "GO to external review; HOLD submission" in root_readme
+    assert "Earlier Paper A" not in root_readme
+    assert "Current Branch Result" not in root_readme
+    assert "Historical Repository Context" not in root_readme
 
     launch_text = (PAPER / "EXTERNAL_REVIEW_LAUNCH.md").read_text(
         encoding="ascii"

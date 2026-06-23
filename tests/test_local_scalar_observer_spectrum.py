@@ -6,6 +6,7 @@ import numpy as np
 import pytest
 
 from experiments.local_scalar_observer_spectrum import (
+    _manifest_path,
     galerkin_cost_estimate,
     vacuum_piecewise_constant_matrix,
 )
@@ -51,6 +52,8 @@ def test_galerkin_cost_sits_inside_the_rigorous_bracket() -> None:
 
 
 def test_frozen_spectrum_records_convergence_and_provenance() -> None:
+    assert _manifest_path(ROOT / "paper/example.pdf") == "paper/example.pdf"
+    assert _manifest_path(Path("/tmp/example.pdf")) == "/tmp/example.pdf"
     record = json.loads(DATA.read_text(encoding="ascii"))
     assert record["status"] == "numerical_convergence_pass_nonrigorous"
     assert record["checks"]["all_curve_estimates_inside_rigorous_bracket"]

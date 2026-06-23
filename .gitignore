@@ -6,7 +6,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .playwright-cli/
-/output/playwright/*/cli.config.json
+output/
 .coverage
 htmlcov/
 

@@ -1,241 +1,116 @@
 # Reproducibility
 
-This repo is a finite certificate suite. The commands below reproduce the
-packaged static-patch observer-algebra benchmark used by the paper draft.
+This document reproduces the final-support thermal dephasing manuscript and its
+review package from a clean checkout.
 
-No command below proves continuum de Sitter quantum gravity, a dS/CFT
-dictionary, or literal ER=EPR in de Sitter.
+## Environment
 
-## One-Command Summary
+- Python 3.11 or newer
+- NumPy 2.x for the numerical spectrum
+- Tectonic 0.16.9 or a compatible LaTeX toolchain to rebuild the PDF
 
-From a clean checkout:
-
-```bash
-PYTHONPATH=. python3 examples/reproduce_static_patch_package.py
-```
-
-Expected result: JSON with
-
-```text
-"package": "static_patch_observer_algebra"
-"claim_boundary": "finite certificate suite; not continuum de Sitter, dS/CFT, or literal ER=EPR"
-```
-
-and five certificate entries whose `status` is `pass` and whose
-`all_certified_claims_true` field is `true`:
-
-```text
-strong_continuity_gate
-finite_to_typeii_scaffold
-inclusion_covariant_dynamics
-approximate_cutoff_embeddings
-continuum_lift_obstruction
-```
-
-The `approximate_cutoff_embeddings` entry covers the trace-filled UCP baseline
-plus harmonic projection/refinement, heat-kernel coarse graining, and a
-Berezin-Toeplitz-inspired smoothing surrogate. These are finite audits, not
-canonical continuum static-patch embeddings.
-
-The frozen output of this command is:
-
-```text
-artifacts/static_patch_diagnostics/compact_summary.json
-```
-
-## Focused Regression Tests
-
-Run the focused package test suite:
+Install the package and numerical extra:
 
 ```bash
-PYTHONPATH=. python3 -m unittest tests.test_static_patch_strong_continuity tests.test_typeii_static_patch_limit tests.test_inclusion_covariant_dynamics tests.test_embedding_channels tests.test_continuum_lift_obstruction
+python -m pip install -e '.[research-numerics]'
+```
+
+## Focused Test Suite
+
+Run all retained tests:
+
+```bash
+PYTHONPATH=. python -m pytest -q
 ```
 
 Expected result:
 
 ```text
-Ran 34 tests
-OK
+47 passed
 ```
 
-## Information-Exposure Control Sprint
+The suite covers the analytic certificate, theorem normalization and scaling,
+manuscript structure, source-bound frozen records, numerical convergence,
+review-document links, and deterministic external-review packets.
 
-The completed Paper U prove-or-kill sprint is separate from the frozen package.
-Replay its analytic control and JSON-record checks with:
+## Analytic Replay
 
 ```bash
-PYTHONPATH=. python3 -m pytest -q tests/test_information_exposure_control.py
+PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
 ```
 
-Expected result: `18 passed`. To recompute the optional floating-point
-covariant SDP record, install its isolated extra and run:
-
-```bash
-python3 -m pip install -e '.[research-sdp]'
-PYTHONPATH=. python3 experiments/information_exposure_small_spin_sdp.py
-```
-
-The script should report `R_min` approximately `0.537943312211` and the verdict
-`KNOWN-FRAMEWORK SPECIALIZATION`. This replay checks a finite SDP formulation,
-quadrature agreement, and solver residuals. It is not a rigorous interval
-certificate, a local-action theorem, or a Paper U novelty claim.
-
-## Finite Type-Certification Control Sprint
-
-Replay the exact cylinder control, entropy dimension floor, adaptive hybrid
-bound, and finite-prefix embezzlement optimization with:
-
-```bash
-PYTHONPATH=. python3 -m pytest -q \
-  tests/test_finite_type_certification_control.py
-PYTHONPATH=. python3 \
-  experiments/finite_type_certification_control_audit.py
-python3 -m json.tool \
-  experiments/finite_type_certification_control_certificate.json >/dev/null
-```
-
-Expected focused result: `21 passed`. The audit script reports both finite
-checks as `true` and the decision
-`STOP_GENERIC_FINITE_CERTIFICATION_THEOREM`. The Schmidt-spectrum optimization
-is exact at finite dimension up to ordinary floating-point evaluation, and is
-cross-checked against brute-force spectra through five sites. The apparent
-inverse-square-root support rate is a numerical diagnostic, not a proved
-asymptotic, energy, locality, gravity, or algebraic-connectivity theorem.
-
-## Physical Observer-Channel Sprint
-
-Replay the exact finite pointer channel, relational acquisition, resource
-ledger, spherical mass-envelope bound, and matched two-region controls with:
-
-```bash
-PYTHONPATH=. python3 -m pytest -q \
-  tests/test_physical_observer_channel.py
-PYTHONPATH=. python3 \
-  experiments/physical_observer_channel_audit.py
-python3 -m json.tool \
-  experiments/physical_observer_channel_certificate.json >/dev/null
-```
-
-Expected focused result: `13 passed`. The audit reports normalized diamond
-distance approximately `0.03125`, maximum spherical constraint ratio
-approximately `0.0729167`, observer-channel decision `RETAIN`, and ER=EPR
-decision `STOP_NO_DERIVED_CONNECTIVITY_CONTRAST`. The backreaction entry is an
-exact Hamiltonian-constraint calculation for a declared spherical mass
-profile, not a same-action stress-tensor or Einstein-matter solution.
-
-## Final-Support Thermal Dephasing Paper
-
-Replay the arbitrary-temperature half-line theorem, conformal de Sitter
-all-sector specialization, numerical illustration, and source hashes with:
-
-```bash
-PYTHONPATH=. python3 \
-  experiments/local_scalar_observer_cost_audit.py
-PYTHONPATH=. python3 \
-  experiments/local_scalar_observer_spectrum.py
-PYTHONPATH=. python3 -m pytest -q \
-  tests/test_local_scalar_observer_cost.py \
-  tests/test_local_scalar_observer_manuscript.py \
-  tests/test_local_scalar_observer_spectrum.py
-python3 -m json.tool \
-  experiments/local_scalar_observer_cost_certificate.json >/dev/null
-python3 paper/local_scalar_observer_cost/audit_package.py
-```
-
-Expected focused result: `45 passed`. The theorem audit reports status
-`strengthened_final_support_theorem_pass_external_review_open`, minimum
-`E_K R` approximately
-`38.5083647231`, necessary wall constraint ratio approximately
-`0.000286896268303`, and an explicit weak-constraint window. The JSON artifact
-is bound to the audit and theorem source hashes. The spectrum replay reports
-`numerical_convergence_pass_nonrigorous`, regenerates Figure 1, and records
-resolution and quadrature comparisons. It requires the `research-numerics`
-optional dependency.
-
-This replay verifies the formulas, final constraint data, frozen example,
-manuscript structure, checked PDF, and artifact hashes. It does not certify
-standalone novelty, include the stress or work of an
-autonomous source actuator, rederive the channel on the perturbed geometry, or
-solve the coupled evolution. The paper decision remains open by construction.
-
-## Lead Certificate Commands
-
-Emit the five lead certificates:
-
-```bash
-PYTHONPATH=. python3 -m qgtoy static-patch-strong-continuity --max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
-PYTHONPATH=. python3 -m qgtoy finite-typeii-static-patch --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
-PYTHONPATH=. python3 -m qgtoy inclusion-covariant-dynamics --max-level 4 --max-consecutive-cutoff 5 --bridge-cert-max-cutoff 5 --noise-strength 1.0 --fixed-lapse 1.0 --environment-qubits 4 --temperature-scale 1.0 --screen-probability 0.75 --low-order 2 --perturbation-radius 0.05
-PYTHONPATH=. python3 -m qgtoy static-patch-embedding-channels --max-cutoff 5
-PYTHONPATH=. python3 -m qgtoy continuum-lift-obstruction --max-cutoff 5
-```
-
-Frozen outputs are stored under:
+The command regenerates
+`experiments/local_scalar_observer_cost_certificate.json`. Its status must be
 
 ```text
-artifacts/static_patch_diagnostics/
+strengthened_final_support_theorem_pass_external_review_open
 ```
 
-## Artifact Validation
+and its source hashes must match the audit script and
+`qgtoy/local_scalar_observer_cost.py`.
 
-Validate the frozen JSON artifacts:
+## Numerical Spectrum
 
 ```bash
-python3 -m json.tool artifacts/static_patch_diagnostics/strong_continuity_gate.json >/dev/null
-python3 -m json.tool artifacts/static_patch_diagnostics/finite_to_typeii_scaffold.json >/dev/null
-python3 -m json.tool artifacts/static_patch_diagnostics/inclusion_covariant_dynamics.json >/dev/null
-python3 -m json.tool artifacts/static_patch_diagnostics/approximate_cutoff_embeddings.json >/dev/null
-python3 -m json.tool artifacts/static_patch_diagnostics/continuum_lift_obstruction.json >/dev/null
-python3 -m json.tool artifacts/static_patch_diagnostics/compact_summary.json >/dev/null
-python3 -m json.tool artifacts/static_patch_diagnostics/environment.json >/dev/null
+PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
 ```
 
-## Recorded Environment
+This regenerates the numerical data and both Figure 1 formats under
+`paper/local_scalar_observer_cost/`. The computation uses exact cell integrals
+for the vacuum logarithmic kernel and Gauss-Legendre quadrature only for the
+smooth thermal correction. It is a convergence-checked illustration, not an
+interval proof.
 
-The frozen environment manifest is:
+## Package Audit
+
+```bash
+python paper/local_scalar_observer_cost/audit_package.py
+```
+
+Expected summary:
 
 ```text
-artifacts/static_patch_diagnostics/environment.json
+"status": "pass"
+"page_count": 18
+"checked_files": 25
 ```
 
-For the current artifact set it records:
+The audit verifies artifact hashes, TeX labels and citations, PDF and build-log
+closure, the theorem certificate, numerical data, and figure provenance.
 
-```text
-Python: 3.14.2
-OS: macOS-26.5.1-arm64-arm-64bit-Mach-O
-Generation baseline commit: ebf4a2e3d27ffb806bc99da8795e5fce21e68d8b
-Release identifier: v0.1-static-patch-diagnostics
+## External-Review Bundles
+
+From a clean committed checkout, run:
+
+```bash
+python paper/local_scalar_observer_cost/build_review_packets.py
 ```
 
-The release tag identifies the final immutable repository state for this
-package. The generation baseline commit is the code baseline used to emit the
-frozen certificates before adding the release artifacts themselves.
+The builder writes ignored ZIP archives under
+`dist/local_scalar_observer_review/`. Each bundle pins the full Git revision,
+commit time, source URL, and attachment hashes. Repeated builds at one commit
+must be byte-for-byte identical. The builder refuses a dirty tracked worktree.
 
-## Deterministic Parameters
+## Rebuild the Manuscript
 
-The certificate package uses the following deterministic parameters:
+From `paper/local_scalar_observer_cost/`:
 
-```text
-max_cutoff = 5
-max_level = 4
-max_consecutive_cutoff = 5
-bridge_cert_max_cutoff = 5
-noise_strength = 1.0
-fixed_lapse = 1.0
-environment_qubits = 4
-temperature_scale = 1.0
-screen_probability = 0.75
-low_order = 2
-perturbation_radius = 0.05
+```bash
+tectonic -X compile main.tex --keep-logs
 ```
 
-## What the Tests Prove
+or:
 
-The tests and frozen artifacts prove reproducibility of the finite benchmark:
-the certificate constructors run, the declared finite claims remain internally
-consistent, the JSON outputs parse, and the compact package summary reports the
-five lead certificate families as passing.
+```bash
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+```
 
-They do not replace the paper proofs. They also do not prove a canonical
-continuum static-patch embedding, a continuum de Sitter theorem, a dS/CFT
-dictionary, approximate QEC stability, or literal ER=EPR in de Sitter.
+The checked build has 18 pages and no undefined references or citations,
+overfull boxes, or underfull boxes.
+
+## What This Establishes
+
+The replay establishes internal consistency, deterministic provenance, and
+the stated finite calculations. It does not establish standalone novelty,
+model an autonomous source actuator, rederive the channel on perturbed
+geometry, or replace independent proof review.

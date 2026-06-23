@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
-title: "Physics and Information Theory Toy Verifier"
+title: "Final-Support Thermal Dephasing Research Code and Review Package"
 authors:
   - family-names: "Fioca"
     given-names: "Brian"
 year: 2026
 repository-code: "https://github.com/bfioca/physics-and-information-theory"
 license: "MIT"
-abstract: "Exact finite stabilizer/QEC certificates for entropy, reconstruction, observer-algebra tomography, and algebraic ER=EPR channel benchmarks."
+abstract: "Research code, analytic certificates, numerical checks, and external-review materials for sharp final-support field-energy bounds in an exact thermal dephasing channel."

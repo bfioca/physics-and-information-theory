@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "Please cite the manuscript below when using this review package."
 title: "Final-support thermal dephasing review package"
 type: software
-version: "strengthened-review-v2"
-date-released: 2026-06-22
+version: "external-review"
+date-released: 2026-06-23
 authors:
   - family-names: "Fioca"
     given-names: "Brian"
