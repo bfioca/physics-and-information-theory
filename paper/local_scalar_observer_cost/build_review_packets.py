@@ -118,6 +118,10 @@ REVIEW_RESPONSE_FORM.md. If the central result is known, please give a source
 or equation-level reduction. If it is insufficient, please identify the
 smallest bounded addition needed for a publishable short paper.
 
+Please mark each claim-level row you can assess. It is fine to use NOT
+REVIEWED outside your expertise; a blank row or NOT REVIEWED is not interpreted
+as a proof pass.
+
 This is a request for critical technical review, not endorsement or approval.
 Internal planning notes and repository history are intentionally excluded.
 """

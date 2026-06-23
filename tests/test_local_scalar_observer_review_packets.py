@@ -72,6 +72,12 @@ def test_review_packets_are_minimal_pinned_and_reproducible(tmp_path: Path) -> N
         with zipfile.ZipFile(archive_path) as archive:
             assert set(archive.namelist()) == expected_names
             assert archive.read("main.pdf").startswith(b"%PDF-")
+            assert b"NOT REVIEWED is not interpreted" in archive.read(
+                "PACKET_README.txt"
+            )
+            assert b"Submission Acceptance Rule" in archive.read(
+                "REVIEW_RESPONSE_FORM.md"
+            )
             assert "PRIORITY_AUDIT.md" not in archive.namelist()
             assert "REVIEWER_SHORTLIST.md" not in archive.namelist()
             manifest = json.loads(archive.read("REVIEW_PACKET_MANIFEST.json"))

@@ -144,6 +144,9 @@ Best,
 4. Integrate corrections before soliciting a second opinion on a superseded
    draft.
 5. Report the outcome as external feedback, not approval or endorsement.
+6. Authorize `SUBMIT` only if both domain novelty gates pass and the combined
+   external record gives every central claim at least one `PASS` or `CORRECT`.
+   An item marked `NOT REVIEWED` by every reviewer remains open.
 
 The publication decision remains **SUBMIT**, **STRENGTHEN**, or **NO-GO** under
 the goal contract. Silence or a polite general reaction does not close a gate.

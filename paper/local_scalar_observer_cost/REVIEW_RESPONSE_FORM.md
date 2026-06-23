@@ -46,6 +46,18 @@ as appropriate.
 | Final-support versus source-cylinder language |  |  |
 | Post-switch field-energy interpretation |  |  |
 
+## Submission Acceptance Rule
+
+`SUBMIT` requires both domain novelty gates to pass and every central claim in
+the table above to receive at least one external `PASS` or `CORRECT` finding
+across the preserved review records. A claim marked `NOT REVIEWED` by every
+reviewer remains open. `UNCLEAR`, a blank row, silence, or a general positive
+reaction does not count as proof coverage.
+
+The two domain reviewers may divide the claim-level checks according to their
+expertise. If neither reviewer covers an item, obtain a targeted external
+proof check for that item before changing the package status to `SUBMIT`.
+
 ## Corrections and Missing Comparisons
 
 ```text

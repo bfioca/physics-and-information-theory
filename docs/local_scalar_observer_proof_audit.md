@@ -138,7 +138,7 @@ This proves sharpness for final support and for source worldtubes approaching
 the final-support ball. It does not prove near-controllability from every
 fixed smaller source cylinder. **Internal result: PASS WITH EXPLICIT SCOPE.**
 
-## Remaining Independent Checks
+## Checks Requiring External Sign-Off
 
 - Verify all normalization factors in the general-`beta` quotient and the
   de Sitter specialization.

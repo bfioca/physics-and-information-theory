@@ -147,6 +147,9 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     )
     assert "KNOWN COROLLARY" in response_text
     assert "TECHNICALLY NEW BUT INSUFFICIENT" in response_text
+    assert "Submission Acceptance Rule" in response_text
+    assert "every central claim" in response_text
+    assert "marked `NOT REVIEWED` by every" in response_text
     assert "Neither answer grants permission to imply endorsement" in response_text
 
     priority_text = (PAPER / "PRIORITY_AUDIT.md").read_text(encoding="ascii")
@@ -165,6 +168,8 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
         encoding="ascii"
     )
     assert "Adversarial Follow-Up: 2026-06-23" in proof_audit
+    assert "Checks Requiring External Sign-Off" in proof_audit
+    assert "Remaining Independent Checks" not in proof_audit
     assert "No missing factor" in proof_audit
     assert "of two was found" in proof_audit
     assert "||r_tau||<=pi/(6 tau)" in proof_audit
