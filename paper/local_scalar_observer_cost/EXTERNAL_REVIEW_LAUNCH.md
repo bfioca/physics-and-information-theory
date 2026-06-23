@@ -11,7 +11,7 @@ submission-ready:
 
 No one review substitutes for another unless it explicitly covers that
 domain. Use the public
-[review branch](https://github.com/bfioca/physics-and-information-theory/tree/codex/paper-u-information-exposure)
+[repository](https://github.com/bfioca/physics-and-information-theory)
 or send the minimal packet below. Preserve the reviewed commit and record each
 response in `REVIEW_RESPONSE_FORM.md`.
 
