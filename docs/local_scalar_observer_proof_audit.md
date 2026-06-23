@@ -99,11 +99,20 @@ For large `tau`, split
 k_tau=(2 tau/pi) min(u,v)+r_tau.
 ```
 
-The resolvent expansion gives `r_tau>=0`, and the explicit row integral gives
-`||r_tau||<=pi/(4 tau)`. Since `||min(u,v)||=4/pi^2`,
+The explicit Dirichlet-resolvent expansion is
 
 ```text
-0 <= C_beta(L)-16L^2/(beta pi^2) <= beta/2.
+r_tau(u,v)=pi^-1 sum_[n>=1] n^-1
+  {exp[-2 n tau |u-v|]-exp[-2 n tau (u+v)]}.
+```
+
+Every summand is positive in operator order. Extending its row integral from
+`(0,1)` to the half-line gives at most `1/(pi tau n^2)`, so monotone
+summation and Schur's test yield `||r_tau||<=pi/(6 tau)`. Since
+`||min(u,v)||=4/pi^2`,
+
+```text
+0 <= C_beta(L)-16L^2/(beta pi^2) <= beta/3.
 ```
 
 At `beta=2 pi R` these become the stated de Sitter remainders.

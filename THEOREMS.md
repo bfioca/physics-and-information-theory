@@ -7166,7 +7166,7 @@ max{3L/pi,16L^2/(beta pi^2)}
  <= 4 asinh(1)L/pi+16L^2/(beta pi^2),
 
 0<=C_beta(L)-2L Lambda(0)<=2 pi L^3/(3 beta^2),
-0<=C_beta(L)-16L^2/(beta pi^2)<=beta/2.          (AZ.0a)
+0<=C_beta(L)-16L^2/(beta pi^2)<=beta/3.          (AZ.0a)
 ```
 
 This theorem concerns final Cauchy support and does not use a de Sitter
@@ -7287,7 +7287,7 @@ The exact coefficient has the explicit global bounds
 ```text
 max(3y/pi,8y^2/pi^3)<=C_opt(y)<=F(y),              (AZ.2a)
 0<=C_opt(y)-2y Lambda(0)<=y^3/(6pi),
-0<=C_opt(y)-8y^2/pi^3<=pi.                        (AZ.2b)
+0<=C_opt(y)-8y^2/pi^3<=2pi/3.                     (AZ.2b)
 ```
 
 Thus temperature first corrects the localized vacuum cost at cubic order, and

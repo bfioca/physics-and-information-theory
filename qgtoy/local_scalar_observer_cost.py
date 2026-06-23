@@ -442,7 +442,7 @@ def sharp_thermal_half_line_momentum_cost(
         4.0 * asinh(1.0) * length / pi
         + 2.0 * pi * length**3 / (3.0 * beta**2)
     )
-    large_support_upper = thermal_lower + beta / 2.0
+    large_support_upper = thermal_lower + beta / 3.0
     explicit_upper = min(
         closed_form_upper,
         row_upper,
@@ -481,7 +481,7 @@ def sharp_thermal_half_line_momentum_cost(
             "0<=C_beta(L)-2*L*Lambda(0)<=2*pi*L^3/(3*beta^2)."
         ),
         "large_support_statement": (
-            "0<=C_beta(L)-16*L^2/(beta*pi^2)<=beta/2."
+            "0<=C_beta(L)-16*L^2/(beta*pi^2)<=beta/3."
         ),
         "scope": (
             "This is the general-temperature half-line momentum theorem. "
@@ -562,8 +562,8 @@ def sharp_observer_cost_characterization(
             "correction is cubic, not quadratic, at small support."
         ),
         "large_support_statement": (
-            "0<=C_opt(y)-8*y^2/pi^3<=pi; the thermal Green operator fixes "
-            "the sharp leading large-support coefficient."
+            "0<=C_opt(y)-8*y^2/pi^3<=2*pi/3; the thermal Green operator "
+            "fixes the sharp leading large-support coefficient."
         ),
         "full_phase_space_domination": (
             "The q-sector obeys C_q<=2*y/pi+2*y^2/pi^3. The s-wave momentum "

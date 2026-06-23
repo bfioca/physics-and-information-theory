@@ -87,6 +87,9 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
     assert "Wiener--Hopf term minus" in text
     assert "finite-interval logarithmic convolution" in text
     assert "geodesic compression of the hyperbolic logarithmic Green" in text
+    assert "\\norm{r_\\tau}\\leq(\\pi\\tau)^{-1}" in text
+    assert "\\leq\\frac\\beta3" in text
+    assert "\\leq\\frac{2\\pi}{3}" in text
     assert "not their closed-universe encoding error" in text
     assert "strictly positive quadratic form" in text
     assert "observer_cost_spectrum.pdf" in text

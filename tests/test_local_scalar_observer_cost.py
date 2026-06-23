@@ -155,6 +155,13 @@ def test_general_thermal_half_line_cost_has_rigorous_global_brackets(
     assert record["exact_optimal_coefficient_formula"] == (
         "C_beta(L)=2*L*Lambda(pi*L/beta)"
     )
+    thermal_lower = 16.0 * support_length**2 / (
+        inverse_temperature * pi**2
+    )
+    assert record["large_support_upper_coefficient"] == pytest.approx(
+        thermal_lower + inverse_temperature / 3.0
+    )
+    assert "<=beta/3" in record["large_support_statement"]
 
 
 def test_general_thermal_half_line_cost_has_the_correct_scaling() -> None:

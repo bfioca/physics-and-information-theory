@@ -204,7 +204,7 @@ max{3L/pi,16L^2/(beta pi^2)}
  <= 4 asinh(1)L/pi+16L^2/(beta pi^2),            (11d)
 
 0<=C_beta(L)-2L Lambda(0)<=2 pi L^3/(3 beta^2),
-0<=C_beta(L)-16L^2/(beta pi^2)<=beta/2.           (11e)
+0<=C_beta(L)-16L^2/(beta pi^2)<=beta/3.           (11e)
 ```
 
 This is the general thermal half-line theorem. The next step is specific to
@@ -311,7 +311,7 @@ global remainder estimates
 
 ```text
 0<=C_opt(y)-2y Lambda(0)<=y^3/(6 pi),
-0<=C_opt(y)-8y^2/pi^3<=pi.                        (12h)
+0<=C_opt(y)-8y^2/pi^3<=2pi/3.                     (12h)
 ```
 
 Thus the thermal correction is cubic at small support, and `8/pi^3` is the

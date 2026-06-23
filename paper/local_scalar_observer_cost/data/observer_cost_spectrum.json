@@ -1023,7 +1023,7 @@
   ],
   "source_sha256": {
     "experiments/local_scalar_observer_spectrum.py": "ba993f5aeccf45b280fb834bb0ea577a952b59cad454759e523c813100e1d5d1",
-    "qgtoy/local_scalar_observer_cost.py": "443db8cc673b105d31bcfd5fdb20fa99a1e088eea2c3604def4688c891d5cdb8"
+    "qgtoy/local_scalar_observer_cost.py": "0449c1a85d58d23aa3df24b6e6923c301e41b169ec964f03c8958307071f1eca"
   },
   "status": "numerical_convergence_pass_nonrigorous"
 }

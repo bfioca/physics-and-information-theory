@@ -31,7 +31,7 @@ formula for the upper bound, and the uniform remainders
 
 ```text
 0 <= C_beta(L)-2L Lambda(0) <= 2 pi L^3/(3 beta^2),
-0 <= C_beta(L)-16L^2/(beta pi^2) <= beta/2.
+0 <= C_beta(L)-16L^2/(beta pi^2) <= beta/3.
 ```
 
 ## Equivalent Representations To Test
@@ -64,7 +64,7 @@ formula for the upper bound, and the uniform remainders
    This is the inverse pseudo-hyperbolic-distance kernel on a disk diameter,
    acting with measure `dr/(2 tau r)` on `(exp(-2 tau),1)`.
 
-Please test all three descriptions. A negative keyword search in only one
+Please test all five descriptions. A negative keyword search in only one
 operator vocabulary is not a decisive novelty assessment.
 
 ## Closest Comparators Located Internally
