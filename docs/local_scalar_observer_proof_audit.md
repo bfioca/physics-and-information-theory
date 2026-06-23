@@ -149,3 +149,78 @@ fixed smaller source cylinder. **Internal result: PASS WITH EXPLICIT SCOPE.**
 
 No **SUBMIT** decision is authorized until an independent reader signs off on
 these items and the two-domain novelty review is complete.
+
+## Adversarial Follow-Up: 2026-06-23
+
+This second internal pass rederived the normalization and inequality chain
+without using the generated certificate as evidence.
+
+### Channel normalization
+
+For one pointer qubit, the two pointer eigenstates apply opposite Weyl
+displacements. The off-diagonal multiplier is therefore
+
+```text
+kappa=omega_beta[W(2 E J)]
+     =exp[-2 mu_beta(EJ,EJ)]
+     =exp(-Gamma).
+```
+
+This agrees with the quasifree Weyl expectation and the `nu_j` factor in the
+primary exact-channel derivation
+([Landulfo et al., 2016](https://arxiv.org/abs/1603.06641)). With the static
+one-particle convention
+
+```text
+K(q,p)=2^-1/2 (h^1/2 q+i h^-1/2 p),
+```
+
+the real quadratic forms are
+
+```text
+Gamma=2<K(q,p),coth(beta h/2)K(q,p)>
+     =<q,h coth(beta h/2)q>+<p,h^-1 coth(beta h/2)p>,
+E_K=<K(q,p),h K(q,p)>=(||h q||^2+||p||^2)/2.
+```
+
+The channel error then satisfies
+`(1/2)||D_kappa-D_0||_diamond=|kappa|/2`; the lower bound is attained by a
+pointer superposition, while the matching upper bound follows from
+`D_kappa-D_0=(kappa/2)(id-Ad_Z)` after removing its phase. No missing factor
+of two was found.
+
+### Strict all-sector comparison
+
+The coordinate upper bound meets the vacuum momentum lower bound only at
+`y=pi^2/2` and meets the thermal Green lower bound only at `y=pi^2/3`.
+The intervals overlap. At either possible equality, the omitted positive
+thermal-resolvent terms make the momentum trial quotient strict. For
+`ell>0`, one massive resolvent term is already strictly order decreasing
+because the angular potential is positive almost everywhere. Hence a mixed
+sector cannot tie the simple s-wave momentum eigenvector.
+
+### Large-support remainder
+
+Expanding the remainder into positive Dirichlet half-line resolvents gives
+the stronger uniform estimate `||r_tau||<=pi/(6 tau)`. Consequently,
+
+```text
+0<=C_beta(L)-16L^2/(beta pi^2)<=beta/3,
+0<=C_opt(y)-8y^2/pi^3<=2pi/3.
+```
+
+The theorem registry, executable record, generated certificate, manuscript,
+and specialist brief were updated together. **Second internal result: PASS.**
+
+### Smooth source margin
+
+For target support ending at `L-delta`, choose the cutoff transition within a
+time interval shorter than `delta`. Backward finite propagation keeps the
+homogeneous solution, and therefore `P(eta phi_free)`, inside the declared
+optical worldtube during the transition. This proves exact realization for
+each smooth interior approximant and limiting sharpness at fixed final
+support. It still does not prove reachability of the optimizer from every
+strictly smaller fixed source cylinder.
+
+This follow-up remains an author-side audit. It strengthens the packet but
+does not replace either external specialist disposition.

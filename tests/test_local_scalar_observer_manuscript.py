@@ -160,3 +160,12 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     assert "First route: Andre G. S. Landulfo" in shortlist_text
     assert "First route: A. A. Polosin" in shortlist_text
     assert "does not replace either domain review" in shortlist_text
+
+    proof_audit = (ROOT / "docs" / "local_scalar_observer_proof_audit.md").read_text(
+        encoding="ascii"
+    )
+    assert "Adversarial Follow-Up: 2026-06-23" in proof_audit
+    assert "No missing factor" in proof_audit
+    assert "of two was found" in proof_audit
+    assert "||r_tau||<=pi/(6 tau)" in proof_audit
+    assert "does not replace either external specialist disposition" in proof_audit
