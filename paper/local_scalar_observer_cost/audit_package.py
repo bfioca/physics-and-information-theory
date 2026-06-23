@@ -188,6 +188,45 @@ def _numerical_audit() -> list[str]:
     return errors
 
 
+def _clean_room_numerical_audit() -> list[str]:
+    errors: list[str] = []
+    path = ROOT / "experiments/local_scalar_observer_clean_room_check.json"
+    try:
+        record = json.loads(path.read_text(encoding="ascii"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [f"invalid clean-room numerical record: {exc}"]
+    if record.get("status") != "pass_independent_computation_nonrigorous":
+        errors.append("clean-room numerical record does not have pass status")
+    checks = record.get("checks")
+    if not isinstance(checks, dict):
+        errors.append("clean-room numerical record has no checks")
+    else:
+        boolean_checks = (
+            "all_grid_estimates_inside_analytic_bracket",
+            "all_top_vectors_strictly_positive",
+            "all_matrices_symmetric",
+            "small_support_remainder_bound_holds_on_grid",
+            "large_support_remainder_bound_holds_on_grid",
+            "thermal_top_eigenvalue_strictly_exceeds_vacuum",
+            "coordinate_bound_strictly_below_momentum_lower_envelope",
+        )
+        errors.extend(
+            f"clean-room numerical check failed: {key}"
+            for key in boolean_checks
+            if checks.get(key) is not True
+        )
+        if float(checks.get("maximum_coarse_to_fine_relative_step", 1.0)) >= (
+            6.0e-3
+        ):
+            errors.append("clean-room resolution step exceeds tolerance")
+    source_hashes = record.get("source_sha256")
+    if not isinstance(source_hashes, dict):
+        errors.append("clean-room numerical record has no source ledger")
+    else:
+        errors.extend(_check_hashes(source_hashes, base=ROOT))
+    return errors
+
+
 def main() -> int:
     manifest = json.loads(MANIFEST.read_text(encoding="ascii"))
     errors = _check_hashes(manifest["files"], base=PACKAGE)
@@ -201,6 +240,7 @@ def main() -> int:
     errors.extend(_build_audit(manifest))
     errors.extend(_certificate_audit(manifest))
     errors.extend(_numerical_audit())
+    errors.extend(_clean_room_numerical_audit())
     result = {
         "artifact": manifest["artifact"],
         "status": "pass" if not errors else "fail",

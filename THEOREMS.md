@@ -4,8 +4,8 @@ This index summarizes the current manuscript. The authoritative statements and
 proofs are in
 [`paper/local_scalar_observer_cost/main.pdf`](paper/local_scalar_observer_cost/main.pdf).
 
-**Publication status:** internal pass; external proof and two-domain novelty
-review open.
+**Publication status:** clean-room internal pass; external proof coverage and
+two-domain novelty dispositions remain open.
 
 ## Model
 
@@ -98,9 +98,10 @@ coupled evolution theorem.
 | Layer | Authoritative artifact | Status |
 | --- | --- | --- |
 | Manuscript proof | [`main.pdf`](paper/local_scalar_observer_cost/main.pdf) | Internal pass |
-| Adversarial proof audit | [`local_scalar_observer_proof_audit.md`](docs/local_scalar_observer_proof_audit.md) | Internal pass; external sign-off open |
+| Clean-room proof audit | [`local_scalar_observer_proof_audit.md`](docs/local_scalar_observer_proof_audit.md) | All central rows pass internally; external sign-off open |
 | Executable certificate | [`local_scalar_observer_cost_certificate.json`](experiments/local_scalar_observer_cost_certificate.json) | Source-bound pass |
 | Numerical illustration | [`observer_cost_spectrum.json`](paper/local_scalar_observer_cost/data/observer_cost_spectrum.json) | Convergence pass; nonrigorous |
+| Independent numerical replay | [`local_scalar_observer_clean_room_check.json`](experiments/local_scalar_observer_clean_room_check.json) | Different discretization pass; nonrigorous |
 | Package provenance | [`artifact_manifest.json`](paper/local_scalar_observer_cost/artifact_manifest.json) | 25 files verified |
 | Novelty boundary | [`PRIORITY_AUDIT.md`](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md) | External gate open |
 

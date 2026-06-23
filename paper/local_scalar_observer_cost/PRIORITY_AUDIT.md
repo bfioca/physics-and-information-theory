@@ -2,11 +2,21 @@
 
 **Status:** no direct subsumption located; specialist verdict remains open
 
-**Audit date:** 2026-06-22
+**Audit date:** 2026-06-23
 
 This record distinguishes an actual operator reduction from a merely similar
 title or keyword. It is an internal literature audit, not a substitute for the
 two independent written assessments required by the research goal.
+
+Detailed results are split by reviewer domain:
+
+- [`OPERATOR_NOVELTY_REVIEW.md`](OPERATOR_NOVELTY_REVIEW.md) records eight
+  attempted theorem-class reductions and the first failed hypothesis or
+  conclusion in each;
+- [`QFT_NOVELTY_REVIEW.md`](QFT_NOVELTY_REVIEW.md) gives an equation-level
+  channel, support, energy, and achievability matrix; and
+- [`../../docs/local_scalar_observer_proof_audit.md`](../../docs/local_scalar_observer_proof_audit.md)
+  is the clean-room correctness audit and independent numerical replay.
 
 ## Claim Being Tested
 
@@ -83,15 +93,18 @@ different domain and measure.
 | [Anoop and Johnson 2025](https://arxiv.org/abs/2501.13569) | Largest eigenvalues of Euclidean logarithmic potentials | Relevant principal-eigenvalue theory, but no direct domain/measure reduction found |
 | [Johnson and Verma 2026](https://arxiv.org/abs/2601.20431) | Same pseudo-hyperbolic-distance kernel on two-dimensional domains | Exact kernel relation found; their measure and geometry differ |
 | [Widom 2006](https://arxiv.org/abs/math/0605076) and [Kozlowski 2008](https://arxiv.org/abs/0805.3902) | Singular truncated Wiener-Hopf inverses and determinants | Nearby operator machinery; no top-norm or uniform-remainder reduction located |
+| [Ponomarev 2021](https://arxiv.org/abs/2103.11923) | Finite-interval convolution eigenproblems | Its smoothness and decay hypotheses fail for the singular, linearly growing log-sinh parent kernel |
+| [Didenko and Silbermann 2016](https://arxiv.org/abs/1607.04944) | Wiener-Hopf plus Hankel kernel/cokernel theory | Requires bounded Wiener-algebra symbols; `|xi|^-1 coth(beta|xi|/2)` is unbounded at zero |
+| [Singh and Dhaliwal 1979](https://doi.org/10.1017/S0013091500016369) | Explicit dual-integral solution with a nearby hyperbolic logarithmic kernel | Different `tanh` multiplier and an additional cosh ratio; no diagonalization of the present kernel |
 | [Barcellos and Landulfo 2021](https://arxiv.org/abs/2109.13896) | Separates background field energy, switching work, and communication work for the exact channel | Establishes energy accounting, not fixed-final-support optimization |
 | [Aspling and Lawler 2023](https://arxiv.org/abs/2309.07218) | UDW communication channels represented as bosonic dephasing channels | Establishes another dephasing-channel representation, not the support-energy optimum |
 
 ## Current Internal Disposition
 
-**STRENGTHEN, external gate open.** The search found material prior art that
-must be cited and narrows the novelty claim. It did not find a theorem that
-supplies all of the thermal principal-support coefficient, both uniform
-remainders, and the strict de Sitter full-sector reduction.
+**DISTINCT CONJUNCTION, MEDIUM PRIORITY RISK, external gate open.** The search
+found material prior art that narrows the novelty claim. It did not find a
+theorem that supplies all of the thermal principal-support coefficient, both
+uniform remainders, and the strict de Sitter full-sector reduction.
 
 The main risk is now sharper: an operator specialist may judge the thermal
 extension and its bounds to be routine once the odd-convolution and
@@ -99,6 +112,12 @@ hyperbolic-kernel representations are written down. A **SUBMIT** disposition
 requires that reviewer to reject that reduction-to-routine argument, and a
 detector/QFT specialist to judge the physical conjunction useful enough for a
 short paper.
+
+The detector audit independently reaches the same boundary. The exact Weyl
+channel, KMS `coth` covariance, factor-of-two normalization, and source-field
+energy accounting are prior art. The first unmatched step is the optimization
+of that known covariance at fixed post-switch field energy and compact final
+Cauchy support, followed by the de Sitter all-sector theorem.
 
 ## Search Boundary
 

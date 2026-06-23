@@ -4,10 +4,12 @@ Research code, proofs, and external-review materials for a short
 mathematical-physics paper on the maximum thermal dephasing attainable at
 fixed post-switch scalar-field energy and fixed final Cauchy support.
 
-**Status: GO to external review; HOLD submission.** The theorem, numerical,
-build, and reproducibility checks pass internally. Submission remains gated on
-written detector/QFT and operator-theory novelty reviews plus external proof
-coverage of every central claim.
+**Status: GO to external review; HOLD submission.** The theorem, two
+independent numerical implementations, build, reproducibility, and clean-room
+proof checks pass internally. Equation-level detector/QFT and operator audits
+reduce the remaining review workload, but submission remains gated on written
+external novelty dispositions and external proof coverage of every central
+claim.
 
 ## Start Here
 
@@ -16,7 +18,7 @@ coverage of every central claim.
    and requested disposition.
 3. Use the [paper package guide](paper/local_scalar_observer_cost/README.md)
    for sources, replay commands, and artifact provenance.
-4. Consult the [proof audit](docs/local_scalar_observer_proof_audit.md) and
+4. Consult the [clean-room proof audit](docs/local_scalar_observer_proof_audit.md) and
    [equation-level priority audit](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md)
    for the two remaining external gates.
 
@@ -75,10 +77,10 @@ conformally coupled massless scalar.
 | --- | --- |
 | [`paper/local_scalar_observer_cost/`](paper/local_scalar_observer_cost/) | Manuscript, bibliography, review briefs, PDF, and frozen artifact ledger |
 | [`qgtoy/local_scalar_observer_cost.py`](qgtoy/local_scalar_observer_cost.py) | Executable formulas and certificate construction |
-| [`experiments/`](experiments/) | Analytic replay, numerical spectrum, and frozen certificate |
-| [`tests/`](tests/) | Focused theorem, manuscript, spectrum, and packet tests |
+| [`experiments/`](experiments/) | Analytic replay, production spectrum, independent clean-room checker, and frozen records |
+| [`tests/`](tests/) | Focused theorem, manuscript, two-method numerical, and packet tests |
 | [`docs/local_scalar_observer_cost.md`](docs/local_scalar_observer_cost.md) | Extended derivation and physical interpretation |
-| [`docs/local_scalar_observer_proof_audit.md`](docs/local_scalar_observer_proof_audit.md) | Adversarial internal proof audit and external sign-off checklist |
+| [`docs/local_scalar_observer_proof_audit.md`](docs/local_scalar_observer_proof_audit.md) | Claim-by-claim clean-room derivation, independent numerical replay, and external sign-off boundary |
 | [`THEOREMS.md`](THEOREMS.md) | Compact theorem and evidence index |
 | [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) | Clean-checkout verification instructions |
 
@@ -90,7 +92,7 @@ PYTHONPATH=. python -m pytest -q
 python paper/local_scalar_observer_cost/audit_package.py
 ```
 
-Expected result: `47 passed` and a package audit with `"status": "pass"`.
+Expected result: `50 passed` and a package audit with `"status": "pass"`.
 See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for full analytic and numerical
 replay commands.
 

@@ -1,9 +1,9 @@
 # Reviewer Entry Point: Final-Support Thermal Dephasing
 
 **Status:** strengthened short-paper candidate. Internal theorem,
-reproducibility, numerical, and package gates pass. Independent proof coverage
-and two-domain novelty review remain open. No submission decision has been
-issued.
+reproducibility, two-method numerical, clean-room proof, and package gates
+pass. External proof coverage and two-domain novelty dispositions remain open.
+No submission decision has been issued.
 
 This repository is organized around one manuscript. The paper solves a sharp
 thermal covariance optimization for fixed final Cauchy support and then proves
@@ -20,9 +20,10 @@ optimum for a conformal scalar in a de Sitter static patch.
 3. Choose the domain brief:
    [detector/QFT](paper/local_scalar_observer_cost/QFT_NOVELTY_REVIEW.md) or
    [operator theory](paper/local_scalar_observer_cost/OPERATOR_NOVELTY_REVIEW.md).
-4. Consult the [proof audit](docs/local_scalar_observer_proof_audit.md) for the
-   vulnerable derivations and the [priority audit](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md)
-   for exact prior-art reductions.
+4. Consult the [clean-room proof audit](docs/local_scalar_observer_proof_audit.md)
+   for claim-level derivations and the
+   [priority audit](paper/local_scalar_observer_cost/PRIORITY_AUDIT.md) for
+   exact prior-art reductions and their first failed hypotheses.
 5. Record findings in the [response form](paper/local_scalar_observer_cost/REVIEW_RESPONSE_FORM.md).
 
 ## Candidate Contribution
@@ -82,7 +83,7 @@ PYTHONPATH=. python -m pytest -q
 python paper/local_scalar_observer_cost/audit_package.py
 ```
 
-Expected result: `47 passed` and a passing 25-file package audit. These checks
+Expected result: `50 passed` and a passing 25-file package audit. These checks
 establish internal closure and provenance, not literature novelty.
 
 This is a request for critical review, not endorsement or approval. The

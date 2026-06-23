@@ -637,27 +637,30 @@ nor is strengthened by (1).
 | --- | --- | --- |
 | Exact local channel | Pass, prior art | Present as setup, not novelty |
 | Same-source field stress and energy | Pass after switch-off | Keep actuator exclusion explicit |
-| General-`beta` half-line momentum theorem | Internal pass | Independent proof audit |
-| Conformal de Sitter all-sector reduction | Internal pass | Independent angular and coordinate-sector audit |
+| General-`beta` half-line momentum theorem | Clean-room derivation pass | External proof coverage |
+| Conformal de Sitter all-sector reduction | Clean-room angular and coordinate audit pass | External proof coverage |
 | Small- and large-support scaling | Sharp leading terms pass | Closed form for finite-support eigenvalue is optional |
-| Numerical realization | Converged Galerkin curve and positive profiles pass | Keep separate from the rigorous analytic bracket |
+| Numerical realization | Production Galerkin and independent product-integration grids pass | Keep both separate from the rigorous analytic bracket |
 | Smooth compact realization | Analytic density pass | Include the bounded-form and uniform-mass proof |
 | Final-slice gravity and local weak-constraint window | Exact appendix application | Keep secondary; not a submission gate |
 | Autonomous actuator | Outside narrow scope | Keep excluded from the field-energy claim |
 | Bekenstein comparison | Analytic separation pass | Frame `Gamma` as a distinct dephasing functional |
-| Detector/QFT novelty | Open | Written specialist disposition |
-| Operator-theory novelty | Open | Written specialist disposition |
-| Standalone manuscript | Strengthened internal draft | Integrate both reviews and freeze tagged release |
+| Detector/QFT novelty | Internally mapped, externally open | Written specialist disposition |
+| Operator-theory novelty | Eight reductions tested, externally open | Written specialist disposition |
+| Standalone manuscript | Ready for external review; submission held | Close both novelty gates and external proof coverage |
 
-The current verdict is **STRENGTHEN / INTERNAL THEOREM PASS / EXTERNAL REVIEW
-OPEN**. A **SUBMIT** decision is not issued by the executable certificate.
+The current verdict is **GO TO EXTERNAL REVIEW / HOLD SUBMISSION**. A
+**SUBMIT** decision is not issued by the executable certificate or the
+clean-room audit.
 
 ## Reproduction
 
 ```bash
 PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
 PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
+PYTHONPATH=. python experiments/local_scalar_observer_clean_room_check.py
 PYTHONPATH=. python -m pytest -q \
+  tests/test_local_scalar_observer_clean_room_check.py \
   tests/test_local_scalar_observer_cost.py \
   tests/test_local_scalar_observer_manuscript.py \
   tests/test_local_scalar_observer_spectrum.py

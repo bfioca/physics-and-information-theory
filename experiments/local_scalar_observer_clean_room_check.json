@@ -1,0 +1,193 @@
+{
+  "artifact": "local_scalar_observer_clean_room_numerical_check",
+  "checks": {
+    "all_grid_estimates_inside_analytic_bracket": true,
+    "all_matrices_symmetric": true,
+    "all_top_vectors_strictly_positive": true,
+    "coordinate_bound_strictly_below_momentum_lower_envelope": true,
+    "large_support_remainder_bound_holds_on_grid": true,
+    "maximum_coarse_to_fine_relative_step": 0.00054030107100115,
+    "small_support_remainder_bound_holds_on_grid": true,
+    "thermal_top_eigenvalue_strictly_exceeds_vacuum": true
+  },
+  "coordinate_sector": {
+    "grid_maximum_y": 1000000.0,
+    "grid_minimum_y": 1e-06,
+    "minimum_sampled_margin": 3.1830982168072e-07
+  },
+  "grid": [
+    {
+      "coarse_cost": 0.0049792541150133,
+      "fine_cost": 0.0049819458657002,
+      "relative_resolution_step": 0.00054030107100115,
+      "rigorous_explicit_upper": 0.0056110051548478,
+      "rigorous_lower": 0.0047746482927569,
+      "support_ratio_y": 0.005
+    },
+    {
+      "coarse_cost": 0.0099585330793188,
+      "fine_cost": 0.0099639165796369,
+      "relative_resolution_step": 0.00054029961763674,
+      "rigorous_explicit_upper": 0.011222050098431,
+      "rigorous_lower": 0.0095492965855137,
+      "support_ratio_y": 0.01
+    },
+    {
+      "coarse_cost": 0.02987639440535,
+      "fine_cost": 0.029892544872526,
+      "relative_resolution_step": 0.00054028411580383,
+      "rigorous_explicit_upper": 0.033667423534839,
+      "rigorous_lower": 0.028647889756541,
+      "support_ratio_y": 0.03
+    },
+    {
+      "coarse_cost": 0.099618127178085,
+      "fine_cost": 0.099671960788991,
+      "relative_resolution_step": 0.00054010787467522,
+      "rigorous_explicit_upper": 0.11227302211553,
+      "rigorous_lower": 0.095492965855137,
+      "support_ratio_y": 0.1
+    },
+    {
+      "coarse_cost": 0.29964842432032,
+      "fine_cost": 0.29980989166368,
+      "relative_resolution_step": 0.0005385657640081,
+      "rigorous_explicit_upper": 0.33809230589134,
+      "rigorous_lower": 0.28647889756541,
+      "support_ratio_y": 0.3
+    },
+    {
+      "coarse_cost": 1.0285167246348,
+      "fine_cost": 1.0290537816756,
+      "relative_resolution_step": 0.00052189404521262,
+      "rigorous_explicit_upper": 1.1752513523757,
+      "rigorous_lower": 0.95492965855137,
+      "support_ratio_y": 1.0
+    },
+    {
+      "coarse_cost": 3.785053530754,
+      "fine_cost": 3.7866483746907,
+      "relative_resolution_step": 0.0004211756093827,
+      "rigorous_explicit_upper": 4.4165055815836,
+      "rigorous_lower": 2.8647889756541,
+      "support_ratio_y": 3.0
+    },
+    {
+      "coarse_cost": 8.1615436246878,
+      "fine_cost": 8.1641895573789,
+      "relative_resolution_step": 0.00032409006093112,
+      "rigorous_explicit_upper": 8.5447019890331,
+      "rigorous_lower": 6.4503068866399,
+      "support_ratio_y": 5.0
+    },
+    {
+      "coarse_cost": 27.706501088338,
+      "fine_cost": 27.711813765075,
+      "relative_resolution_step": 0.00019171162099587,
+      "rigorous_explicit_upper": 27.895622648953,
+      "rigorous_lower": 25.80122754656,
+      "support_ratio_y": 10.0
+    },
+    {
+      "coarse_cost": 234.2177861155,
+      "fine_cost": 234.23414825161,
+      "relative_resolution_step": 6.9853760572036e-05,
+      "rigorous_explicit_upper": 234.30544302143,
+      "rigorous_lower": 232.21104791904,
+      "support_ratio_y": 30.0
+    },
+    {
+      "coarse_cost": 2582.0849726759,
+      "fine_cost": 2582.1444073227,
+      "relative_resolution_step": 2.3017553383926e-05,
+      "rigorous_explicit_upper": 2582.2171497584,
+      "rigorous_lower": 2580.122754656,
+      "support_ratio_y": 100.0
+    }
+  ],
+  "independence_boundary": "This script imports neither qgtoy nor the production Galerkin implementation. It is an author-side numerical audit, not an analytic proof or external review.",
+  "large_support": [
+    {
+      "analytic_upper_2pi_over_3": 2.0943951023932,
+      "computed_remainder": 0.77104150621005,
+      "support_ratio_y": 1.0
+    },
+    {
+      "analytic_upper_2pi_over_3": 2.0943951023932,
+      "computed_remainder": 1.4645378955004,
+      "support_ratio_y": 3.0
+    },
+    {
+      "analytic_upper_2pi_over_3": 2.0943951023932,
+      "computed_remainder": 1.713882670739,
+      "support_ratio_y": 5.0
+    },
+    {
+      "analytic_upper_2pi_over_3": 2.0943951023932,
+      "computed_remainder": 1.9105862185158,
+      "support_ratio_y": 10.0
+    },
+    {
+      "analytic_upper_2pi_over_3": 2.0943951023932,
+      "computed_remainder": 2.0231003325713,
+      "support_ratio_y": 30.0
+    },
+    {
+      "analytic_upper_2pi_over_3": 2.0943951023932,
+      "computed_remainder": 2.0216526666977,
+      "support_ratio_y": 100.0
+    }
+  ],
+  "method": {
+    "coarse_cell_count": 80,
+    "diagonal_quadrature_order": 32,
+    "discretization": "uniform midpoint Nystrom matrix with transformed Gauss-Legendre product integration on each logarithmic diagonal cell",
+    "fine_cell_count": 160,
+    "production_imports": []
+  },
+  "small_support": [
+    {
+      "analytic_upper_y3_over_6pi": 6.6314559621623e-09,
+      "computed_remainder": 4.1413786705524e-09,
+      "support_ratio_y": 0.005
+    },
+    {
+      "analytic_upper_y3_over_6pi": 5.3051647697298e-08,
+      "computed_remainder": 3.3130993826874e-08,
+      "support_ratio_y": 0.01
+    },
+    {
+      "analytic_upper_y3_over_6pi": 1.4323944878271e-06,
+      "computed_remainder": 8.9452659642747e-07,
+      "support_ratio_y": 0.03
+    },
+    {
+      "analytic_upper_y3_over_6pi": 5.3051647697298e-05,
+      "computed_remainder": 3.3126302560402e-05,
+      "support_ratio_y": 0.1
+    },
+    {
+      "analytic_upper_y3_over_6pi": 0.0014323944878271,
+      "computed_remainder": 0.00089338820438395,
+      "support_ratio_y": 0.3
+    }
+  ],
+  "source_sha256": {
+    "experiments/local_scalar_observer_clean_room_check.py": "80de198f7391bfaeba4384410aa33761902b7fbe9a445fb7786b1c96fd3ce3cc"
+  },
+  "status": "pass_independent_computation_nonrigorous",
+  "thermal_increment": [
+    {
+      "support_ratio_y": 0.03,
+      "top_eigenvalue_increment": 1.4908776607092e-05
+    },
+    {
+      "support_ratio_y": 1.0,
+      "top_eigenvalue_increment": 0.016332718405668
+    },
+    {
+      "support_ratio_y": 30.0,
+      "top_eigenvalue_increment": 3.405708298428
+    }
+  ]
+}

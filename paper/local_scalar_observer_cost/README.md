@@ -1,8 +1,9 @@
 # Final-Support Thermal Dephasing Review Package
 
-**Status:** strengthened short-paper candidate. Analytic, build, numerical,
-and reproducibility checks are internal gates. Independent proof review and
-two-domain novelty review remain required before submission.
+**Status:** strengthened short-paper candidate. Analytic, build, two-method
+numerical, clean-room proof, and reproducibility checks pass internally.
+External proof coverage and two-domain novelty dispositions remain required
+before submission.
 
 ## Start Here
 
@@ -16,7 +17,9 @@ two-domain novelty review remain required before submission.
    `REVIEW_RESPONSE_FORM.md`.
 5. Use `REVIEWER_SHORTLIST.md` for ranked contact routes and
    `PRIORITY_AUDIT.md` for the equation-level literature boundary.
-6. Run `audit_package.py` for a quick integrity check.
+6. Consult the
+   [clean-room proof audit](../../docs/local_scalar_observer_proof_audit.md),
+   then run `audit_package.py` for a quick integrity check.
 
 The exact gapless-detector channel is prior art. The candidate contribution is
 the exact reflected KMS operator selected by final support, its
@@ -30,12 +33,12 @@ sharp support asymptotics.
 | `main.pdf` | Primary review manuscript |
 | `main.tex`, `sections/`, `references.bib` | LaTeX source and bibliography |
 | `REFEREE_GUIDE.md` | Shared claim and disposition guide |
-| `QFT_NOVELTY_REVIEW.md` | Detector/QFT specialist questions |
-| `OPERATOR_NOVELTY_REVIEW.md` | Operator-theory specialist questions |
+| `QFT_NOVELTY_REVIEW.md` | Completed internal equation matrix and detector/QFT specialist questions |
+| `OPERATOR_NOVELTY_REVIEW.md` | Completed reduction audit and operator-theory specialist questions |
 | `EXTERNAL_REVIEW_LAUNCH.md` | Send-ready attachment sets and outreach drafts |
 | `REVIEW_RESPONSE_FORM.md` | Structured, auditable specialist disposition |
 | `REVIEWER_SHORTLIST.md` | Ranked public contact routes for both domains |
-| `PRIORITY_AUDIT.md` | Exact reductions and internal comparator outcomes |
+| `PRIORITY_AUDIT.md` | Exact reductions, first failed hypotheses, and internal comparator outcomes |
 | `build_review_packets.py` | Deterministic, commit-pinned specialist ZIP builder |
 | `data/observer_cost_spectrum.json` | Reproducible numerical illustration |
 | `artifact_manifest.json` | Frozen hashes and build metadata |
@@ -48,7 +51,9 @@ From the repository root:
 ```bash
 PYTHONPATH=. python experiments/local_scalar_observer_cost_audit.py
 PYTHONPATH=. python experiments/local_scalar_observer_spectrum.py
+PYTHONPATH=. python experiments/local_scalar_observer_clean_room_check.py
 PYTHONPATH=. python -m pytest -q \
+  tests/test_local_scalar_observer_clean_room_check.py \
   tests/test_local_scalar_observer_cost.py \
   tests/test_local_scalar_observer_manuscript.py \
   tests/test_local_scalar_observer_review_packets.py \

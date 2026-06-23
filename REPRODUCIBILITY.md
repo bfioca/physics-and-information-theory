@@ -26,12 +26,13 @@ PYTHONPATH=. python -m pytest -q
 Expected result:
 
 ```text
-47 passed
+50 passed
 ```
 
 The suite covers the analytic certificate, theorem normalization and scaling,
-manuscript structure, source-bound frozen records, numerical convergence,
-review-document links, and deterministic external-review packets.
+manuscript structure, source-bound frozen records, two independent numerical
+implementations, review-document links, and deterministic external-review
+packets.
 
 ## Analytic Replay
 
@@ -61,6 +62,26 @@ for the vacuum logarithmic kernel and Gauss-Legendre quadrature only for the
 smooth thermal correction. It is a convergence-checked illustration, not an
 interval proof.
 
+## Clean-Room Numerical Replay
+
+```bash
+PYTHONPATH=. python experiments/local_scalar_observer_clean_room_check.py
+```
+
+This regenerates
+`experiments/local_scalar_observer_clean_room_check.json`. The checker imports
+neither `qgtoy` nor the production Galerkin implementation. It uses midpoint
+sampling and separate product integration across each logarithmic diagonal
+cell, then tests the analytic brackets and both uniform remainders on a broad
+support grid. Its required status is
+
+```text
+pass_independent_computation_nonrigorous
+```
+
+This is a deliberately different numerical path, not an analytic proof or an
+external audit.
+
 ## Package Audit
 
 ```bash
@@ -76,7 +97,8 @@ Expected summary:
 ```
 
 The audit verifies artifact hashes, TeX labels and citations, PDF and build-log
-closure, the theorem certificate, numerical data, and figure provenance.
+closure, the theorem certificate, both numerical records, and figure
+provenance.
 
 ## External-Review Bundles
 

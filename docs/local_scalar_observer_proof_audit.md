@@ -1,226 +1,215 @@
-# Internal Proof Audit: Final-Support Thermal Dephasing
+# Clean-Room Proof Audit: Final-Support Thermal Dephasing
 
-Status: internal analytic pass; independent human proof review remains open
+**Status:** all central claims passed an author-side clean-room derivation;
+independent human proof review remains open
 
-This audit targets the five steps most likely to control correctness of the
-strengthened paper. It is not a novelty review and is not independent of the
-derivation.
+## Audit Protocol
 
-## 1. General Thermal Half-Line Theorem
+The audit restarts from the model definitions and theorem statements and
+rederives each implication rather than treating the manuscript steps or the
+production Python formulas as evidence. It is clean-room in derivation
+structure, not blinded in personnel or information access: the same author
+workflow had previously seen the manuscript. The numerical replay is
+separately implemented in
+[`experiments/local_scalar_observer_clean_room_check.py`](../experiments/local_scalar_observer_clean_room_check.py):
+it imports neither `qgtoy` nor the production Galerkin code.
 
-For Dirichlet half-line momentum data supported in `[0,L]`,
+This is meaningful adversarial coverage, but not social independence. It was
+performed within the author workflow and does not replace an unaffiliated
+mathematician or detector/QFT specialist.
+
+The allowed dispositions in this record are exactly:
+
+- `PASS, independent derivation`
+- `PASS, independent computation`
+- `FAIL`
+- `NOT CHECKED`
+
+## Claim Table
+
+| Claim | Disposition | Independent check |
+| --- | --- | --- |
+| Weyl-channel factor of two | `PASS, independent derivation` | Opposite pointer branches differ by the Weyl displacement `2EJ`; the quasifree characteristic function gives `|kappa|=exp[-2 mu(EJ,EJ)]`. |
+| Canonical covariance and energy forms | `PASS, independent derivation` | Expanding `K(q,p)=2^-1/2(h^1/2 q+i h^-1/2 p)` gives the stated `q` and `p` forms and `E=(||hq||^2+||p||^2)/2`. |
+| Reflected thermal kernel and scaling | `PASS, independent derivation` | The sine transform and the partial-fraction expansion of `coth` reproduce `B_beta,L` and `C_beta(L)=2L Lambda(pi L/beta)`. |
+| Compactness and operator positivity | `PASS, independent derivation` | The logarithmic diagonal is square integrable; positivity follows from the compressed positive spectral multiplier, not merely from pointwise kernel positivity. |
+| Simplicity and optimizer uniqueness | `PASS, independent derivation` | The kernel is positivity improving away from null sets, so Perron-Jentzsch gives a simple positive top eigenfunction; positive semidefiniteness makes it the operator norm. |
+| Strict reduction to the s-wave momentum sector | `PASS, independent derivation` | Every term in the thermal resolvent series is strictly order decreasing under `A_l>A_0` for nonzero data. |
+| Coordinate-sector domination | `PASS, independent derivation` | Dirichlet Poincare plus `coth z<=1+1/z` gives the coordinate bound, which lies strictly below the two-piece momentum lower envelope for every `y>0`. |
+| Uniform small-support remainder | `PASS, independent derivation` | Euler's product gives a nonnegative kernel correction with Schur row bound `tau^2/(3pi)`. |
+| Uniform large-support `beta/3` remainder | `PASS, independent derivation` | The remainder is a positive sum of Dirichlet half-line resolvents with norm at most `pi/(6tau)`. |
+| Smooth compact source density | `PASS, independent derivation` | Interior `C_c^infinity` momenta are dense in `L2`; the compressed covariance is bounded and the cutoff homogeneous solution realizes each approximant. |
+| Final support versus fixed source cylinder | `PASS, independent derivation` | The construction proves sharpness for final data and for source worldtubes approaching that ball; it does not prove near-controllability from every smaller fixed cylinder. |
+| Independent leading-eigenvalue reconstruction | `PASS, independent computation` | A midpoint/product-integration matrix passes analytic brackets and coarse/fine convergence on `0.005<=y<=100`. |
+| Independent asymptotic stress tests | `PASS, independent computation` | The frozen checker verifies the small- and large-support remainder inequalities on dedicated grids. |
+
+No row is currently `FAIL` or `NOT CHECKED`. That statement concerns the
+listed internal checks only, not external proof coverage or novelty.
+
+## Derivation Ledger
+
+### 1. Channel normalization
+
+For pointer eigenvalues `z=+1,-1`, the conditional field unitaries are
+`U_z=exp[-i z phi(J)]`. The off-diagonal trace contains
 
 ```text
-Gamma_beta[p]=<p,h_0^-1 coth(beta h_0/2)p>,
-E[p]=||p||_2^2/2.
+U_-^dagger U_+ = W(-2EJ)
 ```
 
-Compression to `[0,L]` gives the exact kernel
+up to a phase. With `omega[W(f)]=exp[-mu(f,f)/2]`, this gives
+
+```text
+|kappa|=exp[-2 mu(EJ,EJ)]=exp(-Gamma).
+```
+
+This matches the `nu_j=omega(W(E(2f_j)))` normalization in
+[Landulfo (2016)](https://arxiv.org/abs/1603.06641). Expanding the static
+one-particle map gives
+
+```text
+Gamma=<q,h coth(beta h/2)q>+<p,h^-1 coth(beta h/2)p>,
+E=(||h q||^2+||p||^2)/2.
+```
+
+Thus the momentum quotient contains the factor `2||B_beta,L||`.
+No missing factor of two was found.
+
+### 2. Kernel, scaling, and principal eigenfunction
+
+The half-line sine transform turns the momentum form into
+
+```text
+(2/pi) integral_0^infinity sin(kx)sin(ky)coth(beta k/2) dk/k.
+```
+
+Taking the reflected cosine difference yields
 
 ```text
 B_beta,L(x,y)=pi^-1 log{
   sinh[pi(x+y)/beta]/sinh[pi|x-y|/beta]}.
 ```
 
-Under `x=Lu`, this operator is unitarily equivalent to
-`L K_(pi L/beta)`. Therefore
+The unitary dilation `x=Lu` gives `B_beta,L` equivalent to
+`L K_(pi L/beta)`. The logarithmic singularity is in `L2((0,1)^2)`, hence the
+operator is Hilbert-Schmidt. Its positivity comes from
+`P_L h^-1 coth(beta h/2) P_L>=0`. Since its position kernel is strictly
+positive for `u,v>0` off the diagonal, it is positivity improving and has a
+simple strictly positive top eigenfunction.
 
-```text
-sup Gamma_beta/E = 2 ||B_beta,L||
-                 = 2 L Lambda(pi L/beta).
-```
+### 3. Angular and canonical sectors
 
-The logarithmic singularity is square integrable, the kernel is strictly
-positive away from null sets, and the operator is positive by its spectral
-definition. The Perron-Jentzsch conclusion therefore gives a simple top
-eigenvalue and a positive optimizer. **Internal result: PASS.**
-
-## 2. All-Angular Ordering
-
-The conformal de Sitter partial-wave operators obey
-
-```text
-A_l=A_0+l(l+1)/(R^2 sinh^2(x/R)) >= A_0.
-```
-
-The exact expansion
+For `A_l=A_0+l(l+1)/(R^2 sinh^2(x/R))`,
 
 ```text
 h_l^-1 coth(beta h_l/2)
  = (2/beta) A_l^-1
-   + (4/beta) sum_(n>=1) [A_l+(2 pi n/beta)^2]^-1
+   +(4/beta) sum_(n>=1)[A_l+(2pi n/beta)^2]^-1.
 ```
 
-contains only order-decreasing resolvents. Hence every `l>0` momentum form is
-bounded by the `l=0` form. Strictness follows because equality in one resolvent
-term would force the positive angular potential times the resolved vector to
-vanish almost everywhere, and therefore the original vector to vanish.
-**Internal result: PASS.**
+Every summand is order decreasing in `A_l`. Equality for a nonzero datum would
+force the resolved vector to vanish where the angular potential is positive,
+and hence everywhere. This makes the `l=0` momentum comparison strict.
 
-## 3. Coordinate-Sector Domination
-
-For coordinate data supported in `[0,L]`, zero extension gives an
-`H_0^1(0,L)` vector. Dirichlet Poincare and Cauchy-Schwarz imply
-
-```text
-||q|| <= (L/pi)||h_l q||,
-<q,h_l q> <= (L/pi)||h_l q||^2.
-```
-
-Using `coth z <= 1+1/z` and `beta=2 pi R` gives
+For zero-extended coordinate data, Poincare and Cauchy-Schwarz give
 
 ```text
 Gamma_q/(E_q R) <= 2y/pi+2y^2/pi^3.
 ```
 
-The s-wave momentum sector is at least `3y/pi` for
-`y<=pi^2/2` and at least `8y^2/pi^3` for `y>=pi^2/3`. These intervals overlap,
-so momentum dominates for every `y>0`. Strict thermal enhancement excludes a
-coordinate tie at the endpoints. **Internal result: PASS.**
+The momentum trials give `max(3y/pi,8y^2/pi^3)`. The coordinate expression is
+at most the first term for `y<=pi^2/2` and at most the second for
+`y>=pi^2/3`; those intervals overlap. At either formal endpoint, the omitted
+positive thermal contribution makes the comparison strict.
 
-## 4. Uniform Remainder Bounds
+### 4. Uniform support remainders
 
-For small `tau`, Euler's product gives
+For `A=tau(u+v)` and `B=tau|u-v|`, Euler's product gives
 
 ```text
 0 <= log[(sinh A/A)/(sinh B/B)] <= (A^2-B^2)/6.
 ```
 
-With `A=tau(u+v)` and `B=tau|u-v|`, the maximum row integral is
-`tau^2/(3 pi)`. Thus
+Its largest row integral is `tau^2/(3pi)`, so
 
 ```text
-0 <= C_beta(L)-2L Lambda(0) <= 2 pi L^3/(3 beta^2).
+0<=C_beta(L)-2L Lambda(0)<=2pi L^3/(3beta^2).
 ```
 
-For large `tau`, split
+For large support,
 
 ```text
-k_tau=(2 tau/pi) min(u,v)+r_tau.
+k_tau=(2tau/pi)min(u,v)+r_tau,
+r_tau=pi^-1 sum_(n>=1) n^-1 {
+  exp[-2n tau|u-v|]-exp[-2n tau(u+v)]}.
 ```
 
-The explicit Dirichlet-resolvent expansion is
-
-```text
-r_tau(u,v)=pi^-1 sum_[n>=1] n^-1
-  {exp[-2 n tau |u-v|]-exp[-2 n tau (u+v)]}.
-```
-
-Every summand is positive in operator order. Extending its row integral from
-`(0,1)` to the half-line gives at most `1/(pi tau n^2)`, so monotone
-summation and Schur's test yield `||r_tau||<=pi/(6 tau)`. Since
+Each bracket is a positive Dirichlet resolvent kernel. Its half-line row
+integral is at most `1/(n tau)`, including the outer `1/n` only after the
+sum is formed, so `||r_tau||<=pi/(6tau)`. Since
 `||min(u,v)||=4/pi^2`,
 
 ```text
-0 <= C_beta(L)-16L^2/(beta pi^2) <= beta/3.
+0<=C_beta(L)-16L^2/(beta pi^2)<=beta/3.
 ```
 
-At `beta=2 pi R` these become the stated de Sitter remainders.
-**Internal result: PASS.**
+### 5. Source closure and exact scope
 
-## 5. Smooth-Source Closure
-
-Smooth radial momentum profiles supported strictly inside `[0,L]` are dense
-in the energy space. On this support,
+Choose normalized `p_n in C_c^infinity(0,L)` converging in `L2` to the top
+eigenfunction. On `[0,L]`,
 
 ```text
 P_L h^-1 coth(beta h/2) P_L
  <= P_L h^-1 P_L+(2/beta)P_L h^-2 P_L,
 ```
 
-and the right side is bounded, so the dephasing form is continuous under
-`L2` convergence. Cauchy-Schwarz gives uniform convergence of cumulative
-energy measures. For each smooth target datum, a cutoff homogeneous solution
-with `J=P(eta phi_free)` is a smooth compact source producing that datum when
-the source worldtube contains a strict optical transition margin.
-
-This proves sharpness for final support and for source worldtubes approaching
-the final-support ball. It does not prove near-controllability from every
-fixed smaller source cylinder. **Internal result: PASS WITH EXPLICIT SCOPE.**
-
-## Checks Requiring External Sign-Off
-
-- Verify all normalization factors in the general-`beta` quotient and the
-  de Sitter specialization.
-- Check the strict resolvent-order argument and the exclusion of coordinate
-  ties.
-- Check the row-integral estimate used for the large-support remainder.
-- Check the cutoff-source support statement in the conformal optical geometry.
-
-No **SUBMIT** decision is authorized until an independent reader signs off on
-these items and the two-domain novelty review is complete.
-
-## Adversarial Follow-Up: 2026-06-23
-
-This second internal pass rederived the normalization and inequality chain
-without using the generated certificate as evidence.
-
-### Channel normalization
-
-For one pointer qubit, the two pointer eigenstates apply opposite Weyl
-displacements. The off-diagonal multiplier is therefore
+and both compressed forms are bounded. The Rayleigh quotients therefore
+converge. Also,
 
 ```text
-kappa=omega_beta[W(2 E J)]
-     =exp[-2 mu_beta(EJ,EJ)]
-     =exp(-Gamma).
+sup_x |integral_0^x(p_n^2-p^2)|
+ <= ||p_n-p||_2 (||p_n||_2+||p||_2),
 ```
 
-This agrees with the quasifree Weyl expectation and the `nu_j` factor in the
-primary exact-channel derivation
-([Landulfo et al., 2016](https://arxiv.org/abs/1603.06641)). With the static
-one-particle convention
+so cumulative energy measures converge uniformly.
 
-```text
-K(q,p)=2^-1/2 (h^1/2 q+i h^-1/2 p),
+For each interior smooth target, let `phi_free` be its homogeneous solution,
+take a time cutoff `eta` that is zero in the past and one near the final
+slice, and set `J=P(eta phi_free)`. The retarded solution is exactly
+`eta phi_free`. If the target ends at `L-delta`, a transition shorter than
+`delta` keeps `J` inside the declared optical worldtube by finite propagation.
+This proves the final-support supremum and an approaching-worldtube limit,
+not fixed-smaller-cylinder controllability.
+
+## Independent Numerical Record
+
+Run:
+
+```bash
+python experiments/local_scalar_observer_clean_room_check.py
 ```
 
-the real quadratic forms are
+The frozen output is
+[`experiments/local_scalar_observer_clean_room_check.json`](../experiments/local_scalar_observer_clean_room_check.json).
+It uses 80 and 160 midpoint cells, a transformed 32-point product rule on the
+singular diagonal, and a de Sitter support grid from `y=0.005` through
+`y=100`. It checks:
 
-```text
-Gamma=2<K(q,p),coth(beta h/2)K(q,p)>
-     =<q,h coth(beta h/2)q>+<p,h^-1 coth(beta h/2)p>,
-E_K=<K(q,p),h K(q,p)>=(||h q||^2+||p||^2)/2.
-```
+- every leading-eigenvalue estimate against analytic lower and upper bounds;
+- positivity of every sampled principal vector;
+- the small-support remainder through `y=0.3`;
+- the global large-support remainder through `y=100`;
+- strict coordinate-sector domination on 2,001 logarithmic samples from
+  `10^-6` to `10^6`; and
+- coarse-to-fine stability, with the maximum recorded relative step below
+  `6e-4`.
 
-The channel error then satisfies
-`(1/2)||D_kappa-D_0||_diamond=|kappa|/2`; the lower bound is attained by a
-pointer superposition, while the matching upper bound follows from
-`D_kappa-D_0=(kappa/2)(id-Ad_Z)` after removing its phase. No missing factor
-of two was found.
+These are `PASS, independent computation` results. They do not turn the
+analytic inequalities into computer-assisted proofs.
 
-### Strict all-sector comparison
+## External Gate
 
-The coordinate upper bound meets the vacuum momentum lower bound only at
-`y=pi^2/2` and meets the thermal Green lower bound only at `y=pi^2/3`.
-The intervals overlap. At either possible equality, the omitted positive
-thermal-resolvent terms make the momentum trial quotient strict. For
-`ell>0`, one massive resolvent term is already strictly order decreasing
-because the angular potential is positive almost everywhere. Hence a mixed
-sector cannot tie the simple s-wave momentum eigenvector.
-
-### Large-support remainder
-
-Expanding the remainder into positive Dirichlet half-line resolvents gives
-the stronger uniform estimate `||r_tau||<=pi/(6 tau)`. Consequently,
-
-```text
-0<=C_beta(L)-16L^2/(beta pi^2)<=beta/3,
-0<=C_opt(y)-8y^2/pi^3<=2pi/3.
-```
-
-The theorem registry, executable record, generated certificate, manuscript,
-and specialist brief were updated together. **Second internal result: PASS.**
-
-### Smooth source margin
-
-For target support ending at `L-delta`, choose the cutoff transition within a
-time interval shorter than `delta`. Backward finite propagation keeps the
-homogeneous solution, and therefore `P(eta phi_free)`, inside the declared
-optical worldtube during the transition. This proves exact realization for
-each smooth interior approximant and limiting sharpness at fixed final
-support. It still does not prove reachability of the optimizer from every
-strictly smaller fixed source cylinder.
-
-This follow-up remains an author-side audit. It strengthens the packet but
-does not replace either external specialist disposition.
+The clean-room audit reduces the proof-review workload but does not authorize
+submission. External readers must still check the normalization, strict
+resolvent comparison, uniform remainder argument, and cutoff-source support
+construction. Both domain novelty reviews also remain open.

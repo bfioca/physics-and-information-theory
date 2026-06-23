@@ -28,8 +28,10 @@ principle are not claimed as new.
    causal source-cylinder corollary.
 2. `sections/localization_theorem.tex`: complete analytic proof.
 3. `sections/achievability.tex`: smooth final-data and source closure.
-4. `../../docs/local_scalar_observer_proof_audit.md`: five-step internal audit.
-5. The domain-specific novelty brief matching your expertise.
+4. `../../docs/local_scalar_observer_proof_audit.md`: clean-room claim table,
+   derivation ledger, and independent numerical replay.
+5. The domain-specific novelty brief matching your expertise; each now
+   records completed internal reductions and the first obstruction.
 6. `REVIEW_RESPONSE_FORM.md` for the requested written disposition.
 
 ## Decisive Questions
@@ -59,6 +61,7 @@ From the repository root:
 ```bash
 python paper/local_scalar_observer_cost/audit_package.py
 PYTHONPATH=. python -m pytest -q \
+  tests/test_local_scalar_observer_clean_room_check.py \
   tests/test_local_scalar_observer_cost.py \
   tests/test_local_scalar_observer_manuscript.py \
   tests/test_local_scalar_observer_spectrum.py

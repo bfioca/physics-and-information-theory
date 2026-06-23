@@ -57,9 +57,10 @@ OPERATOR_NOVELTY_REVIEW.md
 REVIEW_RESPONSE_FORM.md
 ```
 
-Offer `REFEREE_GUIDE.md`, the LaTeX source, and the internal proof audit for a
-deeper pass. Offer `PRIORITY_AUDIT.md` when the reviewer wants the complete
-comparison trail. Do not lead with the full repository history.
+Offer `REFEREE_GUIDE.md`, the LaTeX source, and the clean-room proof audit for
+a deeper pass. Offer `PRIORITY_AUDIT.md` when the reviewer wants the complete
+comparison trail and first-failed-reduction ledger. Do not lead with the full
+repository history.
 
 ## Detector/QFT Email Draft
 

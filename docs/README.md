@@ -9,7 +9,7 @@ be awkward to place in the main text.
 | File | Purpose |
 | --- | --- |
 | [`local_scalar_observer_cost.md`](local_scalar_observer_cost.md) | Extended theorem derivation, model definition, bounds, and physical interpretation |
-| [`local_scalar_observer_proof_audit.md`](local_scalar_observer_proof_audit.md) | Adversarial checks of normalization, angular and coordinate domination, remainders, uniqueness, and smooth-source closure |
+| [`local_scalar_observer_proof_audit.md`](local_scalar_observer_proof_audit.md) | Clean-room claim table, derivation ledger, independent numerical replay, and external-review boundary |
 
 Reviewer-specific materials live beside the manuscript:
 

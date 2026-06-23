@@ -173,7 +173,22 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     priority_text = (PAPER / "PRIORITY_AUDIT.md").read_text(encoding="ascii")
     assert "The vacuum parent problem is established prior art" in priority_text
     assert "Finite temperature: odd log-sinh convolution sector" in priority_text
-    assert "STRENGTHEN, external gate open" in priority_text
+    assert "DISTINCT CONJUNCTION, MEDIUM PRIORITY RISK" in priority_text
+    assert "first failed hypothesis" in priority_text
+
+    qft_audit = (PAPER / "QFT_NOVELTY_REVIEW.md").read_text(encoding="ascii")
+    assert "Channel and model matrix" in qft_audit
+    assert "Optimization and support matrix" in qft_audit
+    assert "DISTINCT CONJUNCTION, EXTERNALLY PENDING" in qft_audit
+    assert "Landulfo normalization map succeeds" in qft_audit
+
+    operator_audit = (PAPER / "OPERATOR_NOVELTY_REVIEW.md").read_text(
+        encoding="ascii"
+    )
+    assert "Completed Internal Reduction Audit" in operator_audit
+    assert "First failed hypothesis or conclusion" in operator_audit
+    assert "DISTINCT CONJUNCTION, MEDIUM PRIORITY RISK" in operator_audit
+    assert "Ponomarev 2021" in operator_audit
 
     shortlist_text = (PAPER / "REVIEWER_SHORTLIST.md").read_text(
         encoding="ascii"
@@ -185,10 +200,11 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     proof_audit = (ROOT / "docs" / "local_scalar_observer_proof_audit.md").read_text(
         encoding="ascii"
     )
-    assert "Adversarial Follow-Up: 2026-06-23" in proof_audit
-    assert "Checks Requiring External Sign-Off" in proof_audit
-    assert "Remaining Independent Checks" not in proof_audit
+    assert "Clean-Room Proof Audit" in proof_audit
+    assert "PASS, independent derivation" in proof_audit
+    assert "PASS, independent computation" in proof_audit
+    assert "No row is currently `FAIL` or `NOT CHECKED`" in proof_audit
     assert "No missing factor" in proof_audit
     assert "of two was found" in proof_audit
-    assert "||r_tau||<=pi/(6 tau)" in proof_audit
-    assert "does not replace either external specialist disposition" in proof_audit
+    assert "||r_tau||<=pi/(6tau)" in proof_audit
+    assert "does not authorize" in proof_audit
