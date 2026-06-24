@@ -145,7 +145,7 @@ is made.
 
 Gate 2 disposition: **PASS, binary-sharp**.
 
-## Gate 3: Harlow-Code Insertion
+## Gate 3: Harlow-Code Record Substitution
 
 The purified controlled-displacement state is
 
@@ -179,14 +179,17 @@ E_O |<phi|Vhat^dagger Vhat|psi>|^2
      exp{-C_beta(L)E_bar/(1-P_cl)}].              (11)
 ```
 
-Thus the same purity controlled by the localized field-energy theorem enters
-the Harlow code calculation. This closes the algebraic bridge that the binary
-diamond error did not provide.
+This is a controlled model substitution, not an identification of records.
+The conditional field states are generally nonorthogonal, unlike the exact
+pointer-basis clone used to motivate the ideal observer rule. Equation (8) is
+their Stinespring record, substituted into the same bipartite slot of the
+simple code. Thus the same purity controlled by the localized field-energy
+theorem enters the Harlow code calculation. This closes the algebraic bridge
+that the binary diamond error did not provide.
 
-The interpretation is deliberately limited. Equation (8) treats the
-purified field record as the nonideal record system in the code state. It is a
-physical replacement of the ideal pointer record at the level of the simple
-code model, not a derivation of the gravitational observer rule. Equation
+The interpretation is deliberately limited. Equation (8) is a nonideal
+replacement of the ideal record at the level of the simple code model, not a
+derivation of the gravitational observer rule. Equation
 (11) is a Haar-ensemble mean-square floor for an orthogonal matter pair; it is
 not a lower bound for every fixed encoding map.
 

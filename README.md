@@ -6,7 +6,7 @@ its energy, support, observer-code accuracy, and branchwise gravitational
 backreaction.
 
 **Status: GO to external review; HOLD submission.** The finite-pointer
-algebra, exact localization theorem, Harlow-code insertion, branchwise
+algebra, exact localization theorem, Harlow-code record substitution, branchwise
 constraint composition, two independent numerical implementations, and
 reproducibility checks pass internally. Submission remains gated on external
 proof and novelty review in detector/QFT, operator theory, and quantum gravity.
@@ -62,9 +62,12 @@ optimizer over all angular and canonical sectors.
 
 ## Observer-Code Consequence
 
-The purified field record has the same nonzero reduced spectrum as the
-physical pointer. For an orthogonal CRT-real matter pair in the simple random
-code of [Harlow, Usatyuk, and Zhao](https://arxiv.org/abs/2501.02359),
+The field record is not identified with the exact pointer-basis clone in the
+ideal observer construction. Instead, its nonideal Stinespring record is
+substituted into the same bipartite slot of the simple random code of
+[Harlow, Usatyuk, and Zhao](https://arxiv.org/abs/2501.02359). It has the same
+nonzero reduced spectrum as the physical pointer, and for an orthogonal
+CRT-real matter pair,
 
 ```text
 E_O |<phi|Vhat^dagger Vhat|psi>|^2

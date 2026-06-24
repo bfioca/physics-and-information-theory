@@ -5,7 +5,7 @@ novelty review remain open
 
 This note records the binary channel and operator theorem that supply the
 sharp pairwise coefficient for the active finite-pointer paper. For the
-finite-pointer purity theorem, Harlow-code insertion, and branchwise gravity
+finite-pointer purity theorem, Harlow-code record substitution, and branchwise gravity
 composition, read
 [`finite_pointer_observer_entropy.md`](finite_pointer_observer_entropy.md).
 

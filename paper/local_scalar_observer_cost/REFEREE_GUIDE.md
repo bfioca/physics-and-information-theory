@@ -29,8 +29,10 @@ general-d sharpness claim is made. For a conformal scalar in de Sitter,
 `beta=2 pi R`, and the same coefficient is the unique optimum over all
 angular and canonical sectors.
 
-Purifying the physical record and inserting it into the simple random code of
-Harlow, Usatyuk, and Zhao gives, for an orthogonal CRT-real matter pair,
+The physical field record is not identified with the exact pointer-basis clone
+used in the ideal motivation. Substituting its nonideal Stinespring record
+into the same bipartite slot of the Harlow, Usatyuk, and Zhao simple random
+code gives, for an orthogonal CRT-real matter pair,
 
 ```text
 E_O |<phi|Vhat^dagger Vhat|psi>|^2

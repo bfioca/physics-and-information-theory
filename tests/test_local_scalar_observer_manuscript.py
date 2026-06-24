@@ -89,6 +89,8 @@ def test_local_scalar_observer_manuscript_is_structurally_closed() -> None:
     assert "Global sharpness for arbitrary pointer dimension" in text
     assert "Physical floor in the simple observer code" in text
     assert "\\frac{D}{D+2}\\Tr\\rho_P^2" in text
+    assert "do not identify the field record with the exact pointer-basis clone" in text
+    assert "Stinespring record of a partial dephasing channel" in text
     assert "Branchwise constraint bound on pointer entropy" in text
     assert "Causal source-cylinder envelope" in text
     assert text.index("\\appendix") < text.index(
@@ -168,6 +170,8 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     )
     assert "substitutes for another" in launch_text
     assert "Harlow Framing Email Draft" in launch_text
+    assert "Question about Eq. (4.2) and a localized field record" in launch_text
+    assert "Do not attach `REVIEW_RESPONSE_FORM.md`" in launch_text
     assert "build_review_packets.py" in launch_text
     assert "byte-for-byte deterministic" in launch_text
     assert "Silence or a polite general reaction does not close a gate" in launch_text
@@ -215,6 +219,7 @@ def test_local_scalar_observer_review_packet_is_navigable() -> None:
     )
     assert "Observer-Code and Gravity Review" in observer_audit
     assert "Harlow-Usatyuk-Zhao Eq. (4.2)" in observer_audit
+    assert "Stinespring record of a partial dephasing channel" in observer_audit
     assert "CORRECT AND USEFUL" in observer_audit
 
     proof_audit = (ROOT / "docs" / "local_scalar_observer_proof_audit.md").read_text(

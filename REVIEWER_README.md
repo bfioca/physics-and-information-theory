@@ -5,8 +5,9 @@ remain open. No submission decision has been issued.
 
 This repository is organized around one manuscript. The paper derives a
 finite-pointer purity bound from a sharp localized thermal covariance theorem,
-inserts that physical purity into the Harlow-Usatyuk-Zhao simple random code,
-and gives a branchwise final-slice gravity corollary.
+substitutes its nonideal Stinespring record for the ideal clone in the
+Harlow-Usatyuk-Zhao simple random code, and gives a branchwise final-slice
+gravity corollary.
 
 ## Five-Minute Route
 
@@ -49,8 +50,9 @@ conformal scalar in de Sitter. The entropy inequality is saturated in the
 symmetric binary top-mode sector; arbitrary-dimension sharpness is not
 claimed.
 
-For an orthogonal CRT-real matter pair in the Harlow-Usatyuk-Zhao simple
-random code, the physical record gives
+The physical field record is not identified with the exact pointer-basis
+clone. Under the controlled substitution of its Stinespring record into the
+same bipartite slot, an orthogonal CRT-real matter pair gives
 
 ```text
 E_O |<phi|Vhat^dagger Vhat|psi>|^2

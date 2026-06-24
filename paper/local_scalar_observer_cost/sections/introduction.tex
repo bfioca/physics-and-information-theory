@@ -3,12 +3,13 @@
 
 The observer rule of Harlow, Usatyuk, and Zhao replaces the inner product of
 closed-universe states by a quantum-to-classical channel carried by an
-observer record~\cite{HarlowUsatyukZhao2025}.  In their simple random-code
-model, departures from an ideal inner product are controlled by the purity
-$e^{-S_2(\omega_{\rm Ob'})}$ of that record.  This makes the second R\'enyi
-entropy operational, but leaves a complementary physical question: how much
-localized field energy is required to produce a record with a specified
-purity?
+observer record~\cite{HarlowUsatyukZhao2025}.  Its ideal motivation uses an
+exact pointer-basis clone.  In their simple random-code model, departures from
+an ideal inner product are controlled by the purity
+$e^{-S_2(\omega_{\rm Ob'})}$ of the record placed in the corresponding
+bipartite slot.  This makes the second R\'enyi entropy operational, but leaves
+a complementary physical question: what happens when that ideal record is
+replaced by a localized, nonideal field record of specified purity?
 
 We answer that question in an exactly solvable model.  A finite pointer
 controls compact classical sources for a free scalar field in a thermal
@@ -91,15 +92,18 @@ optimum over the full angular and canonical phase space, with
  \label{eq:intro-de-sitter-cost}
 \end{equation}
 
-The physical record also fits directly into the simple observer code.
-Purifying the conditional field states gives
+We do not identify the field record with the exact pointer-basis clone used to
+motivate the ideal observer rule.  We replace that ideal record with the
+Stinespring record of a partial dephasing channel and ask how its physically
+constrained purity modifies the same random-code second moment.  Purifying the
+conditional field states gives
 \begin{equation}
  \ket\omega=\sum_i\sqrt{w_i}\ket i_{\rm Ob}\ket{e_i}_{\rm Ob'},
  \qquad e^{-S_2(\omega_{\rm Ob'})}=\Tr\rho_P^2.
  \label{eq:intro-record-state}
 \end{equation}
-For an orthogonal CRT-real matter pair, the exact second-moment formula of
-Harlow, Usatyuk, and Zhao therefore yields
+For an orthogonal CRT-real matter pair, substituting this state into the exact
+second-moment formula of Harlow, Usatyuk, and Zhao yields
 \begin{equation}
  \mathbb E_O
  \abs{\bra\phi\widehat V^\dagger\widehat V\ket\psi}^2
@@ -145,14 +149,14 @@ prior art~\cite{Landulfo2016,BarcellosLandulfo2021,BatistaEtAl2026}; positive
 compact kernels and logarithmic-potential variational principles also have a
 substantial literature.  The candidate contribution is the finite-pointer
 purity theorem with the exact localized thermal coefficient, its all-sector
-de Sitter reduction, and the explicit insertion of that physical purity into
-the observer-code second moment.  External detector/QFT, operator-theory,
+de Sitter reduction, and the controlled substitution of that physical record
+in the observer-code second moment.  External detector/QFT, operator-theory,
 and quantum-gravity review remain publication gates.
 
 \Cref{sec:model} defines the controlled-source model and exact Schur channel.
 \Cref{sec:bound} proves the localized thermal operator theorem and the full
 de Sitter reduction.  \Cref{sec:finite-pointer} derives the R\'enyi bound and
-observer-code insertion.  \Cref{sec:construction} treats smooth source
+observer-code record substitution.  \Cref{sec:construction} treats smooth source
 realization, \cref{sec:comparison} separates the result from adjacent entropy
 and detector bounds, and \cref{sec:discussion} states the claim boundary.
 \Cref{sec:gravity} contains the branchwise final-slice application.

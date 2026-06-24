@@ -22,7 +22,7 @@ PYTHONPATH=. python -m pytest -q
 ```
 
 The suite covers channel normalization, the finite-pointer Jensen theorem,
-the Harlow-code insertion, branchwise gravity, the localization certificate,
+the Harlow-code record substitution, branchwise gravity, the localization certificate,
 manuscript structure, two independent numerical implementations, review
 links, artifact provenance, and deterministic specialist packets.
 

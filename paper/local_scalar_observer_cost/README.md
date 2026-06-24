@@ -7,7 +7,7 @@ coverage and three specialist dispositions remain required before submission.
 ## Start Here
 
 1. Read `main.pdf`, beginning with the finite-pointer entropy theorem and
-   observer-code insertion.
+   observer-code record substitution.
 2. Use `REFEREE_GUIDE.md` for the common claim hierarchy and boundary.
 3. Choose `QFT_NOVELTY_REVIEW.md`, `OPERATOR_NOVELTY_REVIEW.md`, or
    `OBSERVER_CODE_REVIEW.md` for the relevant specialist questions.
@@ -21,9 +21,9 @@ coverage and three specialist dispositions remain required before submission.
 
 The exact gapless-detector channel is prior art. The candidate contribution is
 the finite-pointer purity and Renyi bound with an exact localized thermal
-coefficient, its all-sector de Sitter realization, the explicit
-Harlow-code second-moment floor, and the branchwise final-slice gravity
-corollary.
+coefficient, its all-sector de Sitter realization, the explicit second-moment
+floor obtained by substituting a nonideal Stinespring record for the ideal
+Harlow-code clone, and the branchwise final-slice gravity corollary.
 
 ## Package Map
 
@@ -34,7 +34,7 @@ corollary.
 | `REFEREE_GUIDE.md` | Shared claim and disposition guide |
 | `QFT_NOVELTY_REVIEW.md` | Detector/QFT normalization, model, and novelty questions |
 | `OPERATOR_NOVELTY_REVIEW.md` | Thermal-kernel reduction and operator-theory questions |
-| `OBSERVER_CODE_REVIEW.md` | Harlow-code insertion, entropy, and gravity questions |
+| `OBSERVER_CODE_REVIEW.md` | Harlow-code record substitution, entropy, and gravity questions |
 | `EXTERNAL_REVIEW_LAUNCH.md` | Send-ready attachment sets and outreach drafts |
 | `REVIEW_RESPONSE_FORM.md` | Structured specialist disposition |
 | `REVIEWER_SHORTLIST.md` | Ranked contact routes |
@@ -81,8 +81,10 @@ overfull or underfull boxes.
 ## Claim Boundary
 
 The resource is centered post-switch scalar-field energy, not total apparatus
-cost. The finite pointer and sources are prescribed. The code consequence is
-an ensemble mean-square statement for an orthogonal CRT-real pair, not a
-deterministic or uniform code theorem. The gravity result assumes a local
+cost. The finite pointer and sources are prescribed. The field record is a
+nonideal Stinespring-record substitution, not a realization of the exact
+pointer-basis clone. The code consequence is an ensemble mean-square statement
+for an orthogonal CRT-real pair, not a deterministic or uniform code theorem.
+The gravity result assumes a local
 constraint budget on every conditional spherical branch and does not describe
 coupled gravitational evolution. General-d sharpness is not claimed.

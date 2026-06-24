@@ -42,7 +42,7 @@ The allowed dispositions in this record are exactly:
 | Final support versus fixed source cylinder | `PASS, independent derivation` | The construction proves sharpness for final data and for source worldtubes approaching that ball; it does not prove near-controllability from every smaller fixed cylinder. |
 | Finite-pointer Schur normalization | `PASS, independent derivation` | Conditional Weyl states form a Gram matrix and `Gamma_ij=<p_i-p_j,B(p_i-p_j)>/4`, which reduces exactly to the binary convention for opposite profiles. |
 | Finite-pointer purity and Renyi bound | `PASS, independent derivation` | The pairwise variance identity gives `sum_ij w_i w_j ||p_i-p_j||^2=4E_bar`; Jensen on normalized off-diagonal weights gives the stated purity floor. |
-| Harlow-code insertion | `PASS, independent derivation` | The two reductions of the purified record have equal purity; for an orthogonal CRT-real matter pair, both matter overlaps in Harlow-Usatyuk-Zhao Eq. (4.2) vanish and leave `D Tr(rho^2)/(D+2)`. |
+| Harlow-code record substitution | `PASS, independent derivation` | Under the controlled replacement of the ideal clone by the nonideal Stinespring record, the two reductions have equal purity; for an orthogonal CRT-real matter pair, both matter overlaps in Harlow-Usatyuk-Zhao Eq. (4.2) vanish and leave `D Tr(rho^2)/(D+2)`. |
 | Branchwise gravity composition | `PASS, independent derivation` | Applying the final-slice mass bound to every conditional branch gives `E_bar<=sum_i w_i E_i<=max_i E_i`; a centered or average geometry alone would not suffice. |
 | Independent leading-eigenvalue reconstruction | `PASS, independent computation` | A midpoint/product-integration matrix passes analytic brackets and coarse/fine convergence on `0.005<=y<=100`. |
 | Independent asymptotic stress tests | `PASS, independent computation` | The frozen checker verifies the small- and large-support remainder inequalities on dedicated grids. |
@@ -233,5 +233,5 @@ literature or continuum-operator proof.
 The clean-room audit reduces the proof-review workload but does not authorize
 submission. External readers must still check the normalization, strict
 resolvent comparison, uniform remainder argument, and cutoff-source support
-construction, Harlow-code specialization, and branchwise gravity
+construction, Harlow-code record substitution, and branchwise gravity
 interpretation. All three domain novelty reviews also remain open.

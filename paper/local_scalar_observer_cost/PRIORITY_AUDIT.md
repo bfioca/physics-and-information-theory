@@ -31,7 +31,7 @@ second moment. It is the conjunction of:
 3. global bounds and uniform small- and large-support remainders;
 4. the strict reduction of every angular and canonical de Sitter sector to
    the same s-wave momentum optimizer;
-5. the physical-purity insertion into the observer-code second moment; and
+5. the nonideal-record substitution in the observer-code second moment; and
 6. the branchwise final-slice backreaction corollary.
 
 ## Exact Operator Reductions

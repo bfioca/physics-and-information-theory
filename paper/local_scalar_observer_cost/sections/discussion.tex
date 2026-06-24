@@ -3,7 +3,8 @@
 
 The result has two layers.  The analytic engine is the exact localization
 coefficient for the thermal inverse Hamiltonian.  The physical composition is
-the finite-pointer purity bound and its insertion into a simple observer code.
+the finite-pointer purity bound and its controlled substitution into a simple
+observer code.
 Together they say that a field record of large second R\'enyi entropy cannot be
 produced with simultaneously fixed support and bounded post-switch scalar
 energy in this model.  The statement is quantitative and nonperturbative in
@@ -32,7 +33,7 @@ The exact statements are:
  \item the purity and R\'enyi bounds
  \cref{eq:finite-pointer-purity-bound,eq:simple-entropy-bound}, with exact
  saturation for the symmetric binary top-mode record;
- \item the physical-purity insertion
+ \item the nonideal-record substitution
  \cref{eq:harlow-physical-floor} into the Harlow--Usatyuk--Zhao simple random
  code for an orthogonal CRT-real matter pair; and
  \item the branchwise final-slice constraint estimate
@@ -54,11 +55,14 @@ the declared final-support ball.
 
 \subsection{Observer-code interpretation}
 
-The code insertion supplies a concrete bridge that the earlier binary
-diamond-error comparison did not.  The conditional field record purifies the
-physical pointer state, so its record-system purity is exactly
-$\Tr\rho_P^2$.  For the specified orthogonal CRT-real pair, this is precisely
-the observer factor left in the Haar second moment of
+The code substitution supplies a concrete bridge that the earlier binary
+diamond-error comparison did not.  The conditional field states are generally
+nonorthogonal, so their record is not the exact pointer-basis clone used in the
+ideal motivation.  Instead, their purification is the Stinespring record of a
+partial-dephasing channel, with record-system purity exactly $\Tr\rho_P^2$.
+Putting that record in the same bipartite slot is a controlled modification of
+the simple code model.  For the specified orthogonal CRT-real pair, its purity
+is precisely the observer factor left in the Haar second moment of
 \cite{HarlowUsatyukZhao2025}.  The field theorem therefore converts a
 localization and energy budget into a lower floor on that ensemble-averaged
 squared inner-product fluctuation.

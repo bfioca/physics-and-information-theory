@@ -2,11 +2,11 @@
 
 ## Review Assignment
 
-Assess whether the manuscript correctly inserts a physically generated
-finite-pointer record into the simple random-code calculation of Harlow,
-Usatyuk, and Zhao, and whether the resulting energy-support and branchwise
-gravity bounds are interesting in the observer program. This is not a request
-to endorse the broader program or to review the integral-operator proof.
+Assess whether the manuscript's controlled replacement of the ideal
+pointer-basis clone by a physically generated, nonideal field record is a
+legitimate and useful modification of the simple random-code calculation of
+Harlow, Usatyuk, and Zhao. This is not a request to endorse the broader
+program or to review the integral-operator proof.
 
 ## Result Under Review
 
@@ -23,6 +23,13 @@ The two reductions have the same nonzero spectrum, so
 ```text
 exp[-S_2(omega_Ob')]=Tr(rho_P^2).
 ```
+
+The manuscript does **not** identify this field record with the exact
+pointer-basis clone used to motivate the ideal observer rule. The conditional
+field states are generally nonorthogonal. Instead, it replaces the ideal
+record with the Stinespring record of a partial dephasing channel and asks how
+its physically constrained purity modifies the same bipartite random-code
+second moment.
 
 The localization theorem bounds that physical purity:
 
@@ -76,27 +83,24 @@ These checks are recorded in
 and in source-bound executable certificates. They do not replace specialist
 review.
 
-## Decisive Questions
+## Questions for the Initial Inquiry
 
-1. Is the specialization of Harlow-Usatyuk-Zhao Eq. (4.2), including the
-   finite-`D` factor and CRT-real hypothesis, exactly correct?
-2. Is it legitimate and useful to model `Ob'` as the purified conditional
-   field record while `Ob` is the finite pointer?
-3. Does an energy-support lower floor on an ensemble-averaged squared
-   inner-product fluctuation constitute a meaningful physical refinement of
-   the simple observer code?
-4. Is a concentration or high-probability theorem necessary before this can
-   support the paper's title and abstract?
-5. Is the branchwise final-slice backreaction bound correctly framed as a
-   corollary rather than a coupled gravity theorem?
-6. What is the smallest bounded addition, if any, needed for this to be a
-   useful standalone contribution to the observer program?
+1. Is it legitimate to substitute this nonideal Stinespring record for the
+   ideal clone in the same bipartite slot of Eq. (4.2), including the stated
+   finite-`D` factor and CRT-real specialization?
+2. Is the resulting connection between localized field resources and the
+   random-code second moment useful enough to pursue?
+
+The concentration question and branchwise gravity corollary can be assessed
+in a later formal review; they are not part of the initial request.
 
 ## Requested Disposition
 
-Return one of the following in `REVIEW_RESPONSE_FORM.md`:
+For the initial inquiry, a brief reply to the two questions above is enough;
+do not use `REVIEW_RESPONSE_FORM.md` unless a formal follow-up review is
+invited. For that later review, the available dispositions are:
 
-- **CORRECT AND USEFUL:** the code insertion is correct and materially
+- **CORRECT AND USEFUL:** the record substitution is correct and materially
   strengthens the standalone paper.
 - **CORRECT BUT INSUFFICIENT:** the algebra is right, but identify the minimum
   missing result needed for publication in this framing.

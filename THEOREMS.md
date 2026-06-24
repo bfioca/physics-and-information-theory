@@ -73,10 +73,11 @@ S_2(rho_P)<=min{H_2(w),C_beta(L)E_bar}.
 The symmetric binary top-mode record saturates the bound. Global sharpness for
 arbitrary pointer dimension is not asserted.
 
-## T4. Observer-Code Insertion
+## T4. Observer-Code Record Substitution
 
-For the purified physical record and an orthogonal CRT-real matter pair in the
-Harlow-Usatyuk-Zhao simple random code,
+The nonorthogonal field record is not identified with the exact pointer-basis
+clone. Substitute its Stinespring record into the same bipartite slot of the
+Harlow-Usatyuk-Zhao simple random code. For an orthogonal CRT-real matter pair,
 
 ```text
 E_O |<phi|Vhat^dagger Vhat|psi>|^2

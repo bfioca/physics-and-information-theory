@@ -86,10 +86,11 @@ binary-channel analogy. Harlow is best placed to judge both the Eq. (4.2)
 specialization and whether an energy-support floor on its ensemble second
 moment is useful to the observer program.
 
-Ask specifically: is the purified field record a legitimate realization of
-the nonideal observer record in the simple code, is the orthogonal CRT-real
-specialization correct, and does the branchwise backreaction corollary
-materially strengthen the paper?
+Ask specifically: is substituting the nonideal Stinespring field record for
+the ideal pointer-basis clone in the same bipartite slot legitimate, is the
+orthogonal CRT-real specialization correct, and is that connection useful to
+the observer program? Leave the branchwise backreaction corollary for a formal
+follow-up.
 
 ### Second route: Mykhaylo Usatyuk or Ying Zhao
 

@@ -30,7 +30,12 @@ and machine-readable manifest. The manifest pins the full commit, time, source
 URL, and SHA-256 digest of every attachment. Rebuilding at the same commit is
 byte-for-byte deterministic.
 
-## Minimal Attachment Sets
+## Formal Review Attachment Sets
+
+These sets are for a second-stage formal review. For an initial warm
+introduction to Dr. Harlow, send direct links only to `main.pdf` and
+`OBSERVER_CODE_REVIEW.md`. Do not attach `REVIEW_RESPONSE_FORM.md` unless he
+invites a formal follow-up.
 
 **Detector/QFT**
 
@@ -107,37 +112,44 @@ Best,
 
 ## Harlow Framing Email Draft
 
-**Subject:** Physical finite-pointer insertion into the observer code
+**Subject:** Question about Eq. (4.2) and a localized field record
 
-Dear Dr. Harlow,
+Hi Dr. Harlow,
 
-I have a short mathematical-physics manuscript that tries to supply a
-microphysical resource bound for the nonideal record in your observer
-framework. A finite pointer controls localized scalar sources, and I derive an
-exact bound relating the record's second Renyi entropy to centered
-post-switch field energy and support.
+[Mutual friend's name] suggested I send this to you. I've written a manuscript
+prompted by your observer paper with Usatyuk and Zhao. In a solvable localized
+scalar-field model, a finite pointer becomes entangled with conditional field
+records, and I derive an exact bound on the record's second Renyi entropy in
+terms of its final support and centered post-switch field energy.
 
-The main new bridge is explicit: for an orthogonal CRT-real matter pair in the
-simple random code of your paper with Usatyuk and Zhao, the physical field
-record gives
+The narrow point I'd value your judgment on is the connection to your simple
+random code. I model a nonideal physical field record in place of the ideal
+pointer-basis clone. For an orthogonal CRT-real matter pair, Eq. (4.2) then
+appears to reduce exactly to
 
 ```text
 E_O |<phi|Vhat^dagger Vhat|psi>|^2
  = D/(D+2) Tr(rho_record^2),
 ```
 
-so the field theorem produces an energy-support lower floor on that
-Haar-averaged squared fluctuation. I also derive a branchwise final-slice
-backreaction bound on the same record entropy. The paper does not claim a
-deterministic floor for every code, an autonomous observer, or coupled gravity.
+so the field bound gives a floor on the Haar-averaged squared inner-product
+fluctuation. I also include a deliberately limited branchwise final-slice
+constraint corollary.
 
-Would you be willing to check whether this insertion is correct and whether it
-is useful enough to justify the observer-entropy framing? The repository is
-[link], and I have attached the 23-page manuscript plus a focused review
-brief.
+Would you be willing to tell me whether that replacement is legitimate and
+whether the connection is useful enough to pursue? A brief "the algebra is
+right, but the framing is not useful" would also be very helpful. The relevant
+code argument is summarized in the short note below; I am not asking you to
+review the operator-theory proof.
+
+Manuscript (PDF):
+https://raw.githubusercontent.com/bfioca/physics-and-information-theory/main/paper/local_scalar_observer_cost/main.pdf
+
+Focused observer-code note:
+https://github.com/bfioca/physics-and-information-theory/blob/main/paper/local_scalar_observer_cost/OBSERVER_CODE_REVIEW.md
 
 Best,
-[Name]
+Brian
 
 ## Review Handling
 
